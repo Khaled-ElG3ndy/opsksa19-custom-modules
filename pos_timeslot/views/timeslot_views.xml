@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    
+    <record id="pos_timeslot_view_form" model="ir.ui.view">
+        <field name="name">pos_timeslot_view_form</field>
+        <field name="model">pos.timeslot</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                        <group>
+                            <field name="time_from" widget="float_time" required="1"/>
+                            <field name="time_to" widget="float_time" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="pos_timeslot_view_tree" model="ir.ui.view">
+        <field name="name">pos_timeslot_view_tree</field>
+        <field name="model">pos.timeslot</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="time_from" widget="float_time"/>
+                <field name="time_to" widget="float_time"/>
+            </tree>
+        </field>
+    </record>
+    
+    
+    <record id="pos_timeslot_action" model="ir.actions.act_window">
+        <field name="name">POS Timeslots</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pos.timeslot</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_pos_timeslot" name="POS Timeslots" parent="point_of_sale.menu_point_config_product"
+              action="pos_timeslot.pos_timeslot_action" sequence="15"/>
+
+
+</odoo>

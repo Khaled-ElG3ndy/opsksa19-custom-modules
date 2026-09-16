@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- VAT summary table on the POS receipt.
+
+         It goes inside the "before-footer" hook the core receipt leaves for
+         exactly this, so it lands under the payment and change lines and above
+         the receipt footer, and it does not compete with the tax lines core
+         already prints next to the total. -->
+    <t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('before-footer')]" position="inside">
+            <t t-set="vatSummary" t-value="vatSummaryRows"/>
+            <table t-if="vatSummary.length" class="pos-receipt-vat-summary w-100 mt-3">
+                <thead>
+                    <tr>
+                        <th class="text-start">VAT%</th>
+                        <th class="text-end">VAT</th>
+                        <th class="text-end">ExVAT</th>
+                        <th class="text-end">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- The cells are marked ltr so the figures read the same
+                         way on an Arabic receipt as on an English one, while
+                         the table itself still mirrors with the interface. -->
+                    <tr t-foreach="vatSummary" t-as="vatRow" t-key="vatRow_index">
+                        <td class="text-start" dir="ltr" t-esc="vatRow.rate"/>
+                        <td class="text-end font-monospace" dir="ltr" t-esc="vatRow.tax"/>
+                        <td class="text-end font-monospace" dir="ltr" t-esc="vatRow.base"/>
+                        <td class="text-end font-monospace" dir="ltr" t-esc="vatRow.total"/>
+                    </tr>
+                </tbody>
+            </table>
+        </xpath>
+    </t>
+
+</templates>

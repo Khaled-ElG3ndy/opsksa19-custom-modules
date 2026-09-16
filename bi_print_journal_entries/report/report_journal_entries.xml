@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_journal_entries" model="report.paperformat">
+        <field name="name">Journal Entries A4</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_journal_entries" model="ir.actions.report">
+        <field name="name">Print Journal Entries</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">bi_print_journal_entries.report_journal_entries</field>
+        <field name="report_file">bi_print_journal_entries.report_journal_entries</field>
+        <field name="print_report_name">object._get_journal_entry_report_filename()</field>
+        <field name="paperformat_id" ref="paperformat_journal_entries"/>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="binding_view_types">list,form</field>
+    </record>
+
+    <template id="report_journal_entries">
+        <t t-set="report_lang" t-value="env.user.lang or env.context.get('lang') or 'en_US'"/>
+        <t t-set="lang" t-value="report_lang"/>
+        <t t-call="web.html_container" t-lang="report_lang">
+            <t t-foreach="docs" t-as="move">
+                <t t-set="is_rtl" t-value="env['res.lang']._get_data(code=report_lang).direction == 'rtl'"/>
+                <t t-set="doc" t-value="move.with_context(lang=report_lang)"/>
+                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                <t t-set="currency" t-value="company.currency_id"/>
+                <t t-set="report_lines" t-value="doc.line_ids.filtered(lambda line: line.display_type not in ('line_section', 'line_note'))"/>
+                <t t-call="bi_print_journal_entries.report_journal_entry_document"
+                   t-lang="report_lang"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_journal_entry_document">
+        <div class="article"
+             t-att-data-oe-model="doc._name"
+             t-att-data-oe-id="doc.id"
+             t-att-data-oe-lang="report_lang">
+            <div t-attf-class="page bi_journal_entry_report #{'bi_rtl' if is_rtl else 'bi_ltr'}"
+                 t-att-dir="'rtl' if is_rtl else 'ltr'"
+                 t-att-lang="report_lang">
+                        <style>
+                            .bi_journal_entry_report {
+                                color: #25292d;
+                                font-family: "DejaVu Sans", Arial, sans-serif;
+                                font-size: 10.5px;
+                                line-height: 1.4;
+                            }
+                            .bi_journal_entry_report.bi_rtl {
+                                direction: rtl;
+                                text-align: right;
+                                font-family: "Noto Naskh Arabic", "DejaVu Sans", Arial, sans-serif;
+                            }
+                            .bi_journal_entry_report.bi_ltr {
+                                direction: ltr;
+                                text-align: left;
+                            }
+                            .bi_journal_entry_report * {
+                                box-sizing: border-box;
+                            }
+                            .bi_journal_entry_report .company_header,
+                            .bi_journal_entry_report .company_identity,
+                            .bi_journal_entry_report .entry_information,
+                            .bi_journal_entry_report .journal_lines {
+                                width: 100%;
+                                border-collapse: collapse;
+                            }
+                            .bi_journal_entry_report .company_header {
+                                border-bottom: 1.5px solid #30353a;
+                                margin-bottom: 16px;
+                            }
+                            .bi_journal_entry_report .company_header > tbody > tr > td {
+                                padding: 0 0 14px 0;
+                                vertical-align: middle;
+                            }
+                            .bi_journal_entry_report .company_identity_cell {
+                                width: 67%;
+                            }
+                            .bi_journal_entry_report .company_identity td {
+                                padding: 0;
+                                vertical-align: middle;
+                            }
+                            .bi_journal_entry_report .company_logo_cell {
+                                width: 26%;
+                            }
+                            .bi_journal_entry_report .company_logo {
+                                display: block;
+                                max-height: 58px;
+                                max-width: 135px;
+                            }
+                            .bi_journal_entry_report .company_details {
+                                padding-left: 12px !important;
+                                padding-right: 12px !important;
+                            }
+                            .bi_journal_entry_report .company_name {
+                                color: #202428;
+                                font-size: 18px;
+                                font-weight: 700;
+                                line-height: 1.2;
+                                margin-bottom: 4px;
+                            }
+                            .bi_journal_entry_report .company_address {
+                                color: #62676b;
+                                font-size: 8.5px;
+                                line-height: 1.25;
+                                white-space: pre-line;
+                            }
+                            .bi_journal_entry_report .document_identity {
+                                width: 33%;
+                                padding-left: 16px !important;
+                                padding-right: 3px !important;
+                                text-align: right;
+                            }
+                            .bi_journal_entry_report.bi_rtl .document_identity {
+                                padding-left: 3px !important;
+                                padding-right: 16px !important;
+                                text-align: left;
+                            }
+                            .bi_journal_entry_report .report_title {
+                                color: #202428;
+                                font-size: 21px;
+                                font-weight: 700;
+                                line-height: 1.2;
+                                margin-bottom: 7px;
+                            }
+                            .bi_journal_entry_report .document_number {
+                                border-top: 1px solid #c8cbce;
+                                padding-top: 6px;
+                            }
+                            .bi_journal_entry_report .document_number .field_label {
+                                margin-bottom: 1px;
+                            }
+                            .bi_journal_entry_report .document_number_value {
+                                color: #202428;
+                                display: block;
+                                font-size: 11.5px;
+                                font-weight: 700;
+                            }
+                            .bi_journal_entry_report .entry_information {
+                                background: #f6f6f6;
+                                border: 1px solid #d5d7d9;
+                                margin-bottom: 20px;
+                            }
+                            .bi_journal_entry_report .entry_information td {
+                                width: 25%;
+                                padding: 9px 11px;
+                                vertical-align: top;
+                                border-left: 1px solid #d5d7d9;
+                            }
+                            .bi_journal_entry_report.bi_ltr .entry_information td:first-child {
+                                border-left: 0;
+                            }
+                            .bi_journal_entry_report.bi_rtl .entry_information td {
+                                border-left: 0;
+                                border-right: 1px solid #d5d7d9;
+                            }
+                            .bi_journal_entry_report.bi_rtl .entry_information td:first-child {
+                                border-right: 0;
+                            }
+                            .bi_journal_entry_report .field_label {
+                                color: #717579;
+                                display: block;
+                                font-size: 8px;
+                                font-weight: 700;
+                                line-height: 1.2;
+                                margin-bottom: 3px;
+                            }
+                            .bi_journal_entry_report .field_value {
+                                color: #24282c;
+                                display: block;
+                                font-size: 10.5px;
+                                font-weight: 600;
+                                word-wrap: break-word;
+                            }
+                            .bi_journal_entry_report .date_value {
+                                direction: ltr;
+                                unicode-bidi: embed;
+                            }
+                            .bi_journal_entry_report .status_value {
+                                border: 1px solid #b9bdc0;
+                                border-radius: 10px;
+                                display: inline-block;
+                                font-size: 9px;
+                                line-height: 1.25;
+                                padding: 2px 8px;
+                            }
+                            .bi_journal_entry_report .journal_lines {
+                                border: 1px solid #ced1d3;
+                                table-layout: fixed;
+                            }
+                            .bi_journal_entry_report .journal_lines thead {
+                                display: table-header-group;
+                            }
+                            .bi_journal_entry_report .journal_lines tr {
+                                page-break-inside: avoid;
+                            }
+                            .bi_journal_entry_report .journal_lines th {
+                                color: #ffffff;
+                                background: #34393d;
+                                border-left: 1px solid #555a5e;
+                                font-size: 9px;
+                                font-weight: 700;
+                                padding: 8px;
+                                text-align: left;
+                                vertical-align: middle;
+                            }
+                            .bi_journal_entry_report.bi_rtl .journal_lines th {
+                                text-align: right;
+                            }
+                            .bi_journal_entry_report.bi_ltr .journal_lines th:first-child {
+                                border-left: 0;
+                            }
+                            .bi_journal_entry_report.bi_rtl .journal_lines th {
+                                border-left: 0;
+                                border-right: 1px solid #555a5e;
+                            }
+                            .bi_journal_entry_report.bi_rtl .journal_lines th:first-child {
+                                border-right: 0;
+                            }
+                            .bi_journal_entry_report .journal_lines td {
+                                background: #ffffff;
+                                border-bottom: 1px solid #d9dbdd;
+                                border-left: 1px solid #e1e2e3;
+                                padding: 8px;
+                                vertical-align: middle;
+                                word-wrap: break-word;
+                                overflow-wrap: break-word;
+                            }
+                            .bi_journal_entry_report.bi_ltr .journal_lines td:first-child {
+                                border-left: 0;
+                            }
+                            .bi_journal_entry_report.bi_rtl .journal_lines td {
+                                border-left: 0;
+                                border-right: 1px solid #e1e2e3;
+                            }
+                            .bi_journal_entry_report.bi_rtl .journal_lines td:first-child {
+                                border-right: 0;
+                            }
+                            .bi_journal_entry_report .journal_lines tbody tr:nth-child(even) td {
+                                background: #fafafa;
+                            }
+                            .bi_journal_entry_report .account_column {
+                                width: 25%;
+                            }
+                            .bi_journal_entry_report .label_column {
+                                width: 33%;
+                            }
+                            .bi_journal_entry_report .partner_column {
+                                width: 18%;
+                            }
+                            .bi_journal_entry_report .amount_column {
+                                width: 12%;
+                            }
+                            .bi_journal_entry_report .amount_heading {
+                                text-align: right !important;
+                            }
+                            .bi_journal_entry_report .amount_value {
+                                direction: ltr;
+                                text-align: right;
+                                unicode-bidi: embed;
+                                white-space: nowrap;
+                            }
+                            .bi_journal_entry_report .account_code {
+                                color: #777b7e;
+                                direction: ltr;
+                                display: block;
+                                font-size: 8px;
+                                unicode-bidi: embed;
+                            }
+                            .bi_journal_entry_report .account_name {
+                                display: block;
+                                font-weight: 600;
+                                margin-top: 1px;
+                            }
+                            .bi_journal_entry_report .totals td {
+                                background: #eeeeee !important;
+                                border-bottom: 0;
+                                border-top: 1.5px solid #34393d;
+                                font-weight: 700;
+                                padding-top: 8px;
+                                padding-bottom: 8px;
+                            }
+                            .bi_journal_entry_report .total_label {
+                                text-align: right;
+                            }
+                            .bi_journal_entry_report.bi_rtl .total_label {
+                                text-align: left;
+                            }
+                        </style>
+
+                        <table class="company_header">
+                            <tr>
+                                <td class="company_identity_cell">
+                                    <table class="company_identity">
+                                        <tr>
+                                            <td t-if="company.logo" class="company_logo_cell">
+                                                <img class="company_logo"
+                                                     t-att-src="image_data_uri(company.logo)"
+                                                     alt="Company Logo"/>
+                                            </td>
+                                            <td class="company_details">
+                                                <div class="company_name" t-field="company.name"/>
+                                                <t t-set="company_address"
+                                                   t-value="company.partner_id._display_address(without_company=True).strip()"/>
+                                                <div t-if="company_address"
+                                                     class="company_address"
+                                                     t-out="company_address"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td class="document_identity">
+                                    <div class="report_title">Journal Entry</div>
+                                    <div class="document_number">
+                                        <span class="field_label">Entry Number</span>
+                                        <span class="document_number_value" dir="auto" t-field="doc.name"/>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="entry_information">
+                            <tr>
+                                <td>
+                                    <span class="field_label">Date</span>
+                                    <span class="field_value date_value" t-field="doc.date" t-options="{'widget': 'date'}"/>
+                                </td>
+                                <td>
+                                    <span class="field_label">Journal</span>
+                                    <span class="field_value" t-field="doc.journal_id.name"/>
+                                </td>
+                                <td>
+                                    <span class="field_label">Status</span>
+                                    <span class="field_value status_value" t-field="doc.state"/>
+                                </td>
+                                <td>
+                                    <span class="field_label">Reference</span>
+                                    <span class="field_value" t-out="doc.ref or '—'"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="journal_lines">
+                            <thead>
+                                <tr>
+                                    <th class="account_column">Account</th>
+                                    <th class="label_column">Label</th>
+                                    <th class="partner_column">Partner</th>
+                                    <th class="amount_column amount_heading">Debit</th>
+                                    <th class="amount_column amount_heading">Credit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="report_lines" t-as="line">
+                                    <td>
+                                        <span class="account_code" t-field="line.account_id.code"/>
+                                        <span class="account_name" t-field="line.account_id.name"/>
+                                    </td>
+                                    <td><span t-out="line.name or '—'"/></td>
+                                    <td><span t-out="line.partner_id.display_name or '—'"/></td>
+                                    <td class="amount_value">
+                                        <span t-field="line.debit"
+                                              t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                                    </td>
+                                    <td class="amount_value">
+                                        <span t-field="line.credit"
+                                              t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="totals">
+                                    <td colspan="3" class="total_label">Total</td>
+                                    <td class="amount_value">
+                                        <span t-out="sum(report_lines.mapped('debit'))"
+                                              t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                                    </td>
+                                    <td class="amount_value">
+                                        <span t-out="sum(report_lines.mapped('credit'))"
+                                              t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+            </div>
+        </div>
+    </template>
+</odoo>

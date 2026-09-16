@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_print_kitchen_receipt.PrintKitchenReceiptScreen">
+        <div class="receipt-screen screen h-100 bg-100 kitchen-receipt-screen">
+            <div class="screen-content d-flex flex-column h-100">
+                <div class="default-view d-flex flex-lg-row flex-column overflow-hidden flex-grow-1">
+                    <div class="actions d-flex flex-column flex-lg-grow-1 flex-grow-0 flex-shrink-1 flex-basis-0 border-end">
+                        <div class="top-content d-flex align-items-center p-2 border-bottom text-center">
+                            <button class="discard btn btn-lg btn-light" t-on-click="goBack">
+                                Back
+                            </button>
+                            <button class="highlight btn btn-lg btn-primary ms-auto" t-on-click="goBack">
+                                New Order
+                            </button>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center flex-grow-1 p-3 p-xxl-5">
+                            <h1>How would you like to receive your kitchen receipt?</h1>
+                            <div class="buttons my-3">
+                                <button class="button print btn btn-lg btn-secondary w-100 py-3"
+                                        t-on-click="() => doPrint.call()">
+                                    <i t-attf-class="fa {{doPrint.status === 'loading' ? 'fa-fw fa-spin fa-circle-o-notch' : 'fa-print'}} me-1"
+                                       role="img"
+                                       aria-label="Print"/>
+                                    Print Kitchen Receipt
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pos-receipt-container d-flex flex-grow-1 flex-lg-grow-0 w-100 w-lg-50 user-select-none justify-content-center bg-200 text-center overflow-hidden">
+                        <div t-att-class="{'w-50': !ui.isSmall}"
+                             class="d-inline-block m-2 m-lg-3 p-3 border rounded bg-view text-start overflow-y-auto">
+                            <KitchenReceipt order="currentOrder"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
+

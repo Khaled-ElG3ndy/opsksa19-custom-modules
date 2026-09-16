@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_base_document_layout_inherit" model="ir.ui.view">
+        <field name="name">base.document.layout.inherit</field>
+        <field name="model">base.document.layout</field>
+        <field name="inherit_id" ref="web.view_base_document_layout"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='layout_background']" position="after">
+                <field name="header_img" widget="image"/>
+                <field name="footer_img" widget="image"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

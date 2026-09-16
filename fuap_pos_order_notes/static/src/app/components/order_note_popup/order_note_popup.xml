@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="fuap_pos_order_notes.OrderNotePopup">
+        <Dialog size="'lg'" title="props.title" bodyClass="'fuap-order-note-popup'">
+            <div t-att-dir="direction">
+                <label class="form-label fw-semibold" for="fuap_order_note_input">Order Note</label>
+                <textarea id="fuap_order_note_input"
+                          rows="5"
+                          dir="auto"
+                          class="form-control form-control-lg w-100"
+                          t-model="state.value"
+                          t-ref="orderNoteInput"
+                          placeholder="Add an order note..."/>
+                <div t-if="props.tags.length" class="fuap-order-note-tags d-flex flex-wrap gap-2 mt-3">
+                    <button t-foreach="props.tags"
+                            t-as="tag"
+                            t-key="tag.id"
+                            type="button"
+                            class="btn btn-secondary fuap-order-note-tag"
+                            t-on-click="() => this.addTag(tag)">
+                        <t t-esc="tag.name"/>
+                    </button>
+                </div>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary btn-lg fuap-order-note-save" t-on-click="save">Save</button>
+                <button class="btn btn-secondary btn-lg fuap-order-note-cancel" t-on-click="cancel">Cancel</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>
+

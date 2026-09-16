@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_kitchen_receipt" model="ir.ui.view">
+        <field name="name">res.config.form.inherit.kitchen.receipt</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='restaurant_section']" position="after">
+                <block title="Print Kitchen Receipt" id="pos_print_kitchen_receipt_section">
+                    <setting id="print_kitchen_receipt_setting"
+                             string="Print Kitchen Receipt"
+                             help="Show a POS action that previews and prints the current order for the kitchen.">
+                        <field name="print_kitchen_receipt"/>
+                    </setting>
+                    <setting id="print_kitchen_receipt_categ_setting"
+                             string="Enable Category Wise Receipt"
+                             help="Group kitchen receipt lines by product category."
+                             invisible="not print_kitchen_receipt">
+                        <field name="print_kitchen_receipt_categ"/>
+                    </setting>
+                    <setting id="print_kitchen_categories_exclude_setting"
+                             string="Exclude Categories on Print"
+                             help="Exclude products from selected categories while printing a category-wise receipt."
+                             invisible="not print_kitchen_receipt or not print_kitchen_receipt_categ">
+                        <field name="print_kitchen_categories_exclude_ids"
+                               widget="many2many_tags"
+                               options="{'no_create_edit': True}"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

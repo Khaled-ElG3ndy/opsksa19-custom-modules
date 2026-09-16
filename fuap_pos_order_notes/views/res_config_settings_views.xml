@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pos.order.notes</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='pos_preparation_section']" position="before">
+                <block title="Notes" id="pos_order_notes_section">
+                    <setting id="pos_order_note_receipt_setting"
+                             string="Order Note on Receipt"
+                             help="Display order notes on POS receipts.">
+                        <field name="pos_order_note_on_receipt"/>
+                    </setting>
+                    <setting id="pos_order_note_tags_setting"
+                             string="Order Notes Tags"
+                             help="Predefine useful and easy-to-use POS order notes.">
+                        <div class="content-group">
+                            <div class="mt16">
+                                <field name="pos_order_note_ids"
+                                       widget="many2many_tags"
+                                       placeholder="Add an order note tag"/>
+                            </div>
+                            <div>
+                                <button name="%(fuap_pos_order_notes.action_pos_order_note)d"
+                                        icon="oi-arrow-right"
+                                        type="action"
+                                        string="Tags"
+                                        class="btn-link"/>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

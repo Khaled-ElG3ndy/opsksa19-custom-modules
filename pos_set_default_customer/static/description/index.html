@@ -1,0 +1,234 @@
+<!-- Odoo Apps description page. Bilingual on purpose: the two halves declare
+     their own lang/dir so the browser mirrors the Arabic half by itself, and
+     every rule below uses logical properties so nothing has to be duplicated
+     per direction. -->
+<section class="posdc" lang="en" dir="ltr">
+  <style>
+    .posdc {
+      --ink: #362b59;
+      --plum: #714b67;
+      --muted: #6b6480;
+      --line: #e4e0ec;
+      --paper: #fbfafd;
+      --gold: #f3b85c;
+      font-family: Roboto, "Segoe UI", "Noto Sans Arabic", system-ui, sans-serif;
+      color: var(--ink);
+      line-height: 1.65;
+      max-width: 1000px;
+      margin-inline: auto;
+      padding-inline: 24px;
+    }
+    .posdc :is(h1, h2, h3) { color: var(--ink); font-weight: 600; margin-block: 0 .4em; }
+    .posdc h1 { font-size: 2.1rem; }
+    .posdc h2 { font-size: 1.4rem; }
+    .posdc h3 { font-size: 1.05rem; }
+    .posdc p { margin-block: 0 1em; }
+
+    .posdc-hero {
+      background: linear-gradient(135deg, var(--plum), var(--ink));
+      color: #fff;
+      border-radius: 18px;
+      padding: 44px 40px;
+      margin-block: 28px;
+    }
+    .posdc-hero h1, .posdc-hero p { color: #fff; }
+    .posdc-hero p { opacity: .85; margin-block-end: 0; max-width: 58ch; }
+    .posdc-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, .16);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: .8rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-block-end: 14px;
+    }
+
+    .posdc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-block: 24px;
+    }
+    .posdc-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      background: var(--paper);
+    }
+    .posdc-card h3 { margin-block-end: .35em; }
+    .posdc-card p { color: var(--muted); margin-block-end: 0; font-size: .95rem; }
+
+    .posdc-steps { counter-reset: posdc-step; list-style: none; padding-inline-start: 0; }
+    .posdc-steps li {
+      counter-increment: posdc-step;
+      position: relative;
+      padding-inline-start: 46px;
+      margin-block-end: 16px;
+    }
+    .posdc-steps li::before {
+      content: counter(posdc-step);
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--plum);
+      color: #fff;
+      font-weight: 600;
+      display: grid;
+      place-items: center;
+    }
+
+    .posdc-note {
+      border-inline-start: 4px solid var(--gold);
+      background: #fdf7ec;
+      border-start-end-radius: 10px;
+      border-end-end-radius: 10px;
+      padding: 16px 20px;
+      margin-block: 24px;
+    }
+
+    .posdc-rule { border: 0; border-block-start: 1px solid var(--line); margin-block: 40px; }
+    .posdc-foot { color: var(--muted); font-size: .9rem; }
+  </style>
+
+  <div class="posdc-hero">
+    <span class="posdc-badge">Point of Sale &middot; Odoo 19</span>
+    <h1>POS Default Customer</h1>
+    <p>
+      Choose a customer once, per Point of Sale, and every order the cashier
+      opens starts with that customer already selected.
+    </p>
+  </div>
+
+  <div class="posdc-grid">
+    <div class="posdc-card">
+      <h3>Set once, per shop</h3>
+      <p>
+        The customer lives on the Point of Sale configuration, so two shops on
+        the same database can default to two different customers.
+      </p>
+    </div>
+    <div class="posdc-card">
+      <h3>Always reaches the session</h3>
+      <p>
+        A Point of Sale only preloads a slice of the address book. The chosen
+        customer is shipped to the session regardless, so it is never missing
+        when the register opens.
+      </p>
+    </div>
+    <div class="posdc-card">
+      <h3>Never in the way</h3>
+      <p>
+        The cashier can still change the customer, or clear it, on any order.
+        Only newly created orders get the default back.
+      </p>
+    </div>
+    <div class="posdc-card">
+      <h3>Arabic and English</h3>
+      <p>
+        Every label is translatable and ships translated, and the module adds no
+        direction-specific styling, so it reads correctly in RTL and LTR alike.
+      </p>
+    </div>
+  </div>
+
+  <hr class="posdc-rule">
+
+  <h2>How to use it</h2>
+  <ol class="posdc-steps">
+    <li>
+      <strong>Open the settings.</strong>
+      Go to <em>Point of Sale &rsaquo; Configuration &rsaquo; Settings</em> and
+      pick the Point of Sale you want to configure at the top of the page.
+    </li>
+    <li>
+      <strong>Pick the customer.</strong>
+      Under <em>Default Customer in POS Order</em>, set <em>Default Customer</em>
+      to the contact that should be preselected, then save.
+    </li>
+    <li>
+      <strong>Open the register.</strong>
+      Every new order now starts with that customer, including the one that
+      follows a completed sale.
+    </li>
+  </ol>
+
+  <div class="posdc-note">
+    <strong>Multi-company:</strong> a customer belonging to a different company
+    than the Point of Sale is refused, so a shop can never be pointed at a
+    contact its cashiers cannot use.
+  </div>
+
+  <hr class="posdc-rule">
+
+  <section lang="ar" dir="rtl">
+    <h2>العميل الافتراضي لنقطة البيع</h2>
+    <p>
+      اختر العميل مرة واحدة لكل نقطة بيع، وسيبدأ كل طلب يفتحه الكاشير بهذا
+      العميل محدَّداً مسبقاً.
+    </p>
+
+    <div class="posdc-grid">
+      <div class="posdc-card">
+        <h3>إعداد واحد لكل متجر</h3>
+        <p>
+          يُحفظ العميل على تهيئة نقطة البيع نفسها، لذا يمكن لمتجرين على قاعدة
+          البيانات ذاتها أن يعتمد كل منهما عميلاً افتراضياً مختلفاً.
+        </p>
+      </div>
+      <div class="posdc-card">
+        <h3>يصل دائماً إلى الجلسة</h3>
+        <p>
+          لا تُحمِّل نقطة البيع سوى جزء من دفتر العناوين، ومع ذلك يُرسَل العميل
+          المختار إلى الجلسة دائماً فلا يغيب عند فتح الصندوق.
+        </p>
+      </div>
+      <div class="posdc-card">
+        <h3>لا يعيق العمل</h3>
+        <p>
+          يظل بإمكان الكاشير تغيير العميل أو إزالته من أي طلب، وتعود القيمة
+          الافتراضية في الطلبات الجديدة فقط.
+        </p>
+      </div>
+      <div class="posdc-card">
+        <h3>العربية والإنجليزية</h3>
+        <p>
+          جميع النصوص قابلة للترجمة ومترجمة بالفعل، ولا تضيف الوحدة أي تنسيق
+          مرتبط باتجاه معيّن، فتظهر بشكل سليم في الاتجاهين.
+        </p>
+      </div>
+    </div>
+
+    <h3>طريقة الاستخدام</h3>
+    <ol class="posdc-steps">
+      <li>
+        <strong>افتح الإعدادات.</strong>
+        من <em>نقطة البيع &rsaquo; التهيئة &rsaquo; الإعدادات</em>، اختر نقطة
+        البيع المطلوبة من أعلى الصفحة.
+      </li>
+      <li>
+        <strong>اختر العميل.</strong>
+        ضمن قسم <em>العميل الافتراضي في طلب نقطة البيع</em>، حدِّد
+        <em>العميل الافتراضي</em> ثم احفظ.
+      </li>
+      <li>
+        <strong>افتح الصندوق.</strong>
+        سيبدأ كل طلب جديد بهذا العميل، بما في ذلك الطلب الذي يلي إتمام عملية بيع.
+      </li>
+    </ol>
+
+    <div class="posdc-note">
+      <strong>تعدد الشركات:</strong> يُرفض اختيار عميل تابع لشركة أخرى غير شركة
+      نقطة البيع، حتى لا تُربط نقطة البيع بجهة لا يستطيع الكاشير التعامل معها.
+    </div>
+  </section>
+
+  <hr class="posdc-rule">
+  <p class="posdc-foot">
+    Odoo 19 &middot; depends on <code>point_of_sale</code> &middot; no extra
+    configuration required.
+  </p>
+</section>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="pos_timeslot_view_pos_pos_form_inherit" model="ir.ui.view">
+        <field name="name">pos_timeslot_view_pos_pos_form_inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_order']" position="after">
+                <field name="pos_timeslot_id" readonly="1"
+                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True,}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="pos_timeslot_view_pos_order_tree_inherit" model="ir.ui.view">
+        <field name="name">pos_timeslot_view_pos_order_tree_inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_order']" position="after">
+                <field name="pos_timeslot_id" optional="hide" readonly="1"
+                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,'no_create': True,}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

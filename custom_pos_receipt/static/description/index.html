@@ -1,0 +1,169 @@
+<!-- Odoo Apps description page. Bilingual on purpose: each half declares its
+     own lang/dir so the browser mirrors the Arabic one by itself, and every
+     rule uses logical properties so nothing has to be written twice. -->
+<section class="cpr" lang="en" dir="ltr">
+  <style>
+    .cpr {
+      --ink: #362b59;
+      --plum: #714b67;
+      --muted: #6b6480;
+      --line: #e4e0ec;
+      --paper: #fbfafd;
+      font-family: Roboto, "Segoe UI", "Noto Sans Arabic", system-ui, sans-serif;
+      color: var(--ink);
+      line-height: 1.65;
+      max-width: 1000px;
+      margin-inline: auto;
+      padding-inline: 24px;
+    }
+    .cpr :is(h1, h2, h3) { color: var(--ink); font-weight: 600; margin-block: 0 .4em; }
+    .cpr h1 { font-size: 2.1rem; }
+    .cpr h2 { font-size: 1.4rem; }
+    .cpr h3 { font-size: 1.05rem; }
+    .cpr p { margin-block: 0 1em; }
+
+    .cpr-hero {
+      background: linear-gradient(135deg, var(--plum), var(--ink));
+      color: #fff;
+      border-radius: 18px;
+      padding: 40px 36px;
+      margin-block: 24px;
+    }
+    .cpr-hero h1 { color: #fff; }
+    .cpr-hero p { margin-block-end: 0; opacity: .92; font-size: 1.05rem; }
+
+    .cpr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-block: 24px;
+    }
+    .cpr-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+      background: var(--paper);
+    }
+    .cpr-card h3 { margin-block-end: .3em; }
+    .cpr-card p { margin-block-end: 0; color: var(--muted); font-size: .95rem; }
+
+    .cpr-ticket {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 22px;
+      font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: .9rem;
+      white-space: pre;
+      overflow-x: auto;
+      margin-block: 0 1em;
+    }
+    .cpr-ticket b { color: var(--plum); }
+
+    .cpr-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .cpr hr { border: 0; border-block-start: 1px solid var(--line); margin-block: 36px; }
+    .cpr-note { color: var(--muted); font-size: .9rem; }
+  </style>
+
+  <div class="cpr-hero">
+    <h1>POS Custom Receipt</h1>
+    <p>Customize your Point of Sale receipts effortlessly, tailoring the layout,
+       content, and branding to match your business needs.</p>
+  </div>
+
+  <div class="cpr-grid">
+    <div class="cpr-card">
+      <h3>Fully customizable receipts</h3>
+      <p>The client and the VAT breakdown are printed on the receipt screen, on
+         the printed ticket and on every reprint.</p>
+    </div>
+    <div class="cpr-card">
+      <h3>No configuration required</h3>
+      <p>Install the module and both additions appear. There is nothing to set
+         up, per shop or otherwise.</p>
+    </div>
+    <div class="cpr-card">
+      <h3>Arabic and English</h3>
+      <p>Every label is translated, and the receipt mirrors with the interface
+         for a right-to-left session.</p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="cpr-split">
+    <div>
+      <h2>Client Name on POS Receipt</h2>
+      <p>The customer set on the order is printed as a labelled line, directly
+         under <em>Served by</em>.</p>
+      <div class="cpr-ticket">Served by: Mitchell Admin
+<b>Client: Billy Fox</b>
+
+1  Corner Desk Left Sit      97.75</div>
+      <p class="cpr-note">A customer under a company prints as
+         <em>Client: Deco Addict, Billy Fox</em>. An order with no customer
+         prints no client line.</p>
+    </div>
+    <div>
+      <h2>VAT Summary on POS Receipt</h2>
+      <p>A table at the foot of the receipt, one line per VAT rate on the
+         order.</p>
+      <div class="cpr-ticket">CHANGE            0.00
+
+<b>VAT%   VAT    ExVAT   Total</b>
+<b>15 %   12.75  85.00   97.75</b></div>
+      <p class="cpr-note">Rows are per tax, so a 15% item and a zero-rated item
+         are told apart even when the chart of accounts files them under one
+         tax group.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cpr" lang="ar" dir="rtl">
+  <div class="cpr-hero">
+    <h1>إيصال نقطة البيع المخصص</h1>
+    <p>خصّص إيصالات نقطة البيع بسهولة، وعدّل التنسيق والمحتوى والهوية البصرية
+       بما يناسب نشاطك التجاري.</p>
+  </div>
+
+  <div class="cpr-grid">
+    <div class="cpr-card">
+      <h3>إيصالات قابلة للتخصيص بالكامل</h3>
+      <p>يُطبع اسم العميل وملخص الضريبة على شاشة الإيصال وعلى الإيصال المطبوع
+         وعند إعادة الطباعة.</p>
+    </div>
+    <div class="cpr-card">
+      <h3>لا يحتاج أي إعداد</h3>
+      <p>ثبّت الموديول فتظهر الإضافتان مباشرة. لا توجد إعدادات لضبطها، لا لكل
+         نقطة بيع ولا غيرها.</p>
+    </div>
+    <div class="cpr-card">
+      <h3>العربية والإنجليزية</h3>
+      <p>كل العناوين مترجمة، والإيصال ينعكس مع الواجهة في الجلسات التي تُقرأ من
+         اليمين إلى اليسار.</p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="cpr-split">
+    <div>
+      <h2>اسم العميل على الإيصال</h2>
+      <p>يُطبع العميل المحدد في الطلب في سطر مُعنون، أسفل سطر
+         <em>تم تقديم الخدمة بواسطة</em> مباشرة.</p>
+      <div class="cpr-ticket" dir="rtl">تم تقديم الخدمة بواسطة: متشل أدمن
+<b>العميل: Billy Fox</b></div>
+      <p class="cpr-note">العميل التابع لشركة يُطبع باسم الشركة أولاً. والطلب
+         الذي بلا عميل لا يُطبع له سطر عميل.</p>
+    </div>
+    <div>
+      <h2>ملخص الضريبة على الإيصال</h2>
+      <p>جدول في أسفل الإيصال، سطر لكل نسبة ضريبة في الطلب.</p>
+      <div class="cpr-ticket" dir="rtl"><b>الإجمالي  قبل الضريبة  الضريبة  نسبة الضريبة</b>
+<b>97.75     85.00        12.75    15 %</b></div>
+      <p class="cpr-note">الأسطر لكل ضريبة على حدة، فتُميَّز الضريبة بنسبة 15%
+         عن الأصناف صفرية الضريبة حتى لو جمعهما دليل الحسابات في مجموعة ضريبية
+         واحدة.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="fuap_pos_order_notes.OrderNoteButton">
+        <button t-att-class="props.class"
+                class="fuap-order-note-button flex-shrink-0"
+                t-att-disabled="pos.getOrder()?.isEmpty()"
+                t-on-click="onClick">
+            <i class="fa fa-sticky-note me-1" role="img" aria-label="Order Note" title="Order Note"/>
+            <span t-esc="props.label"/>
+        </button>
+    </t>
+
+    <t t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+        <xpath expr="//InternalNoteButton" position="after">
+            <OrderNoteButton t-if="!props.showRemainingButtons"
+                             label.translate="Order Note"
+                             class="buttonClass"/>
+        </xpath>
+        <xpath expr="//NoteButton" position="after">
+            <OrderNoteButton label.translate="Order Note"
+                             class="buttonClass"/>
+        </xpath>
+    </t>
+</templates>

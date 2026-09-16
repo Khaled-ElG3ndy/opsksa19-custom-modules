@@ -1,0 +1,204 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fuap_pos_order_notes
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-01 11:13+0000\n"
+"PO-Revision-Date: 2026-09-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order_note__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: fuap_pos_order_notes
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.res_config_settings_view_form
+msgid "Add an order note tag"
+msgstr "أضف وسمًا لملاحظة الطلب"
+
+#. module: fuap_pos_order_notes
+#. odoo-javascript
+#: code:addons/fuap_pos_order_notes/static/src/app/components/order_note_popup/order_note_popup.xml:0
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.view_pos_pos_form
+msgid "Add an order note..."
+msgstr "أضف ملاحظة للطلب..."
+
+#. module: fuap_pos_order_notes
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.view_pos_order_note_form
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: fuap_pos_order_notes
+#. odoo-javascript
+#: code:addons/fuap_pos_order_notes/static/src/app/components/order_note_popup/order_note_popup.xml:0
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: fuap_pos_order_notes
+#: model_terms:ir.actions.act_window,help:fuap_pos_order_notes.action_pos_order_note
+msgid "Cashiers can insert these tags from the Order Note popup."
+msgstr "يمكن لأمناء الصندوق إدراج هذه الوسوم من نافذة ملاحظة الطلب."
+
+#. module: fuap_pos_order_notes
+#: model:ir.model,name:fuap_pos_order_notes.model_res_config_settings
+msgid "Config Settings"
+msgstr "إعدادات الضبط"
+
+#. module: fuap_pos_order_notes
+#: model_terms:ir.actions.act_window,help:fuap_pos_order_notes.action_pos_order_note
+msgid "Create a predefined order note"
+msgstr "إنشاء ملاحظة طلب مُعرّفة مسبقًا"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order_note__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order_note__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_config__display_name
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order__display_name
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order_note__display_name
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_session__display_name
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,help:fuap_pos_order_notes.field_pos_config__order_note_on_receipt
+#: model:ir.model.fields,help:fuap_pos_order_notes.field_res_config_settings__pos_order_note_on_receipt
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.res_config_settings_view_form
+msgid "Display order notes on POS receipts."
+msgstr "عرض ملاحظات الطلب على إيصالات نقطة البيع."
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_config__id
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order__id
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order_note__id
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_session__id
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_res_config_settings__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order_note__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order_note__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order_note__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,help:fuap_pos_order_notes.field_pos_order__order_note
+msgid ""
+"Note for the complete POS order. It can be printed on the receipt and copied"
+" to the delivery note and invoice."
+msgstr ""
+"ملاحظة لكامل طلب نقطة البيع؛ يمكن طباعتها على الإيصال ونسخها إلى إذن التسليم"
+" والفاتورة."
+
+#. module: fuap_pos_order_notes
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.res_config_settings_view_form
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: fuap_pos_order_notes
+#. odoo-javascript
+#: code:addons/fuap_pos_order_notes/static/src/app/components/order_note_button/order_note_button.js:0
+#: code:addons/fuap_pos_order_notes/static/src/app/components/order_note_button/order_note_button.xml:0
+#: code:addons/fuap_pos_order_notes/static/src/app/components/order_note_popup/order_note_popup.xml:0
+#: code:addons/fuap_pos_order_notes/static/src/app/receipt/order_receipt.xml:0
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order__order_note
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.view_pos_pos_form
+msgid "Order Note"
+msgstr "ملاحظة الطلب"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_config__order_note_on_receipt
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_res_config_settings__pos_order_note_on_receipt
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.res_config_settings_view_form
+msgid "Order Note on Receipt"
+msgstr "ملاحظة الطلب على الإيصال"
+
+#. module: fuap_pos_order_notes
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.view_pos_order_note_form
+msgid "Order Notes Tag"
+msgstr "وسم ملاحظات الطلب"
+
+#. module: fuap_pos_order_notes
+#: model:ir.actions.act_window,name:fuap_pos_order_notes.action_pos_order_note
+#: model:ir.model,name:fuap_pos_order_notes.model_pos_order_note
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_config__order_note_ids
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_res_config_settings__pos_order_note_ids
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.view_pos_order_note_list
+msgid "Order Notes Tags"
+msgstr "وسوم ملاحظات الطلب"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model,name:fuap_pos_order_notes.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "إعدادات نقطة البيع"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model,name:fuap_pos_order_notes.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "طلبات نقطة البيع"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model,name:fuap_pos_order_notes.model_pos_session
+msgid "Point of Sale Session"
+msgstr "جلسة نقطة البيع"
+
+#. module: fuap_pos_order_notes
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.res_config_settings_view_form
+msgid "Predefine useful and easy-to-use POS order notes."
+msgstr "تعريف ملاحظات مفيدة وسهلة الاستخدام لطلبات نقطة البيع مسبقًا."
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,help:fuap_pos_order_notes.field_pos_config__order_note_ids
+#: model:ir.model.fields,help:fuap_pos_order_notes.field_res_config_settings__pos_order_note_ids
+msgid "Predefined notes available from the Order Note popup."
+msgstr "الملاحظات المُعرّفة مسبقًا والمتاحة من نافذة ملاحظة الطلب."
+
+#. module: fuap_pos_order_notes
+#. odoo-javascript
+#: code:addons/fuap_pos_order_notes/static/src/app/components/order_note_popup/order_note_popup.xml:0
+msgid "Save"
+msgstr "حفظ"
+
+#. module: fuap_pos_order_notes
+#: model:ir.model.fields,field_description:fuap_pos_order_notes.field_pos_order_note__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: fuap_pos_order_notes
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.res_config_settings_view_form
+msgid "Tags"
+msgstr "الوسوم"
+
+#. module: fuap_pos_order_notes
+#: model_terms:ir.ui.view,arch_db:fuap_pos_order_notes.view_pos_order_note_form
+msgid "e.g. Order assembled"
+msgstr "مثال: تم تجهيز الطلب"

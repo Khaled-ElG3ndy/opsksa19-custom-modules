@@ -1,0 +1,20 @@
+.fuap-order-note-popup {
+    text-align: start;
+
+    textarea {
+        min-block-size: 8rem;
+        text-align: start;
+        unicode-bidi: plaintext;
+        resize: vertical;
+    }
+}
+
+.fuap-order-note-tags {
+    justify-content: flex-start;
+}
+
+.fuap-order-note-receipt-value {
+    white-space: pre-wrap;
+    unicode-bidi: plaintext;
+}
+
