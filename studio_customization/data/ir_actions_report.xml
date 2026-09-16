@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.approval_request_rep_34a29cdc-e0d6-4100-8e02-765b696f39b3" model="ir.actions.report" context="{'studio': True}">
+    <field name="attachment" eval="False"/>
+    <field name="attachment_use" eval="False"/>
+    <field name="binding_model_id" ref="approvals.model_approval_request"/>
+    <field name="binding_type">report</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="model">approval.request</field>
+    <field name="multi" eval="False"/>
+    <field name="name">Approval Request Report</field>
+    <field name="paperformat_id" eval="False"/>
+    <field name="report_name">studio_customization.studio_report_docume_42afbba1-5b96-48ab-a586-34b76f7bed63</field>
+    <field name="report_type">qweb-pdf</field>
+  </record>
+  <record id="studio_customization.invoices_383d4b39-8d8a-46e0-9e73-bafde44d5c84" model="ir.actions.report" context="{'studio': True}">
+    <field name="attachment" eval="False"/>
+    <field name="attachment_use" eval="False"/>
+    <field name="binding_model_id" ref="account.model_account_move"/>
+    <field name="binding_type">report</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="groups_id" eval="[(6, 0, [ref('account.group_account_invoice'), ref('account.group_account_readonly')])]"/>
+    <field name="model">account.move</field>
+    <field name="multi" eval="False"/>
+    <field name="name">Invoices Product Name</field>
+    <field name="paperformat_id" eval="False"/>
+    <field name="report_name">account.report_invoice_with_payments_copy_2</field>
+    <field name="report_type">qweb-pdf</field>
+  </record>
+  <record id="studio_customization.invoices_d748fdac-5ef2-4ae6-a73c-8e18be6060a4" model="ir.actions.report" context="{'studio': True}">
+    <field name="attachment" eval="False"/>
+    <field name="attachment_use" eval="False"/>
+    <field name="binding_model_id" ref="account.model_account_move"/>
+    <field name="binding_type">report</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="groups_id" eval="[(6, 0, [ref('account.group_account_invoice'), ref('account.group_account_readonly')])]"/>
+    <field name="model">account.move</field>
+    <field name="multi" eval="False"/>
+    <field name="name">Invoices 2</field>
+    <field name="paperformat_id" eval="False"/>
+    <field name="report_name">account.report_invoice_with_payments_copy_1</field>
+    <field name="report_type">qweb-pdf</field>
+  </record>
+  <record id="studio_customization.pdf_quote_7857823b-430e-414e-a85f-7fde5dfdf26e" model="ir.actions.report" context="{'studio': True}">
+    <field name="attachment" eval="False"/>
+    <field name="attachment_use" eval="False"/>
+    <field name="binding_model_id" ref="sale.model_sale_order"/>
+    <field name="binding_type">report</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="model">sale.order</field>
+    <field name="multi" eval="False"/>
+    <field name="name">PDF Quote Shortcut</field>
+    <field name="paperformat_id" eval="False"/>
+    <field name="report_name">sale.report_saleorder_copy_2</field>
+    <field name="report_type">qweb-pdf</field>
+  </record>
+  <record id="studio_customization.pdf_quote_cf0fcdfe-e721-46c1-bda7-531ce8c611a4" model="ir.actions.report" context="{'studio': True}">
+    <field name="attachment" eval="False"/>
+    <field name="attachment_use" eval="False"/>
+    <field name="binding_model_id" ref="sale.model_sale_order"/>
+    <field name="binding_type">report</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="model">sale.order</field>
+    <field name="multi" eval="False"/>
+    <field name="name">PDF Quote Floorless</field>
+    <field name="paperformat_id" eval="False"/>
+    <field name="report_name">sale.report_saleorder_copy_3</field>
+    <field name="report_type">qweb-pdf</field>
+  </record>
+  <record id="studio_customization.picking_operations_8dfcd6dc-cc76-4f93-b20b-8bfdb945d208" model="ir.actions.report" context="{'studio': True}">
+    <field name="attachment" eval="False"/>
+    <field name="attachment_use" eval="False"/>
+    <field name="binding_model_id" ref="stock.model_stock_picking"/>
+    <field name="binding_type">report</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="model">stock.picking</field>
+    <field name="multi" eval="False"/>
+    <field name="name">Picking Operations OPS</field>
+    <field name="paperformat_id" eval="False"/>
+    <field name="report_name">stock.report_picking_copy_1</field>
+    <field name="report_type">qweb-pdf</field>
+  </record>
+  <record id="studio_customization.picking_operations_o_a1c0096c-f229-4c40-ba64-2a3d13828768" model="ir.actions.report" context="{'studio': True}">
+    <field name="attachment" eval="False"/>
+    <field name="attachment_use" eval="False"/>
+    <field name="binding_model_id" ref="stock.model_stock_picking"/>
+    <field name="binding_type">report</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="model">stock.picking</field>
+    <field name="multi" eval="False"/>
+    <field name="name">Picking Operations Absal</field>
+    <field name="paperformat_id" eval="False"/>
+    <field name="report_name">stock.report_picking_copy_1_copy_1</field>
+    <field name="report_type">qweb-pdf</field>
+  </record>
+  <record id="studio_customization.purchase_order_5b5ee56a-8db8-4c20-bd76-f63abbf94695" model="ir.actions.report" context="{'studio': True}">
+    <field name="attachment" eval="False"/>
+    <field name="attachment_use" eval="False"/>
+    <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+    <field name="binding_type">report</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="model">purchase.order</field>
+    <field name="multi" eval="False"/>
+    <field name="name">Purchase Order 2</field>
+    <field name="paperformat_id" eval="False"/>
+    <field name="report_name">purchase.report_purchaseorder_copy_1</field>
+    <field name="report_type">qweb-pdf</field>
+  </record>
+</odoo>

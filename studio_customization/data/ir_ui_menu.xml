@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="account_accountant.menu_account_group" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="account_accountant.action_account_group_tree"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Account Groups</field>
+    <field name="parent_id" ref="account.account_account_menu"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="repair.repair_menu" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="repair.action_repair_order_graph"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Repairs</field>
+    <field name="parent_id" ref="repair.repair_menu_reporting"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_warehouse_config" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('stock.group_stock_manager')])]"/>
+    <field name="name">Warehouse Management</field>
+    <field name="parent_id" ref="stock.menu_stock_config_settings"/>
+    <field name="sequence">6</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_action_location_form" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.action_location_form"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('stock.group_stock_multi_locations')])]"/>
+    <field name="name">Locations</field>
+    <field name="parent_id" ref="stock.menu_warehouse_config"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_action_rules_form" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.action_rules_form"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('stock.group_adv_location')])]"/>
+    <field name="name">Rules</field>
+    <field name="parent_id" ref="stock.menu_warehouse_config"/>
+    <field name="sequence">4</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_action_warehouse_form" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.action_warehouse_form"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Warehouses</field>
+    <field name="parent_id" ref="stock.menu_warehouse_config"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_product_in_config_stock" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Products</field>
+    <field name="parent_id" ref="stock.menu_stock_config_settings"/>
+    <field name="sequence">7</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_attribute_action" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="product.attribute_action"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('product.group_product_variant')])]"/>
+    <field name="name">Attributes</field>
+    <field name="parent_id" ref="stock.menu_product_in_config_stock"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_pickingtype" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.action_picking_type_list"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Operations Types</field>
+    <field name="parent_id" ref="stock.menu_warehouse_config"/>
+    <field name="sequence">5</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_procurement_compute" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.action_procurement_compute"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    <field name="name">Run Scheduler</field>
+    <field name="parent_id" ref="stock.menu_stock_warehouse_mgmt"/>
+    <field name="sequence">6</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_product_category_config_stock" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="product.product_category_action_form"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Product Categories</field>
+    <field name="parent_id" ref="stock.menu_product_in_config_stock"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_product_packagings" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="product.action_packaging_view"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('product.group_stock_packaging')])]"/>
+    <field name="name">Product Packagings</field>
+    <field name="parent_id" ref="stock.menu_product_in_config_stock"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_product_stock" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.action_product_stock_view"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Stock</field>
+    <field name="parent_id" ref="stock.menu_warehouse_report"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_putaway" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.action_putaway_tree"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('stock.group_stock_multi_locations')])]"/>
+    <field name="name">Putaway Rules</field>
+    <field name="parent_id" ref="stock.menu_warehouse_config"/>
+    <field name="sequence">7</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_reordering_rules_config" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.action_orderpoint"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Reordering Rules</field>
+    <field name="parent_id" ref="stock.menu_product_in_config_stock"/>
+    <field name="sequence">4</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_routes_config" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.action_routes_form"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('stock.group_adv_location')])]"/>
+    <field name="name">Routes</field>
+    <field name="parent_id" ref="stock.menu_warehouse_config"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_stock_adjustments" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Adjustments</field>
+    <field name="parent_id" ref="stock.menu_stock_warehouse_mgmt"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_stock_general_settings" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.action_stock_config_settings"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+    <field name="name">Settings</field>
+    <field name="parent_id" ref="stock.menu_stock_config_settings"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_stock_procurement" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Procurement</field>
+    <field name="parent_id" ref="stock.menu_stock_warehouse_mgmt"/>
+    <field name="sequence">4</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_stock_transfers" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Transfers</field>
+    <field name="parent_id" ref="stock.menu_stock_warehouse_mgmt"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_valuation" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.action_view_quants"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('stock.group_tracking_owner'), ref('stock.group_stock_multi_locations'), ref('base.group_no_one')])]"/>
+    <field name="name">Locations</field>
+    <field name="parent_id" ref="stock.menu_warehouse_report"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.menu_wms_barcode_nomenclature_all" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="barcodes.action_barcode_nomenclature_form"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+    <field name="name">Barcode Nomenclatures</field>
+    <field name="parent_id" ref="stock.menu_product_in_config_stock"/>
+    <field name="sequence">5</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.product_uom_menu" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('uom.group_uom')])]"/>
+    <field name="name">Units of Measures</field>
+    <field name="parent_id" ref="stock.menu_stock_config_settings"/>
+    <field name="sequence">9</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.stock_move_line_menu" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.stock_move_line_action"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Moves History</field>
+    <field name="parent_id" ref="stock.menu_warehouse_report"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock.stock_move_menu" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock.stock_move_action"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Move Analysis</field>
+    <field name="parent_id" ref="stock.menu_warehouse_report"/>
+    <field name="sequence">4</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock_account.menu_inventory_aging" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock_account.inventory_aging_action"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Inventory Aging</field>
+    <field name="parent_id" ref="stock.menu_warehouse_report"/>
+    <field name="sequence">7</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock_account.menu_valuation" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock_account.stock_valuation_layer_action"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Valuation</field>
+    <field name="parent_id" ref="stock.menu_warehouse_report"/>
+    <field name="sequence">5</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="stock_enterprise.stock_dashboard_menuitem" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="stock_enterprise.stock_report_action_performance"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Performance</field>
+    <field name="parent_id" ref="stock.menu_warehouse_report"/>
+    <field name="sequence">8</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_machines_ae446057-6f62-4508-b8e1-7dd8bb6d0690" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="base.action_open_website"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Machines</field>
+    <field name="parent_id" ref="stock.menu_stock_config_settings"/>
+    <field name="sequence">8</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_brands_8effa354-0237-4fa5-aced-f50a3c7ad518" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.brands_17e84c52-4161-43fc-b35d-bb6f2eb6a97a"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Brands</field>
+    <field name="parent_id" ref="studio_customization.inventory_machines_ae446057-6f62-4508-b8e1-7dd8bb6d0690"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_driver_6088161d-40fd-44c5-b80c-067c44840c08" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.driver_11f22162-bd02-4c1d-927b-01d04f8e3d75"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Driver</field>
+    <field name="parent_id" ref="stock.menu_stock_root"/>
+    <field name="sequence">101</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_drivers_pl_85be0892-355b-4c70-a191-131cd0ee8de9" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="base.action_open_website"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Drivers &amp; Plates</field>
+    <field name="parent_id" ref="stock.menu_stock_warehouse_mgmt"/>
+    <field name="sequence">5</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_driver_66cb7110-d4b7-481e-8e1e-a442d7df7ce5" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.driver_3c30fbe7-6a0b-423d-b37a-dfa0cce68a62"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Driver</field>
+    <field name="parent_id" ref="studio_customization.inventory_drivers_pl_85be0892-355b-4c70-a191-131cd0ee8de9"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_drivers_8786117b-5c5f-4419-9830-81ac4f24f482" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.drivers_227125e2-0c2c-4de2-aefe-e540e5aebc41"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Drivers</field>
+    <field name="parent_id" ref="stock.menu_stock_config_settings"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_engine_typ_28a123cd-f496-4d83-9157-c9464ad4a03e" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.engine_type_fd05723f-fae1-4df9-a872-0cfff2e8f4f9"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Engine Type</field>
+    <field name="parent_id" ref="studio_customization.inventory_machines_ae446057-6f62-4508-b8e1-7dd8bb6d0690"/>
+    <field name="sequence">4</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_loaders_558e8931-d278-4d0b-a737-1a99d9d50c70" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.loaders_dbba3e9d-a264-4495-a24c-7895270e194e"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Loaders</field>
+    <field name="parent_id" ref="studio_customization.inventory_drivers_pl_85be0892-355b-4c70-a191-131cd0ee8de9"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_lot_perfor_3654d25b-e92b-4dbe-91be-88e4b1cb9aeb" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.lot_performance_dd672b3f-03db-4d4c-a3b3-c8f1d6a5949d"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Lot Performance</field>
+    <field name="parent_id" ref="stock.menu_warehouse_report"/>
+    <field name="sequence">6</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_mileages_160bebe2-fae9-4ba8-86c9-75a0cda6ddc2" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.mileages_a3593d6d-7ebd-4abf-aa95-b1a51d5235da"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Mileages</field>
+    <field name="parent_id" ref="studio_customization.inventory_machines_ae446057-6f62-4508-b8e1-7dd8bb6d0690"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_model_73838c26-01f6-4911-a2f2-6b4f82450a38" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.model_f7bc9e3b-c9b6-424b-9641-52a13e437058"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Model</field>
+    <field name="parent_id" ref="studio_customization.inventory_machines_ae446057-6f62-4508-b8e1-7dd8bb6d0690"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_plates_e416c1d4-c3e9-453d-babb-a415c2abbf99" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.plates_d8a28660-2b6f-4476-adb1-f3c73a5ca1c0"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Plates</field>
+    <field name="parent_id" ref="studio_customization.inventory_drivers_pl_85be0892-355b-4c70-a191-131cd0ee8de9"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_power_type_938b2e62-bed4-43db-abca-daa0288397f8" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.power_type_d228fb15-fb02-4f9f-a9d6-049ff8d5327a"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Power Type</field>
+    <field name="parent_id" ref="studio_customization.inventory_machines_ae446057-6f62-4508-b8e1-7dd8bb6d0690"/>
+    <field name="sequence">5</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.inventory_stock_deli_725cf9cf-986b-48fa-b979-ac521cf5f9e1" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.stock_delivery_0314b0d1-5340-4aa2-b1f5-0676ae55faec"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Stock Delivery</field>
+    <field name="parent_id" ref="stock.menu_stock_warehouse_mgmt"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.repairs_repair_costi_3b4ab132-4ec5-4dbd-bb9b-7de8244bce36" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.repair_costing_449a37bc-e3a9-47da-bc8c-591c678216a1"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Repair Costing</field>
+    <field name="parent_id" ref="repair.repair_menu_reporting"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+</odoo>

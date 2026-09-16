@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.account_journal_dash_ef0b9e9f-65f1-400a-85b9-c362e9148e3d" model="ir.actions.act_window.view" context="{'studio': True}">
+    <field name="act_window_id" ref="account.open_account_journal_dashboard_kanban"/>
+    <field name="multi" eval="False"/>
+    <field name="sequence" eval="False"/>
+    <field name="view_id" ref="account.account_journal_dashboard_kanban_view"/>
+    <field name="view_mode">kanban</field>
+  </record>
+  <record id="studio_customization.false_204d3e51-b181-4f47-b302-78ab1bb41c33" model="ir.actions.act_window.view" context="{'studio': True}">
+    <field name="act_window_id" ref="account.open_account_journal_dashboard_kanban"/>
+    <field name="multi" eval="False"/>
+    <field name="sequence">2</field>
+    <field name="view_id" eval="False"/>
+    <field name="view_mode">pivot</field>
+  </record>
+  <record id="studio_customization.false_99a61999-fd34-4b75-990d-53a5f0a18107" model="ir.actions.act_window.view" context="{'studio': True}">
+    <field name="act_window_id" ref="account.open_account_journal_dashboard_kanban"/>
+    <field name="multi" eval="False"/>
+    <field name="sequence">1</field>
+    <field name="view_id" eval="False"/>
+    <field name="view_mode">form</field>
+  </record>
+  <record id="studio_customization.false_a3b484df-6780-4c8a-a82c-30d6c212c7fb" model="ir.actions.act_window.view" context="{'studio': True}">
+    <field name="act_window_id" ref="account.open_account_journal_dashboard_kanban"/>
+    <field name="multi" eval="False"/>
+    <field name="sequence">3</field>
+    <field name="view_id" eval="False"/>
+    <field name="view_mode">tree</field>
+  </record>
+</odoo>
