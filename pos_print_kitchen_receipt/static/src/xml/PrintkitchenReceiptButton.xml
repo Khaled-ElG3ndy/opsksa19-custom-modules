@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_print_kitchen_receipt.PrintKitchenReceiptButton">
+        <button t-att-class="props.buttonClass"
+                class="control-button kitchen-receipt-button"
+                t-on-click="click">
+            <i class="fa fa-print me-1" role="img" aria-label="Print" title="Print"/>
+            <span>Kitchen Receipt</span>
+        </button>
+    </t>
+
+    <t t-name="pos_print_kitchen_receipt.ControlButtons"
+       t-inherit="point_of_sale.ControlButtons"
+       t-inherit-mode="extension">
+        <xpath expr="//InternalNoteButton" position="after">
+            <PrintKitchenReceiptButton
+                t-if="pos.config.print_kitchen_receipt"
+                buttonClass="buttonClass"
+                close="props.close"/>
+        </xpath>
+    </t>
+</templates>
+

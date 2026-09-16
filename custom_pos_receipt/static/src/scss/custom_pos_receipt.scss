@@ -1,0 +1,36 @@
+// Styling for what this module prints on the Point of Sale receipt.
+//
+// Everything below is written with logical properties, so the rules hold as
+// they are in a right-to-left session: the core receipt container declares its
+// own direction and rtlcss flips that declaration for the Arabic bundle, which
+// is what mirrors the table headers together with their columns.
+
+// "Client: <name>", under the cashier line. It is deliberately unstyled: the
+// line reads as part of the contact block above it, in the same weight as the
+// cashier line it follows.
+
+// VAT% / VAT / ExVAT / Total, at the foot of the receipt.
+.pos-receipt-vat-summary {
+    // Receipts are read as a column of figures, not as a ruled table.
+    border-collapse: collapse;
+
+    th {
+        font-weight: bold;
+        // Enough of a gap that the headers do not merge into the change line
+        // printed above them.
+        padding-block-start: 4px;
+        // Headers may wrap: the Arabic ones are two words, and a ticket is
+        // narrow. The figures below them are what must stay on one line.
+        white-space: normal;
+    }
+
+    td {
+        // A narrow ticket cannot afford to break a figure across two lines.
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding-block-end: 2px;
+    }
+}

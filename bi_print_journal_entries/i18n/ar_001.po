@@ -1,0 +1,100 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * bi_print_journal_entries
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Language: ar_001\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: bi_print_journal_entries
+#: model:ir.actions.report,name:bi_print_journal_entries.action_report_journal_entries
+msgid "Print Journal Entries"
+msgstr "طباعة القيود"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.view_move_form_inherit_print_journal_entries
+msgid "<span class=\"o_stat_text\">Print Entry</span>"
+msgstr "<span class=\"o_stat_text\">طباعة القيد</span>"
+
+#. module: bi_print_journal_entries
+#: model:report.paperformat,name:bi_print_journal_entries.paperformat_journal_entries
+msgid "Journal Entries A4"
+msgstr "قيود اليومية A4"
+
+#. module: bi_print_journal_entries
+#. odoo-python
+#: code:addons/bi_print_journal_entries/models/account_move.py:0
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: bi_print_journal_entries
+#. odoo-python
+#: code:addons/bi_print_journal_entries/models/account_move.py:0
+msgid "Journal Entries"
+msgstr "قيود اليومية"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "<span class=\"field_label\">Entry Number</span>"
+msgstr "<span class=\"field_label\">رقم القيد</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "<span class=\"field_label\">Date</span>"
+msgstr "<span class=\"field_label\">التاريخ</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "<span class=\"field_label\">Journal</span>"
+msgstr "<span class=\"field_label\">اليومية</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "<span class=\"field_label\">Status</span>"
+msgstr "<span class=\"field_label\">الحالة</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "<span class=\"field_label\">Reference</span>"
+msgstr "<span class=\"field_label\">المرجع</span>"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "Account"
+msgstr "الحساب"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "Label"
+msgstr "البيان"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "Debit"
+msgstr "مدين"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "Credit"
+msgstr "دائن"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: bi_print_journal_entries
+#: model_terms:ir.ui.view,arch_db:bi_print_journal_entries.report_journal_entry_document
+msgid "Company Logo"
+msgstr "شعار الشركة"

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_print_kitchen_receipt.KitchenReceipt">
+        <div class="pos-receipt p-2 kitchen-receipt">
+            <ReceiptHeader order="order"/>
+
+            <t t-if="config.print_kitchen_receipt_categ">
+                <table class="w-100 border-0 kitchen-receipt-lines">
+                    <t t-foreach="orderCategories" t-as="category" t-key="category.id">
+                        <tr class="kitchen-category">
+                            <td colspan="2" class="fw-bold pt-2">
+                                <span t-esc="category.name"/>
+                            </td>
+                        </tr>
+                        <tr aria-hidden="true">
+                            <td colspan="2" class="border-bottom border-secondary"/>
+                        </tr>
+                        <tr t-foreach="linesForCategory(category)" t-as="line" t-key="line.uuid || line.id">
+                            <td class="w-80 py-1 align-top">
+                                <div class="kitchen-product-name" t-esc="lineName(line)"/>
+                                <div t-if="lineCustomerNote(line)" class="pos-receipt-customer-note fst-italic ps-2">
+                                    <t t-esc="lineCustomerNote(line)"/>
+                                </div>
+                            </td>
+                            <td class="w-20 py-1 text-center align-top kitchen-product-qty">
+                                <span t-esc="lineQuantity(line)"/>
+                            </td>
+                        </tr>
+                        <tr aria-hidden="true">
+                            <td colspan="2"><br/></td>
+                        </tr>
+                    </t>
+                </table>
+            </t>
+            <t t-else="">
+                <table class="w-100 border-0 kitchen-receipt-lines">
+                    <tr t-foreach="orderLines" t-as="line" t-key="line.uuid || line.id">
+                        <td class="w-80 py-1 align-top">
+                            <div class="kitchen-product-name" t-esc="lineName(line)"/>
+                            <div t-if="lineCustomerNote(line)" class="pos-receipt-customer-note fst-italic ps-2">
+                                <t t-esc="lineCustomerNote(line)"/>
+                            </div>
+                        </td>
+                        <td class="w-20 py-1 text-center align-top kitchen-product-qty">
+                            <span t-esc="lineQuantity(line)"/>
+                        </td>
+                    </tr>
+                </table>
+            </t>
+
+            <div class="before-footer"/>
+            <div t-if="config.receipt_footer"
+                 class="pos-receipt-center-align pt-3 text-center"
+                 style="white-space: pre-line">
+                <t t-esc="config.receipt_footer"/>
+            </div>
+
+            <br/>
+            <div class="pos-receipt-order-data">
+                <div t-esc="orderName"/>
+                <div t-esc="orderDate"/>
+            </div>
+        </div>
+    </t>
+</templates>
+

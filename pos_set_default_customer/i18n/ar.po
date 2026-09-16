@@ -1,0 +1,77 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_set_default_customer
+#
+# Only the terms this module introduces are translated here. The generic model
+# names it inherits (Contact, Config Settings, ...) are left empty on purpose so
+# that Odoo's own Arabic translation of those records keeps applying.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-31 18:09+0000\n"
+"PO-Revision-Date: 2026-08-31 18:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: pos_set_default_customer
+#: model:ir.model,name:pos_set_default_customer.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: pos_set_default_customer
+#: model:ir.model,name:pos_set_default_customer.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: pos_set_default_customer
+#: model:ir.model.fields,help:pos_set_default_customer.field_pos_config__default_customer_id
+#: model:ir.model.fields,help:pos_set_default_customer.field_res_config_settings__pos_default_customer_id
+msgid ""
+"Customer preselected on every order created in this Point of Sale. The "
+"cashier can still change it or clear it on any individual order."
+msgstr ""
+"العميل الذي يتم تحديده مسبقاً في كل طلب يُنشأ في نقطة البيع هذه. ويظل بإمكان"
+" الكاشير تغييره أو إزالته من أي طلب على حدة."
+
+#. module: pos_set_default_customer
+#: model:ir.model.fields,field_description:pos_set_default_customer.field_pos_config__default_customer_id
+#: model:ir.model.fields,field_description:pos_set_default_customer.field_res_config_settings__pos_default_customer_id
+#: model_terms:ir.ui.view,arch_db:pos_set_default_customer.res_config_settings_view_form
+msgid "Default Customer"
+msgstr "العميل الافتراضي"
+
+#. module: pos_set_default_customer
+#: model_terms:ir.ui.view,arch_db:pos_set_default_customer.res_config_settings_view_form
+msgid "Default Customer in POS Order"
+msgstr "العميل الافتراضي في طلب نقطة البيع"
+
+#. module: pos_set_default_customer
+#: model:ir.model.fields,field_description:pos_set_default_customer.field_pos_config__display_name
+#: model:ir.model.fields,field_description:pos_set_default_customer.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:pos_set_default_customer.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: pos_set_default_customer
+#: model:ir.model.fields,field_description:pos_set_default_customer.field_pos_config__id
+#: model:ir.model.fields,field_description:pos_set_default_customer.field_res_config_settings__id
+#: model:ir.model.fields,field_description:pos_set_default_customer.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: pos_set_default_customer
+#: model:ir.model,name:pos_set_default_customer.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr ""
+
+#. module: pos_set_default_customer
+#: model_terms:ir.ui.view,arch_db:pos_set_default_customer.res_config_settings_view_form
+msgid "Set a default customer for POS orders."
+msgstr "قم بتعيين عميل افتراضي لطلبات نقطة البيع."

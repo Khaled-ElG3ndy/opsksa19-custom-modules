@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+        <xpath expr="//OrderDisplay" position="after">
+            <div t-if="order.order_note and order.config_id.order_note_on_receipt"
+                 class="fuap-order-note-receipt text-start text-break mt-2 p-2 border rounded">
+                <div class="fw-bolder">Order Note</div>
+                <div dir="auto" class="fuap-order-note-receipt-value">
+                    <t t-esc="order.order_note"/>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>
+
