@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <!-- Client name on the POS receipt.
+
+         The line is inserted after the whole contact block rather than after
+         the "Served by" line itself: l10n_gcc_pos chains a t-elif onto that
+         line for its bilingual cashier name, and slipping a node between a
+         t-if and its t-elif breaks the chain. Landing after the block keeps
+         both modules working and still prints the client directly under the
+         cashier, which is where the receipt reads it. -->
+    <t t-inherit="point_of_sale.ReceiptHeader" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('pos-receipt-contact')]" position="after">
+            <div t-if="clientName" class="pos-receipt-client">
+                <!-- Label and name stay on one source line: OWL drops a
+                     whitespace-only text node that spans a line break, and the
+                     receipt would read "Client:Billy Fox".
+                     dir="auto" isolates the name, so an Arabic customer on an
+                     English receipt (and the reverse) keeps the label, the
+                     colon and the name in the right order. -->
+                <span class="pos-receipt-client-label">Client:</span> <span class="pos-receipt-client-name" dir="auto" t-esc="clientName"/>
+            </div>
+        </xpath>
+
+        <!-- The customer block below still carries the address and the VAT
+             number, but its bare name line is now the labelled line above.
+             Dropping it is what keeps the name from printing twice. -->
+        <xpath expr="//div[hasclass('pos-receipt-customer')]/div[@t-if='order.partner_id.name']"
+               position="replace"/>
+    </t>
+
+</templates>
