@@ -1,0 +1,688 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* strx_cabin_substitution
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid ""
+"A specification change for a multi-serial allocation must replace the "
+"complete ordered group. Change the sale-line specification before dispatch, "
+"or create a separate approved commercial order."
+msgstr ""
+"تغيير مواصفة تخصيص متعدد الأرقام التسلسلية يجب أن يشمل المجموعة المطلوبة "
+"بالكامل. غيّر مواصفة بند البيع قبل الإرسال، أو أنشئ أمرًا تجاريًا معتمدًا "
+"منفصلًا."
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "A specification change requires a reason."
+msgstr "يتطلب تغيير المواصفة ذكر السبب."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__allocation_lot_ids
+msgid "Allocated Serials"
+msgstr "الأرقام التسلسلية المخصصة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__allocation_id
+msgid "Allocation"
+msgstr "التخصيص"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields.selection,name:strx_cabin_substitution.selection__strx_cabin_substitution__state__approved
+msgid "Approved"
+msgstr "تمت الموافقة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Audit"
+msgstr "التدقيق"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_search
+msgid "Awaiting Approval"
+msgstr "بانتظار الموافقة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model,name:strx_cabin_substitution.model_strx_cabin_allocation
+msgid "Cabin Allocation"
+msgstr "تخصيص كابينة"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Cabin Substitution"
+msgstr "استبدال كابينة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model,name:strx_cabin_substitution.model_strx_cabin_substitution
+msgid "Cabin Substitution Request"
+msgstr "طلب استبدال كابينة"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Change"
+msgstr "التغيير"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__price_impact
+msgid "Change to what the customer is charged. Zero for a free upgrade."
+msgstr "التغيير في المبلغ المحمل على العميل. يكون صفرًا للترقية المجانية."
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Commercial Impact"
+msgstr "الأثر التجاري"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__commercial_value
+msgid "Commercial Value"
+msgstr "القيمة التجارية"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "Committed by substitution %(ref)s"
+msgstr "تم الالتزام بها عبر الاستبدال %(ref)s"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid ""
+"Confirm the proposed unit fits the site before submitting a specification "
+"change."
+msgstr "أكد ملاءمة الوحدة المقترحة للموقع قبل إرسال تغيير المواصفة."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__partner_id
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__approver_id
+msgid "Decided By"
+msgstr "تم البت بواسطة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__decision_date
+msgid "Decision On"
+msgstr "تاريخ القرار"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_allocation__display_name
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields.selection,name:strx_cabin_substitution.selection__strx_cabin_substitution__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__allocation_lot_ids
+msgid ""
+"Exact physical units committed. Their count must match the rental-line "
+"quantity and every unit must be Available at allocation time. Units on rent "
+"or in maintenance are shown for planning visibility but cannot be committed."
+msgstr ""
+"الوحدات الفعلية المُلتزَم بها بالضبط. يجب أن يطابق عددها كمية بند التأجير "
+"وأن تكون كل وحدة متاحة وقت التخصيص. الوحدات المؤجّرة أو تحت الصيانة تُعرض "
+"لغرض التخطيط فقط ولا يمكن الالتزام بها."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Free Upgrade"
+msgstr "ترقية مجانية"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_search
+msgid "Free Upgrades"
+msgstr "ترقيات مجانية"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "Freed by substitution %(ref)s"
+msgstr "تم تحريرها عبر الاستبدال %(ref)s"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_list
+msgid "From"
+msgstr "من"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "Give a rejection reason."
+msgstr "أدخل سبب الرفض."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_allocation__id
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__message_has_error
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__is_free_upgrade
+msgid "Is Free Upgrade"
+msgstr "ترقية مجانية"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__commercial_value
+msgid ""
+"List value of the specification change. For a FREE upgrade this is what is "
+"being given away — it must be recorded even when the price impact is 0."
+msgstr ""
+"القيمة الاسمية لتغيير المواصفة. في الترقية المجانية تمثل هذه القيمة ما يُمنح"
+" للعميل، ويجب تسجيلها حتى عندما يكون أثر السعر صفرًا."
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Logistics / Site"
+msgstr "اللوجستيات / الموقع"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields.selection,name:strx_cabin_substitution.selection__strx_cabin_substitution__transport_impact__major
+msgid "Major"
+msgstr "جوهري"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields.selection,name:strx_cabin_substitution.selection__strx_cabin_substitution__transport_impact__minor
+msgid "Minor"
+msgstr "طفيف"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__no_approval_required
+msgid "No Approval Required"
+msgstr "لا تتطلب موافقة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields.selection,name:strx_cabin_substitution.selection__strx_cabin_substitution__transport_impact__none
+msgid "No change"
+msgstr "لا تغيير"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid ""
+"Only a Commercial Manager may approve or reject a specification "
+"substitution."
+msgstr "مدير الشؤون التجارية فقط يمكنه اعتماد استبدال المواصفة أو رفضه."
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "Only a submitted request can be approved."
+msgstr "لا يمكن اعتماد الطلب إلا بعد إرساله."
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "Only a submitted request can be rejected."
+msgstr "لا يمكن رفض الطلب إلا بعد إرساله."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__original_lot_id
+msgid "Original Serial"
+msgstr "الرقم التسلسلي الأصلي"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__original_product_id
+msgid "Original Spec"
+msgstr "المواصفة الأصلية"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__price_impact
+msgid "Price Impact"
+msgstr "أثر السعر"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__proposed_lot_id
+msgid "Proposed Serial"
+msgstr "الرقم التسلسلي المقترح"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__proposed_product_id
+msgid "Proposed Spec"
+msgstr "المواصفة المقترحة"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "Proposed serial %(serial)s is %(state)s and cannot be selected."
+msgstr "الرقم التسلسلي المقترح %(serial)s حالته %(state)s ولا يمكن اختياره."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__reason
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Reason"
+msgstr "السبب"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__name
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields.selection,name:strx_cabin_substitution.selection__strx_cabin_substitution__state__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Rejection"
+msgstr "الرفض"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__rejection_reason
+msgid "Rejection Reason"
+msgstr "سبب الرفض"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Rental"
+msgstr "التأجير"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__order_line_id
+msgid "Rental Line"
+msgstr "بند التأجير"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__order_id
+msgid "Rental Order"
+msgstr "طلب التأجير"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_allocation.py:0
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_allocation_form_substitution
+msgid "Request Substitution"
+msgstr "طلب استبدال"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__requester_id
+msgid "Requested By"
+msgstr "مقدم الطلب"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__request_date
+msgid "Requested On"
+msgstr "تاريخ الطلب"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Reset to Draft"
+msgstr "إعادة إلى مسودة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "Same-specification reallocation applied — no approval required."
+msgstr "تمت إعادة التخصيص بالمواصفة نفسها — لا تتطلب موافقة."
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "Select the original serial to replace."
+msgstr "اختر الرقم التسلسلي الأصلي المطلوب استبداله."
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "Select the proposed serial before proceeding."
+msgstr "اختر الرقم التسلسلي المقترح قبل المتابعة."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__site_fit_confirmed
+msgid "Site-Fit Confirmed"
+msgstr "تم تأكيد ملاءمة الموقع"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_search
+msgid "Spec Changes"
+msgstr "تغييرات المواصفة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__is_spec_change
+msgid "Specification Change"
+msgstr "تغيير المواصفة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__state
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_allocation__strx_substitution_count
+msgid "Strx Substitution Count"
+msgstr "عدد عمليات الاستبدال"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Submit"
+msgstr "إرسال"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields.selection,name:strx_cabin_substitution.selection__strx_cabin_substitution__state__submitted
+msgid "Submitted"
+msgstr "تم الإرسال"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__submitted_date
+msgid "Submitted On"
+msgstr "تم الإرسال في"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "Substitution approved: %(orig)s → %(new)s (commercial value %(val)s)."
+msgstr "تم اعتماد الاستبدال: %(orig)s ← %(new)s (القيمة التجارية %(val)s)."
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_allocation.py:0
+#: model:ir.actions.act_window,name:strx_cabin_substitution.action_strx_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_allocation__strx_substitution_ids
+#: model:ir.ui.menu,name:strx_cabin_substitution.menu_strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_list
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_search
+msgid "Substitutions"
+msgstr "عمليات الاستبدال"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid ""
+"The original serial is no longer part of this allocation. Refresh the "
+"request and select one of its current serials."
+msgstr ""
+"الرقم التسلسلي الأصلي لم يعد ضمن هذا التخصيص. حدّث الطلب واختر أحد أرقامه "
+"التسلسلية الحالية."
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid "The proposed serial does not match the proposed specification."
+msgstr "الرقم التسلسلي المقترح لا يطابق المواصفة المقترحة."
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid ""
+"The proposed serial is already selected on this allocation. Choose a "
+"different available serial."
+msgstr ""
+"الرقم التسلسلي المقترح مختار بالفعل في هذا التخصيص. اختر رقمًا تسلسليًا آخر "
+"متاحًا."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__site_fit_confirmed
+msgid "The proposed unit fits the customer site."
+msgstr "الوحدة المقترحة ملائمة لموقع العميل."
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_substitution.py:0
+msgid ""
+"This is a free upgrade — record its commercial value so management can see "
+"what is being given away."
+msgstr ""
+"هذه ترقية مجانية — سجل قيمتها التجارية حتى تتمكن الإدارة من معرفة القيمة "
+"الممنوحة."
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_list
+msgid "To"
+msgstr "إلى"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__transport_impact
+msgid "Transport Impact"
+msgstr "الأثر على النقل"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__transport_note
+msgid "Transport Note"
+msgstr "ملاحظة النقل"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,field_description:strx_cabin_substitution.field_strx_cabin_substitution__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: strx_cabin_substitution
+#: model:ir.model.fields,help:strx_cabin_substitution.field_strx_cabin_substitution__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: strx_cabin_substitution
+#: model_terms:ir.ui.view,arch_db:strx_cabin_substitution.view_strx_substitution_form
+msgid "Why is the specification being changed?"
+msgstr "لماذا يتم تغيير المواصفة؟"
+
+#. module: strx_cabin_substitution
+#. odoo-python
+#: code:addons/strx_cabin_substitution/models/cabin_allocation.py:0
+msgid "allocation_id"
+msgstr "allocation_id"

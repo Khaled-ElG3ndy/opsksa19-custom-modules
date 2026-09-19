@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Supplier rental status and vendor exposure are both relative to
+         today, so a stored value silently goes stale at midnight even when
+         no record was touched. A daily recompute keeps the stored values
+         honest without giving up the filters and group-bys that storing
+         them buys. -->
+    <record id="ir_cron_refresh_supplier_rental_status" model="ir.cron">
+        <field name="name">Generator Rental: Refresh Supplier Rental Status</field>
+        <field name="model_id" ref="gr_fleet_base.model_gr_generator_asset"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_refresh_supplier_rental_status()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

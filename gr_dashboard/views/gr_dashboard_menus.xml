@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_gr_dashboard_root"
+              name="Dashboards"
+              parent="gr_security_base.menu_generator_root"
+              action="action_dash_fleet"
+              groups="gr_security_base.group_generator_general_manager"
+              sequence="5"/>
+
+    <menuitem id="menu_dash_fleet"
+              name="Fleet Utilization &amp; Status"
+              parent="menu_gr_dashboard_root"
+              action="action_dash_fleet_detail"
+              sequence="10"/>
+
+    <menuitem id="menu_dash_revenue"
+              name="Invoiced Revenue"
+              parent="menu_gr_dashboard_root"
+              action="action_dash_revenue"
+              groups="gr_security_base.group_generator_finance_officer"
+              sequence="20"/>
+
+    <menuitem id="menu_dash_hours"
+              name="Billable Hours"
+              parent="menu_gr_dashboard_root"
+              action="action_dash_hours"
+              sequence="30"/>
+
+    <menuitem id="menu_dash_maint"
+              name="Maintenance Overview"
+              parent="menu_gr_dashboard_root"
+              action="action_dash_maint_jobs"
+              sequence="40"/>
+
+    <menuitem id="menu_dash_overdue"
+              name="Assets Needing Maintenance"
+              parent="menu_gr_dashboard_root"
+              action="action_dash_overdue_assets"
+              sequence="50"/>
+
+    <menuitem id="menu_dash_profit"
+              name="Asset Profitability"
+              parent="menu_gr_dashboard_root"
+              action="action_dash_profit"
+              groups="gr_security_base.group_generator_general_manager"
+              sequence="60"/>
+
+    <!-- Dashboard detail actions stay available through the overview cards.
+         The dropdown list is hidden so the top Dashboards button opens only
+         the modern overview screen. -->
+    <record id="menu_dash_fleet" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="menu_dash_revenue" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="menu_dash_hours" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="menu_dash_maint" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="menu_dash_overdue" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="menu_dash_profit" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+</odoo>

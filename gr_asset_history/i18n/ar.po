@@ -1,0 +1,1656 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_asset_history
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_parts_history.py:0
+msgid "%(qty)s %(uom)s of %(part)s consumed on maintenance job %(job)s."
+msgstr "تم استهلاك %(qty)s %(uom)s من %(part)s في أمر الصيانة %(job)s."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "%(target)s delivered to %(site)s"
+msgstr "تم تسليم الأصل %(target)s إلى الموقع %(site)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "%(target)s installed at %(site)s"
+msgstr "تم تركيب الأصل %(target)s في الموقع %(site)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "%(target)s reserved for %(customer)s"
+msgstr "تم حجز الأصل %(target)s للعميل %(customer)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "%(target)s returned from %(customer)s"
+msgstr "تم إرجاع الأصل %(target)s من العميل %(customer)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_sublet_history.py:0
+msgid "%(type)s cost %(amount)s recorded on %(agreement)s: %(name)s"
+msgstr "تم تسجيل تكلفة %(type)s بمبلغ %(amount)s على %(agreement)s: %(name)s"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_search
+msgid "Accessories"
+msgstr "الإكسسوارات"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__asset_role__accessory
+msgid "Accessory"
+msgstr "إكسسوار"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_search
+msgid "Active"
+msgstr "نشط"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__actual_return_datetime
+msgid "Actual Return"
+msgstr "الإرجاع الفعلي"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__asset_id
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__asset_id
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_search
+msgid "Asset"
+msgstr "الأصل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+msgid "Asset %(asset)s created"
+msgstr "تم إنشاء الأصل %(asset)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+msgid "Asset %(asset)s data updated"
+msgstr "تم تحديث بيانات الأصل %(asset)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+msgid "Asset %(asset)s was registered in the system."
+msgstr "تم تسجيل الأصل %(asset)s في النظام."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/migrations/18.0.1.0.1/post-migrate.py:0
+msgid "Asset %s created"
+msgstr "تم إنشاء الأصل %s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/migrations/18.0.1.0.1/post-migrate.py:0
+msgid "Asset %s was registered in the system."
+msgstr "تم تسجيل الأصل %s في النظام."
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__asset_created
+msgid "Asset Created"
+msgstr "تم إنشاء الأصل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+#: code:addons/gr_asset_history/models/gr_rental_item_history.py:0
+#: model:ir.actions.act_window,name:gr_asset_history.action_rental_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_ids
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__history_ids
+#: model:ir.ui.menu,name:gr_asset_history.menu_rental_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+msgid "Asset History"
+msgstr "سجل الأصول"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__asset_reactivated
+msgid "Asset Reactivated"
+msgstr "تمت إعادة تفعيل الأصل"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_rental_asset_rental_history
+msgid "Asset Rental History Line"
+msgstr "سطر سجل تأجير الأصل"
+
+#. module: gr_asset_history
+#: model:ir.actions.act_window,name:gr_asset_history.action_rental_asset_rental_history
+#: model:ir.ui.menu,name:gr_asset_history.menu_rental_asset_rental_history
+msgid "Asset Rental Operations"
+msgstr "عمليات تأجير الأصول"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__asset_reserved
+msgid "Asset Reserved"
+msgstr "تم حجز الأصل"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__asset_retired
+msgid "Asset Retired"
+msgstr "تم إيقاف الأصل"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__asset_updated
+msgid "Asset Updated"
+msgstr "تم تحديث الأصل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Asset reserved"
+msgstr "تم حجز الأصل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Asset was dispatched for delivery to the customer."
+msgstr "تم إرسال الأصل للتسليم إلى العميل."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Asset was installed at the customer site."
+msgstr "تم تركيب الأصل في موقع العميل."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Asset was reserved for this rental order."
+msgstr "تم حجز الأصل لأمر التأجير هذا."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Asset was returned from the customer."
+msgstr "تم إرجاع الأصل من العميل."
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_generator_asset__current_presence_type__customer
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_rental_item_unit__current_presence_type__customer
+msgid "At Customer"
+msgstr "عند العميل"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__is_automatic
+msgid "Automatic Event"
+msgstr "حدث تلقائي"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/rental_asset_history.py:0
+msgid "Automatic history events cannot be deleted by regular users."
+msgstr "لا يمكن للمستخدمين العاديين حذف أحداث السجل التلقائية."
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_generator_asset__current_presence_type__available
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_rental_item_unit__current_presence_type__available
+msgid "Available"
+msgstr "متاح"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__breakdown_reported
+msgid "Breakdown Reported"
+msgstr "تم تسجيل عطل"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_breakdown_count
+msgid "Breakdowns / Repairs"
+msgstr "الأعطال / الإصلاحات"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+msgid "Business Events"
+msgstr "الأحداث المهمة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__cancelled
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__state__closed
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__company_id
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__company_id
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__state__confirmed
+msgid "Confirmed"
+msgstr "تم التأكيد"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__contract_id
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__contract_id
+msgid "Contract"
+msgstr "العقد"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__contract_activated
+msgid "Contract Activated"
+msgstr "تم تفعيل العقد"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__contract_approved
+msgid "Contract Approved"
+msgstr "تم اعتماد العقد"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_contract_history.py:0
+msgid "Contract activated"
+msgstr "تم تفعيل العقد"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_contract_history.py:0
+msgid "Contract approved"
+msgstr "تم اعتماد العقد"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_contract_history.py:0
+msgid "Contract containing this asset was activated."
+msgstr "تم تفعيل العقد الذي يحتوي على هذا الأصل."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_contract_history.py:0
+msgid "Contract containing this asset was approved."
+msgstr "تم اعتماد العقد الذي يحتوي على هذا الأصل."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_contract_count
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+msgid "Contracts"
+msgstr "العقود"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__create_uid
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__create_date
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__current_contract_id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__current_contract_id
+msgid "Current Contract"
+msgstr "العقد الحالي"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__current_partner_id
+msgid "Current Customer"
+msgstr "العميل الحالي"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__current_location_label
+msgid "Current Location"
+msgstr "الموقع الحالي"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+msgid "Current Position"
+msgstr "الموقع الحالي"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__current_presence_type
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__current_presence_type
+msgid "Current Presence"
+msgstr "نوع التواجد الحالي"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__current_rental_order_id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__current_rental_order_id
+msgid "Current Rental Order"
+msgstr "أمر التأجير الحالي"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__current_site_id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__current_site_id
+msgid "Current Site"
+msgstr "الموقع الحالي"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__partner_id
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__partner_id
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_list
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_form
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Customer requested off-hire / return."
+msgstr "طلب العميل إنهاء التأجير / الإرجاع."
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__daily_rate
+msgid "Daily Rate"
+msgstr "السعر اليومي"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__damage_found
+msgid "Damage Found"
+msgstr "تم اكتشاف تلف"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Damage or issue found"
+msgstr "تم تسجيل ضرر أو مشكلة"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Damage or issue found on %(asset)s"
+msgstr "تم تسجيل ضرر أو مشكلة على الأصل %(asset)s"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_generator_asset__current_presence_type__out_of_service
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_rental_item_unit__current_presence_type__out_of_service
+msgid "Damaged / Out of Service"
+msgstr "تالف / خارج الخدمة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__event_datetime
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_list
+msgid "Date & Time"
+msgstr "التاريخ والوقت"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_form
+msgid "Dates"
+msgstr "التواريخ"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__duration_days
+msgid "Days"
+msgstr "الأيام"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__delivery
+msgid "Delivered to Customer"
+msgstr "تم التسليم للعميل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Delivered to customer"
+msgstr "تم التسليم للعميل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+#: code:addons/gr_asset_history/models/gr_rental_item_history.py:0
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_delivery_count
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__history_delivery_count
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+msgid "Deliveries"
+msgstr "عمليات التسليم"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__name
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_form
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_list
+msgid "Details"
+msgstr "العنوان"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,help:gr_asset_history.field_rental_asset_history__technical_key
+msgid ""
+"Deterministic key for automatic events. Prevents duplicate events when the "
+"same workflow step is retried."
+msgstr ""
+"مفتاح ثابت للأحداث التلقائية يمنع تكرار الأحداث عند إعادة محاولة نفس خطوة "
+"العمل."
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__state__dispatched
+msgid "Dispatched"
+msgstr "تم الإخراج"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_field_worksheet__display_name
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__display_name
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_maintenance_job__display_name
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_parts_consumption_line__display_name
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_contract__display_name
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_inspection__display_name
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__display_name
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_order__display_name
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_sublet_agreement__display_name
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_sublet_direct_cost__display_name
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__display_name
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_form
+msgid "Event"
+msgstr "فعالية"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__event_type
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_list
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+msgid "Event Type"
+msgstr "نوع الحدث"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__expected_return_datetime
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__expected_return_datetime
+msgid "Expected Return"
+msgstr "الإرجاع المتوقع"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Expected return changed for %(target)s"
+msgstr "تم تمديد تاريخ الإرجاع المتوقع للأصل %(target)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Expected return changed from %(old)s to %(new)s."
+msgstr "تغيّر الإرجاع المتوقع من %(old)s إلى %(new)s."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_field_worksheet_history.py:0
+msgid "Field worksheet was created."
+msgstr "تم إنشاء ورقة العمل الميدانية."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_field_worksheet_history.py:0
+msgid "Field worksheet was submitted."
+msgstr "تم تقديم ورقة العمل الميدانية."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_field_worksheet_history.py:0
+msgid "Field worksheet was verified with required proof."
+msgstr "تم التحقق من ورقة العمل الميدانية بالإثبات المطلوب."
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_search
+msgid "Free"
+msgstr "مجاني"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__is_free
+msgid "Free of Charge"
+msgstr "مجاني"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_gr_generator_asset
+msgid "Generator Asset"
+msgstr "أصل المولد"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_gr_maintenance_job
+msgid "Generator Maintenance Job"
+msgstr "أمر صيانة مولد"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_gr_parts_consumption_line
+msgid "Generator Maintenance Parts Consumption"
+msgstr "استهلاك قطع صيانة المولد"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_gr_rental_contract
+msgid "Generator Rental Contract"
+msgstr "عقد تأجير المولد"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_gr_rental_order
+msgid "Generator Rental Order"
+msgstr "أمر تأجير المولد"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+msgid "History"
+msgstr "السجل"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_event_count
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__history_event_count
+msgid "History Events"
+msgstr "أحداث السجل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/rental_asset_history.py:0
+msgid ""
+"History must be linked to exactly one generator asset or one rentable item "
+"unit."
+msgstr "يجب ربط السجل بأصل مولد واحد أو وحدة صنف قابل للتأجير واحدة فقط."
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_field_worksheet__id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_maintenance_job__id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_parts_consumption_line__id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_contract__id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_inspection__id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_order__id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_sublet_agreement__id
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_sublet_direct_cost__id
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__id
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_generator_asset__current_presence_type__maintenance
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_rental_item_unit__current_presence_type__maintenance
+msgid "In Maintenance"
+msgstr "في الصيانة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_generator_asset__current_presence_type__transit
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_rental_item_unit__current_presence_type__transit
+msgid "In Transit"
+msgstr "في النقل"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_generator_asset__current_presence_type__warehouse
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_rental_item_unit__current_presence_type__warehouse
+msgid "In Warehouse"
+msgstr "في المستودع"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__inspection_id
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__state__inspection
+msgid "Inspection"
+msgstr "الفحص"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__inspection_created
+msgid "Inspection Created"
+msgstr "تم إنشاء الفحص"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__inspection_failed
+msgid "Inspection Failed"
+msgstr "فشل الفحص"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__inspection_passed
+msgid "Inspection Passed"
+msgstr "نجح الفحص"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Inspection created"
+msgstr "تم إنشاء الفحص"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Inspection created for %(asset)s"
+msgstr "تم إنشاء فحص للأصل %(asset)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Inspection failed"
+msgstr "فشل الفحص"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Inspection failed for %(asset)s"
+msgstr "فشل فحص الأصل %(asset)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Inspection failed. Review checklist notes for damage or issues."
+msgstr "فشل الفحص. راجع ملاحظات قائمة التحقق بحثًا عن أضرار أو مشكلات."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Inspection passed"
+msgstr "نجح الفحص"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Inspection passed for %(asset)s"
+msgstr "نجح فحص الأصل %(asset)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Inspection was marked failed; possible damage or issue recorded."
+msgstr "تم تسجيل الفحص كفاشل؛ وسُجّل ضرر أو مشكلة محتملة."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Inspection was passed."
+msgstr "تم اجتياز الفحص."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_inspection_count
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+msgid "Inspections"
+msgstr "الفحوصات"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__state__installed
+msgid "Installed"
+msgstr "تم التثبيت"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__installed
+msgid "Installed at Site"
+msgstr "تم التركيب في الموقع"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Installed at site"
+msgstr "مركّب في الموقع"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+msgid "Issues"
+msgstr "المشكلات"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+msgid "Issues / Damage"
+msgstr "المشكلات / التلفيات"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_last_maintenance_id
+msgid "Last Maintenance"
+msgstr "آخر صيانة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_last_maintenance_date
+msgid "Last Maintenance Date"
+msgstr "تاريخ آخر صيانة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_last_event_datetime
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__history_last_event_datetime
+msgid "Last Movement"
+msgstr "آخر حركة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__write_uid
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__write_date
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+msgid "Lifetime Summary"
+msgstr "ملخص عمر الأصل"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_form
+msgid "Links"
+msgstr "الروابط"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__location_label
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_form
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_list
+msgid "Location"
+msgstr "الموقع"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__asset_role__main
+msgid "Main Asset"
+msgstr "أصل رئيسي"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_search
+msgid "Main Assets"
+msgstr "الأصول الرئيسية"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+msgid "Maintenance"
+msgstr "الصيانة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__maintenance_cancelled
+msgid "Maintenance Cancelled"
+msgstr "تم إلغاء الصيانة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__maintenance_done
+msgid "Maintenance Done"
+msgstr "اكتملت الصيانة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__maintenance_id
+msgid "Maintenance Job"
+msgstr "أمر صيانة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__maintenance_opened
+msgid "Maintenance Opened"
+msgstr "تم فتح الصيانة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__maintenance_scheduled
+msgid "Maintenance Scheduled"
+msgstr "تمت جدولة الصيانة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__maintenance_started
+msgid "Maintenance Started"
+msgstr "بدأت الصيانة"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+msgid "Maintenance and Repairs"
+msgstr "الصيانة والإصلاحات"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance cancelled"
+msgstr "تم إلغاء الصيانة"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance cancelled for %(asset)s"
+msgstr "تم إلغاء صيانة الأصل %(asset)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance completed"
+msgstr "اكتملت الصيانة"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance completed for %(asset)s"
+msgstr "تم إكمال صيانة الأصل %(asset)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance job started and the asset was moved out of service."
+msgstr "بدأ أمر الصيانة وتم إخراج الأصل من الخدمة."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance job was cancelled."
+msgstr "تم إلغاء أمر الصيانة."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance job was completed."
+msgstr "تم إنجاز أمر الصيانة."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance job was created."
+msgstr "تم إنشاء أمر الصيانة."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance job was scheduled."
+msgstr "تمت جدولة أمر الصيانة."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance opened"
+msgstr "تم فتح الصيانة"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance opened for %(asset)s"
+msgstr "تم إنشاء صيانة للأصل %(asset)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance scheduled"
+msgstr "تمت جدولة الصيانة"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance scheduled for %(asset)s"
+msgstr "تمت جدولة صيانة للأصل %(asset)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance started"
+msgstr "بدأت الصيانة"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_maintenance_history.py:0
+msgid "Maintenance started for %(asset)s"
+msgstr "بدأت صيانة الأصل %(asset)s"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__manual_note
+msgid "Manual Note"
+msgstr "ملاحظة يدوية"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__location_id
+msgid "New Site"
+msgstr "الموقع الجديد"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__new_state
+msgid "New State"
+msgstr "الحالة الجديدة"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+msgid "No"
+msgstr "لا"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Not set"
+msgstr "غير محدد"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__off_hire_requested
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__state__off_hire_requested
+msgid "Off-Hire Requested"
+msgstr "تم طلب إيقاف التأجير"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Off-hire requested"
+msgstr "تم طلب إنهاء التأجير"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_search
+msgid "Oldest First"
+msgstr "الأقدم أولاً"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__state__on_rent
+msgid "On Rent"
+msgstr "مؤجر"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/rental_asset_history.py:0
+msgid ""
+"Only a Generator Administrator can change event date or source metadata."
+msgstr "لا يمكن تغيير تاريخ الحدث أو بيانات المصدر إلا لمسؤول المولدات."
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_form
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_list
+msgid "Open Rental Order"
+msgstr "فتح أمر التأجير"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_form
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_list
+msgid "Open Source"
+msgstr "فتح المصدر"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__order_line_id
+msgid "Order Line"
+msgstr "سطر الأمر"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__parts_line_id
+msgid "Parts Consumption Line"
+msgstr "سطر استهلاك القطع"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__parts_used
+msgid "Parts Used"
+msgstr "القطع المستخدمة"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_parts_history.py:0
+msgid "Parts used"
+msgstr "قطع الغيار المستخدمة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__planned_return_datetime
+msgid "Planned Return"
+msgstr "الإرجاع المخطط"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__previous_location_label
+msgid "Previous Location"
+msgstr "الموقع السابق"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__previous_location_id
+msgid "Previous Site"
+msgstr "الموقع السابق"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__old_state
+msgid "Previous State"
+msgstr "الحالة السابقة"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_form
+msgid "Pricing"
+msgstr "الأسعار"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__vendor_received
+msgid "Received / Committed from Vendor"
+msgstr "تم الاستلام / الالتزام من المورد"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_sublet_history.py:0
+msgid "Received / committed from vendor"
+msgstr "مستلم / ملتزم به من المورّد"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__sublet_created
+msgid "Rent-in Agreement Created"
+msgstr "تم إنشاء اتفاقية التأجير من الغير"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_sublet_history.py:0
+msgid "Rent-in agreement created"
+msgstr "تم إنشاء اتفاقية استئجار"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_sublet_history.py:0
+msgid "Rent-in purchase order was raised; vendor commitment is active."
+msgstr "تم إصدار أمر شراء الاستئجار؛ التزام المورّد نشط."
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__item_unit_id
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+msgid "Rentable Item"
+msgstr "بند قابل للتأجير"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_gr_rental_item_unit
+msgid "Rentable Item Unit"
+msgstr "وحدة بند قابلة للتأجير"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_item_history.py:0
+msgid "Rentable item %(item)s created"
+msgstr "تم إنشاء البند القابل للتأجير %(item)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_item_history.py:0
+msgid "Rentable item %(item)s data updated"
+msgstr "تم تحديث بيانات البند القابل للتأجير %(item)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_item_history.py:0
+msgid "Rentable item %(item)s was registered."
+msgstr "تم تسجيل الصنف القابل للتأجير %(item)s."
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_form
+msgid "Rental"
+msgstr "التأجير"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_rental_asset_history
+msgid "Rental Asset History"
+msgstr "سجل الأصل التأجيري"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__rental_closed
+msgid "Rental Closed"
+msgstr "تم إغلاق التأجير"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__rental_confirmed
+msgid "Rental Confirmed"
+msgstr "تم تأكيد التأجير"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__rental_extended
+msgid "Rental Extended"
+msgstr "تم تمديد التأجير"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_gr_rental_inspection
+msgid "Rental Inspection (Delivery / Return / Replacement)"
+msgstr "فحص التأجير (تسليم / إرجاع / استبدال)"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_rental_line_ids
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+msgid "Rental Operations"
+msgstr "عمليات التأجير"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__rental_order_id
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__rental_order_id
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_search
+msgid "Rental Order"
+msgstr "أمر التأجير"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__rental_order_created
+msgid "Rental Order Created"
+msgstr "تم إنشاء أمر التأجير"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+#: code:addons/gr_asset_history/models/gr_rental_item_history.py:0
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_rental_order_count
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__history_rental_order_count
+msgid "Rental Orders"
+msgstr "أوامر التأجير"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__rental_started
+msgid "Rental Started"
+msgstr "بدأ التأجير"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental cancelled"
+msgstr "تم إلغاء التأجير"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental closed"
+msgstr "تم إغلاق التأجير"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental confirmed"
+msgstr "تم تأكيد التأجير"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_inspection_history.py:0
+msgid "Rental inspection was created."
+msgstr "تم إنشاء فحص التأجير."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental order %(order)s cancelled"
+msgstr "تم إلغاء أمر التأجير %(order)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental order %(order)s closed"
+msgstr "تم إغلاق أمر التأجير %(order)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental order %(order)s confirmed"
+msgstr "تم تأكيد أمر التأجير %(order)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental order %(order)s created for %(target)s"
+msgstr "تم إنشاء أمر التأجير %(order)s للأصل %(target)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental order created"
+msgstr "تم إنشاء أمر التأجير"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental order was cancelled and any reservation was released."
+msgstr "تم إلغاء أمر التأجير وتحرير أي حجز."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental order was closed and the asset was released."
+msgstr "تم إغلاق أمر التأجير وتحرير الأصل."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental order was confirmed."
+msgstr "تم تأكيد أمر التأجير."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental order was created."
+msgstr "تم إنشاء أمر التأجير."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental period started for %(target)s"
+msgstr "بدأت فترة التأجير للأصل %(target)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental period started."
+msgstr "بدأت فترة التأجير."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Rental started"
+msgstr "بدأ التأجير"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+msgid "Rentals"
+msgstr "عمليات التأجير"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_sublet_history.py:0
+msgid "Rented-in agreement was cancelled."
+msgstr "تم إلغاء اتفاقية الاستئجار."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_sublet_history.py:0
+msgid "Rented-in asset agreement was created."
+msgstr "تم إنشاء اتفاقية أصل مستأجر."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_sublet_history.py:0
+msgid "Rented-in asset was marked returned to the vendor."
+msgstr "تم تسجيل إرجاع الأصل المستأجر إلى المورّد."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_repair_count
+msgid "Repairs / Breakdowns"
+msgstr "الإصلاحات / الأعطال"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__reservation_cancelled
+msgid "Reservation Cancelled"
+msgstr "تم إلغاء الحجز"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_generator_asset__current_presence_type__reserved
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_rental_item_unit__current_presence_type__reserved
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__state__reserved
+msgid "Reserved"
+msgstr "محجوز"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__user_id
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_list
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__inspection_started
+msgid "Return Inspection Started"
+msgstr "بدأ فحص الإرجاع"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Return inspection started"
+msgstr "بدأ فحص الإرجاع"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Return inspection started for %(target)s"
+msgstr "بدأ فحص الإرجاع للأصل %(target)s"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Return requested for %(target)s"
+msgstr "تم طلب إرجاع الأصل %(target)s"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_rental_history__state__returned
+msgid "Returned"
+msgstr "تم الإرجاع"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Returned asset entered inspection."
+msgstr "دخل الأصل المُرجَع مرحلة الفحص."
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__return
+msgid "Returned from Customer"
+msgstr "تم الإرجاع من العميل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "Returned from customer"
+msgstr "مُرجَع من العميل"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__vendor_returned
+msgid "Returned to Vendor"
+msgstr "تم الإرجاع إلى المورد"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_sublet_history.py:0
+msgid "Returned to vendor"
+msgstr "مُرجَع إلى المورّد"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+#: code:addons/gr_asset_history/models/gr_rental_item_history.py:0
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_return_count
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_rental_item_unit__history_return_count
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+msgid "Returns"
+msgstr "عمليات الإرجاع"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__revenue_amount
+msgid "Revenue"
+msgstr "الإيراد"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__asset_role
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_search
+msgid "Role"
+msgstr "الدور"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__site_id
+msgid "Site"
+msgstr "الموقع"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_form
+msgid "Source"
+msgstr "المصدر"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__source_res_id
+msgid "Source ID"
+msgstr "معرف المصدر"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__source_model
+msgid "Source Model"
+msgstr "نموذج المصدر"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__source_reference
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_rental_item_unit_form_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_list
+msgid "Source Reference"
+msgstr "مرجع المصدر"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/rental_asset_history.py:0
+msgid "Source model %s is not available."
+msgstr "نموذج المصدر %s غير متاح."
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__start_datetime
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__state
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_rental_history_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_form
+msgid "Status & Party"
+msgstr "الحالة والطرف"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__status_changed
+msgid "Status Changed"
+msgstr "تم تغيير الحالة"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__picking_id
+msgid "Stock Picking"
+msgstr "عملية المخزون"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__sublet_agreement_id
+msgid "Sublet Agreement"
+msgstr "اتفاقية التأجير من الغير"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_gr_sublet_direct_cost
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__sublet_direct_cost_id
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__sublet_direct_cost
+msgid "Sublet Direct Cost"
+msgstr "تكلفة مباشرة للتأجير من الغير"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_gr_sublet_agreement
+msgid "Sublet Rental Agreement (rent-in)"
+msgstr "اتفاقية تأجير من الغير (تأجير داخلي)"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_sublet_history.py:0
+msgid "Sublet direct cost recorded"
+msgstr "تم تسجيل تكلفة مباشرة للتأجير من الغير"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__is_technical_event
+msgid "Technical Event"
+msgstr "حدث تقني"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+msgid "Technical Events"
+msgstr "الأحداث التقنية"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__technical_key
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_rental_history__technical_key
+msgid "Technical Key"
+msgstr "المفتاح التقني"
+
+#. module: gr_asset_history
+#: model:ir.model,name:gr_asset_history.model_gr_field_worksheet
+msgid "Technician Field Worksheet"
+msgstr "ورقة عمل الفني الميدانية"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/rental_asset_history.py:0
+msgid "The source document no longer exists."
+msgstr "المستند المصدر لم يعد موجودًا."
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+msgid "This Month"
+msgstr "هذا الشهر"
+
+#. module: gr_asset_history
+#: model:ir.model.constraint,message:gr_asset_history.constraint_rental_asset_rental_history_technical_key_company_uniq
+msgid "This asset rental history line already exists for this company."
+msgstr "بند سجل تأجير الأصل هذا موجود بالفعل لهذه الشركة."
+
+#. module: gr_asset_history
+#: model:ir.model.constraint,message:gr_asset_history.constraint_rental_asset_history_technical_key_company_uniq
+msgid "This asset-history event already exists for this company."
+msgstr "حدث سجل الأصل هذا موجود بالفعل لهذه الشركة."
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/rental_asset_history.py:0
+msgid "This history event has no source document."
+msgstr "حدث السجل هذا ليس له مستند مصدر."
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+msgid "Timeline"
+msgstr "الخط الزمني"
+
+#. module: gr_asset_history
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_rental_asset_history_search
+msgid "Today"
+msgstr "اليوم"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_total_parts_cost
+msgid "Total Parts Cost"
+msgstr "إجمالي تكلفة قطع الغيار"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_total_rental_days
+msgid "Total Rental Days"
+msgstr "إجمالي أيام التأجير"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_generator_asset__current_presence_type__unavailable
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_rental_item_unit__current_presence_type__unavailable
+msgid "Unavailable"
+msgstr "غير متاح"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__gr_generator_asset__current_presence_type__inspection
+msgid "Under Inspection"
+msgstr "تحت الفحص"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/rental_asset_history.py:0
+msgid "Unsupported history target: %s"
+msgstr "هدف سجل غير مدعوم: %s"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__vendor_cancelled
+msgid "Vendor Rent-in Cancelled"
+msgstr "تم إلغاء التأجير الداخلي من المورد"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_sublet_history.py:0
+msgid "Vendor rent-in cancelled"
+msgstr "تم إلغاء الاستئجار من المورّد"
+
+#. module: gr_asset_history
+#: model:ir.model.fields,field_description:gr_asset_history.field_rental_asset_history__visit_id
+msgid "Visit / Worksheet"
+msgstr "زيارة / ورقة عمل"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__visit_created
+msgid "Visit / Worksheet Created"
+msgstr "تم إنشاء زيارة / ورقة عمل"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__visit_submitted
+msgid "Visit / Worksheet Submitted"
+msgstr "تم تقديم زيارة / ورقة عمل"
+
+#. module: gr_asset_history
+#: model:ir.model.fields.selection,name:gr_asset_history.selection__rental_asset_history__event_type__visit_verified
+msgid "Visit / Worksheet Verified"
+msgstr "تم التحقق من زيارة / ورقة عمل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_field_worksheet_history.py:0
+msgid "Visit / worksheet created"
+msgstr "تم إنشاء زيارة / ورقة عمل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_field_worksheet_history.py:0
+msgid "Visit / worksheet submitted"
+msgstr "تم تقديم زيارة / ورقة عمل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_field_worksheet_history.py:0
+msgid "Visit / worksheet verified"
+msgstr "تم التحقق من زيارة / ورقة عمل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+#: model:ir.model.fields,field_description:gr_asset_history.field_gr_generator_asset__history_visit_count
+#: model_terms:ir.ui.view,arch_db:gr_asset_history.view_gr_generator_asset_form_history
+msgid "Visits"
+msgstr "الزيارات"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+msgid "Yes"
+msgstr "نعم"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+msgid "asset_id"
+msgstr "asset_id"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_generator_asset_history.py:0
+#: code:addons/gr_asset_history/models/gr_rental_item_history.py:0
+msgid "id"
+msgstr "المعرف"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_item_history.py:0
+msgid "item_unit_id"
+msgstr "item_unit_id"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "the customer"
+msgstr "العميل"
+
+#. module: gr_asset_history
+#. odoo-python
+#: code:addons/gr_asset_history/models/gr_rental_order_history.py:0
+msgid "the site"
+msgstr "الموقع"

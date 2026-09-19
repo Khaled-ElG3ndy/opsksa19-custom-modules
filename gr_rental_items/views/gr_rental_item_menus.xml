@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_gr_rental_items_root" name="Rentable Items"
+              parent="gr_security_base.menu_generator_root"
+              groups="gr_security_base.group_generator_user"
+              sequence="20"/>
+    <menuitem id="menu_gr_rental_item_unit" name="Items"
+              parent="menu_gr_rental_items_root"
+              action="action_gr_rental_item_unit" sequence="10"/>
+    <menuitem id="menu_gr_rental_item_type" name="Item Types"
+              parent="menu_gr_rental_items_root"
+              action="action_gr_rental_item_type"
+              groups="gr_security_base.group_generator_operations_officer"
+              sequence="20"/>
+</odoo>

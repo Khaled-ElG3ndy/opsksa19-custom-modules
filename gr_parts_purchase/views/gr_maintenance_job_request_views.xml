@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_maintenance_job_form_requests" model="ir.ui.view">
+        <field name="name">gr.maintenance.job.form.requests</field>
+        <field name="model">gr.maintenance.job</field>
+        <field name="inherit_id" ref="gr_parts_consumption.view_gr_maintenance_job_form_parts"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parts_line_ids']" position="before">
+                <separator string="Parts Requests (ordered for this unit)"/>
+                <field name="parts_request_ids">
+                    <list decoration-success="reconciled"
+                          decoration-warning="qty_outstanding &gt; 0 and state in ('received','purchased')">
+                        <field name="name"/>
+                        <field name="product_id"/>
+                        <field name="quantity"/>
+                        <field name="available_qty"/>
+                        <field name="purpose"/>
+                        <field name="qty_issued"/>
+                        <field name="qty_installed"/>
+                        <field name="qty_remaining_to_issue"/>
+                        <field name="qty_shortage_to_buy"/>
+                        <field name="qty_outstanding"/>
+                        <field name="purchase_order_id"/>
+                        <field name="state" widget="badge"/>
+                        <field name="reconciled" column_invisible="1"/>
+                    </list>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

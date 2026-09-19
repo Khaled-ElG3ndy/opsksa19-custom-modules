@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="equipment_type_generator" model="gr.equipment.type">
+            <field name="name">Generator</field>
+            <field name="code">GEN</field>
+            <field name="sequence">10</field>
+            <field name="description">Generator set rented as a powered asset.</field>
+            <field name="rental_requires_dispatch" eval="True"/>
+            <field name="rental_requires_installation" eval="True"/>
+            <field name="rental_requires_meter_readings" eval="True"/>
+            <field name="rental_requires_delivery_inspection" eval="True"/>
+            <field name="rental_requires_return_inspection" eval="True"/>
+            <field name="rental_requires_delivery_signature" eval="True"/>
+            <field name="rental_requires_return_signature" eval="True"/>
+            <field name="rental_standalone_ok" eval="True"/>
+            <field name="rental_accessory_ok" eval="False"/>
+        </record>
+        <record id="equipment_type_cable" model="gr.equipment.type">
+            <field name="name">Cable</field>
+            <field name="code">CBL</field>
+            <field name="sequence">20</field>
+            <field name="description">Power cable rented as an individually tracked asset.</field>
+            <field name="rental_requires_dispatch" eval="True"/>
+            <field name="rental_requires_installation" eval="False"/>
+            <field name="rental_requires_meter_readings" eval="False"/>
+            <field name="rental_requires_delivery_inspection" eval="False"/>
+            <field name="rental_requires_return_inspection" eval="False"/>
+            <field name="rental_requires_delivery_signature" eval="True"/>
+            <field name="rental_requires_return_signature" eval="True"/>
+            <field name="rental_standalone_ok" eval="True"/>
+            <field name="rental_accessory_ok" eval="True"/>
+        </record>
+        <record id="equipment_type_fuel_tank" model="gr.equipment.type">
+            <field name="name">Fuel Tank</field>
+            <field name="code">TNK</field>
+            <field name="sequence">30</field>
+            <field name="description">External or auxiliary fuel tank rented as an asset.</field>
+            <field name="rental_requires_dispatch" eval="True"/>
+            <field name="rental_requires_installation" eval="False"/>
+            <field name="rental_requires_meter_readings" eval="False"/>
+            <field name="rental_requires_delivery_inspection" eval="True"/>
+            <field name="rental_requires_return_inspection" eval="True"/>
+            <field name="rental_requires_delivery_signature" eval="True"/>
+            <field name="rental_requires_return_signature" eval="True"/>
+            <field name="rental_standalone_ok" eval="True"/>
+            <field name="rental_accessory_ok" eval="True"/>
+        </record>
+        <record id="equipment_type_distribution_panel" model="gr.equipment.type">
+            <field name="name">Distribution Panel</field>
+            <field name="code">PNL</field>
+            <field name="sequence">40</field>
+            <field name="description">Electrical distribution or changeover panel rented as an asset.</field>
+            <field name="rental_requires_dispatch" eval="True"/>
+            <field name="rental_requires_installation" eval="True"/>
+            <field name="rental_requires_meter_readings" eval="False"/>
+            <field name="rental_requires_delivery_inspection" eval="True"/>
+            <field name="rental_requires_return_inspection" eval="True"/>
+            <field name="rental_requires_delivery_signature" eval="True"/>
+            <field name="rental_requires_return_signature" eval="True"/>
+            <field name="rental_standalone_ok" eval="True"/>
+            <field name="rental_accessory_ok" eval="True"/>
+        </record>
+    </data>
+</odoo>

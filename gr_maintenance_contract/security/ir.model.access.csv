@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_mc_user,gr.maintenance.contract.user,model_gr_maintenance_contract,gr_security_base.group_generator_user,1,0,0,0
+access_gr_mc_maint,gr.maintenance.contract.maint,model_gr_maintenance_contract,gr_security_base.group_generator_maint_technician,1,0,0,0
+access_gr_mc_maintmgr,gr.maintenance.contract.maintmgr,model_gr_maintenance_contract,gr_security_base.group_generator_maint_manager,1,1,1,0
+access_gr_mc_sales,gr.maintenance.contract.sales,model_gr_maintenance_contract,gr_security_base.group_generator_sales_officer,1,1,1,0
+access_gr_mc_finance,gr.maintenance.contract.finance,model_gr_maintenance_contract,gr_security_base.group_generator_finance_officer,1,1,1,0
+access_gr_mc_gm,gr.maintenance.contract.gm,model_gr_maintenance_contract,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_mc_admin,gr.maintenance.contract.admin,model_gr_maintenance_contract,gr_security_base.group_generator_administrator,1,1,1,1
+access_gr_mcp_user,gr.maintenance.contract.payment.user,model_gr_maintenance_contract_payment,gr_security_base.group_generator_user,1,0,0,0
+access_gr_mcp_maintmgr,gr.maintenance.contract.payment.maintmgr,model_gr_maintenance_contract_payment,gr_security_base.group_generator_maint_manager,1,1,1,0
+access_gr_mcp_finance,gr.maintenance.contract.payment.finance,model_gr_maintenance_contract_payment,gr_security_base.group_generator_finance_officer,1,1,1,0
+access_gr_mcp_gm,gr.maintenance.contract.payment.gm,model_gr_maintenance_contract_payment,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_mcp_admin,gr.maintenance.contract.payment.admin,model_gr_maintenance_contract_payment,gr_security_base.group_generator_administrator,1,1,1,1

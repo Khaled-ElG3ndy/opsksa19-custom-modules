@@ -1,0 +1,679 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_rental_items
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order__is_items_only
+msgid "Accessories-only Rental"
+msgstr "تأجير إكسسوارات فقط"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: gr_rental_items
+#: model_terms:ir.actions.act_window,help:gr_rental_items.action_gr_rental_item_type
+msgid "Add any item you rent — cable, fuel tank, panel, or anything else"
+msgstr "أضف أي بند تؤجره - كابل أو خزان وقود أو لوحة توزيع أو غير ذلك"
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_item.py:0
+msgid "Asset %s cannot be added as an accessory with another asset."
+msgstr "لا يمكن إضافة الأصل %s كملحق مع أصل آخر."
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_item.py:0
+msgid "Asset %s cannot be rented standalone."
+msgstr "لا يمكن تأجير الأصل %s منفرداً."
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_item.py:0
+msgid ""
+"Asset %s is already the main equipment on this order. Do not add the same "
+"asset again as a line."
+msgstr ""
+"الأصل %s هو بالفعل المعدة الرئيسية في هذا الأمر. لا تضف الأصل نفسه مرة أخرى "
+"كسطر."
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_item.py:0
+msgid "Asset %s is not rentable and cannot be added to a rental order line."
+msgstr "الأصل %s غير قابل للتأجير ولا يمكن إضافته إلى سطر أمر التأجير."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__asset_type_display_name
+msgid "Asset Type"
+msgstr "نوع الأصل"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_rental_items
+#: model:ir.model.fields.selection,name:gr_rental_items.selection__gr_rental_item_unit__status__available
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_item_unit_search
+msgid "Available"
+msgstr "متاح"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_order_line__item_unit_id
+msgid ""
+"Backward-compatible rentable item unit. New asset rentals should use Asset "
+"instead."
+msgstr "الوحدة الفعلية المحددة الخارجة في هذا التأجير."
+
+#. module: gr_rental_items
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_item_type_form
+msgid "CBL"
+msgstr "CBL"
+
+#. module: gr_rental_items
+#: model:gr.rental.item.type,name:gr_rental_items.item_type_cable
+msgid "Cable"
+msgstr "كابل"
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_order_items.py:0
+msgid "Cannot close %s: a passed RETURN inspection is required first."
+msgstr "لا يمكن إغلاق %s: يجب أولاً وجود فحص إرجاع ناجح."
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_order_items.py:0
+msgid "Cannot dispatch %s: a passed DELIVERY inspection is required first."
+msgstr "لا يمكن إرسال %s: يجب أولاً وجود فحص تسليم ناجح."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__code
+msgid "Code"
+msgstr "الرمز"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__company_id
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__company_id
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__create_uid
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__create_uid
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__create_date
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__create_date
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__currency_id
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__currency_id
+msgid "Currency"
+msgstr "معرف العملة"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__daily_rate
+msgid "Daily Rate"
+msgstr "السعر اليومي"
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_item.py:0
+msgid "Daily rate cannot be negative."
+msgstr "لا يمكن أن يكون السعر اليومي سالباً."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__quantity_days
+msgid "Days"
+msgstr "الأيام"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__default_daily_rate
+msgid "Default Daily Rate"
+msgstr "السعر اليومي الافتراضي"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_generator_asset__rental_daily_rate
+msgid ""
+"Default daily rental rate when this asset is added as a rental order line. "
+"The line can still override the rate."
+msgstr ""
+"سعر الإيجار اليومي الافتراضي عند إضافة هذا الأصل كسطر في أمر التأجير. يمكن "
+"تغيير السعر داخل السطر."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_generator_asset__display_name
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__display_name
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__display_name
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order__display_name
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__asset_display_name
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_rental_items
+#: model:gr.rental.item.type,name:gr_rental_items.item_type_distribution_panel
+msgid "Distribution Panel"
+msgstr "لوحة توزيع"
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_item.py:0
+msgid ""
+"Each rental line must reference exactly one physical asset: either an Asset "
+"or a legacy Item Unit."
+msgstr ""
+"يجب أن يشير كل سطر تأجير إلى أصل فعلي واحد فقط: إما أصل أو وحدة بند قديمة."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_rental_items
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_order_form_items
+msgid "Free"
+msgstr "مجاني"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__is_free
+msgid "Free of Charge"
+msgstr "مجاني"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_generator_asset__default_is_free_with_asset
+msgid "Free with Another Asset by Default"
+msgstr "مجاني افتراضيا مع أصل آخر"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__default_is_free_with_generator
+msgid "Free with Generator by Default"
+msgstr "مجاني مع المولد افتراضيا"
+
+#. module: gr_rental_items
+#: model:gr.rental.item.type,name:gr_rental_items.item_type_fuel_tank
+msgid "Fuel Tank"
+msgstr "خزان وقود"
+
+#. module: gr_rental_items
+#: model:ir.model,name:gr_rental_items.model_gr_generator_asset
+msgid "Generator Asset"
+msgstr "أصل المولد"
+
+#. module: gr_rental_items
+#: model:ir.model,name:gr_rental_items.model_gr_rental_order
+msgid "Generator Rental Order"
+msgstr "أمر تأجير المولد"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order__generator_serial_count
+msgid "Generator Serials"
+msgstr "سيريالات المولدات"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order__has_generator
+msgid "Has Generator Serial"
+msgstr "يحتوي على سيريال مولد"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_generator_asset__id
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__id
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__id
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order__id
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_item_unit__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_item_unit__message_has_error
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_item_unit__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_generator_asset__default_is_free_with_asset
+msgid ""
+"If set, this asset defaults to a free line when the same order already rents"
+" another asset, such as a generator."
+msgstr ""
+"عند التفعيل، يصبح هذا الأصل مجانيا افتراضيا إذا كان أمر التأجير يحتوي بالفعل"
+" على أصل آخر مثل المولد."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_item_type__default_is_free_with_generator
+msgid ""
+"If set, when this item is added to an order that also has a generator, the "
+"line defaults to Free."
+msgstr ""
+"عند التفعيل، إذا أضيف هذا البند إلى أمر يحتوي أيضا على مولد فسيكون السطر "
+"مجانيا افتراضيا."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__name
+msgid "Item No"
+msgstr "رقم البند"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__name
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__item_type_id
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__item_type_id
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_item_unit_search
+msgid "Item Type"
+msgstr "نوع البند"
+
+#. module: gr_rental_items
+#: model:ir.ui.menu,name:gr_rental_items.menu_gr_rental_item_type
+msgid "Item Types"
+msgstr "أنواع البنود"
+
+#. module: gr_rental_items
+#: model:ir.ui.menu,name:gr_rental_items.menu_gr_rental_item_unit
+msgid "Items"
+msgstr "البنود"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__write_uid
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__write_uid
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__write_date
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__write_date
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__item_unit_id
+msgid "Legacy Item Unit"
+msgstr "وحدة بند قديمة"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__line_total
+msgid "Line Total"
+msgstr "السطر الإجمالي"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_item.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: gr_rental_items
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_item_unit_form
+msgid "Notes..."
+msgstr "ملاحظات..."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_item_unit__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_item_unit__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_rental_items
+#: model:ir.model.fields.selection,name:gr_rental_items.selection__gr_rental_item_unit__status__on_rent
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_item_unit_search
+msgid "On Rent"
+msgstr "قيد التأجير"
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_order_items.py:0
+msgid "Only confirmed orders can be reserved."
+msgstr "يمكن حجز الأوامر المؤكدة فقط."
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_order_items.py:0
+msgid "Only dispatched orders can be installed."
+msgstr "يمكن تركيب الأوامر المرسلة فقط."
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_order_items.py:0
+msgid "Only installed orders can start the rental."
+msgstr "يمكن بدء التأجير للأوامر المركبة فقط."
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_order_items.py:0
+msgid "Only reserved orders can be dispatched."
+msgstr "يمكن إرسال الأوامر المحجوزة فقط."
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_order_items.py:0
+msgid "Only returned orders can be closed."
+msgstr "يمكن إغلاق الأوامر المرتجعة فقط."
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_order_items.py:0
+msgid "Order %s does not require dispatch. Start the rental directly."
+msgstr "الأمر %s لا يتطلب إرسالاً. ابدأ التأجير مباشرة."
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_order_items.py:0
+msgid "Order %s does not require return inspection. Close it directly."
+msgstr "الأمر %s لا يتطلب فحص إرجاع. أغلقه مباشرة."
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_order_items.py:0
+msgid ""
+"Order %s has no rented serials. Add every generator or accessory serial in "
+"the Rented Serials tab."
+msgstr ""
+"الأمر %s لا يحتوي على أي سيريالات مؤجرة. أضف كل سيريال مولد أو ملحق في تبويب"
+" السيريالات المؤجرة."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__is_primary_asset_line
+msgid "Primary Rental Serial"
+msgstr "سيريال التأجير الرئيسي"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_order_line__daily_rate
+msgid "Rate for this item, independent of the generator's rate."
+msgstr "سعر هذا البند، مستقل عن سعر المولد."
+
+#. module: gr_rental_items
+#: model:ir.model,name:gr_rental_items.model_gr_rental_item_type
+msgid "Rentable Item Type"
+msgstr "نوع بند قابل للتأجير"
+
+#. module: gr_rental_items
+#: model:ir.actions.act_window,name:gr_rental_items.action_gr_rental_item_type
+msgid "Rentable Item Types"
+msgstr "أنواع البنود القابلة للتأجير"
+
+#. module: gr_rental_items
+#: model:ir.model,name:gr_rental_items.model_gr_rental_item_unit
+msgid "Rentable Item Unit"
+msgstr "وحدة بند قابلة للتأجير"
+
+#. module: gr_rental_items
+#: model:ir.actions.act_window,name:gr_rental_items.action_gr_rental_item_unit
+#: model:ir.ui.menu,name:gr_rental_items.menu_gr_rental_items_root
+msgid "Rentable Items"
+msgstr "البنود القابلة للتأجير"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_generator_asset__rental_daily_rate
+msgid "Rental Daily Rate"
+msgstr "سعر الإيجار اليومي"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order__item_line_count
+msgid "Rental Lines"
+msgstr "سطور التأجير"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order__items_total
+msgid "Rental Lines Total"
+msgstr "إجمالي سطور التأجير"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__order_id
+msgid "Rental Order"
+msgstr "أمر التأجير"
+
+#. module: gr_rental_items
+#: model:ir.model,name:gr_rental_items.model_gr_rental_order_line
+msgid "Rental Order Item Line"
+msgstr "التأجير الأمر البند السطر"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_order_line__quantity_days
+msgid "Rental days for this item (may differ from the generator's)."
+msgstr "أيام التأجير لهذا البند (قد تختلف عن أيام المولد)."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__equipment_asset_id
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_order_form_items
+msgid "Rented Serial"
+msgstr "السيريال المؤجر"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order__item_line_ids
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_order_form_items
+msgid "Rented Serials"
+msgstr "السيريالات المؤجرة"
+
+#. module: gr_rental_items
+#: model:ir.model.fields.selection,name:gr_rental_items.selection__gr_rental_item_unit__status__retired
+msgid "Retired"
+msgstr "خارج الخدمة"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_order_line__equipment_asset_id
+msgid ""
+"Select the physical rented serial for this line. Add one line per generator,"
+" cable, fuel tank, panel, or any future tracked rental asset."
+msgstr ""
+"اختر السيريال المؤجر الفعلي لهذا السطر. أضف سطرا لكل مولد أو كابل أو خزان "
+"وقود أو لوحة أو أي أصل تأجير متتبع لاحقا."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__sequence
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__serial_number
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__asset_serial_number
+msgid "Serial Number"
+msgstr "الرقم التسلسلي"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_item_type__code
+msgid "Short code, e.g. CBL, TNK, PNL."
+msgstr "رمز قصير، مثال: CBL، TNK، PNL."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__specification
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_order_line__specification
+msgid "Specification"
+msgstr "المواصفات"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__status
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_item_unit_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_item_type__default_daily_rate
+msgid ""
+"Suggested rate when this item is added to an order. Can be overridden per "
+"line, or set to zero / marked Free."
+msgstr ""
+"السعر المقترح عند إضافة هذا البند إلى أمر. يمكن تجاوزه لكل سطر أو ضبطه صفرا "
+"/ تعليمه كمجاني."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_order__items_total
+msgid "Sum of the item lines (free lines contribute zero)."
+msgstr "مجموع سطور البنود (السطور المجانية قيمتها صفر)."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_order_line__is_primary_asset_line
+msgid ""
+"Technical marker for the first rental asset synced to legacy main-asset "
+"fields. Users still enter all serials in the same rental lines list."
+msgstr ""
+"علامة تقنية لأول أصل تأجير تتم مزامنته مع حقول الأصل الرئيسي القديمة. "
+"المستخدم يظل يدخل كل السيريالات في نفس قائمة سطور التأجير."
+
+#. module: gr_rental_items
+#: model:ir.model.constraint,message:gr_rental_items.constraint_gr_rental_item_unit_name_company_uniq
+msgid "The item number must be unique per company."
+msgstr "يجب أن يكون رقم البند فريداً لكل شركة."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_order_line__is_free
+msgid ""
+"Tick if this item goes out at no charge (bundled with the main asset). The "
+"line then bills nothing."
+msgstr ""
+"فعله إذا كان هذا الأصل أو الملحق يخرج بدون رسوم مع الأصل الرئيسي. عندها لا "
+"تتم فوترة السطر."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_order__is_items_only
+msgid ""
+"True when this order rents accessories or legacy items with no generator "
+"serial."
+msgstr ""
+"صحيح عندما يؤجر هذا الأمر إكسسوارات أو وحدات قديمة بدون أي سيريال مولد."
+
+#. module: gr_rental_items
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_order_form_items
+msgid "Type"
+msgstr "النوع"
+
+#. module: gr_rental_items
+#: model:ir.model.fields.selection,name:gr_rental_items.selection__gr_rental_item_unit__status__unavailable
+msgid "Unavailable"
+msgstr "غير متاح"
+
+#. module: gr_rental_items
+#: model:ir.model.fields.selection,name:gr_rental_items.selection__gr_rental_item_unit__status__maintenance
+msgid "Under Maintenance"
+msgstr "تحت الصيانة"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__unit_count
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_type__unit_ids
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_item_type_form
+msgid "Units"
+msgstr "الوحدات"
+
+#. module: gr_rental_items
+#. odoo-python
+#: code:addons/gr_rental_items/models/gr_rental_item.py:0
+msgid "Units — %s"
+msgstr "الوحدات — %s"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,field_description:gr_rental_items.field_gr_rental_item_unit__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_item_unit__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: gr_rental_items
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_item_type_form
+msgid "What this item is..."
+msgstr "ما هو هذا البند..."
+
+#. module: gr_rental_items
+#: model:ir.model.fields,help:gr_rental_items.field_gr_rental_item_unit__specification
+msgid "e.g. '4-core 120mm 50m' for a cable, '1000 L' for a tank."
+msgstr "مثال: '4-core 120mm 50m' للكابل، '1000 L' للخزان."
+
+#. module: gr_rental_items
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_item_unit_form
+msgid "e.g. 4-core 120mm 50m"
+msgstr "مثال: 4-core 120mm 50m"
+
+#. module: gr_rental_items
+#: model_terms:ir.ui.view,arch_db:gr_rental_items.view_gr_rental_item_type_form
+msgid "e.g. Cable, Fuel Tank, Distribution Panel"
+msgstr "مثال: كابل، خزان وقود، لوحة توزيع"

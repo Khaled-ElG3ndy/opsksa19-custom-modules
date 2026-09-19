@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_rental_order_user,gr.rental.order.user,model_gr_rental_order,gr_security_base.group_generator_user,1,0,0,0
+access_gr_rental_order_sales,gr.rental.order.sales,model_gr_rental_order,gr_security_base.group_generator_sales_officer,1,1,1,0
+access_gr_rental_order_ops,gr.rental.order.ops,model_gr_rental_order,gr_security_base.group_generator_operations_officer,1,1,1,0
+access_gr_rental_order_tech,gr.rental.order.tech,model_gr_rental_order,gr_security_base.group_generator_maint_technician,1,0,0,0
+access_gr_rental_order_finance,gr.rental.order.finance,model_gr_rental_order,gr_security_base.group_generator_finance_officer,1,0,0,0
+access_gr_rental_order_gm,gr.rental.order.gm,model_gr_rental_order,gr_security_base.group_generator_general_manager,1,1,1,0
+access_gr_rental_order_admin,gr.rental.order.admin,model_gr_rental_order,gr_security_base.group_generator_administrator,1,1,1,1
+access_gr_rental_order_return_wizard_user,gr.rental.order.return.info.wizard.user,model_gr_rental_order_return_info_wizard,gr_security_base.group_generator_user,1,1,1,1
+access_gr_rental_order_checklist_user,gr.rental.order.checklist.user,model_gr_rental_order_checklist,gr_security_base.group_generator_user,1,0,0,0
+access_gr_rental_order_checklist_ops,gr.rental.order.checklist.ops,model_gr_rental_order_checklist,gr_security_base.group_generator_operations_officer,1,1,1,1
+access_gr_rental_order_checklist_tech,gr.rental.order.checklist.tech,model_gr_rental_order_checklist,gr_security_base.group_generator_maint_technician,1,1,1,0
+access_gr_rental_order_checklist_gm,gr.rental.order.checklist.gm,model_gr_rental_order_checklist,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_rental_order_checklist_admin,gr.rental.order.checklist.admin,model_gr_rental_order_checklist,gr_security_base.group_generator_administrator,1,1,1,1

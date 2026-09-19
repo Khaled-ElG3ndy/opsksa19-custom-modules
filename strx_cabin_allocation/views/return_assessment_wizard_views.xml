@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_strx_return_assessment_wizard_form" model="ir.ui.view">
+        <field name="name">strx.cabin.return.assessment.wizard.form</field>
+        <field name="model">strx.cabin.return.assessment.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Return Condition Assessment">
+                <sheet>
+                    <div class="alert alert-info d-flex align-items-start gap-2 mb-3"
+                         role="alert">
+                        <i class="fa fa-info-circle fa-lg mt-1"
+                           title="Assessment guidance"/>
+                        <div>
+                            <div class="fw-bold">Record each cabin exactly as it was received.</div>
+                            <div>Only cabins set to Available can be selected for a new rental; all other choices route the cabin to its actual follow-up workflow.</div>
+                        </div>
+                    </div>
+                    <group col="4">
+                        <field name="allocation_id"/>
+                        <field name="order_id"/>
+                        <field name="partner_id"/>
+                    </group>
+                    <separator string="Returned Cabins"/>
+                    <field name="line_ids" nolabel="1">
+                        <list editable="bottom" create="0" delete="0"
+                              decoration-success="target_state == 'available'"
+                              decoration-warning="target_state in ('in_inspection', 'in_cleaning', 'in_maintenance')"
+                              decoration-danger="target_state == 'damaged'"
+                              decoration-muted="target_state == 'retired'">
+                            <field name="lot_id" force_save="1"/>
+                            <field name="product_id" optional="hide"/>
+                            <field name="current_state" widget="badge"
+                                   decoration-danger="current_state == 'returned'"
+                                   readonly="1"/>
+                            <field name="condition"/>
+                            <field name="target_state"/>
+                            <field name="note" optional="show"
+                                   placeholder="Optional inspection or damage note..."/>
+                        </list>
+                    </field>
+                </sheet>
+                <footer>
+                    <button name="action_confirm_assessment" type="object"
+                            string="Save Assessment" class="btn-primary"/>
+                    <button string="Cancel" special="cancel"
+                            class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

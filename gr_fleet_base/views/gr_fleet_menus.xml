@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Organizational parent for all equipment-related screens. -->
+    <record id="menu_gr_assets_root" model="ir.ui.menu">
+        <field name="name">Equipment</field>
+        <field name="parent_id" ref="gr_security_base.menu_generator_root"/>
+        <field name="action" eval="False"/>
+        <field name="group_ids" eval="[(6, 0, [ref('gr_security_base.group_generator_user')])]"/>
+        <field name="sequence">50</field>
+    </record>
+
+    <menuitem id="menu_gr_all_equipment"
+              name="All Equipment"
+              parent="menu_gr_assets_root"
+              action="action_gr_generator_asset"
+              groups="gr_security_base.group_generator_user"
+              sequence="10"/>
+</odoo>

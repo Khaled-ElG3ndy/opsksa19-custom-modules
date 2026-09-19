@@ -1,0 +1,1045 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_equipment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span class=\"badge text-bg-info\">Customer-owned</span>"
+msgstr "<span class=\"badge text-bg-info\">مملوك للعميل</span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_form
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span class=\"badge text-bg-success\">Company Owned</span>"
+msgstr "<span class=\"badge text-bg-success\">مملوك للشركة</span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span class=\"badge text-bg-warning\">Third-Party</span>"
+msgstr "<span class=\"badge text-bg-warning\">مستأجر من الغير</span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span> h</span>"
+msgstr "<span> ساعة</span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid ""
+"<span> h</span><br/>\n"
+"                                        <span>Next PM: </span>"
+msgstr ""
+"<span> ساعة</span><br/>\n"
+"                                        <span>الصيانة القادمة: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid ""
+"<span> h</span><br/>\n"
+"                                        <span>Utilization: </span>"
+msgstr ""
+"<span> ساعة</span><br/>\n"
+"                                        <span>الاستخدام: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid ""
+"<span> kVA</span><br/>\n"
+"                                        <span>Meter: </span>"
+msgstr ""
+"<span> ك.ف.أ</span><br/>\n"
+"                                        <span>العداد: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span> m</span>"
+msgstr "<span> م</span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span>Capacity: </span>"
+msgstr "<span>السعة: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span>Customer: </span>"
+msgstr "<span>العميل: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span>Expected Return: </span>"
+msgstr "<span>الإرجاع المتوقع: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span>Length: </span>"
+msgstr "<span>الطول: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span>Location: </span>"
+msgstr "<span>الموقع: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span>Size: </span>"
+msgstr "<span>المقاس: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span>Specification: </span>"
+msgstr "<span>المواصفات: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span>Supplier: </span>"
+msgstr "<span>المورد: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_kanban
+msgid "<span>Voltage: </span>"
+msgstr "<span>الجهد: </span>"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_form
+msgid ""
+"<strong>Third-Party</strong>\n"
+"                    <span> · </span>\n"
+"                    <span>This unit is NOT a company asset. It is rented in from\n"
+"                          a supplier and may only be re-rented within the\n"
+"                          supplier rental period.</span>"
+msgstr ""
+"<strong>مستأجر من الغير</strong>\n"
+"                    <span> · </span>\n"
+"                    <span>هذه الوحدة ليست أصلاً مملوكاً للشركة. هي مستأجرة\n"
+"                          من مورد ولا يجوز إعادة تأجيرها إلا خلال\n"
+"                          فترة الاستئجار من المورد.</span>"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_accessory_ok_override
+msgid "Accessory Rental Override"
+msgstr "تجاوز الإضافة كإكسسوار"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+msgid "Asset Code"
+msgstr "رقم الأصل"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__name
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__equipment_type_id
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Asset Type"
+msgstr "نوع المعدة"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__current_presence_type__customer
+msgid "At Customer"
+msgstr "عند العميل"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__availability_state
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Availability"
+msgstr "التوفر"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__availability_state__available
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__current_presence_type__available
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Available"
+msgstr "متاح"
+
+#. module: gr_equipment
+#: model:gr.equipment.type,name:gr_equipment.equipment_type_cable
+msgid "Cable"
+msgstr "كابل"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__rental_accessory_ok
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_accessory_ok
+msgid "Can Be Added as Accessory"
+msgstr "يمكن إضافته كإكسسوار"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__rental_standalone_ok
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_standalone_ok
+msgid "Can Be Rented Standalone"
+msgstr "يمكن تأجيره منفردا"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__capacity
+msgid "Capacity"
+msgstr "السعة"
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_rental_order_equipment.py:0
+msgid ""
+"Capture the customer's return signature before returning rental order %s."
+msgstr "التقط توقيع إرجاع العميل قبل إرجاع أمر التأجير %s."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_generator_asset__equipment_type_id
+msgid ""
+"Classifies the physical asset: generator, cable, fuel tank, distribution "
+"panel, or any future rentable equipment type."
+msgstr ""
+"يصنّف الأصل الفعلي: مولد، أو كابل، أو خزان وقود، أو لوحة توزيع، أو أي نوع "
+"معدة قابلة للتأجير مستقبلاً."
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__code
+msgid "Code"
+msgstr "الكود"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__owner_type__owned
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Company Owned"
+msgstr "مملوك للشركة"
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_equipment.py:0
+msgid "Company Owned equipment %s should not have an external owner/supplier."
+msgstr "المعدة المملوكة للشركة %s يجب ألا يكون لها مالك/مورد خارجي."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_generator_asset__owner_type
+msgid ""
+"Company Owned: ABSAL's own rental fleet, a real company asset. Third-Party: "
+"NOT a company asset - rented in from a third-party supplier and re-rented to"
+" customers for the supplier's rental period only. Customer-owned: belongs to"
+" a customer ABSAL only services - never in the rental pool."
+msgstr ""
+"مملوك للشركة: أسطول ABSAL التأجيري الخاص، أصل حقيقي للشركة. مستأجر من الغير:"
+" ليس أصلاً للشركة — مستأجر من مورد خارجي ويعاد تأجيره للعملاء خلال فترة "
+"استئجاره من المورد فقط. مملوك للعميل: يخص عميلاً وتقوم ABSAL بخدمته فقط ولا "
+"يدخل في أسطول التأجير."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_equipment_type__rental_requires_delivery_signature
+msgid "Controls whether delivery receiver/signature fields are shown."
+msgstr "يتحكم في إظهار حقول مستلم/توقيع التسليم."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_equipment_type__rental_requires_return_signature
+msgid "Controls whether return signature fields are shown."
+msgstr "يتحكم في إظهار حقول توقيع الإرجاع."
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__current_contract_id
+msgid "Current Contract"
+msgstr "العقد الحالي"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Current Customer"
+msgstr "العميل الحالي"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__current_location_label
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+msgid "Current Location"
+msgstr "الموقع الحالي"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__current_presence_type
+msgid "Current Presence"
+msgstr "نوع التواجد الحالي"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__current_rental_order_id
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+msgid "Current Rental Order"
+msgstr "أمر التأجير الحالي"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__current_site_id
+msgid "Current Site"
+msgstr "الموقع الحالي"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__owner_type__customer_owned
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Customer-owned"
+msgstr "مملوك للعميل"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__current_presence_type__out_of_service
+msgid "Damaged / Out of Service"
+msgstr "تالف / خارج الخدمة"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_delivery_inspection_override
+msgid "Delivery Inspection Override"
+msgstr "تجاوز فحص التسليم"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_delivery_signature_override
+msgid "Delivery Signature Override"
+msgstr "تجاوز توقيع التسليم"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_dispatch_override
+msgid "Dispatch / Delivery Override"
+msgstr "تجاوز الإرسال / التسليم"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__dispatch_datetime
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+msgid "Dispatch Date"
+msgstr "تاريخ الخروج"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__display_name
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__display_name
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_equipment
+#: model:gr.equipment.type,name:gr_equipment.equipment_type_distribution_panel
+msgid "Distribution Panel"
+msgstr "لوحة توزيع"
+
+#. module: gr_equipment
+#: model:gr.equipment.type,description:gr_equipment.equipment_type_distribution_panel
+msgid "Electrical distribution or changeover panel rented as an asset."
+msgstr "لوحة توزيع أو تحويل كهربائية تُؤجَّر كأصل."
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__asset_ids
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_type_form
+msgid "Equipment"
+msgstr "المعدات"
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_rental_order_equipment.py:0
+msgid "Equipment %s cannot be added as an accessory with another asset."
+msgstr "لا يمكن إضافة المعدة %s كإكسسوار مع أصل آخر."
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_rental_order_equipment.py:0
+msgid "Equipment %s cannot be rented as the main standalone asset."
+msgstr "لا يمكن تأجير المعدة %s كأصل رئيسي منفرد."
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_rental_order_equipment.py:0
+msgid ""
+"Equipment %s cannot be rented as the main standalone asset. Add it only as "
+"an accessory or change its rental workflow settings."
+msgstr ""
+"لا يمكن تأجير المعدة %s كأصل رئيسي منفرد. أضفها كإكسسوار فقط أو غيّر إعدادات"
+" دورة التأجير."
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_rental_order_equipment.py:0
+msgid "Equipment %s cannot be rented standalone."
+msgstr "لا يمكن تأجير المعدة %s منفردة."
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_equipment.py:0
+msgid "Equipment %s is %s, so it must record an owner/supplier."
+msgstr "المعدة %s من نوع %s، لذا يجب تسجيل المالك/المورد."
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_equipment.py:0
+msgid ""
+"Equipment %s is Customer-owned and cannot be placed in a rental status (%s)."
+" Customer-owned units are serviced only."
+msgstr ""
+"المعدة %s مملوكة للعميل ولا يمكن وضعها في حالة تأجير (%s). الوحدات المملوكة "
+"للعميل تخدم فقط."
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_rental_order_equipment.py:0
+msgid ""
+"Equipment %s is Customer-owned and cannot be put on a rental order. It is "
+"serviced only, not rented."
+msgstr ""
+"المعدة %s مملوكة للعميل ولا يمكن وضعها على أمر تأجير. هي للخدمة فقط وليست "
+"للتأجير."
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_equipment.py:0
+msgid ""
+"Equipment %s is not Third-Party equipment, so it cannot carry a supplier "
+"equipment reference."
+msgstr ""
+"المعدة %s ليست مستأجرة من الغير، لذا لا يمكن أن تحمل رقم معدة لدى المورد."
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_equipment.py:0
+msgid "Equipment - %s"
+msgstr "معدة - %s"
+
+#. module: gr_equipment
+#: model:ir.actions.act_window,name:gr_equipment.action_gr_equipment_availability
+#: model:ir.ui.menu,name:gr_equipment.menu_gr_equipment_availability
+msgid "Equipment Availability"
+msgstr "توفر المعدات"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__asset_count
+msgid "Equipment Count"
+msgstr "عدد المعدات"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+msgid "Equipment Name"
+msgstr "اسم المعدة"
+
+#. module: gr_equipment
+#: model:ir.model,name:gr_equipment.model_gr_equipment_type
+msgid "Equipment Type"
+msgstr "نوع المعدة"
+
+#. module: gr_equipment
+#: model:ir.actions.act_window,name:gr_equipment.action_gr_equipment_type
+#: model:ir.ui.menu,name:gr_equipment.menu_gr_equipment_type
+msgid "Equipment Types"
+msgstr "أنواع المعدات"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__expected_return_datetime
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+msgid "Expected Return"
+msgstr "الإرجاع المتوقع"
+
+#. module: gr_equipment
+#: model:gr.equipment.type,description:gr_equipment.equipment_type_fuel_tank
+msgid "External or auxiliary fuel tank rented as an asset."
+msgstr "خزان وقود خارجي أو مساعد يُؤجَّر كأصل."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_generator_asset__owner_partner_id
+msgid ""
+"For Third-Party units, the supplier ABSAL rents from and pays. For Customer-"
+"owned units, the customer who owns the generator. Empty for Company Owned "
+"units."
+msgstr ""
+"للوحدات المستأجرة من الغير، هذا هو المورد الذي تستأجر منه ABSAL وتدفع له. "
+"للوحدات المملوكة للعميل، هذا هو العميل مالك المولد. يترك فارغاً للوحدات "
+"المملوكة للشركة."
+
+#. module: gr_equipment
+#: model:gr.equipment.type,name:gr_equipment.equipment_type_fuel_tank
+msgid "Fuel Tank"
+msgstr "خزان وقود"
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_generator_asset__specification
+msgid ""
+"General specification for non-generator equipment, such as 4-core 120mm 50m,"
+" 1000 L, 400V, or panel size."
+msgstr ""
+"مواصفة عامة للمعدات غير المولدات، مثل 4 عروق 120مم 50م، أو 1000 لتر، أو 400 "
+"فولت، أو مقاس اللوحة."
+
+#. module: gr_equipment
+#: model:gr.equipment.type,name:gr_equipment.equipment_type_generator
+msgid "Generator"
+msgstr "مولد"
+
+#. module: gr_equipment
+#: model:ir.model,name:gr_equipment.model_gr_generator_asset
+msgid "Generator Asset"
+msgstr "أصل المولد"
+
+#. module: gr_equipment
+#: model:ir.model,name:gr_equipment.model_gr_rental_order
+msgid "Generator Rental Order"
+msgstr "أمر تأجير المولد"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__is_generator_type
+msgid "Generator Type"
+msgstr "نوع مولد"
+
+#. module: gr_equipment
+#: model:gr.equipment.type,description:gr_equipment.equipment_type_generator
+msgid "Generator set rented as a powered asset."
+msgstr "مجموعة مولد تُؤجَّر كأصل مولِّد للطاقة."
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Has Active Rental Order"
+msgstr "لديه أمر تأجير نشط"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Has Current Customer"
+msgstr "لديه عميل حالي"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__id
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__id
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_equipment_type__rental_requires_return_inspection
+msgid "If enabled, closing is blocked until a return inspection is passed."
+msgstr "عند التفعيل، يُمنع الإغلاق حتى يُجتاز فحص الإرجاع."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_equipment_type__rental_requires_delivery_inspection
+msgid "If enabled, dispatch is blocked until a delivery inspection is passed."
+msgstr "عند التفعيل، يُمنع الإرسال حتى يُجتاز فحص التسليم."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_equipment_type__rental_requires_dispatch
+msgid ""
+"If enabled, rental orders for this equipment type go through the Dispatch "
+"step before rental can start."
+msgstr ""
+"عند التفعيل، تمر أوامر تأجير هذا النوع من المعدات بخطوة الإرسال قبل أن يبدأ "
+"التأجير."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_equipment_type__rental_requires_installation
+msgid ""
+"If enabled, rental orders must be installed/commissioned before rental can "
+"start."
+msgstr "عند التفعيل، يجب تركيب/تشغيل أوامر التأجير قبل أن يبدأ التأجير."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_equipment_type__rental_requires_meter_readings
+msgid "If enabled, start/end meter readings are shown and validated."
+msgstr ""
+"عند التفعيل، تُعرض قراءات العداد الابتدائية/النهائية ويتم التحقق منها."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_equipment_type__rental_accessory_ok
+msgid ""
+"If enabled, this equipment type can be added in the Assets & Accessories tab"
+" with another main asset."
+msgstr ""
+"عند التفعيل، يمكن إضافة هذا النوع من المعدات في تبويب الأصول والملحقات مع "
+"أصل رئيسي آخر."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_equipment_type__rental_standalone_ok
+msgid "If enabled, this equipment type can be rented without a main asset."
+msgstr "عند التفعيل، يمكن تأجير هذا النوع من المعدات بدون أصل رئيسي."
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__availability_state__maintenance
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__current_presence_type__maintenance
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "In Maintenance"
+msgstr "قيد الصيانة"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__current_presence_type__transit
+msgid "In Transit"
+msgstr "في النقل"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__current_presence_type__warehouse
+msgid "In Warehouse"
+msgstr "في المستودع"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_installation_override
+msgid "Installation Override"
+msgstr "تجاوز التركيب"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__length_m
+msgid "Length (m)"
+msgstr "الطول (متر)"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Location"
+msgstr "الموقع"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_meter_readings_override
+msgid "Meter Readings Override"
+msgstr "تجاوز قراءات العداد"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_accessory_ok_override__no
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_delivery_inspection_override__no
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_delivery_signature_override__no
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_dispatch_override__no
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_installation_override__no
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_meter_readings_override__no
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_return_inspection_override__no
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_return_signature_override__no
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_standalone_ok_override__no
+msgid "No"
+msgstr "لا"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "On Rent"
+msgstr "قيد التأجير"
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_rental_order_equipment.py:0
+msgid "Only on-rent or off-hire orders can be returned."
+msgstr "لا يمكن إرجاع إلا الأوامر المؤجَّرة أو المنتهية."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_generator_asset__availability_state
+msgid ""
+"Operational availability bucket used by the quick equipment availability "
+"screen. Rental-committed statuses are grouped as Rented / Reserved, while "
+"maintenance, breakdown, inspection and non-rentable units are kept out of "
+"the available pool."
+msgstr ""
+"تصنيف تشغيلي للتوفر يُستخدم في شاشة توفر المعدات السريعة. يتم تجميع الحالات "
+"المرتبطة بالتأجير كـ مؤجرة / محجوزة، بينما تبقى حالات الصيانة والأعطال "
+"والفحص والمعدات غير القابلة للتأجير خارج قائمة المتاح."
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_rental_order_equipment.py:0
+msgid "Order %s does not require dispatch. Start the rental directly."
+msgstr "الأمر %s لا يتطلب إرسالا. ابدأ التأجير مباشرة."
+
+#. module: gr_equipment
+#: model:ir.actions.act_window,name:gr_equipment.action_gr_equipment_owned
+#: model:ir.ui.menu,name:gr_equipment.menu_gr_equipment_owned
+msgid "Owned Assets"
+msgstr "الأصول المملوكة"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__owner_partner_id
+msgid "Owner / Supplier"
+msgstr "المالك / المورد"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__owner_type
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Ownership"
+msgstr "الملكية"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Pending Inspection"
+msgstr "بانتظار الفحص"
+
+#. module: gr_equipment
+#: model:gr.equipment.type,description:gr_equipment.equipment_type_cable
+msgid "Power cable rented as an individually tracked asset."
+msgstr "كابل كهرباء يُؤجَّر كأصل متتبَّع بشكل مستقل."
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__asset_id
+msgid "Primary Rental Serial"
+msgstr "سيريال التأجير الرئيسي"
+
+#. module: gr_equipment
+#: model_terms:ir.actions.act_window,help:gr_equipment.action_gr_equipment_third_party
+msgid "Register equipment rented in from a supplier"
+msgstr "سجّل معدة مستأجرة من مورد"
+
+#. module: gr_equipment
+#: model_terms:ir.actions.act_window,help:gr_equipment.action_gr_equipment_owned
+msgid "Register the company's own rental fleet"
+msgstr "سجّل أسطول التأجير المملوك للشركة"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__is_rentable
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Rentable"
+msgstr "قابل للتأجير"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_form
+msgid "Rental Workflow"
+msgstr "دورة التأجير"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_type_form
+msgid "Rental Workflow Defaults"
+msgstr "إعدادات دورة التأجير الافتراضية"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__availability_state__rented
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Rented / Reserved"
+msgstr "مؤجرة / محجوزة"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_form
+msgid "Rented from Supplier"
+msgstr "مستأجر من المورد"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__rental_requires_delivery_inspection
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_delivery_inspection
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_workflow_requires_delivery_inspection
+msgid "Requires Delivery Inspection"
+msgstr "يتطلب فحص تسليم"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__rental_requires_delivery_signature
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_delivery_signature
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_workflow_requires_delivery_signature
+msgid "Requires Delivery Signature"
+msgstr "يتطلب توقيع التسليم"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__rental_requires_dispatch
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_dispatch
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_workflow_requires_dispatch
+msgid "Requires Dispatch / Delivery"
+msgstr "يتطلب إرسال / تسليم"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__rental_requires_installation
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_installation
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_workflow_requires_installation
+msgid "Requires Installation"
+msgstr "يتطلب تركيب"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__rental_requires_meter_readings
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_meter_readings
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_workflow_requires_meter_readings
+msgid "Requires Meter Readings"
+msgstr "يتطلب قراءات عداد"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__rental_requires_return_inspection
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_return_inspection
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_workflow_requires_return_inspection
+msgid "Requires Return Inspection"
+msgstr "يتطلب فحص إرجاع"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__rental_requires_return_signature
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_return_signature
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_workflow_requires_return_signature
+msgid "Requires Return Signature"
+msgstr "يتطلب توقيع الإرجاع"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__current_presence_type__reserved
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Reserved"
+msgstr "محجوز"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_return_inspection_override
+msgid "Return Inspection Override"
+msgstr "تجاوز فحص الإرجاع"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_workflow_return_signature_due
+msgid "Return Signature Due"
+msgstr "توقيع الإرجاع مستحق"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_requires_return_signature_override
+msgid "Return Signature Override"
+msgstr "تجاوز توقيع الإرجاع"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_equipment_type__sequence
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+msgid "Serial / Barcode"
+msgstr "الرقم التسلسلي / الباركود"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_show_close_button
+msgid "Show Close Button"
+msgstr "إظهار زر الإغلاق"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_show_dispatch_button
+msgid "Show Dispatch Button"
+msgstr "إظهار زر الإرسال"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_show_install_button
+msgid "Show Install Button"
+msgstr "إظهار زر التركيب"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_show_start_inspection_button
+msgid "Show Start Inspection Button"
+msgstr "إظهار زر بدء الفحص"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_rental_order__rental_show_start_rental_button
+msgid "Show Start Rental Button"
+msgstr "إظهار زر بدء التأجير"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__size_label
+msgid "Size"
+msgstr "المقاس"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__rental_standalone_ok_override
+msgid "Standalone Rental Override"
+msgstr "تجاوز التأجير المنفرد"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_form
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+msgid "Supplier / Owner"
+msgstr "المورد / المالك"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__supplier_equipment_ref
+msgid "Supplier Equipment Reference"
+msgstr "رقم المعدة لدى المورد"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_list
+msgid "Supplier Ref"
+msgstr "مرجع المورد"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_form
+msgid "Supplier Rental Details"
+msgstr "بيانات الاستئجار من المورد"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__specification
+msgid "Technical Specification"
+msgstr "الوصف الفني"
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_rental_order__asset_id
+msgid ""
+"Technical mirror of the first rental line for legacy workflows. Users enter "
+"all rented serials in the Rented Serials tab."
+msgstr ""
+"مرآة تقنية لأول سطر تأجير لدعم مسارات العمل القديمة. المستخدم يدخل كل "
+"السيريالات المؤجرة في تبويب السيريالات المؤجرة."
+
+#. module: gr_equipment
+#: model:ir.model.constraint,message:gr_equipment.constraint_gr_equipment_type_code_company_uniq
+msgid "The equipment type code must be unique."
+msgstr "يجب أن يكون رمز نوع المعدة فريداً."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_generator_asset__supplier_equipment_ref
+msgid ""
+"The supplier's own number/reference for this unit (e.g. ABC-GEN-55). Third-"
+"party equipment only - this is how the supplier identifies the unit, not an "
+"ABSAL asset code."
+msgstr ""
+"رقم/مرجع المورد الخاص بهذه الوحدة (مثال: ABC-GEN-55). للمعدات المستأجرة من "
+"الغير فقط — هذا هو تعريف المورد للوحدة وليس رمز أصل لدى ABSAL."
+
+#. module: gr_equipment
+#: model_terms:ir.actions.act_window,help:gr_equipment.action_gr_equipment_owned
+msgid ""
+"These are real company-owned assets. Equipment rented in from a\n"
+"               supplier belongs under Third-Party Rented Equipment."
+msgstr ""
+"هذه أصول مملوكة فعلياً للشركة. المعدات المستأجرة من مورد تُدرج ضمن المعدات "
+"المستأجرة من الغير."
+
+#. module: gr_equipment
+#: model_terms:ir.actions.act_window,help:gr_equipment.action_gr_equipment_third_party
+msgid ""
+"These units are NOT company assets. They are rented in from a\n"
+"               supplier and re-rented to customers only within the supplier's\n"
+"               rental period."
+msgstr ""
+"هذه الوحدات ليست أصولاً للشركة. هي مستأجرة من مورد ويعاد تأجيرها للعملاء "
+"خلال فترة الاستئجار من المورد فقط."
+
+#. module: gr_equipment
+#. odoo-python
+#: code:addons/gr_equipment/models/gr_equipment.py:0
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__owner_type__rented_in
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_form
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Third-Party"
+msgstr "مستأجر من الغير"
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__is_third_party
+msgid "Third-Party Equipment"
+msgstr "معدة مستأجرة من الغير"
+
+#. module: gr_equipment
+#: model:ir.actions.act_window,name:gr_equipment.action_gr_equipment_third_party
+#: model:ir.ui.menu,name:gr_equipment.menu_gr_equipment_third_party
+#: model:ir.ui.menu,name:gr_equipment.menu_gr_equipment_third_party_list
+msgid "Third-Party Rented Equipment"
+msgstr "المعدات المستأجرة من الغير"
+
+#. module: gr_equipment
+#: model_terms:ir.actions.act_window,help:gr_equipment.action_gr_equipment_availability
+msgid "Track equipment availability"
+msgstr "متابعة توفر المعدات"
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_generator_asset__is_rentable
+msgid ""
+"True for Company Owned and Third-Party units; False for Customer-owned "
+"units, which are serviced only and never enter the rental pool."
+msgstr ""
+"صحيح للوحدات المملوكة للشركة والمستأجرة من الغير؛ وخطأ للوحدات المملوكة "
+"للعميل، فهي تخدم فقط ولا تدخل أسطول التأجير."
+
+#. module: gr_equipment
+#: model:ir.model.fields,help:gr_equipment.field_gr_generator_asset__is_third_party
+msgid ""
+"True when the unit is rented in from a supplier and is NOT a company-owned "
+"asset. Drives the third-party badge, the separated menus, and the owned-"
+"fleet dashboard KPIs."
+msgstr ""
+"صحيح عندما تكون الوحدة مستأجرة من مورد وليست أصلاً مملوكاً للشركة. يتحكم في "
+"شارة \"مستأجر من الغير\" وفصل القوائم ومؤشرات لوحة المعلومات للأسطول "
+"المملوك."
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__availability_state__unavailable
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__current_presence_type__unavailable
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Unavailable"
+msgstr "غير متاح"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Unavailable Status"
+msgstr "حالة غير متاحة"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__current_presence_type__inspection
+msgid "Under Inspection"
+msgstr "تحت الفحص"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_search
+msgid "Under Maintenance"
+msgstr "تحت الصيانة"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_accessory_ok_override__inherit
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_delivery_inspection_override__inherit
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_delivery_signature_override__inherit
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_dispatch_override__inherit
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_installation_override__inherit
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_meter_readings_override__inherit
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_return_inspection_override__inherit
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_return_signature_override__inherit
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_standalone_ok_override__inherit
+msgid "Use Equipment Type Setting"
+msgstr "حسب إعداد نوع المعدة"
+
+#. module: gr_equipment
+#: model_terms:ir.actions.act_window,help:gr_equipment.action_gr_equipment_availability
+msgid ""
+"Use this screen to review available, rented, maintenance and\n"
+"               unavailable equipment before committing rental dates."
+msgstr ""
+"استخدم هذه الشاشة لمراجعة المعدات المتاحة والمؤجرة وقيد الصيانة\n"
+"               وغير المتاحة قبل اعتماد مواعيد الإيجار."
+
+#. module: gr_equipment
+#: model:ir.model.fields,field_description:gr_equipment.field_gr_generator_asset__voltage_label
+msgid "Voltage"
+msgstr "الجهد"
+
+#. module: gr_equipment
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_accessory_ok_override__yes
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_delivery_inspection_override__yes
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_delivery_signature_override__yes
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_dispatch_override__yes
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_installation_override__yes
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_meter_readings_override__yes
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_return_inspection_override__yes
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_requires_return_signature_override__yes
+#: model:ir.model.fields.selection,name:gr_equipment.selection__gr_generator_asset__rental_standalone_ok_override__yes
+msgid "Yes"
+msgstr "نعم"
+
+#. module: gr_equipment
+#: model_terms:ir.ui.view,arch_db:gr_equipment.view_gr_equipment_form
+msgid "e.g. ABC-GEN-55"
+msgstr "مثال: ABC-GEN-55"

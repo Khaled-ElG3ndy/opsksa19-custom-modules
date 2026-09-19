@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_equipment_type_user,gr.equipment.type.user,model_gr_equipment_type,gr_security_base.group_generator_user,1,0,0,0
+access_gr_equipment_type_ops,gr.equipment.type.ops,model_gr_equipment_type,gr_security_base.group_generator_operations_officer,1,1,1,0
+access_gr_equipment_type_gm,gr.equipment.type.gm,model_gr_equipment_type,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_equipment_type_admin,gr.equipment.type.admin,model_gr_equipment_type,gr_security_base.group_generator_administrator,1,1,1,1

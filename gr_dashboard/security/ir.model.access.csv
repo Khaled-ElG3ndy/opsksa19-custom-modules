@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_dashboard_card_user,gr.dashboard.card user,model_gr_dashboard_card,gr_security_base.group_generator_user,1,0,0,0

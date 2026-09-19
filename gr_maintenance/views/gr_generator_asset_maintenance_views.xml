@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_generator_asset_form_maintenance" model="ir.ui.view">
+        <field name="name">gr.generator.asset.form.maintenance</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="inherit_id" ref="gr_fleet_base.view_gr_generator_asset_form"/>
+        <field name="arch" type="xml">
+            <!-- jobs smart button -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_maintenance_jobs" type="object"
+                        class="oe_stat_button" icon="fa-wrench"
+                        invisible="maintenance_job_count == 0">
+                    <field name="maintenance_job_count" widget="statinfo" string="Jobs"/>
+                </button>
+            </xpath>
+            <!-- calendar PM fields after the hour-based overdue flag -->
+            <xpath expr="//field[@name='maintenance_overdue']" position="after">
+                <field name="pm_interval_days"/>
+                <field name="last_pm_date"/>
+                <field name="next_pm_date"/>
+                <field name="pm_calendar_overdue"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

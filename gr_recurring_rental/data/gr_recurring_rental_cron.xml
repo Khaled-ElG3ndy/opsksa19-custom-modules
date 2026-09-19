@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Daily is the right cadence: the reminder is date-based, so checking
+         more often would only re-ask a question whose answer changes once a
+         day. The job raises activities and refreshes the date-relative status
+         column. It never prepares an order and never moves an occurrence
+         date - committing the company to a rental stays a human decision. -->
+    <record id="ir_cron_recurring_rental_reminders" model="ir.cron">
+        <field name="name">Generator Rental: Recurring Rental Reminders</field>
+        <field name="model_id" ref="model_gr_recurring_rental"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_recurring_rental_reminders()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

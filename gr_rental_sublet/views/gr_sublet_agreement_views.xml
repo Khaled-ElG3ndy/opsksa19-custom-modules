@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_rental_order_form_sublet" model="ir.ui.view">
+        <field name="name">gr.rental.order.form.sublet</field>
+        <field name="model">gr.rental.order</field>
+        <field name="inherit_id" ref="gr_rental_order.view_gr_rental_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Ownership of the booked unit, stated on the order itself.
+                 Selecting equipment is where the mistake would be made, so
+                 the warning belongs next to the selection, not one click
+                 away on the equipment record. -->
+            <xpath expr="//field[@name='asset_id']" position="after">
+                <field name="asset_owner_type" invisible="1"/>
+                <field name="asset_is_third_party" invisible="1"/>
+                <field name="asset_supplier_id" readonly="1"
+                       string="Supplier / Owner"
+                       invisible="not asset_is_third_party"/>
+                <field name="supplier_rental_start" readonly="1"
+                       invisible="not asset_is_third_party"/>
+                <field name="supplier_rental_end" readonly="1"
+                       invisible="not asset_is_third_party"/>
+                <field name="supplier_return_buffer_days" readonly="1"
+                       invisible="not supplier_buffer_level"/>
+                <field name="supplier_buffer_level" widget="badge" readonly="1"
+                       invisible="not supplier_buffer_level"
+                       decoration-danger="supplier_buffer_level == 'critical'"
+                       decoration-warning="supplier_buffer_level == 'warning'"
+                       decoration-success="supplier_buffer_level == 'ok'"/>
+            </xpath>
+            <xpath expr="//field[@name='asset_id']" position="attributes">
+                <attribute name="context">{'gr_show_ownership': True}</attribute>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_title')]" position="after">
+                <div class="alert alert-warning mb-2" role="status"
+                     invisible="not asset_is_third_party">
+                    <strong>Third-Party</strong>
+                    <span> · </span>
+                    <span>This generator is not owned by the company. It may
+                          only be rented out within the supplier rental
+                          period shown below.</span>
+                </div>
+                <!-- The return buffer. Separate from the block above on
+                     purpose: that one says whose generator this is, this one
+                     says how little time there is to get it back to them.
+                     Never blocking - the message itself carries the days. -->
+                <div class="alert alert-danger mb-2" role="alert"
+                     invisible="supplier_buffer_level != 'critical'">
+                    <i class="fa fa-exclamation-triangle me-1" role="img"
+                       title="Critical"/>
+                    <field name="supplier_buffer_message" nolabel="1"
+                           readonly="1" class="d-inline"/>
+                </div>
+                <div class="alert alert-warning mb-2" role="alert"
+                     invisible="supplier_buffer_level != 'warning'">
+                    <i class="fa fa-clock-o me-1" role="img" title="Warning"/>
+                    <field name="supplier_buffer_message" nolabel="1"
+                           readonly="1" class="d-inline"/>
+                </div>
+            </xpath>
+            <xpath expr="//widget[@name='web_ribbon'][1]" position="before">
+                <widget name="web_ribbon" title="Third-Party Equipment"
+                        bg_color="text-bg-warning"
+                        invisible="not asset_is_third_party or state == 'cancelled'"/>
+            </xpath>
+            <xpath expr="//field[@name='contract_id']" position="after">
+                <field name="sublet_agreement_id"
+                       domain="[('asset_id', '=', asset_id)]"
+                       required="asset_is_third_party and state != 'draft'"
+                       readonly="state != 'draft' and sublet_agreement_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- The buffer on the rental-order list: one badge column, blank for
+         everything that is not a third-party rental, so the owned-fleet view
+         is unchanged. Paired with filters, this is how an operator finds the
+         collections that need planning this week. -->
+    <record id="view_gr_rental_order_list_sublet" model="ir.ui.view">
+        <field name="name">gr.rental.order.list.sublet</field>
+        <field name="model">gr.rental.order</field>
+        <field name="inherit_id" ref="gr_rental_order.view_gr_rental_order_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="before">
+                <field name="supplier_rental_end" string="Supplier Due Back"
+                       optional="hide"/>
+                <field name="supplier_buffer_level" string="Return Buffer"
+                       widget="badge" optional="show"
+                       decoration-danger="supplier_buffer_level == 'critical'"
+                       decoration-warning="supplier_buffer_level == 'warning'"
+                       decoration-success="supplier_buffer_level == 'ok'"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_gr_rental_order_search_sublet" model="ir.ui.view">
+        <field name="name">gr.rental.order.search.sublet</field>
+        <field name="model">gr.rental.order</field>
+        <field name="inherit_id" ref="gr_rental_order.view_gr_rental_order_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='f_inspection']" position="after">
+                <separator/>
+                <filter name="f_third_party" string="Third-Party Equipment"
+                        domain="[('asset_is_third_party','=',True)]"/>
+                <filter name="f_buffer_critical" string="No Return Buffer"
+                        domain="[('supplier_buffer_level','=','critical')]"/>
+                <filter name="f_buffer_warning" string="Tight Return Buffer"
+                        domain="[('supplier_buffer_level','in',('critical','warning'))]"/>
+            </xpath>
+            <xpath expr="//filter[@name='g_asset']" position="after">
+                <filter name="g_buffer" string="Return Buffer"
+                        context="{'group_by': 'supplier_buffer_level'}"/>
+                <filter name="g_supplier" string="Equipment Supplier"
+                        context="{'group_by': 'asset_supplier_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_gr_sublet_agreement_form" model="ir.ui.view">
+        <field name="name">gr.sublet.agreement.form</field>
+        <field name="model">gr.sublet.agreement</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate_rent_in_po" type="object"
+                            string="Raise Rent-in PO" class="btn-primary"
+                            invisible="state != 'draft'"/>
+                    <button name="action_mark_returned" type="object"
+                            string="Return to Vendor" invisible="state != 'committed'"/>
+                    <button name="action_view_po" type="object" string="View PO"
+                            invisible="not purchase_order_id"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state in ('returned','cancelled')"/>
+                    <button name="action_reset_draft" type="object"
+                            string="Reset to Draft" invisible="state == 'draft'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,committed,returned"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Vendor Exposure" bg_color="text-bg-danger"
+                            invisible="not exposure_flagged"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_rentout" type="object"
+                                class="oe_stat_button" icon="fa-refresh">
+                            <field name="rental_order_count" widget="statinfo"
+                                   string="Rent-out"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Rented-in Unit">
+                            <field name="asset_id" context="{'gr_show_ownership': True}"/>
+                            <field name="serial_number" readonly="1"/>
+                            <field name="supplier_equipment_ref"
+                                   placeholder="e.g. ABC-GEN-55"/>
+                            <field name="vendor_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+                        <group string="Rent-in Cost">
+                            <field name="rent_in_product_id"/>
+                            <field name="rent_in_expense_account_id" readonly="1"/>
+                            <field name="rent_in_amount"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="purchase_order_id" readonly="1"/>
+                            <field name="po_state" readonly="1"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <group string="Margin">
+                        <group>
+                            <field name="revenue_out"/>
+                            <field name="cost_in"/>
+                            <field name="extra_direct_cost"/>
+                        </group>
+                        <group>
+                            <field name="total_cost"/>
+                            <field name="margin"/>
+                            <field name="margin_pct" widget="percentage"/>
+                        </group>
+                    </group>
+                    <group string="Exposure" invisible="not exposure_flagged">
+                        <field name="exposure_flagged"/>
+                        <field name="exposure_reason"/>
+                    </group>
+                    <notebook>
+                        <page string="Rent-out Orders">
+                            <field name="rental_order_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="partner_id"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" name="agreement_notes">
+                            <field name="note"
+                                   placeholder="Conditions, accessories included, delivery arrangements..."/>
+                        </page>
+                        <page string="Direct Costs">
+                            <field name="direct_cost_ids">
+                                <list editable="bottom">
+                                    <field name="agreement_id" column_invisible="1"/>
+                                    <field name="cost_date"/>
+                                    <field name="cost_type"/>
+                                    <field name="name"/>
+                                    <field name="rental_order_id"/>
+                                    <field name="amount" sum="Extra Direct Cost"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                    <field name="note"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gr_sublet_agreement_list" model="ir.ui.view">
+        <field name="name">gr.sublet.agreement.list</field>
+        <field name="model">gr.sublet.agreement</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="exposure_flagged" decoration-muted="state == 'cancelled'"
+                  decoration-success="state == 'returned'">
+                <field name="name"/>
+                <field name="asset_id"/>
+                <field name="supplier_equipment_ref" optional="show"/>
+                <field name="vendor_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="cost_in"/>
+                <field name="extra_direct_cost"/>
+                <field name="total_cost"/>
+                <field name="revenue_out"/>
+                <field name="margin"/>
+                <field name="exposure_flagged"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'committed'"
+                       decoration-success="state == 'returned'"
+                       decoration-muted="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_sublet_agreement_search" model="ir.ui.view">
+        <field name="name">gr.sublet.agreement.search</field>
+        <field name="model">gr.sublet.agreement</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="asset_id"/>
+                <field name="vendor_id"/>
+                <filter name="f_committed" string="Committed" domain="[('state','=','committed')]"/>
+                <filter name="f_exposure" string="Vendor Exposure" domain="[('exposure_flagged','=',True)]"/>
+                <group>
+                    <filter name="g_vendor" string="Vendor" context="{'group_by':'vendor_id'}"/>
+                    <filter name="g_asset" string="Equipment" context="{'group_by':'asset_id'}"/>
+                    <filter name="g_state" string="Status" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_gr_sublet_agreement" model="ir.actions.act_window">
+        <field name="name">Supplier Rental Agreements</field>
+        <field name="res_model">gr.sublet.agreement</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_gr_sublet_agreement_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Rent a unit in, rent it out, track the margin</p>
+        </field>
+    </record>
+
+    <record id="action_gr_sublet_exposure" model="ir.actions.act_window">
+        <field name="name">Supplier Exposure</field>
+        <field name="res_model">gr.sublet.agreement</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('exposure_flagged','=',True)]</field>
+        <field name="search_view_id" ref="view_gr_sublet_agreement_search"/>
+    </record>
+
+</odoo>

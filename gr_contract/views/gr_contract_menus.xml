@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_gr_contracts"
+              name="Rental Contracts"
+              parent="gr_security_base.menu_generator_root"
+              action="action_gr_rental_contract"
+              groups="gr_security_base.group_generator_sales_officer"
+              sequence="30"/>
+
+    <menuitem id="menu_gr_contract_amendments"
+              name="Amendments"
+              parent="gr_security_base.menu_generator_config"
+              action="action_gr_contract_amendment"
+              groups="gr_security_base.group_generator_general_manager"
+              sequence="20"/>
+</odoo>

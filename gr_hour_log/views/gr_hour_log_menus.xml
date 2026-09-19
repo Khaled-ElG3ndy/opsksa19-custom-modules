@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_gr_hour_logs"
+              name="Hour Logs"
+              parent="gr_security_base.menu_generator_root"
+              action="action_gr_hour_log"
+              groups="gr_security_base.group_generator_operations_officer"
+              sequence="50"/>
+</odoo>

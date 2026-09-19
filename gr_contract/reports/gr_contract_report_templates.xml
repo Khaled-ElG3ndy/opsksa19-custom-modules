@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_gr_rental_contract">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="report_lang" t-value="doc.env.context.get('lang') or env.context.get('lang') or env.user.lang or 'en_US'"/>
+                <t t-set="is_rtl" t-value="report_lang.startswith('ar')"/>
+                <div class="article"
+                     t-att-data-oe-model="doc and doc._name"
+                     t-att-data-oe-id="doc and doc.id"
+                     t-att-data-oe-lang="report_lang">
+                    <div t-attf-class="page gr_contract_report #{'gr_rtl' if is_rtl else 'gr_ltr'}"
+                         t-att-dir="'rtl' if is_rtl else 'ltr'">
+                        <style>
+                        .gr_contract_report {
+                            color: #18212f;
+                            font-size: 11px;
+                            line-height: 1.35;
+                            padding: 0;
+                        }
+                        .gr_contract_report * {
+                            box-sizing: border-box;
+                        }
+                        .gr_contract_report.gr_ltr {
+                            text-align: left;
+                            direction: ltr;
+                        }
+                        .gr_contract_report.gr_rtl {
+                            text-align: right;
+                            direction: rtl;
+                            font-family: "DejaVu Sans", "Noto Naskh Arabic", sans-serif;
+                        }
+                        .gr_contract_report .contract-header {
+                            width: 100%;
+                            border-collapse: collapse;
+                            background: #102f4b;
+                            color: #ffffff;
+                            border-radius: 6px;
+                            margin: 0 0 10px 0;
+                        }
+                        .gr_contract_report .contract-header td {
+                            padding: 14px 16px;
+                            vertical-align: middle;
+                        }
+                        .gr_contract_report .header-kicker {
+                            color: #b7c7d8;
+                            font-size: 9px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            margin-bottom: 3px;
+                        }
+                        .gr_contract_report .header-title {
+                            font-size: 22px;
+                            font-weight: 800;
+                            margin: 0 0 4px 0;
+                        }
+                        .gr_contract_report .header-subtitle {
+                            color: #d8e2ec;
+                            font-size: 10px;
+                        }
+                        .gr_contract_report .header-ref {
+                            color: #ffffff;
+                            font-size: 14px;
+                            font-weight: 800;
+                        }
+                        .gr_contract_report .status-pill {
+                            display: inline-block;
+                            background: #e9fbf2;
+                            color: #087245;
+                            border-radius: 999px;
+                            padding: 5px 11px;
+                            font-size: 9px;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                        }
+                        .gr_contract_report .summary-table,
+                        .gr_contract_report .details-table,
+                        .gr_contract_report .line-table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            table-layout: fixed;
+                        }
+                        .gr_contract_report .summary-table {
+                            margin-bottom: 10px;
+                        }
+                        .gr_contract_report .summary-table td {
+                            width: 25%;
+                            background: #f6f8fb;
+                            border: 1px solid #dde4ec;
+                            padding: 8px 9px;
+                            vertical-align: top;
+                        }
+                        .gr_contract_report .label {
+                            color: #64748b;
+                            display: block;
+                            font-size: 8px;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            margin-bottom: 3px;
+                        }
+                        .gr_contract_report .value {
+                            color: #111827;
+                            font-size: 11px;
+                            font-weight: 700;
+                            word-break: break-word;
+                        }
+                        .gr_contract_report .section-title {
+                            color: #102f4b;
+                            font-size: 12px;
+                            font-weight: 800;
+                            margin: 13px 0 6px 0;
+                            padding-bottom: 4px;
+                            border-bottom: 2px solid #b7c7d8;
+                            text-transform: uppercase;
+                        }
+                        .gr_contract_report .details-table th,
+                        .gr_contract_report .details-table td,
+                        .gr_contract_report .line-table th,
+                        .gr_contract_report .line-table td {
+                            border: 1px solid #dde4ec;
+                            padding: 5px 7px;
+                            vertical-align: top;
+                            word-break: break-word;
+                        }
+                        .gr_contract_report .details-table th,
+                        .gr_contract_report .line-table th {
+                            background: #eef3f8;
+                            color: #163854;
+                            font-size: 9px;
+                            font-weight: 800;
+                        }
+                        .gr_contract_report .details-table td,
+                        .gr_contract_report .line-table td {
+                            background: #ffffff;
+                        }
+                        .gr_contract_report .muted {
+                            color: #64748b;
+                        }
+                        .gr_contract_report .terms-box {
+                            border: 1px solid #dde4ec;
+                            border-radius: 5px;
+                            padding: 9px 10px;
+                            background: #fbfdff;
+                            min-height: 34px;
+                        }
+                        .gr_contract_report .signature-table {
+                            width: 100%;
+                            border-collapse: separate;
+                            border-spacing: 12px 0;
+                            margin-top: 22px;
+                        }
+                        .gr_contract_report .signature-box {
+                            border-top: 2px solid #102f4b;
+                            padding-top: 7px;
+                            min-height: 54px;
+                        }
+                        .gr_contract_report .signature-title {
+                            color: #111827;
+                            font-weight: 800;
+                        }
+                        .gr_contract_report .footer-note {
+                            color: #64748b;
+                            font-size: 8px;
+                            margin-top: 10px;
+                            text-align: center;
+                        }
+                        </style>
+
+                        <table class="contract-header">
+                        <tr>
+                            <td style="width: 64%;">
+                                <div class="header-kicker">Contract Reference</div>
+                                <div class="header-ref"><span t-field="doc.name"/></div>
+                                <h1 class="header-title">Rental Contract</h1>
+                                <div class="header-subtitle">Professional generator rental agreement</div>
+                            </td>
+                            <td style="width: 36%; text-align: inherit;">
+                                <div class="header-kicker">Status</div>
+                                <div style="margin-bottom: 8px;">
+                                    <span class="status-pill" t-field="doc.state"/>
+                                </div>
+                                <div class="header-kicker">Company</div>
+                                <div class="header-ref"><span t-field="doc.company_id"/></div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="summary-table">
+                        <tr>
+                            <td>
+                                <span class="label">Customer</span>
+                                <span class="value" t-field="doc.partner_id"/>
+                            </td>
+                            <td>
+                                <span class="label">Site</span>
+                                <span class="value" t-field="doc.site_id"/>
+                            </td>
+                            <td>
+                                <span class="label">Contract Type</span>
+                                <span class="value" t-field="doc.contract_type"/>
+                            </td>
+                            <td>
+                                <span class="label">Start Date</span>
+                                <span class="value" t-field="doc.date_start"/>
+                                <span class="label" style="margin-top: 5px;">End Date</span>
+                                <span class="value" t-field="doc.date_end"/>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="section-title">Parties &amp; Period</div>
+                    <table class="details-table">
+                        <tbody>
+                            <tr>
+                                <th style="width: 18%;">Customer</th>
+                                <td style="width: 32%;"><span t-field="doc.partner_id"/></td>
+                                <th style="width: 18%;">Company</th>
+                                <td style="width: 32%;"><span t-field="doc.company_id"/></td>
+                            </tr>
+                            <tr>
+                                <th>Site</th>
+                                <td><span t-field="doc.site_id"/></td>
+                                <th>Customer PO Number</th>
+                                <td>
+                                    <span t-if="doc.customer_po_number" t-field="doc.customer_po_number"/>
+                                    <span t-else="" class="muted">Not provided</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Start Date</th>
+                                <td><span t-field="doc.date_start"/></td>
+                                <th>End Date</th>
+                                <td><span t-field="doc.date_end"/></td>
+                            </tr>
+                            <tr>
+                                <th>Currency</th>
+                                <td><span t-field="doc.currency_id"/></td>
+                                <th>Payment Terms</th>
+                                <td><span t-field="doc.payment_terms_id"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="section-title">Commercial Terms</div>
+                    <table class="details-table">
+                        <tbody>
+                            <tr>
+                                <th style="width: 25%;">Included Hours / Day</th>
+                                <td style="width: 25%;"><span t-field="doc.included_hours_per_day"/></td>
+                                <th style="width: 25%;">Max Hours / Day</th>
+                                <td style="width: 25%;"><span t-field="doc.max_hours_per_day"/></td>
+                            </tr>
+                            <tr>
+                                <th>Base Daily Rate</th>
+                                <td>
+                                    <span t-field="doc.base_daily_rate"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                                <th>Base Monthly Rate</th>
+                                <td>
+                                    <span t-field="doc.base_monthly_rate"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Hourly Rate</th>
+                                <td>
+                                    <span t-field="doc.hourly_rate"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                                <th>Standby Rate</th>
+                                <td>
+                                    <span t-field="doc.standby_rate"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Overtime Hour Rate</th>
+                                <td>
+                                    <span t-field="doc.overtime_hour_rate"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                                <th>Violation Hour Rate</th>
+                                <td>
+                                    <span t-field="doc.violation_hour_rate"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Operator Daily Rate</th>
+                                <td>
+                                    <span t-field="doc.operator_daily_rate"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                                <th>Requires Daily Customer Signature</th>
+                                <td><span t-if="doc.requires_daily_customer_signature">Yes</span><span t-else="">No</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="section-title">Charges, Fuel &amp; Service</div>
+                    <table class="details-table">
+                        <tbody>
+                            <tr>
+                                <th style="width: 25%;">Mobilization Charge</th>
+                                <td style="width: 25%;">
+                                    <span t-field="doc.mobilization_charge"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                                <th style="width: 25%;">Demobilization Charge</th>
+                                <td style="width: 25%;">
+                                    <span t-field="doc.demobilization_charge"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Security Deposit</th>
+                                <td>
+                                    <span t-field="doc.security_deposit"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                                <th>Fuel Policy</th>
+                                <td><span t-field="doc.fuel_billing_policy"/></td>
+                            </tr>
+                            <tr>
+                                <th>Fuel Rate</th>
+                                <td>
+                                    <span t-field="doc.fuel_rate"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                                <th>SLA Response (h)</th>
+                                <td><span t-field="doc.sla_response_hours"/></td>
+                            </tr>
+                            <tr>
+                                <th>Maintenance Included</th>
+                                <td><span t-if="doc.maintenance_included">Yes</span><span t-else="">No</span></td>
+                                <th>Spare Parts Included</th>
+                                <td><span t-if="doc.spare_parts_included">Yes</span><span t-else="">No</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="section-title" t-if="doc.line_ids">Allocation Lines</div>
+                    <table class="line-table" t-if="doc.line_ids">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>kVA Rating</th>
+                                <th>Quantity</th>
+                                <th>Preferred Asset</th>
+                                <th>Rate Override</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="doc.line_ids" t-as="line">
+                                <td><span t-field="line.product_id"/></td>
+                                <td><span t-field="line.kva_rating"/></td>
+                                <td><span t-field="line.quantity"/></td>
+                                <td><span t-field="line.preferred_asset_id"/></td>
+                                <td>
+                                    <span t-field="line.rate_override"
+                                          t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                                <td><span t-field="line.notes"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="section-title">Terms &amp; Conditions</div>
+                    <div class="terms-box">
+                        <div t-if="doc.terms_and_conditions" t-field="doc.terms_and_conditions"/>
+                        <p t-else="" class="muted">
+                            No additional terms and conditions were recorded on this contract.
+                        </p>
+                    </div>
+
+                    <div class="section-title" t-if="doc.notes">Notes</div>
+                    <div class="terms-box" t-if="doc.notes">
+                        <span t-field="doc.notes"/>
+                    </div>
+
+                    <table class="signature-table">
+                        <tr>
+                            <td style="width: 50%;">
+                                <div class="signature-box">
+                                    <div class="signature-title">Customer Signature</div>
+                                    <div class="muted">Name, signature, and date</div>
+                                </div>
+                            </td>
+                            <td style="width: 50%;">
+                                <div class="signature-box">
+                                    <div class="signature-title">Company Signature</div>
+                                    <div class="muted">Name, signature, and date</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="footer-note">
+                        This document was generated from Generator Rental ERP.
+                    </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

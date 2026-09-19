@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_billing_run_user,gr.billing.run.user,model_gr_billing_run,gr_security_base.group_generator_user,1,0,0,0
+access_gr_billing_run_finance,gr.billing.run.finance,model_gr_billing_run,gr_security_base.group_generator_finance_officer,1,1,1,0
+access_gr_billing_run_finance_mgr,gr.billing.run.finance.mgr,model_gr_billing_run,gr_security_base.group_generator_finance_manager,1,1,1,1
+access_gr_billing_run_gm,gr.billing.run.gm,model_gr_billing_run,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_billing_run_admin,gr.billing.run.admin,model_gr_billing_run,gr_security_base.group_generator_administrator,1,1,1,1

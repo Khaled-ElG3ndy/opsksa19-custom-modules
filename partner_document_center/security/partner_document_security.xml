@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Metadata is a side-car on ir.attachment, so it must never be more
+        visible than the attachment it annotates. The multi-company rule below
+        mirrors the standard ir.attachment rule; the attachment-level cascade
+        itself is enforced in Python (_check_attachment_access and the
+        write-access gate in _get_or_create), because a record rule cannot
+        express "the referenced attachment is readable".
+    -->
+    <record id="partner_document_metadata_company_rule" model="ir.rule">
+        <field name="name">Partner document metadata: multi-company</field>
+        <field name="model_id" ref="model_partner_document_metadata"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        <field name="global" eval="True"/>
+    </record>
+
+    <!--
+        Categories are shared configuration: readable by every internal user,
+        writable only by contact managers. That is fully expressed by
+        ir.model.access.csv, so no record rule is needed here.
+    -->
+
+</odoo>

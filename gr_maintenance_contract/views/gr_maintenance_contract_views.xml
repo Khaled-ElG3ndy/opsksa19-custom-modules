@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_maintenance_contract_form" model="ir.ui.view">
+        <field name="name">gr.maintenance.contract.form</field>
+        <field name="model">gr.maintenance.contract</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_activate" type="object" string="Activate"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_log_emergency_visit" type="object"
+                            string="Log Emergency / T&amp;M Visit"
+                            invisible="state != 'active'"/>
+                    <button name="action_expire" type="object" string="Mark Expired"
+                            invisible="state != 'active'"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state in ('cancelled','expired')"/>
+                    <button name="action_reset_draft" type="object"
+                            string="Reset to Draft" invisible="state == 'draft'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,active,expired"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_visits" type="object"
+                                class="oe_stat_button" icon="fa-wrench">
+                            <field name="visit_count" widget="statinfo" string="Visits"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Customer &amp; Unit">
+                            <field name="partner_id"/>
+                            <field name="asset_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+                        <group string="Emergency / T&amp;M">
+                            <field name="emergency_visit_rate"/>
+                            <field name="emergency_response_hours"/>
+                            <field name="tm_visit_count"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Visit Schedule">
+                            <field name="visit_interval_months"/>
+                            <field name="visits_total"/>
+                            <field name="maintenance_template_id"/>
+                            <field name="covered_visit_count"/>
+                        </group>
+                        <group string="Consumable Cadence">
+                            <field name="oil_filter_interval_months"/>
+                            <field name="battery_once"/>
+                        </group>
+                    </group>
+                    <group string="Pricing &amp; Billing">
+                        <group>
+                            <field name="annual_price"/>
+                            <field name="payment_split_count"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Payment Schedule">
+                            <field name="schedule_line_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="due_date"/>
+                                    <field name="amount"/>
+                                    <field name="state"/>
+                                    <field name="invoice_id" readonly="1"/>
+                                    <button name="action_create_invoice" type="object"
+                                            string="Create Invoice" icon="fa-file-text-o"
+                                            invisible="state == 'invoiced'"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Visits">
+                            <field name="visit_ids" readonly="1">
+                                <list decoration-info="contract_coverage == 'tm'">
+                                    <field name="scheduled_date"/>
+                                    <field name="job_type"/>
+                                    <field name="contract_coverage"/>
+                                    <field name="oil_filter_due"/>
+                                    <field name="tm_charge"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gr_maintenance_contract_list" model="ir.ui.view">
+        <field name="name">gr.maintenance.contract.list</field>
+        <field name="model">gr.maintenance.contract</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="state in ('cancelled','expired')">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="asset_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="visits_total"/>
+                <field name="annual_price"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'active'"
+                       decoration-muted="state in ('cancelled','expired')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_maintenance_contract_search" model="ir.ui.view">
+        <field name="name">gr.maintenance.contract.search</field>
+        <field name="model">gr.maintenance.contract</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="asset_id"/>
+                <filter name="f_active" string="Active" domain="[('state','=','active')]"/>
+                <group>
+                    <filter name="g_customer" string="Customer" context="{'group_by':'partner_id'}"/>
+                    <filter name="g_state" string="Status" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_gr_maintenance_contract" model="ir.actions.act_window">
+        <field name="name">Maintenance Contracts</field>
+        <field name="res_model">gr.maintenance.contract</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_gr_maintenance_contract_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Recurring service on a customer-owned generator</p>
+        </field>
+    </record>
+
+</odoo>

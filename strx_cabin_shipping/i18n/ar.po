@@ -1,0 +1,1724 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* strx_cabin_shipping
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "0.00 SR"
+msgstr "0.00 ر.س"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_form
+msgid "<span class=\"o_stat_text\">Create Payment</span>"
+msgstr "<span class=\"o_stat_text\">إنشاء دفعة</span>"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_cabin_allocation_form_shipping
+msgid "<span class=\"o_stat_text\">Return Status</span>"
+msgstr "<span class=\"o_stat_text\">حالة الإرجاع</span>"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__message_needaction
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Add at least one carried serial before proceeding."
+msgstr "أضف رقمًا تسلسليًا منقولًا واحدًا على الأقل قبل المتابعة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "Add at least one delivered shipment before issuing the payment order."
+msgstr "أضف شحنة تم تسليمها واحدة على الأقل قبل إصدار أمر الدفع."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__agreed_cost
+msgid "Agreed Cost"
+msgstr "التكلفة المتفق عليها"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Agreed cost"
+msgstr "التكلفة المتفق عليها"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "All shipments in a broker payment order must have an agreed cost."
+msgstr "يجب أن تحتوي كل الشحنات في أمر دفع وسيط الشحن على تكلفة متفق عليها."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "All shipments in a payment order must belong to the selected broker."
+msgstr "يجب أن تكون كل الشحنات في أمر الدفع تابعة لوسيط الشحن المحدد."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "All shipments in one payment order must use the same currency."
+msgstr "يجب أن تستخدم كل الشحنات في أمر الدفع الواحد نفس العملة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "All shipments must belong to the same company as the payment order."
+msgstr "يجب أن تكون كل الشحنات تابعة لنفس شركة أمر الدفع."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_history_event__event_type__allocation
+msgid "Allocation"
+msgstr "تخصيص"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/stock_lot.py:0
+msgid "Allocation %(ref)s"
+msgstr "تخصيص %(ref)s"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__allocation_ids
+msgid "Allocations whose exact cabin serials are carried by this shipment."
+msgstr "التخصيصات التي تحمل هذه الشحنة أرقام الكبائن التسلسلية الخاصة بها."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__allowed_order_ids
+msgid "Allowed Rental Orders"
+msgstr "طلبات التأجير المسموح بها"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+msgid "Approve"
+msgstr "اعتماد"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_broker_payment__state__approved
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__approved_by_id
+msgid "Approved By"
+msgstr "اعتمد بواسطة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__approved_date
+msgid "Approved On"
+msgstr "تاريخ الاعتماد"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_sale_order__strx_customer_receipt_attachment_ids
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__customer_receipt_attachment_ids
+msgid "Attach the signed/stamped delivery receipt or any supporting proof."
+msgstr "أرفق ورقة الاستلام الموقعة/المختومة أو أي إثبات داعم."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__message_attachment_count
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "Auto Return"
+msgstr "إرجاع تلقائي"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__payment_batch
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_search
+msgid "Batch Option"
+msgstr "خيار الدفعة"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+msgid "Batch Period"
+msgstr "فترة الدفعة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__name
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__broker_id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__broker_id
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_search
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "Broker"
+msgstr "وسيط الشحن"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_broker_payment__payment_batch__broker_batch
+msgid "Broker Batch"
+msgstr "دفعة الوسيط"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker.py:0
+#: model:ir.model,name:strx_cabin_shipping.model_strx_cabin_broker_payment
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+msgid "Broker Payment Order"
+msgstr "أمر دفع وسيط الشحن"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker.py:0
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+#: model:ir.actions.act_window,name:strx_cabin_shipping.action_strx_broker_payment
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__broker_payment_ids
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_list
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_search
+msgid "Broker Payment Orders"
+msgstr "أوامر دفع وسطاء الشحن"
+
+#. module: strx_cabin_shipping
+#: model:ir.ui.menu,name:strx_cabin_shipping.menu_strx_broker_payment
+msgid "Broker Payments"
+msgstr "دفعات وسطاء الشحن"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Broker contact"
+msgstr "مسؤول التواصل"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Broker details"
+msgstr "بيانات الوسيط"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_form
+msgid "Broker name"
+msgstr "اسم وسيط الشحن"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Broker phone"
+msgstr "هاتف الوسيط"
+
+#. module: strx_cabin_shipping
+#: model:ir.actions.act_window,name:strx_cabin_shipping.action_strx_broker
+#: model:ir.ui.menu,name:strx_cabin_shipping.menu_strx_broker
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_list
+msgid "Brokers"
+msgstr "وسطاء الشحن"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__company_registration
+msgid "CR Number"
+msgstr "رقم السجل التجاري"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "Cabin %(serial)s was returned on shipment %(shipment)s."
+msgstr "تم إرجاع الكابينة %(serial)s على الشحنة %(shipment)s."
+
+#. module: strx_cabin_shipping
+#: model:ir.model,name:strx_cabin_shipping.model_strx_cabin_allocation
+msgid "Cabin Allocation"
+msgstr "تخصيص الكابينة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__allocation_ids
+msgid "Cabin Allocations"
+msgstr "تخصيصات الكبائن"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/stock_lot.py:0
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_stock_lot__strx_cabin_history_count
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_production_lot_form_strx_cabin_history
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_cabin_history_event_list
+msgid "Cabin History"
+msgstr "تاريخ الكابينة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model,name:strx_cabin_shipping.model_strx_cabin_history_event
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_cabin_history_event_form
+msgid "Cabin History Event"
+msgstr "حدث تاريخ الكابينة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model,name:strx_cabin_shipping.model_strx_cabin_broker
+msgid "Cabin Shipping Broker"
+msgstr "وسيط شحن الكبائن"
+
+#. module: strx_cabin_shipping
+#: model:ir.model,name:strx_cabin_shipping.model_strx_cabin_shipping_order
+msgid "Cabin Shipping Order"
+msgstr "أمر شحن كبائن"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_broker_payment__state__cancel
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__state__cancel
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_search
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid ""
+"Cannot update logistics status for shipment %(shipment)s.\n"
+"These serials are not eligible for rental %(order)s: %(serials)s"
+msgstr ""
+"لا يمكن تحديث الحالة اللوجستية للشحنة %(shipment)s.\n"
+"هذه الأرقام التسلسلية غير مؤهلة لطلب التأجير %(order)s: %(serials)s"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_broker__company_registration
+msgid "Commercial Registration number."
+msgstr "رقم السجل التجاري."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__company_id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__partner_id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__company_id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__company_id
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_form
+msgid "Company"
+msgstr "الشركة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__is_internal
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__is_internal
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "Company Transport"
+msgstr "النقل بواسطة الشركة"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Complete the following details before issuing %s:"
+msgstr "أكمل البيانات التالية قبل إصدار %s:"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__contact_name
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_form
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Cost & Dates"
+msgstr "التكلفة والتواريخ"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_cabin_allocation_form_shipping
+msgid "Create Delivery Shipment"
+msgstr "إنشاء شحنة إرسال"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Create Shipment Payment"
+msgstr "إنشاء أمر دفع للشحنة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__create_uid
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__create_uid
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__create_uid
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__create_date
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__create_date
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__create_date
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__currency_id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__currency_id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_broker_payment__payment_batch__custom
+msgid "Custom Period"
+msgstr "فترة مخصصة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__partner_id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__partner_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_sale_order__strx_customer_receipt_exception
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__customer_receipt_exception
+msgid "Customer Did Not Sign"
+msgstr "العميل لم يوقّع"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_order_form_strx_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Customer Receipt"
+msgstr "إثبات استلام العميل"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_sale_order__strx_customer_receipt_signature
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__customer_receipt_signature
+msgid "Customer Signature / Stamp"
+msgstr "توقيع / ختم العميل"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_sale_order__strx_customer_receipt_signature
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__customer_receipt_signature
+msgid "Customer signature or company stamp on the delivery receipt."
+msgstr "توقيع العميل أو ختم الشركة على ورقة الاستلام."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__event_date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__default_rate
+msgid "Default Rate"
+msgstr "التعرفة الافتراضية"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__state__delivered
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "Delivered"
+msgstr "تم التسليم"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "Delivered / Unpaid"
+msgstr "مُسلَّم / غير مدفوع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__delivered_date
+msgid "Delivered On"
+msgstr "تاريخ التسليم"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Delivered on shipment %(ref)s"
+msgstr "تم التسليم على شحنة %(ref)s"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "Deliveries"
+msgstr "عمليات التسليم"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__movement_type__delivery
+msgid "Delivery"
+msgstr "تسليم"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "Delivery Shipment"
+msgstr "شحنة إرسال"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__movement_type
+msgid ""
+"Delivery sends the cabin to the customer. Return receives it back from the "
+"customer to the yard. Site Transfer moves an on-rent cabin directly from one"
+" customer site to another without returning it to the yard."
+msgstr ""
+"التسليم يرسل الكابينة إلى العميل. الاستلام/الرجوع يستقبلها من العميل مرة "
+"أخرى إلى الساحة. النقل بين المواقع ينقل كابينة مؤجرة مباشرة من موقع عميل إلى"
+" موقع آخر بدون إرجاعها إلى الساحة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "Delivery shipments can only be created from allocated cabins."
+msgstr "يمكن إنشاء شحنة الإرسال فقط من كابينة مخصصة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__route_destination
+msgid "Destination"
+msgstr "الوجهة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__details
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_cabin_history_event_form
+msgid "Details"
+msgstr "التفاصيل"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_sale_order__display_name
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_stock_lot__display_name
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_allocation__display_name
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__display_name
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__display_name
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__display_name
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_broker_payment__state__draft
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__broker_payment_state__draft
+msgid "Draft Payment"
+msgstr "دفعة مسودة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__driver_name
+msgid "Driver"
+msgstr "السائق"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Driver & Vehicle"
+msgstr "السائق والمركبة"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Driver & vehicle"
+msgstr "السائق والمركبة"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__driver_id_number
+msgid "Driver ID"
+msgstr "هوية السائق"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__driver_phone
+msgid "Driver Phone"
+msgstr "هاتف السائق"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Driver name"
+msgstr "اسم السائق"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Driver phone"
+msgstr "هاتف السائق"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__due_date
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__eligible_lot_ids
+msgid "Eligible Serials"
+msgstr "الأرقام التسلسلية المؤهلة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__eligible_shipping_order_ids
+msgid "Eligible Shipments"
+msgstr "شحنات مؤهلة للدفع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__contact_email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__title
+msgid "Event"
+msgstr "الحدث"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_sale_order__strx_customer_receipt_exception_reason
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__customer_receipt_exception_reason
+msgid "Exception Reason"
+msgstr "سبب الاستثناء"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+msgid "Fetch Due Shipments"
+msgstr "جلب الشحنات المستحقة"
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.js:0
+msgid "File"
+msgstr "ملف"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__message_follower_ids
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__message_partner_ids
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__date_from
+msgid "From Date"
+msgstr "من تاريخ"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/stock_lot.py:0
+msgid ""
+"From: %(old)s\n"
+"To: %(new)s\n"
+"Reason: %(reason)s\n"
+"By: %(user)s"
+msgstr ""
+"من: %(old)s\n"
+"إلى: %(new)s\n"
+"السبب: %(reason)s\n"
+"بواسطة: %(user)s"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_broker__is_internal
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__is_internal
+msgid ""
+"Group company carrier. Movements are flagged for inter-company treatment."
+msgstr "ناقل تابع لشركة من المجموعة. تُعلَّم الحركات للمعالجة بين الشركات."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__has_message
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_sale_order__id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_stock_lot__id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_allocation__id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__id
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للدلالة على نشاط استثنائي."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_broker_payment__message_needaction
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_broker_payment__message_has_error
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_broker_payment__message_has_sms_error
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__message_has_error
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.js:0
+msgid "Image"
+msgstr "صورة"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "In Transit"
+msgstr "في مرحلة النقل"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_broker__default_rate
+msgid "Indicative rate per movement."
+msgstr "التعرفة الإرشادية لكل حركة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "Instant return created from allocation %(allocation)s."
+msgstr "إرجاع فوري تم إنشاؤه من التخصيص %(allocation)s."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "Internal Return"
+msgstr "إرجاع داخلي"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__message_is_follower
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Issue"
+msgstr "إصدار"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_broker_payment__state__issued
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__state__issued
+msgid "Issued"
+msgstr "تم الإصدار"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__issued_by_id
+msgid "Issued By"
+msgstr "أصدر بواسطة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__issue_date
+msgid "Issued On"
+msgstr "تاريخ الإصدار"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__write_uid
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__write_uid
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__write_uid
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__write_date
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__write_date
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__write_date
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_broker__company_id
+msgid "Leave empty to share this broker with every company."
+msgstr "اتركه فارغًا لمشاركة هذا الوسيط مع كل الشركات."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__state__loaded
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Loaded"
+msgstr "تم التحميل"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__loaded_date
+msgid "Loaded On"
+msgstr "تاريخ التحميل"
+
+#. module: strx_cabin_shipping
+#: model:ir.model,name:strx_cabin_shipping.model_stock_lot
+msgid "Lot/Serial"
+msgstr "الدفعة/الرقم التسلسلي"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+msgid "Mark Paid"
+msgstr "تسجيل كمدفوع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__message_has_error
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__message_ids
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_search
+msgid "Monthly"
+msgstr "شهري"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_broker_payment__payment_batch__monthly
+msgid "Monthly Batch"
+msgstr "دفعة شهرية"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__movement_type
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "Movement"
+msgstr "نوع الحركة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "No due delivered shipments were found for this broker."
+msgstr "لا توجد شحنات تم تسليمها ومستحقة للدفع لهذا الوسيط."
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.xml:0
+msgid "No receipt attachments uploaded yet."
+msgstr "لا توجد مرفقات استلام مرفوعة حتى الآن."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__broker_payment_state__none
+msgid "Not Billed"
+msgstr "غير مفوتر"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__note
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__note
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__message_needaction_counter
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__message_has_error_counter
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_broker_payment__message_needaction_counter
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_broker_payment__message_has_error_counter
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "Only delivered shipments can be added to a broker payment order."
+msgstr "لا يمكن إضافة إلا الشحنات التي تم تسليمها إلى أمر دفع وسيط الشحن."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Only delivered shipments can be sent to broker payment."
+msgstr "يمكن إرسال الشحنات التي تم تسليمها فقط إلى دفع وسيط الشحن."
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.js:0
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_search
+msgid "Open"
+msgstr "فتح"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__route_note
+msgid ""
+"Optional pickup/drop-off instructions, checkpoints, or site access notes for"
+" this shipment."
+msgstr ""
+"تعليمات اختيارية للاستلام أو التسليم أو نقاط المرور أو دخول الموقع لهذه "
+"الشحنة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__route_origin
+msgid "Origin"
+msgstr "نقطة الانطلاق"
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.js:0
+msgid "PDF document"
+msgstr "مستند PDF"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_broker_payment__state__paid
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__broker_payment_state__paid
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_search
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__paid_by_id
+msgid "Paid By"
+msgstr "دفع بواسطة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__paid_date
+msgid "Paid On"
+msgstr "تاريخ الدفع"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "Paid payment orders cannot be cancelled."
+msgstr "لا يمكن إلغاء أوامر الدفع المدفوعة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "Paid payment orders cannot be reset to Draft."
+msgstr "لا يمكن إرجاع أوامر الدفع المدفوعة إلى مسودة."
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+msgid "Payment"
+msgstr "الدفع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__broker_payment_state__approved
+msgid "Payment Approved"
+msgstr "تم اعتماد الدفع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__broker_payment_state__issued
+msgid "Payment Issued"
+msgstr "تم إصدار الدفع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__name
+msgid "Payment Order"
+msgstr "أمر الدفع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__payment_order_count
+msgid "Payment Order Count"
+msgstr "عدد أوامر الدفع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__payment_order_ids
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__broker_payment_count
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_form
+msgid "Payment Orders"
+msgstr "أوامر الدفع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__payment_reference
+msgid "Payment Reference"
+msgstr "مرجع الدفع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__broker_payment_state
+msgid "Payment Status"
+msgstr "حالة الدفع"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Payments"
+msgstr "الدفعات"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__contact_phone
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Pickup, delivery, site access, or checkpoints..."
+msgstr "الاستلام أو التسليم أو دخول الموقع أو نقاط المرور..."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__scheduled_date
+msgid "Planned Date"
+msgstr "التاريخ المخطط"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Planned date"
+msgstr "تاريخ الشحن المخطط"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__vehicle_plate
+msgid "Plate"
+msgstr "رقم اللوحة"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Plate number"
+msgstr "رقم اللوحة"
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.js:0
+msgid "Preview"
+msgstr "معاينة"
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.js:0
+msgid "Preview %s"
+msgstr "معاينة %s"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__rate_note
+msgid "Rate Notes"
+msgstr "ملاحظات التعرفة"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_form
+msgid "Rates"
+msgstr "التعرفات"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_history_event__event_type__readiness
+msgid "Readiness Change"
+msgstr "تغيير الجاهزية"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/stock_lot.py:0
+msgid "Readiness changed"
+msgstr "تغيير حالة الجاهزية"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_sale_order__strx_customer_receipt_attachment_ids
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__customer_receipt_attachment_ids
+msgid "Receipt Attachments"
+msgstr "مرفقات الاستلام"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__reference
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.xml:0
+msgid "Remove attachment"
+msgstr "إزالة المرفق"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Rental"
+msgstr "التأجير"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid ""
+"Rental %(order)s has no eligible allocations for this %(movement)s step."
+msgstr ""
+"طلب التأجير %(order)s لا يحتوي على تخصيصات مؤهلة لخطوة %(movement)s هذه."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Rental %(order)s is not ready for %(movement)s shipping."
+msgstr "طلب التأجير %(order)s غير جاهز لشحن %(movement)s."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__order_id
+msgid "Rental Order"
+msgstr "طلب التأجير"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/stock_lot.py:0
+msgid ""
+"Rental Order: %(order)s\n"
+"Customer: %(customer)s\n"
+"Broker: %(broker)s\n"
+"Status: %(state)s\n"
+"Route: %(origin)s → %(destination)s\n"
+"Planned: %(planned)s\n"
+"Shipped: %(shipped)s\n"
+"Delivered: %(delivered)s\n"
+"Cost: %(cost)s"
+msgstr ""
+"طلب التأجير: %(order)s\n"
+"العميل: %(customer)s\n"
+"وسيط الشحن: %(broker)s\n"
+"الحالة: %(state)s\n"
+"المسار: %(origin)s ← %(destination)s\n"
+"المخطط: %(planned)s\n"
+"تم الشحن: %(shipped)s\n"
+"تم التسليم: %(delivered)s\n"
+"التكلفة: %(cost)s"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/stock_lot.py:0
+msgid ""
+"Rental Order: %(order)s\n"
+"Customer: %(customer)s\n"
+"Status: %(state)s\n"
+"Dispatch: %(out)s\n"
+"Expected Return: %(ret)s\n"
+"Actual Return: %(actual)s"
+msgstr ""
+"طلب التأجير: %(order)s\n"
+"العميل: %(customer)s\n"
+"الحالة: %(state)s\n"
+"الإرسال: %(out)s\n"
+"العودة المتوقعة: %(ret)s\n"
+"العودة الفعلية: %(actual)s"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Reset to Draft"
+msgstr "إعادة إلى مسودة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__movement_type__return
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_cabin_allocation_form_shipping
+msgid "Return"
+msgstr "إرجاع"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "Return Shipments"
+msgstr "شحنات الإرجاع"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "Return completed"
+msgstr "تم الإرجاع"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "Return shipments can only be created from on-rent cabins."
+msgstr "يمكن إنشاء شحنة الإرجاع فقط من كابينة مؤجرة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Return shipped on shipment %(ref)s"
+msgstr "تم شحن الرجوع على شحنة %(ref)s"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Returned on shipment %(ref)s"
+msgstr "تم الاستلام على شحنة %(ref)s"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "Returns"
+msgstr "عمليات الاستلام"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Route"
+msgstr "المسار"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Route & cost"
+msgstr "المسار والتكلفة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__route_note
+msgid "Route Notes"
+msgstr "ملاحظات المسار"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__message_has_sms_error
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model,name:strx_cabin_shipping.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "Select a broker first."
+msgstr "اختر وسيطًا أولاً."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Select a rental order before proceeding."
+msgstr "اختر طلب التأجير قبل المتابعة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "Select and allocate the required serials before creating shipment."
+msgstr "اختر الأرقام التسلسلية المطلوبة وخصصها قبل إنشاء الشحنة."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__lot_id
+msgid "Serial"
+msgstr "الرقم التسلسلي"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "Serial %(serial)s is not ready for a return shipment."
+msgstr "الرقم التسلسلي %(serial)s غير جاهز لإنشاء شحنة إرجاع."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__lot_ids
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Serials Carried"
+msgstr "الأرقام التسلسلية المنقولة"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Set the agreed cost before creating a shipment payment."
+msgstr "حدد التكلفة المتفق عليها قبل إنشاء أمر دفع للشحنة."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__name
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_history_event__event_type__shipment
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Shipment"
+msgstr "شحنة"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/stock_lot.py:0
+msgid "Shipment %(ref)s — %(movement)s"
+msgstr "الشحنة %(ref)s — %(movement)s"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid ""
+"Shipment %(shipment)s cannot be delivered without complete customer receipt proof.\n"
+"\n"
+"Required:\n"
+"%(missing)s"
+msgstr ""
+"لا يمكن إكمال تسليم الشحنة %(shipment)s بدون إثبات استلام كامل.\n"
+"\n"
+"المطلوب:\n"
+"%(missing)s"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid ""
+"Shipment %(shipment)s must carry all serials from allocation %(allocation)s:"
+" %(serials)s"
+msgstr ""
+"يجب أن تحمل الشحنة %(shipment)s جميع الأرقام التسلسلية من التخصيص "
+"%(allocation)s: %(serials)s"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_allocation__strx_shipping_count
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__waybill_count
+msgid "Shipment Count"
+msgstr "عدد الشحنات"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Shipment Payment"
+msgstr "أمر دفع للشحنة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__broker_waybill_ref
+msgid "Shipment Tracking Number"
+msgstr "رقم تتبع الشحنة"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Shipment details are incomplete"
+msgstr "بيانات الشحنة غير مكتملة"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+#: code:addons/strx_cabin_shipping/models/sale_order.py:0
+#: model:ir.actions.act_window,name:strx_cabin_shipping.action_strx_shipping_order
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_sale_order__strx_shipping_order_ids
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_allocation__strx_shipping_order_ids
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__shipping_order_ids
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__shipping_order_ids
+#: model:ir.ui.menu,name:strx_cabin_shipping.menu_strx_shipping_order
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_list
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_cabin_allocation_form_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_list
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "Shipments"
+msgstr "الشحنات"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+msgid "Shipments Included"
+msgstr "الشحنات المضمنة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__state__shipped
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Shipped"
+msgstr "تم الشحن"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__shipped_date
+msgid "Shipped On"
+msgstr "تاريخ الشحن"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Shipped on shipment %(ref)s"
+msgstr "تم الشحن على شحنة %(ref)s"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_order_form_strx_shipping
+msgid "Shipping"
+msgstr "الشحن"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_sale_order__strx_shipping_cost
+msgid "Shipping Cost"
+msgstr "تكلفة الشحن"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker__shipping_order_count
+msgid "Shipping Order Count"
+msgstr "عدد الشحنات"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Shipping broker"
+msgstr "وسيط الشحن"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_broker_payment__payment_batch__single
+msgid "Single Shipment"
+msgstr "شحنة واحدة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_shipping_order__movement_type__site_transfer
+msgid "Site Transfer"
+msgstr "نقل بين المواقع"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "Site Transfers"
+msgstr "النقل بين المواقع"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Site transfer delivered on shipment %(ref)s"
+msgstr "تم تسليم النقل بين المواقع على شحنة %(ref)s"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Site transfer shipped on shipment %(ref)s"
+msgstr "تم شحن النقل بين المواقع على شحنة %(ref)s"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__state
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__state
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_search
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق مضى بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_sale_order__strx_shipping_count
+msgid "Strx Shipping Count"
+msgstr "عدد عمليات الشحن"
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.js:0
+msgid "Text document"
+msgstr "مستند نصي"
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.xml:0
+msgid "The attachment appears here immediately after upload."
+msgstr "سيظهر المرفق هنا فور اكتمال الرفع."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__lot_ids
+msgid "The exact physical units on this shipment."
+msgstr "الوحدات الفعلية المحددة في هذه الشحنة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "The payment currency must match the shipment currency."
+msgstr "يجب أن تتطابق عملة الدفع مع عملة الشحنة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid "The payment order total must be greater than zero."
+msgstr "يجب أن يكون إجمالي أمر الدفع أكبر من صفر."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid ""
+"These shipments are already included in payment order %(payment)s: "
+"%(shipments)s"
+msgstr "هذه الشحنات مضافة بالفعل في أمر الدفع %(payment)s: %(shipments)s"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "This rented cabin allocation has no serials to return."
+msgstr "لا توجد أرقام تسلسلية في هذا التخصيص لإرجاعها."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid ""
+"Tip: keep the shipment in Draft until the broker, driver, vehicle, route, "
+"and cost are confirmed."
+msgstr ""
+"ملاحظة: اترك الشحنة كمسودة إلى أن يتم تأكيد بيانات الوسيط والسائق والمركبة "
+"والمسار والتكلفة."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__date_to
+msgid "To Date"
+msgstr "إلى تاريخ"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_list
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__amount_total
+msgid "Total Amount"
+msgstr "إجمالي المبلغ"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_sale_order__strx_shipping_cost
+msgid ""
+"Total agreed shipping cost booked against this rental, for margin "
+"visibility. Cancelled shipments are excluded."
+msgstr ""
+"إجمالي تكلفة الشحن المتفق عليها والمسجلة على هذا التأجير لإظهار هامش الربح. "
+"تُستبعد الشحنات الملغاة."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__broker_waybill_ref
+msgid "Tracking number provided by the carrier for this shipment."
+msgstr "رقم التتبع الخاص بهذه الشحنة من شركة النقل."
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_history_event__event_type
+msgid "Type"
+msgstr "النوع"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي على السجل."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "Unsupported payment-status search operator."
+msgstr "معامل بحث غير مدعوم لحالة الدفع."
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.js:0
+msgid "Upload attachments"
+msgstr "رفع مرفقات"
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.xml:0
+msgid "Uploaded attachments"
+msgstr "المرفقات المرفوعة"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_sale_order__strx_customer_receipt_exception
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__customer_receipt_exception
+msgid "Use only when the customer did not sign or stamp the receipt."
+msgstr "استخدمه فقط عند عدم توقيع أو ختم العميل على ورقة الاستلام."
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_form
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__vehicle_model
+msgid "Vehicle"
+msgstr "المركبة"
+
+#. module: strx_cabin_shipping
+#. odoo-javascript
+#: code:addons/strx_cabin_shipping/static/src/shipping/receipt_attachment_preview_field.js:0
+msgid "Video"
+msgstr "فيديو"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_broker_payment__website_message_ids
+#: model:ir.model.fields,field_description:strx_cabin_shipping.field_strx_cabin_shipping_order__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_broker_payment__website_message_ids
+#: model:ir.model.fields,help:strx_cabin_shipping.field_strx_cabin_shipping_order__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_broker_payment_search
+msgid "Weekly"
+msgstr "أسبوعي"
+
+#. module: strx_cabin_shipping
+#: model:ir.model.fields.selection,name:strx_cabin_shipping.selection__strx_cabin_broker_payment__payment_batch__weekly
+msgid "Weekly Batch"
+msgstr "دفعة أسبوعية"
+
+#. module: strx_cabin_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_order_form_strx_shipping
+#: model_terms:ir.ui.view,arch_db:strx_cabin_shipping.view_strx_shipping_order_form
+msgid "Why did the customer not sign or stamp the receipt?"
+msgstr "لماذا لم يوقّع أو يختم العميل ورقة الاستلام؟"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker_payment.py:0
+msgid ""
+"You can only change broker, shipments, batch option, period, or currency "
+"while the payment order is Draft."
+msgstr ""
+"يمكن تغيير وسيط الشحن أو الشحنات أو خيار الدفعة أو الفترة أو العملة فقط "
+"عندما يكون أمر الدفع في حالة مسودة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid ""
+"You can only change the rental, movement, or carried serials while the "
+"shipment is still Draft."
+msgstr ""
+"يمكن تغيير طلب التأجير أو نوع الحركة أو الأرقام التسلسلية المنقولة فقط عندما"
+" تكون الشحنة في حالة مسودة."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_broker.py:0
+msgid "broker_id"
+msgstr "broker_id"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "driver_id_number"
+msgstr "driver_id_number"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "driver_phone"
+msgstr "driver_phone"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+msgid "id"
+msgstr "id"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/stock_lot.py:0
+msgid "lot_id"
+msgstr "lot_id"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_allocation.py:0
+#: code:addons/strx_cabin_shipping/models/sale_order.py:0
+msgid "order_id"
+msgstr "order_id"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "route_destination"
+msgstr "route_destination"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "route_origin"
+msgstr "route_origin"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "scheduled_date"
+msgstr "scheduled_date"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "shipping_order_ids"
+msgstr "shipping_order_ids"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "vehicle_model"
+msgstr "vehicle_model"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "vehicle_plate"
+msgstr "vehicle_plate"
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "• At least one receipt attachment on the shipment or sales order."
+msgstr "• مرفق استلام واحد على الأقل على الشحنة أو أمر البيع."
+
+#. module: strx_cabin_shipping
+#. odoo-python
+#: code:addons/strx_cabin_shipping/models/cabin_shipping_order.py:0
+msgid "• Customer signature/stamp, or a documented no-signature exception."
+msgstr "• توقيع/ختم العميل، أو تفعيل استثناء عدم التوقيع وكتابة السبب."

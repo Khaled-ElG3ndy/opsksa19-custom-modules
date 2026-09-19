@@ -1,0 +1,736 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_parts_purchase
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "%(part)s for %(asset)s (req %(req)s)"
+msgstr "%(part)s للأصل %(asset)s (الطلب %(req)s)"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "A purchase order already covers the current shortage for request %s."
+msgstr "يوجد أمر شراء يغطي بالفعل العجز الحالي للطلب %s."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_consumption_line__allowed_product_ids
+msgid "Allowed Parts"
+msgstr "القطع المسموح بها"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__available_qty
+msgid "Available Quantity"
+msgstr "الكمية المتاحة"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields.selection,name:gr_parts_purchase.selection__gr_parts_request__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "Cancelled requests cannot be installed."
+msgstr "لا يمكن تركيب الطلبات الملغاة."
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "Cannot cancel request %s: parts already installed."
+msgstr "لا يمكن إلغاء الطلب %s: قطع الغيار مركّبة بالفعل."
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid ""
+"Cannot complete maintenance job %(job)s while spare-parts requests still "
+"have unissued or uninstalled quantities: %(requests)s"
+msgstr ""
+"لا يمكن إنجاز أمر الصيانة %(job)s وطلبات قطع الغيار لا تزال بها كميات غير "
+"مصروفة أو غير مركّبة: %(requests)s"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_consumption_origin.py:0
+msgid ""
+"Cannot issue %(qty)s %(uom)s from request %(req)s. Remaining quantity is "
+"%(remaining)s %(uom)s."
+msgstr ""
+"لا يمكن صرف %(qty)s %(uom)s من الطلب %(req)s. الكمية المتبقية هي "
+"%(remaining)s %(uom)s."
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "Cannot issue parts for request %s in its current state."
+msgstr "لا يمكن صرف قطع غيار للطلب %s في حالته الحالية."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields.selection,name:gr_parts_purchase.selection__gr_parts_request__purpose__change_oil
+msgid "Change Oil Service"
+msgstr "خدمة تغيير الزيت"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "Create PO for Shortage"
+msgstr "إنشاء أمر شراء للعجز"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__product_uom_id
+msgid "Default unit of measure used for all stock operations."
+msgstr "وحدة القياس الافتراضية المستخدمة لكافة عمليات المخزون."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_maintenance_job__display_name
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_consumption_line__display_name
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields.selection,name:gr_parts_purchase.selection__gr_parts_request__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_search
+msgid "Equipment"
+msgstr "المعدات"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__asset_id
+msgid "Equipment (Asset No)"
+msgstr "المعدة (رقم الأصل)"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: gr_parts_purchase
+#: model:ir.model,name:gr_parts_purchase.model_gr_maintenance_job
+msgid "Generator Maintenance Job"
+msgstr "أمر صيانة مولد"
+
+#. module: gr_parts_purchase
+#: model:ir.model,name:gr_parts_purchase.model_gr_parts_consumption_line
+msgid "Generator Maintenance Parts Consumption"
+msgstr "استهلاك قطع صيانة المولد"
+
+#. module: gr_parts_purchase
+#: model:ir.model,name:gr_parts_purchase.model_gr_parts_request
+msgid "Generator Parts Request (for a specific unit)"
+msgstr "طلب قطع للمولد (لوحدة محددة)"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_maintenance_job__id
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_consumption_line__id
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__message_has_error
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields.selection,name:gr_parts_purchase.selection__gr_parts_request__state__installed
+msgid "Installed"
+msgstr "مركب"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "Installed %(qty)s %(uom)s of %(part)s on %(asset)s."
+msgstr "تم تركيب %(qty)s %(uom)s من %(part)s على %(asset)s."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__consumption_line_ids
+msgid "Installed As"
+msgstr "ركب كـ"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__qty_installed
+msgid "Installed Quantity"
+msgstr "الكمية المركبة"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "Issue Available Stock"
+msgstr "صرف المتاح من المخزون"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "Issue Links"
+msgstr "روابط الصرف"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields.selection,name:gr_parts_purchase.selection__gr_parts_request__state__issued
+msgid "Issued"
+msgstr "مصروف"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "Issued %(qty)s %(uom)s of %(part)s from %(location)s."
+msgstr "تم صرف %(qty)s %(uom)s من %(part)s من %(location)s."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__qty_issued
+msgid "Issued Quantity"
+msgstr "الكمية المصروفة"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__job_id
+msgid "Maintenance Job"
+msgstr "أمر صيانة"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_consumption_origin.py:0
+msgid "Maintenance Job must match the selected Source Request."
+msgstr "يجب أن يطابق أمر الصيانة الطلب المصدر المحدد."
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "Mark Received"
+msgstr "تسجيل الاستلام"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__purpose
+msgid "Matches the Warehouse Issuance 'purpose of parts releasing'."
+msgstr "يطابق 'غرض صرف القطع' في إصدار المستودع."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "No available quantity to issue for request %s."
+msgstr "لا توجد كمية متاحة للصرف للطلب %s."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "Only open requests can be purchased."
+msgstr "لا يمكن شراء إلا الطلبات المفتوحة."
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "Only purchased requests can be received."
+msgstr "لا يمكن استلام إلا الطلبات المشتراة."
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_search
+msgid "Open"
+msgstr "مفتوح"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_consumption_line__purchase_line_id
+msgid "Origin PO Line"
+msgstr "سطر أمر الشراء الأصلي"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__purchase_line_id
+msgid "PO Line"
+msgstr "سطر أمر الشراء"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__product_id
+msgid "Part"
+msgstr "القطعة"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "Part & Unit"
+msgstr "القطعة والوحدة"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_consumption_origin.py:0
+msgid "Part must match the selected Source Request."
+msgstr "يجب أن تطابق القطعة الطلب المصدر المحدد."
+
+#. module: gr_parts_purchase
+#: model:ir.ui.menu,name:gr_parts_purchase.menu_gr_parts_leakage
+msgid "Parts Leakage"
+msgstr "تسرب القطع"
+
+#. module: gr_parts_purchase
+#: model:ir.actions.act_window,name:gr_parts_purchase.action_gr_parts_leakage
+msgid "Parts Leakage (Unreconciled)"
+msgstr "تسرب القطع (غير مطابق)"
+
+#. module: gr_parts_purchase
+#: model:ir.actions.act_window,name:gr_parts_purchase.action_gr_parts_request
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_maintenance_job__parts_request_ids
+#: model:ir.ui.menu,name:gr_parts_purchase.menu_gr_parts_request
+msgid "Parts Requests"
+msgstr "طلبات القطع"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_maintenance_job_form_requests
+msgid "Parts Requests (ordered for this unit)"
+msgstr "طلبات القطع (المطلوبة لهذه الوحدة)"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__vendor_id
+msgid "Preferred Vendor"
+msgstr "المورد المفضل"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "Purchase"
+msgstr "شراء"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__purchase_order_id
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid ""
+"Purchase order %(po)s generated for shortage quantity %(qty)s %(uom)s for "
+"%(asset)s."
+msgstr ""
+"تم توليد أمر الشراء %(po)s لكمية العجز %(qty)s %(uom)s للأصل %(asset)s."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields.selection,name:gr_parts_purchase.selection__gr_parts_request__state__purchased
+msgid "Purchased"
+msgstr "تم الشراء"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__purchase_qty_ordered
+msgid "Purchased Quantity"
+msgstr "كمية الشراء"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__purpose
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_search
+msgid "Purpose"
+msgstr "الغرض"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "Receive the purchase order for request %s before marking it received."
+msgstr "استلم أمر الشراء للطلب %s قبل تعليمه كمستلَم."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields.selection,name:gr_parts_purchase.selection__gr_parts_request__state__received
+msgid "Received"
+msgstr "مستلم"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__purchase_qty_received
+msgid "Received Quantity"
+msgstr "الكمية المستلمة"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__reconciled
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "Reconciled"
+msgstr "مطابق"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "Reconciliation (required vs issued vs installed)"
+msgstr "المطابقة (المطلوب مقابل المصروف والمركب)"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "Register Installation"
+msgstr "تسجيل التركيب"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_consumption_line__request_remaining_qty
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__qty_remaining_to_issue
+msgid "Remaining Quantity"
+msgstr "الكمية المتبقية"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields.selection,name:gr_parts_purchase.selection__gr_parts_request__purpose__repair
+msgid "Repair"
+msgstr "إصلاح"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields.selection,name:gr_parts_purchase.selection__gr_parts_request__purpose__replacement
+msgid "Replacement"
+msgstr "استبدال"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__name
+msgid "Request Reference"
+msgstr "مرجع الطلب"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.actions.act_window,help:gr_parts_purchase.action_gr_parts_request
+msgid "Request a part for a specific generator"
+msgstr "اطلب قطعة غيار لمولد محدد"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_maintenance_job__parts_request_count
+msgid "Requests"
+msgstr "الطلبات"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__quantity
+msgid "Required Quantity"
+msgstr "الكمية المطلوبة"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__qty_outstanding
+msgid ""
+"Required for this unit but not yet installed on it. A positive value that "
+"lingers is the parts-leakage early warning."
+msgstr ""
+"طلبت لهذه الوحدة لكنها لم تركب عليها بعد. بقاء قيمة موجبة هو إنذار مبكر "
+"لتسرب القطع."
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "Required quantity must be positive."
+msgstr "يجب أن تكون الكمية المطلوبة موجبة."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid ""
+"Set a preferred vendor before generating the purchase order for request %s."
+msgstr "حدد موردًا مفضلاً قبل توليد أمر الشراء للطلب %s."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__qty_shortage_to_buy
+msgid "Shortage to Buy"
+msgstr "العجز المطلوب شراؤه"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__source_location_id
+msgid "Source Location"
+msgstr "موقع المصدر"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_consumption_line__request_id
+msgid "Source Request"
+msgstr "طلب المصدر"
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_consumption_origin.py:0
+msgid "Source Request %s is not open for issuing parts."
+msgstr "الطلب المصدر %s غير مفتوح لصرف قطع الغيار."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__state
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "Stock"
+msgstr "المخزون"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__stock_move_id
+msgid "Stock Move"
+msgstr "حركة المخزون"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__stock_picking_id
+msgid "Stock Picking"
+msgstr "عملية المخزون"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.actions.act_window,help:gr_parts_purchase.action_gr_parts_request
+msgid ""
+"The closed loop: request against a job, purchase born-linked to the\n"
+"               unit, receive, install by Asset No, and reconcile."
+msgstr ""
+"الدورة المغلقة: طلب مقابل أمر صيانة، وشراء مرتبط\n"
+"               بالوحدة منذ نشأته، ثم استلام، وتركيب حسب رقم الأصل، ثم تسوية."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__job_id
+msgid "The job that needs the part. Carries the equipment / Asset No."
+msgstr "العمل الذي يحتاج إلى القطعة. يحمل المعدة / رقم الأصل."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_consumption_line__request_id
+msgid ""
+"The parts request this consumption fulfils. Links the part installed on the "
+"unit back to the purchase raised for it."
+msgstr ""
+"طلب القطع الذي يحققه هذا الاستهلاك. يربط القطعة المركبة على الوحدة بالشراء "
+"المنشأ لها."
+
+#. module: gr_parts_purchase
+#: model:ir.model.constraint,message:gr_parts_purchase.constraint_gr_parts_request_name_company_uniq
+msgid "The parts-request reference must be unique per company."
+msgstr "يجب أن يكون مرجع طلب القطع فريداً لكل شركة."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__asset_id
+msgid "The specific generator this part is ordered for."
+msgstr "المولد المحدد الذي طلبت هذه القطعة له."
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "There is no issued quantity waiting for installation on request %s."
+msgstr "لا توجد كمية مصروفة بانتظار التركيب في الطلب %s."
+
+#. module: gr_parts_purchase
+#. odoo-python
+#: code:addons/gr_parts_purchase/models/gr_parts_request.py:0
+msgid "There is no shortage to purchase for request %s."
+msgstr "لا يوجد عجز مطلوب شراؤه للطلب %s."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__reconciled
+msgid ""
+"True when everything ordered for this unit has been installed on it (no "
+"leakage)."
+msgstr "صحيح عندما يتم تركيب كل ما طلب لهذه الوحدة عليها (لا يوجد تسرب)."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__qty_outstanding
+msgid "Uninstalled Quantity"
+msgstr "الكمية غير المركبة"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__product_uom_id
+msgid "Unit"
+msgstr "الوحدة"
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_search
+msgid "Unreconciled (leakage)"
+msgstr "غير مطابق (تسرب)"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__vendor_id
+msgid "Vendor to raise the purchase order against."
+msgstr "المورد الذي سيتم إنشاء أمر الشراء عليه."
+
+#. module: gr_parts_purchase
+#: model_terms:ir.ui.view,arch_db:gr_parts_purchase.view_gr_parts_request_form
+msgid "View PO"
+msgstr "عرض أمر الشراء"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__warehouse_id
+msgid "Warehouse"
+msgstr "المستودع"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,field_description:gr_parts_purchase.field_gr_parts_request__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: gr_parts_purchase
+#: model:ir.model.fields,help:gr_parts_purchase.field_gr_parts_request__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"

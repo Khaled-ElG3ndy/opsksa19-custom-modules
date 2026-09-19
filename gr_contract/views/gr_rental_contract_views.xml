@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================ -->
+    <!-- Contract form                                                -->
+    <!-- ============================================================ -->
+    <record id="view_gr_rental_contract_form" model="ir.ui.view">
+        <field name="name">gr.rental.contract.form</field>
+        <field name="model">gr.rental.contract</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_submit" type="object" string="Submit"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="Approve"
+                            class="btn-primary" invisible="state != 'submitted'"
+                            groups="gr_security_base.group_generator_general_manager"/>
+                    <button name="action_activate" type="object" string="Activate"
+                            class="btn-primary"
+                            invisible="state not in ('approved','suspended')"/>
+                    <button name="action_suspend" type="object" string="Suspend"
+                            invisible="state != 'active'"/>
+                    <button name="action_expire" type="object" string="Expire"
+                            invisible="state not in ('active','suspended')"/>
+                    <button name="action_close" type="object" string="Close"
+                            invisible="state in ('draft','cancelled','closed')"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state in ('cancelled','closed')"/>
+                    <button name="action_reset_to_draft" type="object" string="Reset to Draft"
+                            invisible="state not in ('cancelled','submitted')"/>
+                    <button name="action_raise_monthly_sales_followup" type="object"
+                            string="Send Sales Reminder"
+                            invisible="state not in ('approved','active')"
+                            groups="gr_security_base.group_generator_sales_officer"/>
+                    <button name="%(action_report_gr_rental_contract)d" type="action"
+                            string="Download" class="btn-secondary" icon="fa-download"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,submitted,approved,active,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_amendments" type="object"
+                                class="oe_stat_button" icon="fa-pencil-square-o"
+                                invisible="amendment_count == 0">
+                            <field name="amendment_count" widget="statinfo" string="Amendments"/>
+                        </button>
+                    </div>
+
+                    <widget name="web_ribbon" title="Approved - Terms Locked"
+                            bg_color="text-bg-success"
+                            invisible="state not in ('approved','active','suspended','expired','closed')"/>
+
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+
+                    <group>
+                        <group string="Parties">
+                            <field name="partner_id"
+                                   readonly="state in ('approved','active','suspended','expired','closed')"/>
+                            <field name="site_id"
+                                   readonly="state in ('approved','active','suspended','expired','closed')"/>
+                            <field name="sales_user_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="currency_id"
+                                   readonly="state in ('approved','active','suspended','expired','closed')"/>
+                        </group>
+                        <group string="Period &amp; Type">
+                            <field name="contract_type"
+                                   readonly="state in ('approved','active','suspended','expired','closed')"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="customer_po_number"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Commercial Terms" name="commercial">
+                            <group>
+                                <group string="Hours">
+                                    <field name="included_hours_per_day"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                    <field name="max_hours_per_day"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                </group>
+                                <group string="Base Rates">
+                                    <field name="base_daily_rate"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                    <field name="base_monthly_rate"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                    <field name="hourly_rate"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                    <field name="standby_rate"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Usage Rates">
+                                    <field name="overtime_hour_rate"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                    <field name="violation_hour_rate"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                    <field name="operator_daily_rate"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                </group>
+                                <group string="Fuel">
+                                    <field name="fuel_billing_policy"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                    <field name="fuel_rate"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Charges &amp; Deposit">
+                                    <field name="mobilization_charge"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                    <field name="demobilization_charge"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                    <field name="security_deposit"
+                                           readonly="state in ('approved','active','suspended','expired','closed')"/>
+                                </group>
+                                <group string="Terms">
+                                    <field name="payment_terms_id"/>
+                                    <field name="sla_response_hours"/>
+                                    <field name="maintenance_included"/>
+                                    <field name="spare_parts_included"/>
+                                    <field name="requires_daily_customer_signature"/>
+                                </group>
+                            </group>
+                            <group string="Sales Follow-up">
+                                <field name="sales_monthly_reminder_enabled"/>
+                                <field name="sales_monthly_reminder_day"
+                                       invisible="not sales_monthly_reminder_enabled"/>
+                                <field name="renewal_reminder_days"
+                                       invisible="not sales_monthly_reminder_enabled"/>
+                                <field name="last_sales_followup_period" readonly="1"
+                                       invisible="not last_sales_followup_period"/>
+                            </group>
+                        </page>
+                        <page string="Allocation Lines" name="lines">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="kva_rating"/>
+                                    <field name="quantity"/>
+                                    <field name="preferred_asset_id"/>
+                                    <field name="rate_override"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                    <field name="notes"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="PO &amp; Documents" name="docs">
+                            <group>
+                                <field name="customer_po_attachment" filename="customer_po_filename"/>
+                                <field name="customer_po_filename" invisible="1"/>
+                                <field name="analytic_account_id"/>
+                            </group>
+                        </page>
+                        <page string="Terms &amp; Conditions" name="tc">
+                            <field name="terms_and_conditions"/>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- Contract list                                                -->
+    <!-- ============================================================ -->
+    <record id="view_gr_rental_contract_list" model="ir.ui.view">
+        <field name="name">gr.rental.contract.list</field>
+        <field name="model">gr.rental.contract</field>
+        <field name="arch" type="xml">
+            <list decoration-info="state == 'active'" decoration-muted="state in ('closed','cancelled','expired')">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="site_id"/>
+                <field name="contract_type"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="sales_user_id" optional="show"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'active'"
+                       decoration-info="state == 'approved'"
+                       decoration-warning="state in ('submitted','suspended')"
+                       decoration-danger="state == 'cancelled'"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- Contract search                                              -->
+    <!-- ============================================================ -->
+    <record id="view_gr_rental_contract_search" model="ir.ui.view">
+        <field name="name">gr.rental.contract.search</field>
+        <field name="model">gr.rental.contract</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="site_id"/>
+                <field name="sales_user_id"/>
+                <separator/>
+                <filter name="f_draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="f_submitted" string="Submitted" domain="[('state','=','submitted')]"/>
+                <filter name="f_approved" string="Approved" domain="[('state','=','approved')]"/>
+                <filter name="f_active" string="Active" domain="[('state','=','active')]"/>
+                <group>
+                    <filter name="g_state" string="Status" context="{'group_by': 'state'}"/>
+                    <filter name="g_customer" string="Customer" context="{'group_by': 'partner_id'}"/>
+                    <filter name="g_sales_user" string="Sales Responsible" context="{'group_by': 'sales_user_id'}"/>
+                    <filter name="g_type" string="Type" context="{'group_by': 'contract_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_gr_rental_contract" model="ir.actions.act_window">
+        <field name="name">Rental Contracts</field>
+        <field name="res_model">gr.rental.contract</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_gr_rental_contract_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first rental contract</p>
+            <p>A commercial agreement defining rates, hours, and terms. Once approved,
+               commercial terms lock and changes require an amendment.</p>
+        </field>
+    </record>
+
+</odoo>

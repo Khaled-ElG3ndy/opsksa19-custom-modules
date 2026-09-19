@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_rental_asset_history_list" model="ir.ui.view">
+        <field name="name">rental.asset.history.list</field>
+        <field name="model">rental.asset.history</field>
+        <field name="arch" type="xml">
+            <list create="1" edit="0" delete="0"
+                  decoration-info="event_type in ('rental_confirmed','asset_reserved','delivery','installed','rental_started','rental_extended')"
+                  decoration-warning="event_type in ('maintenance_opened','maintenance_started','inspection_started','off_hire_requested')"
+                  decoration-danger="event_type in ('breakdown_reported','damage_found','inspection_failed','asset_retired')"
+                  decoration-success="event_type in ('return','maintenance_done','inspection_passed','rental_closed','vendor_returned')">
+                <field name="event_datetime" string="Date &amp; Time"/>
+                <field name="event_type" string="Event Type" widget="badge"/>
+                <field name="name" string="Details"/>
+                <field name="partner_id" string="Customer"/>
+                <field name="location_label" string="Location"/>
+                <field name="source_reference" string="Source Reference"/>
+                <field name="user_id" string="Responsible User"/>
+                <button name="action_open_source" type="object" icon="fa-external-link"
+                        string="Open Source" title="Open Source" invisible="not source_model"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_rental_asset_history_form" model="ir.ui.view">
+        <field name="name">rental.asset.history.form</field>
+        <field name="model">rental.asset.history</field>
+        <field name="arch" type="xml">
+            <form create="1" edit="1" delete="0">
+                <header>
+                    <button name="action_open_source" type="object"
+                            string="Open Source" class="btn-primary"
+                            invisible="not source_model"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group string="Event">
+                            <field name="event_datetime"
+                                   readonly="is_automatic"/>
+                            <field name="event_type"/>
+                            <field name="asset_id" readonly="is_automatic"/>
+                            <field name="item_unit_id" readonly="is_automatic"/>
+                            <field name="is_automatic"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group string="Source">
+                            <field name="source_reference" readonly="1"/>
+                            <field name="source_model" readonly="1"/>
+                            <field name="source_res_id" readonly="1"/>
+                            <field name="technical_key" readonly="is_automatic"/>
+                            <field name="user_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Status &amp; Party">
+                            <field name="old_state"/>
+                            <field name="new_state"/>
+                            <field name="partner_id"/>
+                        </group>
+                        <group string="Location">
+                            <field name="previous_location_id"/>
+                            <field name="previous_location_label"/>
+                            <field name="location_id"/>
+                            <field name="location_label"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Details" name="details">
+                            <field name="description"/>
+                            <field name="notes"/>
+                        </page>
+                        <page string="Links" name="links">
+                            <group>
+                                <field name="rental_order_id"/>
+                                <field name="contract_id"/>
+                                <field name="maintenance_id"/>
+                                <field name="inspection_id"/>
+                                <field name="visit_id"/>
+                                <field name="parts_line_id"/>
+                                <field name="sublet_agreement_id"/>
+                                <field name="sublet_direct_cost_id"/>
+                                <field name="picking_id"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_rental_asset_history_search" model="ir.ui.view">
+        <field name="name">rental.asset.history.search</field>
+        <field name="model">rental.asset.history</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="asset_id"/>
+                <field name="item_unit_id"/>
+                <field name="partner_id"/>
+                <field name="rental_order_id"/>
+                <field name="contract_id"/>
+                <field name="event_datetime"/>
+                <field name="source_reference"/>
+                <filter name="f_business_events" string="Business Events"
+                        domain="[('is_technical_event','=',False)]"/>
+                <filter name="f_technical_events" string="Technical Events"
+                        domain="[('is_technical_event','=',True)]"
+                        groups="gr_security_base.group_generator_administrator"/>
+                <filter name="f_rental" string="Rental"
+                        domain="[('event_type','in',['rental_order_created','rental_confirmed','asset_reserved','delivery','installed','rental_started','rental_extended','return','rental_closed'])]"/>
+                <filter name="f_maintenance" string="Maintenance"
+                        domain="[('event_type','in',['maintenance_opened','maintenance_scheduled','maintenance_started','maintenance_done','maintenance_cancelled','parts_used','sublet_direct_cost'])]"/>
+                <filter name="f_issues" string="Issues / Damage"
+                        domain="[('event_type','in',['breakdown_reported','damage_found','inspection_failed'])]"/>
+                <filter name="f_today" string="Today"
+                        domain="[('event_datetime', '&gt;=', 'today')]"/>
+                <filter name="f_this_month" string="This Month"
+                        domain="[('event_datetime', '&gt;=', '=1d')]"/>
+                <filter name="f_oldest_first" string="Oldest First"
+                        context="{'order': 'event_datetime asc'}"/>
+                <group>
+                    <filter name="g_asset" string="Asset" context="{'group_by':'asset_id'}"/>
+                    <filter name="g_item" string="Rentable Item" context="{'group_by':'item_unit_id'}"/>
+                    <filter name="g_type" string="Event Type" context="{'group_by':'event_type'}"/>
+                    <filter name="g_customer" string="Customer" context="{'group_by':'partner_id'}"/>
+                    <filter name="g_company" string="Company" context="{'group_by':'company_id'}"
+                            groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_rental_asset_rental_history_list" model="ir.ui.view">
+        <field name="name">rental.asset.rental.history.list</field>
+        <field name="model">rental.asset.rental.history</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0" delete="0"
+                  decoration-muted="state == 'cancelled'"
+                  decoration-success="state == 'closed'"
+                  decoration-info="state in ('reserved','dispatched','installed','on_rent')">
+                <field name="rental_order_id"/>
+                <field name="asset_role" widget="badge"/>
+                <field name="partner_id"/>
+                <field name="contract_id"/>
+                <field name="site_id"/>
+                <field name="start_datetime"/>
+                <field name="planned_return_datetime"/>
+                <field name="actual_return_datetime"/>
+                <field name="duration_days"/>
+                <field name="daily_rate"/>
+                <field name="revenue_amount"/>
+                <field name="is_free"/>
+                <field name="state" widget="badge"/>
+                <button name="action_open_rental_order" type="object"
+                        icon="fa-external-link" string="Open Rental Order"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_rental_asset_rental_history_form" model="ir.ui.view">
+        <field name="name">rental.asset.rental.history.form</field>
+        <field name="model">rental.asset.rental.history</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0" delete="0">
+                <header>
+                    <button name="action_open_rental_order" type="object"
+                            string="Open Rental Order" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group string="Rental">
+                            <field name="asset_id"/>
+                            <field name="rental_order_id"/>
+                            <field name="order_line_id"/>
+                            <field name="asset_role"/>
+                            <field name="state"/>
+                        </group>
+                        <group string="Customer">
+                            <field name="partner_id"/>
+                            <field name="contract_id"/>
+                            <field name="site_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Dates">
+                            <field name="start_datetime"/>
+                            <field name="planned_return_datetime"/>
+                            <field name="actual_return_datetime"/>
+                            <field name="duration_days"/>
+                        </group>
+                        <group string="Pricing">
+                            <field name="daily_rate"/>
+                            <field name="revenue_amount"/>
+                            <field name="is_free"/>
+                            <field name="technical_key" groups="gr_security_base.group_generator_administrator"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_rental_asset_rental_history_search" model="ir.ui.view">
+        <field name="name">rental.asset.rental.history.search</field>
+        <field name="model">rental.asset.rental.history</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="asset_id"/>
+                <field name="rental_order_id"/>
+                <field name="partner_id"/>
+                <field name="contract_id"/>
+                <field name="site_id"/>
+                <field name="start_datetime"/>
+                <filter name="f_main" string="Main Assets"
+                        domain="[('asset_role','=','main')]"/>
+                <filter name="f_accessory" string="Accessories"
+                        domain="[('asset_role','=','accessory')]"/>
+                <filter name="f_free" string="Free"
+                        domain="[('is_free','=',True)]"/>
+                <filter name="f_active" string="Active"
+                        domain="[('state','in',['reserved','dispatched','installed','on_rent','off_hire_requested'])]"/>
+                <filter name="f_oldest_first" string="Oldest First"
+                        context="{'order': 'start_datetime asc'}"/>
+                <group>
+                    <filter name="g_asset" string="Asset" context="{'group_by':'asset_id'}"/>
+                    <filter name="g_role" string="Role" context="{'group_by':'asset_role'}"/>
+                    <filter name="g_customer" string="Customer" context="{'group_by':'partner_id'}"/>
+                    <filter name="g_order" string="Rental Order" context="{'group_by':'rental_order_id'}"/>
+                    <filter name="g_status" string="Status" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_rental_asset_rental_history" model="ir.actions.act_window">
+        <field name="name">Asset Rental Operations</field>
+        <field name="res_model">rental.asset.rental.history</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_rental_asset_rental_history_search"/>
+    </record>
+
+    <record id="action_rental_asset_history" model="ir.actions.act_window">
+        <field name="name">Asset History</field>
+        <field name="res_model">rental.asset.history</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_rental_asset_history_search"/>
+        <field name="context">{'search_default_f_business_events': 1}</field>
+    </record>
+
+    <menuitem id="menu_rental_asset_history"
+              name="Asset History"
+              parent="gr_fleet_base.menu_gr_assets_root"
+              action="action_rental_asset_history"
+              groups="gr_security_base.group_generator_user"
+              sequence="20"/>
+
+    <menuitem id="menu_rental_asset_rental_history"
+              name="Asset Rental Operations"
+              parent="gr_fleet_base.menu_gr_assets_root"
+              action="action_rental_asset_rental_history"
+              groups="gr_security_base.group_generator_user"
+              sequence="21"/>
+
+</odoo>

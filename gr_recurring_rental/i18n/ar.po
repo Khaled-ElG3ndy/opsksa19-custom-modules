@@ -1,0 +1,1166 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_recurring_rental
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental_line.py:0
+msgid "%(item)s x%(qty)s: select the unit(s) to rent."
+msgstr "%(item)s ×%(qty)s: اختر الوحدة/الوحدات المطلوب تأجيرها."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "%(item)s: %(count)s more unit(s) still need a serial."
+msgstr "%(item)s: ما زال يلزم تحديد %(count)s وحدة إضافية."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental_line.py:0
+msgid "%(item)s: preferred unit %(asset)s not used - %(why)s"
+msgstr "%(item)s: لم تُستخدم الوحدة المفضلة %(asset)s — %(why)s"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "%s has no next rental date."
+msgstr "%s ليس له موعد تأجير قادم."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid ""
+"%s has no recurring items. Add what the customer normally rents before "
+"preparing an order."
+msgstr "%s ليس به بنود ثابتة. أضف ما يستأجره العميل عادةً قبل تجهيز الأمر."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid ""
+"%s has no rental contract. A rental order cannot be confirmed without one."
+msgstr "%s ليس له عقد تأجير. لا يمكن تأكيد أمر التأجير بدون عقد."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "%s is paused. Reactivate it before preparing an order."
+msgstr "%s موقوف مؤقتاً. أعد تفعيله قبل تجهيز أمر التأجير."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental_line.py:0
+msgid "%s kVA"
+msgstr "%s ك.ف.أ"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__site_id
+msgid ""
+"A customer may have one arrangement per site, each on its own schedule."
+msgstr "يمكن أن يكون للعميل ترتيب واحد لكل موقع، ولكل منها جدولته الخاصة."
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid ""
+"A line is a requirement, not a promise of one\n"
+"                                   specific machine. A Preferred Unit is used\n"
+"                                   only when it is available on the rental dates\n"
+"                                   and, for third-party equipment, covered by a\n"
+"                                   valid supplier agreement — otherwise the\n"
+"                                   prepared order leaves the serial blank for\n"
+"                                   you to choose."
+msgstr ""
+"البند هو متطلب وليس التزاماً بجهاز معيّن. لا تُستخدم الوحدة المفضلة إلا إذا "
+"كانت متاحة في تواريخ التأجير، وبالنسبة للمعدات المستأجرة من الغير أن تكون "
+"مغطاة بعقد مورد ساري — وإلا يُترك الرقم التسلسلي فارغاً في الأمر المجهز "
+"لتختاره بنفسك."
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_res_partner_form_recurring
+msgid "A recurring rental for this customer is due today."
+msgstr "يوجد تأجير دوري مستحق اليوم لهذا العميل."
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_res_partner_form_recurring
+msgid "A recurring rental for this customer is overdue."
+msgstr "يوجد تأجير دوري متأخر لهذا العميل."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__daily_rate_override
+msgid "Agreed Daily Rate"
+msgstr "السعر اليومي المتفق عليه"
+
+#. module: gr_recurring_rental
+#: model:ir.model.constraint,message:gr_recurring_rental.constraint_gr_recurring_rental_occurrence_occurrence_uniq
+msgid "An occurrence date can only be handled once per recurring rental."
+msgstr "لا يمكن معالجة تاريخ الموعد أكثر من مرة لكل تأجير دوري."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__active
+msgid ""
+"Archive to pause the arrangement. A paused arrangement raises no reminders "
+"and prepares no orders, but keeps its full history and can be reactivated at"
+" any time."
+msgstr ""
+"الأرشفة توقف الترتيب مؤقتاً. الترتيب الموقوف لا ينشئ تذكيرات ولا يجهّز "
+"أوامر، لكنه يحتفظ بسجله كاملاً ويمكن إعادة تفعيله في أي وقت."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental_line__is_free
+msgid ""
+"Bundled at no charge, the way a cable often goes out free with a generator."
+msgstr "يخرج ضمن الباقة بدون رسوم، مثلما يخرج الكابل عادةً مجاناً مع المولد."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental_line__required_kva
+msgid ""
+"Capacity the customer needs, for generator lines. Recorded so the operator "
+"can pick an equivalent machine when the preferred one is unavailable."
+msgstr ""
+"القدرة التي يحتاجها العميل في بنود المولدات. تُسجَّل ليتمكن المشغل من اختيار"
+" جهاز مكافئ عندما تكون الوحدة المفضلة غير متاحة."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental_line__item_type_id
+msgid ""
+"Catalogue item type, used for pricing defaults and for items that are not "
+"tracked as equipment assets."
+msgstr ""
+"نوع البند في الكتالوج، ويُستخدم لأسعار افتراضية وللبنود غير المتتبَّعة كأصول"
+" معدات."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__company_id
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__company_id
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental_line__preferred_owner_type
+msgid ""
+"Company Owned: ABSAL's own rental fleet, a real company asset. Third-Party: "
+"NOT a company asset - rented in from a third-party supplier and re-rented to"
+" customers for the supplier's rental period only. Customer-owned: belongs to"
+" a customer ABSAL only services - never in the rental pool."
+msgstr ""
+"مملوك للشركة: أسطول ABSAL التأجيري الخاص، أصل حقيقي للشركة. مستأجر من الغير:"
+" ليس أصلاً للشركة — مستأجر من مورد خارجي ويعاد تأجيره للعملاء خلال فترة "
+"استئجاره من المورد فقط. مملوك للعميل: يخص عميلاً وتقوم ABSAL بخدمته فقط ولا "
+"يدخل في أسطول التأجير."
+
+#. module: gr_recurring_rental
+#: model:ir.model,name:gr_recurring_rental.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Contract %(contract)s does not belong to customer %(partner)s."
+msgstr "العقد %(contract)s لا يخص العميل %(partner)s."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__contract_state
+msgid "Contract Status"
+msgstr "حالة العقد"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__create_uid
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__create_uid
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__create_date
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__create_date
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__currency_id
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__partner_id
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__day_of_month
+msgid "Day of Month"
+msgstr "يوم من الشهر"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Day of Month must be between 1 and 31 for %s."
+msgstr "يجب أن يكون \"يوم من الشهر\" بين 1 و 31 في %s."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__display_name
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__display_name
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__display_name
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_rental_order__display_name
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_res_partner__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Draft Rental Order"
+msgstr "أمر تأجير مسودة"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_search
+msgid "Due Soon"
+msgstr "مستحق قريباً"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields.selection,name:gr_recurring_rental.selection__gr_recurring_rental__occurrence_state__due_today
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_search
+msgid "Due Today"
+msgstr "مستحق اليوم"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__equipment_type_id
+msgid "Equipment Type"
+msgstr "نوع المعدة"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_list
+msgid "Every"
+msgstr "كل"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__planned_return_preview
+msgid "Expected Return"
+msgstr "الإرجاع المتوقع"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__is_free
+msgid "Free of Charge"
+msgstr "مجاناً"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental_line__specification
+msgid "Free text for non-generator requirements, such as '4-core 120mm 50m'."
+msgstr "نص حر للمتطلبات غير المتعلقة بالمولدات، مثل '4-core 120mm 50m'."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__frequency
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_search
+msgid "Frequency"
+msgstr "التكرار"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_rental_order_search_recurring
+msgid "From a Recurring Rental"
+msgstr "ناتج عن تأجير دوري"
+
+#. module: gr_recurring_rental
+#: model:ir.model,name:gr_recurring_rental.model_gr_rental_order
+msgid "Generator Rental Order"
+msgstr "أمر تأجير المولد"
+
+#. module: gr_recurring_rental
+#: model:ir.actions.server,name:gr_recurring_rental.ir_cron_recurring_rental_reminders_ir_actions_server
+msgid "Generator Rental: Recurring Rental Reminders"
+msgstr "تأجير المولدات: تذكيرات التأجير الدوري"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental_line__quantity
+msgid ""
+"How many units of this requirement. Each unit becomes its own rental order "
+"line, because each is a separate serial."
+msgstr ""
+"عدد الوحدات المطلوبة من هذا المتطلب. كل وحدة تصبح بنداً مستقلاً في أمر "
+"التأجير، لأن كل واحدة رقم تسلسلي منفصل."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__id
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__id
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__id
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_rental_order__id
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_res_partner__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__message_has_error
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "Internal notes..."
+msgstr "ملاحظات داخلية..."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "It is time to prepare the next rental for this customer."
+msgstr "حان وقت تجهيز التأجير القادم لهذا العميل."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid ""
+"It is time to prepare the recurring rental for %(customer)s. Next rental "
+"date: %(date)s."
+msgstr ""
+"حان وقت تجهيز التأجير الدوري لـ %(customer)s. موعد التأجير القادم: %(date)s."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental_line.py:0
+msgid "Item"
+msgstr "بند"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__item_type_id
+msgid "Item Type"
+msgstr "نوع البند"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "Last Preparation"
+msgstr "آخر تجهيز"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__last_prepared_date
+msgid "Last Prepared On"
+msgstr "تاريخ آخر تجهيز"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__last_order_id
+msgid "Last Prepared Order"
+msgstr "آخر أمر مجهز"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__write_uid
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__write_uid
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__write_date
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__write_date
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__reminder_days_before
+msgid ""
+"Lead time for this customer specifically. Set per arrangement: one customer "
+"may want two days' notice, another five."
+msgstr ""
+"مدة التنبيه المسبق لهذا العميل تحديداً. تُضبط لكل ترتيب على حدة: عميل قد "
+"يريد تنبيهاً قبل يومين وآخر قبل خمسة أيام."
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid ""
+"Leave Agreed Daily Rate empty to price from\n"
+"                                   the current catalogue and contract each\n"
+"                                   month."
+msgstr ""
+"اترك \"السعر اليومي المتفق عليه\" فارغاً ليتم التسعير من الكتالوج والعقد "
+"الحاليين في كل شهر."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental_line__daily_rate_override
+msgid ""
+"Leave empty to price from the current catalogue and contract when the order "
+"is prepared - which is normally what you want, so a price change reaches "
+"next month's order. Fill it in only for a rate negotiated specifically for "
+"this arrangement."
+msgstr ""
+"اتركه فارغاً ليتم التسعير من الكتالوج والعقد الحاليين عند تجهيز الأمر — وهذا"
+" هو المطلوب عادةً، حتى يصل أي تغيير في الأسعار إلى أمر الشهر القادم. املأه "
+"فقط لسعر تم التفاوض عليه خصيصاً لهذا الترتيب."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields.selection,name:gr_recurring_rental.selection__gr_recurring_rental__frequency__monthly
+msgid "Monthly"
+msgstr "شهري"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_search
+msgid "My Recurring Rentals"
+msgstr "تأجيراتي الدورية"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_search
+msgid "Needs Attention"
+msgstr "يحتاج إلى متابعة"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__next_reminder_date
+msgid "Next Reminder Date"
+msgstr "موعد التذكير القادم"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__next_rental_date
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_search
+msgid "Next Rental Date"
+msgstr "موعد التأجير القادم"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Next rental date changed from %(old)s to %(new)s."
+msgstr "تم تغيير موعد التأجير القادم من %(old)s إلى %(new)s."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__notes
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__notes
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__interval
+msgid ""
+"Number of weeks or months between rentals. 1 = every month, 2 = every second"
+" month."
+msgstr "عدد الأسابيع أو الأشهر بين كل تأجير وآخر. 1 = كل شهر، 2 = كل شهرين."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__occurrence_date
+msgid "Occurrence Date"
+msgstr "تاريخ الموعد"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__occurrence_ids
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "Occurrence History"
+msgstr "سجل المواعيد"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Occurrence skipped."
+msgstr "تم تخطي الموعد."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental_line__preferred_asset_id
+msgid ""
+"Optional. Used only when it is genuinely available on the rental dates and, "
+"for third-party units, covered by a valid supplier agreement. Otherwise the "
+"line is prepared without a serial for the operator to choose."
+msgstr ""
+"اختياري. لا تُستخدم إلا إذا كانت متاحة فعلاً في تواريخ التأجير، وبالنسبة "
+"للوحدات المستأجرة من الغير أن تكون مغطاة بعقد مورد ساري. وإلا يُجهَّز البند "
+"بدون رقم تسلسلي ليختاره المشغل."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__order_state
+msgid "Order Status"
+msgstr "حالة الأمر"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__state
+msgid "Outcome"
+msgstr "النتيجة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields.selection,name:gr_recurring_rental.selection__gr_recurring_rental__occurrence_state__overdue
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_search
+msgid "Overdue"
+msgstr "متأخر"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "Ownership"
+msgstr "الملكية"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_search
+msgid "Paused"
+msgstr "موقوف مؤقتاً"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__preferred_asset_id
+msgid "Preferred Unit"
+msgstr "الوحدة المفضلة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__preferred_owner_type
+msgid "Preferred Unit Ownership"
+msgstr "ملكية الوحدة المفضلة"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "Prepare Next Rental"
+msgstr "تجهيز التأجير القادم"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Prepare recurring rental"
+msgstr "تجهيز التأجير الدوري"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields.selection,name:gr_recurring_rental.selection__gr_recurring_rental_occurrence__state__prepared
+msgid "Prepared"
+msgstr "تم التجهيز"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__order_count
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__order_ids
+msgid "Prepared Orders"
+msgstr "الأوامر المجهزة"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid ""
+"Prepared from recurring rental %(ref)s. The following items still need a "
+"physical unit selected before the order can be reserved:<br/>%(items)s"
+msgstr ""
+"تم التجهيز من التأجير الدوري %(ref)s. البنود التالية ما زالت تحتاج إلى "
+"اختيار وحدة فعلية قبل حجز الأمر:<br/>%(items)s"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Prepared from recurring rental %s."
+msgstr "تم التجهيز من التأجير الدوري %s."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__quantity
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.actions.act_window,help:gr_recurring_rental.action_gr_recurring_rental
+msgid ""
+"Record what they normally take and when. The system reminds the\n"
+"               responsible user before each date, and prepares the next rental\n"
+"               order as a draft for review — it never confirms a rental on its\n"
+"               own."
+msgstr ""
+"سجّل ما يستأجره العميل عادةً ومتى. يذكّر النظام المستخدم المسؤول قبل كل "
+"موعد، ويجهّز أمر التأجير القادم كمسودة للمراجعة — ولا يؤكد أي تأجير من تلقاء"
+" نفسه أبداً."
+
+#. module: gr_recurring_rental
+#: model:ir.model,name:gr_recurring_rental.model_gr_recurring_rental
+msgid "Recurring Customer Rental"
+msgstr "تأجير دوري للعميل"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__line_ids
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "Recurring Items"
+msgstr "البنود الثابتة"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_rental_order_recurring.py:0
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__recurring_id
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__recurring_id
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_rental_order__recurring_rental_id
+msgid "Recurring Rental"
+msgstr "تأجير دوري"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_res_partner__recurring_rental_alert
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_res_users__recurring_rental_alert
+msgid "Recurring Rental Alert"
+msgstr "تنبيه التأجير الدوري"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields.selection,name:gr_recurring_rental.selection__res_partner__recurring_rental_alert__due_today
+msgid "Recurring Rental Due Today"
+msgstr "تأجير دوري مستحق اليوم"
+
+#. module: gr_recurring_rental
+#: model:ir.model,name:gr_recurring_rental.model_gr_recurring_rental_line
+msgid "Recurring Rental Item"
+msgstr "بند التأجير الدوري"
+
+#. module: gr_recurring_rental
+#: model:ir.model,name:gr_recurring_rental.model_gr_recurring_rental_occurrence
+msgid "Recurring Rental Occurrence"
+msgstr "موعد التأجير الدوري"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields.selection,name:gr_recurring_rental.selection__res_partner__recurring_rental_alert__overdue
+msgid "Recurring Rental Overdue"
+msgstr "تأجير دوري متأخر"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/res_partner_recurring.py:0
+#: model:ir.actions.act_window,name:gr_recurring_rental.action_gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_res_partner__recurring_rental_count
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_res_partner__recurring_rental_ids
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_res_users__recurring_rental_count
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_res_users__recurring_rental_ids
+#: model:ir.ui.menu,name:gr_recurring_rental.menu_gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_res_partner_form_recurring
+msgid "Recurring Rentals"
+msgstr "التأجيرات الدورية"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid ""
+"Recurring rental created. First occurrence: %(date)s, reminder %(days)s "
+"day(s) before."
+msgstr ""
+"تم إنشاء تأجير دوري. أول موعد: %(date)s، والتذكير قبله بـ %(days)s يوم/أيام."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Recurring rental paused. No reminders will be raised."
+msgstr "تم إيقاف التأجير الدوري مؤقتاً. لن يتم إنشاء أي تذكيرات."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Recurring rental reactivated."
+msgstr "تم إعادة تفعيل التأجير الدوري."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__name
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__reminder_days_before
+msgid "Remind Days Before"
+msgstr "التذكير قبل الموعد بـ"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Remind Days Before cannot be negative for %s."
+msgstr "لا يمكن أن يكون \"التذكير قبل الموعد بـ\" رقماً سالباً في %s."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields.selection,name:gr_recurring_rental.selection__gr_recurring_rental__occurrence_state__due_soon
+msgid "Reminder Due"
+msgstr "حان وقت التذكير"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Reminder raised for %(user)s: rental due %(date)s."
+msgstr "تم إنشاء تذكير لـ %(user)s: التأجير مستحق بتاريخ %(date)s."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__contract_id
+msgid "Rental Contract"
+msgstr "عقد التأجير"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__rental_duration_days
+msgid "Rental Duration (days)"
+msgstr "مدة التأجير (أيام)"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Rental Duration must be at least one day for %s."
+msgstr "يجب ألا تقل مدة التأجير عن يوم واحد في %s."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_occurrence__order_id
+msgid "Rental Order"
+msgstr "أمر التأجير"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "Rental Orders"
+msgstr "أوامر التأجير"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid ""
+"Rental order %(order)s prepared for %(date)s. Next occurrence: %(next)s."
+msgstr ""
+"تم تجهيز أمر التأجير %(order)s لموعد %(date)s. الموعد القادم: %(next)s."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Rental order %s prepared."
+msgstr "تم تجهيز أمر التأجير %s."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__interval
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "Repeat Every"
+msgstr "يتكرر كل"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Repeat Every must be at least 1 for %s."
+msgstr "يجب ألا يقل \"يتكرر كل\" عن 1 في %s."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__required_kva
+msgid "Required kVA"
+msgstr "القدرة المطلوبة (ك.ف.أ)"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__user_id
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_search
+msgid "Responsible"
+msgstr "المسؤول"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "Schedule"
+msgstr "الجدولة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields.selection,name:gr_recurring_rental.selection__gr_recurring_rental__occurrence_state__scheduled
+msgid "Scheduled"
+msgstr "مجدول"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__sequence
+msgid "Sequence"
+msgstr "تسلسل"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.actions.act_window,help:gr_recurring_rental.action_gr_recurring_rental
+msgid "Set up a customer who rents every month"
+msgstr "أضف عميلاً يستأجر كل شهر"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_res_partner__recurring_rental_alert
+#: model:ir.model.fields,help:gr_recurring_rental.field_res_users__recurring_rental_alert
+msgid ""
+"Set when one of this customer's active arrangements needs attention, so the "
+"contact form shows it without opening the arrangements."
+msgstr ""
+"يُضبط عندما يحتاج أحد الترتيبات النشطة لهذا العميل إلى متابعة، ليظهر ذلك في "
+"بطاقة جهة الاتصال دون فتح الترتيبات."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__site_id
+msgid "Site"
+msgstr "الموقع"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "Site %(site)s does not belong to customer %(partner)s."
+msgstr "الموقع %(site)s لا يخص العميل %(partner)s."
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "Skip This Occurrence"
+msgstr "تخطي هذا الموعد"
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid ""
+"Skip this occurrence? The next rental date will move forward and no order "
+"will be prepared."
+msgstr ""
+"هل تريد تخطي هذا الموعد؟ سينتقل موعد التأجير القادم للأمام ولن يتم تجهيز أي "
+"أمر."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields.selection,name:gr_recurring_rental.selection__gr_recurring_rental_occurrence__state__skipped
+msgid "Skipped"
+msgstr "تم التخطي"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental_line__specification
+msgid "Specification"
+msgstr "المواصفات"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__occurrence_state
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "The %s occurrence has already been handled."
+msgstr "تمت معالجة موعد %s بالفعل."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid ""
+"The %s occurrence was skipped. Move to the next date or change the next "
+"rental date to prepare an order."
+msgstr ""
+"تم تخطي موعد %s. انتقل إلى الموعد التالي أو غيّر موعد التأجير القادم لتجهيز "
+"أمر."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__contract_id
+msgid ""
+"The contract the prepared orders are booked against. Its rates are what the "
+"order is priced on, so it must be approved or active before an order can be "
+"prepared."
+msgstr ""
+"العقد الذي تُسجَّل عليه الأوامر المجهزة. أسعاره هي أساس تسعير الأمر، لذا يجب"
+" أن يكون معتمداً أو نشطاً قبل تجهيز أي أمر."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__day_of_month
+msgid ""
+"The day the rental normally starts, 1-31. A month that is too short uses its"
+" last day (31 becomes 28 or 29 in February) and the following month returns "
+"to the configured day."
+msgstr ""
+"اليوم الذي يبدأ فيه التأجير عادةً، من 1 إلى 31. الشهر الأقصر يستخدم آخر يوم "
+"فيه (31 تصبح 28 أو 29 في فبراير) ثم يعود الشهر التالي إلى اليوم المحدد."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__next_rental_date
+msgid ""
+"The occurrence currently due. It only moves when the occurrence is "
+"explicitly prepared or skipped - never on its own."
+msgstr ""
+"الموعد المستحق حالياً. لا ينتقل إلا عند تجهيز الموعد أو تخطيه صراحةً — ولا "
+"يتحرك من تلقاء نفسه أبداً."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_rental_order__recurring_rental_id
+msgid "The recurring arrangement this order was prepared from, if any."
+msgstr "الترتيب الدوري الذي جُهِّز منه هذا الأمر، إن وجد."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid ""
+"The recurring rental occurrence of %(date)s was skipped. Next occurrence: "
+"%(next)s."
+msgstr "تم تخطي موعد التأجير الدوري بتاريخ %(date)s. الموعد القادم: %(next)s."
+
+#. module: gr_recurring_rental
+#: model:ir.model.constraint,message:gr_recurring_rental.constraint_gr_recurring_rental_name_company_uniq
+msgid "The recurring rental reference must be unique per company."
+msgstr "يجب أن يكون مرجع التأجير الدوري فريداً لكل شركة."
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid ""
+"The rental contract linked to this recurring rental is\n"
+"                        not active. Review the contract before preparing the\n"
+"                        order."
+msgstr ""
+"عقد التأجير المرتبط بهذا التأجير الدوري غير نشط. راجع العقد قبل تجهيز الأمر."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid ""
+"The rental contract linked to this recurring rental is not active. Review the contract before preparing the order.\n"
+"\n"
+"Contract: %(contract)s\n"
+"Status: %(state)s"
+msgstr ""
+"عقد التأجير المرتبط بهذا التأجير الدوري غير نشط. راجع العقد قبل تجهيز الأمر.\n"
+"\n"
+"العقد: %(contract)s\n"
+"الحالة: %(state)s"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid ""
+"The rental order for the %(date)s occurrence has already been prepared "
+"(%(order)s)."
+msgstr "تم بالفعل تجهيز أمر التأجير الخاص بموعد %(date)s (%(order)s)."
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid ""
+"This rental date has passed without being prepared or\n"
+"                        skipped. Prepare the order or skip the occurrence — the\n"
+"                        date is never moved automatically."
+msgstr ""
+"مرّ موعد التأجير هذا دون تجهيزه أو تخطيه. جهّز الأمر أو تخطَّ الموعد — "
+"فالنظام لا ينقل التاريخ تلقائياً أبداً."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__rental_duration_days
+msgid ""
+"Used to derive the prepared order's Planned Return from its Planned "
+"Dispatch."
+msgstr ""
+"تُستخدم لاشتقاق تاريخ الإرجاع المخطط في الأمر المجهز من تاريخ الإخراج "
+"المخطط."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,field_description:gr_recurring_rental.field_gr_recurring_rental__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields.selection,name:gr_recurring_rental.selection__gr_recurring_rental__frequency__weekly
+msgid "Weekly"
+msgstr "أسبوعي"
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental_line__equipment_type_id
+msgid ""
+"What kind of unit the customer needs: generator, cable, fuel tank, "
+"distribution panel. This is the requirement that survives from month to "
+"month."
+msgstr ""
+"نوع الوحدة التي يحتاجها العميل: مولد، كابل، خزان وقود، لوحة توزيع. هذا هو "
+"المتطلب الذي يستمر من شهر لآخر."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__occurrence_state
+msgid ""
+"Where the current occurrence stands against today's date. An occurrence that"
+" passes unhandled stays Overdue until somebody prepares or skips it; it is "
+"never advanced silently."
+msgstr ""
+"موقع الموعد الحالي بالنسبة لتاريخ اليوم. الموعد الذي يمر دون معالجة يبقى "
+"\"متأخر\" حتى يقوم أحد بتجهيزه أو تخطيه، ولا يتم تقديمه بصمت أبداً."
+
+#. module: gr_recurring_rental
+#: model:ir.model.fields,help:gr_recurring_rental.field_gr_recurring_rental__user_id
+msgid "Who gets the reminder activity and prepares the order."
+msgstr "من يصله نشاط التذكير ويقوم بتجهيز الأمر."
+
+#. module: gr_recurring_rental
+#: model_terms:ir.ui.view,arch_db:gr_recurring_rental.view_gr_recurring_rental_form
+msgid "e.g. 20"
+msgstr "مثال: 20"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental_line.py:0
+msgid "it is customer-owned and never rented out."
+msgstr "لأنها مملوكة للعميل ولا تُؤجَّر إطلاقاً."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental_line.py:0
+msgid "its rental settings do not allow it to be rented."
+msgstr "لأن إعدادات التأجير الخاصة بها لا تسمح بتأجيرها."
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "not set"
+msgstr "غير محدد"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/res_partner_recurring.py:0
+msgid "partner_id"
+msgstr "partner_id"
+
+#. module: gr_recurring_rental
+#. odoo-python
+#: code:addons/gr_recurring_rental/models/gr_recurring_rental.py:0
+msgid "recurring_rental_id"
+msgstr "recurring_rental_id"

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_strx_cabin_history_event_list" model="ir.ui.view">
+        <field name="name">strx.cabin.history.event.list</field>
+        <field name="model">strx.cabin.history.event</field>
+        <field name="arch" type="xml">
+            <list string="Cabin History" create="0" edit="0" delete="0"
+                  decoration-info="event_type == 'shipment'"
+                  decoration-success="event_type == 'allocation'">
+                <field name="event_date"/>
+                <field name="event_type" widget="badge"
+                       decoration-info="event_type == 'shipment'"
+                       decoration-success="event_type == 'allocation'"
+                       decoration-muted="event_type == 'readiness'"/>
+                <field name="title"/>
+                <field name="reference"/>
+                <field name="partner_id" optional="show"/>
+                <field name="details" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_strx_cabin_history_event_form" model="ir.ui.view">
+        <field name="name">strx.cabin.history.event.form</field>
+        <field name="model">strx.cabin.history.event</field>
+        <field name="arch" type="xml">
+            <form string="Cabin History Event" create="0" edit="0" delete="0">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="title" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="lot_id"/>
+                            <field name="event_date"/>
+                            <field name="event_type"/>
+                        </group>
+                        <group>
+                            <field name="reference"/>
+                            <field name="partner_id"/>
+                        </group>
+                    </group>
+                    <group string="Details">
+                        <field name="details" nolabel="1" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_production_lot_form_strx_cabin_history" model="ir.ui.view">
+        <field name="name">stock.lot.form.strx.cabin.history</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_strx_open_cabin_history" type="object"
+                        class="oe_stat_button o_strx_cabin_stat_button" icon="fa-clock-o"
+                        invisible="not strx_is_cabin">
+                    <field name="strx_cabin_history_count" widget="statinfo"
+                           string="Cabin History"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

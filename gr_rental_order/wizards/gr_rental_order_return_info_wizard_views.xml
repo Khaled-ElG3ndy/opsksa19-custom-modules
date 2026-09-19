@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_gr_rental_order_return_info_wizard_form" model="ir.ui.view">
+        <field name="name">gr.rental.order.return.info.wizard.form</field>
+        <field name="model">gr.rental.order.return.info.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Expected Return Info">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="order_reference"/>
+                            <field name="rental_start_date"/>
+                            <field name="expected_return_date"/>
+                        </group>
+                        <group>
+                            <field name="current_date"/>
+                            <field name="remaining_days"/>
+                            <field name="return_status"/>
+                            <field name="rental_status"/>
+                        </group>
+                    </group>
+                    <field name="order_id" invisible="1"/>
+                </sheet>
+                <footer>
+                    <button string="Close" class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

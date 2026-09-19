@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_rental_order_form" model="ir.ui.view">
+        <field name="name">gr.rental.order.form</field>
+        <field name="model">gr.rental.order</field>
+        <field name="arch" type="xml">
+            <form>
+	                <header>
+	                    <button name="action_confirm" type="object" string="Confirm"
+	                            class="btn-primary" invisible="state != 'draft'"/>
+	                    <button name="action_reserve" type="object" string="Reserve Asset"
+	                            class="btn-primary" invisible="state != 'confirmed'"
+                            groups="gr_security_base.group_generator_operations_officer"/>
+                    <button name="action_dispatch" type="object" string="Dispatch"
+                            class="btn-primary" invisible="state != 'reserved'"
+                            groups="gr_security_base.group_generator_operations_officer"/>
+                    <button name="action_install" type="object" string="Install"
+                            class="btn-primary" invisible="state != 'dispatched'"
+                            groups="gr_security_base.group_generator_operations_officer"/>
+                    <button name="action_start_rental" type="object" string="Start Rental"
+                            class="btn-primary" invisible="state != 'installed'"/>
+                    <button name="action_request_off_hire" type="object" string="Request Off-Hire"
+                            invisible="state != 'on_rent'"/>
+                    <button name="action_return" type="object" string="Return"
+                            class="btn-primary" invisible="state not in ('on_rent','off_hire_requested')"
+                            groups="gr_security_base.group_generator_operations_officer"/>
+                    <button name="action_start_inspection" type="object" string="Start Inspection"
+                            invisible="state != 'returned'"/>
+                    <button name="action_close" type="object" string="Close"
+                            class="btn-primary" invisible="state != 'inspection'"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state in ('closed','cancelled')"/>
+                    <button name="action_reset_to_draft" type="object" string="Reset to Draft"
+                            invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,confirmed,reserved,dispatched,installed,on_rent,returned,closed"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Cancelled" bg_color="text-bg-danger"
+                            invisible="state != 'cancelled'"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Customer &amp; Contract">
+                            <field name="partner_id" readonly="state != 'draft'"/>
+                            <field name="site_id" readonly="state != 'draft'"/>
+                            <field name="contract_id" readonly="state != 'draft'"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+	                        <group string="Asset">
+	                            <field name="asset_id"
+                                       domain="[('status', '=', 'available')]"
+	                                   readonly="state not in ('draft','confirmed')"/>
+	                            <field name="requested_kva"/>
+	                            <field name="analytic_account_id"/>
+	                        </group>
+	                    </group>
+	                    <notebook>
+                        <page string="Logistics" name="logistics">
+                            <group>
+                                <group string="Planned">
+                                    <field name="date_requested"/>
+                                    <field name="planned_dispatch_datetime"/>
+                                    <field name="planned_install_datetime"/>
+                                    <field name="planned_return_datetime"/>
+                                </group>
+                                <group string="Actual">
+                                    <field name="actual_dispatch_datetime"/>
+                                    <field name="actual_install_datetime"/>
+                                    <field name="actual_return_datetime"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Meter Readings">
+                                    <field name="start_meter_reading"
+                                           readonly="state not in ('dispatched','installed')"/>
+                                    <field name="end_meter_reading"
+                                           readonly="state not in ('on_rent','off_hire_requested')"/>
+                                </group>
+                                <group string="Team">
+                                    <field name="delivery_driver_id"/>
+                                    <field name="installation_technician_id"/>
+                                    <field name="return_technician_id"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Checklist" name="checklist">
+                            <field name="checklist_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="phase"/>
+                                    <field name="name"/>
+                                    <field name="is_done"/>
+                                    <field name="notes"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Sign-off" name="signoff">
+                            <group>
+                                <group string="Delivery / Install">
+                                    <field name="customer_receiver_name"/>
+                                    <field name="customer_receiver_signature" widget="signature"/>
+                                    <field name="dispatch_note"/>
+                                    <field name="installation_note"/>
+                                </group>
+                                <group string="Return">
+                                    <field name="customer_return_signature" widget="signature"/>
+                                    <field name="return_note"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gr_rental_order_list" model="ir.ui.view">
+        <field name="name">gr.rental.order.list</field>
+        <field name="model">gr.rental.order</field>
+        <field name="arch" type="xml">
+            <list decoration-info="state == 'on_rent'" decoration-muted="state in ('closed','cancelled')">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="site_id"/>
+                <field name="asset_id"/>
+	                <field name="contract_id"/>
+	                <field name="planned_dispatch_datetime"/>
+	                <field name="state" widget="badge"
+                       decoration-success="state == 'on_rent'"
+                       decoration-info="state in ('reserved','dispatched','installed')"
+                       decoration-warning="state in ('returned','inspection','off_hire_requested')"
+                       decoration-danger="state == 'cancelled'"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_rental_order_search" model="ir.ui.view">
+        <field name="name">gr.rental.order.search</field>
+        <field name="model">gr.rental.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="partner_id"/>
+	                <field name="asset_id"/>
+	                <field name="contract_id"/>
+	                <separator/>
+                <filter name="f_active_rent" string="On Rent" domain="[('state','=','on_rent')]"/>
+                <filter name="f_reserved" string="Reserved" domain="[('state','=','reserved')]"/>
+                <filter name="f_pending_return" string="Pending Return"
+                        domain="[('state','in',('on_rent','off_hire_requested'))]"/>
+                <filter name="f_inspection" string="Inspection" domain="[('state','=','inspection')]"/>
+                <group>
+                    <filter name="g_state" string="Status" context="{'group_by': 'state'}"/>
+                    <filter name="g_customer" string="Customer" context="{'group_by': 'partner_id'}"/>
+                    <filter name="g_asset" string="Asset" context="{'group_by': 'asset_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_gr_rental_order" model="ir.actions.act_window">
+        <field name="name">Rental Orders</field>
+        <field name="res_model">gr.rental.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_gr_rental_order_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first rental order</p>
+            <p>The operational document that moves a generator from the depot to a
+               customer site and back, tracking each step.</p>
+        </field>
+    </record>
+
+    <!-- ============================================================
+         Expected-return smart button (one visible variant per status).
+         The invisible expression picks a single colored button out of
+         the six variants below; 'none' status hides all of them.
+         ============================================================ -->
+    <record id="view_gr_rental_order_form_return_button" model="ir.ui.view">
+        <field name="name">gr.rental.order.form.return.button</field>
+        <field name="model">gr.rental.order</field>
+        <field name="inherit_id" ref="view_gr_rental_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet" position="inside">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_rental_return_info" type="object"
+                            class="oe_stat_button o_gr_return o_gr_return_ok"
+                            invisible="rental_return_status != 'ok'"
+>
+                        <i class="fa fa-clock-o" role="img" title="Return timing"/>
+                        <div class="o_gr_return_text">
+                            <span class="o_gr_return_value"><field name="rental_return_primary" nolabel="1"/></span>
+                            <span class="o_gr_return_sub"><field name="rental_return_secondary" nolabel="1"/></span>
+                        </div>
+                    </button>
+                    <button name="action_view_rental_return_info" type="object"
+                            class="oe_stat_button o_gr_return o_gr_return_soon"
+                            invisible="rental_return_status != 'soon'"
+>
+                        <i class="fa fa-clock-o" role="img" title="Return timing"/>
+                        <div class="o_gr_return_text">
+                            <span class="o_gr_return_value"><field name="rental_return_primary" nolabel="1"/></span>
+                            <span class="o_gr_return_sub"><field name="rental_return_secondary" nolabel="1"/></span>
+                        </div>
+                    </button>
+                    <button name="action_view_rental_return_info" type="object"
+                            class="oe_stat_button o_gr_return o_gr_return_tomorrow"
+                            invisible="rental_return_status != 'tomorrow'"
+>
+                        <i class="fa fa-clock-o" role="img" title="Return timing"/>
+                        <div class="o_gr_return_text">
+                            <span class="o_gr_return_value"><field name="rental_return_primary" nolabel="1"/></span>
+                            <span class="o_gr_return_sub"><field name="rental_return_secondary" nolabel="1"/></span>
+                        </div>
+                    </button>
+                    <button name="action_view_rental_return_info" type="object"
+                            class="oe_stat_button o_gr_return o_gr_return_today"
+                            invisible="rental_return_status != 'today'"
+>
+                        <i class="fa fa-clock-o" role="img" title="Return timing"/>
+                        <div class="o_gr_return_text">
+                            <span class="o_gr_return_value"><field name="rental_return_primary" nolabel="1"/></span>
+                            <span class="o_gr_return_sub"><field name="rental_return_secondary" nolabel="1"/></span>
+                        </div>
+                    </button>
+                    <button name="action_view_rental_return_info" type="object"
+                            class="oe_stat_button o_gr_return o_gr_return_overdue"
+                            invisible="rental_return_status != 'overdue'"
+>
+                        <i class="fa fa-clock-o" role="img" title="Return timing"/>
+                        <div class="o_gr_return_text">
+                            <span class="o_gr_return_value"><field name="rental_return_primary" nolabel="1"/></span>
+                            <span class="o_gr_return_sub"><field name="rental_return_secondary" nolabel="1"/></span>
+                        </div>
+                    </button>
+                    <button name="action_view_rental_return_info" type="object"
+                            class="oe_stat_button o_gr_return o_gr_return_done"
+                            invisible="rental_return_status != 'done'"
+>
+                        <i class="fa fa-check-square-o" role="img" title="Checklist"/>
+                        <div class="o_gr_return_text">
+                            <span class="o_gr_return_value"><field name="rental_return_primary" nolabel="1"/></span>
+                            <span class="o_gr_return_sub"><field name="rental_return_secondary" nolabel="1"/></span>
+                        </div>
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

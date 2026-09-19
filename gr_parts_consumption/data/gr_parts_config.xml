@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Dedicated product category for generator spare parts. The AVCO cost
+             method (set per-company by the post-init hook, since it is a
+             company-dependent field) makes each part's cost auto-update to the
+             last purchase price when goods are received. -->
+        <record id="product_category_gr_parts" model="product.category">
+            <field name="name">Generator Spare Parts</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,641 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_hour_log
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid "A rental order is required."
+msgstr "أمر التأجير مطلوب."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_correction_wizard_form
+msgid "Apply Correction"
+msgstr "تطبيق التصحيح"
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_form
+msgid "Approval"
+msgstr "الاعتماد"
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_form
+msgid "Approve"
+msgstr "اعتماد"
+
+#. module: gr_hour_log
+#: model:ir.model.fields.selection,name:gr_hour_log.selection__gr_hour_log__state__approved
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_search
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__approved_by_id
+msgid "Approved By"
+msgstr "اعتمد بواسطة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__approved_date
+msgid "Approved On"
+msgstr "اعتمد في"
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid ""
+"Approved hour log %(name)s is locked. Use the correction action to change "
+"%(fields)s."
+msgstr ""
+"سجل الساعات المعتمد %(name)s مقفل. استخدم إجراء التصحيح لتغيير %(fields)s."
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid "Approved logs cannot be cancelled; use a correction instead."
+msgstr "لا يمكن إلغاء السجلات المعتمدة؛ استخدم تصحيحًا بدلاً من ذلك."
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_search
+msgid "Asset"
+msgstr "الأصل"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_correction_wizard_form
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: gr_hour_log
+#: model:ir.model.fields.selection,name:gr_hour_log.selection__gr_hour_log__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__contract_id
+msgid "Contract"
+msgstr "العقد"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__included_allowance
+msgid "Contract included hours/day x days covered."
+msgstr "الساعات المشمولة في العقد/اليوم × الأيام المغطاة."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__max_allowance
+msgid "Contract max hours/day x days covered."
+msgstr "الحد الأقصى لساعات العقد/اليوم × الأيام المغطاة."
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_form
+msgid "Correct"
+msgstr "تصحيح"
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_correction_wizard_form
+msgid "Correct Hour Log"
+msgstr "تصحيح سجل الساعات"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log_correction_wizard__current_meter_reading
+msgid "Corrected Current Meter"
+msgstr "العداد الحالي المصحح"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log_correction_wizard__reading_date
+msgid "Corrected Reading Date"
+msgstr "تاريخ القراءة المصححة"
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log_correction_wizard.py:0
+msgid ""
+"Correction applied. Meter %(om)s -> %(nm)s; date %(od)s -> %(nd)s. Reason: "
+"%(r)s"
+msgstr ""
+"تم تطبيق التصحيح. العداد %(om)s ← %(nm)s؛ التاريخ %(od)s ← %(nd)s. السبب: "
+"%(r)s"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__create_uid
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log_correction_wizard__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__create_date
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log_correction_wizard__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__current_meter_reading
+msgid "Current Meter"
+msgstr "العداد الحالي"
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid ""
+"Current meter (%(cur)s) cannot be below the previous reading (%(prev)s)."
+msgstr ""
+"لا يمكن أن يكون العداد الحالي (%(cur)s) أقل من القراءة السابقة (%(prev)s)."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__partner_id
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_hour_log
+#: model_terms:ir.actions.act_window,help:gr_hour_log.action_gr_hour_log
+msgid "Daily or periodic meter readings drive overtime/violation billing."
+msgstr ""
+"قراءات العداد اليومية أو الدورية هي أساس فوترة الساعات الإضافية والمخالفات."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__days_covered
+msgid "Days Covered"
+msgstr "الأيام المغطاة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__display_name
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log_correction_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_hour_log
+#: model:ir.model.fields.selection,name:gr_hour_log.selection__gr_hour_log__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid ""
+"Generator %(asset)s logged %(v)s violation hour(s) over the contracted "
+"maximum on %(d)s."
+msgstr ""
+"سجّل المولد %(asset)s %(v)s ساعة مخالفة فوق الحد الأقصى التعاقدي في %(d)s."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__asset_id
+msgid "Generator Asset"
+msgstr "أصل المولد"
+
+#. module: gr_hour_log
+#: model:ir.model,name:gr_hour_log.model_gr_hour_log
+msgid "Generator Hour Log"
+msgstr "سجل ساعات المولد"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__has_violation
+msgid "Has Violation"
+msgstr "يوجد تجاوز"
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_form
+msgid "Hour Breakdown"
+msgstr "تفصيل الساعات"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log_correction_wizard__log_id
+msgid "Hour Log"
+msgstr "سجل الساعات"
+
+#. module: gr_hour_log
+#: model:ir.model,name:gr_hour_log.model_gr_hour_log_correction_wizard
+msgid "Hour Log Correction"
+msgstr "تصحيح سجل الساعات"
+
+#. module: gr_hour_log
+#: model:ir.actions.act_window,name:gr_hour_log.action_gr_hour_log
+#: model:ir.ui.menu,name:gr_hour_log.menu_gr_hour_logs
+msgid "Hour Logs"
+msgstr "سجلات الساعات"
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid ""
+"Hour log %(log)s pushed the meter to %(m)s h, crossing the PM threshold "
+"(%(pm)s h). Maintenance is now due."
+msgstr ""
+"رفع سجل الساعات %(log)s العداد إلى %(m)s ساعة، متجاوزًا حد الصيانة الوقائية "
+"(%(pm)s ساعة). الصيانة مستحقة الآن."
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid ""
+"Hour log %s breaches the contracted maximum and can only be approved by an "
+"Operations Manager or General Manager."
+msgstr ""
+"سجل الساعات %s يتجاوز الحد الأقصى التعاقدي ولا يمكن اعتماده إلا من مدير "
+"العمليات أو المدير العام."
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid "Hour-log violation: %s"
+msgstr "مخالفة في سجل الساعات: %s"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__id
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log_correction_wizard__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__message_has_error
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__included_allowance
+msgid "Included Allowance"
+msgstr "السماحية المشمولة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__write_uid
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log_correction_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__write_date
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log_correction_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__max_allowance
+msgid "Max Allowance"
+msgstr "السماحية القصوى"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__previous_meter_reading
+msgid ""
+"Meter at the previous approved reading for this rental (or the rental start "
+"meter if this is the first log)."
+msgstr ""
+"العداد عند القراءة السابقة المعتمدة لهذا التأجير (أو عداد بداية التأجير إذا "
+"كان هذا أول سجل)."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_form
+msgid "Notes..."
+msgstr "ملاحظات..."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+#: code:addons/gr_hour_log/models/gr_hour_log_correction_wizard.py:0
+msgid "Only approved logs can be corrected."
+msgstr "لا يمكن تصحيح إلا السجلات المعتمدة."
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid "Only draft logs can be submitted."
+msgstr "لا يمكن تقديم إلا السجلات المسودة."
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid "Only submitted logs can be approved."
+msgstr "لا يمكن اعتماد إلا السجلات المقدَّمة."
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid "Only submitted or cancelled logs can reset to draft."
+msgstr "لا يمكن إرجاع إلا السجلات المقدَّمة أو الملغاة إلى مسودة."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__overtime_hours
+msgid "Overtime Hours"
+msgstr "ساعات العمل الإضافي"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__previous_log_id
+msgid "Previous Log"
+msgstr "السجل السابق"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__previous_meter_reading
+msgid "Previous Meter"
+msgstr "العداد السابق"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__previous_reading_date
+msgid "Previous Reading Date"
+msgstr "تاريخ القراءة السابقة"
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_form
+msgid "Reading"
+msgstr "القراءة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__reading_date
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_search
+msgid "Reading Date"
+msgstr "تاريخ القراءة"
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid "Reading date cannot be earlier than the previous reading date."
+msgstr "لا يمكن أن يكون تاريخ القراءة قبل تاريخ القراءة السابقة."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log_correction_wizard__reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: gr_hour_log
+#: model_terms:ir.actions.act_window,help:gr_hour_log.action_gr_hour_log
+msgid "Record your first hour-meter reading"
+msgstr "سجّل أول قراءة لعداد الساعات"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__name
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__regular_hours
+msgid "Regular Hours"
+msgstr "الساعات العادية"
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_form
+msgid "Rental"
+msgstr "التأجير"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__rental_order_id
+msgid "Rental Order"
+msgstr "أمر التأجير"
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_form
+msgid "Reset to Draft"
+msgstr "إرجاع إلى مسودة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__state
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_form
+msgid "Submit"
+msgstr "تقديم"
+
+#. module: gr_hour_log
+#: model:ir.model.fields.selection,name:gr_hour_log.selection__gr_hour_log__state__submitted
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_search
+msgid "Submitted"
+msgstr "مقدم"
+
+#. module: gr_hour_log
+#: model:ir.model.constraint,message:gr_hour_log.constraint_gr_hour_log_name_company_uniq
+msgid "The hour-log reference must be unique per company."
+msgstr "يجب أن يكون مرجع سجل الساعات فريداً لكل شركة."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__used_hours
+msgid "Used Hours"
+msgstr "الساعات المستخدمة"
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_form
+msgid "Violation"
+msgstr "تجاوز"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__violation_hours
+msgid "Violation Hours"
+msgstr "ساعات التجاوز"
+
+#. module: gr_hour_log
+#. odoo-python
+#: code:addons/gr_hour_log/models/gr_hour_log.py:0
+msgid ""
+"Violation alert raised to Operations and Sales: %s hour(s) over the "
+"contracted maximum."
+msgstr ""
+"تم رفع تنبيه مخالفة إلى العمليات والمبيعات: %s ساعة فوق الحد الأقصى "
+"التعاقدي."
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_search
+msgid "Violations"
+msgstr "التجاوزات"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,field_description:gr_hour_log.field_gr_hour_log__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: gr_hour_log
+#: model:ir.model.fields,help:gr_hour_log.field_gr_hour_log__days_covered
+msgid ""
+"Whole days between the previous reading date and this one (minimum 1). "
+"Allowances scale by this number."
+msgstr ""
+"عدد الأيام الكاملة بين تاريخ القراءة السابقة وهذه القراءة (الحد الأدنى 1). "
+"تتدرج السماحيات حسب هذا الرقم."
+
+#. module: gr_hour_log
+#: model_terms:ir.ui.view,arch_db:gr_hour_log.view_gr_hour_log_correction_wizard_form
+msgid "Why is this correction needed?"
+msgstr "لماذا يلزم هذا التصحيح؟"

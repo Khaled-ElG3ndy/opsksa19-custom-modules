@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="item_type_cable" model="gr.rental.item.type">
+            <field name="name">Cable</field>
+            <field name="code">CBL</field>
+            <field name="sequence">10</field>
+            <field name="description">Power cable supplied with or without a generator.</field>
+            <field name="default_is_free_with_generator" eval="True"/>
+        </record>
+        <record id="item_type_fuel_tank" model="gr.rental.item.type">
+            <field name="name">Fuel Tank</field>
+            <field name="code">TNK</field>
+            <field name="sequence">20</field>
+            <field name="description">External / auxiliary fuel tank.</field>
+        </record>
+        <record id="item_type_distribution_panel" model="gr.rental.item.type">
+            <field name="name">Distribution Panel</field>
+            <field name="code">PNL</field>
+            <field name="sequence">30</field>
+            <field name="description">Electrical distribution / changeover panel.</field>
+        </record>
+    </data>
+</odoo>

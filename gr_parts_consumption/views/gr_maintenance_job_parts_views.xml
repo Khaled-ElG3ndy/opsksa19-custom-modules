@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_maintenance_job_form_parts" model="ir.ui.view">
+        <field name="name">gr.maintenance.job.form.parts</field>
+        <field name="model">gr.maintenance.job</field>
+        <field name="inherit_id" ref="gr_maintenance.view_gr_maintenance_job_form"/>
+        <field name="arch" type="xml">
+            <!-- Add a Parts page after the field that follows work_performed -->
+            <xpath expr="//field[@name='parts_note']" position="after">
+                <separator string="Parts Consumption"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="parts_line_ids">
+                    <list editable="bottom"
+                          decoration-success="state == 'consumed'"
+                          decoration-muted="state == 'cancelled'">
+                        <field name="product_id"/>
+                        <field name="quantity"/>
+                        <field name="product_uom_id"/>
+                        <field name="warehouse_id" optional="hide"/>
+                        <field name="source_location_id" optional="show"/>
+                        <field name="unit_cost"/>
+                        <field name="subtotal_cost" sum="Total Parts Cost"/>
+                        <field name="picking_id" optional="show"/>
+                        <field name="move_id" optional="hide"/>
+                        <field name="currency_id" column_invisible="1"/>
+                        <field name="state" widget="badge"
+                               decoration-success="state == 'consumed'"
+                               decoration-muted="state == 'cancelled'"/>
+                        <button name="action_consume" type="object" string="Consume"
+                                icon="fa-check" invisible="state != 'draft'"/>
+                        <button name="action_cancel" type="object" string="Cancel"
+                                icon="fa-times" invisible="state != 'draft'"/>
+                    </list>
+                </field>
+                <group class="oe_subtotal_footer">
+                    <field name="total_parts_cost"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

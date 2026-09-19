@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_customer_site_user,gr.customer.site.user,model_gr_customer_site,gr_security_base.group_generator_user,1,0,0,0
+access_gr_customer_site_sales,gr.customer.site.sales,model_gr_customer_site,gr_security_base.group_generator_sales_officer,1,1,1,0
+access_gr_customer_site_ops,gr.customer.site.ops,model_gr_customer_site,gr_security_base.group_generator_operations_officer,1,1,0,0
+access_gr_customer_site_tech,gr.customer.site.tech,model_gr_customer_site,gr_security_base.group_generator_maint_technician,1,0,0,0
+access_gr_customer_site_finance,gr.customer.site.finance,model_gr_customer_site,gr_security_base.group_generator_finance_officer,1,0,0,0
+access_gr_customer_site_gm,gr.customer.site.gm,model_gr_customer_site,gr_security_base.group_generator_general_manager,1,1,1,0
+access_gr_customer_site_admin,gr.customer.site.admin,model_gr_customer_site,gr_security_base.group_generator_administrator,1,1,1,1

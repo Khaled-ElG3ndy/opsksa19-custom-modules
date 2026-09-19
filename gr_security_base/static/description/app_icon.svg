@@ -1,0 +1,98 @@
+<svg role="img" aria-label="Generator Rental" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs>
+  <linearGradient id="front" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#C6CDD5"/><stop offset="0.55" stop-color="#98A1AB"/><stop offset="1" stop-color="#5F6872"/>
+  </linearGradient>
+  <linearGradient id="side" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#5A626C"/><stop offset="1" stop-color="#3F464E"/>
+  </linearGradient>
+  <linearGradient id="top" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#DDE3E9"/><stop offset="1" stop-color="#A7AFB8"/>
+  </linearGradient>
+  <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6E757C"/><stop offset="0.35" stop-color="#C9CFD5"/>
+    <stop offset="0.6" stop-color="#9AA1A8"/><stop offset="1" stop-color="#5A6067"/>
+  </linearGradient>
+  <linearGradient id="vent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1B1D20"/><stop offset="1" stop-color="#22262B"/>
+  </linearGradient>
+  <linearGradient id="frame" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#4A4F56"/><stop offset="1" stop-color="#23262A"/>
+  </linearGradient>
+  <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#37E0C8"/><stop offset="1" stop-color="#0E8C86"/>
+  </linearGradient>
+  <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#2B2440" stop-opacity="0.38"/>
+    <stop offset="0.6" stop-color="#2B2440" stop-opacity="0.16"/>
+    <stop offset="1" stop-color="#2B2440" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<ellipse cx="122" cy="222" rx="104" ry="20" fill="url(#shadow)"/>
+
+<!-- exhaust pipe -->
+<g>
+  <rect x="170" y="26" width="22" height="52" fill="url(#steel)"/>
+  <rect x="170" y="46" width="22" height="9" fill="#000000" opacity="0.18"/>
+  <ellipse cx="181" cy="26" rx="11" ry="4.6" fill="#2E3238"/>
+  <ellipse cx="181" cy="26" rx="6.8" ry="2.8" fill="#111316"/>
+</g>
+
+<!-- top face -->
+<path d="M40,88 L168,88 L214,60 L86,60 Z" fill="url(#top)"/>
+<path d="M52,84 L160,84 L196,62 L88,62 Z" fill="#FFFFFF" opacity="0.10"/>
+<ellipse cx="180" cy="73" rx="11" ry="3.6" fill="#000000" opacity="0.14"/>
+<!-- lifting eye -->
+<path d="M104,74 a10,5 0 1,1 20,0" fill="none" stroke="#41464C" stroke-width="4"/>
+
+<!-- side face -->
+<path d="M168,88 L214,60 L214,172 L168,200 Z" fill="url(#side)"/>
+<path d="M176,96 L206,78 L206,150 L176,168 Z" fill="#000000" opacity="0.10"/>
+<g fill="#000000" opacity="0.30">
+  <path d="M180,116 L202,103 L202,107 L180,120 Z"/>
+  <path d="M180,128 L202,115 L202,119 L180,132 Z"/>
+  <path d="M180,140 L202,127 L202,131 L180,144 Z"/>
+</g>
+
+<!-- front face -->
+<path d="M40,88 L168,88 L168,200 L40,200 Z" fill="url(#front)"/>
+<path d="M40,88 L168,88 L168,96 L40,96 Z" fill="#FFFFFF" opacity="0.18"/>
+<path d="M40,88 L96,88 L40,146 Z" fill="#FFFFFF" opacity="0.07"/>
+
+<!-- louver vents -->
+<g>
+  <rect x="54" y="106" width="62" height="10" rx="3" fill="url(#vent)"/>
+  <rect x="54" y="122" width="62" height="10" rx="3" fill="url(#vent)"/>
+  <rect x="54" y="138" width="62" height="10" rx="3" fill="url(#vent)"/>
+  <rect x="54" y="154" width="62" height="10" rx="3" fill="url(#vent)"/>
+  <g fill="#FFFFFF" opacity="0.28">
+    <rect x="54" y="115" width="62" height="2" rx="1"/>
+    <rect x="54" y="131" width="62" height="2" rx="1"/>
+    <rect x="54" y="147" width="62" height="2" rx="1"/>
+    <rect x="54" y="163" width="62" height="2" rx="1"/>
+  </g>
+</g>
+
+<!-- control panel -->
+<rect x="126" y="104" width="34" height="60" rx="5" fill="#2B2F34"/>
+<rect x="129" y="107" width="28" height="54" rx="4" fill="#3A3F45"/>
+<rect x="132" y="111" width="22" height="16" rx="2" fill="url(#screen)"/>
+<circle cx="137" cy="137" r="4" fill="#E2493C"/>
+<circle cx="149" cy="137" r="4" fill="#4CC38A"/>
+<rect x="132" y="147" width="22" height="6" rx="3" fill="#20242A"/>
+
+<!-- door seam + hinges -->
+<path d="M120,100 L120,190" stroke="#000000" stroke-opacity="0.22" stroke-width="2"/>
+<rect x="46" y="112" width="5" height="12" rx="2" fill="#000000" opacity="0.28"/>
+<rect x="46" y="160" width="5" height="12" rx="2" fill="#000000" opacity="0.28"/>
+
+<!-- brand stripe -->
+<rect x="40" y="176" width="128" height="12" fill="#D8641F" opacity="0.95"/>
+<path d="M168,176 L214,148 L214,160 L168,188 Z" fill="#D8641F" opacity="0.75"/>
+
+<!-- skid frame -->
+<path d="M34,198 L174,198 L220,170 L220,182 L174,210 L34,210 Z" fill="url(#frame)"/>
+<path d="M34,210 L174,210 L174,216 L34,216 Z" fill="#191B1E"/>
+<rect x="52" y="216" width="26" height="8" rx="3" fill="#131518"/>
+<rect x="132" y="216" width="26" height="8" rx="3" fill="#131518"/>
+</svg>

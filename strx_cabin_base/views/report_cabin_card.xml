@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_strx_cabin_id_card" model="report.paperformat">
+        <field name="name">Cabin Identity Card — A5 Portrait</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">210</field>
+        <field name="page_width">148</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">8</field>
+        <field name="margin_bottom">8</field>
+        <field name="margin_left">8</field>
+        <field name="margin_right">8</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="action_report_strx_cabin_id_card" model="ir.actions.report">
+        <field name="name">Cabin ID Card</field>
+        <field name="model">stock.lot</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">strx_cabin_base.report_cabin_id_card</field>
+        <field name="report_file">strx_cabin_base.report_cabin_id_card</field>
+        <field name="print_report_name">'Cabin_ID_Card_%s' % ((object.name or '').replace('/', '-'))</field>
+        <field name="paperformat_id" ref="paperformat_strx_cabin_id_card"/>
+        <field name="binding_model_id" ref="stock.model_stock_lot"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_cabin_id_card">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="lot">
+                <t t-call="web.basic_layout">
+                    <div class="page" style="margin:0;padding:0;">
+                        <!-- The exact same HTML method feeds the popup preview. -->
+                        <t t-out="lot.strx_get_cabin_card_preview_html()"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

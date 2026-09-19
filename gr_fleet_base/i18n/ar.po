@@ -1,0 +1,829 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_fleet_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/wizards/gr_meter_correction_wizard.py:0
+msgid "(none)"
+msgstr "(لا يوجد)"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/wizards/gr_meter_correction_wizard.py:0
+msgid ""
+"<b>Meter correction applied.</b><br/>Old reading: %(old)s h<br/>New reading:"
+" %(new)s h<br/>By: %(user)s<br/>Reason: %(reason)s"
+msgstr ""
+"<b>تم تطبيق تصحيح العداد.</b><br/>القراءة السابقة: %(old)s ساعة<br/>القراءة "
+"الجديدة: %(new)s ساعة<br/>بواسطة: %(user)s<br/>السبب: %(reason)s"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gr_fleet_base
+#: model:ir.actions.act_window,name:gr_fleet_base.action_gr_generator_asset
+#: model:ir.ui.menu,name:gr_fleet_base.menu_gr_all_equipment
+msgid "All Equipment"
+msgstr "أصول المولدات"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__alternator_model
+msgid "Alternator Model"
+msgstr "موديل المولد الكهربائي"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_meter_correction_wizard_form
+msgid "Apply Correction"
+msgstr "تطبيق التصحيح"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__asset_id
+msgid "Asset"
+msgstr "الأصل"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/models/gr_generator_asset.py:0
+msgid ""
+"Asset %s cannot be set to Available while maintenance is overdue. Complete "
+"the preventive maintenance first."
+msgstr ""
+"لا يمكن تعيين الأصل %s كمتاح والصيانة متأخرة. أكمل الصيانة الوقائية أولاً."
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/models/gr_generator_asset.py:0
+msgid "Asset %s has an active rental order and cannot be retired."
+msgstr "الأصل %s له أمر تأجير نشط ولا يمكن إخراجه من الخدمة."
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/models/gr_generator_asset.py:0
+msgid "Asset %s has overdue maintenance and cannot be made Available."
+msgstr "الأصل %s عليه صيانة متأخرة ولا يمكن جعله متاحًا."
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/models/gr_generator_asset.py:0
+msgid "Asset %s is in Breakdown and cannot be made Available directly."
+msgstr "الأصل %s في حالة عطل ولا يمكن جعله متاحًا مباشرة."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__code
+msgid "Asset Code"
+msgstr "رمز الأصل"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/models/gr_generator_asset.py:0
+msgid "Asset marked as Breakdown."
+msgstr "تم تعليم الأصل كعطل."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__status__available
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_search
+msgid "Available"
+msgstr "متاح"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__brand
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_search
+msgid "Brand"
+msgstr "العلامة التجارية"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__status__breakdown
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_search
+msgid "Breakdown"
+msgstr "عطل"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_meter_correction_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__company_id
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Correct Meter"
+msgstr "تصحيح العداد"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__new_meter
+msgid "Corrected Meter"
+msgstr "العداد المصحح"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/wizards/gr_meter_correction_wizard.py:0
+msgid "Corrected meter cannot be negative."
+msgstr "لا يمكن أن يكون العداد المصحَّح سالبًا."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__create_uid
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__create_date
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__current_contract_ref
+msgid "Current Contract (ref)"
+msgstr "العقد الحالي (مرجع)"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__current_customer_id
+msgid "Current Customer"
+msgstr "العميل الحالي"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__current_hour_meter
+msgid "Current Hour Meter"
+msgstr "عداد الساعات الحالي"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__old_meter
+msgid "Current Meter (old)"
+msgstr "العداد الحالي (القديم)"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__current_rental_order_ref
+msgid "Current Rental Order (ref)"
+msgstr "أمر التأجير الحالي (مرجع)"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__current_site_ref
+msgid "Current Site (ref)"
+msgstr "الموقع الحالي (مرجع)"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/models/gr_generator_asset.py:0
+msgid "Current hour meter cannot be negative (asset %s)."
+msgstr "لا يمكن أن يكون عداد الساعات الحالي سالبًا (الأصل %s)."
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/wizards/gr_meter_correction_wizard.py:0
+msgid ""
+"Decreasing a meter reading requires Generator Administrator approval. Please"
+" ask an administrator to apply this correction."
+msgstr ""
+"خفض قراءة العداد يتطلب اعتماد مسؤول المولدات. يُرجى الطلب من مسؤول تطبيق هذا"
+" التصحيح."
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Deployment"
+msgstr "التشغيل الميداني"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__depot_location_id
+msgid "Depot / Yard"
+msgstr "المستودع / الساحة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__fuel_type__diesel
+msgid "Diesel"
+msgstr "ديزل"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__display_name
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__name
+msgid "Display name for the generator (e.g. 'CAT 500 kVA #3')."
+msgstr "اسم عرض المولد (مثال: CAT 500 kVA #3)."
+
+#. module: gr_fleet_base
+#: model_terms:ir.actions.act_window,help:gr_fleet_base.action_gr_generator_asset
+msgid ""
+"Each record represents a physical generator tracked by engine hours,\n"
+"                status, and preventive-maintenance schedule."
+msgstr ""
+"كل سجل يمثل مولدًا فعليًا يُتتبَّع بساعات المحرك\n"
+"                والحالة وجدول الصيانة الوقائية."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__engine_model
+msgid "Engine Model"
+msgstr "موديل المحرك"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__pm_interval_hours
+msgid "Engine hours between preventive-maintenance services."
+msgstr "ساعات المحرك بين خدمات الصيانة الوقائية."
+
+#. module: gr_fleet_base
+#: model:ir.ui.menu,name:gr_fleet_base.menu_gr_assets_root
+msgid "Equipment"
+msgstr "المعدات"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Financials"
+msgstr "البيانات المالية"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__fuel_tank_capacity
+msgid "Fuel Tank Capacity (L)"
+msgstr "سعة خزان الوقود (لتر)"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__fuel_type
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_search
+msgid "Fuel Type"
+msgstr "نوع الوقود"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__fuel_type__gas
+msgid "Gas"
+msgstr "غاز"
+
+#. module: gr_fleet_base
+#: model:ir.model,name:gr_fleet_base.model_gr_generator_asset
+msgid "Generator Asset"
+msgstr "أصل المولد"
+
+#. module: gr_fleet_base
+#: model:ir.model,name:gr_fleet_base.model_gr_generator_asset_meter_correction_wizard
+msgid "Generator Asset Meter Correction Wizard"
+msgstr "معالج تصحيح عداد أصل المولد"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Hour Meter"
+msgstr "عداد الساعات"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Hour Meter & PM"
+msgstr "عداد الساعات والصيانة الدورية"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__fuel_type__hybrid
+msgid "Hybrid"
+msgstr "هجين"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__id
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__image_1920
+msgid "Image"
+msgstr "الصورة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__status__in_transit
+msgid "In Transit"
+msgstr "قيد النقل"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__status__installed
+msgid "Installed"
+msgstr "مركب"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Internal notes..."
+msgstr "ملاحظات داخلية..."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__is_decrease
+msgid "Is a Decrease"
+msgstr "هل هو خفض"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__last_pm_hour
+msgid "Last PM at (h)"
+msgstr "آخر صيانة دورية عند (ساعة)"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__write_uid
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__write_date
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__last_verified_by
+msgid "Last Verified By"
+msgstr "آخر تحقق بواسطة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__last_verified_hour_meter
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__last_verified_hour_meter
+msgid "Last Verified Meter"
+msgstr "آخر عداد متحقق منه"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__last_verified_date
+msgid "Last Verified On"
+msgstr "آخر تحقق في"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__last_verified_hour_meter
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__last_verified_hour_meter
+msgid ""
+"Last reading verified on-site. The current meter may not be set below this "
+"except through an approved correction."
+msgstr ""
+"آخر قراءة تم التحقق منها في الموقع. لا يجوز ضبط العداد الحالي دونها إلا عبر "
+"تصحيح معتمد."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__current_hour_meter
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__old_meter
+msgid ""
+"Latest known engine-hour reading. Never decreases except via the controlled "
+"meter-correction wizard."
+msgstr ""
+"آخر قراءة معروفة لساعات المحرك. لا تنخفض إلا عبر معالج تصحيح العداد المنضبط."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__status__maintenance_due
+msgid "Maintenance Due"
+msgstr "الصيانة مستحقة"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_search
+msgid "Maintenance Due / Under"
+msgstr "الصيانة مستحقة / تحت الصيانة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__maintenance_overdue
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Maintenance Overdue"
+msgstr "الصيانة متأخرة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__serial_number
+msgid "Manufacturer serial number. Unique per company."
+msgstr "الرقم التسلسلي من المصنع. فريد لكل شركة."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__manufacturing_year
+msgid "Manufacturing Year"
+msgstr "سنة التصنيع"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/models/gr_generator_asset.py:0
+msgid "Manufacturing year %(y)s is out of a sensible range."
+msgstr "سنة التصنيع %(y)s خارج النطاق المعقول."
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Mark Breakdown"
+msgstr "تسجيل عطل"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/models/gr_generator_asset.py:0
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_meter_correction_wizard_form
+msgid "Meter Correction"
+msgstr "تصحيح العداد"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/models/gr_generator_asset.py:0
+msgid ""
+"Meter for %(asset)s cannot be reduced from %(floor)s h to %(new)s h by a "
+"normal edit. Use the Meter Correction wizard for an audited adjustment."
+msgstr ""
+"لا يمكن خفض عداد %(asset)s من %(floor)s ساعة إلى %(new)s ساعة بتعديل عادي. "
+"استخدم معالج تصحيح العداد لإجراء تعديل مُدقَّق."
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_kanban
+msgid "Meter:"
+msgstr "العداد:"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__model_name
+msgid "Model"
+msgstr "الموديل"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/models/gr_generator_asset.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Next PM (h)"
+msgstr "الصيانة الدورية التالية (ساعة)"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__next_pm_hour
+msgid "Next PM at (h)"
+msgstr "الصيانة الدورية التالية عند (ساعة)"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__notes
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__status__on_rent
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_search
+msgid "On Rent"
+msgstr "قيد التأجير"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/wizards/gr_meter_correction_wizard.py:0
+msgid ""
+"Only a Maintenance Manager or Administrator may correct a generator meter."
+msgstr "لا يجوز تصحيح عداد المولد إلا لمدير الصيانة أو المسؤول."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__product_id
+msgid "Optional commercial product this generator is rented as."
+msgstr "منتج تجاري اختياري يؤجر هذا المولد على أساسه."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__fuel_type__other
+msgid "Other"
+msgstr "أخرى"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__pm_interval_hours
+msgid "PM Interval (h)"
+msgstr "فترة الصيانة الدورية (ساعة)"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_kanban
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_search
+msgid "PM Overdue"
+msgstr "الصيانة الدورية متأخرة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__pm_warning_threshold_hours
+msgid "PM Warning Before (h)"
+msgstr "تحذير الصيانة قبل (ساعة)"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__fuel_type__petrol
+msgid "Petrol"
+msgstr "بنزين"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__profitability
+msgid "Profitability"
+msgstr "الربحية"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__pm_warning_threshold_hours
+msgid "Raise a maintenance-due warning this many hours before the next PM."
+msgstr ""
+"إظهار تحذير استحقاق الصيانة قبل الصيانة الدورية التالية بهذا العدد من "
+"الساعات."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset_meter_correction_wizard__reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: gr_fleet_base
+#: model_terms:ir.actions.act_window,help:gr_fleet_base.action_gr_generator_asset
+msgid "Register your first generator asset"
+msgstr "سجّل أول أصل مولد لديك"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__status__reserved
+msgid "Reserved"
+msgstr "محجوز"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Retire"
+msgstr "إخراج من الخدمة"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Retire this asset? It will be archived."
+msgstr "إخراج هذا الأصل من الخدمة؟ سيتم أرشفته."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__status__retired
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Retired"
+msgstr "خارج الخدمة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__status__returned_pending_inspection
+msgid "Returned - Pending Inspection"
+msgstr "مرتجع - بانتظار الفحص"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__serial_number
+msgid "Serial Number"
+msgstr "الرقم التسلسلي"
+
+#. module: gr_fleet_base
+#. odoo-python
+#: code:addons/gr_fleet_base/models/gr_generator_asset.py:0
+msgid "Serial number %(sn)s already exists for this company."
+msgstr "الرقم التسلسلي %(sn)s موجود بالفعل لهذه الشركة."
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Set Available"
+msgstr "تعيين كمتاح"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Set Unavailable"
+msgstr "تعيين كغير متاح"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "Specification"
+msgstr "المواصفات"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__status
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: gr_fleet_base
+#: model:ir.model.constraint,message:gr_fleet_base.constraint_gr_generator_asset_code_company_uniq
+msgid "The asset code must be unique per company."
+msgstr "يجب أن يكون رمز الأصل فريداً لكل شركة."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__cost_total
+msgid "Total Cost"
+msgstr "إجمالي التكلفة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__revenue_total
+msgid "Total Revenue"
+msgstr "إجمالي الإيرادات"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__utilization_hours_total
+msgid "Total Utilization (h)"
+msgstr "إجمالي الاستخدام (ساعة)"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__status__unavailable
+msgid "Unavailable"
+msgstr "غير متاح"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields.selection,name:gr_fleet_base.selection__gr_generator_asset__status__under_maintenance
+msgid "Under Maintenance"
+msgstr "تحت الصيانة"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__code
+msgid "Unique internal code. Auto-assigned from the GR/ASSET sequence."
+msgstr "رمز داخلي فريد. يعين تلقائيا من تسلسل GR/ASSET."
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,help:gr_fleet_base.field_gr_generator_asset__depot_location_id
+msgid "Where the generator sits when not deployed."
+msgstr "مكان وجود المولد عندما لا يكون مشغلا في موقع."
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_meter_correction_wizard_form
+msgid "Why is this correction needed?"
+msgstr "لماذا يلزم هذا التصحيح؟"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_meter_correction_wizard_form
+msgid ""
+"You are <b>decreasing</b> the meter reading. This requires\n"
+"                        Generator Administrator approval and will be logged permanently."
+msgstr "أنت <b>تقلّل</b> قراءة العداد. هذا يتطلب مبرراً وسيُسجَّل للمراجعة."
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_form
+msgid "e.g. CAT 500 kVA #3"
+msgstr "مثال: CAT 500 kVA #3"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_kanban
+msgid "h"
+msgstr "ساعة"
+
+#. module: gr_fleet_base
+#: model_terms:ir.ui.view,arch_db:gr_fleet_base.view_gr_generator_asset_kanban
+msgid "kVA"
+msgstr "ك.ف.أ"
+
+#. module: gr_fleet_base
+#: model:ir.model.fields,field_description:gr_fleet_base.field_gr_generator_asset__kva_rating
+msgid "kVA Rating"
+msgstr "قدرة ك.ف.أ"

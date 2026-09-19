@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_parts_line_list" model="ir.ui.view">
+        <field name="name">gr.parts.consumption.line.list</field>
+        <field name="model">gr.parts.consumption.line</field>
+        <field name="arch" type="xml">
+            <list string="Parts Consumption" editable="bottom"
+                  decoration-success="state == 'consumed'"
+                  decoration-muted="state == 'cancelled'">
+                <field name="product_id"/>
+                <field name="quantity"/>
+                <field name="product_uom_id"/>
+                <field name="warehouse_id" optional="hide"/>
+                <field name="source_location_id" optional="show"/>
+                <field name="dest_location_id" optional="hide"/>
+                <field name="unit_cost"/>
+                <field name="subtotal_cost" sum="Total"/>
+                <field name="picking_id" optional="show"/>
+                <field name="move_id" optional="hide"/>
+                <field name="currency_id" column_invisible="1"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'consumed'"
+                       decoration-muted="state == 'cancelled'"/>
+                <button name="action_consume" type="object" string="Consume"
+                        icon="fa-check" invisible="state != 'draft'"/>
+                <button name="action_cancel" type="object" string="Cancel"
+                        icon="fa-times" invisible="state != 'draft'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_parts_line_search" model="ir.ui.view">
+        <field name="name">gr.parts.consumption.line.search</field>
+        <field name="model">gr.parts.consumption.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_id"/>
+                <field name="asset_id"/>
+                <field name="job_id"/>
+                <filter name="f_consumed" string="Consumed" domain="[('state','=','consumed')]"/>
+                <group>
+                    <filter name="g_asset" string="Asset" context="{'group_by':'asset_id'}"/>
+                    <filter name="g_product" string="Part" context="{'group_by':'product_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_gr_parts_line" model="ir.actions.act_window">
+        <field name="name">Parts Consumption</field>
+        <field name="res_model">gr.parts.consumption.line</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_gr_parts_line_search"/>
+    </record>
+
+</odoo>

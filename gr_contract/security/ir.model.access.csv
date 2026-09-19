@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_rental_contract_user,gr.rental.contract.user,model_gr_rental_contract,gr_security_base.group_generator_user,1,0,0,0
+access_gr_rental_contract_sales,gr.rental.contract.sales,model_gr_rental_contract,gr_security_base.group_generator_sales_officer,1,1,1,0
+access_gr_rental_contract_ops,gr.rental.contract.ops,model_gr_rental_contract,gr_security_base.group_generator_operations_officer,1,0,0,0
+access_gr_rental_contract_finance,gr.rental.contract.finance,model_gr_rental_contract,gr_security_base.group_generator_finance_officer,1,0,0,0
+access_gr_rental_contract_gm,gr.rental.contract.gm,model_gr_rental_contract,gr_security_base.group_generator_general_manager,1,1,1,0
+access_gr_rental_contract_admin,gr.rental.contract.admin,model_gr_rental_contract,gr_security_base.group_generator_administrator,1,1,1,1
+access_gr_rental_contract_line_user,gr.rental.contract.line.user,model_gr_rental_contract_line,gr_security_base.group_generator_user,1,0,0,0
+access_gr_rental_contract_line_sales,gr.rental.contract.line.sales,model_gr_rental_contract_line,gr_security_base.group_generator_sales_officer,1,1,1,1
+access_gr_rental_contract_line_gm,gr.rental.contract.line.gm,model_gr_rental_contract_line,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_rental_contract_line_admin,gr.rental.contract.line.admin,model_gr_rental_contract_line,gr_security_base.group_generator_administrator,1,1,1,1
+access_gr_contract_amendment_user,gr.contract.amendment.user,model_gr_contract_amendment,gr_security_base.group_generator_user,1,0,0,0
+access_gr_contract_amendment_sales,gr.contract.amendment.sales,model_gr_contract_amendment,gr_security_base.group_generator_sales_officer,1,1,1,0
+access_gr_contract_amendment_gm,gr.contract.amendment.gm,model_gr_contract_amendment,gr_security_base.group_generator_general_manager,1,1,1,0
+access_gr_contract_amendment_admin,gr.contract.amendment.admin,model_gr_contract_amendment,gr_security_base.group_generator_administrator,1,1,1,1

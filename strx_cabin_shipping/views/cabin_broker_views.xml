@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_strx_broker_list" model="ir.ui.view">
+        <field name="name">strx.cabin.broker.list</field>
+        <field name="model">strx.cabin.broker</field>
+        <field name="arch" type="xml">
+            <list string="Brokers">
+                <field name="name" decoration-bf="1"/>
+                <field name="is_internal" widget="boolean_toggle"/>
+                <field name="company_registration" optional="show"/>
+                <field name="contact_name" optional="show"/>
+                <field name="contact_phone" optional="show"/>
+                <field name="contact_email" optional="hide"/>
+                <field name="default_rate" optional="show"/>
+                <field name="shipping_order_count" string="Shipments"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_strx_broker_form" model="ir.ui.view">
+        <field name="name">strx.cabin.broker.form</field>
+        <field name="model">strx.cabin.broker</field>
+        <field name="arch" type="xml">
+            <form string="Broker">
+                <sheet>
+                    <widget name="web_ribbon" title="Company Transport"
+                            bg_color="text-bg-info" invisible="not is_internal"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_payment_orders" type="object"
+                                class="oe_stat_button" icon="fa-credit-card">
+                            <field name="payment_order_count" widget="statinfo"
+                                   string="Payment Orders"/>
+                        </button>
+                        <button name="action_create_payment_order" type="object"
+                                class="oe_stat_button" icon="fa-plus">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Create Payment</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Broker name"/></h1>
+                    </div>
+                    <group>
+                        <group string="Company">
+                            <field name="is_internal"/>
+                            <field name="partner_id"/>
+                            <field name="company_registration"/>
+                        </group>
+                        <group string="Contact">
+                            <field name="contact_name"/>
+                            <field name="contact_phone"/>
+                            <field name="contact_email" widget="email"/>
+                        </group>
+                        <group string="Rates">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="default_rate"/>
+                            <field name="rate_note"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_strx_broker" model="ir.actions.act_window">
+        <field name="name">Brokers</field>
+        <field name="res_model">strx.cabin.broker</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

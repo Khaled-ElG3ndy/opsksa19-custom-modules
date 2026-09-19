@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="gr_contract.action_report_gr_rental_contract" model="ir.actions.report">
+        <field name="print_report_name">object._rental_contract_filename()</field>
+        <field name="paperformat_id" ref="gr_customer_approval.paperformat_gr_customer_approval"/>
+    </record>
+
+    <record id="gr_rental_order.action_report_gr_delivery_note" model="ir.actions.report">
+        <field name="print_report_name">object._legacy_report_filename('delivery_note')</field>
+        <field name="paperformat_id" ref="gr_customer_approval.paperformat_gr_customer_approval"/>
+    </record>
+
+    <record id="gr_rental_order.action_report_gr_install_report" model="ir.actions.report">
+        <field name="print_report_name">object._legacy_report_filename('installation')</field>
+        <field name="paperformat_id" ref="gr_customer_approval.paperformat_gr_customer_approval"/>
+    </record>
+
+    <record id="gr_rental_order.action_report_gr_return_inspection" model="ir.actions.report">
+        <field name="print_report_name">object._legacy_report_filename('return_inspection')</field>
+        <field name="paperformat_id" ref="gr_customer_approval.paperformat_gr_customer_approval"/>
+    </record>
+
+    <template id="unified_contract_report"
+              inherit_id="gr_contract.report_gr_rental_contract" priority="90">
+        <xpath expr="//t[@t-call='web.html_container']" position="replace">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="approval_copy" t-value="False"/>
+                <t t-set="document_title">Rental Contract</t>
+                <t t-call="gr_customer_approval.unified_document_layout"
+                   t-lang="doc.env.context.get('lang')">
+                    <div class="gr-section">
+                        <div class="gr-section-title">Contract Overview</div>
+                        <table class="gr-info-table">
+                            <tr>
+                                <td class="gr-label">Customer</td><td t-out="doc.partner_id.display_name or ''"/>
+                                <td class="gr-label">Site</td><td t-out="doc.site_id.display_name or ''"/>
+                            </tr>
+                            <tr>
+                                <td class="gr-label">Contract Type</td><td><span t-field="doc.contract_type"/></td>
+                                <td class="gr-label">Currency</td><td><span class="gr-ltr-value" t-out="doc.currency_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td class="gr-label">Start Date</td><td><span t-field="doc.date_start"/></td>
+                                <td class="gr-label">End Date</td><td><span t-field="doc.date_end"/></td>
+                            </tr>
+                            <tr>
+                                <td class="gr-label">Customer PO Number</td><td><span class="gr-ltr-value" t-out="doc.customer_po_number or ''"/></td>
+                                <td class="gr-label">Payment Terms</td><td t-out="doc.payment_terms_id.display_name or ''"/>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="gr-section">
+                        <div class="gr-section-title">Pricing and Commercial Terms</div>
+                        <table class="gr-info-table">
+                            <tr t-if="doc.contract_type == 'daily_with_included_hours'">
+                                <td class="gr-label">Base Daily Rate</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.base_daily_rate, doc.currency_id)"/></td>
+                                <td class="gr-label">Included Hours / Day</td><td t-out="doc.included_hours_per_day"/>
+                            </tr>
+                            <tr t-if="doc.contract_type == 'monthly_with_included_hours'">
+                                <td class="gr-label">Base Monthly Rate</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.base_monthly_rate, doc.currency_id)"/></td>
+                                <td class="gr-label">Included Hours / Day</td><td t-out="doc.included_hours_per_day"/>
+                            </tr>
+                            <tr t-if="doc.contract_type == 'hourly'">
+                                <td class="gr-label">Hourly Rate</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.hourly_rate, doc.currency_id)"/></td>
+                                <td class="gr-label">Billing Basis</td><td>Approved operating hours</td>
+                            </tr>
+                            <tr t-if="doc.contract_type == 'standby_plus_usage'">
+                                <td class="gr-label">Standby Rate</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.standby_rate, doc.currency_id)"/></td>
+                                <td class="gr-label">Hourly Rate</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.hourly_rate, doc.currency_id)"/></td>
+                            </tr>
+                            <tr t-if="doc.overtime_hour_rate or doc.violation_hour_rate">
+                                <td class="gr-label">Overtime Hour Rate</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.overtime_hour_rate, doc.currency_id)"/></td>
+                                <td class="gr-label">Violation Hour Rate</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.violation_hour_rate, doc.currency_id)"/></td>
+                            </tr>
+                            <tr t-if="doc.max_hours_per_day">
+                                <td class="gr-label">Max Hours / Day</td><td t-out="doc.max_hours_per_day"/>
+                                <td class="gr-label">Fuel Policy</td><td><span t-field="doc.fuel_billing_policy"/></td>
+                            </tr>
+                            <tr t-if="doc.mobilization_charge or doc.demobilization_charge">
+                                <td class="gr-label">Mobilization Charge</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.mobilization_charge, doc.currency_id)"/></td>
+                                <td class="gr-label">Demobilization Charge</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.demobilization_charge, doc.currency_id)"/></td>
+                            </tr>
+                            <tr t-if="doc.security_deposit">
+                                <td class="gr-label">Security Deposit</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.security_deposit, doc.currency_id)"/></td>
+                                <td/><td/>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="gr-section gr-can-break" t-if="doc.line_ids">
+                        <div class="gr-section-title">Allocated Assets and Equipment</div>
+                        <table class="gr-data-table">
+                            <thead><tr><th>Product</th><th>Capacity</th><th>Quantity</th><th>Preferred Asset</th><th>Independent Rate</th><th>Notes</th></tr></thead>
+                            <tbody>
+                                <tr t-foreach="doc.line_ids" t-as="line">
+                                    <td t-out="line.product_id.display_name or ''"/>
+                                    <td><span t-out="line.kva_rating"/> kVA</td>
+                                    <td t-out="line.quantity"/>
+                                    <td t-out="line.preferred_asset_id.display_name or ''"/>
+                                    <td><span class="gr-number" t-if="line.rate_override" t-out="doc._approval_format_amount(line.rate_override, doc.currency_id)"/><span t-else="">Contract rate</span></td>
+                                    <td t-out="line.notes or ''"/>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="gr-section">
+                        <div class="gr-section-title">Terms and Conditions</div>
+                        <div class="gr-terms-box" t-if="doc.terms_and_conditions" t-field="doc.terms_and_conditions"/>
+                        <p class="gr-muted" t-else="">No additional terms and conditions were recorded on this contract.</p>
+                    </div>
+
+                    <table class="gr-signature-grid">
+                        <tr>
+                            <td class="gr-signature-box"><strong>Customer Signature</strong><br/><span class="gr-muted">Name, signature, and date</span></td>
+                            <td class="gr-signature-box"><strong>Company Signature</strong><br/><span class="gr-muted">Name, signature, and date</span></td>
+                        </tr>
+                    </table>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="unified_legacy_order_overview">
+        <t t-call="gr_customer_approval.approval_customer_section"/>
+        <div class="gr-section">
+            <div class="gr-section-title">Order and Asset Details</div>
+            <table class="gr-info-table">
+                <tr><td class="gr-label">Rental Order</td><td><span class="gr-ltr-value" t-out="doc.name"/></td><td class="gr-label">Contract</td><td><span class="gr-ltr-value" t-out="doc.contract_id.display_name or ''"/></td></tr>
+                <tr><td class="gr-label">Asset</td><td t-out="doc.asset_id.display_name or ''"/><td class="gr-label">Asset Number</td><td><span class="gr-ltr-value" t-out="doc.asset_id.code or ''"/></td></tr>
+                <tr><td class="gr-label">Serial Number</td><td><span class="gr-ltr-value" t-out="doc.asset_id.serial_number or ''"/></td><td class="gr-label">Site</td><td t-out="doc.site_id.display_name or ''"/></tr>
+            </table>
+        </div>
+    </template>
+
+    <template id="unified_delivery_note_report"
+              inherit_id="gr_rental_order.report_gr_delivery_note" priority="90">
+        <xpath expr="//t[@t-call='web.html_container']" position="replace">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="doc" t-value="doc.with_context(operational_report=True)"/>
+                <t t-set="approval_copy" t-value="False"/>
+                <t t-set="document_title">Delivery Note</t>
+                <t t-call="gr_customer_approval.unified_document_layout" t-lang="doc.env.context.get('lang')">
+                    <t t-call="gr_customer_approval.unified_legacy_order_overview"/>
+                    <div class="gr-section"><div class="gr-section-title">Delivery Details</div>
+                        <table class="gr-info-table">
+                            <tr><td class="gr-label">Planned Dispatch</td><td><span t-field="doc.planned_dispatch_datetime"/></td><td class="gr-label">Actual Dispatch</td><td><span t-field="doc.actual_dispatch_datetime"/></td></tr>
+                            <tr><td class="gr-label">Delivery Driver</td><td t-out="doc.delivery_driver_id.display_name or ''"/><td class="gr-label">Received By</td><td t-out="doc.customer_receiver_name or ''"/></tr>
+                            <tr t-if="doc.dispatch_note"><td class="gr-label">Dispatch Note</td><td colspan="3" t-out="doc.dispatch_note"/></tr>
+                        </table>
+                    </div>
+                    <table class="gr-signature-grid"><tr><td class="gr-signature-box"><strong>Customer Signature</strong></td><td class="gr-signature-box"><strong>Driver Signature</strong></td></tr></table>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="unified_installation_report"
+              inherit_id="gr_rental_order.report_gr_install_report" priority="90">
+        <xpath expr="//t[@t-call='web.html_container']" position="replace">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="doc" t-value="doc.with_context(operational_report=True)"/>
+                <t t-set="approval_copy" t-value="False"/>
+                <t t-set="document_title">Installation / Commissioning Report</t>
+                <t t-call="gr_customer_approval.unified_document_layout" t-lang="doc.env.context.get('lang')">
+                    <t t-call="gr_customer_approval.unified_legacy_order_overview"/>
+                    <div class="gr-section"><div class="gr-section-title">Installation Details</div>
+                        <table class="gr-info-table">
+                            <tr><td class="gr-label">Actual Install</td><td><span t-field="doc.actual_install_datetime"/></td><td class="gr-label">Start Meter Reading</td><td t-out="doc.start_meter_reading"/></tr>
+                            <tr><td class="gr-label">Installation Technician</td><td t-out="doc.installation_technician_id.display_name or ''"/><td class="gr-label">Installation Note</td><td t-out="doc.installation_note or ''"/></tr>
+                        </table>
+                    </div>
+                    <div class="gr-section gr-can-break" t-if="doc.checklist_ids"><div class="gr-section-title">Checklist</div>
+                        <table class="gr-data-table"><thead><tr><th>Phase</th><th>Item</th><th>Completed</th><th>Notes</th></tr></thead><tbody>
+                            <tr t-foreach="doc.checklist_ids" t-as="line"><td><span t-field="line.phase"/></td><td t-out="line.name"/><td><span t-if="line.is_done">Yes</span><span t-else="">No</span></td><td t-out="line.notes or ''"/></tr>
+                        </tbody></table>
+                    </div>
+                    <table class="gr-signature-grid"><tr><td class="gr-signature-box"><strong>Customer Signature</strong></td><td class="gr-signature-box"><strong>Technician Signature</strong></td></tr></table>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="unified_return_inspection_report"
+              inherit_id="gr_rental_order.report_gr_return_inspection" priority="90">
+        <xpath expr="//t[@t-call='web.html_container']" position="replace">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="doc" t-value="doc.with_context(operational_report=True)"/>
+                <t t-set="approval_copy" t-value="False"/>
+                <t t-set="document_title">Return Inspection Report</t>
+                <t t-call="gr_customer_approval.unified_document_layout" t-lang="doc.env.context.get('lang')">
+                    <t t-call="gr_customer_approval.unified_legacy_order_overview"/>
+                    <div class="gr-section"><div class="gr-section-title">Return Inspection Details</div>
+                        <table class="gr-info-table">
+                            <tr><td class="gr-label">Actual Return</td><td><span t-field="doc.actual_return_datetime"/></td><td class="gr-label">Return Technician</td><td t-out="doc.return_technician_id.display_name or ''"/></tr>
+                            <tr><td class="gr-label">Start Meter</td><td t-out="doc.start_meter_reading"/><td class="gr-label">End Meter</td><td t-out="doc.end_meter_reading"/></tr>
+                            <tr><td class="gr-label">Hours Used</td><td t-out="(doc.end_meter_reading or 0) - (doc.start_meter_reading or 0)"/><td class="gr-label">Return Note</td><td t-out="doc.return_note or ''"/></tr>
+                        </table>
+                    </div>
+                    <table class="gr-signature-grid"><tr><td class="gr-signature-box"><strong>Customer Signature</strong></td><td class="gr-signature-box"><strong>Inspector Signature</strong></td></tr></table>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

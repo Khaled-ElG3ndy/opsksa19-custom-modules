@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_strx_cabin_allocation_form_shipping" model="ir.ui.view">
+        <field name="name">strx.cabin.allocation.form.shipping</field>
+        <field name="model">strx.cabin.allocation</field>
+        <field name="inherit_id" ref="strx_cabin_allocation.view_strx_cabin_allocation_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_create_delivery_shipment" type="object"
+                        string="Create Delivery Shipment"
+                        class="oe_highlight"
+                        invisible="state != 'allocated'"/>
+                <button name="action_create_return_shipment" type="object"
+                        string="Return"
+                        class="oe_highlight"
+                        invisible="state != 'on_rent'"/>
+            </xpath>
+            <xpath expr="//sheet/div[hasclass('oe_title')]" position="before">
+                <field name="strx_return_timing_level" invisible="1"/>
+                <field name="strx_return_timing_label" invisible="1"/>
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_shipping_orders" type="object"
+                            class="oe_stat_button" icon="fa-truck"
+                            invisible="strx_shipping_count == 0">
+                        <field name="strx_shipping_count" widget="statinfo"
+                               string="Shipments"/>
+                    </button>
+                    <button name="action_view_return_shipments" type="object"
+                            class="oe_stat_button o_strx_return_status_button o_strx_return_status_ok"
+                            icon="fa-calendar-check-o"
+                            invisible="state != 'on_rent' or strx_return_timing_level not in ('normal', 'none')">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Return Status</span>
+                            <span class="o_stat_value">
+                                <field name="strx_return_timing_label"/>
+                            </span>
+                        </div>
+                    </button>
+                    <button name="action_view_return_shipments" type="object"
+                            class="oe_stat_button o_strx_return_status_button o_strx_return_status_today"
+                            icon="fa-clock-o"
+                            invisible="state != 'on_rent' or strx_return_timing_level != 'today'">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Return Status</span>
+                            <span class="o_stat_value">
+                                <field name="strx_return_timing_label"/>
+                            </span>
+                        </div>
+                    </button>
+                    <button name="action_view_return_shipments" type="object"
+                            class="oe_stat_button o_strx_return_status_button o_strx_return_status_overdue"
+                            icon="fa-exclamation-triangle"
+                            invisible="state != 'on_rent' or strx_return_timing_level != 'overdue'">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Return Status</span>
+                            <span class="o_stat_value">
+                                <field name="strx_return_timing_label"/>
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

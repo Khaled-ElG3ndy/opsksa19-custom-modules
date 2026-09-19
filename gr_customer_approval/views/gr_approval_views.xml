@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_customer_approval_log_list" model="ir.ui.view">
+        <field name="name">gr.customer.approval.log.list</field>
+        <field name="model">gr.customer.approval.log</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0" delete="0">
+                <field name="create_date" string="Date"/>
+                <field name="document_ref"/>
+                <field name="approval_document_id"/>
+                <field name="partner_id"/>
+                <field name="event_type" widget="badge"
+                       decoration-success="event_type == 'approved'"
+                       decoration-info="event_type == 'sent'"
+                       decoration-warning="event_type == 'failed'"
+                       decoration-muted="event_type == 'cancelled'"/>
+                <field name="approval_method"/>
+                <field name="channel"/>
+                <field name="recipient"/>
+                <field name="attempts"/>
+                <field name="user_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_customer_approval_log_form" model="ir.ui.view">
+        <field name="name">gr.customer.approval.log.form</field>
+        <field name="model">gr.customer.approval.log</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0" delete="0">
+                <sheet>
+                    <group>
+                        <group string="Document">
+                            <field name="document_ref"/>
+                            <field name="document_model"/>
+                            <field name="document_res_id"/>
+                            <field name="partner_id"/>
+                            <field name="approval_document_id"/>
+                        </group>
+                        <group string="Approval Event">
+                            <field name="event_type" widget="badge"/>
+                            <field name="approval_method"/>
+                            <field name="channel"/>
+                            <field name="recipient"/>
+                            <field name="attempts"/>
+                            <field name="user_id"/>
+                        </group>
+                    </group>
+                    <group string="Details">
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_gr_customer_approval_log" model="ir.actions.act_window">
+        <field name="name">Customer Approval Log</field>
+        <field name="res_model">gr.customer.approval.log</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'create': False, 'edit': False, 'delete': False}</field>
+    </record>
+
+    <record id="view_gr_customer_approval_document_list" model="ir.ui.view">
+        <field name="name">gr.customer.approval.document.list</field>
+        <field name="model">gr.customer.approval.document</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0" delete="0" default_order="version desc">
+                <field name="document_number"/>
+                <field name="report_type"/>
+                <field name="version"/>
+                <field name="language"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'approved'"
+                       decoration-info="state == 'pending'"
+                       decoration-warning="state == 'superseded'"
+                       decoration-muted="state == 'cancelled'"/>
+                <field name="generated_at"/>
+                <field name="approved_at"/>
+                <field name="approval_method"/>
+                <field name="file_hash" optional="hide"/>
+                <button name="action_view_copy" type="object" string="View Approval Copy"
+                        icon="fa-eye" invisible="not attachment_id"/>
+                <button name="action_view_approved_document" type="object"
+                        string="View Approved Document" icon="fa-check-circle"
+                        invisible="not approved_attachment_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_customer_approval_document_form" model="ir.ui.view">
+        <field name="name">gr.customer.approval.document.form</field>
+        <field name="model">gr.customer.approval.document</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0" delete="0">
+                <header>
+                    <button name="action_view_copy" type="object" string="View Approval Copy"
+                            class="btn-primary" invisible="not attachment_id"/>
+                    <button name="action_download_copy" type="object" string="Download PDF"
+                            invisible="not attachment_id"/>
+                    <button name="action_view_approved_document" type="object"
+                            string="View Approved Document" class="btn-primary"
+                            invisible="not approved_attachment_id"/>
+                    <button name="action_download_approved_document" type="object"
+                            string="Download Approved Document"
+                            invisible="not approved_attachment_id"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <group>
+                        <group string="Document">
+                            <field name="report_type"/>
+                            <field name="document_number"/>
+                            <field name="document_ref"/>
+                            <field name="partner_id"/>
+                            <field name="company_id"/>
+                        </group>
+                        <group string="Version Information">
+                            <field name="version"/>
+                            <field name="language"/>
+                            <field name="generated_at"/>
+                            <field name="file_hash"/>
+                            <field name="content_hash"/>
+                        </group>
+                    </group>
+                    <group string="Approval Evidence">
+                        <group>
+                            <field name="approval_method"/>
+                            <field name="approval_channel"/>
+                            <field name="approval_recipient"/>
+                            <field name="approved_at"/>
+                        </group>
+                        <group>
+                            <field name="approval_log_id"/>
+                            <field name="approved_file_hash"/>
+                            <field name="sent_count"/>
+                            <field name="last_sent_at"/>
+                        </group>
+                    </group>
+                    <group string="Stored Files">
+                        <field name="attachment_id"/>
+                        <field name="approved_attachment_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_gr_customer_approval_document" model="ir.actions.act_window">
+        <field name="name">Approval Documents</field>
+        <field name="res_model">gr.customer.approval.document</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'create': False, 'edit': False, 'delete': False}</field>
+    </record>
+
+    <!-- [1] RENTAL ORDER — approval page -->
+    <record id="view_gr_rental_order_form_approval" model="ir.ui.view">
+        <field name="name">gr.rental.order.form.approval</field>
+        <field name="model">gr.rental.order</field>
+        <field name="inherit_id" ref="gr_rental_order.view_gr_rental_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='action_confirm']" position="attributes">
+                <attribute name="invisible">state != 'draft' or approval_state != 'approved'</attribute>
+            </xpath>
+            <xpath expr="//header/button[@name='action_confirm']" position="before">
+                <button name="action_generate_approval_copy" type="object"
+                        string="Generate Approval Copy" class="btn-primary"
+                        invisible="state != 'draft' or current_approval_document_id or approval_state == 'approved'"/>
+                <button name="action_view_approval_copy" type="object"
+                        string="View Approval Copy"
+                        invisible="state != 'draft' or not current_approval_document_id or approval_state == 'approved'"/>
+                <button name="action_view_approved_document" type="object"
+                        string="View Approved Document"
+                        invisible="state != 'draft' or approval_state != 'approved'"/>
+            </xpath>
+            <xpath expr="//sheet/div[hasclass('oe_title')]" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_approval_documents" type="object"
+                            class="oe_stat_button" icon="fa-file-pdf-o">
+                        <field name="approval_document_count" widget="statinfo"
+                               string="Approval Documents"/>
+                    </button>
+                    <button name="action_view_approval_logs" type="object"
+                            class="oe_stat_button" icon="fa-check-square-o">
+                        <field name="approval_log_count" widget="statinfo"
+                               string="Approval History"/>
+                    </button>
+                    <button name="action_view_approval_emails" type="object"
+                            class="oe_stat_button" icon="fa-envelope-o">
+                        <field name="approval_email_count" widget="statinfo"
+                               string="Emails Sent"/>
+                    </button>
+                </div>
+            </xpath>
+            <xpath expr="//page[@name='signoff']" position="after">
+                <page string="Customer Approval" name="customer_approval">
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <button name="action_generate_approval_copy" type="object"
+                                string="Generate Approval Copy" class="btn-primary"
+                                icon="fa-file-pdf-o"
+                                invisible="current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_preview_document" type="object"
+                                string="Preview Document" icon="fa-eye"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_download_pdf" type="object"
+                                string="Download PDF" icon="fa-download"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_view_approval_copy" type="object"
+                                string="View Approval Copy" icon="fa-file-pdf-o"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_send_document_to_customer" type="object"
+                                string="Send to Customer" icon="fa-envelope"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_view_approved_document" type="object"
+                                string="View Approved Document" class="btn-primary"
+                                icon="fa-check-circle"
+                                invisible="approval_state != 'approved'"/>
+                        <button name="action_download_approved_document" type="object"
+                                string="Download Approved Document" icon="fa-download"
+                                invisible="approval_state != 'approved'"/>
+                        <button name="action_create_new_revision" type="object"
+                                string="Create New Revision" icon="fa-copy"
+                                invisible="approval_state != 'approved'"/>
+                    </div>
+                    <group>
+                        <group string="Status">
+                            <field name="approval_state" widget="badge"
+                                   decoration-success="approval_state == 'approved'"
+                                   decoration-info="approval_state == 'sent'"/>
+                            <field name="approval_method" readonly="1"
+                                   invisible="approval_state != 'approved'"/>
+                            <field name="approved_on" readonly="1"
+                                   invisible="approval_state != 'approved'"/>
+                            <field name="approved_by_uid" readonly="1"
+                                   invisible="approval_state != 'approved'"/>
+                            <field name="approval_partner_id"/>
+                        </group>
+                        <group string="Send a Code (customer not present)">
+                            <field name="otp_channel"/>
+                            <field name="otp_sent_to" readonly="1"
+                                   invisible="not otp_sent_to"/>
+                            <field name="otp_expires_at" readonly="1"
+                                   invisible="approval_state != 'sent'"/>
+                            <field name="otp_input"
+                                   invisible="approval_state != 'sent'"/>
+                            <field name="otp_attempts" readonly="1"
+                                   invisible="approval_state != 'sent'"/>
+                        </group>
+                    </group>
+                    <group string="Sign in Person">
+                        <field name="approval_signed_by"
+                               invisible="approval_state == 'approved'"/>
+                        <field name="approval_signed_by_role"
+                               invisible="approval_state == 'approved'"/>
+                        <field name="approval_signature" widget="signature"
+                               invisible="approval_state == 'approved'"/>
+                    </group>
+                    <group string="Approval Notes">
+                        <field name="approval_notes" readonly="approval_state == 'approved'"/>
+                    </group>
+                    <div class="d-flex flex-wrap gap-2 mt-2">
+                        <button name="action_approve_by_signature" type="object"
+                                string="Approve with Signature" class="btn-primary"
+                                icon="fa-pencil"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_send_otp" type="object"
+                                string="Send Code to Customer"
+                                icon="fa-paper-plane"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_verify_otp" type="object"
+                                string="Verify Code" class="btn-primary"
+                                icon="fa-check"
+                                invisible="approval_state != 'sent'"/>
+                        <button name="action_reset_approval" type="object"
+                                string="Withdraw Approval"
+                                icon="fa-undo"
+                                invisible="approval_state != 'approved'"/>
+                    </div>
+                    <field name="current_approval_document_id" invisible="1"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- [2 & 4] RENTAL INSPECTION (delivery note + return note) -->
+    <record id="view_gr_rental_inspection_form_approval" model="ir.ui.view">
+        <field name="name">gr.rental.inspection.form.approval</field>
+        <field name="model">gr.rental.inspection</field>
+        <field name="inherit_id" ref="gr_rental_inspection.view_gr_rental_inspection_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='action_pass']" position="attributes">
+                <attribute name="invisible">state != 'draft' or approval_state != 'approved'</attribute>
+            </xpath>
+            <xpath expr="//header/button[@name='action_pass']" position="before">
+                <button name="action_generate_approval_copy" type="object"
+                        string="Generate Approval Copy" class="btn-primary"
+                        invisible="state != 'draft' or current_approval_document_id or approval_state == 'approved'"/>
+                <button name="action_view_approval_copy" type="object"
+                        string="View Approval Copy"
+                        invisible="state != 'draft' or not current_approval_document_id or approval_state == 'approved'"/>
+                <button name="action_view_approved_document" type="object"
+                        string="View Approved Document"
+                        invisible="state != 'draft' or approval_state != 'approved'"/>
+            </xpath>
+            <xpath expr="//sheet/div[hasclass('oe_title')]" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_approval_documents" type="object"
+                            class="oe_stat_button" icon="fa-file-pdf-o">
+                        <field name="approval_document_count" widget="statinfo"
+                               string="Approval Documents"/>
+                    </button>
+                    <button name="action_view_approval_logs" type="object"
+                            class="oe_stat_button" icon="fa-check-square-o">
+                        <field name="approval_log_count" widget="statinfo"
+                               string="Approval History"/>
+                    </button>
+                    <button name="action_view_approval_emails" type="object"
+                            class="oe_stat_button" icon="fa-envelope-o">
+                        <field name="approval_email_count" widget="statinfo"
+                               string="Emails Sent"/>
+                    </button>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='remarks']" position="after">
+                <notebook>
+                    <page string="Customer Approval" name="customer_approval">
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <button name="action_generate_approval_copy" type="object"
+                                    string="Generate Approval Copy" class="btn-primary"
+                                    icon="fa-file-pdf-o"
+                                    invisible="current_approval_document_id or approval_state == 'approved'"/>
+                            <button name="action_preview_document" type="object"
+                                    string="Preview Document" icon="fa-eye"
+                                    invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                            <button name="action_download_pdf" type="object"
+                                    string="Download PDF" icon="fa-download"
+                                    invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                            <button name="action_view_approval_copy" type="object"
+                                    string="View Approval Copy" icon="fa-file-pdf-o"
+                                    invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                            <button name="action_send_document_to_customer" type="object"
+                                    string="Send to Customer" icon="fa-envelope"
+                                    invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                            <button name="action_view_approved_document" type="object"
+                                    string="View Approved Document" class="btn-primary"
+                                    icon="fa-check-circle"
+                                    invisible="approval_state != 'approved'"/>
+                            <button name="action_download_approved_document" type="object"
+                                    string="Download Approved Document" icon="fa-download"
+                                    invisible="approval_state != 'approved'"/>
+                            <button name="action_create_new_revision" type="object"
+                                    string="Create New Revision" icon="fa-copy"
+                                    invisible="approval_state != 'approved'"/>
+                        </div>
+                        <group>
+                            <group string="Status">
+                                <field name="approval_state" widget="badge"
+                                       decoration-success="approval_state == 'approved'"
+                                       decoration-info="approval_state == 'sent'"/>
+                                <field name="approval_method" readonly="1"
+                                       invisible="approval_state != 'approved'"/>
+                                <field name="approved_on" readonly="1"
+                                       invisible="approval_state != 'approved'"/>
+                                <field name="approved_by_uid" readonly="1"
+                                       invisible="approval_state != 'approved'"/>
+                                <field name="approval_partner_id"/>
+                            </group>
+                            <group string="Send a Code (customer not present)">
+                                <field name="otp_channel"/>
+                                <field name="otp_sent_to" readonly="1"
+                                       invisible="not otp_sent_to"/>
+                                <field name="otp_expires_at" readonly="1"
+                                       invisible="approval_state != 'sent'"/>
+                                <field name="otp_input"
+                                       invisible="approval_state != 'sent'"/>
+                                <field name="otp_attempts" readonly="1"
+                                       invisible="approval_state != 'sent'"/>
+                            </group>
+                        </group>
+                        <group string="Sign in Person">
+                            <field name="approval_signed_by"
+                                   invisible="approval_state == 'approved'"/>
+                            <field name="approval_signed_by_role"
+                                   invisible="approval_state == 'approved'"/>
+                            <field name="approval_signature" widget="signature"
+                                   invisible="approval_state == 'approved'"/>
+                        </group>
+                        <group string="Approval Notes">
+                            <field name="approval_notes" readonly="approval_state == 'approved'"/>
+                        </group>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <button name="action_approve_by_signature" type="object"
+                                    string="Approve with Signature" class="btn-primary"
+                                    icon="fa-pencil"
+                                    invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                            <button name="action_send_otp" type="object"
+                                    string="Send Code to Customer" icon="fa-paper-plane"
+                                    invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                            <button name="action_verify_otp" type="object"
+                                    string="Verify Code" class="btn-primary" icon="fa-check"
+                                    invisible="approval_state != 'sent'"/>
+                            <button name="action_reset_approval" type="object"
+                                    string="Withdraw Approval" icon="fa-undo"
+                                    invisible="approval_state != 'approved'"/>
+                        </div>
+                        <field name="current_approval_document_id" invisible="1"/>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- [3] FIELD WORKSHEET (every service visit report) -->
+    <record id="view_gr_field_worksheet_form_approval" model="ir.ui.view">
+        <field name="name">gr.field.worksheet.form.approval</field>
+        <field name="model">gr.field.worksheet</field>
+        <field name="inherit_id" ref="gr_field_worksheet.view_gr_field_worksheet_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='action_verify']" position="attributes">
+                <attribute name="invisible">state != 'submitted' or approval_state != 'approved'</attribute>
+            </xpath>
+            <xpath expr="//header/button[@name='action_verify']" position="before">
+                <button name="action_generate_approval_copy" type="object"
+                        string="Generate Approval Copy" class="btn-primary"
+                        invisible="state != 'submitted' or current_approval_document_id or approval_state == 'approved'"/>
+                <button name="action_view_approval_copy" type="object"
+                        string="View Approval Copy"
+                        invisible="state != 'submitted' or not current_approval_document_id or approval_state == 'approved'"/>
+                <button name="action_view_approved_document" type="object"
+                        string="View Approved Document"
+                        invisible="state != 'submitted' or approval_state != 'approved'"/>
+            </xpath>
+            <xpath expr="//sheet/div[hasclass('oe_title')]" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_approval_documents" type="object"
+                            class="oe_stat_button" icon="fa-file-pdf-o">
+                        <field name="approval_document_count" widget="statinfo"
+                               string="Approval Documents"/>
+                    </button>
+                    <button name="action_view_approval_logs" type="object"
+                            class="oe_stat_button" icon="fa-check-square-o">
+                        <field name="approval_log_count" widget="statinfo"
+                               string="Approval History"/>
+                    </button>
+                    <button name="action_view_approval_emails" type="object"
+                            class="oe_stat_button" icon="fa-envelope-o">
+                        <field name="approval_email_count" widget="statinfo"
+                               string="Emails Sent"/>
+                    </button>
+                </div>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Customer Approval" name="customer_approval">
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <button name="action_generate_approval_copy" type="object"
+                                string="Generate Approval Copy" class="btn-primary"
+                                icon="fa-file-pdf-o"
+                                invisible="current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_preview_document" type="object"
+                                string="Preview Document" icon="fa-eye"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_download_pdf" type="object"
+                                string="Download PDF" icon="fa-download"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_view_approval_copy" type="object"
+                                string="View Approval Copy" icon="fa-file-pdf-o"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_send_document_to_customer" type="object"
+                                string="Send to Customer" icon="fa-envelope"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_view_approved_document" type="object"
+                                string="View Approved Document" class="btn-primary"
+                                icon="fa-check-circle"
+                                invisible="approval_state != 'approved'"/>
+                        <button name="action_download_approved_document" type="object"
+                                string="Download Approved Document" icon="fa-download"
+                                invisible="approval_state != 'approved'"/>
+                        <button name="action_create_new_revision" type="object"
+                                string="Create New Revision" icon="fa-copy"
+                                invisible="approval_state != 'approved'"/>
+                    </div>
+                    <group>
+                        <group string="Status">
+                            <field name="approval_state" widget="badge"
+                                   decoration-success="approval_state == 'approved'"
+                                   decoration-info="approval_state == 'sent'"/>
+                            <field name="approval_method" readonly="1"
+                                   invisible="approval_state != 'approved'"/>
+                            <field name="approved_on" readonly="1"
+                                   invisible="approval_state != 'approved'"/>
+                            <field name="approved_by_uid" readonly="1"
+                                   invisible="approval_state != 'approved'"/>
+                            <field name="approval_partner_id"/>
+                        </group>
+                        <group string="Send a Code (customer not present)">
+                            <field name="otp_channel"/>
+                            <field name="otp_sent_to" readonly="1"
+                                   invisible="not otp_sent_to"/>
+                            <field name="otp_expires_at" readonly="1"
+                                   invisible="approval_state != 'sent'"/>
+                            <field name="otp_input"
+                                   invisible="approval_state != 'sent'"/>
+                            <field name="otp_attempts" readonly="1"
+                                   invisible="approval_state != 'sent'"/>
+                        </group>
+                    </group>
+                    <group string="Sign in Person">
+                        <field name="approval_signed_by"
+                               invisible="approval_state == 'approved'"/>
+                        <field name="approval_signed_by_role"
+                               invisible="approval_state == 'approved'"/>
+                        <field name="approval_signature" widget="signature"
+                               invisible="approval_state == 'approved'"/>
+                    </group>
+                    <group string="Approval Notes">
+                        <field name="approval_notes" readonly="approval_state == 'approved'"/>
+                    </group>
+                    <div class="d-flex flex-wrap gap-2 mt-2">
+                        <button name="action_approve_by_signature" type="object"
+                                string="Approve with Signature" class="btn-primary"
+                                icon="fa-pencil"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_send_otp" type="object"
+                                string="Send Code to Customer" icon="fa-paper-plane"
+                                invisible="not current_approval_document_id or approval_state == 'approved'"/>
+                        <button name="action_verify_otp" type="object"
+                                string="Verify Code" class="btn-primary" icon="fa-check"
+                                invisible="approval_state != 'sent'"/>
+                        <button name="action_reset_approval" type="object"
+                                string="Withdraw Approval" icon="fa-undo"
+                                invisible="approval_state != 'approved'"/>
+                    </div>
+                    <field name="current_approval_document_id" invisible="1"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

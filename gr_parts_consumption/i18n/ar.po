@@ -1,0 +1,275 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_parts_consumption
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__asset_id
+#: model_terms:ir.ui.view,arch_db:gr_parts_consumption.view_gr_parts_line_search
+msgid "Asset"
+msgstr "الأصل"
+
+#. module: gr_parts_consumption
+#: model_terms:ir.ui.view,arch_db:gr_parts_consumption.view_gr_maintenance_job_form_parts
+#: model_terms:ir.ui.view,arch_db:gr_parts_consumption.view_gr_parts_line_list
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields.selection,name:gr_parts_consumption.selection__gr_parts_consumption_line__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: gr_parts_consumption
+#. odoo-python
+#: code:addons/gr_parts_consumption/models/gr_parts_consumption_line.py:0
+msgid ""
+"Cannot issue %(qty)s %(uom)s of %(part)s. Available quantity in %(location)s"
+" is %(available)s %(uom)s."
+msgstr ""
+"لا يمكن صرف %(qty)s %(uom)s من %(part)s. الكمية المتاحة في %(location)s هي "
+"%(available)s %(uom)s."
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_parts_consumption
+#: model_terms:ir.ui.view,arch_db:gr_parts_consumption.view_gr_maintenance_job_form_parts
+#: model_terms:ir.ui.view,arch_db:gr_parts_consumption.view_gr_parts_line_list
+msgid "Consume"
+msgstr "استهلاك"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields.selection,name:gr_parts_consumption.selection__gr_parts_consumption_line__state__consumed
+#: model_terms:ir.ui.view,arch_db:gr_parts_consumption.view_gr_parts_line_search
+msgid "Consumed"
+msgstr "مستهلك"
+
+#. module: gr_parts_consumption
+#. odoo-python
+#: code:addons/gr_parts_consumption/models/gr_parts_consumption_line.py:0
+msgid ""
+"Consumed parts cannot be cancelled here; reverse the stock move in Inventory"
+" if a correction is needed."
+msgstr ""
+"لا يمكن إلغاء قطع الغيار المستهلكة هنا؛ اعكس حركة المخزون في المخزون إذا لزم"
+" التصحيح."
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_maintenance_job__currency_id
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,help:gr_parts_consumption.field_gr_parts_consumption_line__product_uom_id
+msgid "Default unit of measure used for all stock operations."
+msgstr "وحدة القياس الافتراضية المستخدمة لكافة عمليات المخزون."
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_generator_asset__display_name
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_maintenance_job__display_name
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields.selection,name:gr_parts_consumption.selection__gr_parts_consumption_line__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_parts_consumption
+#: model:ir.model,name:gr_parts_consumption.model_gr_generator_asset
+msgid "Generator Asset"
+msgstr "أصل المولد"
+
+#. module: gr_parts_consumption
+#: model:ir.model,name:gr_parts_consumption.model_gr_maintenance_job
+msgid "Generator Maintenance Job"
+msgstr "أمر صيانة مولد"
+
+#. module: gr_parts_consumption
+#: model:ir.model,name:gr_parts_consumption.model_gr_parts_consumption_line
+msgid "Generator Maintenance Parts Consumption"
+msgstr "استهلاك قطع صيانة المولد"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_generator_asset__id
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_maintenance_job__id
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__dest_location_id
+msgid "Maintenance Consumption Location"
+msgstr "موقع استهلاك الصيانة"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__job_id
+msgid "Maintenance Job"
+msgstr "أمر صيانة"
+
+#. module: gr_parts_consumption
+#. odoo-python
+#: code:addons/gr_parts_consumption/models/gr_parts_consumption_line.py:0
+msgid "No production/scrap location available."
+msgstr "لا يوجد موقع إنتاج/إتلاف متاح."
+
+#. module: gr_parts_consumption
+#. odoo-python
+#: code:addons/gr_parts_consumption/models/gr_parts_consumption_line.py:0
+msgid "No warehouse configured for company %s."
+msgstr "لا يوجد مستودع مهيّأ للشركة %s."
+
+#. module: gr_parts_consumption
+#. odoo-python
+#: code:addons/gr_parts_consumption/models/gr_parts_consumption_line.py:0
+msgid "Only draft lines can be consumed."
+msgstr "لا يمكن استهلاك إلا البنود المسودة."
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__product_id
+#: model_terms:ir.ui.view,arch_db:gr_parts_consumption.view_gr_parts_line_search
+msgid "Part"
+msgstr "القطعة"
+
+#. module: gr_parts_consumption
+#: model:ir.actions.act_window,name:gr_parts_consumption.action_gr_parts_line
+#: model:ir.ui.menu,name:gr_parts_consumption.menu_gr_parts_consumption
+#: model_terms:ir.ui.view,arch_db:gr_parts_consumption.view_gr_maintenance_job_form_parts
+#: model_terms:ir.ui.view,arch_db:gr_parts_consumption.view_gr_parts_line_list
+msgid "Parts Consumption"
+msgstr "استهلاك القطع"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_maintenance_job__parts_line_count
+msgid "Parts Lines"
+msgstr "بنود القطع"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_maintenance_job__parts_line_ids
+msgid "Parts Used"
+msgstr "القطع المستخدمة"
+
+#. module: gr_parts_consumption
+#. odoo-python
+#: code:addons/gr_parts_consumption/models/gr_parts_consumption_line.py:0
+msgid "Parts: %s"
+msgstr "قطع الغيار: %s"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__quantity
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: gr_parts_consumption
+#. odoo-python
+#: code:addons/gr_parts_consumption/models/gr_parts_consumption_line.py:0
+msgid "Quantity must be positive."
+msgstr "يجب أن تكون الكمية موجبة."
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,help:gr_parts_consumption.field_gr_parts_consumption_line__unit_cost
+msgid ""
+"Snapshot of the part's cost (last purchase price) at the moment of "
+"consumption; does not change if the product cost later changes."
+msgstr ""
+"لقطة لتكلفة القطعة (آخر سعر شراء) وقت الاستهلاك؛ لا تتغير إذا تغيرت تكلفة "
+"المنتج لاحقا."
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__source_location_id
+msgid "Source Location"
+msgstr "موقع المصدر"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__move_id
+msgid "Stock Move"
+msgstr "حركة المخزون"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__picking_id
+msgid "Stock Picking"
+msgstr "عملية المخزون"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__subtotal_cost
+msgid "Subtotal"
+msgstr "الإجمالي الفرعي"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,help:gr_parts_consumption.field_gr_parts_consumption_line__picking_id
+msgid "The internal stock transfer that issued the part to maintenance."
+msgstr "تحويل المخزون الداخلي الذي صرف القطعة للصيانة."
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,help:gr_parts_consumption.field_gr_parts_consumption_line__move_id
+msgid "The outgoing stock move that decremented inventory for this part."
+msgstr "حركة المخزون الصادرة التي خفضت مخزون هذه القطعة."
+
+#. module: gr_parts_consumption
+#: model_terms:ir.ui.view,arch_db:gr_parts_consumption.view_gr_parts_line_list
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_maintenance_job__total_parts_cost
+#: model_terms:ir.ui.view,arch_db:gr_parts_consumption.view_gr_maintenance_job_form_parts
+msgid "Total Parts Cost"
+msgstr "إجمالي تكلفة القطع"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__product_uom_id
+msgid "Unit"
+msgstr "الوحدة"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__unit_cost
+msgid "Unit Cost"
+msgstr "تكلفة الوحدة"
+
+#. module: gr_parts_consumption
+#: model:ir.model.fields,field_description:gr_parts_consumption.field_gr_parts_consumption_line__warehouse_id
+msgid "Warehouse"
+msgstr "المستودع"

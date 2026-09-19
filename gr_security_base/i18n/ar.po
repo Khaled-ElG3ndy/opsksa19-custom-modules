@@ -1,0 +1,140 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_security_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_security_base
+#: model:ir.module.category,description:gr_security_base.module_category_generator_rental
+msgid "Access management for the Generator Rental ERP vertical."
+msgstr "إدارة الصلاحيات لنظام تأجير المولدات."
+
+#. module: gr_security_base
+#: model:res.groups,comment:gr_security_base.group_generator_finance_manager
+msgid "Approve billing exceptions and finalize billing."
+msgstr "اعتماد استثناءات الفوترة وإنهاء الفوترة."
+
+#. module: gr_security_base
+#: model:res.groups,comment:gr_security_base.group_generator_maint_manager
+msgid ""
+"Approve maintenance, block/unblock assets, close maintenance jobs, correct "
+"meters."
+msgstr ""
+"اعتماد الصيانة، وحظر/إتاحة الأصول، وإغلاق أوامر الصيانة، وتصحيح العدادات."
+
+#. module: gr_security_base
+#: model:res.groups,comment:gr_security_base.group_generator_user
+msgid "Baseline access: view documents assigned to the user."
+msgstr "صلاحية أساسية: عرض المستندات المسندة للمستخدم."
+
+#. module: gr_security_base
+#: model:ir.ui.menu,name:gr_security_base.menu_generator_config
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: gr_security_base
+#: model:res.groups,comment:gr_security_base.group_generator_sales_officer
+msgid ""
+"Create quotations, contracts, and rental orders. Cannot approve financial "
+"exceptions."
+msgstr ""
+"إنشاء عروض الأسعار والعقود وأوامر التأجير. لا يمكنه اعتماد الاستثناءات "
+"المالية."
+
+#. module: gr_security_base
+#: model:ir.ui.menu,name:gr_security_base.menu_generator_dashboard
+msgid "Dashboard"
+msgstr "لوحة المعلومات"
+
+#. module: gr_security_base
+#: model:res.groups,comment:gr_security_base.group_generator_administrator
+msgid "Full functional access to the Generator Rental ERP."
+msgstr "صلاحية وظيفية كاملة على نظام تأجير المولدات."
+
+#. module: gr_security_base
+#: model:res.groups,comment:gr_security_base.group_generator_finance_officer
+msgid "Generate billing batches and draft invoices from approved logs."
+msgstr "إنشاء دفعات الفوترة وفواتير المسودة من السجلات المعتمدة."
+
+#. module: gr_security_base
+#: model:res.groups,name:gr_security_base.group_generator_administrator
+msgid "Generator Administrator"
+msgstr "مدير نظام المولدات"
+
+#. module: gr_security_base
+#: model:res.groups,name:gr_security_base.group_generator_finance_manager
+msgid "Generator Finance Manager"
+msgstr "مدير مالية المولدات"
+
+#. module: gr_security_base
+#: model:res.groups,name:gr_security_base.group_generator_finance_officer
+msgid "Generator Finance Officer"
+msgstr "مسؤول مالية المولدات"
+
+#. module: gr_security_base
+#: model:res.groups,name:gr_security_base.group_generator_general_manager
+msgid "Generator General Manager"
+msgstr "المدير العام للمولدات"
+
+#. module: gr_security_base
+#: model:res.groups,name:gr_security_base.group_generator_maint_manager
+msgid "Generator Maintenance Manager"
+msgstr "مدير صيانة المولدات"
+
+#. module: gr_security_base
+#: model:res.groups,name:gr_security_base.group_generator_maint_technician
+msgid "Generator Maintenance Technician"
+msgstr "فني صيانة المولدات"
+
+#. module: gr_security_base
+#: model:res.groups,name:gr_security_base.group_generator_operations_officer
+msgid "Generator Operations Officer"
+msgstr "مسؤول عمليات المولدات"
+
+#. module: gr_security_base
+#: model:ir.ui.menu,name:gr_security_base.menu_generator_root
+#: model:res.groups.privilege,name:gr_security_base.res_groups_privilege_generator_rental
+msgid "Generator Rental"
+msgstr "تأجير المولدات"
+
+#. module: gr_security_base
+#: model:ir.module.category,name:gr_security_base.module_category_generator_rental
+msgid "Generator Rental ERP"
+msgstr "نظام تأجير المولدات"
+
+#. module: gr_security_base
+#: model:res.groups,name:gr_security_base.group_generator_sales_officer
+msgid "Generator Sales Officer"
+msgstr "مسؤول مبيعات المولدات"
+
+#. module: gr_security_base
+#: model:res.groups,name:gr_security_base.group_generator_user
+msgid "Generator User"
+msgstr "مستخدم نظام المولدات"
+
+#. module: gr_security_base
+#: model:res.groups,comment:gr_security_base.group_generator_operations_officer
+msgid "Reserve, dispatch, install, off-hire, and return generators."
+msgstr "حجز وإخراج وتركيب وإنهاء تأجير وإرجاع المولدات."
+
+#. module: gr_security_base
+#: model:res.groups,comment:gr_security_base.group_generator_general_manager
+msgid "View all dashboards and approve contract exceptions."
+msgstr "عرض جميع لوحات المعلومات واعتماد استثناءات العقود."
+
+#. module: gr_security_base
+#: model:res.groups,comment:gr_security_base.group_generator_maint_technician
+msgid "View assigned assets/jobs and submit maintenance reports."
+msgstr "عرض الأصول وأوامر العمل المسندة وتقديم تقارير الصيانة."

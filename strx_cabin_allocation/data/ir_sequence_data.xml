@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="seq_strx_cabin_allocation" model="ir.sequence">
+        <field name="name">Cabin Allocation</field>
+        <field name="code">strx.cabin.allocation</field>
+        <field name="prefix">ALLOC/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,78 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* strx_cabin_dispatch_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: strx_cabin_dispatch_control
+#. odoo-python
+#: code:addons/strx_cabin_dispatch_control/models/stock_move_line.py:0
+msgid "Dispatch blocked — no cabin allocated to this rental."
+msgstr "تم منع الإرسال — لا توجد كابينة مخصصة لهذا التأجير."
+
+#. module: strx_cabin_dispatch_control
+#. odoo-python
+#: code:addons/strx_cabin_dispatch_control/models/stock_move_line.py:0
+msgid "Dispatch blocked — serial not approved for this rental."
+msgstr "تم منع الإرسال — الرقم التسلسلي غير معتمد لهذا التأجير."
+
+#. module: strx_cabin_dispatch_control
+#. odoo-python
+#: code:addons/strx_cabin_dispatch_control/models/stock_move_line.py:0
+msgid "Dispatch blocked — wrong specification."
+msgstr "تم منع الإرسال — المواصفة غير صحيحة."
+
+#. module: strx_cabin_dispatch_control
+#: model:ir.model.fields,field_description:strx_cabin_dispatch_control.field_stock_move_line__display_name
+#: model:ir.model.fields,field_description:strx_cabin_dispatch_control.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: strx_cabin_dispatch_control
+#: model:ir.model.fields,field_description:strx_cabin_dispatch_control.field_stock_move_line__id
+#: model:ir.model.fields,field_description:strx_cabin_dispatch_control.field_stock_picking__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: strx_cabin_dispatch_control
+#: model:ir.model,name:strx_cabin_dispatch_control.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "تحركات المنتج (بنود حركة المخزون)"
+
+#. module: strx_cabin_dispatch_control
+#. odoo-python
+#: code:addons/strx_cabin_dispatch_control/models/stock_move_line.py:0
+msgid "Required"
+msgstr "مطلوب"
+
+#. module: strx_cabin_dispatch_control
+#. odoo-python
+#: code:addons/strx_cabin_dispatch_control/models/stock_move_line.py:0
+msgid ""
+"Scan an approved unit, re-allocate the correct serial, or raise a "
+"substitution request."
+msgstr ""
+"امسح وحدة معتمدة، أو أعد تخصيص الرقم التسلسلي الصحيح، أو أنشئ طلب استبدال."
+
+#. module: strx_cabin_dispatch_control
+#. odoo-python
+#: code:addons/strx_cabin_dispatch_control/models/stock_move_line.py:0
+msgid "Scanned"
+msgstr "تم المسح"
+
+#. module: strx_cabin_dispatch_control
+#: model:ir.model,name:strx_cabin_dispatch_control.model_stock_picking
+msgid "Transfer"
+msgstr "عملية النقل"

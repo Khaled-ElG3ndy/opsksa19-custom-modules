@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_sublet_margin_pivot" model="ir.ui.view">
+        <field name="name">gr.sublet.margin.report.pivot</field>
+        <field name="model">gr.sublet.margin.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Margin Analysis">
+                <field name="owner_type" type="row"/>
+                <field name="asset_id" type="row"/>
+                <field name="revenue_out" type="measure"/>
+                <field name="cost_in" type="measure"/>
+                <field name="extra_direct_cost" type="measure"/>
+                <field name="total_cost" type="measure"/>
+                <field name="margin" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_gr_sublet_margin_graph" model="ir.ui.view">
+        <field name="name">gr.sublet.margin.report.graph</field>
+        <field name="model">gr.sublet.margin.report</field>
+        <field name="arch" type="xml">
+            <graph string="Margin Analysis" type="bar">
+                <field name="owner_type"/>
+                <field name="margin" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_gr_sublet_margin_search" model="ir.ui.view">
+        <field name="name">gr.sublet.margin.report.search</field>
+        <field name="model">gr.sublet.margin.report</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="asset_id"/>
+                <field name="partner_id"/>
+                <field name="vendor_id"/>
+                <filter name="f_sublet" string="Sublet only" domain="[('owner_type','=','rented_in')]"/>
+                <filter name="f_owned" string="Owned fleet only" domain="[('owner_type','=','owned')]"/>
+                <group>
+                    <filter name="g_owner" string="Fleet Type" context="{'group_by':'owner_type'}"/>
+                    <filter name="g_asset" string="Equipment" context="{'group_by':'asset_id'}"/>
+                    <filter name="g_customer" string="Customer" context="{'group_by':'partner_id'}"/>
+                    <filter name="g_vendor" string="Vendor" context="{'group_by':'vendor_id'}"/>
+                    <filter name="g_month" string="Order Month" context="{'group_by':'order_date:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_gr_sublet_margin" model="ir.actions.act_window">
+        <field name="name">Margin Analysis</field>
+        <field name="res_model">gr.sublet.margin.report</field>
+        <field name="view_mode">pivot,graph</field>
+        <field name="search_view_id" ref="view_gr_sublet_margin_search"/>
+    </record>
+
+</odoo>

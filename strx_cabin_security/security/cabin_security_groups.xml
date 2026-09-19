@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================= -->
+    <!-- Application category for all cabin-rental security groups     -->
+    <!-- ============================================================= -->
+    <record id="module_category_cabin_rental" model="ir.module.category">
+        <field name="name">Cabin Rental Control</field>
+        <field name="description">Access management for the cabin-rental vertical.</field>
+        <field name="sequence">26</field>
+    </record>
+
+    <!-- Odoo 19 groups a category's roles under a privilege: the privilege is
+         what renders as a single selection field on the user form. Mirrors the
+         shape gr_security_base uses for the generator vertical. -->
+    <record id="res_groups_privilege_cabin_rental" model="res.groups.privilege">
+        <field name="name">Cabin Rental</field>
+        <field name="description">Role granted on Cabin Rental Control.</field>
+        <field name="sequence">26</field>
+        <field name="category_id" ref="module_category_cabin_rental"/>
+    </record>
+
+    <!-- ============================================================= -->
+    <!-- Functional groups                                             -->
+    <!--                                                               -->
+    <!-- Each role implies the ordinary Odoo role its holders need to  -->
+    <!-- do the job (Inventory user, Sales user...). Those generic     -->
+    <!-- roles are what let a cabin operator touch transfers and       -->
+    <!-- quotations at all; which transfers and quotations they can    -->
+    <!-- actually see is decided by the company on their user record,  -->
+    <!-- through Odoo's multi-company record rules.                    -->
+    <!-- ============================================================= -->
+
+    <!-- 1. Cabin User: baseline read access across the cabin documents. -->
+    <record id="group_cabin_user" model="res.groups">
+        <field name="name">Cabin User</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_cabin_rental"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Baseline access: read cabin specifications, readiness history and allocations. Full internal user.</field>
+    </record>
+
+    <!-- 2. Cabin Sales Officer: quotations and rental orders for cabins. -->
+    <record id="group_cabin_sales_officer" model="res.groups">
+        <field name="name">Cabin Sales Officer</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_cabin_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_cabin_user')),
+                                         (4, ref('sales_team.group_sale_salesman'))]"/>
+        <field name="comment">Raise cabin quotations and rental orders, run the quantity-increase and product-change wizards. Cannot approve a specification substitution.</field>
+    </record>
+
+    <!-- 3. Cabin Operations Officer: allocate, dispatch, ship, receive back. -->
+    <record id="group_cabin_operations_officer" model="res.groups">
+        <field name="name">Cabin Operations Officer</field>
+        <field name="sequence">30</field>
+        <field name="privilege_id" ref="res_groups_privilege_cabin_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_cabin_user')),
+                                         (4, ref('stock.group_stock_user')),
+                                         (4, ref('stock.group_production_lot'))]"/>
+        <field name="comment">Commit serials to order lines, dispatch, raise waybills and record the return assessment. Cannot approve a specification substitution or a broker payment.</field>
+    </record>
+
+    <!-- 4. Cabin Manager: the approval authority for both officer roles. -->
+    <record id="group_cabin_manager" model="res.groups">
+        <field name="name">Cabin Manager</field>
+        <field name="sequence">40</field>
+        <field name="privilege_id" ref="res_groups_privilege_cabin_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_cabin_sales_officer')),
+                                         (4, ref('group_cabin_operations_officer')),
+                                         (4, ref('stock.group_stock_manager')),
+                                         (4, ref('sales_team.group_sale_manager'))]"/>
+        <field name="comment">Everything both officer roles can do, plus: approve specification substitutions, maintain brokers, and approve and pay broker invoices.</field>
+    </record>
+
+    <!-- 5. Cabin Administrator: full control, including deletion. -->
+    <record id="group_cabin_administrator" model="res.groups">
+        <field name="name">Cabin Administrator</field>
+        <field name="sequence">50</field>
+        <field name="privilege_id" ref="res_groups_privilege_cabin_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_cabin_manager'))]"/>
+        <field name="comment">Full control of the cabin vertical, including deleting cabin records and correcting readiness history.</field>
+    </record>
+
+</odoo>

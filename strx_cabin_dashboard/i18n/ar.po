@@ -1,0 +1,417 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* strx_cabin_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid ""
+"%\n"
+"                                    utilization"
+msgstr "% معدل الاستخدام"
+
+#. module: strx_cabin_dashboard
+#. odoo-python
+#: code:addons/strx_cabin_dashboard/models/cabin_dashboard.py:0
+msgid "%(count)s days overdue"
+msgstr "متأخرة %(count)s يومًا"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Action center"
+msgstr "مركز الإجراءات"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Active shipments"
+msgstr "الشحنات النشطة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "All returns"
+msgstr "جميع المرتجعات"
+
+#. module: strx_cabin_dashboard
+#. odoo-python
+#: code:addons/strx_cabin_dashboard/models/cabin_dashboard.py:0
+msgid "Available"
+msgstr "متاحة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Available now"
+msgstr "المتاحة الآن"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Awaiting substitution approval"
+msgstr "بانتظار اعتماد الاستبدال"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Cabin"
+msgstr "الكابينة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.js:0
+msgid "Cabin Allocations"
+msgstr "تخصيصات الكبائن"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Cabin Operations Center"
+msgstr "مركز تشغيل الكبائن"
+
+#. module: strx_cabin_dashboard
+#: model:ir.model,name:strx_cabin_dashboard.model_strx_cabin_dashboard
+msgid "Cabin Operations Dashboard"
+msgstr "لوحة عمليات الكبائن"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.js:0
+msgid "Cabin Units"
+msgstr "وحدات الكبائن"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Cabin readiness"
+msgstr "جاهزية الكبائن"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Commercial decision required"
+msgstr "يتطلب قرارًا تجاريًا"
+
+#. module: strx_cabin_dashboard
+#. odoo-python
+#: code:addons/strx_cabin_dashboard/models/cabin_dashboard.py:0
+msgid "Committed"
+msgstr "محجوزة ومخصصة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Customer"
+msgstr "العميل"
+
+#. module: strx_cabin_dashboard
+#: model:ir.ui.menu,name:strx_cabin_dashboard.menu_strx_cabin_dashboard
+msgid "Dashboard"
+msgstr "لوحة المعلومات"
+
+#. module: strx_cabin_dashboard
+#: model:ir.model.fields,field_description:strx_cabin_dashboard.field_strx_cabin_dashboard__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: strx_cabin_dashboard
+#. odoo-python
+#: code:addons/strx_cabin_dashboard/models/cabin_dashboard.py:0
+msgid "Due in %(count)s days"
+msgstr "مستحقة خلال %(count)s يومًا"
+
+#. module: strx_cabin_dashboard
+#. odoo-python
+#: code:addons/strx_cabin_dashboard/models/cabin_dashboard.py:0
+msgid "Due today"
+msgstr "مستحقة اليوم"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Expected return"
+msgstr "العودة المتوقعة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Expected return date has passed"
+msgstr "تجاوزت تاريخ العودة المتوقع"
+
+#. module: strx_cabin_dashboard
+#: model:ir.model.fields,field_description:strx_cabin_dashboard.field_strx_cabin_dashboard__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: strx_cabin_dashboard
+#. odoo-python
+#: code:addons/strx_cabin_dashboard/models/cabin_dashboard.py:0
+msgid "Inspection & Service"
+msgstr "الفحص والخدمة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Issued, loaded or currently shipped"
+msgstr "مصدرة أو محملة أو قيد الشحن"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Latest activity"
+msgstr "أحدث النشاطات"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Live"
+msgstr "مباشر"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Logistics pulse"
+msgstr "نبض الخدمات اللوجستية"
+
+#. module: strx_cabin_dashboard
+#. odoo-python
+#: code:addons/strx_cabin_dashboard/models/cabin_dashboard.py:0
+msgid "Needs Attention"
+msgstr "تحتاج إلى متابعة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Needs attention"
+msgstr "تحتاج إلى متابعة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.js:0
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "New Allocation"
+msgstr "تخصيص جديد"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "New shipments will appear here."
+msgstr "ستظهر الشحنات الجديدة هنا."
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Next movements"
+msgstr "الحركات القادمة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "No active allocations yet."
+msgstr "لا توجد تخصيصات نشطة حتى الآن."
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "No scheduled returns"
+msgstr "لا توجد مرتجعات مجدولة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "No shipments yet"
+msgstr "لا توجد شحنات حتى الآن"
+
+#. module: strx_cabin_dashboard
+#. odoo-python
+#: code:addons/strx_cabin_dashboard/models/cabin_dashboard.py:0
+msgid "Not assigned"
+msgstr "غير مخصصة"
+
+#. module: strx_cabin_dashboard
+#. odoo-python
+#: code:addons/strx_cabin_dashboard/models/cabin_dashboard.py:0
+msgid "On Rent"
+msgstr "مؤجرة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "On rent"
+msgstr "مؤجرة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Operational alerts"
+msgstr "التنبيهات التشغيلية"
+
+#. module: strx_cabin_dashboard
+#: model:ir.actions.client,name:strx_cabin_dashboard.action_strx_cabin_dashboard
+msgid "Operations Dashboard"
+msgstr "لوحة العمليات"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Overdue returns"
+msgstr "المرتجعات المتأخرة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Plan inspection and cleaning capacity"
+msgstr "خطط لسعة الفحص والتنظيف"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Readiness distribution"
+msgstr "توزيع حالات الجاهزية"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Ready for allocation"
+msgstr "جاهزة للتخصيص"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Recent allocations"
+msgstr "أحدث التخصيصات"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Recent shipping"
+msgstr "أحدث عمليات الشحن"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Refresh"
+msgstr "تحديث"
+
+#. module: strx_cabin_dashboard
+#. odoo-python
+#: code:addons/strx_cabin_dashboard/models/cabin_dashboard.py:0
+msgid "Retired"
+msgstr "مسحوبة من الخدمة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Return dates will appear here."
+msgstr "ستظهر تواريخ العودة هنا."
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Returns in the next 7 days"
+msgstr "المرتجعات خلال 7 أيام"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Returns, service and damage"
+msgstr "المرتجعات والصيانة والتلف"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.js:0
+msgid "Shipments"
+msgstr "الشحنات"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Specification"
+msgstr "المواصفة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Status"
+msgstr "الحالة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.js:0
+msgid "Substitutions"
+msgstr "عمليات الاستبدال"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.js:0
+msgid "The dashboard could not be loaded. Please try again."
+msgstr "تعذر تحميل لوحة المعلومات. يرجى المحاولة مرة أخرى."
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Total cabins"
+msgstr "إجمالي الكبائن"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Total units"
+msgstr "إجمالي الوحدات"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "Upcoming returns"
+msgstr "المرتجعات القادمة"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "View all allocations"
+msgstr "عرض جميع التخصيصات"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "View cabins"
+msgstr "عرض الكبائن"
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "View shipping"
+msgstr "عرض الشحن"
+
+#. module: strx_cabin_dashboard
+#. odoo-python
+#: code:addons/strx_cabin_dashboard/models/cabin_dashboard.py:0
+msgid "You need a Cabin Rental role to view the Cabin Operations Dashboard."
+msgstr "تحتاج إلى دور تأجير الكابينات لعرض لوحة عمليات الكابينات."
+
+#. module: strx_cabin_dashboard
+#. odoo-javascript
+#: code:addons/strx_cabin_dashboard/static/src/dashboard/cabin_dashboard.xml:0
+msgid "active allocations"
+msgstr "تخصيصات نشطة"

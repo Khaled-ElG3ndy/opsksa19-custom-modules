@@ -1,0 +1,437 @@
+// Cabin Control internal-view theme.
+// The NavBar template adds .o_strx_cabin_navbar only while this app is active,
+// keeping the visual treatment isolated from every other Odoo application.
+body:has(.o_strx_cabin_navbar) {
+    --strx-app-bg: #f5f7fb;
+    --strx-surface: #ffffff;
+    --strx-text: #30394f;
+    --strx-muted: #6e7890;
+    --strx-border: #e3e7f0;
+    --strx-indigo: #5b61d6;
+    --strx-indigo-dark: #4f55c8;
+    --strx-indigo-soft: #eff0ff;
+    --strx-teal-soft: #eaf8f9;
+    --strx-shadow: 0 8px 24px rgba(42, 51, 83, 0.055);
+
+    .o_action_manager,
+    .o_action_manager .o_action,
+    .o_action_manager .o_content {
+        background-color: var(--strx-app-bg);
+        color: var(--strx-text);
+    }
+
+    // Control panel, breadcrumbs, search and navigation.
+    .o_control_panel {
+        --ControlPanel-border-bottom: 1px solid var(--strx-border);
+
+        padding-top: 9px;
+        padding-bottom: 9px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 4px 16px rgba(42, 51, 83, 0.035);
+
+        .o_last_breadcrumb_item,
+        .o_breadcrumb .active {
+            color: var(--strx-text);
+            font-size: 15px;
+            font-weight: 750;
+        }
+
+        .o_searchview {
+            min-height: 38px;
+            border: 1px solid #dce1eb;
+            border-radius: 11px;
+            background: #fbfcfe;
+            box-shadow: inset 0 1px 2px rgba(42, 51, 83, 0.025);
+            transition: border-color 150ms ease, box-shadow 150ms ease,
+                background-color 150ms ease;
+
+            &:focus-within {
+                border-color: rgba(91, 97, 214, 0.55);
+                background: #fff;
+                box-shadow: 0 0 0 3px rgba(91, 97, 214, 0.1);
+            }
+        }
+
+        .o_searchview_dropdown_toggler,
+        .o_pager .btn,
+        .o_cp_switch_buttons .btn {
+            border-color: #dfe3ec;
+            background: #f8f9fc;
+            color: #5e687d;
+
+            &:hover,
+            &:focus,
+            &.active {
+                border-color: rgba(91, 97, 214, 0.25);
+                background: var(--strx-indigo-soft);
+                color: var(--strx-indigo-dark);
+            }
+        }
+
+        .o_pager .btn:first-child {
+            border-start-start-radius: 9px;
+            border-end-start-radius: 9px;
+        }
+
+        .o_pager .btn:last-child {
+            border-start-end-radius: 9px;
+            border-end-end-radius: 9px;
+        }
+    }
+
+    // Shared application buttons.
+    .o_action_manager,
+    .modal-content {
+        .btn {
+            border-radius: 9px;
+            font-weight: 650;
+            transition: border-color 150ms ease, background-color 150ms ease,
+                box-shadow 150ms ease, color 150ms ease, transform 150ms ease;
+        }
+
+        .btn-primary {
+            border-color: var(--strx-indigo);
+            background: linear-gradient(135deg, #666ce0, #555bd0);
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(91, 97, 214, 0.18);
+
+            &:hover,
+            &:focus {
+                border-color: var(--strx-indigo-dark);
+                background: linear-gradient(135deg, #5d63d8, #4e54c7);
+                box-shadow: 0 8px 18px rgba(91, 97, 214, 0.24);
+                color: #fff;
+                transform: translateY(-1px);
+            }
+        }
+
+        .btn-secondary,
+        .btn-light {
+            border-color: #dfe3ec;
+            background: #f2f4f8;
+            color: #4f5a70;
+
+            &:hover,
+            &:focus {
+                border-color: rgba(91, 97, 214, 0.23);
+                background: var(--strx-indigo-soft);
+                color: var(--strx-indigo-dark);
+            }
+        }
+    }
+
+    // List views.
+    .o_list_view {
+        .o_content {
+            padding: 14px 16px 18px;
+        }
+
+        .o_list_renderer {
+            --ListRenderer-thead-bg-color: #f7f8fc;
+            --ListRenderer-thead-bg-active-color: #eceeff;
+
+            overflow: auto;
+            border: 1px solid var(--strx-border);
+            border-radius: 15px;
+            background: var(--strx-surface);
+            box-shadow: var(--strx-shadow);
+        }
+
+        .o_list_table {
+            --table-bg: #fff;
+
+            thead th {
+                height: 44px;
+                border-bottom: 1px solid #dfe4ed;
+                color: #566177;
+                font-size: 11px;
+                font-weight: 800;
+                letter-spacing: 0.015em;
+                vertical-align: middle;
+            }
+
+            tbody > tr > td {
+                height: 48px;
+                border-color: #edf0f5;
+                color: #495469;
+                vertical-align: middle;
+                transition: background-color 130ms ease;
+            }
+
+            tbody > tr.o_data_row:hover > td {
+                background-color: #f7f8ff;
+            }
+
+            tbody > tr.o_data_row.table-info > td,
+            tbody > tr.o_data_row.o_data_row_selected > td {
+                background-color: #eff1ff;
+            }
+
+            a,
+            .o_field_widget[name="name"] {
+                color: var(--strx-indigo-dark);
+                font-weight: 650;
+            }
+        }
+
+        .o_list_record_selector input {
+            accent-color: var(--strx-indigo);
+        }
+
+        .o_list_no_content {
+            color: var(--strx-muted);
+        }
+    }
+
+    // Form views.
+    .o_form_view {
+        .o_form_renderer,
+        .o_form_sheet_bg {
+            background: var(--strx-app-bg);
+        }
+
+        .o_form_statusbar {
+            min-height: 56px;
+            padding: 7px 16px;
+            border-bottom: 1px solid var(--strx-border);
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 5px 16px rgba(42, 51, 83, 0.035);
+        }
+
+        .o_field_statusbar > .o_statusbar_status {
+            --o-statusbar-border: #fff;
+            --o-statusbar-background-active: var(--strx-indigo);
+            --o-statusbar-border-active: var(--strx-indigo);
+            --o-statusbar-background-hover: #e9ebff;
+            --o-statusbar-radius: 0.4rem;
+
+            > .o_arrow_button {
+                color: #657086;
+
+                &:hover,
+                &:focus {
+                    color: var(--strx-indigo-dark);
+                }
+
+                &.o_arrow_button_current {
+                    color: #fff;
+                }
+            }
+        }
+
+        .o_form_sheet_bg {
+            padding-top: 16px;
+            padding-bottom: 20px;
+        }
+
+        .o_form_sheet {
+            --formView-sheet-border-width-md: 1px;
+            --formView-sheet-border-radius-md: 16px;
+
+            border-color: var(--strx-border);
+            background: var(--strx-surface);
+            box-shadow: var(--strx-shadow);
+        }
+
+        .oe_title {
+            color: var(--strx-text);
+
+            h1 {
+                color: #273147;
+                font-weight: 760;
+                letter-spacing: -0.025em;
+            }
+        }
+
+        .o_horizontal_separator {
+            margin-top: 10px;
+            color: var(--strx-indigo-dark);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .o_group {
+            row-gap: 5px;
+        }
+
+        .o_field_widget {
+            .o_input,
+            input,
+            textarea,
+            select {
+                border-radius: 8px;
+                transition: border-color 150ms ease, box-shadow 150ms ease,
+                    background-color 150ms ease;
+
+                &:focus {
+                    border-color: rgba(91, 97, 214, 0.55);
+                    box-shadow: 0 0 0 3px rgba(91, 97, 214, 0.09);
+                }
+            }
+        }
+
+        .o_field_widget a,
+        .oe_stat_button .o_stat_value {
+            color: var(--strx-indigo-dark);
+        }
+
+        .oe_button_box .oe_stat_button {
+            border-radius: 10px;
+
+            &:hover {
+                background: var(--strx-indigo-soft);
+            }
+        }
+    }
+
+    // Chatter beside forms.
+    .o-mail-Form-chatter.o-aside,
+    .o-mail-ChatterContainer.o-aside {
+        border-inline-start: 1px solid var(--strx-border);
+        background: #fbfcff;
+        box-shadow: inset 5px 0 18px rgba(42, 51, 83, 0.025);
+
+        .o-mail-Chatter-top {
+            background: #fbfcff;
+        }
+    }
+
+    // Kanban and other card-based views used by related records.
+    .o_kanban_renderer {
+        background: var(--strx-app-bg);
+
+        .o_kanban_record {
+            border: 1px solid var(--strx-border);
+            border-radius: 14px;
+            background: var(--strx-surface);
+            box-shadow: 0 6px 18px rgba(42, 51, 83, 0.045);
+            transition: border-color 150ms ease, box-shadow 150ms ease,
+                transform 150ms ease;
+
+            &:hover {
+                border-color: rgba(91, 97, 214, 0.24);
+                box-shadow: 0 10px 24px rgba(42, 51, 83, 0.075);
+                transform: translateY(-1px);
+            }
+        }
+    }
+
+    // Badges, tabs and dialogs.
+    .badge,
+    .o_field_badge {
+        border-radius: 999px;
+    }
+
+    .nav-tabs {
+        border-bottom-color: var(--strx-border);
+
+        .nav-link {
+            color: #657086;
+
+            &.active {
+                border-bottom-color: var(--strx-indigo);
+                color: var(--strx-indigo-dark);
+                font-weight: 750;
+            }
+        }
+    }
+
+    .modal-content {
+        overflow: hidden;
+        border: 1px solid var(--strx-border);
+        border-radius: 16px;
+        box-shadow: 0 20px 55px rgba(35, 43, 76, 0.16);
+
+        .modal-header {
+            border-bottom-color: var(--strx-border);
+            background: #f8f9fd;
+        }
+    }
+}
+
+// This whole block defines the final physical layout for Arabic screens.
+// Preserve the directives through minification so rtlcss does not invert it.
+/*!rtl:begin:ignore*/
+html[dir="rtl"] body:has(.o_strx_cabin_navbar),
+html.o_rtl body:has(.o_strx_cabin_navbar),
+body[dir="rtl"]:has(.o_strx_cabin_navbar),
+body.o_rtl:has(.o_strx_cabin_navbar),
+body:has(.o_web_client.o_rtl .o_strx_cabin_navbar) {
+    .o_action_manager .o_content,
+    .o_action_manager .o_list_renderer {
+        direction: ltr;
+    }
+
+    .o_action_manager .o_control_panel,
+    .o_action_manager .o_form_view,
+    .o_action_manager .o_form_renderer,
+    .o_action_manager .o_form_sheet_bg,
+    .o_action_manager .o_form_sheet,
+    .o_action_manager .o_kanban_view,
+    .o_action_manager .o_kanban_renderer,
+    .o_action_manager .o_list_view,
+    .o_action_manager .o_list_renderer .o_list_table,
+    .o_action_manager .o_list_renderer .o_list_table th,
+    .o_action_manager .o_list_renderer .o_list_table td {
+        direction: rtl;
+        text-align: right;
+    }
+
+    .o_action_manager .o_control_panel .o_cp_top,
+    .o_action_manager .o_control_panel .o_cp_bottom,
+    .o_action_manager .o_control_panel .o_cp_buttons,
+    .o_action_manager .o_control_panel .o_cp_pager,
+    .o_action_manager .o_form_statusbar,
+    .o_action_manager .o_form_button_box,
+    .o_action_manager .oe_button_box,
+    .o_action_manager .nav-tabs {
+        direction: rtl;
+    }
+
+    .o_action_manager .o_control_panel .o_cp_buttons,
+    .o_action_manager .o_form_statusbar .o_statusbar_buttons,
+    .o_action_manager .o_form_button_box,
+    .o_action_manager .oe_button_box {
+        justify-content: flex-start;
+    }
+
+    .o_action_manager .o_form_view .o_group .o_td_label,
+    .o_action_manager .o_form_view .o_group .o_field_widget,
+    .o_action_manager .o_form_view .o_horizontal_separator,
+    .o_action_manager .o_form_view .oe_title,
+    .o_action_manager .o_form_view .o_notebook,
+    .o_action_manager .o_kanban_record {
+        text-align: right;
+    }
+
+    .o_action_manager .o_form_view .o_field_widget input,
+    .o_action_manager .o_form_view .o_field_widget textarea {
+        text-align: right;
+    }
+
+    .o_action_manager .o_form_view .o_field_monetary input,
+    .o_action_manager .o_form_view .o_field_float input,
+    .o_action_manager .o_form_view .o_field_integer input {
+        direction: ltr;
+        text-align: left;
+    }
+
+    .o_action_manager .o_list_renderer .o_optional_columns_dropdown_toggle {
+        inset-inline-end: auto;
+        inset-inline-start: 0;
+    }
+}
+/*!rtl:end:ignore*/
+
+@media (max-width: 767.98px) {
+    body:has(.o_strx_cabin_navbar) {
+        .o_list_view .o_content {
+            padding: 8px;
+        }
+
+        .o_list_view .o_list_renderer,
+        .o_form_view .o_form_sheet {
+            border-radius: 11px;
+        }
+    }
+}

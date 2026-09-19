@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_strx_cabin_root"
+              name="Cabin Control"
+              web_icon="strx_cabin_base,static/description/icon.svg"
+              groups="strx_cabin_security.group_cabin_user"
+              sequence="55"/>
+
+    <menuitem id="menu_strx_cabin_cards"
+              name="Cabin Cards"
+              parent="menu_strx_cabin_root"
+              action="action_strx_cabin_cards"
+              sequence="10"/>
+
+    <menuitem id="menu_strx_cabin_readiness_log"
+              name="Readiness History"
+              parent="menu_strx_cabin_root"
+              action="action_strx_readiness_log"
+              sequence="90"/>
+
+</odoo>

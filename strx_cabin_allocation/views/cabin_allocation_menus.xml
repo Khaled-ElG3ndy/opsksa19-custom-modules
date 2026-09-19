@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_strx_cabin_allocation"
+              name="Allocations"
+              parent="strx_cabin_base.menu_strx_cabin_root"
+              action="action_strx_cabin_allocation"
+              sequence="10"/>
+
+</odoo>

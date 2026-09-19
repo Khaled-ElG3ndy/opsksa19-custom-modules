@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_hour_log_form_billing" model="ir.ui.view">
+        <field name="name">gr.hour.log.form.billing</field>
+        <field name="model">gr.hour.log</field>
+        <field name="inherit_id" ref="gr_hour_log.view_gr_hour_log_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='note']" position="before">
+                <group string="Billing">
+                    <field name="billed"/>
+                    <field name="invoice_id"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_gr_hour_log_list_billing" model="ir.ui.view">
+        <field name="name">gr.hour.log.list.billing</field>
+        <field name="model">gr.hour.log</field>
+        <field name="inherit_id" ref="gr_hour_log.view_gr_hour_log_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='violation_hours']" position="after">
+                <field name="billed" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

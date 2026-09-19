@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_invoice_document_strx_allocated_serials"
+              inherit_id="account.report_invoice_document">
+        <xpath expr="//td[@name='account_invoice_line_name']/span[@t-if='line.name']"
+               position="after">
+            <div t-if="line.strx_allocated_serial_numbers"
+                 class="mt-1 text-muted"
+                 name="strx_allocated_serial_numbers">
+                <strong>Serial Numbers:</strong>
+                <span t-field="line.strx_allocated_serial_numbers"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

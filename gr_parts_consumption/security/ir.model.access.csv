@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_parts_line_user,gr.parts.consumption.line.user,model_gr_parts_consumption_line,gr_security_base.group_generator_user,1,0,0,0
+access_gr_parts_line_tech,gr.parts.consumption.line.tech,model_gr_parts_consumption_line,gr_security_base.group_generator_maint_technician,1,1,1,0
+access_gr_parts_line_mgr,gr.parts.consumption.line.mgr,model_gr_parts_consumption_line,gr_security_base.group_generator_maint_manager,1,1,1,1
+access_gr_parts_line_gm,gr.parts.consumption.line.gm,model_gr_parts_consumption_line,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_parts_line_admin,gr.parts.consumption.line.admin,model_gr_parts_consumption_line,gr_security_base.group_generator_administrator,1,1,1,1

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_field_worksheet_form" model="ir.ui.view">
+        <field name="name">gr.field.worksheet.form</field>
+        <field name="model">gr.field.worksheet</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_submit" type="object" string="Submit"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_verify" type="object" string="Verify"
+                            class="btn-primary" invisible="state != 'submitted'"/>
+                    <button name="action_load_checklist" type="object"
+                            string="Load Checklist"
+                            invisible="state != 'draft' or checklist_ids"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state in ('verified','cancelled')"/>
+                    <button name="action_reset_draft" type="object"
+                            string="Reset to Draft" invisible="state == 'draft' or verified"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,submitted,verified"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Verified" bg_color="text-bg-success"
+                            invisible="not verified"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Header">
+                            <field name="asset_id"/>
+                            <field name="serial_number" readonly="1"/>
+                            <field name="partner_id"/>
+                            <field name="contact_no"/>
+                            <field name="project_name"/>
+                            <field name="location"/>
+                        </group>
+                        <group string="Visit">
+                            <field name="visiting_mode"/>
+                            <field name="hour_reading"/>
+                            <field name="time_in"/>
+                            <field name="time_out"/>
+                            <field name="job_id" invisible="inspection_id"/>
+                            <field name="inspection_id" invisible="job_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="System Function Panel">
+                            <group>
+                                <group>
+                                    <field name="voltage_vac"/>
+                                    <field name="frequency_hz"/>
+                                    <field name="battery_voltage_dcv"/>
+                                    <field name="oil_pressure_kpa"/>
+                                </group>
+                                <group>
+                                    <field name="speed_rpm"/>
+                                    <field name="water_temp_c"/>
+                                    <field name="load_5m"/>
+                                    <field name="load_10m"/>
+                                    <field name="load_15m"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Mechanical Checklist">
+                            <field name="checklist_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="result"/>
+                                    <field name="note"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Spare Parts">
+                            <field name="spare_part_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="part_number"/>
+                                    <field name="description"/>
+                                    <field name="quantity"/>
+                                    <field name="remarks"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Verified Proof">
+                            <group>
+                                <group string="Signatures">
+                                    <field name="technician_id"/>
+                                    <field name="technician_signature" widget="signature"/>
+                                    <field name="customer_ack_name"/>
+                                    <field name="customer_signature" widget="signature"/>
+                                    <field name="verification_pin" password="True"/>
+                                </group>
+                                <group string="On-site Evidence">
+                                    <field name="scanned_serial"/>
+                                    <field name="serial_scan_ok" readonly="1"/>
+                                    <field name="gps_latitude"/>
+                                    <field name="gps_longitude"/>
+                                    <field name="photo_ids" widget="many2many_binary"/>
+                                </group>
+                            </group>
+                            <group string="Verification Policy (what this worksheet requires)">
+                                <group>
+                                    <field name="require_customer_signature"/>
+                                    <field name="require_serial_scan"/>
+                                </group>
+                                <group>
+                                    <field name="require_gps"/>
+                                    <field name="require_photo"/>
+                                </group>
+                            </group>
+                            <group string="Verification" invisible="not verified">
+                                <field name="verified" readonly="1"/>
+                                <field name="verified_by_id" readonly="1"/>
+                                <field name="verified_on" readonly="1"/>
+                            </group>
+                        </page>
+                        <page string="Remarks">
+                            <field name="remarks"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gr_maintenance_job_form_field_worksheet" model="ir.ui.view">
+        <field name="name">gr.maintenance.job.form.field.worksheet</field>
+        <field name="model">gr.maintenance.job</field>
+        <field name="inherit_id" ref="gr_maintenance.view_gr_maintenance_job_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='action_complete']" position="before">
+                <button name="action_create_field_worksheet" type="object"
+                        string="Create Worksheet"
+                        invisible="state == 'done' or field_worksheet_count"
+                        groups="gr_security_base.group_generator_maint_technician"/>
+                <button name="action_view_field_worksheets" type="object"
+                        string="Worksheets"
+                        invisible="not field_worksheet_count"
+                        groups="gr_security_base.group_generator_maint_technician"/>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <field name="field_worksheet_count" invisible="1"/>
+                <field name="verified_field_worksheet_count" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_gr_field_worksheet_list" model="ir.ui.view">
+        <field name="name">gr.field.worksheet.list</field>
+        <field name="model">gr.field.worksheet</field>
+        <field name="arch" type="xml">
+            <list decoration-success="verified" decoration-muted="state == 'cancelled'">
+                <field name="name"/>
+                <field name="asset_id"/>
+                <field name="partner_id"/>
+                <field name="technician_id"/>
+                <field name="time_in"/>
+                <field name="serial_scan_ok"/>
+                <field name="verified"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'verified'"
+                       decoration-info="state == 'submitted'"
+                       decoration-muted="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_field_worksheet_search" model="ir.ui.view">
+        <field name="name">gr.field.worksheet.search</field>
+        <field name="model">gr.field.worksheet</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="asset_id"/>
+                <field name="partner_id"/>
+                <field name="technician_id"/>
+                <filter name="f_verified" string="Verified" domain="[('verified','=',True)]"/>
+                <filter name="f_unverified" string="Unverified" domain="[('verified','=',False),('state','!=','cancelled')]"/>
+                <filter name="f_scan_mismatch" string="Serial Mismatch" domain="[('serial_scan_ok','=',False),('scanned_serial','!=',False)]"/>
+                <group>
+                    <filter name="g_tech" string="Technician" context="{'group_by':'technician_id'}"/>
+                    <filter name="g_asset" string="Equipment" context="{'group_by':'asset_id'}"/>
+                    <filter name="g_state" string="Status" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_gr_field_worksheet" model="ir.actions.act_window">
+        <field name="name">Field Worksheets</field>
+        <field name="res_model">gr.field.worksheet</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_gr_field_worksheet_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">The paperless field inspection report</p>
+        </field>
+    </record>
+
+    <record id="view_gr_fw_check_item_list" model="ir.ui.view">
+        <field name="name">gr.field.worksheet.check.item.list</field>
+        <field name="model">gr.field.worksheet.check.item</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_gr_fw_check_item" model="ir.actions.act_window">
+        <field name="name">Worksheet Checklist Items</field>
+        <field name="res_model">gr.field.worksheet.check.item</field>
+        <field name="view_mode">list</field>
+    </record>
+
+</odoo>

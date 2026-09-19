@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_item_type_user,gr.rental.item.type.user,model_gr_rental_item_type,gr_security_base.group_generator_user,1,0,0,0
+access_gr_item_type_sales,gr.rental.item.type.sales,model_gr_rental_item_type,gr_security_base.group_generator_sales_officer,1,0,0,0
+access_gr_item_type_ops,gr.rental.item.type.ops,model_gr_rental_item_type,gr_security_base.group_generator_operations_officer,1,1,1,0
+access_gr_item_type_gm,gr.rental.item.type.gm,model_gr_rental_item_type,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_item_type_admin,gr.rental.item.type.admin,model_gr_rental_item_type,gr_security_base.group_generator_administrator,1,1,1,1
+access_gr_item_unit_user,gr.rental.item.unit.user,model_gr_rental_item_unit,gr_security_base.group_generator_user,1,0,0,0
+access_gr_item_unit_sales,gr.rental.item.unit.sales,model_gr_rental_item_unit,gr_security_base.group_generator_sales_officer,1,0,0,0
+access_gr_item_unit_ops,gr.rental.item.unit.ops,model_gr_rental_item_unit,gr_security_base.group_generator_operations_officer,1,1,1,0
+access_gr_item_unit_gm,gr.rental.item.unit.gm,model_gr_rental_item_unit,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_item_unit_admin,gr.rental.item.unit.admin,model_gr_rental_item_unit,gr_security_base.group_generator_administrator,1,1,1,1
+access_gr_ro_line_user,gr.rental.order.line.user,model_gr_rental_order_line,gr_security_base.group_generator_user,1,0,0,0
+access_gr_ro_line_sales,gr.rental.order.line.sales,model_gr_rental_order_line,gr_security_base.group_generator_sales_officer,1,1,1,1
+access_gr_ro_line_ops,gr.rental.order.line.ops,model_gr_rental_order_line,gr_security_base.group_generator_operations_officer,1,1,1,1
+access_gr_ro_line_gm,gr.rental.order.line.gm,model_gr_rental_order_line,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_ro_line_admin,gr.rental.order.line.admin,model_gr_rental_order_line,gr_security_base.group_generator_administrator,1,1,1,1

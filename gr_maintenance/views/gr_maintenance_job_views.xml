@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_maintenance_job_form" model="ir.ui.view">
+        <field name="name">gr.maintenance.job.form</field>
+        <field name="model">gr.maintenance.job</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_schedule" type="object" string="Schedule"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_start" type="object" string="Start Work"
+                            class="btn-primary" invisible="state not in ('draft','scheduled')"
+                            groups="gr_security_base.group_generator_maint_technician"/>
+                    <button name="action_complete" type="object" string="Complete"
+                            class="btn-primary" invisible="state != 'in_progress'"
+                            groups="gr_security_base.group_generator_maint_technician"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state in ('done','cancelled')"/>
+                    <button name="action_reset_to_draft" type="object" string="Reset to Draft"
+                            invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,scheduled,in_progress,done"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Breakdown" bg_color="text-bg-danger"
+                            invisible="job_type != 'breakdown'"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Asset &amp; Type">
+                            <field name="asset_id" readonly="state not in ('draft','scheduled')"/>
+                            <field name="job_type" readonly="state not in ('draft','scheduled')"/>
+                            <field name="template_id" readonly="state not in ('draft','scheduled')"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group string="Scheduling">
+                            <field name="technician_id"/>
+                            <field name="scheduled_date"/>
+                            <field name="scheduled_end_datetime"/>
+                            <field name="started_date"/>
+                            <field name="completed_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Work" name="work">
+                            <group>
+                                <group string="Service">
+                                    <field name="meter_at_service"/>
+                                    <field name="labor_hours"/>
+                                    <field name="downtime_hours"/>
+                                    <field name="reset_pm"/>
+                                </group>
+                            </group>
+                            <field name="work_performed" placeholder="Describe the work performed..."/>
+                            <field name="parts_note" placeholder="Parts used (free text)..."/>
+                        </page>
+                        <page string="Checklist" name="checklist">
+                            <field name="checklist_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="is_done"/>
+                                    <field name="note"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gr_maintenance_job_list" model="ir.ui.view">
+        <field name="name">gr.maintenance.job.list</field>
+        <field name="model">gr.maintenance.job</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="job_type == 'breakdown'" decoration-muted="state == 'cancelled'"
+                  decoration-success="state == 'done'">
+                <field name="name"/>
+                <field name="asset_id"/>
+                <field name="job_type"/>
+                <field name="technician_id"/>
+                <field name="scheduled_date"/>
+                <field name="scheduled_end_datetime" optional="show"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'done'"
+                       decoration-info="state in ('scheduled','in_progress')"
+                       decoration-muted="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_maintenance_job_search" model="ir.ui.view">
+        <field name="name">gr.maintenance.job.search</field>
+        <field name="model">gr.maintenance.job</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="asset_id"/>
+                <field name="technician_id"/>
+                <separator/>
+                <filter name="f_open" string="Open" domain="[('state','in',('draft','scheduled','in_progress'))]"/>
+                <filter name="f_breakdown" string="Breakdowns" domain="[('job_type','=','breakdown')]"/>
+                <filter name="f_preventive" string="Preventive" domain="[('job_type','=','preventive')]"/>
+                <group>
+                    <filter name="g_state" string="Status" context="{'group_by':'state'}"/>
+                    <filter name="g_type" string="Type" context="{'group_by':'job_type'}"/>
+                    <filter name="g_asset" string="Asset" context="{'group_by':'asset_id'}"/>
+                    <filter name="g_tech" string="Technician" context="{'group_by':'technician_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_gr_maintenance_job" model="ir.actions.act_window">
+        <field name="name">Maintenance Jobs</field>
+        <field name="res_model">gr.maintenance.job</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_gr_maintenance_job_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first maintenance job</p>
+            <p>Preventive, corrective, and breakdown work orders for your fleet.</p>
+        </field>
+    </record>
+
+</odoo>

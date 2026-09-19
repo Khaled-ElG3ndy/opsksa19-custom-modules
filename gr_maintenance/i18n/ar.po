@@ -1,0 +1,701 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_maintenance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_search
+msgid "Asset"
+msgstr "الأصل"
+
+#. module: gr_maintenance
+#. odoo-python
+#: code:addons/gr_maintenance/models/gr_maintenance_job.py:0
+msgid "Asset %s is on rent; it must be returned before maintenance."
+msgstr "الأصل %s قيد التأجير؛ يجب إرجاعه قبل الصيانة."
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Asset & Type"
+msgstr "الأصل والنوع"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__technician_id
+msgid "Assigned Technician"
+msgstr "الفني المعين"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_maintenance
+#: model:ir.model.fields.selection,name:gr_maintenance.selection__gr_maintenance_job__job_type__breakdown
+#: model:ir.model.fields.selection,name:gr_maintenance.selection__gr_maintenance_template__job_type__breakdown
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Breakdown"
+msgstr "عطل"
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_search
+msgid "Breakdowns"
+msgstr "الأعطال"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_generator_asset__pm_calendar_overdue
+msgid "Calendar PM Overdue"
+msgstr "الصيانة الدورية التقويمية متأخرة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_generator_asset__pm_interval_days
+msgid ""
+"Calendar interval for preventive maintenance. PM becomes due when either the"
+" hour interval OR this calendar interval is reached, whichever comes first. "
+"Leave 0 to disable calendar PM."
+msgstr ""
+"الفاصل التقويمي للصيانة الوقائية. تستحق الصيانة الدورية عند بلوغ فاصل "
+"الساعات أو هذا الفاصل التقويمي، أيهما أولا. اتركه 0 لتعطيل الصيانة "
+"التقويمية."
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: gr_maintenance
+#: model:ir.model.fields.selection,name:gr_maintenance.selection__gr_maintenance_job__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: gr_maintenance
+#. odoo-python
+#: code:addons/gr_maintenance/models/gr_maintenance_job.py:0
+msgid ""
+"Cannot schedule maintenance for %(asset)s during %(period)s because the "
+"equipment is already committed to a rental."
+msgstr ""
+"لا يمكن جدولة الصيانة للمعدة %(asset)s خلال %(period)s لأن المعدة مرتبطة "
+"بالفعل بتأجير."
+
+#. module: gr_maintenance
+#. odoo-python
+#: code:addons/gr_maintenance/models/gr_maintenance_job.py:0
+msgid "Cannot service a retired asset."
+msgstr "لا يمكن صيانة أصل متقاعد."
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job_checklist__name
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template_line__name
+msgid "Check Item"
+msgstr "بند الفحص"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__checklist_ids
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Checklist"
+msgstr "قائمة التحقق"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__checklist_line_ids
+msgid "Checklist Items"
+msgstr "قائمة التحقق البنود"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__company_id
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Complete"
+msgstr "إكمال"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__completed_date
+msgid "Completed"
+msgstr "مكتمل"
+
+#. module: gr_maintenance
+#. odoo-python
+#: code:addons/gr_maintenance/models/gr_maintenance_job.py:0
+msgid "Completed jobs cannot be cancelled."
+msgstr "لا يمكن إلغاء أوامر الصيانة المكتملة."
+
+#. module: gr_maintenance
+#: model:ir.model.fields.selection,name:gr_maintenance.selection__gr_maintenance_job__job_type__corrective
+#: model:ir.model.fields.selection,name:gr_maintenance.selection__gr_maintenance_template__job_type__corrective
+msgid "Corrective"
+msgstr "تصحيحية"
+
+#. module: gr_maintenance
+#: model_terms:ir.actions.act_window,help:gr_maintenance.action_gr_maintenance_job
+msgid "Create your first maintenance job"
+msgstr "أنشئ أول أمر صيانة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__create_uid
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job_checklist__create_uid
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__create_uid
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__create_date
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job_checklist__create_date
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__create_date
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template_line__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__job_type
+msgid "Default Job Type"
+msgstr "نوع العمل الافتراضي"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__default_interval_days
+msgid "Default PM Interval (days)"
+msgstr "فترة الصيانة الدورية الافتراضية (أيام)"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__default_interval_hours
+msgid "Default PM Interval (hours)"
+msgstr "فترة الصيانة الدورية الافتراضية (ساعات)"
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Describe the work performed..."
+msgstr "صف العمل المنجز..."
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_generator_asset__display_name
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__display_name
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job_checklist__display_name
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__display_name
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job_checklist__is_done
+#: model:ir.model.fields.selection,name:gr_maintenance.selection__gr_maintenance_job__state__done
+msgid "Done"
+msgstr "منجز"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__downtime_hours
+msgid "Downtime Hours"
+msgstr "ساعات التوقف"
+
+#. module: gr_maintenance
+#: model:ir.model.fields.selection,name:gr_maintenance.selection__gr_maintenance_job__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__parts_note
+msgid ""
+"Free-text for now; structured parts consumption arrives with the stock-"
+"integration milestone."
+msgstr "نص حر حاليا؛ سيأتي استهلاك القطع المنظم مع مرحلة تكامل المخزون."
+
+#. module: gr_maintenance
+#: model:ir.model,name:gr_maintenance.model_gr_generator_asset
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__asset_id
+msgid "Generator Asset"
+msgstr "أصل المولد"
+
+#. module: gr_maintenance
+#: model:ir.model,name:gr_maintenance.model_gr_maintenance_job
+msgid "Generator Maintenance Job"
+msgstr "أمر صيانة مولد"
+
+#. module: gr_maintenance
+#: model:ir.model,name:gr_maintenance.model_gr_maintenance_job_checklist
+msgid "Generator Maintenance Job Checklist Item"
+msgstr "بند قائمة تحقق صيانة المولد"
+
+#. module: gr_maintenance
+#: model:ir.model,name:gr_maintenance.model_gr_maintenance_template
+msgid "Generator PM Template"
+msgstr "قالب الصيانة الدورية للمولد"
+
+#. module: gr_maintenance
+#: model:ir.model,name:gr_maintenance.model_gr_maintenance_template_line
+msgid "Generator PM Template Checklist Item"
+msgstr "بند قائمة تحقق قالب الصيانة الدورية للمولد"
+
+#. module: gr_maintenance
+#: model:ir.actions.server,name:gr_maintenance.cron_calendar_pm_due_ir_actions_server
+msgid "Generator: flag calendar PM due"
+msgstr "المولدات: تمييز الصيانة الدورية المستحقة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_generator_asset__id
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__id
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job_checklist__id
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__id
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template_line__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__message_has_error
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_maintenance
+#: model:ir.model.fields.selection,name:gr_maintenance.selection__gr_maintenance_job__state__in_progress
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job_checklist__job_id
+msgid "Job"
+msgstr "العمل"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__name
+msgid "Job Reference"
+msgstr "مرجع العمل"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_generator_asset__maintenance_job_count
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_generator_asset_form_maintenance
+msgid "Jobs"
+msgstr "الأعمال"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__labor_hours
+msgid "Labor Hours"
+msgstr "ساعات العمل"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_generator_asset__last_pm_date
+msgid "Last PM Date"
+msgstr "تاريخ آخر صيانة دورية"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__write_uid
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job_checklist__write_uid
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__write_uid
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__write_date
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job_checklist__write_date
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__write_date
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_maintenance
+#: model:ir.ui.menu,name:gr_maintenance.menu_gr_maintenance_root
+msgid "Maintenance"
+msgstr "الصيانة"
+
+#. module: gr_maintenance
+#: model:ir.actions.act_window,name:gr_maintenance.action_gr_maintenance_job
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_generator_asset__maintenance_job_ids
+#: model:ir.ui.menu,name:gr_maintenance.menu_gr_maintenance_jobs
+msgid "Maintenance Jobs"
+msgstr "أوامر الصيانة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__meter_at_service
+msgid "Meter at Service"
+msgstr "العداد عند الخدمة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: gr_maintenance
+#. odoo-python
+#: code:addons/gr_maintenance/models/gr_maintenance_job.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_generator_asset__next_pm_date
+msgid "Next PM Date"
+msgstr "تاريخ الصيانة الدورية التالية"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job_checklist__note
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template_line__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_maintenance
+#. odoo-python
+#: code:addons/gr_maintenance/models/gr_maintenance_job.py:0
+msgid "Only cancelled jobs can reset to draft."
+msgstr "يمكن إرجاع أوامر الصيانة الملغاة فقط إلى مسودة."
+
+#. module: gr_maintenance
+#. odoo-python
+#: code:addons/gr_maintenance/models/gr_maintenance_job.py:0
+msgid "Only draft jobs can be scheduled."
+msgstr "يمكن جدولة أوامر الصيانة في حالة المسودة فقط."
+
+#. module: gr_maintenance
+#. odoo-python
+#: code:addons/gr_maintenance/models/gr_maintenance_job.py:0
+msgid "Only draft or scheduled jobs can start."
+msgstr "يمكن بدء أوامر الصيانة في حالة المسودة أو المجدولة فقط."
+
+#. module: gr_maintenance
+#. odoo-python
+#: code:addons/gr_maintenance/models/gr_maintenance_job.py:0
+msgid "Only in-progress jobs can be completed."
+msgstr "يمكن إكمال أوامر الصيانة قيد التنفيذ فقط."
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_search
+msgid "Open"
+msgstr "مفتوح"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_generator_asset__pm_interval_days
+msgid "PM Interval (days)"
+msgstr "فترة الصيانة الدورية (أيام)"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__template_id
+msgid "PM Template"
+msgstr "قالب الصيانة الدورية"
+
+#. module: gr_maintenance
+#: model:ir.actions.act_window,name:gr_maintenance.action_gr_maintenance_template
+#: model:ir.ui.menu,name:gr_maintenance.menu_gr_maintenance_templates
+msgid "PM Templates"
+msgstr "قوالب الصيانة الدورية"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__parts_note
+msgid "Parts Used (note)"
+msgstr "قطع مستخدمة (ملاحظة)"
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Parts used (free text)..."
+msgstr "القطع المستخدمة (نص حر)..."
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__scheduled_end_datetime
+msgid ""
+"Planned end of the unavailable maintenance window. Leave empty for open-"
+"ended downtime until the job is completed."
+msgstr ""
+"النهاية المخططة لفترة عدم الإتاحة بسبب الصيانة. اتركها فارغة إذا كانت فترة "
+"التوقف مفتوحة حتى اكتمال أمر الصيانة."
+
+#. module: gr_maintenance
+#: model:ir.model.fields.selection,name:gr_maintenance.selection__gr_maintenance_job__job_type__preventive
+#: model:ir.model.fields.selection,name:gr_maintenance.selection__gr_maintenance_template__job_type__preventive
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_search
+msgid "Preventive"
+msgstr "وقائية"
+
+#. module: gr_maintenance
+#: model_terms:ir.actions.act_window,help:gr_maintenance.action_gr_maintenance_job
+msgid "Preventive, corrective, and breakdown work orders for your fleet."
+msgstr "أوامر الصيانة الوقائية والتصحيحية وأوامر الأعطال لأسطولك."
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__reset_pm
+msgid "Reset PM Clock on Completion"
+msgstr "إعادة ضبط عداد الصيانة الدورية عند الإكمال"
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Reset to Draft"
+msgstr "إرجاع إلى مسودة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Schedule"
+msgstr "جدولة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__scheduled_date
+#: model:ir.model.fields.selection,name:gr_maintenance.selection__gr_maintenance_job__state__scheduled
+msgid "Scheduled"
+msgstr "مجدول"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__scheduled_end_datetime
+msgid "Scheduled End"
+msgstr "نهاية الجدولة"
+
+#. module: gr_maintenance
+#. odoo-python
+#: code:addons/gr_maintenance/models/gr_maintenance_job.py:0
+msgid "Scheduled End must be after the Scheduled start for %s."
+msgstr "يجب أن تكون نهاية الجدولة بعد بداية الجدولة لـ %s."
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Scheduling"
+msgstr "الجدولة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job_checklist__sequence
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template_line__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Service"
+msgstr "خدمة"
+
+#. module: gr_maintenance
+#. odoo-python
+#: code:addons/gr_maintenance/models/gr_maintenance_job.py:0
+msgid "Set a scheduled date before scheduling."
+msgstr "حدد تاريخ الجدولة قبل تنفيذ الجدولة."
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Start Work"
+msgstr "بدء العمل"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__started_date
+msgid "Started"
+msgstr "بدأ"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__state
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_search
+msgid "Technician"
+msgstr "الفني"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template_line__template_id
+msgid "Template"
+msgstr "القالب"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_template__name
+msgid "Template Name"
+msgstr "اسم القالب"
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_template_form
+msgid "Template description..."
+msgstr "وصف القالب..."
+
+#. module: gr_maintenance
+#: model:ir.model.constraint,message:gr_maintenance.constraint_gr_maintenance_job_name_company_uniq
+msgid "The maintenance-job reference must be unique per company."
+msgstr "يجب أن يكون مرجع أمر الصيانة فريداً لكل شركة."
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__job_type
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_search
+msgid "Type"
+msgstr "النوع"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,help:gr_maintenance.field_gr_maintenance_job__reset_pm
+msgid ""
+"When done, set the asset's last PM hour/date to now so the next PM interval "
+"starts fresh. Typically on for preventive jobs."
+msgstr ""
+"عند الإكمال، اضبط آخر ساعة/تاريخ صيانة دورية للأصل إلى الآن حتى يبدأ فاصل "
+"الصيانة التالي من جديد. يستخدم عادة للأعمال الوقائية."
+
+#. module: gr_maintenance
+#: model_terms:ir.ui.view,arch_db:gr_maintenance.view_gr_maintenance_job_form
+msgid "Work"
+msgstr "العمل"
+
+#. module: gr_maintenance
+#: model:ir.model.fields,field_description:gr_maintenance.field_gr_maintenance_job__work_performed
+msgid "Work Performed"
+msgstr "العمل المنجز"

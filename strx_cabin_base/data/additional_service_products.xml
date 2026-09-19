@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="product_strx_extra_bathroom_tank" model="product.template">
+            <field name="name">Additional Bathroom Tank</field>
+            <field name="default_code">STRX-SVC-BATH-TANK</field>
+            <field name="type">service</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="list_price">0.0</field>
+            <field name="strx_is_free_additional_service">True</field>
+        </record>
+
+        <record id="product_strx_cabin_ladder" model="product.template">
+            <field name="name">Cabin Ladder</field>
+            <field name="default_code">STRX-SVC-LADDER</field>
+            <field name="type">service</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="list_price">0.0</field>
+            <field name="strx_is_free_additional_service">True</field>
+        </record>
+
+        <record id="product_strx_canopy" model="product.template">
+            <field name="name">Canopy</field>
+            <field name="default_code">STRX-SVC-CANOPY</field>
+            <field name="type">service</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="list_price">0.0</field>
+            <field name="strx_is_free_additional_service">True</field>
+        </record>
+
+        <record id="product_strx_extra_ac_unit" model="product.template">
+            <field name="name">Additional AC Unit</field>
+            <field name="default_code">STRX-SVC-AC-UNIT</field>
+            <field name="type">service</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="list_price">0.0</field>
+            <field name="strx_is_free_additional_service">True</field>
+        </record>
+
+        <record id="product_strx_extra_water_tank" model="product.template">
+            <field name="name">Additional Water Tank</field>
+            <field name="default_code">STRX-SVC-WATER-TANK</field>
+            <field name="type">service</field>
+            <field name="sale_ok">True</field>
+            <field name="purchase_ok">False</field>
+            <field name="list_price">0.0</field>
+            <field name="strx_is_free_additional_service">True</field>
+        </record>
+
+    </data>
+</odoo>

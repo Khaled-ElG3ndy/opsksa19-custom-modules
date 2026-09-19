@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="approval_document_styles">
+        <style>
+            <t t-if="doc._approval_is_rtl()" t-out="doc._approval_arabic_font_css()"/>
+            .gr-approval-document { font-family: DejaVu Sans, Arial, sans-serif; color: #26363d; font-size: 10.5px; line-height: 1.55; }
+            .gr-approval-document * { box-sizing: border-box; }
+            .gr-approval-document[dir="rtl"],
+            .gr-approval-document[dir="rtl"] * {
+                font-family: GRDataArabic, DejaVu Sans, sans-serif !important;
+            }
+            .gr-approval-document[dir="rtl"] { text-align: right; }
+            .gr-doc-header { border: 1px solid #cfdadd; border-top: 6px solid #173f46; margin-bottom: 18px; background: #fff; }
+            .gr-doc-header td { padding: 13px 15px; }
+            .gr-doc-header .gr-doc-meta { background: #f1f5f6; border-inline-start: 1px solid #cfdadd; }
+            .gr-logo { max-height: 58px; max-width: 145px; object-fit: contain; margin-bottom: 7px; }
+            .gr-company-name { color: #173f46; font-size: 19px; font-weight: 700; margin-bottom: 4px; }
+            .gr-doc-title { color: #173f46; font-size: 23px; line-height: 1.25; font-weight: 700; margin: 0 0 8px; }
+            .gr-muted { color: #687980; font-size: 9.5px; }
+            .gr-status { display: inline-block; border: 1px solid #2f7d6d; color: #155f51; background: #edf8f4; font-weight: 700; padding: 4px 10px; border-radius: 3px; }
+            .gr-meta-label { color: #66767c; font-size: 8.5px; font-weight: 700; text-transform: uppercase; }
+            .gr-meta-value { color: #173f46; font-weight: 700; margin-bottom: 4px; }
+            .gr-section { margin: 0 0 18px; page-break-inside: avoid; }
+            .gr-section.gr-can-break { page-break-inside: auto; }
+            .gr-section-title { background: #eaf2f1; border-bottom: 2px solid #287a73; color: #173f46; font-size: 14px; line-height: 1.4; font-weight: 700; padding: 8px 10px; margin: 0 0 9px; }
+            .gr-info-table, .gr-data-table { width: 100%; border-collapse: collapse; }
+            .gr-info-table td { border: 1px solid #d6dfe1; padding: 7px 8px; vertical-align: top; }
+            .gr-info-table td.gr-label { width: 20%; background: #f5f8f8; color: #4f6067; font-weight: 700; }
+            .gr-data-table { page-break-inside: auto; }
+            .gr-data-table thead { display: table-header-group; }
+            .gr-data-table tr { page-break-inside: avoid; page-break-after: auto; }
+            .gr-data-table th { background: #35646a; color: #fff; border: 1px solid #35646a; padding: 8px 6px; font-weight: 700; }
+            .gr-data-table td { border: 1px solid #d6dfe1; padding: 7px 6px; vertical-align: top; }
+            .gr-data-table tbody tr:nth-child(even) td { background: #f7f9f9; }
+            .gr-price-summary { width: 100%; border-collapse: separate; border-spacing: 6px 0; margin: 0 -6px 10px; }
+            .gr-price-summary td { width: 25%; background: #f4f7f8; border-top: 3px solid #287a73; padding: 10px; vertical-align: top; }
+            .gr-price-label { color: #617278; font-size: 8.5px; font-weight: 700; text-transform: uppercase; }
+            .gr-price-value { color: #173f46; font-size: 14px; font-weight: 700; margin-top: 3px; }
+            .gr-approval-box { border: 2px solid #287a73; padding: 16px; margin-top: 22px; min-height: 210px; page-break-inside: avoid; }
+            .gr-declaration { font-weight: 700; color: #173f46; margin-bottom: 9px; }
+            .gr-signature { max-width: 230px; max-height: 95px; object-fit: contain; border-bottom: 1px solid #809095; padding: 5px 14px; }
+            .gr-signature-grid { width: 100%; border-collapse: separate; border-spacing: 12px 0; margin-top: 22px; }
+            .gr-signature-box { width: 50%; min-height: 105px; border-top: 2px solid #173f46; padding: 9px 4px; vertical-align: top; }
+            .gr-terms-box { border: 1px solid #d6dfe1; background: #fbfcfc; padding: 11px 13px; }
+            .gr-photo-grid { width: 100%; border-collapse: separate; border-spacing: 6px; }
+            .gr-photo-cell { width: 50%; border: 1px solid #d4dcde; padding: 5px; text-align: center; vertical-align: top; }
+            .gr-photo { max-width: 100%; max-height: 205px; object-fit: contain; }
+            .gr-footer { margin-top: 20px; border-top: 1px solid #aeb9bc; padding-top: 6px; color: #687980; font-size: 8px; page-break-inside: avoid; }
+            .gr-footer table { width: 100%; border-collapse: collapse; }
+            .gr-no-break { page-break-inside: avoid; }
+            .gr-ltr-value { direction: ltr !important; unicode-bidi: isolate; display: inline-block; text-align: left; }
+            .gr-number { direction: ltr !important; unicode-bidi: isolate; display: inline-block; white-space: nowrap; }
+        </style>
+    </template>
+
+    <template id="approval_document_header">
+        <t t-set="show_company_logo" t-value="doc.company_id.logo and not doc.company_id.uses_default_logo"/>
+        <div class="gr-doc-header">
+            <table style="width:100%; border-collapse:collapse;">
+                <tr>
+                    <td t-if="show_company_logo" style="width:20%; vertical-align:top;">
+                        <img class="gr-logo"
+                             t-att-src="image_data_uri(doc.company_id.logo)"/>
+                    </td>
+                    <td t-att-style="'width:45%; vertical-align:top;' if show_company_logo else 'width:65%; vertical-align:top;'">
+                        <div class="gr-company-name" t-out="doc.company_id.name"/>
+                        <div class="gr-muted" t-if="doc.company_id.phone">
+                            <span>Phone</span>: <span t-out="doc.company_id.phone"/>
+                        </div>
+                        <div class="gr-muted" t-if="doc.company_id.email">
+                            <span>Email</span>: <span t-out="doc.company_id.email"/>
+                        </div>
+                        <div class="gr-muted" t-if="doc.company_id.website">
+                            <span>Website</span>: <span t-out="doc.company_id.website"/>
+                        </div>
+                    </td>
+                    <td class="gr-doc-meta" style="width:35%; vertical-align:top; text-align:end;">
+                        <h1 class="gr-doc-title" t-out="document_title"/>
+                        <div class="gr-meta-label">Document Number</div>
+                        <div class="gr-meta-value gr-ltr-value" t-out="doc.display_name"/>
+                        <div class="gr-meta-label">Issue Date</div>
+                        <div class="gr-meta-value">
+                            <span t-if="approval_copy" t-field="approval_copy.generated_at"/>
+                            <span t-else="" t-out="time.strftime('%Y-%m-%d %H:%M')"/>
+                        </div>
+                        <div><span class="gr-meta-label">Version</span>: <strong t-out="approval_copy.version if approval_copy else 1"/></div>
+                        <div style="margin-top:5px;"><span class="gr-status" t-out="doc._approval_report_status_label()"/></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+    <template id="approval_customer_section">
+        <div class="gr-section">
+            <div class="gr-section-title">Customer Information</div>
+            <table class="gr-info-table">
+                <tr>
+                    <td class="gr-label">Customer</td>
+                    <td t-out="doc.partner_id.display_name or ''"/>
+                    <td class="gr-label">Customer Representative</td>
+                    <td t-out="doc._approval_customer_representative()"/>
+                </tr>
+                <tr>
+                    <td class="gr-label">Email</td>
+                    <td t-out="doc.partner_id.email or ''"/>
+                    <td class="gr-label">Phone</td>
+                    <td t-out="doc.partner_id.phone or ''"/>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+    <template id="approval_photos_section">
+        <div class="gr-section" t-if="photos">
+            <div class="gr-section-title">Photos</div>
+            <table class="gr-photo-grid">
+                <t t-foreach="range(0, len(photos), 2)" t-as="photo_index">
+                    <tr>
+                        <td class="gr-photo-cell">
+                            <img class="gr-photo" t-att-src="image_data_uri(photos[photo_index].datas)"/>
+                            <div class="gr-muted" t-out="photos[photo_index].name"/>
+                        </td>
+                        <td class="gr-photo-cell" t-if="photo_index + 1 &lt; len(photos)">
+                            <img class="gr-photo" t-att-src="image_data_uri(photos[photo_index + 1].datas)"/>
+                            <div class="gr-muted" t-out="photos[photo_index + 1].name"/>
+                        </td>
+                        <td class="gr-photo-cell" t-else=""/>
+                    </tr>
+                </t>
+            </table>
+        </div>
+    </template>
+
+    <template id="approval_customer_signoff">
+        <div class="gr-approval-box">
+            <div class="gr-section-title">Customer Approval</div>
+            <p class="gr-declaration">I confirm that I have reviewed this document and approve all information and notes stated in it.</p>
+            <table class="gr-info-table">
+                <tr>
+                    <td class="gr-label">Approval Status</td>
+                    <td t-out="doc._approval_report_status_label()"/>
+                    <td class="gr-label">Approval Method</td>
+                    <td t-out="doc._approval_selection_label('approval_method') if doc.approval_method else ''"/>
+                </tr>
+                <tr>
+                    <td class="gr-label">Customer Representative</td>
+                    <td t-out="doc.approval_signed_by or ''"/>
+                    <td class="gr-label">Representative Role</td>
+                    <td t-out="doc.approval_signed_by_role or ''"/>
+                </tr>
+                <tr t-if="doc.approval_state == 'approved'">
+                    <td class="gr-label">Approval Date</td>
+                    <td><span t-field="doc.approved_on"/></td>
+                    <td class="gr-label">Recorded By</td>
+                    <td t-out="doc.approved_by_uid.display_name or ''"/>
+                </tr>
+                <tr t-if="doc.approval_method == 'otp'">
+                    <td class="gr-label">OTP Approval Proof</td>
+                    <td>Approved via OTP</td>
+                    <td class="gr-label">Recipient</td>
+                    <td t-out="doc.otp_sent_to or ''"/>
+                </tr>
+                <tr t-if="approval_copy">
+                    <td class="gr-label">Approval Log Number</td>
+                    <td t-out="approval_copy.approval_log_id.id or ''"/>
+                    <td class="gr-label">File Hash</td>
+                    <td t-out="(approval_copy.file_hash or '')[:16]"/>
+                </tr>
+            </table>
+            <div style="margin-top:10px;" t-if="doc.approval_method == 'signature' and doc.approval_signature">
+                <img class="gr-signature" t-att-src="image_data_uri(doc.approval_signature)"/>
+                <div><strong>Signature</strong> - <span t-out="doc.approval_signed_by or ''"/></div>
+            </div>
+            <p t-if="doc.approval_notes" style="margin-top:8px;"><strong>Notes</strong>: <span t-out="doc.approval_notes"/></p>
+        </div>
+    </template>
+
+    <template id="approval_document_footer">
+        <div class="gr-footer" style="display:none;">
+            <table style="width:100%; border-collapse:collapse;">
+                <tr>
+                    <td style="width:72%;">
+                        <div><strong t-out="doc.company_id.name"/> - <span class="gr-ltr-value" t-out="doc.display_name"/> - <span>Version</span> <span t-out="approval_copy.version if approval_copy else 1"/></div>
+                        <div>This document was electronically generated, and its controlled version is stored in the system.</div>
+                    </td>
+                    <td style="width:28%; text-align:end; vertical-align:bottom;">
+                        <span>Page</span> <span class="page"/> / <span class="topage"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+    <template id="unified_document_layout">
+        <t t-call="web.html_container">
+            <div class="article page gr-approval-document"
+                 t-att-dir="'rtl' if doc._approval_is_rtl() else 'ltr'"
+                 t-att-lang="'ar' if doc._approval_is_rtl() else 'en'"
+                 t-att-data-oe-model="doc._name"
+                 t-att-data-oe-id="doc.id"
+                 t-att-data-oe-lang="doc.env.context.get('lang') or doc.env.lang">
+                <t t-call="gr_customer_approval.approval_document_styles"/>
+                <t t-call="gr_customer_approval.approval_document_header"/>
+                <t t-out="0"/>
+                <t t-call="gr_customer_approval.approval_document_footer"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="approval_document_layout">
+        <t t-call="gr_customer_approval.unified_document_layout">
+            <t t-out="0"/>
+            <t t-call="gr_customer_approval.approval_customer_signoff"/>
+        </t>
+    </template>
+
+    <template id="report_approval_rental_agreement">
+        <t t-foreach="docs" t-as="doc">
+            <t t-set="approval_copy" t-value="doc._approval_report_copy()"/>
+            <t t-set="pricing" t-value="doc._approval_pricing_data()"/>
+            <t t-set="document_title">Rental Agreement</t>
+            <t t-call="gr_customer_approval.approval_document_layout" t-lang="doc.env.context.get('lang')">
+                <t t-call="gr_customer_approval.approval_customer_section"/>
+                <div class="gr-section">
+                    <div class="gr-section-title">Contract Details</div>
+                    <table class="gr-info-table">
+                        <tr><td class="gr-label">Rental Order</td><td t-out="doc.name"/><td class="gr-label">Contract</td><td t-out="doc.contract_id.display_name or ''"/></tr>
+                        <tr><td class="gr-label">Site</td><td t-out="doc.site_id.display_name or ''"/><td class="gr-label">Requested Capacity</td><td><span t-out="doc.requested_kva"/> kVA</td></tr>
+                        <tr><td class="gr-label">Start Date</td><td><span t-field="doc.planned_install_datetime"/></td><td class="gr-label">Expected Return Date</td><td><span t-field="doc.planned_return_datetime"/></td></tr>
+                        <tr t-if="doc.contract_id"><td class="gr-label">Contract Type</td><td><span t-field="doc.contract_id.contract_type"/></td><td class="gr-label">Currency</td><td t-out="doc.currency_id.name"/></tr>
+                    </table>
+                </div>
+                <div class="gr-section">
+                    <div class="gr-section-title">Assets and Equipment</div>
+                    <table class="gr-data-table">
+                        <thead><tr><th>Asset / Item</th><th>Asset Number</th><th>Serial Number</th><th>Pricing Method</th><th>Rate</th><th>Duration</th><th>Total</th></tr></thead>
+                        <tbody>
+                            <tr t-if="doc.asset_id">
+                                <td t-out="doc.asset_id.display_name"/>
+                                <td><span class="gr-ltr-value" t-out="doc.asset_id.code or ''"/></td>
+                                <td><span class="gr-ltr-value" t-out="doc.asset_id.serial_number or ''"/></td>
+                                <td t-out="pricing['method']"/>
+                                <td><span class="gr-number" t-out="doc._approval_format_amount(pricing['rate'], doc.currency_id)"/></td>
+                                <td t-out="pricing['duration']"/>
+                                <td>
+                                    <span class="gr-number" t-if="pricing['estimated_total']" t-out="doc._approval_format_amount(pricing['estimated_total'], doc.currency_id)"/>
+                                    <span t-else="">Calculated from actual usage</span>
+                                </td>
+                            </tr>
+                            <t t-foreach="doc.item_line_ids" t-as="line">
+                                <tr t-if="not line.is_primary_asset_line">
+                                    <td t-out="line.asset_type_display_name"/>
+                                    <td><span class="gr-ltr-value" t-out="line.asset_display_name"/></td>
+                                    <td><span class="gr-ltr-value" t-out="line.asset_serial_number or ''"/></td>
+                                    <td><span t-if="line.is_free">Free of Charge</span><span t-else="">Daily Rate</span></td>
+                                    <td><span t-if="line.is_free">Free of Charge</span><span class="gr-number" t-else="" t-out="doc._approval_format_amount(line.daily_rate, doc.currency_id)"/></td>
+                                    <td><span t-out="line.quantity_days"/> <span>day(s)</span></td>
+                                    <td><span t-if="line.is_free">Free of Charge</span><span class="gr-number" t-else="" t-out="doc._approval_format_amount(line.line_total, doc.currency_id)"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="gr-section" t-if="doc.contract_id">
+                    <div class="gr-section-title">Pricing Summary</div>
+                    <table class="gr-price-summary">
+                        <tr>
+                            <td><div class="gr-price-label">Pricing Method</div><div class="gr-price-value" t-out="pricing['method']"/></td>
+                            <td><div class="gr-price-label" t-out="pricing['rate_label']"/><div class="gr-price-value gr-number" t-out="doc._approval_format_amount(pricing['rate'], doc.currency_id)"/></td>
+                            <td><div class="gr-price-label">Duration</div><div class="gr-price-value" t-out="pricing['duration']"/></td>
+                            <td><div class="gr-price-label">Estimated Total</div><div class="gr-price-value"><span class="gr-number" t-if="pricing['estimated_total']" t-out="doc._approval_format_amount(pricing['estimated_total'], doc.currency_id)"/><span t-else="">Calculated from actual usage</span></div></td>
+                        </tr>
+                    </table>
+                    <table class="gr-info-table">
+                        <tr t-if="doc.contract_id.included_hours_per_day">
+                            <td class="gr-label">Included Hours / Day</td><td t-out="doc.contract_id.included_hours_per_day"/>
+                            <td class="gr-label">Max Hours / Day</td><td t-out="doc.contract_id.max_hours_per_day or ''"/>
+                        </tr>
+                        <tr t-if="doc.contract_id.overtime_hour_rate or doc.contract_id.violation_hour_rate">
+                            <td class="gr-label">Overtime Hour Rate</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.contract_id.overtime_hour_rate, doc.currency_id)"/></td>
+                            <td class="gr-label">Violation Hour Rate</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.contract_id.violation_hour_rate, doc.currency_id)"/></td>
+                        </tr>
+                        <tr t-if="doc.contract_id.mobilization_charge or doc.contract_id.demobilization_charge">
+                            <td class="gr-label">Mobilization Charge</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.contract_id.mobilization_charge, doc.currency_id)"/></td>
+                            <td class="gr-label">Demobilization Charge</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.contract_id.demobilization_charge, doc.currency_id)"/></td>
+                        </tr>
+                        <tr>
+                            <td class="gr-label">Payment Terms</td><td t-out="doc.contract_id.payment_terms_id.display_name or ''"/>
+                            <td class="gr-label">Taxes</td><td>As applicable under the contract and tax invoice</td>
+                        </tr>
+                        <tr t-if="doc.contract_id.security_deposit">
+                            <td class="gr-label">Security Deposit</td><td><span class="gr-number" t-out="doc._approval_format_amount(doc.contract_id.security_deposit, doc.currency_id)"/></td><td/><td/>
+                        </tr>
+                    </table>
+                </div>
+                <div class="gr-section" t-if="doc.contract_id.terms_and_conditions">
+                    <div class="gr-section-title">Terms and Conditions</div>
+                    <div t-field="doc.contract_id.terms_and_conditions"/>
+                </div>
+                <div class="gr-section">
+                    <div class="gr-section-title">Customer Responsibilities, Delay and Damage</div>
+                    <p>The customer is responsible for using the assets safely, preserving all supplied accessories, reporting damage promptly, and returning the assets on the agreed date. Delay and damage charges are applied according to the approved contract and the documented return condition.</p>
+                </div>
+                <div class="gr-section" t-if="doc.dispatch_note or doc.installation_note or doc.return_note">
+                    <div class="gr-section-title">Notes</div>
+                    <p t-if="doc.dispatch_note" t-out="doc.dispatch_note"/><p t-if="doc.installation_note" t-out="doc.installation_note"/><p t-if="doc.return_note" t-out="doc.return_note"/>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_approval_delivery">
+        <t t-foreach="docs" t-as="doc">
+            <t t-set="approval_copy" t-value="doc._approval_report_copy()"/>
+            <t t-set="document_title">Asset Delivery Report</t>
+            <t t-call="gr_customer_approval.approval_document_layout" t-lang="doc.env.context.get('lang')">
+                <t t-call="gr_customer_approval.approval_customer_section"/>
+                <div class="gr-section"><div class="gr-section-title">Delivery Details</div>
+                    <table class="gr-info-table">
+                        <tr><td class="gr-label">Rental Order</td><td t-out="doc.rental_order_id.display_name"/><td class="gr-label">Delivery Date and Time</td><td><span t-field="doc.inspection_date"/></td></tr>
+                        <tr><td class="gr-label">Delivery Site</td><td t-out="doc.rental_order_id.site_id.display_name or ''"/><td class="gr-label">Inspected By</td><td t-out="doc.inspected_by_id.display_name or ''"/></tr>
+                        <tr><td class="gr-label">Hour Meter</td><td t-out="doc.current_hours"/><td class="gr-label">Fuel Level</td><td>Not recorded</td></tr>
+                    </table>
+                </div>
+                <div class="gr-section"><div class="gr-section-title">Delivered Assets and Accessories</div>
+                    <table class="gr-data-table"><thead><tr><th>#</th><th>Asset / Accessory</th><th>Asset Number</th><th>Serial Number</th><th>Condition</th></tr></thead><tbody>
+                        <tr t-if="doc.asset_id"><td>1</td><td t-out="doc.asset_id.display_name"/><td t-out="doc.asset_id.name"/><td t-out="doc.asset_id.serial_number or ''"/><td>As stated in the checklist</td></tr>
+                        <tr t-foreach="doc.rental_order_id.item_line_ids" t-as="line"><td t-out="line_index + (2 if doc.asset_id else 1)"/><td t-out="line.asset_type_display_name"/><td t-out="line.asset_display_name"/><td t-out="line.asset_serial_number or ''"/><td>Delivered</td></tr>
+                    </tbody></table>
+                </div>
+                <div class="gr-section gr-can-break" t-if="doc.checklist_ids"><div class="gr-section-title">Asset Condition</div>
+                    <table class="gr-data-table"><thead><tr><th>Check Item</th><th>Result</th><th>Notes</th></tr></thead><tbody>
+                        <tr t-foreach="doc.checklist_ids" t-as="line"><td t-out="doc._approval_display_text(line.name)"/><td t-out="doc._approval_record_selection_text(line, 'result')"/><td t-out="line.note or ''"/></tr>
+                    </tbody></table>
+                </div>
+                <div class="gr-section" t-if="doc.remarks"><div class="gr-section-title">Notes</div><p t-out="doc.remarks"/></div>
+                <t t-set="photos" t-value="doc._approval_report_photos()"/><t t-call="gr_customer_approval.approval_photos_section"/>
+                <div class="gr-section gr-no-break"><div class="gr-section-title">Customer Acknowledgement</div><p>I acknowledge that I received the assets and accessories in the condition recorded in this report.</p></div>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_approval_visit">
+        <t t-foreach="docs" t-as="doc">
+            <t t-set="approval_copy" t-value="doc._approval_report_copy()"/>
+            <t t-set="document_title">Field Visit Report</t>
+            <t t-call="gr_customer_approval.approval_document_layout" t-lang="doc.env.context.get('lang')">
+                <t t-call="gr_customer_approval.approval_customer_section"/>
+                <div class="gr-section"><div class="gr-section-title">Visit Details</div>
+                    <table class="gr-info-table">
+                        <tr><td class="gr-label">Visit Number</td><td t-out="doc.name"/><td class="gr-label">Visit Type</td><td><span t-field="doc.visiting_mode"/></td></tr>
+                        <tr><td class="gr-label">Related Job / Inspection</td><td t-out="doc.job_id.display_name or doc.inspection_id.display_name or ''"/><td class="gr-label">Technician</td><td t-out="doc.technician_id.display_name or ''"/></tr>
+                        <tr><td class="gr-label">Site</td><td t-out="doc.location or doc.project_name or ''"/><td class="gr-label">Time In / Time Out</td><td><span t-field="doc.time_in"/> - <span t-field="doc.time_out"/></td></tr>
+                        <tr><td class="gr-label">Asset</td><td t-out="doc.asset_id.display_name"/><td class="gr-label">Serial Number</td><td t-out="doc.serial_number or ''"/></tr>
+                    </table>
+                </div>
+                <div class="gr-section"><div class="gr-section-title">Readings</div>
+                    <table class="gr-data-table"><thead><tr><th>Hour Meter</th><th>Voltage</th><th>Frequency</th><th>Battery Voltage</th><th>Oil Pressure</th><th>Speed</th><th>Water Temperature</th></tr></thead><tbody><tr>
+                        <td t-out="doc.hour_reading"/><td t-out="doc.voltage_vac"/><td t-out="doc.frequency_hz"/><td t-out="doc.battery_voltage_dcv"/><td t-out="doc.oil_pressure_kpa"/><td t-out="doc.speed_rpm"/><td t-out="doc.water_temp_c"/>
+                    </tr></tbody></table>
+                </div>
+                <div class="gr-section gr-can-break" t-if="doc.checklist_ids"><div class="gr-section-title">Inspection and Work Performed</div>
+                    <table class="gr-data-table"><thead><tr><th>Check Item</th><th>Result</th><th>Work / Notes</th></tr></thead><tbody>
+                        <tr t-foreach="doc.checklist_ids" t-as="line"><td t-out="doc._approval_display_text(line.name)"/><td t-out="doc._approval_record_selection_text(line, 'result')"/><td t-out="line.note or ''"/></tr>
+                    </tbody></table>
+                </div>
+                <div class="gr-section gr-can-break" t-if="doc.spare_part_ids"><div class="gr-section-title">Spare Parts Used</div>
+                    <table class="gr-data-table"><thead><tr><th>Part Number</th><th>Description</th><th>Quantity</th><th>Notes</th></tr></thead><tbody>
+                        <tr t-foreach="doc.spare_part_ids" t-as="part"><td t-out="part.part_number or ''"/><td t-out="part.description or ''"/><td t-out="part.quantity"/><td t-out="part.remarks or ''"/></tr>
+                    </tbody></table>
+                </div>
+                <div class="gr-section" t-if="doc.remarks"><div class="gr-section-title">Notes and Technician Recommendations</div><p t-out="doc.remarks"/></div>
+                <t t-set="photos" t-value="doc.photo_ids"/><t t-call="gr_customer_approval.approval_photos_section"/>
+                <div class="gr-section gr-no-break"><div class="gr-section-title">Customer Acknowledgement</div><p>I acknowledge that the work and inspection described in this report were performed.</p></div>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_approval_return">
+        <t t-foreach="docs" t-as="doc">
+            <t t-set="approval_copy" t-value="doc._approval_report_copy()"/>
+            <t t-set="document_title">Asset Return Report</t>
+            <t t-call="gr_customer_approval.approval_document_layout" t-lang="doc.env.context.get('lang')">
+                <t t-call="gr_customer_approval.approval_customer_section"/>
+                <div class="gr-section"><div class="gr-section-title">Return Details</div>
+                    <table class="gr-info-table">
+                        <tr><td class="gr-label">Rental Order</td><td t-out="doc.rental_order_id.display_name"/><td class="gr-label">Return Date and Time</td><td><span t-field="doc.inspection_date"/></td></tr>
+                        <tr><td class="gr-label">Return Site</td><td t-out="doc.rental_order_id.site_id.display_name or ''"/><td class="gr-label">Inspected By</td><td t-out="doc.inspected_by_id.display_name or ''"/></tr>
+                        <tr><td class="gr-label">Hour Meter</td><td t-out="doc.current_hours"/><td class="gr-label">Potential Charges</td><td>Subject to final technical and commercial review</td></tr>
+                    </table>
+                </div>
+                <div class="gr-section"><div class="gr-section-title">Returned Assets and Accessories</div>
+                    <table class="gr-data-table"><thead><tr><th>#</th><th>Asset / Accessory</th><th>Asset Number</th><th>Serial Number</th><th>Return Status</th></tr></thead><tbody>
+                        <tr t-if="doc.asset_id"><td>1</td><td t-out="doc.asset_id.display_name"/><td t-out="doc.asset_id.name"/><td t-out="doc.asset_id.serial_number or ''"/><td>Returned for inspection</td></tr>
+                        <tr t-foreach="doc.rental_order_id.item_line_ids" t-as="line"><td t-out="line_index + (2 if doc.asset_id else 1)"/><td t-out="line.asset_type_display_name"/><td t-out="line.asset_display_name"/><td t-out="line.asset_serial_number or ''"/><td>Returned</td></tr>
+                    </tbody></table>
+                </div>
+                <div class="gr-section gr-can-break" t-if="doc.checklist_ids"><div class="gr-section-title">Return Condition, Missing Items and Damage</div>
+                    <table class="gr-data-table"><thead><tr><th>Check Item</th><th>Result</th><th>Damage / Notes</th></tr></thead><tbody>
+                        <tr t-foreach="doc.checklist_ids" t-as="line"><td t-out="doc._approval_display_text(line.name)"/><td t-out="doc._approval_record_selection_text(line, 'result')"/><td t-out="line.note or ''"/></tr>
+                    </tbody></table>
+                </div>
+                <div class="gr-section" t-if="doc.remarks"><div class="gr-section-title">Notes</div><p t-out="doc.remarks"/></div>
+                <t t-set="photos" t-value="doc._approval_report_photos()"/><t t-call="gr_customer_approval.approval_photos_section"/>
+                <div class="gr-section gr-no-break"><div class="gr-section-title">Customer Acknowledgement</div><p>I acknowledge the return condition, missing accessories, damage observations, and potential claims recorded in this report.</p></div>
+            </t>
+        </t>
+    </template>
+</odoo>

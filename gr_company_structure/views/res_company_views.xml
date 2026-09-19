@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_company_form_profile" model="ir.ui.view">
+        <field name="name">res.company.form.profile</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <field name="phone" position="after">
+                <field name="mobile" class="o_force_ltr"/>
+            </field>
+            <field name="website" position="after">
+                <field name="alias_domain_id" options="{'no_create': True, 'no_open': True}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

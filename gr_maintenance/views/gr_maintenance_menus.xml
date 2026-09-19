@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_gr_maintenance_root"
+              name="Maintenance"
+              parent="gr_security_base.menu_generator_root"
+              groups="gr_security_base.group_generator_maint_technician"
+              sequence="70"/>
+    <menuitem id="menu_gr_maintenance_jobs"
+              name="Maintenance Jobs"
+              parent="menu_gr_maintenance_root"
+              action="action_gr_maintenance_job"
+              sequence="10"/>
+    <menuitem id="menu_gr_maintenance_templates"
+              name="PM Templates"
+              parent="menu_gr_maintenance_root"
+              action="action_gr_maintenance_template"
+              groups="gr_security_base.group_generator_maint_manager"
+              sequence="20"/>
+</odoo>

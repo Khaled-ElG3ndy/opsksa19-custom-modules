@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Fleet readiness target for the header KPI strip.
+
+         A policy number, so it lives here as a system parameter that an
+         administrator can change under Settings > Technical > System
+         Parameters, rather than being hardcoded in the dashboard.
+         noupdate="1" so a module update never overwrites a value the
+         business has set. -->
+    <data noupdate="1">
+        <record id="param_readiness_target" model="ir.config_parameter">
+            <field name="key">gr_dashboard.readiness_target</field>
+            <field name="value">90</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================ -->
+    <!-- Equipment form: the supplier rental window, on the unit.      -->
+    <!-- gr_equipment opens the "Supplier Rental Details" page; this   -->
+    <!-- fills in the half that only exists once agreements do.        -->
+    <!-- ============================================================ -->
+    <record id="view_gr_generator_asset_form_sublet" model="ir.ui.view">
+        <field name="name">gr.generator.asset.form.sublet</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="inherit_id" ref="gr_equipment.view_gr_equipment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='supplier_rental_right']" position="inside">
+                <field name="supplier_contract_ref" readonly="1"/>
+                <field name="supplier_rental_start" readonly="1"/>
+                <field name="supplier_rental_end" readonly="1"/>
+                <field name="supplier_rental_cost" readonly="1"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="supplier_rental_status" widget="badge"
+                       decoration-success="supplier_rental_status == 'active'"
+                       decoration-warning="supplier_rental_status == 'expiring_soon'"
+                       decoration-danger="supplier_rental_status in ('expired','no_agreement')"
+                       decoration-muted="supplier_rental_status == 'returned'"
+                       readonly="1"/>
+            </xpath>
+            <xpath expr="//page[@name='supplier_rental']/group[@name='supplier_rental_group']"
+                   position="after">
+                <group string="Notes">
+                    <field name="supplier_rental_note" nolabel="1"
+                           placeholder="Notes about the supplier rental..."
+                           readonly="not current_sublet_agreement_id"/>
+                    <field name="current_sublet_agreement_id" invisible="1"/>
+                </group>
+                <div class="alert alert-danger" role="alert"
+                     invisible="supplier_rental_status != 'no_agreement'">
+                    No supplier rental agreement is recorded for this unit. It
+                    cannot be reserved for a customer until one exists.
+                </div>
+                <div class="alert alert-warning" role="alert"
+                     invisible="supplier_rental_status != 'expiring_soon'">
+                    The rental of this unit from the supplier is ending soon.
+                </div>
+                <div class="alert alert-danger" role="alert"
+                     invisible="supplier_rental_status != 'expired'">
+                    The rental of this unit from the supplier has expired. It
+                    must be returned to the supplier and cannot be rented out.
+                </div>
+                <!-- The return buffer only means something while a customer
+                     actually holds the unit: it is the gap between getting it
+                     back and handing it on, so with no live rental there is
+                     nothing to warn about. -->
+                <group string="Current Customer Rental"
+                       invisible="not current_rental_order_id">
+                    <field name="current_rental_order_id" readonly="1"/>
+                    <field name="expected_return_datetime" readonly="1"/>
+                    <field name="supplier_return_buffer_days" readonly="1"
+                           invisible="not supplier_buffer_level"/>
+                    <field name="supplier_buffer_level" widget="badge" readonly="1"
+                           invisible="not supplier_buffer_level"
+                           decoration-danger="supplier_buffer_level == 'critical'"
+                           decoration-warning="supplier_buffer_level == 'warning'"
+                           decoration-success="supplier_buffer_level == 'ok'"/>
+                </group>
+                <div class="alert alert-danger" role="alert"
+                     invisible="supplier_buffer_level != 'critical'">
+                    <i class="fa fa-exclamation-triangle me-1" role="img"
+                       title="Critical"/>
+                    <field name="supplier_buffer_message" nolabel="1"
+                           readonly="1" class="d-inline"/>
+                </div>
+                <div class="alert alert-warning" role="alert"
+                     invisible="supplier_buffer_level != 'warning'">
+                    <i class="fa fa-clock-o me-1" role="img" title="Warning"/>
+                    <field name="supplier_buffer_message" nolabel="1"
+                           readonly="1" class="d-inline"/>
+                </div>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_sublet_agreements" type="object"
+                        class="oe_stat_button" icon="fa-handshake-o"
+                        invisible="owner_type != 'rented_in'">
+                    <field name="sublet_agreement_count" widget="statinfo"
+                           string="Supplier Rentals"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Supplier-window columns and filters on the equipment list. -->
+    <record id="view_gr_generator_asset_list_sublet" model="ir.ui.view">
+        <field name="name">gr.generator.asset.list.sublet</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="inherit_id" ref="gr_equipment.view_gr_equipment_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='supplier_equipment_ref']" position="after">
+                <field name="supplier_rental_end" string="Supplier Rental Ends"
+                       optional="show"/>
+                <field name="supplier_rental_status" string="Supplier Status"
+                       widget="badge" optional="show"
+                       decoration-success="supplier_rental_status == 'active'"
+                       decoration-warning="supplier_rental_status == 'expiring_soon'"
+                       decoration-danger="supplier_rental_status in ('expired','no_agreement')"
+                       decoration-muted="supplier_rental_status == 'returned'"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_gr_generator_asset_search_sublet" model="ir.ui.view">
+        <field name="name">gr.generator.asset.search.sublet</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="inherit_id" ref="gr_equipment.view_gr_equipment_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='f_customer_owned']" position="after">
+                <separator/>
+                <filter name="f_supplier_expiring"
+                        string="Supplier Rental Expiring Soon"
+                        domain="[('supplier_rental_status','=','expiring_soon')]"/>
+                <filter name="f_supplier_expired"
+                        string="Supplier Rental Expired"
+                        domain="[('supplier_rental_status','=','expired')]"/>
+                <filter name="f_supplier_returned"
+                        string="Returned to Supplier"
+                        domain="[('supplier_rental_status','=','returned')]"/>
+                <filter name="f_supplier_no_agreement"
+                        string="Third-Party Without Agreement"
+                        domain="[('supplier_rental_status','=','no_agreement')]"/>
+            </xpath>
+            <xpath expr="//filter[@name='g_owner']" position="after">
+                <filter name="g_supplier" string="Supplier / Owner"
+                        context="{'group_by': 'owner_partner_id'}"/>
+                <filter name="g_supplier_status" string="Supplier Rental Status"
+                        context="{'group_by': 'supplier_rental_status'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

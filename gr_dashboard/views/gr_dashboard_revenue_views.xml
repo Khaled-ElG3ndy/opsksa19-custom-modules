@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Billable hours trend (overtime / violation) over hour logs -->
+    <record id="view_dash_hours_pivot" model="ir.ui.view">
+        <field name="name">dash.hours.pivot</field>
+        <field name="model">gr.hour.log</field>
+        <field name="arch" type="xml">
+            <pivot string="Billable Hours">
+                <field name="partner_id" type="row"/>
+                <field name="regular_hours" type="measure"/>
+                <field name="overtime_hours" type="measure"/>
+                <field name="violation_hours" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_dash_hours_graph" model="ir.ui.view">
+        <field name="name">dash.hours.graph</field>
+        <field name="model">gr.hour.log</field>
+        <field name="arch" type="xml">
+            <graph string="Overtime &amp; Violation Hours" type="bar">
+                <field name="reading_date" interval="month"/>
+                <field name="overtime_hours" type="measure"/>
+                <field name="violation_hours" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_dash_hours" model="ir.actions.act_window">
+        <field name="name">Billable Hours (Overtime/Violation)</field>
+        <field name="res_model">gr.hour.log</field>
+        <field name="view_mode">pivot,graph,list</field>
+        <field name="domain">[('state','=','approved')]</field>
+    </record>
+
+    <!-- Invoiced revenue over account.move (our generated invoices) -->
+    <record id="view_dash_revenue_pivot" model="ir.ui.view">
+        <field name="name">dash.revenue.pivot</field>
+        <field name="model">account.move</field>
+        <field name="arch" type="xml">
+            <pivot string="Invoiced Revenue">
+                <field name="partner_id" type="row"/>
+                <field name="invoice_date" interval="month" type="col"/>
+                <field name="amount_untaxed" type="measure"/>
+                <field name="amount_total" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_dash_revenue_graph" model="ir.ui.view">
+        <field name="name">dash.revenue.graph</field>
+        <field name="model">account.move</field>
+        <field name="arch" type="xml">
+            <graph string="Invoiced Revenue" type="bar">
+                <field name="invoice_date" interval="month"/>
+                <field name="amount_untaxed" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_dash_revenue" model="ir.actions.act_window">
+        <field name="name">Invoiced Revenue</field>
+        <field name="res_model">account.move</field>
+        <field name="view_mode">pivot,graph,list</field>
+        <field name="domain">[('move_type','=','out_invoice')]</field>
+        <field name="context">{'create': False}</field>
+    </record>
+
+</odoo>

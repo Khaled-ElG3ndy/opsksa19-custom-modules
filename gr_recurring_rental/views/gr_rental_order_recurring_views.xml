@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Back-reference on the order, so an operator opening a prepared draft
+         can see where it came from and jump to the arrangement. -->
+    <record id="view_gr_rental_order_form_recurring" model="ir.ui.view">
+        <field name="name">gr.rental.order.form.recurring</field>
+        <field name="model">gr.rental.order</field>
+        <field name="inherit_id" ref="gr_rental_order.view_gr_rental_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='contract_id']" position="after">
+                <field name="recurring_rental_id" readonly="1"
+                       invisible="not recurring_rental_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_gr_rental_order_list_recurring" model="ir.ui.view">
+        <field name="name">gr.rental.order.list.recurring</field>
+        <field name="model">gr.rental.order</field>
+        <field name="inherit_id" ref="gr_rental_order.view_gr_rental_order_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='contract_id']" position="after">
+                <field name="recurring_rental_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_gr_rental_order_search_recurring" model="ir.ui.view">
+        <field name="name">gr.rental.order.search.recurring</field>
+        <field name="model">gr.rental.order</field>
+        <field name="inherit_id" ref="gr_rental_order.view_gr_rental_order_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='f_inspection']" position="after">
+                <separator/>
+                <filter name="f_from_recurring" string="From a Recurring Rental"
+                        domain="[('recurring_rental_id','!=',False)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

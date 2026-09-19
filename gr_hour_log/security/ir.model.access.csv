@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_hour_log_user,gr.hour.log.user,model_gr_hour_log,gr_security_base.group_generator_user,1,0,0,0
+access_gr_hour_log_ops_officer,gr.hour.log.ops.officer,model_gr_hour_log,gr_security_base.group_generator_operations_officer,1,1,1,0
+access_gr_hour_log_sales,gr.hour.log.sales,model_gr_hour_log,gr_security_base.group_generator_sales_officer,1,1,1,0
+access_gr_hour_log_tech,gr.hour.log.tech,model_gr_hour_log,gr_security_base.group_generator_maint_technician,1,0,0,0
+access_gr_hour_log_finance,gr.hour.log.finance,model_gr_hour_log,gr_security_base.group_generator_finance_officer,1,0,0,0
+access_gr_hour_log_gm,gr.hour.log.gm,model_gr_hour_log,gr_security_base.group_generator_general_manager,1,1,1,0
+access_gr_hour_log_admin,gr.hour.log.admin,model_gr_hour_log,gr_security_base.group_generator_administrator,1,1,1,1
+access_gr_hour_log_corr_ops,gr.hour.log.corr.ops,model_gr_hour_log_correction_wizard,gr_security_base.group_generator_operations_officer,1,1,1,1
+access_gr_hour_log_corr_gm,gr.hour.log.corr.gm,model_gr_hour_log_correction_wizard,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_hour_log_corr_admin,gr.hour.log.corr.admin,model_gr_hour_log_correction_wizard,gr_security_base.group_generator_administrator,1,1,1,1

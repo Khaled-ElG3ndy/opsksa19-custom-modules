@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="wchk_cabin_ext" model="gr.field.worksheet.check.item"><field name="name">Cabin exterior</field><field name="sequence">10</field></record>
+        <record id="wchk_cabin_int" model="gr.field.worksheet.check.item"><field name="name">Cabin interior</field><field name="sequence">20</field></record>
+        <record id="wchk_panel_board" model="gr.field.worksheet.check.item"><field name="name">Panel board and buttons condition</field><field name="sequence">30</field></record>
+        <record id="wchk_engine_oil_level" model="gr.field.worksheet.check.item"><field name="name">Engine oil level and condition</field><field name="sequence">40</field></record>
+        <record id="wchk_engine_oil_leak" model="gr.field.worksheet.check.item"><field name="name">Engine oil leaking</field><field name="sequence">50</field></record>
+        <record id="wchk_coolant_level" model="gr.field.worksheet.check.item"><field name="name">Water coolant level and condition</field><field name="sequence">60</field></record>
+        <record id="wchk_coolant_leak" model="gr.field.worksheet.check.item"><field name="name">Water coolant leaking</field><field name="sequence">70</field></record>
+        <record id="wchk_coolant_rubber" model="gr.field.worksheet.check.item"><field name="name">Water coolant rubber hose condition</field><field name="sequence">80</field></record>
+        <record id="wchk_coolant_steel" model="gr.field.worksheet.check.item"><field name="name">Water coolant steel pipe condition</field><field name="sequence">90</field></record>
+        <record id="wchk_fuel_leak" model="gr.field.worksheet.check.item"><field name="name">Fuel leaking</field><field name="sequence">100</field></record>
+        <record id="wchk_fuel_cap" model="gr.field.worksheet.check.item"><field name="name">Fuel tank cap availability</field><field name="sequence">110</field></record>
+        <record id="wchk_fan_belt" model="gr.field.worksheet.check.item"><field name="name">Fan belt conditions</field><field name="sequence">120</field></record>
+        <record id="wchk_air_filter" model="gr.field.worksheet.check.item"><field name="name">Air filter conditions</field><field name="sequence">130</field></record>
+        <record id="wchk_air_filter_housing" model="gr.field.worksheet.check.item"><field name="name">Air filter housing and lock conditions</field><field name="sequence">140</field></record>
+        <record id="wchk_fan_hub" model="gr.field.worksheet.check.item"><field name="name">Fan hub bearing and blades conditions</field><field name="sequence">150</field></record>
+        <record id="wchk_battery" model="gr.field.worksheet.check.item"><field name="name">Battery conditions</field><field name="sequence">160</field></record>
+        <record id="wchk_battery_cables" model="gr.field.worksheet.check.item"><field name="name">Battery cables conditions</field><field name="sequence">170</field></record>
+        <record id="wchk_battery_terminal" model="gr.field.worksheet.check.item"><field name="name">Battery terminal conditions</field><field name="sequence">180</field></record>
+        <record id="wchk_dashboard_error" model="gr.field.worksheet.check.item"><field name="name">Dash board error</field><field name="sequence">190</field></record>
+        <record id="wchk_breaker_lags" model="gr.field.worksheet.check.item"><field name="name">Breaker lags and bolts conditions</field><field name="sequence">200</field></record>
+        <record id="wchk_breaker_switch" model="gr.field.worksheet.check.item"><field name="name">Breaker switch conditions</field><field name="sequence">210</field></record>
+        <record id="wchk_emissions" model="gr.field.worksheet.check.item"><field name="name">Emissions / smoke</field><field name="sequence">220</field></record>
+        <record id="wchk_cranking" model="gr.field.worksheet.check.item"><field name="name">Cranking time</field><field name="sequence">230</field></record>
+        <record id="wchk_engine_sounds" model="gr.field.worksheet.check.item"><field name="name">Engine sounds</field><field name="sequence">240</field></record>
+        <record id="wchk_genset_elev" model="gr.field.worksheet.check.item"><field name="name">Genset elevation</field><field name="sequence">250</field></record>
+        <record id="wchk_genset_found" model="gr.field.worksheet.check.item"><field name="name">Genset foundation</field><field name="sequence">260</field></record>
+        <record id="wchk_area_located" model="gr.field.worksheet.check.item"><field name="name">Area located (dry or wet)</field><field name="sequence">270</field></record>
+        <record id="wchk_water_pump" model="gr.field.worksheet.check.item"><field name="name">Water pump leaking</field><field name="sequence">280</field></record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+# External Python dependencies for the custom modules in this repository.
+# odoo.sh installs these automatically from the repo root.
+
+# gr_customer_approval — stamps signature/approval footers onto PDF reports
+Pillow
+pypdf
+reportlab
+
+# strx_cabin_base — QR codes on cabin asset cards
+qrcode

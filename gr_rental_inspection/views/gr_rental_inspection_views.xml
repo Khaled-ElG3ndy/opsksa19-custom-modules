@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_rental_inspection_form" model="ir.ui.view">
+        <field name="name">gr.rental.inspection.form</field>
+        <field name="model">gr.rental.inspection</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_pass" type="object" string="Pass"
+                            class="btn-primary" invisible="state != 'draft'"
+                            groups="gr_security_base.group_generator_operations_officer"/>
+                    <button name="action_fail" type="object" string="Fail"
+                            invisible="state not in ('draft','passed')"
+                            groups="gr_security_base.group_generator_operations_officer"/>
+                    <button name="action_reset" type="object" string="Reset to Draft"
+                            invisible="state == 'draft'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,passed"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Passed" bg_color="text-bg-success"
+                            invisible="state != 'passed'"/>
+                    <widget name="web_ribbon" title="Failed" bg_color="text-bg-danger"
+                            invisible="state != 'failed'"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Order &amp; Unit">
+                            <field name="rental_order_id"/>
+                            <field name="asset_id" readonly="1"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="mode"/>
+                        </group>
+                        <group string="Reading">
+                            <field name="inspection_date"/>
+                            <field name="current_hours"/>
+                            <field name="inspected_by_id"/>
+                            <field name="customer_ack_name"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <separator string="Machine Condition Checklist"/>
+                    <field name="checklist_ids">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="name"/>
+                            <field name="result"/>
+                            <field name="note"/>
+                        </list>
+                    </field>
+                    <field name="remarks" placeholder="Remarks / conditions..."/>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gr_rental_inspection_list" model="ir.ui.view">
+        <field name="name">gr.rental.inspection.list</field>
+        <field name="model">gr.rental.inspection</field>
+        <field name="arch" type="xml">
+            <list decoration-success="state == 'passed'" decoration-danger="state == 'failed'">
+                <field name="name"/>
+                <field name="rental_order_id"/>
+                <field name="asset_id"/>
+                <field name="mode"/>
+                <field name="current_hours"/>
+                <field name="inspection_date"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'passed'"
+                       decoration-danger="state == 'failed'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_rental_inspection_search" model="ir.ui.view">
+        <field name="name">gr.rental.inspection.search</field>
+        <field name="model">gr.rental.inspection</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="rental_order_id"/>
+                <field name="asset_id"/>
+                <filter name="f_delivery" string="Delivery" domain="[('mode','=','delivery')]"/>
+                <filter name="f_return" string="Return" domain="[('mode','=','return')]"/>
+                <filter name="f_pending" string="Pending (draft)" domain="[('state','=','draft')]"/>
+                <group>
+                    <filter name="g_mode" string="Mode" context="{'group_by':'mode'}"/>
+                    <filter name="g_state" string="Status" context="{'group_by':'state'}"/>
+                    <filter name="g_asset" string="Equipment" context="{'group_by':'asset_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_gr_rental_inspection" model="ir.actions.act_window">
+        <field name="name">Rental Inspections</field>
+        <field name="res_model">gr.rental.inspection</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_gr_rental_inspection_search"/>
+    </record>
+
+    <!-- master checklist maintenance -->
+    <record id="view_gr_rental_checklist_item_list" model="ir.ui.view">
+        <field name="name">gr.rental.checklist.item.list</field>
+        <field name="model">gr.rental.checklist.item</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_gr_rental_checklist_item" model="ir.actions.act_window">
+        <field name="name">Inspection Checklist Items</field>
+        <field name="res_model">gr.rental.checklist.item</field>
+        <field name="view_mode">list</field>
+    </record>
+
+</odoo>

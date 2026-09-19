@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_strx_broker_cabin_user,strx.cabin.broker cabin user,model_strx_cabin_broker,strx_cabin_security.group_cabin_user,1,0,0,0
+access_strx_broker_cabin_manager,strx.cabin.broker cabin manager,model_strx_cabin_broker,strx_cabin_security.group_cabin_manager,1,1,1,0
+access_strx_broker_cabin_admin,strx.cabin.broker cabin administrator,model_strx_cabin_broker,strx_cabin_security.group_cabin_administrator,1,1,1,1
+access_strx_shipping_cabin_user,strx.cabin.shipping.order cabin user,model_strx_cabin_shipping_order,strx_cabin_security.group_cabin_user,1,0,0,0
+access_strx_shipping_cabin_sales,strx.cabin.shipping.order cabin sales officer,model_strx_cabin_shipping_order,strx_cabin_security.group_cabin_sales_officer,1,0,0,0
+access_strx_shipping_cabin_ops,strx.cabin.shipping.order cabin operations officer,model_strx_cabin_shipping_order,strx_cabin_security.group_cabin_operations_officer,1,1,1,0
+access_strx_shipping_cabin_manager,strx.cabin.shipping.order cabin manager,model_strx_cabin_shipping_order,strx_cabin_security.group_cabin_manager,1,1,1,0
+access_strx_shipping_cabin_admin,strx.cabin.shipping.order cabin administrator,model_strx_cabin_shipping_order,strx_cabin_security.group_cabin_administrator,1,1,1,1
+access_strx_broker_payment_cabin_user,strx.cabin.broker.payment cabin user,model_strx_cabin_broker_payment,strx_cabin_security.group_cabin_user,1,0,0,0
+access_strx_broker_payment_cabin_ops,strx.cabin.broker.payment cabin operations officer,model_strx_cabin_broker_payment,strx_cabin_security.group_cabin_operations_officer,1,1,1,0
+access_strx_broker_payment_cabin_manager,strx.cabin.broker.payment cabin manager,model_strx_cabin_broker_payment,strx_cabin_security.group_cabin_manager,1,1,1,0
+access_strx_broker_payment_cabin_admin,strx.cabin.broker.payment cabin administrator,model_strx_cabin_broker_payment,strx_cabin_security.group_cabin_administrator,1,1,1,1
+access_strx_cabin_history_event_cabin_user,strx.cabin.history.event cabin user,model_strx_cabin_history_event,strx_cabin_security.group_cabin_user,1,1,1,1

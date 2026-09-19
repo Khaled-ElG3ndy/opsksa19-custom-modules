@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+      Serial picker for allocation / substitution.  Damaged and retired units
+      never reach this list.  Visible states are styled on the serial/status
+      cells only; the row background deliberately remains Odoo's normal white.
+    -->
+    <record id="view_lot_picker_strx" model="ir.ui.view">
+        <field name="name">stock.lot.list.strx.picker</field>
+        <field name="model">stock.lot</field>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <list string="Select a Serial" create="false">
+                <field name="name" string="Serial"
+                       decoration-success="strx_readiness_state == 'available'"
+                       decoration-danger="strx_readiness_state == 'on_rent'"
+                       decoration-warning="strx_readiness_state == 'in_maintenance'"/>
+                <field name="product_id"/>
+                <field name="strx_readiness_state" optional="hide"/>
+                <field name="strx_state_label" widget="badge"
+                       decoration-success="strx_readiness_state == 'available'"
+                       decoration-danger="strx_readiness_state == 'on_rent'"
+                       decoration-warning="strx_readiness_state == 'in_maintenance'"/>
+                <field name="strx_condition" optional="hide"/>
+                <field name="strx_selectable" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+</odoo>

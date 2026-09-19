@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_strx_cabin_id_card_wizard_form" model="ir.ui.view">
+        <field name="name">strx.cabin.id.card.wizard.form</field>
+        <field name="model">strx.cabin.id.card.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Cabin Card Preview" class="o_strx_cabin_card_preview_form">
+                <sheet>
+                    <field name="lot_id" invisible="1"/>
+                    <field name="preview_html" widget="html" nolabel="1" readonly="1"
+                           class="o_strx_cabin_card_preview_field"/>
+                </sheet>
+                <footer>
+                    <button name="action_download" type="object"
+                            string="Download Card" class="btn-primary"/>
+                    <button string="Close" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

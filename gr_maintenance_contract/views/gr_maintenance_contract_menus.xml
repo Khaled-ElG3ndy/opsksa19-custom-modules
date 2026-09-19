@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_gr_maintenance_contract"
+              name="Maintenance Contracts"
+              parent="gr_maintenance.menu_gr_maintenance_root"
+              action="action_gr_maintenance_contract"
+              groups="gr_security_base.group_generator_maint_manager"
+              sequence="30"/>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_gr_field_worksheet"
+              name="Field Worksheets"
+              parent="gr_maintenance.menu_gr_maintenance_root"
+              action="action_gr_field_worksheet"
+              groups="gr_security_base.group_generator_maint_technician"
+              sequence="35"/>
+    <menuitem id="menu_gr_fw_check_item"
+              name="Worksheet Checklist"
+              parent="gr_maintenance.menu_gr_maintenance_root"
+              action="action_gr_fw_check_item"
+              groups="gr_security_base.group_generator_maint_manager"
+              sequence="36"/>
+</odoo>

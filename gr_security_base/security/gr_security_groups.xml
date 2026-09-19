@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================= -->
+    <!-- Application category for all generator-rental security groups -->
+    <!-- ============================================================= -->
+    <record id="module_category_generator_rental" model="ir.module.category">
+        <field name="name">Generator Rental ERP</field>
+        <field name="description">Access management for the GenRental vertical.</field>
+        <field name="sequence">25</field>
+    </record>
+
+    <!-- Odoo 19 groups a category's roles under a privilege: the privilege is
+         what renders as a single selection field on the user form, ordered by
+         group sequence and implication depth. -->
+    <record id="res_groups_privilege_generator_rental" model="res.groups.privilege">
+        <field name="name">Generator Rental</field>
+        <field name="description">Role granted on the Generator Rental ERP.</field>
+        <field name="sequence">25</field>
+        <field name="category_id" ref="module_category_generator_rental"/>
+    </record>
+
+    <!-- ============================================================= -->
+    <!-- Functional groups                                             -->
+    <!-- Inheritance is layered so higher roles inherit lower access.  -->
+    <!-- Manager-type roles are kept as siblings of their officer role -->
+    <!-- and all roll up into Administrator.                           -->
+    <!-- ============================================================= -->
+
+    <!-- 1. Generator User: baseline read access to assigned documents.
+         Implies base.group_user so every generator user is a full internal
+         user (needed for chatter, company access, and standard Odoo UI). -->
+    <record id="group_generator_user" model="res.groups">
+        <field name="name">Generator User</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_generator_rental"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Baseline access: view documents assigned to the user. Full internal user.</field>
+    </record>
+
+    <!-- 2. Sales Officer: quotations/contracts/rental orders -->
+    <record id="group_generator_sales_officer" model="res.groups">
+        <field name="name">Generator Sales Officer</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_generator_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_generator_user'))]"/>
+        <field name="comment">Create quotations, contracts, and rental orders. Cannot approve financial exceptions.</field>
+    </record>
+
+    <!-- 3. Operations Officer: reserve/dispatch/install/return -->
+    <record id="group_generator_operations_officer" model="res.groups">
+        <field name="name">Generator Operations Officer</field>
+        <field name="sequence">30</field>
+        <field name="privilege_id" ref="res_groups_privilege_generator_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_generator_user'))]"/>
+        <field name="comment">Reserve, dispatch, install, off-hire, and return generators.</field>
+    </record>
+
+    <!-- 4. Maintenance Technician -->
+    <record id="group_generator_maint_technician" model="res.groups">
+        <field name="name">Generator Maintenance Technician</field>
+        <field name="sequence">40</field>
+        <field name="privilege_id" ref="res_groups_privilege_generator_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_generator_user'))]"/>
+        <field name="comment">View assigned assets/jobs and submit maintenance reports.</field>
+    </record>
+
+    <!-- 5. Maintenance Manager: inherits technician -->
+    <record id="group_generator_maint_manager" model="res.groups">
+        <field name="name">Generator Maintenance Manager</field>
+        <field name="sequence">50</field>
+        <field name="privilege_id" ref="res_groups_privilege_generator_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_generator_maint_technician'))]"/>
+        <field name="comment">Approve maintenance, block/unblock assets, close maintenance jobs, correct meters.</field>
+    </record>
+
+    <!-- 6. Finance Officer -->
+    <record id="group_generator_finance_officer" model="res.groups">
+        <field name="name">Generator Finance Officer</field>
+        <field name="sequence">60</field>
+        <field name="privilege_id" ref="res_groups_privilege_generator_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_generator_user'))]"/>
+        <field name="comment">Generate billing batches and draft invoices from approved logs.</field>
+    </record>
+
+    <!-- 7. Finance Manager: inherits finance officer -->
+    <record id="group_generator_finance_manager" model="res.groups">
+        <field name="name">Generator Finance Manager</field>
+        <field name="sequence">70</field>
+        <field name="privilege_id" ref="res_groups_privilege_generator_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_generator_finance_officer'))]"/>
+        <field name="comment">Approve billing exceptions and finalize billing.</field>
+    </record>
+
+    <!-- 8. General Manager: dashboards + contract exception approval.
+         Inherits the officer-level roles so a GM can see across departments. -->
+    <record id="group_generator_general_manager" model="res.groups">
+        <field name="name">Generator General Manager</field>
+        <field name="sequence">80</field>
+        <field name="privilege_id" ref="res_groups_privilege_generator_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_generator_sales_officer')), (4, ref('group_generator_operations_officer')), (4, ref('group_generator_finance_officer'))]"/>
+        <field name="comment">View all dashboards and approve contract exceptions.</field>
+    </record>
+
+    <!-- 9. Administrator: full functional access. Rolls up every manager role. -->
+    <record id="group_generator_administrator" model="res.groups">
+        <field name="name">Generator Administrator</field>
+        <field name="sequence">90</field>
+        <field name="privilege_id" ref="res_groups_privilege_generator_rental"/>
+        <field name="implied_ids" eval="[(4, ref('group_generator_general_manager')), (4, ref('group_generator_maint_manager')), (4, ref('group_generator_finance_manager'))]"/>
+        <field name="comment">Full functional access to the Generator Rental ERP.</field>
+    </record>
+
+</odoo>

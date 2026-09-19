@@ -1,0 +1,951 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_document_center
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "\"%s\" will be permanently deleted."
+msgstr "سيتم حذف \"%s\" نهائياً."
+
+#. module: partner_document_center
+#: model:ir.model.constraint,message:partner_document_center.constraint_partner_document_category_code_uniq
+msgid "A document category code must be unique."
+msgstr "يجب أن يكون رمز فئة المستندات فريداً."
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_center.py:0
+msgid "A document name cannot be empty."
+msgstr "لا يمكن أن يكون اسم المستند فارغاً."
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_category__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "All"
+msgstr "الكل"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "All categories"
+msgstr "كل الفئات"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "All types"
+msgstr "كل الأنواع"
+
+#. module: partner_document_center
+#: model:ir.model.constraint,message:partner_document_center.constraint_partner_document_metadata_attachment_uniq
+msgid "An attachment can only carry one Document Center metadata record."
+msgstr "لا يمكن أن يحمل المرفق أكثر من سجل بيانات واحد في مركز الملفات."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Any date"
+msgstr "أي تاريخ"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Attach to an existing document"
+msgstr "ربط بمستند موجود"
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_metadata__attachment_id
+msgid "Attachment"
+msgstr "مرفق"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Attachments"
+msgstr "المرفقات"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Business Documents"
+msgstr "المستندات التجارية"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Business document"
+msgstr "مستند تجاري"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "CRM"
+msgstr "CRM"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: partner_document_center
+#: model_terms:ir.actions.act_window,help:partner_document_center.partner_document_category_action
+msgid ""
+"Categories let you label the files that appear in a contact's Document "
+"Center."
+msgstr ""
+"تتيح لك الفئات تصنيف الملفات التي تظهر في مركز الملفات الخاص بجهة الاتصال."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_metadata__category_id
+msgid "Category"
+msgstr "الفئة"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Clear filters"
+msgstr "مسح الفلاتر"
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_category__code
+msgid "Code"
+msgstr "الرمز"
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_category__color
+msgid "Color Index"
+msgstr "مؤشر اللون"
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_metadata__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Company and all contacts"
+msgstr "الشركة وكل جهات الاتصال"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+#: model:ir.model,name:partner_document_center.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: partner_document_center
+#: model:partner.document.category,name:partner_document_center.category_contract
+msgid "Contract"
+msgstr "عقد"
+
+#. module: partner_document_center
+#: model:partner.document.category,name:partner_document_center.category_correspondence
+msgid "Correspondence"
+msgstr "مراسلات"
+
+#. module: partner_document_center
+#: model_terms:ir.actions.act_window,help:partner_document_center.partner_document_category_action
+msgid "Create a document category"
+msgstr "إنشاء فئة مستندات"
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_category__create_uid
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_metadata__create_uid
+msgid "Created by"
+msgstr "أنشأه"
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_category__create_date
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_metadata__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Custom range"
+msgstr "نطاق مخصص"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Customer Credit Note"
+msgstr "إشعار دائن للعميل"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Customer Invoice"
+msgstr "فاتورة عميل"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Delete"
+msgstr "حذف"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Delete document"
+msgstr "حذف المستند"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Delivery Order"
+msgstr "أمر تسليم"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Destination"
+msgstr "الوجهة"
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_category__display_name
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_center__display_name
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_metadata__display_name
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_source__display_name
+#: model:ir.model.fields,field_description:partner_document_center.field_res_partner__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Display mode"
+msgstr "طريقة العرض"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Document"
+msgstr "مستند"
+
+#. module: partner_document_center
+#: model:ir.actions.act_window,name:partner_document_center.partner_document_category_action
+#: model:ir.ui.menu,name:partner_document_center.menu_partner_document_category
+#: model_terms:ir.ui.view,arch_db:partner_document_center.partner_document_category_view_list
+msgid "Document Categories"
+msgstr "فئات المستندات"
+
+#. module: partner_document_center
+#: model_terms:ir.ui.view,arch_db:partner_document_center.partner_document_category_view_form
+msgid "Document Category"
+msgstr "فئة المستند"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/res_partner.py:0
+#: model:ir.actions.client,name:partner_document_center.partner_document_center_action
+#: model_terms:ir.ui.view,arch_db:partner_document_center.view_partner_form_document_center
+msgid "Document Center"
+msgstr "مركز الملفات"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Document kind"
+msgstr "نوع المستند"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Document type"
+msgstr "نوع المستند"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Download"
+msgstr "تحميل"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Earlier this week"
+msgstr "في وقت سابق من هذا الأسبوع"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Edit"
+msgstr "تعديل"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Excel"
+msgstr "Excel"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "File"
+msgstr "الملف"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Filename A-Z"
+msgstr "اسم الملف أ-ي"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Filename Z-A"
+msgstr "اسم الملف ي-أ"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center_widget.js:0
+msgid "Files"
+msgstr "الملفات"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/controllers/main.py:0
+msgid "Files cannot be attached to this kind of record."
+msgstr "لا يمكن إرفاق ملفات بهذا النوع من السجلات."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "From"
+msgstr "من"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "General file for this contact"
+msgstr "ملف عام للعميل"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Grid"
+msgstr "شبكة"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Helpdesk Ticket"
+msgstr "تذكرة دعم"
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_category__id
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_center__id
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_metadata__id
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_source__id
+#: model:ir.model.fields,field_description:partner_document_center.field_res_partner__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: partner_document_center
+#: model:partner.document.category,name:partner_document_center.category_identity
+msgid "Identity"
+msgstr "هوية"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Images"
+msgstr "صور"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_metadata__is_important
+msgid "Important"
+msgstr "مهم"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Include the files of every contact of this company"
+msgstr "تضمين ملفات كل جهات الاتصال التابعة لهذه الشركة"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Internal Transfer"
+msgstr "تحويل داخلي"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_center.py:0
+msgid "Invalid document reference."
+msgstr "مرجع مستند غير صالح."
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/controllers/main.py:0
+msgid "Invalid request."
+msgstr "طلب غير صالح."
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Inventory"
+msgstr "المخزون"
+
+#. module: partner_document_center
+#: model:partner.document.category,name:partner_document_center.category_invoice
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Invoicing"
+msgstr "الفواتير"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Journal Entry"
+msgstr "قيد محاسبي"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Largest first"
+msgstr "الأكبر حجماً أولاً"
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_category__write_uid
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_metadata__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_category__write_date
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_metadata__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Lead"
+msgstr "عميل محتمل"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Lead / Opportunity"
+msgstr "عميل محتمل / فرصة"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Live"
+msgstr "مباشر"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Maintenance"
+msgstr "الصيانة"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_category__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Newest first"
+msgstr "الأحدث أولاً"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "No category"
+msgstr "بدون فئة"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "No files are linked to this contact yet"
+msgstr "لا توجد ملفات مرتبطة بهذا العميل حتى الآن"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "No files match these filters"
+msgstr "لا توجد ملفات مطابقة لهذه الفلاتر"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "No grouping"
+msgstr "بدون تجميع"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_center.py:0
+msgid "No printable report is configured for this document."
+msgstr "لا يوجد تقرير قابل للطباعة معدّ لهذا المستند."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Oldest first"
+msgstr "الأقدم أولاً"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_center.py:0
+msgid ""
+"Only files attached directly to the contact can be deleted here. Open the "
+"source document to manage its own attachments."
+msgstr ""
+"يمكن حذف الملفات المرفقة مباشرة بجهة الاتصال فقط من هنا. افتح المستند الأصلي"
+" لإدارة مرفقاته."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Open source document"
+msgstr "فتح المستند الأصلي"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Opportunity"
+msgstr "فرصة"
+
+#. module: partner_document_center
+#. odoo-javascript
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+#: model:partner.document.category,name:partner_document_center.category_other
+msgid "Other"
+msgstr "أخرى"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "PDF"
+msgstr "PDF"
+
+#. module: partner_document_center
+#: model:ir.model,name:partner_document_center.model_partner_document_category
+msgid "Partner Document Category"
+msgstr "فئة مستندات جهة الاتصال"
+
+#. module: partner_document_center
+#: model:ir.model,name:partner_document_center.model_partner_document_center
+msgid "Partner Document Center"
+msgstr "مركز ملفات جهة الاتصال"
+
+#. module: partner_document_center
+#: model:ir.model,name:partner_document_center.model_partner_document_metadata
+msgid "Partner Document Metadata"
+msgstr "بيانات مستندات جهة الاتصال"
+
+#. module: partner_document_center
+#: model:ir.model,name:partner_document_center.model_partner_document_source
+msgid "Partner Document Source Registry"
+msgstr "سجل مصادر مستندات جهة الاتصال"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Payment"
+msgstr "دفعة"
+
+#. module: partner_document_center
+#: model:partner.document.category,name:partner_document_center.category_photo
+msgid "Photo"
+msgstr "صورة"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Preview"
+msgstr "معاينة"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Print"
+msgstr "طباعة"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Project"
+msgstr "مشروع"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Projects"
+msgstr "المشاريع"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Purchase"
+msgstr "المشتريات"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Purchase Receipt"
+msgstr "إيصال شراء"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+#: model:partner.document.category,name:partner_document_center.category_quotation
+msgid "Quotation"
+msgstr "عرض سعر"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+#: model:partner.document.category,name:partner_document_center.category_receipt
+msgid "Receipt"
+msgstr "إيصال"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Rental"
+msgstr "التأجير"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Request for Quotation"
+msgstr "طلب عرض سعر"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Sales"
+msgstr "المبيعات"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Sales Order"
+msgstr "أمر بيع"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Sales Receipt"
+msgstr "إيصال بيع"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Save"
+msgstr "حفظ"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Save this contact to start attaching files."
+msgstr "احفظ جهة الاتصال لتتمكن من إرفاق الملفات."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Search files"
+msgstr "البحث في الملفات"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Search..."
+msgstr "بحث..."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Select a type..."
+msgstr "اختر نوعاً..."
+
+#. module: partner_document_center
+#: model:ir.model.fields,field_description:partner_document_center.field_partner_document_category__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Smallest first"
+msgstr "الأصغر حجماً أولاً"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Source"
+msgstr "المصدر"
+
+#. module: partner_document_center
+#: model:ir.model.fields,help:partner_document_center.field_partner_document_category__code
+msgid ""
+"Stable technical key, so that other modules can reference a category without"
+" depending on its translated name."
+msgstr ""
+"مفتاح تقني ثابت، يتيح للوحدات الأخرى الإشارة إلى الفئة دون الاعتماد على "
+"اسمها المترجم."
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Stock Transfer"
+msgstr "حركة مخزون"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Task"
+msgstr "مهمة"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/edit_document_dialog.js:0
+msgid "The document could not be saved."
+msgstr "تعذّر حفظ المستند."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "The documents of this contact could not be loaded."
+msgstr "تعذّر تحميل مستندات جهة الاتصال هذه."
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_center.py:0
+msgid "The record this document belongs to no longer exists."
+msgstr "لم يعد السجل الذي ينتمي إليه هذا المستند موجوداً."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid ""
+"This contact has more documents than can be listed at once. Narrow the "
+"search to see the rest."
+msgstr ""
+"لدى جهة الاتصال هذه مستندات أكثر مما يمكن عرضه دفعة واحدة. ضيّق نطاق البحث "
+"لعرض الباقي."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "This contact only"
+msgstr "الشخص الحالي"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "This document cannot be opened."
+msgstr "تعذّر فتح هذا المستند."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "This document cannot be printed."
+msgstr "تعذّرت طباعة هذا المستند."
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_center.py:0
+msgid "This document is not linked to any record."
+msgstr "هذا المستند غير مرتبط بأي سجل."
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_center.py:0
+msgid "This document no longer exists."
+msgstr "لم يعد هذا المستند موجوداً."
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_center.py:0
+msgid "This document's record cannot be opened from here."
+msgstr "لا يمكن فتح سجل هذا المستند من هنا."
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_center.py:0
+msgid "This kind of record is not a Document Center document."
+msgstr "هذا النوع من السجلات ليس مستنداً في مركز الملفات."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "This month"
+msgstr "هذا الشهر"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/controllers/main.py:0
+msgid "This record does not belong to this contact."
+msgstr "هذا السجل لا يخص جهة الاتصال هذه."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "This week"
+msgstr "هذا الأسبوع"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "This year"
+msgstr "هذه السنة"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Timeline"
+msgstr "خط زمني"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "To"
+msgstr "إلى"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Today"
+msgstr "اليوم"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Uncategorised"
+msgstr "بدون فئة"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Undated"
+msgstr "بدون تاريخ"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/controllers/main.py:0
+msgid "Unknown contact."
+msgstr "جهة اتصال غير معروفة."
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_center.py:0
+msgid "Unknown document category."
+msgstr "فئة مستندات غير معروفة."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Updated"
+msgstr "آخر تحديث"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Upload"
+msgstr "رفع"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Upload File"
+msgstr "رفع ملف"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "Upload the first file"
+msgstr "رفع أول ملف"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Vendor Bill"
+msgstr "فاتورة مورد"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_source.py:0
+msgid "Vendor Credit Note"
+msgstr "إشعار دائن من المورد"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Word"
+msgstr "Word"
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.js:0
+msgid "Yesterday"
+msgstr "أمس"
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_metadata.py:0
+msgid "You are not allowed to access the document this metadata refers to."
+msgstr "غير مسموح لك بالوصول إلى المستند الذي تشير إليه هذه البيانات."
+
+#. module: partner_document_center
+#. odoo-python
+#: code:addons/partner_document_center/models/partner_document_center.py:0
+msgid "You are not allowed to delete this document."
+msgstr "غير مسموح لك بحذف هذا المستند."
+
+#. module: partner_document_center
+#. odoo-javascript
+#: code:addons/partner_document_center/static/src/document_center/document_center.xml:0
+msgid "files"
+msgstr "ملفات"

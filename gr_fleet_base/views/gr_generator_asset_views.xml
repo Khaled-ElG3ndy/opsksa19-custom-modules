@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================ -->
+    <!-- Form view                                                    -->
+    <!-- ============================================================ -->
+    <record id="view_gr_generator_asset_form" model="ir.ui.view">
+        <field name="name">gr.generator.asset.form</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_set_available" type="object"
+                            string="Set Available" class="btn-primary"
+                            invisible="status in ('available', 'retired')"/>
+                    <button name="action_set_breakdown" type="object"
+                            string="Mark Breakdown"
+                            invisible="status in ('breakdown', 'retired')"/>
+                    <button name="action_set_unavailable" type="object"
+                            string="Set Unavailable"
+                            invisible="status in ('unavailable', 'retired')"/>
+                    <button name="action_open_meter_correction" type="object"
+                            string="Correct Meter"
+                            groups="gr_security_base.group_generator_maint_manager"/>
+                    <button name="action_retire" type="object"
+                            string="Retire" confirm="Retire this asset? It will be archived."
+                            invisible="status == 'retired'"
+                            groups="gr_security_base.group_generator_administrator"/>
+                    <field name="status" widget="statusbar"
+                           statusbar_visible="available,reserved,on_rent,maintenance_due,under_maintenance"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <!-- Smart-button placeholders; later milestones bind
+                             counts/actions for contracts, orders, logs, jobs. -->
+                        <button class="oe_stat_button" icon="fa-tachometer" disabled="1">
+                            <field name="current_hour_meter" widget="statinfo"
+                                   string="Hour Meter"/>
+                        </button>
+                        <button class="oe_stat_button" icon="fa-wrench" disabled="1">
+                            <field name="next_pm_hour" widget="statinfo" string="Next PM (h)"/>
+                        </button>
+                    </div>
+
+                    <widget name="web_ribbon" title="Maintenance Overdue"
+                            bg_color="text-bg-danger"
+                            invisible="not maintenance_overdue"/>
+                    <widget name="web_ribbon" title="Retired" bg_color="text-bg-secondary"
+                            invisible="status != 'retired'"/>
+
+                    <field name="image_1920" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. CAT 500 kVA #3"/></h1>
+                        <label for="code"/>
+                        <h2><field name="code" readonly="1"/></h2>
+                    </div>
+
+                    <group>
+                        <group string="Specification">
+                            <field name="brand"/>
+                            <field name="model_name"/>
+                            <field name="serial_number"/>
+                            <field name="manufacturing_year"/>
+                            <field name="kva_rating"/>
+                            <field name="fuel_type"/>
+                            <field name="engine_model"/>
+                            <field name="alternator_model"/>
+                            <field name="fuel_tank_capacity"/>
+                            <field name="product_id"/>
+                        </group>
+                        <group string="Hour Meter &amp; PM">
+                            <field name="current_hour_meter"/>
+                            <field name="last_verified_hour_meter"/>
+                            <field name="last_verified_date"/>
+                            <field name="last_verified_by"/>
+                            <field name="last_pm_hour"/>
+                            <field name="pm_interval_hours"/>
+                            <field name="pm_warning_threshold_hours"/>
+                            <field name="next_pm_hour"/>
+                            <field name="maintenance_overdue"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Deployment">
+                            <field name="depot_location_id"/>
+                            <field name="current_customer_id"/>
+                            <field name="current_site_ref"/>
+                            <field name="current_contract_ref"/>
+                            <field name="current_rental_order_ref"/>
+                        </group>
+                        <group string="Financials">
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="revenue_total"/>
+                            <field name="cost_total"/>
+                            <field name="profitability"/>
+                            <field name="utilization_hours_total"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes" name="notes">
+                            <field name="notes" placeholder="Internal notes..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- List view                                                    -->
+    <!-- ============================================================ -->
+    <record id="view_gr_generator_asset_list" model="ir.ui.view">
+        <field name="name">gr.generator.asset.list</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="maintenance_overdue"
+                  decoration-muted="status == 'retired'">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="brand"/>
+                <field name="kva_rating"/>
+                <field name="fuel_type"/>
+                <field name="current_hour_meter"/>
+                <field name="next_pm_hour"/>
+                <field name="maintenance_overdue"/>
+                <field name="status" widget="badge"
+                       decoration-success="status == 'available'"
+                       decoration-info="status in ('reserved','installed','on_rent')"
+                       decoration-warning="status in ('maintenance_due','under_maintenance','returned_pending_inspection')"
+                       decoration-danger="status == 'breakdown'"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- Kanban view (grouped by status)                              -->
+    <!-- ============================================================ -->
+    <record id="view_gr_generator_asset_kanban" model="ir.ui.view">
+        <field name="name">gr.generator.asset.kanban</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="status" class="o_kanban_small_column">
+                <field name="status"/>
+                <field name="maintenance_overdue"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_record_top">
+                                <div class="o_kanban_record_headings">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </strong>
+                                    <small class="o_kanban_record_subtitle text-muted">
+                                        <field name="code"/>
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_body">
+                                <span><field name="brand"/> &#8226; <field name="kva_rating"/> kVA</span><br/>
+                                <span>Meter: <field name="current_hour_meter"/> h</span>
+                                <span t-if="record.maintenance_overdue.raw_value"
+                                      class="badge text-bg-danger float-end">PM Overdue</span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- Search view                                                  -->
+    <!-- ============================================================ -->
+    <record id="view_gr_generator_asset_search" model="ir.ui.view">
+        <field name="name">gr.generator.asset.search</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="serial_number"/>
+                <field name="brand"/>
+                <field name="kva_rating"/>
+                <separator/>
+                <filter name="f_available" string="Available"
+                        domain="[('status', '=', 'available')]"/>
+                <filter name="f_on_rent" string="On Rent"
+                        domain="[('status', '=', 'on_rent')]"/>
+                <filter name="f_maintenance" string="Maintenance Due / Under"
+                        domain="[('status', 'in', ('maintenance_due','under_maintenance'))]"/>
+                <filter name="f_breakdown" string="Breakdown"
+                        domain="[('status', '=', 'breakdown')]"/>
+                <filter name="f_overdue" string="PM Overdue"
+                        domain="[('maintenance_overdue', '=', True)]"/>
+                <separator/>
+                <filter name="f_inactive" string="Archived"
+                        domain="[('active', '=', False)]"/>
+                <group>
+                    <filter name="g_status" string="Status" context="{'group_by': 'status'}"/>
+                    <filter name="g_brand" string="Brand" context="{'group_by': 'brand'}"/>
+                    <filter name="g_fuel" string="Fuel Type" context="{'group_by': 'fuel_type'}"/>
+                    <filter name="g_company" string="Company" context="{'group_by': 'company_id'}"
+                            groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- Pivot view                                                   -->
+    <!-- ============================================================ -->
+    <record id="view_gr_generator_asset_pivot" model="ir.ui.view">
+        <field name="name">gr.generator.asset.pivot</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="status" type="row"/>
+                <field name="fuel_type" type="col"/>
+                <field name="kva_rating" type="measure"/>
+                <field name="current_hour_meter" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- Action                                                       -->
+    <!-- ============================================================ -->
+    <record id="action_gr_generator_asset" model="ir.actions.act_window">
+        <field name="name">Generator Assets</field>
+        <field name="res_model">gr.generator.asset</field>
+        <field name="view_mode">kanban,list,form,pivot</field>
+        <field name="search_view_id" ref="view_gr_generator_asset_search"/>
+        <field name="context">{'search_default_f_available': 0}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Register your first generator asset
+            </p>
+            <p>
+                Each record represents a physical generator tracked by engine hours,
+                status, and preventive-maintenance schedule.
+            </p>
+        </field>
+    </record>
+
+</odoo>
