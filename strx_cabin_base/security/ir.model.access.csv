@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_strx_readiness_log_cabin_user,strx.cabin.readiness.log cabin user,model_strx_cabin_readiness_log,strx_cabin_security.group_cabin_user,1,0,0,0
+access_strx_readiness_log_cabin_manager,strx.cabin.readiness.log cabin manager,model_strx_cabin_readiness_log,strx_cabin_security.group_cabin_manager,1,1,1,0
+access_strx_readiness_log_cabin_admin,strx.cabin.readiness.log cabin administrator,model_strx_cabin_readiness_log,strx_cabin_security.group_cabin_administrator,1,1,1,1
+access_strx_cabin_id_card_wizard_cabin_user,strx.cabin.id.card.wizard cabin user,model_strx_cabin_id_card_wizard,strx_cabin_security.group_cabin_user,1,1,1,1

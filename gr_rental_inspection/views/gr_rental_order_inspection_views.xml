@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_rental_order_form_inspection" model="ir.ui.view">
+        <field name="name">gr.rental.order.form.inspection</field>
+        <field name="model">gr.rental.order</field>
+        <field name="inherit_id" ref="gr_rental_order.view_gr_rental_order_form"/>
+        <field name="arch" type="xml">
+            <!-- readiness action + view button next to Dispatch -->
+            <xpath expr="//button[@name='action_dispatch']" position="before">
+                <button name="action_create_delivery_inspection" type="object"
+                        string="Delivery Inspection"
+                        invisible="state not in ('confirmed','reserved') or delivery_inspection_passed or not rental_workflow_requires_delivery_inspection"/>
+                <button name="action_view_inspections" type="object"
+                        string="Inspections" invisible="inspection_count == 0"/>
+            </xpath>
+            <!-- flags so buttons can react -->
+            <xpath expr="//field[@name='state']" position="before">
+                <field name="delivery_inspection_passed" invisible="1"/>
+                <field name="return_inspection_passed" invisible="1"/>
+                <field name="inspection_count" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

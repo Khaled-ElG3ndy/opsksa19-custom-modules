@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================= -->
+    <!-- Root application menu for the Generator Rental ERP suite.     -->
+    <!-- Downstream gr_* modules attach their own submenus here as     -->
+    <!-- they are installed, so the user never sees an actionless,     -->
+    <!-- empty menu. Only the root + a Dashboard placeholder ship in   -->
+    <!-- gr_security_base; everything else arrives with its module.    -->
+    <!-- ============================================================= -->
+     <menuitem id="menu_generator_root"
+                 name="Generator Rental"
+                 web_icon="gr_security_base,static/description/app_icon.svg"
+                 groups="gr_security_base.group_generator_user"
+                 sequence="15"/>
+
+    <!-- Dashboard parent shell. gr_dashboard adds child menus + actions.
+         Kept here (without an action) ONLY because it is the natural
+         landing point and gr_dashboard depends on this module for the ID.
+         It is restricted so it is not prominently empty for line users. -->
+    <menuitem id="menu_generator_dashboard"
+              name="Dashboard"
+              parent="menu_generator_root"
+              groups="gr_security_base.group_generator_general_manager"
+              sequence="10"/>
+
+    <!-- Configuration parent shell for admin-only config that later
+         modules (sequences, checklist templates, PM plans) hang under. -->
+    <menuitem id="menu_generator_config"
+              name="Configuration"
+              parent="menu_generator_root"
+              groups="gr_security_base.group_generator_administrator"
+              sequence="120"/>
+
+</odoo>

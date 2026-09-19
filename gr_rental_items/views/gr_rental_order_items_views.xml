@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_rental_order_form_items" model="ir.ui.view">
+        <field name="name">gr.rental.order.form.items</field>
+        <field name="model">gr.rental.order</field>
+        <field name="inherit_id" ref="gr_rental_order.view_gr_rental_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//group[field[@name='asset_id']]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='asset_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- item lines tab, before Logistics -->
+            <xpath expr="//page[@name='logistics']" position="before">
+                <page string="Rented Serials" name="item_lines">
+                    <field name="has_generator" invisible="1"/>
+                    <field name="generator_serial_count" invisible="1"/>
+                    <field name="item_line_ids">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="is_primary_asset_line" column_invisible="1"/>
+                            <field name="equipment_asset_id" string="Rented Serial"
+                                   domain="[('status', '=', 'available')]"/>
+                            <field name="asset_type_display_name" string="Type" readonly="1"/>
+                            <field name="item_type_id" optional="hide"/>
+                            <field name="item_unit_id" optional="hide"/>
+                            <field name="asset_display_name" readonly="1" optional="hide"/>
+                            <field name="specification" readonly="1"/>
+                            <field name="is_free" string="Free"/>
+                            <field name="daily_rate" readonly="is_free"/>
+                            <field name="quantity_days"/>
+                            <field name="line_total" readonly="1"/>
+                            <field name="currency_id" column_invisible="1"/>
+                        </list>
+                    </field>
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="items_total"/>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

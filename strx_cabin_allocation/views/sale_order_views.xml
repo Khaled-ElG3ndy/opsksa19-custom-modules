@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_strx_allocation" model="ir.ui.view">
+        <field name="name">sale.order.form.strx.allocation</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_open_strx_quantity_increase_wizard"
+                        type="object"
+                        string="Quantity Increase"
+                        class="btn-primary"
+                        invisible="state not in ('sale', 'done')"/>
+                <button name="action_open_strx_product_change_wizard"
+                        type="object"
+                        string="Change Cabin Product"
+                        class="btn-secondary"
+                        invisible="state not in ('sale', 'done')"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/list/field[@name='product_uom_qty']"
+                   position="after">
+                <field name="strx_rental_start_date" optional="show"/>
+                <field name="strx_rental_days" optional="show"/>
+                <field name="strx_expected_return_date" optional="show"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='product_uom_qty']"
+                   position="after">
+                <field name="strx_rental_start_date"/>
+                <field name="strx_rental_days"/>
+                <field name="strx_expected_return_date"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_strx_allocations" type="object"
+                        class="oe_stat_button" icon="fa-cube">
+                    <field name="strx_allocation_count" widget="statinfo"
+                           string="Allocations"/>
+                </button>
+                <button name="action_view_strx_addition_orders" type="object"
+                        class="oe_stat_button" icon="fa-plus-circle"
+                        invisible="strx_addition_order_count == 0">
+                    <field name="strx_addition_order_count" widget="statinfo"
+                           string="Quantity Increases"/>
+                </button>
+            </xpath>
+            <!-- Optional Products (page 'optional_products') was removed from
+                 sale_management in Odoo 19; nothing left to patch here. -->
+        </field>
+    </record>
+
+</odoo>

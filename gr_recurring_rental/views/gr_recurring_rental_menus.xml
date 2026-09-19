@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Next to Rental Orders (40), because that is what an arrangement
+         eventually produces and where the operator already works. -->
+    <menuitem id="menu_gr_recurring_rental"
+              name="Recurring Rentals"
+              parent="gr_security_base.menu_generator_root"
+              action="action_gr_recurring_rental"
+              groups="gr_security_base.group_generator_user"
+              sequence="41"/>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_parts_line_list_origin" model="ir.ui.view">
+        <field name="name">gr.parts.consumption.line.list.origin</field>
+        <field name="model">gr.parts.consumption.line</field>
+        <field name="inherit_id" ref="gr_parts_consumption.view_gr_parts_line_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="before">
+                <field name="allowed_product_ids" column_invisible="1"/>
+                <field name="request_id" optional="show"/>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="attributes">
+                <attribute name="domain">[('id', 'in', allowed_product_ids)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='quantity']" position="after">
+                <field name="request_remaining_qty" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_gr_maintenance_job_form_parts_origin" model="ir.ui.view">
+        <field name="name">gr.maintenance.job.form.parts.origin</field>
+        <field name="model">gr.maintenance.job</field>
+        <field name="inherit_id" ref="gr_parts_consumption.view_gr_maintenance_job_form_parts"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parts_line_ids']/list/field[@name='product_id']" position="before">
+                <field name="allowed_product_ids" column_invisible="1"/>
+                <field name="request_id" optional="show"/>
+            </xpath>
+            <xpath expr="//field[@name='parts_line_ids']/list/field[@name='product_id']" position="attributes">
+                <attribute name="domain">[('id', 'in', allowed_product_ids)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='parts_line_ids']/list/field[@name='quantity']" position="after">
+                <field name="request_remaining_qty" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

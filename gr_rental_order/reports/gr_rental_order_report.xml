@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_gr_delivery_note" model="ir.actions.report">
+        <field name="name">Delivery Note</field>
+        <field name="model">gr.rental.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">gr_rental_order.report_gr_delivery_note</field>
+        <field name="report_file">gr_rental_order.report_gr_delivery_note</field>
+        <field name="print_report_name">'Delivery Note - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_gr_rental_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_gr_install_report" model="ir.actions.report">
+        <field name="name">Installation / Commissioning Report</field>
+        <field name="model">gr.rental.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">gr_rental_order.report_gr_install_report</field>
+        <field name="report_file">gr_rental_order.report_gr_install_report</field>
+        <field name="print_report_name">'Installation - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_gr_rental_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_gr_return_inspection" model="ir.actions.report">
+        <field name="name">Return Inspection Report</field>
+        <field name="model">gr.rental.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">gr_rental_order.report_gr_return_inspection</field>
+        <field name="report_file">gr_rental_order.report_gr_return_inspection</field>
+        <field name="print_report_name">'Return Inspection - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_gr_rental_order"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

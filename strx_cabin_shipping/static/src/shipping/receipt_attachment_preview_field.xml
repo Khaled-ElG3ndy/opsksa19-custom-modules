@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="strx_cabin_shipping.ReceiptAttachmentPreviewField">
+        <div t-attf-class="o_strx_receipt_attachments {{props.className ? props.className : ''}}"
+             aria-atomic="true">
+            <div class="o_strx_receipt_attachments_header">
+                <div class="o_strx_receipt_attachments_title">
+                    <i class="fa fa-paperclip" role="img"/>
+                    <span>Uploaded attachments</span>
+                    <span class="badge rounded-pill text-bg-light" t-esc="files.length"/>
+                </div>
+                <div t-if="!props.readonly &amp;&amp; (!props.numberOfFiles or files.length &lt; props.numberOfFiles)">
+                    <FileInput
+                        acceptedFileExtensions="props.acceptedFileExtensions"
+                        multiUpload="true"
+                        onUpload.bind="onFileUploaded"
+                        resModel="props.record.resModel"
+                        resId="props.record.resId or 0"
+                    >
+                        <button type="button" class="btn btn-primary o_strx_receipt_upload">
+                            <i class="fa fa-cloud-upload me-1" role="img"/>
+                            <t t-esc="uploadButtonText"/>
+                        </button>
+                    </FileInput>
+                </div>
+            </div>
+
+            <div t-if="files.length" class="o_strx_receipt_attachments_gallery">
+                <t t-foreach="files" t-as="file" t-key="file.id">
+                    <div class="o_strx_receipt_attachment_card"
+                         role="button"
+                         tabindex="0"
+                         t-att-aria-label="getPreviewLabel(file)"
+                         t-att-title="getPreviewLabel(file)"
+                         t-on-click="() => this.openPreview(file)"
+                         t-on-keydown="(ev) => this.onPreviewKeydown(ev, file)">
+                        <div class="o_strx_receipt_attachment_media">
+                            <img t-if="getFileKind(file) === 'image'"
+                                 t-att-src="getImageUrl(file)"
+                                 t-att-alt="file.name"
+                                 loading="lazy"/>
+                            <div t-else="" t-attf-class="o_strx_receipt_attachment_icon o_kind_#{getFileKind(file)}">
+                                <i t-attf-class="fa #{getFileIcon(file)}" role="img"/>
+                                <span t-esc="getExtension(file).toUpperCase()"/>
+                            </div>
+                            <div class="o_strx_receipt_attachment_overlay">
+                                <i class="fa fa-eye me-1" role="img"/>
+                                <span t-esc="getPreviewActionLabel(file)"/>
+                            </div>
+                            <button t-if="!props.readonly"
+                                    type="button"
+                                    class="btn o_strx_receipt_attachment_delete"
+                                    title="Remove attachment"
+                                    aria-label="Remove attachment"
+                                    t-on-click.stop="() => this.onFileRemove(file.id)">
+                                <i class="fa fa-trash" role="img"/>
+                            </button>
+                        </div>
+                        <div class="o_strx_receipt_attachment_info">
+                            <div class="o_strx_receipt_attachment_name" t-esc="file.name"/>
+                            <div class="o_strx_receipt_attachment_type">
+                                <span t-esc="getFileKindLabel(file)"/>
+                                <span aria-hidden="true"> · </span>
+                                <span t-esc="getExtension(file).toUpperCase()"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </div>
+
+            <div t-else="" class="o_strx_receipt_attachments_empty">
+                <i class="fa fa-picture-o" role="img"/>
+                <div>
+                    <strong>No receipt attachments uploaded yet.</strong>
+                    <span t-if="!props.readonly">The attachment appears here immediately after upload.</span>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- One smart button. The arrangement's own record carries the schedule,
+         the items and the history, so the contact form stays clean for the
+         many customers who do not rent on a cycle. -->
+    <record id="view_res_partner_form_recurring" model="ir.ui.view">
+        <field name="name">res.partner.form.recurring.rentals</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_recurring_rentals" type="object"
+                        class="oe_stat_button" icon="fa-repeat"
+                        groups="gr_security_base.group_generator_user"
+                        invisible="recurring_rental_count == 0">
+                    <field name="recurring_rental_count" widget="statinfo"
+                           string="Recurring Rentals"/>
+                </button>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="before">
+                <field name="recurring_rental_alert" invisible="1"/>
+                <div class="alert alert-warning mb-2" role="status"
+                     groups="gr_security_base.group_generator_user"
+                     invisible="recurring_rental_alert != 'due_today'">
+                    A recurring rental for this customer is due today.
+                </div>
+                <div class="alert alert-danger mb-2" role="alert"
+                     groups="gr_security_base.group_generator_user"
+                     invisible="recurring_rental_alert != 'overdue'">
+                    A recurring rental for this customer is overdue.
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

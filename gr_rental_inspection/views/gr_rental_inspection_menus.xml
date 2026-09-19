@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_gr_rental_inspection"
+              name="Rental Inspections"
+              parent="gr_security_base.menu_generator_root"
+              action="action_gr_rental_inspection"
+              groups="gr_security_base.group_generator_operations_officer"
+              sequence="45"/>
+    <menuitem id="menu_gr_rental_checklist_item"
+              name="Inspection Checklist"
+              parent="gr_security_base.menu_generator_root"
+              action="action_gr_rental_checklist_item"
+              groups="gr_security_base.group_generator_maint_manager"
+              sequence="46"/>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_strx_shipping" model="ir.ui.view">
+        <field name="name">sale.order.form.strx.shipping</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_strx_shipping_orders" type="object"
+                        class="oe_stat_button" icon="fa-truck">
+                    <field name="strx_shipping_count" widget="statinfo"
+                           string="Shipping"/>
+                </button>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page name="strx_customer_receipt" string="Customer Receipt">
+                    <group>
+                        <group>
+                            <field name="strx_customer_receipt_signature"
+                                   widget="signature"/>
+                            <field name="strx_customer_receipt_attachment_ids"
+                                   widget="strx_receipt_attachment_preview"/>
+                        </group>
+                        <group>
+                            <field name="strx_customer_receipt_exception"/>
+                            <field name="strx_customer_receipt_exception_reason"
+                                   placeholder="Why did the customer not sign or stamp the receipt?"
+                                   invisible="not strx_customer_receipt_exception"
+                                   required="strx_customer_receipt_exception"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

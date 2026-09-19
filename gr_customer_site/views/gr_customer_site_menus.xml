@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_gr_customer_sites"
+              name="Customer Sites"
+              parent="gr_security_base.menu_generator_root"
+              action="action_gr_customer_site"
+              groups="gr_security_base.group_generator_sales_officer"
+              sequence="60"/>
+</odoo>

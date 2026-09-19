@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_rental_item_unit_form_history" model="ir.ui.view">
+        <field name="name">gr.rental.item.unit.form.history</field>
+        <field name="model">gr.rental.item.unit</field>
+        <field name="inherit_id" ref="gr_rental_items.view_gr_rental_item_unit_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/div[hasclass('oe_title')]" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_view_history_rental_orders" type="object"
+                            class="oe_stat_button" icon="fa-file-text-o"
+                            invisible="history_rental_order_count == 0">
+                        <field name="history_rental_order_count" widget="statinfo" string="Rentals"/>
+                    </button>
+                    <button name="action_view_history_deliveries" type="object"
+                            class="oe_stat_button" icon="fa-truck"
+                            invisible="history_delivery_count == 0">
+                        <field name="history_delivery_count" widget="statinfo" string="Deliveries"/>
+                    </button>
+                    <button name="action_view_history_returns" type="object"
+                            class="oe_stat_button" icon="fa-undo"
+                            invisible="history_return_count == 0">
+                        <field name="history_return_count" widget="statinfo" string="Returns"/>
+                    </button>
+                    <button name="action_view_asset_history" type="object"
+                            class="oe_stat_button" icon="fa-history"
+                            invisible="history_event_count == 0">
+                        <field name="history_event_count" widget="statinfo" string="History"/>
+                    </button>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <separator string="Current Position"/>
+                <field name="current_presence_type"/>
+                <field name="current_partner_id"/>
+                <field name="current_rental_order_id"/>
+                <field name="current_contract_id"/>
+                <field name="current_site_id"/>
+                <field name="expected_return_datetime"/>
+                <field name="history_last_event_datetime"/>
+            </xpath>
+            <xpath expr="//field[@name='notes']" position="after">
+                <notebook>
+                    <page string="Asset History" name="asset_history">
+                        <field name="history_ids" readonly="1"
+                               domain="[('is_technical_event', '=', False)]"
+                               context="{'default_item_unit_id': id}">
+                            <list create="0" edit="0" delete="0"
+                                  decoration-info="event_type in ('rental_confirmed','asset_reserved','delivery','installed','rental_started','rental_extended')"
+                                  decoration-success="event_type in ('return','rental_closed')">
+                                <field name="event_datetime" string="Date &amp; Time"/>
+                                <field name="event_type" string="Event Type" widget="badge"/>
+                                <field name="name" string="Details"/>
+                                <field name="partner_id" string="Customer"/>
+                                <field name="location_label" string="Location"/>
+                                <field name="source_reference" string="Source Reference"/>
+                                <field name="user_id" string="Responsible User"/>
+                                <button name="action_open_source" type="object" icon="fa-external-link"
+                                        string="Open Source" title="Open Source" invisible="not source_model"/>
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

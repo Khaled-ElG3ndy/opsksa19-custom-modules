@@ -1,0 +1,1415 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_rental_sublet
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_form_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_form_sublet
+msgid "<i class=\"fa fa-clock-o me-1\" role=\"img\" title=\"Warning\"/>"
+msgstr "<i class=\"fa fa-clock-o me-1\" role=\"img\" title=\"تحذير\"/>"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_form_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_form_sublet
+msgid "<i class=\"fa fa-exclamation-triangle me-1\" role=\"img\" title=\"Critical\"/>"
+msgstr "<i class=\"fa fa-exclamation-triangle me-1\" role=\"img\" title=\"حرج\"/>"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_form_sublet
+msgid ""
+"<strong>Third-Party</strong>\n"
+"                    <span> · </span>\n"
+"                    <span>This generator is not owned by the company. It may\n"
+"                          only be rented out within the supplier rental\n"
+"                          period shown below.</span>"
+msgstr ""
+"<strong>مستأجر من الغير</strong>\n"
+"                    <span> · </span>\n"
+"                    <span>هذا المولد غير مملوك للشركة. لا يجوز تأجيره إلا\n"
+"                          خلال فترة الاستئجار من المورد\n"
+"                          الموضحة أدناه.</span>"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "A returned agreement cannot be cancelled."
+msgstr "لا يمكن إلغاء اتفاقية مرتجعة."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__extra_direct_cost
+msgid ""
+"Additional operation costs recorded on this sublet, such as maintenance, "
+"repairs, parts, or vendor-bill expenses."
+msgstr ""
+"تكاليف تشغيل إضافية مسجلة على هذا التأجير من الغير، مثل الصيانة أو الإصلاحات"
+" أو القطع أو مصروفات فواتير المورد."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_generator_asset__supplier_rental_cost
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__rent_in_amount
+msgid "Agreed cost ABSAL pays the vendor for the rent-in period."
+msgstr ""
+"التكلفة المتفق عليها التي تدفعها ABSAL للمورد عن فترة التأجير الداخلي."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__name
+msgid "Agreement Ref"
+msgstr "مرجع الاتفاقية"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_generator_asset__supplier_rental_status
+msgid ""
+"Availability of the unit from the supplier's side. This is about our right "
+"to hold the unit, and is deliberately separate from Status, which is about "
+"where the unit physically is."
+msgstr ""
+"مدى إتاحة الوحدة من جهة المورد. يتعلق هذا بحقنا في الاحتفاظ بالوحدة، وهو "
+"منفصل عمداً عن الحالة التي تصف مكان الوحدة فعلياً."
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_agreement__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid ""
+"Cannot return %s to the vendor: the unit is still out with a customer. Close"
+" the rent-out order(s) first."
+msgstr ""
+"لا يمكن إرجاع %s إلى المورد: الوحدة لا تزال لدى عميل. أغلق أمر/أوامر التأجير"
+" للخارج أولا."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_rental_order__supplier_buffer_level__ok
+msgid "Comfortable Return Buffer"
+msgstr "فترة إرجاع مريحة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_agreement__state__committed
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_search
+msgid "Committed"
+msgstr "ملتزم"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__company_id
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__company_id
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_rental_order__asset_owner_type
+msgid ""
+"Company Owned: ABSAL's own rental fleet, a real company asset. Third-Party: "
+"NOT a company asset - rented in from a third-party supplier and re-rented to"
+" customers for the supplier's rental period only. Customer-owned: belongs to"
+" a customer ABSAL only services - never in the rental pool."
+msgstr ""
+"مملوك للشركة: أسطول ABSAL التأجيري الخاص، أصل حقيقي للشركة. مستأجر من الغير:"
+" ليس أصلاً للشركة — مستأجر من مورد خارجي ويعاد تأجيره للعملاء خلال فترة "
+"استئجاره من المورد فقط. مملوك للعميل: يخص عميلاً وتقوم ABSAL بخدمته فقط ولا "
+"يدخل في أسطول التأجير."
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Conditions, accessories included, delivery arrangements..."
+msgstr "الشروط، الملحقات المشمولة، ترتيبات التسليم..."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__cost_date
+msgid "Cost Date"
+msgstr "تاريخ التكلفة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__cost_in
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__cost_in
+msgid "Cost In"
+msgstr "التكلفة الداخلة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__cost_type
+msgid "Cost Type"
+msgstr "نوع التكلفة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__create_uid
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__create_date
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_rental_order__supplier_buffer_level__critical
+msgid "Critical - No Return Buffer"
+msgstr "حرج — لا يوجد وقت كافٍ للإرجاع"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__currency_id
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__currency_id
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__currency_id
+msgid "Currency"
+msgstr "معرف العملة"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_form_sublet
+msgid "Current Customer Rental"
+msgstr "التأجير الحالي للعميل"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__current_sublet_agreement_id
+msgid "Current Supplier Agreement"
+msgstr "عقد المورد الحالي"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__partner_id
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_margin_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_margin_report__owner_type__customer_owned
+msgid "Customer-owned"
+msgstr "مملوك للعميل"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__name
+msgid "Description"
+msgstr "الوصف"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_direct_cost.py:0
+msgid "Direct Cost"
+msgstr "تكلفة مباشرة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__direct_cost_ids
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Direct Costs"
+msgstr "التكاليف المباشرة"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_direct_cost.py:0
+msgid "Direct cost amount cannot be negative."
+msgstr "لا يمكن أن يكون مبلغ التكلفة المباشرة سالبا."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__display_name
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_rental_order__display_name
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__display_name
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_buffer__display_name
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__display_name
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_agreement__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__asset_id
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_search
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_margin_search
+msgid "Equipment"
+msgstr "المعدات"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_rental_order_sublet.py:0
+msgid ""
+"Equipment %(asset)s can no longer be rented out: its rental from "
+"%(supplier)s is %(status)s."
+msgstr ""
+"لم يعد بالإمكان تأجير المعدة %(asset)s: حالة استئجارها من %(supplier)s هي "
+"%(status)s."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_generator_asset_sublet.py:0
+msgid ""
+"Equipment %(asset)s cannot use supplier %(supplier)s while active supplier "
+"rental agreement(s) use %(vendors)s."
+msgstr ""
+"لا يمكن للمعدة %(asset)s استخدام المورد %(supplier)s بينما اتفاقية/اتفاقيات "
+"إيجار المورد النشطة تستخدم %(vendors)s."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_generator_asset_sublet.py:0
+msgid ""
+"Equipment %(asset)s has active supplier rental agreement(s), so it must "
+"remain Third-Party until those agreements are returned or cancelled."
+msgstr ""
+"المعدة %(asset)s عليها اتفاقية/اتفاقيات إيجار مورد نشطة، لذلك يجب أن تظل "
+"كمعدة من الغير حتى يتم إرجاع هذه الاتفاقيات أو إلغاؤها."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_rental_order_sublet.py:0
+msgid ""
+"Equipment %(asset)s is Third-Party equipment rented from %(supplier)s, but "
+"no supplier rental agreement covers this order. Record the supplier rental "
+"agreement (period and cost) before reserving the unit for a customer."
+msgstr ""
+"المعدة %(asset)s مستأجرة من الغير من %(supplier)s، ولكن لا يوجد عقد استئجار "
+"من المورد يغطي هذا الأمر. سجّل عقد الاستئجار من المورد (الفترة والتكلفة) قبل"
+" حجز الوحدة لعميل."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__asset_id
+msgid "Equipment (Asset No)"
+msgstr "المعدة (رقم الأصل)"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_rental_order__asset_owner_type
+msgid "Equipment Ownership"
+msgstr "ملكية المعدة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_rental_order__asset_supplier_id
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_search_sublet
+msgid "Equipment Supplier"
+msgstr "مورد المعدة"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Exposure"
+msgstr "التعرض"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__exposure_reason
+msgid "Exposure Reason"
+msgstr "سبب التعرض"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__extra_direct_cost
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__extra_direct_cost
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Extra Direct Cost"
+msgstr "تكلفة مباشرة إضافية"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__owner_type
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_margin_search
+msgid "Fleet Type"
+msgstr "نوع الأسطول"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_rental_order__asset_supplier_id
+msgid ""
+"For Third-Party units, the supplier ABSAL rents from and pays. For Customer-"
+"owned units, the customer who owns the generator. Empty for Company Owned "
+"units."
+msgstr ""
+"للوحدات المستأجرة من الغير، هذا هو المورد الذي تستأجر منه ABSAL وتدفع له. "
+"للوحدات المملوكة للعميل، هذا هو العميل مالك المولد. يترك فارغاً للوحدات "
+"المملوكة للشركة."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_generator_asset__supplier_rental_note
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__note
+msgid ""
+"Free-text notes about the supplier rental: conditions, accessories included,"
+" delivery arrangements."
+msgstr ""
+"ملاحظات حرة عن الاستئجار من المورد: الشروط، الملحقات المشمولة، ترتيبات "
+"التسليم."
+
+#. module: gr_rental_sublet
+#: model:ir.model,name:gr_rental_sublet.model_gr_generator_asset
+msgid "Generator Asset"
+msgstr "أصل المولد"
+
+#. module: gr_rental_sublet
+#: model:ir.model,name:gr_rental_sublet.model_gr_rental_order
+msgid "Generator Rental Order"
+msgstr "أمر تأجير المولد"
+
+#. module: gr_rental_sublet
+#: model:ir.actions.server,name:gr_rental_sublet.ir_cron_refresh_supplier_rental_status_ir_actions_server
+msgid "Generator Rental: Refresh Supplier Rental Status"
+msgstr "تأجير المولدات: تحديث حالة الاستئجار من المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_generator_asset__supplier_buffer_level
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_rental_order__supplier_buffer_level
+msgid ""
+"How much slack there is before the unit must be back with the supplier. Not "
+"set for owned equipment or when the supplier rental has no end date."
+msgstr ""
+"مقدار الوقت المتاح قبل وجوب إعادة الوحدة للمورد. لا يُحدد للمعدات المملوكة "
+"أو عندما لا يكون لاستئجار المورد تاريخ انتهاء."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__id
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_rental_order__id
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__id
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_buffer__id
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__id
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__message_has_error
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_rental_order__sublet_agreement_id
+msgid ""
+"If this rental is of a third-party unit, the agreement covering the rent-in "
+"side. Links the rent-out revenue to the rent-in cost, and defines the period"
+" in which the unit may be re-rented."
+msgstr ""
+"إذا كان هذا التأجير لوحدة مستأجرة من الغير، فهذه هي الاتفاقية التي تغطي جانب"
+" التأجير الداخلي. تربط إيراد التأجير للخارج بتكلفة التأجير الداخلي."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__revenue_out
+msgid ""
+"Invoiced rental revenue from the customer rentals of this unit linked to "
+"this agreement."
+msgstr ""
+"إيراد التأجير المفوتر من تأجيرات العملاء لهذه الوحدة المرتبطة بهذه "
+"الاتفاقية."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__write_uid
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__write_date
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_direct_cost__cost_type__maintenance
+msgid "Maintenance"
+msgstr "الصيانة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__serial_number
+msgid "Manufacturer serial number. Unique per company."
+msgstr "الرقم التسلسلي للمُصنِّع. فريد لكل شركة."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__margin
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Margin"
+msgstr "الهامش"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__margin_pct
+msgid "Margin %"
+msgstr "نسبة الهامش"
+
+#. module: gr_rental_sublet
+#: model:ir.actions.act_window,name:gr_rental_sublet.action_gr_sublet_margin
+#: model:ir.ui.menu,name:gr_rental_sublet.menu_gr_sublet_margin
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_margin_graph
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_margin_pivot
+msgid "Margin Analysis"
+msgstr "تحليل الهوامش"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_search_sublet
+msgid "No Return Buffer"
+msgstr "لا يوجد وقت للإرجاع"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_generator_asset__supplier_rental_status__no_agreement
+msgid "No Supplier Agreement"
+msgstr "لا يوجد عقد مورد"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_form_sublet
+msgid ""
+"No supplier rental agreement is recorded for this unit. It\n"
+"                    cannot be reserved for a customer until one exists."
+msgstr ""
+"لا يوجد عقد استئجار من المورد مسجل لهذه الوحدة. لا يمكن حجزها لعميل حتى يتم "
+"تسجيل عقد."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_generator_asset__supplier_rental_status__not_applicable
+msgid "Not Applicable"
+msgstr "غير منطبق"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__note
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__note
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_form_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_form_sublet
+msgid "Notes about the supplier rental..."
+msgstr "ملاحظات عن الاستئجار من المورد..."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "Only committed agreements can be returned."
+msgstr "يمكن إرجاع الاتفاقيات الملتزمة فقط."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "Only draft agreements can raise a rent-in PO."
+msgstr "يمكن للاتفاقيات المسودة فقط إنشاء أمر شراء التأجير الداخلي."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_direct_cost__rental_order_id
+msgid "Optional: link this cost to the exact customer rental order."
+msgstr "اختياري: اربط هذه التكلفة بأمر تأجير العميل المحدد."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__order_date
+msgid "Order Date"
+msgstr "تاريخ الأمر"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_margin_search
+msgid "Order Month"
+msgstr "شهر الأمر"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_direct_cost__cost_type__other
+msgid "Other"
+msgstr "أخرى"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_margin_report__owner_type__owned
+msgid "Owned Fleet"
+msgstr "الأسطول المملوك"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_margin_search
+msgid "Owned fleet only"
+msgstr "الأسطول المملوك فقط"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__po_state
+msgid "PO Status"
+msgstr "حالة أمر الشراء"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_direct_cost__cost_type__parts
+msgid "Parts"
+msgstr "القطع"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Raise Rent-in PO"
+msgstr "إنشاء أمر شراء التأجير الداخلي"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.actions.act_window,help:gr_rental_sublet.action_gr_sublet_agreement
+msgid "Rent a unit in, rent it out, track the margin"
+msgstr "استأجر وحدة ثم أجرها وتتبع الهامش"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "Rent-in %(asset)s from %(vendor)s (%(ref)s)"
+msgstr "تأجير داخلي %(asset)s من %(vendor)s (%(ref)s)"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__rent_in_amount
+msgid "Rent-in Amount"
+msgstr "مبلغ التأجير الداخلي"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Rent-in Cost"
+msgstr "تكلفة التأجير الداخلي"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__rent_in_expense_account_id
+msgid "Rent-in Expense Account"
+msgstr "حساب مصروف الإيجار من المورد"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__purchase_order_id
+msgid "Rent-in PO"
+msgstr "أمر شراء التأجير الداخلي"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid ""
+"Rent-in PO %(po)s raised for %(asset)s; ABSAL is now on the hook to the "
+"vendor."
+msgstr ""
+"تم إنشاء أمر شراء التأجير الداخلي %(po)s للأصل %(asset)s؛ أصبحت ABSAL ملتزمة"
+" تجاه المورد."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__purchase_line_id
+msgid "Rent-in PO Line"
+msgstr "سطر أمر شراء التأجير الداخلي"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__rent_in_product_id
+msgid "Rent-in Service"
+msgstr "خدمة التأجير الداخلي"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "Rent-in amount must be positive."
+msgstr "يجب أن يكون مبلغ التأجير الداخلي موجبا."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "Rent-in period ended and unit still out with a customer"
+msgstr "انتهت فترة التأجير الداخلي ولا تزال الوحدة لدى عميل"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "Rent-in period ended; unit not yet returned to vendor"
+msgstr "انتهت فترة التأجير الداخلي؛ لم تتم إعادة الوحدة إلى المورد بعد"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid ""
+"Rent-in product %(product)s has an Asset Category (%(category)s). Remove it "
+"or use a plain rental expense service product; third-party equipment rentals"
+" must not create fixed assets or depreciation schedules."
+msgstr ""
+"منتج الإيجار من المورد %(product)s عليه فئة أصل (%(category)s). احذفها أو "
+"استخدم منتج خدمة عادي لمصروف الإيجار؛ إيجارات معدات الغير يجب ألا تنشئ أصولا"
+" ثابتة أو جداول إهلاك."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid ""
+"Rent-in product %(product)s must be a service product so the supplier rental"
+" is treated as an operating expense."
+msgstr ""
+"منتج الإيجار من المورد %(product)s يجب أن يكون منتج خدمة حتى يتم التعامل مع "
+"إيجار المورد كمصروف تشغيلي."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid ""
+"Rent-in product %(product)s uses account %(account)s, which is a fixed-"
+"asset/depreciation account. Configure an operating expense account before "
+"using it for third-party equipment rentals."
+msgstr ""
+"منتج الإيجار من المورد %(product)s يستخدم الحساب %(account)s، وهو حساب أصل "
+"ثابت/إهلاك. اضبط حساب مصروف تشغيلي قبل استخدامه في إيجارات معدات الغير."
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Rent-out"
+msgstr "التأجير للخارج"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__order_id
+msgid "Rent-out Order"
+msgstr "أمر التأجير للخارج"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__rental_order_count
+msgid "Rent-out Order Count"
+msgstr "أوامر التأجير للخارج"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__rental_order_ids
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Rent-out Orders"
+msgstr "أوامر التأجير للخارج"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_rental_order_sublet.py:0
+msgid ""
+"Rent-out order %s is linked to sublet agreement %s, but its equipment (%s) "
+"does not match the agreement's unit (%s)."
+msgstr ""
+"أمر التأجير للخارج %s مرتبط باتفاقية التأجير من الغير %s، لكن معدته (%s) لا "
+"تطابق وحدة الاتفاقية (%s)."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__rental_order_id
+msgid "Rental Order"
+msgstr "أمر التأجير"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_direct_cost.py:0
+msgid ""
+"Rental order %(order)s is not linked to sublet agreement %(agreement)s."
+msgstr ""
+"أمر التأجير %(order)s غير مرتبط باتفاقية التأجير من الغير %(agreement)s."
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Rented-in Unit"
+msgstr "الوحدة المستأجرة من الغير"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_direct_cost__cost_type__repair
+msgid "Repair"
+msgstr "إصلاح"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Reset to Draft"
+msgstr "إرجاع إلى مسودة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__supplier_buffer_level
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_rental_order__supplier_buffer_level
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_list_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_search_sublet
+msgid "Return Buffer"
+msgstr "فترة السماح للإرجاع"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__supplier_buffer_message
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_rental_order__supplier_buffer_message
+msgid "Return Buffer Warning"
+msgstr "تنبيه فترة السماح للإرجاع"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "Return to Vendor"
+msgstr "إرجاع إلى المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_agreement__state__returned
+msgid "Returned"
+msgstr "مرتجع"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_generator_asset__supplier_rental_status__returned
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_search_sublet
+msgid "Returned to Supplier"
+msgstr "تمت إعادته للمورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__revenue_out
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__revenue_out
+msgid "Revenue Out"
+msgstr "الإيراد الخارج"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__serial_number
+msgid "Serial Number"
+msgstr "الرقم التسلسلي"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "Set a rent-in service product before raising the PO for %s."
+msgstr "حدد منتج خدمة التأجير الداخلي قبل إنشاء أمر الشراء لـ %s."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "Set the vendor before raising the rent-in PO."
+msgstr "حدد المورد قبل إنشاء أمر شراء التأجير الداخلي."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__state
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_margin_report__owner_type__rented_in
+msgid "Sublet (Rented-in)"
+msgstr "تأجير من الغير (مستأجر)"
+
+#. module: gr_rental_sublet
+#: model:ir.model,name:gr_rental_sublet.model_gr_sublet_margin_report
+msgid "Sublet / Fleet Margin Analysis"
+msgstr "تحليل هامش التأجير من الغير / الأسطول"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_direct_cost__agreement_id
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__agreement_id
+msgid "Sublet Agreement"
+msgstr "اتفاقية التأجير من الغير"
+
+#. module: gr_rental_sublet
+#: model:ir.model,name:gr_rental_sublet.model_gr_sublet_direct_cost
+msgid "Sublet Direct Cost"
+msgstr "تكلفة مباشرة للتأجير من الغير"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__margin
+msgid "Sublet Margin"
+msgstr "هامش التأجير من الغير"
+
+#. module: gr_rental_sublet
+#: model:ir.model,name:gr_rental_sublet.model_gr_sublet_agreement
+msgid "Sublet Rental Agreement (rent-in)"
+msgstr "اتفاقية تأجير من الغير (تأجير داخلي)"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_margin_search
+msgid "Sublet only"
+msgstr "التأجير من الغير فقط"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__vendor_id
+msgid "Supplier (rented from)"
+msgstr "المورد (مستأجر منه)"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_search_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_form_sublet
+msgid "Supplier / Owner"
+msgstr "المورد / المالك"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__sublet_agreement_count
+msgid "Supplier Agreements"
+msgstr "عقود المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__supplier_contract_ref
+msgid "Supplier Contract Reference"
+msgstr "مرجع عقد المورد"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_list_sublet
+msgid "Supplier Due Back"
+msgstr "موعد الإعادة للمورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__supplier_equipment_ref
+msgid "Supplier Equipment Reference"
+msgstr "رقم المعدة لدى المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.actions.act_window,name:gr_rental_sublet.action_gr_sublet_exposure
+#: model:ir.ui.menu,name:gr_rental_sublet.menu_gr_sublet_exposure
+msgid "Supplier Exposure"
+msgstr "مخاطر الالتزام تجاه المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_generator_asset__supplier_rental_status__active
+msgid "Supplier Rental Active"
+msgstr "الاستئجار من المورد ساري"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_rental_order__sublet_agreement_id
+msgid "Supplier Rental Agreement"
+msgstr "عقد الاستئجار من المورد"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_generator_asset_sublet.py:0
+#: model:ir.actions.act_window,name:gr_rental_sublet.action_gr_sublet_agreement
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__sublet_agreement_ids
+#: model:ir.ui.menu,name:gr_rental_sublet.menu_gr_sublet_agreement
+msgid "Supplier Rental Agreements"
+msgstr "عقود الاستئجار من المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__supplier_rental_cost
+msgid "Supplier Rental Cost"
+msgstr "تكلفة الاستئجار من المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__supplier_rental_end
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_rental_order__supplier_rental_end
+msgid "Supplier Rental End"
+msgstr "نهاية الاستئجار من المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__date_end
+msgid "Supplier Rental End (due back)"
+msgstr "نهاية الاستئجار من المورد (موعد الإرجاع)"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_list_sublet
+msgid "Supplier Rental Ends"
+msgstr "ينتهي استئجار المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_generator_asset__supplier_rental_status__expired
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_search_sublet
+msgid "Supplier Rental Expired"
+msgstr "انتهت مدة الاستئجار من المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_generator_asset__supplier_rental_status__expiring_soon
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_search_sublet
+msgid "Supplier Rental Expiring Soon"
+msgstr "استئجار المورد قرب أن ينتهي"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__supplier_rental_note
+msgid "Supplier Rental Notes"
+msgstr "ملاحظات الاستئجار من المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__supplier_rental_start
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_rental_order__supplier_rental_start
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__date_start
+msgid "Supplier Rental Start"
+msgstr "بداية الاستئجار من المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__supplier_rental_status
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_search_sublet
+msgid "Supplier Rental Status"
+msgstr "حالة الاستئجار من المورد"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_form_sublet
+msgid "Supplier Rentals"
+msgstr "الاستئجار من الموردين"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_generator_asset__supplier_return_buffer_days
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_rental_order__supplier_return_buffer_days
+msgid "Supplier Return Buffer (days)"
+msgstr "فترة السماح للإرجاع للمورد (أيام)"
+
+#. module: gr_rental_sublet
+#: model:ir.model,name:gr_rental_sublet.model_gr_sublet_buffer
+msgid "Supplier Return Buffer Policy"
+msgstr "سياسة فترة السماح للإرجاع للمورد"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_list_sublet
+msgid "Supplier Status"
+msgstr "حالة المورد"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid ""
+"Supplier rental agreement %(agreement)s can only be linked to Third-Party "
+"equipment. %(asset)s is %(owner)s."
+msgstr ""
+"اتفاقية إيجار المورد %(agreement)s لا يمكن ربطها إلا بمعدة من الغير. المعدة "
+"%(asset)s حالتها %(owner)s."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid ""
+"Supplier rental agreement %(agreement)s uses vendor %(vendor)s, but "
+"equipment %(asset)s is rented from %(supplier)s. Use the equipment supplier "
+"so the rent-in cost stays tied to the correct third party."
+msgstr ""
+"اتفاقية إيجار المورد %(agreement)s تستخدم المورد %(vendor)s، لكن المعدة "
+"%(asset)s مستأجرة من %(supplier)s. استخدم مورد المعدة حتى تظل تكلفة الإيجار "
+"من المورد مرتبطة بالطرف الصحيح."
+
+#. module: gr_rental_sublet
+#: model:ir.model.constraint,message:gr_rental_sublet.constraint_gr_sublet_agreement_name_company_uniq
+msgid "The agreement reference must be unique per company."
+msgstr "يجب أن يكون مرجع الاتفاقية فريدا لكل شركة."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_buffer.py:0
+msgid "The customer rental ends after the unit is due back to the supplier."
+msgstr "ينتهي تأجير العميل بعد موعد استحقاق إعادة الوحدة للمورد."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_generator_asset__current_sublet_agreement_id
+msgid ""
+"The live rent-in agreement covering this unit today: the committed one if "
+"there is one, otherwise the latest draft."
+msgstr ""
+"اتفاقية الاستئجار السارية التي تغطي هذه الوحدة اليوم: الملتزم بها إن وُجدت، "
+"وإلا فآخر مسودة."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__rent_in_expense_account_id
+msgid ""
+"The operating expense account expected on vendor bills for this rent-in "
+"service. Fixed-asset and depreciation accounts are blocked for third-party "
+"rentals."
+msgstr ""
+"حساب المصروف التشغيلي المتوقع في فواتير المورد لخدمة الإيجار من المورد. يتم "
+"منع حسابات الأصول الثابتة والإهلاك في إيجارات معدات الغير."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_generator_asset__supplier_buffer_message
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_rental_order__supplier_buffer_message
+msgid "The operator-facing warning, empty when the buffer is comfortable."
+msgstr "التنبيه الظاهر للمشغل، ويكون فارغاً عندما تكون فترة الإرجاع مريحة."
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_form_sublet
+msgid ""
+"The rental of this unit from the supplier has expired. It\n"
+"                    must be returned to the supplier and cannot be rented out."
+msgstr ""
+"انتهت مدة استئجار هذه الوحدة من المورد. يجب إعادتها للمورد ولا يمكن تأجيرها."
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_form_sublet
+msgid "The rental of this unit from the supplier is ending soon."
+msgstr "استئجار هذه الوحدة من المورد قرب أن ينتهي."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__asset_id
+msgid "The rented-in unit. Must be equipment flagged Third-Party."
+msgstr ""
+"الوحدة المستأجرة من الغير. يجب أن تكون معدة معلمة كمستأجرة من الغير (M11)."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__rent_in_product_id
+msgid ""
+"The service/product line used on the rent-in PO (e.g. a monthly generator "
+"rental service)."
+msgstr ""
+"سطر الخدمة/المنتج المستخدم في أمر شراء التأجير الداخلي (مثلا خدمة تأجير مولد"
+" شهرية)."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid ""
+"The supplier rental of %(ref)s cannot end (%(end)s) before it starts "
+"(%(start)s)."
+msgstr ""
+"لا يمكن أن ينتهي استئجار %(ref)s من المورد بتاريخ (%(end)s) قبل تاريخ بدايته"
+" (%(start)s)."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__supplier_equipment_ref
+msgid ""
+"The supplier's own reference for the unit (e.g. ABC-GEN-55). Stored on the "
+"equipment record; editable here for convenience."
+msgstr ""
+"مرجع المورد الخاص بالوحدة (مثال: ABC-GEN-55). يُحفظ على سجل المعدة، ويمكن "
+"تعديله من هنا للتسهيل."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__vendor_id
+msgid "The third party ABSAL rents the unit from and pays."
+msgstr "الطرف الثالث الذي تستأجر منه ABSAL الوحدة وتدفع له."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_rental_order__asset_is_third_party
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_form_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_search_sublet
+msgid "Third-Party Equipment"
+msgstr "معدة مستأجرة من الغير"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_generator_asset_search_sublet
+msgid "Third-Party Without Agreement"
+msgstr "مستأجر من الغير بدون عقد"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_rental_order_sublet.py:0
+msgid ""
+"This generator cannot be rented out before the start of its rental from the supplier.\n"
+"\n"
+"Equipment: %(asset)s\n"
+"Supplier: %(supplier)s\n"
+"Supplier rental period: %(sup_start)s → %(sup_end)s\n"
+"Requested customer rental starts: %(start)s"
+msgstr ""
+"لا يمكن تأجير هذا المولد قبل تاريخ بداية استئجاره من المورد.\n"
+"\n"
+"المعدة: %(asset)s\n"
+"المورد: %(supplier)s\n"
+"فترة الاستئجار من المورد: %(sup_start)s → %(sup_end)s\n"
+"بداية التأجير المطلوب للعميل: %(start)s"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_rental_order_sublet.py:0
+msgid ""
+"This generator cannot be rented out beyond the end date of its rental from the supplier.\n"
+"\n"
+"Equipment: %(asset)s\n"
+"Supplier: %(supplier)s\n"
+"Supplier rental ends: %(sup_end)s\n"
+"Requested customer rental ends: %(end)s"
+msgstr ""
+"لا يمكن تأجير هذا المولد بعد تاريخ انتهاء استئجاره من المورد.\n"
+"\n"
+"المعدة: %(asset)s\n"
+"المورد: %(supplier)s\n"
+"ينتهي استئجار المورد في: %(sup_end)s\n"
+"ينتهي التأجير المطلوب للعميل في: %(end)s"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_rental_order__supplier_buffer_level__warning
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_rental_order_search_sublet
+msgid "Tight Return Buffer"
+msgstr "فترة إرجاع ضيقة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__total_cost
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__total_cost
+msgid "Total Cost"
+msgstr "إجمالي التكلفة"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__exposure_flagged
+msgid ""
+"True when ABSAL's rent-in obligation is still live (committed) while either "
+"the rent-in period has ended (unit overdue back to vendor) or a customer "
+"rental of the unit is still out. A risk surface for finance."
+msgstr ""
+"صحيح عندما يكون التزام ABSAL بالتأجير الداخلي لا يزال قائما (ملتزم) بينما "
+"انتهت فترة التأجير الداخلي (الوحدة متأخرة عن الإرجاع للمورد) أو لا يزال "
+"تأجير عميل للوحدة خارجا. سطح مخاطر للمالية."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_rental_order__asset_is_third_party
+msgid ""
+"True when the unit is rented in from a supplier and is NOT a company-owned "
+"asset. Drives the third-party badge, the separated menus, and the owned-"
+"fleet dashboard KPIs."
+msgstr ""
+"صحيح عندما تكون الوحدة مستأجرة من مورد وليست أصلاً مملوكاً للشركة. يتحكم في "
+"شارة \"مستأجر من الغير\" وفصل القوائم ومؤشرات لوحة المعلومات للأسطول "
+"المملوك."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "Unit out with a customer and no rent-in end date set"
+msgstr "الوحدة لدى عميل ولم يحدد تاريخ نهاية التأجير الداخلي"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_margin_report__vendor_id
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_search
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_margin_search
+msgid "Vendor"
+msgstr "المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields.selection,name:gr_rental_sublet.selection__gr_sublet_direct_cost__cost_type__vendor_bill
+msgid "Vendor Bill / Expense"
+msgstr "فاتورة المورد / مصروف"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__exposure_flagged
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_search
+msgid "Vendor Exposure"
+msgstr "تعرض المورد"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__total_cost
+msgid "Vendor rent-in cost plus extra direct costs."
+msgstr ""
+"تكلفة التأجير الداخلي من المورد بالإضافة إلى التكاليف المباشرة الإضافية."
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "View PO"
+msgstr "عرض أمر الشراء"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_buffer.py:0
+msgid ""
+"Warning: the customer return date is close to the date the generator is due "
+"back to the supplier. Only %s days remain."
+msgstr ""
+"تنبيه: موعد إرجاع المولد من العميل قريب من موعد إعادته للمورد. المتبقي %s "
+"أيام فقط."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_buffer.py:0
+msgid ""
+"Warning: the customer return date is very close to the date the generator is"
+" due back to the supplier. Only one day remains."
+msgstr ""
+"تنبيه: موعد إرجاع المولد من العميل قريب جداً من موعد إعادته للمورد. المتبقي "
+"يوم واحد فقط."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_buffer.py:0
+msgid ""
+"Warning: the generator is returned by the customer on the same day it is due"
+" back to the supplier. There is no return buffer at all."
+msgstr ""
+"تنبيه: يعيد العميل المولد في نفس يوم استحقاق إعادته للمورد. لا يوجد أي وقت "
+"للإرجاع إطلاقاً."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,field_description:gr_rental_sublet.field_gr_sublet_agreement__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__cost_in
+msgid "What ABSAL pays the vendor (the rent-in amount)."
+msgstr "ما تدفعه ABSAL للمورد (مبلغ التأجير الداخلي)."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_generator_asset__supplier_rental_end
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_rental_order__supplier_rental_end
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_sublet_agreement__date_end
+msgid ""
+"When ABSAL must return the unit to the supplier. Customer rentals of this "
+"unit may not run past this date."
+msgstr "متى يجب على ABSAL إعادة الوحدة إلى المورد."
+
+#. module: gr_rental_sublet
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_generator_asset__supplier_return_buffer_days
+#: model:ir.model.fields,help:gr_rental_sublet.field_gr_rental_order__supplier_return_buffer_days
+msgid ""
+"Whole days between the customer returning the unit and the date it is due "
+"back to the supplier. The time available to collect, inspect and transport "
+"it."
+msgstr ""
+"عدد الأيام الكاملة بين إعادة العميل للوحدة وموعد استحقاق إعادتها للمورد. "
+"الوقت المتاح لاستلامها وفحصها ونقلها."
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_rental_order_sublet.py:0
+msgid "a supplier"
+msgstr "أحد الموردين"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_generator_asset_sublet.py:0
+msgid "asset_id"
+msgstr "asset_id"
+
+#. module: gr_rental_sublet
+#: model_terms:ir.ui.view,arch_db:gr_rental_sublet.view_gr_sublet_agreement_form
+msgid "e.g. ABC-GEN-55"
+msgstr "مثال: ABC-GEN-55"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_rental_order_sublet.py:0
+msgid "open-ended"
+msgstr "مفتوح المدة"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_sublet_agreement.py:0
+msgid "sublet_agreement_id"
+msgstr "sublet_agreement_id"
+
+#. module: gr_rental_sublet
+#. odoo-python
+#: code:addons/gr_rental_sublet/models/gr_rental_order_sublet.py:0
+msgid "the supplier"
+msgstr "المورد"

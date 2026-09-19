@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_returns_root" name="Returns"
+              parent="gr_security_base.menu_generator_root"
+              groups="gr_security_base.group_generator_operations_officer"
+              sequence="47"/>
+    <menuitem id="menu_returns_all" name="All Upcoming Returns"
+              parent="menu_returns_root" action="action_returns_all" sequence="10"/>
+    <menuitem id="menu_returns_due_3" name="Due in 3 Working Days"
+              parent="menu_returns_root" action="action_returns_due_3" sequence="20"/>
+    <menuitem id="menu_returns_due_today" name="Due Today"
+              parent="menu_returns_root" action="action_returns_due_today" sequence="30"/>
+    <menuitem id="menu_returns_overdue" name="Overdue"
+              parent="menu_returns_root" action="action_returns_overdue" sequence="40"/>
+</odoo>

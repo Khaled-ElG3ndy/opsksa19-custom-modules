@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_billing_run_form" model="ir.ui.view">
+        <field name="name">gr.billing.run.form</field>
+        <field name="model">gr.billing.run</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_set_last_month" type="object"
+                            string="Use Last Month" invisible="state != 'draft'"/>
+                    <button name="action_generate" type="object"
+                            string="Generate Invoices" class="btn-primary"
+                            invisible="state != 'draft'"
+                            groups="gr_security_base.group_generator_finance_officer"/>
+                    <button name="action_cancel" type="object" string="Cancel &amp; Release"
+                            invisible="state != 'done'" confirm="This will delete the draft invoices and release the logs back to billable. Continue?"
+                            groups="gr_security_base.group_generator_finance_manager"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_invoices" type="object"
+                                class="oe_stat_button" icon="fa-file-text-o"
+                                invisible="invoice_count == 0">
+                            <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Period">
+                            <field name="date_from" readonly="state != 'draft'"/>
+                            <field name="date_to" readonly="state != 'draft'"/>
+                        </group>
+                        <group string="Filters (optional)">
+                            <field name="partner_id" readonly="state != 'draft'"/>
+                            <field name="rental_order_id" readonly="state != 'draft'"
+                                   domain="[('partner_id','=',partner_id)]"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Result" invisible="state == 'draft'">
+                        <field name="log_count"/>
+                    </group>
+                    <field name="note" placeholder="Notes..."/>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gr_billing_run_list" model="ir.ui.view">
+        <field name="name">gr.billing.run.list</field>
+        <field name="model">gr.billing.run</field>
+        <field name="arch" type="xml">
+            <list decoration-success="state == 'done'" decoration-muted="state == 'cancelled'">
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="partner_id"/>
+                <field name="invoice_count"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'done'"
+                       decoration-muted="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_gr_billing_run" model="ir.actions.act_window">
+        <field name="name">Billing Runs</field>
+        <field name="res_model">gr.billing.run</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first billing run</p>
+            <p>Generate draft customer invoices from approved hour logs for a
+               period. Each approved log is billed exactly once.</p>
+        </field>
+    </record>
+
+</odoo>

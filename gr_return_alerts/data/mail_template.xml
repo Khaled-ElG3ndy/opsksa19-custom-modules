@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mail_template_return_due" model="mail.template">
+        <field name="name">Rental Return Due / Overdue</field>
+        <field name="model_id" ref="gr_rental_order.model_gr_rental_order"/>
+        <field name="subject">{{ object._return_alert_email_subject() }}</field>
+        <field name="email_from">{{ (user.email_formatted or '') }}</field>
+        <field name="body_html" type="html">
+            <t t-out="object._return_alert_email_body_html()"/>
+        </field>
+    </record>
+</odoo>

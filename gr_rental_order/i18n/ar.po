@@ -1,0 +1,1290 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_rental_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "%(start)s → %(end)s"
+msgstr "%(start)s → %(end)s"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "%s day(s)"
+msgstr "%s يوم"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "%s days"
+msgstr "%s أيام"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.gr_ro_header
+msgid ""
+"<br/>\n"
+"                <strong>Contract:</strong>"
+msgstr ""
+"<br/>\n"
+"                <strong>العقد:</strong>"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.gr_ro_header
+msgid ""
+"<br/>\n"
+"                <strong>Customer:</strong>"
+msgstr ""
+"<br/>\n"
+"                <strong>العميل:</strong>"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.gr_ro_header
+msgid ""
+"<br/>\n"
+"                <strong>Serial:</strong>"
+msgstr ""
+"<br/>\n"
+"                <strong>الرقم التسلسلي:</strong>"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.gr_ro_header
+msgid ""
+"<br/>\n"
+"                <strong>Site:</strong>"
+msgstr ""
+"<br/>\n"
+"                <strong>الموقع:</strong>"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.gr_ro_header
+msgid ""
+"<br/>\n"
+"                <strong>Status:</strong>"
+msgstr ""
+"<br/>\n"
+"                <strong>الحالة:</strong>"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form_return_button
+msgid "<i class=\"fa fa-check-square-o\" role=\"img\" title=\"Checklist\"/>"
+msgstr "<i class=\"fa fa-check-square-o\" role=\"img\" title=\"قائمة التحقق\"/>"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form_return_button
+msgid "<i class=\"fa fa-clock-o\" role=\"img\" title=\"Return timing\"/>"
+msgstr "<i class=\"fa fa-clock-o\" role=\"img\" title=\"توقيت الإرجاع\"/>"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.gr_ro_header
+msgid "<strong>Asset:</strong>"
+msgstr "<strong>الأصل:</strong>"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.gr_ro_header
+msgid "<strong>Order:</strong>"
+msgstr "<strong>الطلب:</strong>"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "A closed order cannot be cancelled."
+msgstr "لا يمكن إلغاء أمر مغلق."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "A contract is required to confirm the order."
+msgstr "يجب تحديد عقد قبل تأكيد الأمر."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "A valid (non-negative) end meter reading is required to return."
+msgstr "يجب إدخال قراءة عداد نهاية صحيحة (غير سالبة) لتنفيذ الإرجاع."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "A valid (non-negative) start meter reading is required to install."
+msgstr "يجب إدخال قراءة عداد بداية صحيحة (غير سالبة) لتنفيذ التركيب."
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Actual"
+msgstr "الفعلي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__actual_dispatch_datetime
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_delivery_note
+msgid "Actual Dispatch"
+msgstr "الإرسال الفعلي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__actual_install_datetime
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "Actual Install"
+msgstr "التركيب الفعلي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__actual_return_datetime
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_return_inspection
+msgid "Actual Return"
+msgstr "الإرجاع الفعلي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order_return_info_wizard__rental_start_date
+msgid "Actual install date, falling back to the actual dispatch date."
+msgstr "تاريخ التركيب الفعلي، وإن لم يوجد فيُستخدم تاريخ الإرسال الفعلي."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "All selected rented serials are available for %(period)s."
+msgstr "كل الأرقام التسلسلية المؤجرة المحددة متاحة خلال %(period)s."
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__analytic_account_id
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_search
+msgid "Asset"
+msgstr "الأصل"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__availability_state
+msgid "Availability"
+msgstr "الإتاحة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__availability_message
+msgid "Availability Details"
+msgstr "تفاصيل الإتاحة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__availability_state__available
+msgid "Available"
+msgstr "متاح"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__state__cancelled
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__name
+msgid "Check Item"
+msgstr "بند الفحص"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__checklist_ids
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Checklist"
+msgstr "قائمة التحقق"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_return_info_wizard_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__state__closed
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order_checklist__phase__commissioning
+msgid "Commissioning"
+msgstr "التشغيل والتسليم"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__state__confirmed
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__contract_id
+msgid "Contract"
+msgstr "العقد"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Contract %s must be approved or active before confirming the order."
+msgstr "يجب أن يكون العقد %s معتمداً أو نشطاً قبل تأكيد الأمر."
+
+#. module: gr_rental_order
+#: model_terms:ir.actions.act_window,help:gr_rental_order.action_gr_rental_order
+msgid "Create your first rental order"
+msgstr "أنشئ أول أمر تأجير"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__create_uid
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__create_uid
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__create_date
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__create_date
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__current_date
+msgid "Current Date"
+msgstr "التاريخ الحالي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__partner_id
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Customer & Contract"
+msgstr "العميل والعقد"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__customer_receiver_name
+msgid "Customer Receiver Name"
+msgstr "اسم مستلم العميل"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__date_requested
+msgid "Date Requested"
+msgstr "تاريخ الطلب"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Delivery / Install"
+msgstr "التسليم / التركيب"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__delivery_driver_id
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_delivery_note
+msgid "Delivery Driver"
+msgstr "سائق التسليم"
+
+#. module: gr_rental_order
+#: model:ir.actions.report,name:gr_rental_order.action_report_gr_delivery_note
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_delivery_note
+msgid "Delivery Note"
+msgstr "إشعار التسليم"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order_checklist__phase__dispatch
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Dispatch"
+msgstr "إرسال"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__dispatch_note
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_delivery_note
+msgid "Dispatch Note"
+msgstr "ملاحظة الإرسال"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__state__dispatched
+msgid "Dispatched"
+msgstr "تم الإرسال"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_availability__display_name
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__display_name
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__display_name
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__is_done
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "Done"
+msgstr "منجز"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__rental_return_status
+msgid ""
+"Drives the colour of the return smart button. ok=green, soon=amber, "
+"tomorrow=orange, today=red-orange, overdue=red, done=gray."
+msgstr ""
+"يحدد لون الزر الذكي للإرجاع: ok=أخضر، soon=كهرماني، tomorrow=برتقالي، "
+"today=برتقالي محمر، overdue=أحمر، done=رمادي."
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_return_inspection
+msgid "End Meter"
+msgstr "عداد النهاية"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__end_meter_reading
+msgid "End Meter Reading"
+msgstr "قراءة عداد النهاية"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "End meter (%(end)s) cannot be below the start meter (%(start)s)."
+msgstr ""
+"لا يمكن أن تكون قراءة عداد النهاية (%(end)s) أقل من قراءة عداد البداية "
+"(%(start)s)."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "End meter reading cannot be less than the start meter reading."
+msgstr "لا يمكن أن تكون قراءة عداد النهاية أقل من قراءة عداد البداية."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "Equipment %(asset)s has maintenance %(job)s during %(period)s."
+msgstr "المعدة %(asset)s عليها صيانة %(job)s خلال %(period)s."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "Equipment %(asset)s has overdue maintenance and cannot be rented out."
+msgstr "المعدة %(asset)s عليها صيانة متأخرة ولا يمكن تأجيرها."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid ""
+"Equipment %(asset)s is Third-Party equipment rented from %(supplier)s, but "
+"no supplier rental agreement covers %(period)s."
+msgstr ""
+"المعدة %(asset)s مستأجرة من الغير من %(supplier)s، ولكن لا توجد اتفاقية "
+"تأجير من المورد تغطي %(period)s."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid ""
+"Equipment %(asset)s is Third-Party equipment, but the requested period "
+"%(period)s is outside its supplier rental period (supplier return date: "
+"%(supplier_return)s)."
+msgstr ""
+"المعدة %(asset)s مستأجرة من الغير، ولكن الفترة المطلوبة %(period)s خارج فترة"
+" تأجيرها من المورد (تاريخ الإرجاع للمورد: %(supplier_return)s)."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid ""
+"Equipment %(asset)s is already booked for %(order)s during %(period)s "
+"(%(state)s)."
+msgstr ""
+"المعدة %(asset)s محجوزة بالفعل على الأمر %(order)s خلال %(period)s "
+"(%(state)s)."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "Equipment %(asset)s is customer-owned and cannot be rented out."
+msgstr "المعدة %(asset)s مملوكة للعميل ولا يمكن تأجيرها."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "Equipment %(asset)s is not in the rental pool."
+msgstr "المعدة %(asset)s ليست ضمن أسطول التأجير."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid ""
+"Equipment %(asset)s is unavailable for the requested period because its "
+"status is %(status)s."
+msgstr "المعدة %(asset)s غير متاحة للفترة المطلوبة لأن حالتها هي %(status)s."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid ""
+"Equipment is not available for the requested rental period:\n"
+"\n"
+"%s"
+msgstr ""
+"المعدة غير متاحة لفترة التأجير المطلوبة:\n"
+"\n"
+"%s"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__expected_return_date
+msgid "Expected Return Date"
+msgstr "تاريخ الإرجاع المتوقع"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_return_info_wizard_form
+msgid "Expected Return Info"
+msgstr "معلومات الإرجاع المتوقع"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Generator %s has overdue maintenance; dispatch is blocked."
+msgstr "المولد %s عليه صيانة متأخرة؛ تم منع الإرسال."
+
+#. module: gr_rental_order
+#: model:ir.model,name:gr_rental_order.model_gr_rental_order
+msgid "Generator Rental Order"
+msgstr "أمر تأجير المولد"
+
+#. module: gr_rental_order
+#: model:ir.model,name:gr_rental_order.model_gr_rental_order_checklist
+msgid "Generator Rental Order Checklist Item"
+msgstr "بند قائمة تحقق أمر تأجير المولد"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_return_inspection
+msgid "Hours Used"
+msgstr "الساعات المستخدمة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_availability__id
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__id
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__id
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__message_has_error
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__state__inspection
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_search
+msgid "Inspection"
+msgstr "الفحص"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Install"
+msgstr "تركيب"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order_checklist__phase__installation
+msgid "Installation"
+msgstr "التركيب"
+
+#. module: gr_rental_order
+#: model:ir.actions.report,name:gr_rental_order.action_report_gr_install_report
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "Installation / Commissioning Report"
+msgstr "تقرير التركيب / التشغيل"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__installation_note
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "Installation Note"
+msgstr "ملاحظة التركيب"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__installation_technician_id
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "Installation Technician"
+msgstr "فني التركيب"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__state__installed
+msgid "Installed"
+msgstr "مركب"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "Item"
+msgstr "البند"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid ""
+"Item %(item)s is already booked for %(order)s during %(period)s (%(state)s)."
+msgstr ""
+"البند %(item)s محجوز بالفعل على الأمر %(order)s خلال %(period)s (%(state)s)."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid ""
+"Item %(item)s is unavailable for the requested period because its status is "
+"%(status)s."
+msgstr "البند %(item)s غير متاح للفترة المطلوبة لأن حالته هي %(status)s."
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__rental_return_primary
+msgid "Large value of the smart button, e.g. \"7 days\" or \"Overdue by 3 days\"."
+msgstr "القيمة الكبيرة في الزر الذكي، مثل \"7 أيام\" أو \"متأخر 3 أيام\"."
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__write_uid
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__write_uid
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__write_date
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__write_date
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Logistics"
+msgstr "الخدمات اللوجستية"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Meter Readings"
+msgstr "قراءات العداد"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "No"
+msgstr "لا"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__rental_return_status__none
+msgid "No Return Date"
+msgstr "لا يوجد تاريخ إرجاع"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__availability_state__not_ready
+msgid "Not Ready"
+msgstr "غير جاهز"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__notes
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__state__off_hire_requested
+msgid "Off-Hire Requested"
+msgstr "تم طلب إيقاف التأجير"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__state__on_rent
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_search
+msgid "On Rent"
+msgstr "قيد التأجير"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "One day"
+msgstr "يوم واحد"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Only cancelled orders can return to draft."
+msgstr "يمكن إرجاع الأوامر الملغاة فقط إلى مسودة."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Only confirmed orders can reserve an asset."
+msgstr "يمكن حجز أصل للأوامر المؤكدة فقط."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Only dispatched orders can be installed."
+msgstr "يمكن تركيب الأوامر المرسلة فقط."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Only draft orders can be confirmed."
+msgstr "يمكن تأكيد أوامر المسودة فقط."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Only installed orders can start rental."
+msgstr "يمكن بدء التأجير للأوامر المركبة فقط."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Only on-rent or off-hire orders can be returned."
+msgstr "يمكن إرجاع الأوامر قيد التأجير أو المطلوب إيقافها فقط."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Only on-rent orders can request off-hire."
+msgstr "يمكن طلب إيقاف التأجير للأوامر قيد التأجير فقط."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Only orders under inspection can be closed."
+msgstr "يمكن إغلاق الأوامر الخاضعة للفحص فقط."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Only reserved orders can be dispatched."
+msgstr "يمكن إرسال الأوامر المحجوزة فقط."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Only returned orders can start inspection."
+msgstr "يمكن بدء الفحص للأوامر المرتجعة فقط."
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__name
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__order_reference
+msgid "Order Reference"
+msgstr "مرجع الأمر"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__rental_return_status__overdue
+msgid "Overdue"
+msgstr "متأخر"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "Overdue by %s"
+msgstr "متأخر %s"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "Past the return date"
+msgstr "متأخر عن موعد الإرجاع"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_search
+msgid "Pending Return"
+msgstr "بانتظار الإرجاع"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__phase
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "Phase"
+msgstr "المرحلة"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Planned"
+msgstr "المخطط"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__planned_dispatch_datetime
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_delivery_note
+msgid "Planned Dispatch"
+msgstr "الإرسال المخطط"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__planned_install_datetime
+msgid "Planned Install"
+msgstr "التركيب المخطط"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__planned_return_datetime
+msgid "Planned Return"
+msgstr "الإرجاع المخطط"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__asset_id
+msgid "Primary Rental Serial"
+msgstr "سيريال التأجير الرئيسي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__customer_receiver_signature
+msgid "Receiver Signature"
+msgstr "توقيع المستلم"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__remaining_days
+msgid "Remaining / Overdue Days"
+msgstr "الأيام المتبقية / المتأخرة"
+
+#. module: gr_rental_order
+#: model:ir.model,name:gr_rental_order.model_gr_rental_availability
+msgid "Rental Availability Engine"
+msgstr "محرك إتاحة التأجير"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__order_id
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__order_id
+msgid "Rental Order"
+msgstr "أمر التأجير"
+
+#. module: gr_rental_order
+#: model:ir.model,name:gr_rental_order.model_gr_rental_order_return_info_wizard
+msgid "Rental Order Expected Return Info"
+msgstr "بيانات الإرجاع المتوقع لأمر التأجير"
+
+#. module: gr_rental_order
+#: model:ir.actions.act_window,name:gr_rental_order.action_gr_rental_order
+#: model:ir.ui.menu,name:gr_rental_order.menu_gr_rental_orders
+msgid "Rental Orders"
+msgstr "أوامر التأجير"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__rental_start_date
+msgid "Rental Start Date"
+msgstr "تاريخ بداية التأجير"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__rental_status
+msgid "Rental Status"
+msgstr "حالة التأجير"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Request Off-Hire"
+msgstr "طلب إيقاف التأجير"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__requested_kva
+msgid "Requested kVA"
+msgstr "القدرة المطلوبة ك.ف.أ"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Reserve Asset"
+msgstr "حجز الأصل"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__state__reserved
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_search
+msgid "Reserved"
+msgstr "محجوز"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Reserved for order %s."
+msgstr "محجوز للأمر %s."
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Reset to Draft"
+msgstr "إرجاع إلى مسودة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order_checklist__phase__return
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Return"
+msgstr "إرجاع"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__rental_return_status
+msgid "Return Countdown Status"
+msgstr "حالة العد التنازلي للإرجاع"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__rental_return_status__ok
+msgid "Return Far"
+msgstr "الإرجاع بعيد"
+
+#. module: gr_rental_order
+#: model:ir.actions.report,name:gr_rental_order.action_report_gr_return_inspection
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_return_inspection
+msgid "Return Inspection Report"
+msgstr "تقرير فحص الإرجاع"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__return_note
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_return_inspection
+msgid "Return Note"
+msgstr "ملاحظة الإرجاع"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__rental_return_primary
+msgid "Return Primary Text"
+msgstr "نص الإرجاع الأساسي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__rental_return_secondary
+msgid "Return Secondary Text"
+msgstr "نص الإرجاع الثانوي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__customer_return_signature
+msgid "Return Signature"
+msgstr "توقيع الإرجاع"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__rental_return_status__soon
+msgid "Return Soon"
+msgstr "الإرجاع قريباً"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__return_technician_id
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_return_inspection
+msgid "Return Technician"
+msgstr "فني الإرجاع"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__rental_return_status__today
+msgid "Return Today"
+msgstr "الإرجاع اليوم"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__rental_return_status__tomorrow
+msgid "Return Tomorrow"
+msgstr "الإرجاع غداً"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "Return completed"
+msgstr "اكتمل الإرجاع"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "Return is due soon"
+msgstr "موعد الإرجاع قريب"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "Return is due today"
+msgstr "موعد الإرجاع اليوم"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "Return is due tomorrow"
+msgstr "الإرجاع غدًا"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__rental_return_status__done
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__state__returned
+msgid "Returned"
+msgstr "تم الإرجاع"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order_checklist__phase__safety
+msgid "Safety"
+msgstr "السلامة"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid "Select a generator asset before reserving."
+msgstr "حدد أصل المولد قبل الحجز."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "Select rented serials to check availability."
+msgstr "حدد الأرقام التسلسلية المؤجرة لفحص الإتاحة."
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_checklist__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "Set a rental start date to check availability."
+msgstr "حدد تاريخ بداية التأجير لفحص الإتاحة."
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Sign-off"
+msgstr "الاعتماد النهائي"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__site_id
+msgid "Site"
+msgstr "الموقع"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__rental_return_secondary
+msgid "Small status line of the smart button."
+msgstr "سطر حالة مختصر للزر الذكي."
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Start Inspection"
+msgstr "بدء الفحص"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_return_inspection
+msgid "Start Meter"
+msgstr "عداد البداية"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__start_meter_reading
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "Start Meter Reading"
+msgstr "قراءة عداد البداية"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Start Rental"
+msgstr "بدء التأجير"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order.py:0
+msgid ""
+"Start meter (%(start)s) cannot be below the asset's current meter (%(cur)s)."
+" Use the meter-correction wizard if needed."
+msgstr ""
+"لا يمكن أن تكون قراءة عداد البداية (%(start)s) أقل من قراءة العداد الحالية "
+"للأصل (%(cur)s). استخدم معالج تصحيح العداد عند الحاجة."
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__state
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order_return_info_wizard__return_status
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "Still time before return"
+msgstr "لسه وقت على الإرجاع"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.view_gr_rental_order_form
+msgid "Team"
+msgstr "الفريق"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__asset_id
+msgid ""
+"Technical mirror of the first rental line for legacy workflows. Users enter "
+"all rented serials in the Rented Serials tab."
+msgstr ""
+"مرآة تقنية لأول سطر تأجير لدعم مسارات العمل القديمة. المستخدم يدخل كل "
+"السيريالات المؤجرة في تبويب السيريالات المؤجرة."
+
+#. module: gr_rental_order
+#: model_terms:ir.actions.act_window,help:gr_rental_order.action_gr_rental_order
+msgid ""
+"The operational document that moves a generator from the depot to a\n"
+"               customer site and back, tracking each step."
+msgstr ""
+"المستند التشغيلي الذي ينقل المولد من المستودع إلى\n"
+"               موقع العميل ثم يعيده، مع تتبع كل خطوة."
+
+#. module: gr_rental_order
+#: model:ir.model.constraint,message:gr_rental_order.constraint_gr_rental_order_name_company_uniq
+msgid "The rental order reference must be unique per company."
+msgstr "يجب أن يكون مرجع أمر التأجير فريداً لكل شركة."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "The rental return date must be after the rental start date."
+msgstr "يجب أن يكون تاريخ إرجاع التأجير بعد تاريخ بداية التأجير."
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "Today"
+msgstr "اليوم"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_order_return.py:0
+msgid "Two days"
+msgstr "يومان"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: gr_rental_order
+#: model:ir.model.fields.selection,name:gr_rental_order.selection__gr_rental_order__availability_state__unavailable
+msgid "Unavailable"
+msgstr "غير متاح"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,field_description:gr_rental_order.field_gr_rental_order__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: gr_rental_order
+#: model:ir.model.fields,help:gr_rental_order.field_gr_rental_order__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "Yes"
+msgstr "نعم"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_return_inspection
+msgid "_____________________<br/>Customer"
+msgstr "_____________________<br/>العميل"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_delivery_note
+msgid "_____________________<br/>Driver"
+msgstr "_____________________<br/>السائق"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_return_inspection
+msgid "_____________________<br/>Inspector"
+msgstr "_____________________<br/>الفاحص"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_delivery_note
+msgid "_____________________<br/>Received By:"
+msgstr "_____________________<br/>استلمه:"
+
+#. module: gr_rental_order
+#: model_terms:ir.ui.view,arch_db:gr_rental_order.report_gr_install_report
+msgid "_____________________<br/>Technician"
+msgstr "_____________________<br/>الفني"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "not set"
+msgstr "غير محدد"
+
+#. module: gr_rental_order
+#: model:ir.actions.report,print_report_name:gr_rental_order.action_report_gr_delivery_note
+msgid "object._legacy_report_filename('delivery_note')"
+msgstr "object._legacy_report_filename('delivery_note')"
+
+#. module: gr_rental_order
+#: model:ir.actions.report,print_report_name:gr_rental_order.action_report_gr_install_report
+msgid "object._legacy_report_filename('installation')"
+msgstr "object._legacy_report_filename('installation')"
+
+#. module: gr_rental_order
+#: model:ir.actions.report,print_report_name:gr_rental_order.action_report_gr_return_inspection
+msgid "object._legacy_report_filename('return_inspection')"
+msgstr "object._legacy_report_filename('return_inspection')"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "open-ended"
+msgstr "مفتوح النهاية"
+
+#. module: gr_rental_order
+#. odoo-python
+#: code:addons/gr_rental_order/models/gr_rental_availability.py:0
+msgid "the supplier"
+msgstr "المورد"

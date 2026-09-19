@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_hour_log_form" model="ir.ui.view">
+        <field name="name">gr.hour.log.form</field>
+        <field name="model">gr.hour.log</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_submit" type="object" string="Submit"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="Approve"
+                            class="btn-primary" invisible="state != 'submitted'"/>
+                    <button name="action_open_correction" type="object" string="Correct"
+                            invisible="state != 'approved'"
+                            groups="gr_security_base.group_generator_operations_officer"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state in ('approved','cancelled')"/>
+                    <button name="action_reset_to_draft" type="object" string="Reset to Draft"
+                            invisible="state not in ('submitted','cancelled')"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,submitted,approved"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Violation" bg_color="text-bg-danger"
+                            invisible="not has_violation"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Rental">
+                            <field name="rental_order_id"
+                                   readonly="state != 'draft'"/>
+                            <field name="asset_id"/>
+                            <field name="partner_id"/>
+                            <field name="contract_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group string="Reading">
+                            <field name="reading_date" readonly="state == 'approved'"/>
+                            <field name="previous_reading_date"/>
+                            <field name="previous_meter_reading"/>
+                            <field name="current_meter_reading" readonly="state == 'approved'"/>
+                            <field name="days_covered"/>
+                        </group>
+                    </group>
+                    <group string="Hour Breakdown">
+                        <group>
+                            <field name="used_hours"/>
+                            <field name="included_allowance"/>
+                            <field name="max_allowance"/>
+                        </group>
+                        <group>
+                            <field name="regular_hours"/>
+                            <field name="overtime_hours"/>
+                            <field name="violation_hours"/>
+                            <field name="has_violation" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Approval" col="2">
+                        <field name="approved_by_id"/>
+                        <field name="approved_date"/>
+                    </group>
+                    <field name="note" placeholder="Notes..."/>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gr_hour_log_list" model="ir.ui.view">
+        <field name="name">gr.hour.log.list</field>
+        <field name="model">gr.hour.log</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="has_violation" decoration-muted="state == 'cancelled'">
+                <field name="name"/>
+                <field name="reading_date"/>
+                <field name="partner_id"/>
+                <field name="asset_id"/>
+                <field name="used_hours"/>
+                <field name="regular_hours"/>
+                <field name="overtime_hours"/>
+                <field name="violation_hours"/>
+                <field name="has_violation" column_invisible="1"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'approved'"
+                       decoration-info="state == 'submitted'"
+                       decoration-muted="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_hour_log_search" model="ir.ui.view">
+        <field name="name">gr.hour.log.search</field>
+        <field name="model">gr.hour.log</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="rental_order_id"/>
+                <field name="asset_id"/>
+                <field name="partner_id"/>
+                <separator/>
+                <filter name="f_violation" string="Violations" domain="[('has_violation','=',True)]"/>
+                <filter name="f_submitted" string="Submitted" domain="[('state','=','submitted')]"/>
+                <filter name="f_approved" string="Approved" domain="[('state','=','approved')]"/>
+                <group>
+                    <filter name="g_state" string="Status" context="{'group_by': 'state'}"/>
+                    <filter name="g_customer" string="Customer" context="{'group_by': 'partner_id'}"/>
+                    <filter name="g_asset" string="Asset" context="{'group_by': 'asset_id'}"/>
+                    <filter name="g_date" string="Reading Date" context="{'group_by': 'reading_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_gr_hour_log_correction_wizard_form" model="ir.ui.view">
+        <field name="name">gr.hour.log.correction.wizard.form</field>
+        <field name="model">gr.hour.log.correction.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Correct Hour Log">
+                <group>
+                    <field name="log_id"/>
+                    <field name="reading_date"/>
+                    <field name="current_meter_reading"/>
+                    <field name="reason" placeholder="Why is this correction needed?"/>
+                </group>
+                <footer>
+                    <button name="action_apply" type="object" string="Apply Correction"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_gr_hour_log" model="ir.actions.act_window">
+        <field name="name">Hour Logs</field>
+        <field name="res_model">gr.hour.log</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_gr_hour_log_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Record your first hour-meter reading</p>
+            <p>Daily or periodic meter readings drive overtime/violation billing.</p>
+        </field>
+    </record>
+
+</odoo>

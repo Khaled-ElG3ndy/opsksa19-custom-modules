@@ -1,0 +1,563 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_rental_inspection
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_checklist_item__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_rental_inspection
+#. odoo-python
+#: code:addons/gr_rental_inspection/models/gr_rental_order_inspection.py:0
+msgid ""
+"Cannot close %s: a passed RETURN inspection is required first. The unit "
+"stays unavailable until the return inspection is signed off."
+msgstr ""
+"لا يمكن إغلاق %s: يلزم أولاً فحص إرجاع ناجح. تظل الوحدة غير متاحة حتى يُعتمد"
+" فحص الإرجاع."
+
+#. module: gr_rental_inspection
+#. odoo-python
+#: code:addons/gr_rental_inspection/models/gr_rental_order_inspection.py:0
+msgid ""
+"Cannot dispatch %s: a passed DELIVERY inspection is required first "
+"(readiness check). Create and pass a delivery inspection for this order."
+msgstr ""
+"لا يمكن إرسال %s: يلزم أولاً فحص تسليم ناجح (فحص الجاهزية). أنشئ فحص تسليم "
+"لهذا الأمر واجتزه."
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_checklist_item__name
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection_line__name
+msgid "Check Item"
+msgstr "بند الفحص"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_checklist_item__create_uid
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__create_uid
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_checklist_item__create_date
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__create_date
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection_line__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__current_hours
+msgid "Current Hours"
+msgstr "الساعات الحالية"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__partner_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__customer_ack_name
+msgid "Customer Acknowledged (name)"
+msgstr "اعتماد العميل (الاسم)"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields.selection,name:gr_rental_inspection.selection__gr_rental_inspection__mode__delivery
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_search
+msgid "Delivery"
+msgstr "تسليم"
+
+#. module: gr_rental_inspection
+#. odoo-python
+#: code:addons/gr_rental_inspection/models/gr_rental_order_inspection.py:0
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_order_form_inspection
+msgid "Delivery Inspection"
+msgstr "فحص التسليم"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_order__delivery_inspection_passed
+msgid "Delivery Inspection Passed"
+msgstr "تم اجتياز فحص التسليم"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_checklist_item__display_name
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__display_name
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection_line__display_name
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_order__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields.selection,name:gr_rental_inspection.selection__gr_rental_inspection__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_rental_inspection
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_search
+msgid "Equipment"
+msgstr "المعدات"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__asset_id
+msgid "Equipment (Asset No)"
+msgstr "المعدة (رقم الأصل)"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields.selection,name:gr_rental_inspection.selection__gr_rental_inspection_line__result__fail
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_form
+msgid "Fail"
+msgstr "فشل"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields.selection,name:gr_rental_inspection.selection__gr_rental_inspection__state__failed
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_form
+msgid "Failed"
+msgstr "فاشل"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: gr_rental_inspection
+#: model:ir.model,name:gr_rental_inspection.model_gr_rental_order
+msgid "Generator Rental Order"
+msgstr "أمر تأجير المولد"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_checklist_item__id
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__id
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection_line__id
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_order__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__message_has_error
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__inspected_by_id
+msgid "Inspected By"
+msgstr "فحص بواسطة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection_line__inspection_id
+msgid "Inspection"
+msgstr "الفحص"
+
+#. module: gr_rental_inspection
+#. odoo-python
+#: code:addons/gr_rental_inspection/models/gr_rental_inspection.py:0
+msgid ""
+"Inspection %s has failed checklist items: %s. Resolve them or mark the "
+"inspection Failed."
+msgstr "الفحص %s به بنود قائمة تحقق فاشلة: %s. عالِجها أو علّم الفحص كفاشل."
+
+#. module: gr_rental_inspection
+#: model:ir.ui.menu,name:gr_rental_inspection.menu_gr_rental_checklist_item
+msgid "Inspection Checklist"
+msgstr "قائمة تحقق الفحص"
+
+#. module: gr_rental_inspection
+#: model:ir.actions.act_window,name:gr_rental_inspection.action_gr_rental_checklist_item
+msgid "Inspection Checklist Items"
+msgstr "بنود قائمة تحقق الفحص"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_order__inspection_count
+msgid "Inspection Count"
+msgstr "الفحوصات"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__inspection_date
+msgid "Inspection Date"
+msgstr "تاريخ الفحص"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__name
+msgid "Inspection Ref"
+msgstr "مرجع الفحص"
+
+#. module: gr_rental_inspection
+#. odoo-python
+#: code:addons/gr_rental_inspection/models/gr_rental_order_inspection.py:0
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_order__inspection_ids
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_order_form_inspection
+msgid "Inspections"
+msgstr "الفحوصات"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_checklist_item__write_uid
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__write_uid
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_checklist_item__write_date
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__write_date
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__checklist_ids
+msgid "Machine Condition"
+msgstr "حالة المعدة"
+
+#. module: gr_rental_inspection
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_form
+msgid "Machine Condition Checklist"
+msgstr "قائمة تحقق حالة المعدة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__mode
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_search
+msgid "Mode"
+msgstr "الوضع"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields.selection,name:gr_rental_inspection.selection__gr_rental_inspection_line__result__na
+msgid "N/A"
+msgstr "غير منطبق"
+
+#. module: gr_rental_inspection
+#. odoo-python
+#: code:addons/gr_rental_inspection/models/gr_rental_inspection.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection_line__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields.selection,name:gr_rental_inspection.selection__gr_rental_inspection_line__result__ok
+msgid "OK"
+msgstr "موافق"
+
+#. module: gr_rental_inspection
+#. odoo-python
+#: code:addons/gr_rental_inspection/models/gr_rental_inspection.py:0
+msgid "Only draft inspections can be passed."
+msgstr "لا يمكن اجتياز إلا الفحوصات المسودة."
+
+#. module: gr_rental_inspection
+#. odoo-python
+#: code:addons/gr_rental_inspection/models/gr_rental_inspection.py:0
+msgid "Only draft/passed inspections can be failed."
+msgstr "لا يمكن تعليم إلا الفحوصات المسودة/الناجحة كفاشلة."
+
+#. module: gr_rental_inspection
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_form
+msgid "Order & Unit"
+msgstr "الأمر والوحدة"
+
+#. module: gr_rental_inspection
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_form
+msgid "Pass"
+msgstr "تمرير"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields.selection,name:gr_rental_inspection.selection__gr_rental_inspection__state__passed
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_form
+msgid "Passed"
+msgstr "ناجح"
+
+#. module: gr_rental_inspection
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_search
+msgid "Pending (draft)"
+msgstr "معلق (مسودة)"
+
+#. module: gr_rental_inspection
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_form
+msgid "Reading"
+msgstr "القراءة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__remarks
+msgid "Remarks"
+msgstr "ملاحظات"
+
+#. module: gr_rental_inspection
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_form
+msgid "Remarks / conditions..."
+msgstr "ملاحظات / حالات..."
+
+#. module: gr_rental_inspection
+#: model:ir.model,name:gr_rental_inspection.model_gr_rental_inspection
+msgid "Rental Inspection (Delivery / Return / Replacement)"
+msgstr "فحص التأجير (تسليم / إرجاع / استبدال)"
+
+#. module: gr_rental_inspection
+#: model:ir.model,name:gr_rental_inspection.model_gr_rental_checklist_item
+msgid "Rental Inspection Checklist Item (master)"
+msgstr "بند قائمة تحقق فحص التأجير (رئيسي)"
+
+#. module: gr_rental_inspection
+#: model:ir.model,name:gr_rental_inspection.model_gr_rental_inspection_line
+msgid "Rental Inspection Checklist Line"
+msgstr "سطر قائمة تحقق فحص التأجير"
+
+#. module: gr_rental_inspection
+#: model:ir.actions.act_window,name:gr_rental_inspection.action_gr_rental_inspection
+#: model:ir.ui.menu,name:gr_rental_inspection.menu_gr_rental_inspection
+msgid "Rental Inspections"
+msgstr "فحوصات التأجير"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__rental_order_id
+msgid "Rental Order"
+msgstr "أمر التأجير"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields.selection,name:gr_rental_inspection.selection__gr_rental_inspection__mode__replacement
+msgid "Replacement"
+msgstr "استبدال"
+
+#. module: gr_rental_inspection
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_form
+msgid "Reset to Draft"
+msgstr "إرجاع إلى مسودة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection_line__result
+msgid "Result"
+msgstr "النتيجة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields.selection,name:gr_rental_inspection.selection__gr_rental_inspection__mode__return
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_search
+msgid "Return"
+msgstr "إرجاع"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_order__return_inspection_passed
+msgid "Return Inspection Passed"
+msgstr "تم اجتياز فحص الإرجاع"
+
+#. module: gr_rental_inspection
+#. odoo-python
+#: code:addons/gr_rental_inspection/models/gr_rental_order_inspection.py:0
+msgid ""
+"Return inspection %s auto-created; unit stays unavailable until it is "
+"passed."
+msgstr "تم إنشاء فحص الإرجاع %s تلقائيًا؛ وتظل الوحدة غير متاحة حتى يُجتاز."
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__current_hours
+msgid ""
+"Running-hours reading at this inspection. Captured at delivery and at "
+"return; feeds the hours-based PM trigger."
+msgstr ""
+"قراءة ساعات التشغيل في هذا الفحص. تسجل عند التسليم وعند الإرجاع وتغذي مشغل "
+"الصيانة الدورية حسب الساعات."
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_checklist_item__sequence
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection_line__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__state
+#: model_terms:ir.ui.view,arch_db:gr_rental_inspection.view_gr_rental_inspection_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__asset_id
+msgid ""
+"Technical mirror of the first rental line for legacy workflows. Users enter "
+"all rented serials in the Rented Serials tab."
+msgstr ""
+"نسخة تقنية من أول بند تأجير لسير العمل القديم. يُدخل المستخدمون كل الأرقام "
+"التسلسلية المؤجَّرة في تبويب الأرقام التسلسلية المؤجَّرة."
+
+#. module: gr_rental_inspection
+#: model:ir.model.constraint,message:gr_rental_inspection.constraint_gr_rental_inspection_name_company_uniq
+msgid "The inspection reference must be unique per company."
+msgstr "يجب أن يكون مرجع الفحص فريداً لكل شركة."
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,field_description:gr_rental_inspection.field_gr_rental_inspection__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: gr_rental_inspection
+#: model:ir.model.fields,help:gr_rental_inspection.field_gr_rental_inspection__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: gr_rental_inspection
+#. odoo-python
+#: code:addons/gr_rental_inspection/models/gr_rental_order_inspection.py:0
+msgid "rental_order_id"
+msgstr "rental_order_id"

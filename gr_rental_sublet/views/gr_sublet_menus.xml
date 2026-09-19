@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- The supplier rent-in screens live under Third-Party Rented Equipment,
+         next to the equipment they are about, rather than as loose entries at
+         the root. Same actions, same models, same groups as before: only the
+         parent and the labels change, so nobody loses or gains access.
+
+         Sales officers see the agreements; finance officers additionally see
+         exposure and margin. The parent menu is visible to any generator
+         user, which is what makes the equipment list underneath reachable. -->
+    <menuitem id="menu_gr_sublet_agreement"
+              name="Supplier Rental Agreements"
+              parent="gr_equipment.menu_gr_equipment_third_party"
+              action="action_gr_sublet_agreement"
+              groups="gr_security_base.group_generator_sales_officer"
+              sequence="20"/>
+    <menuitem id="menu_gr_sublet_exposure"
+              name="Supplier Exposure"
+              parent="gr_equipment.menu_gr_equipment_third_party"
+              action="action_gr_sublet_exposure"
+              groups="gr_security_base.group_generator_finance_officer"
+              sequence="30"/>
+    <menuitem id="menu_gr_sublet_margin"
+              name="Margin Analysis"
+              parent="gr_equipment.menu_gr_equipment_third_party"
+              action="action_gr_sublet_margin"
+              groups="gr_security_base.group_generator_finance_officer"
+              sequence="40"/>
+</odoo>

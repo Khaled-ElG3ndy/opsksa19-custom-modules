@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_gr_customer_approval" model="report.paperformat">
+        <field name="name">Customer Approval A4</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">8</field>
+        <field name="margin_bottom">14</field>
+        <field name="margin_left">8</field>
+        <field name="margin_right">8</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_approval_rental_agreement" model="ir.actions.report">
+        <field name="name">Rental Agreement Approval Document</field>
+        <field name="model">gr.rental.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">gr_customer_approval.report_approval_rental_agreement</field>
+        <field name="report_file">gr_customer_approval.report_approval_rental_agreement</field>
+        <field name="print_report_name">object._approval_filename()</field>
+        <field name="paperformat_id" ref="paperformat_gr_customer_approval"/>
+        <field name="binding_model_id" ref="gr_rental_order.model_gr_rental_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_approval_delivery" model="ir.actions.report">
+        <field name="name">Delivery Approval Document</field>
+        <field name="model">gr.rental.inspection</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">gr_customer_approval.report_approval_delivery</field>
+        <field name="report_file">gr_customer_approval.report_approval_delivery</field>
+        <field name="print_report_name">object._approval_filename(report_type='delivery')</field>
+        <field name="paperformat_id" ref="paperformat_gr_customer_approval"/>
+        <field name="binding_model_id" ref="gr_rental_inspection.model_gr_rental_inspection"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_approval_visit" model="ir.actions.report">
+        <field name="name">Visit Approval Document</field>
+        <field name="model">gr.field.worksheet</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">gr_customer_approval.report_approval_visit</field>
+        <field name="report_file">gr_customer_approval.report_approval_visit</field>
+        <field name="print_report_name">object._approval_filename(report_type='visit')</field>
+        <field name="paperformat_id" ref="paperformat_gr_customer_approval"/>
+        <field name="binding_model_id" ref="gr_field_worksheet.model_gr_field_worksheet"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_approval_return" model="ir.actions.report">
+        <field name="name">Return Approval Document</field>
+        <field name="model">gr.rental.inspection</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">gr_customer_approval.report_approval_return</field>
+        <field name="report_file">gr_customer_approval.report_approval_return</field>
+        <field name="print_report_name">object._approval_filename(report_type='return')</field>
+        <field name="paperformat_id" ref="paperformat_gr_customer_approval"/>
+        <field name="binding_model_id" ref="gr_rental_inspection.model_gr_rental_inspection"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

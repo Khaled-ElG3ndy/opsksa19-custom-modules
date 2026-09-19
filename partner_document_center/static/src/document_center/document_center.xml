@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+<t t-name="partner_document_center.DocumentCenter">
+    <div class="o_pdc" t-att-class="{ 'o_pdc_inline': props.inline }">
+
+        <!-- ============ Search + primary actions ============ -->
+        <div class="o_pdc_toolbar">
+            <div class="o_pdc_search">
+                <i class="fa fa-search o_pdc_search_icon" role="img" aria-hidden="true"/>
+                <input type="text" class="form-control o_pdc_search_input"
+                       placeholder="Search files"
+                       aria-label="Search files"
+                       t-att-value="state.filters.search"
+                       t-on-input="onSearchInput"/>
+            </div>
+
+            <button class="btn btn-primary o_pdc_upload_btn" t-on-click="() => this.openUploadDialog()">
+                <i class="fa fa-upload me-1" role="img" aria-hidden="true"/>
+                <span>Upload File</span>
+            </button>
+
+            <div class="btn-group o_pdc_viewmode" role="group" aria-label="Display mode">
+                <button class="btn btn-secondary" t-att-class="{ active: state.viewMode === 'grid' }"
+                        title="Grid" t-on-click="() => state.viewMode = 'grid'">
+                    <i class="fa fa-th-large" role="img" aria-hidden="true"/>
+                </button>
+                <button class="btn btn-secondary" t-att-class="{ active: state.viewMode === 'timeline' }"
+                        title="Timeline" t-on-click="() => state.viewMode = 'timeline'">
+                    <i class="fa fa-clock-o" role="img" aria-hidden="true"/>
+                </button>
+            </div>
+        </div>
+
+        <!-- ============ Kind: live business records vs stored files ============ -->
+        <div class="o_pdc_kinds" role="group" aria-label="Document kind">
+            <t t-foreach="docKindOptions" t-as="option" t-key="option.value">
+                <button class="o_pdc_kind" t-att-class="{ active: state.filters.doc_kind === option.value }"
+                        t-on-click="() => this.setFilter('doc_kind', option.value)">
+                    <span t-esc="option.label"/>
+                    <span class="o_pdc_chip_count" t-esc="option.count"/>
+                </button>
+            </t>
+        </div>
+
+        <!-- ============ Source chips ============ -->
+        <div class="o_pdc_chips" t-if="state.sources.length">
+            <button class="o_pdc_chip" t-att-class="{ active: state.filters.source === 'all' }"
+                    t-on-click="() => this.setFilter('source', 'all')">
+                <span>All</span>
+                <span class="o_pdc_chip_count" t-esc="state.kpi.total"/>
+            </button>
+            <t t-foreach="state.sources" t-as="group" t-key="group.group">
+                <button class="o_pdc_chip" t-att-class="{ active: state.filters.source === group.group }"
+                        t-on-click="() => this.setFilter('source', group.group)">
+                    <span t-esc="group.label"/>
+                    <span class="o_pdc_chip_count" t-esc="group.count"/>
+                </button>
+            </t>
+        </div>
+
+        <!-- ============ Secondary filters ============ -->
+        <div class="o_pdc_filters">
+            <Dropdown>
+                <button class="btn btn-secondary btn-sm o-dropdown-caret">
+                    <t t-esc="currentFileTypeLabel"/>
+                </button>
+                <t t-set-slot="content">
+                    <t t-foreach="fileTypeOptions" t-as="option" t-key="option.value">
+                        <DropdownItem onSelected="() => this.setFilter('file_type', option.value)">
+                            <t t-esc="option.label"/>
+                        </DropdownItem>
+                    </t>
+                </t>
+            </Dropdown>
+
+            <Dropdown>
+                <button class="btn btn-secondary btn-sm o-dropdown-caret">
+                    <t t-esc="currentDateLabel"/>
+                </button>
+                <t t-set-slot="content">
+                    <t t-foreach="dateOptions" t-as="option" t-key="option.value">
+                        <DropdownItem onSelected="() => this.setFilter('date_range', option.value)">
+                            <t t-esc="option.label"/>
+                        </DropdownItem>
+                    </t>
+                </t>
+            </Dropdown>
+
+            <div class="o_pdc_daterange" t-if="state.filters.date_range === 'custom'">
+                <input type="date" class="form-control form-control-sm" aria-label="From"
+                       t-att-value="state.filters.date_from or ''"
+                       t-on-change="(ev) => this.setFilter('date_from', ev.target.value)"/>
+                <span class="o_pdc_daterange_sep">&#8594;</span>
+                <input type="date" class="form-control form-control-sm" aria-label="To"
+                       t-att-value="state.filters.date_to or ''"
+                       t-on-change="(ev) => this.setFilter('date_to', ev.target.value)"/>
+            </div>
+
+            <Dropdown t-if="state.categories.length">
+                <button class="btn btn-secondary btn-sm o-dropdown-caret">
+                    <t t-esc="currentCategoryLabel"/>
+                </button>
+                <t t-set-slot="content">
+                    <DropdownItem onSelected="() => this.setFilter('category_id', false)">
+                        All categories
+                    </DropdownItem>
+                    <t t-foreach="state.categories" t-as="category" t-key="category.id">
+                        <DropdownItem onSelected="() => this.setFilter('category_id', category.id)">
+                            <t t-esc="category.name"/>
+                        </DropdownItem>
+                    </t>
+                </t>
+            </Dropdown>
+
+            <Dropdown>
+                <button class="btn btn-secondary btn-sm o-dropdown-caret">
+                    <i class="fa fa-sort me-1" role="img" aria-hidden="true"/>
+                    <t t-esc="currentOrderLabel"/>
+                </button>
+                <t t-set-slot="content">
+                    <t t-foreach="orderOptions" t-as="option" t-key="option.value">
+                        <DropdownItem onSelected="() => this.setFilter('order', option.value)">
+                            <t t-esc="option.label"/>
+                        </DropdownItem>
+                    </t>
+                </t>
+            </Dropdown>
+
+            <Dropdown t-if="state.viewMode === 'grid'">
+                <button class="btn btn-secondary btn-sm o-dropdown-caret">
+                    <i class="fa fa-object-group me-1" role="img" aria-hidden="true"/>
+                    <t t-esc="labelFor(groupByOptions, state.groupBy)"/>
+                </button>
+                <t t-set-slot="content">
+                    <t t-foreach="groupByOptions" t-as="option" t-key="option.value">
+                        <DropdownItem onSelected="() => state.groupBy = option.value">
+                            <t t-esc="option.label"/>
+                        </DropdownItem>
+                    </t>
+                </t>
+            </Dropdown>
+
+            <button class="btn btn-sm o_pdc_toggle"
+                    t-att-class="state.filters.important_only ? 'btn-warning' : 'btn-secondary'"
+                    t-on-click="() => this.toggleImportantOnly()">
+                <i class="fa fa-star me-1" role="img" aria-hidden="true"/>
+                <span>Important</span>
+            </button>
+
+            <button class="btn btn-sm o_pdc_toggle" t-if="state.scopeAvailable"
+                    t-att-class="state.filters.scope === 'commercial' ? 'btn-primary' : 'btn-secondary'"
+                    t-on-click="() => this.toggleScope()"
+                    title="Include the files of every contact of this company">
+                <i class="fa fa-sitemap me-1" role="img" aria-hidden="true"/>
+                <span t-if="state.filters.scope === 'commercial'">Company and all contacts</span>
+                <span t-else="">This contact only</span>
+            </button>
+
+            <button class="btn btn-sm btn-link o_pdc_clear" t-if="hasActiveFilters"
+                    t-on-click="() => this.clearFilters()">
+                Clear filters
+            </button>
+        </div>
+
+        <div class="alert alert-warning o_pdc_truncated" role="status" t-if="state.truncated">
+            This contact has more documents than can be listed at once. Narrow the search to see the rest.
+        </div>
+
+        <!-- ============ Body ============ -->
+        <div class="o_pdc_body">
+            <div class="o_pdc_loading" t-if="state.loading">
+                <span class="fa fa-circle-o-notch fa-spin fa-2x" role="img" aria-hidden="true"/>
+            </div>
+
+            <div class="alert alert-danger" role="alert" t-elif="state.error">
+                The documents of this contact could not be loaded.
+            </div>
+
+            <t t-elif="!props.partnerId">
+                <div class="o_pdc_empty">
+                    <i class="fa fa-folder-open-o o_pdc_empty_icon" role="img" aria-hidden="true"/>
+                    <p class="o_pdc_empty_title">Save this contact to start attaching files.</p>
+                </div>
+            </t>
+
+            <t t-elif="!state.documents.length">
+                <div class="o_pdc_empty">
+                    <i class="fa fa-folder-open-o o_pdc_empty_icon" role="img" aria-hidden="true"/>
+                    <t t-if="hasActiveFilters">
+                        <p class="o_pdc_empty_title">No files match these filters</p>
+                        <button class="btn btn-secondary" t-on-click="() => this.clearFilters()">
+                            Clear filters
+                        </button>
+                    </t>
+                    <t t-else="">
+                        <p class="o_pdc_empty_title">No files are linked to this contact yet</p>
+                        <button class="btn btn-primary" t-on-click="() => this.openUploadDialog()">
+                            <i class="fa fa-upload me-1" role="img" aria-hidden="true"/>
+                            <span>Upload the first file</span>
+                        </button>
+                    </t>
+                </div>
+            </t>
+
+            <t t-else="">
+                <t t-foreach="groups" t-as="group" t-key="group.key">
+                    <div class="o_pdc_group_header" t-if="group.label">
+                        <span class="o_pdc_group_label" t-esc="group.label"/>
+                        <span class="o_pdc_group_count" t-esc="group.documents.length"/>
+                    </div>
+                    <div class="o_pdc_grid" t-att-class="{ o_pdc_timeline: state.viewMode === 'timeline' }">
+                        <t t-foreach="group.documents" t-as="doc" t-key="doc.id">
+                            <t t-if="doc.isRecord" t-call="partner_document_center.BusinessDocumentCard"/>
+                            <t t-else="" t-call="partner_document_center.DocumentCard"/>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </div>
+
+        <!-- ============ Pager ============ -->
+        <div class="o_pdc_pager" t-if="state.total > state.filters.limit">
+            <Pager offset="state.filters.offset" limit="state.filters.limit"
+                   total="state.total" onUpdate.bind="onPagerUpdate"/>
+        </div>
+    </div>
+</t>
+
+
+<!--
+    A live business document. Everything on it was read off the record during
+    this request; there is no stored copy, so the card is the record.
+-->
+<t t-name="partner_document_center.BusinessDocumentCard">
+    <div class="o_pdc_card o_pdc_card_record">
+
+        <div class="o_pdc_card_preview o_pdc_record_preview"
+             t-on-click="() => this.onDocumentClick(doc)"
+             t-att-title="doc.name" role="button" tabindex="0">
+            <i class="fa o_pdc_card_icon" t-att-class="doc.icon" role="img" aria-hidden="true"/>
+            <span class="o_pdc_live_badge">Live</span>
+        </div>
+
+        <div class="o_pdc_card_body">
+            <div class="o_pdc_card_name" t-att-title="doc.name" t-esc="doc.name"/>
+
+            <div class="o_pdc_card_meta">
+                <span class="o_pdc_badge o_pdc_badge_record" t-esc="doc.sourceLabel"/>
+                <t t-if="doc.stateLabel">
+                    <span class="o_pdc_state" t-esc="doc.stateLabel"/>
+                </t>
+            </div>
+
+            <div class="o_pdc_card_source" t-if="doc.amountLabel">
+                <span class="o_pdc_amount" t-esc="doc.amountLabel"/>
+            </div>
+
+            <div class="o_pdc_card_footer">
+                <span t-att-title="formatDocumentDateTime(doc.createDate)"
+                      t-esc="formatDocumentDate(doc.createDate)"/>
+                <t t-if="doc.writeDate">
+                    <span class="o_pdc_dot">&#183;</span>
+                    <span t-att-title="formatDocumentDateTime(doc.writeDate)">
+                        Updated <t t-esc="formatDocumentDate(doc.writeDate)"/>
+                    </span>
+                </t>
+            </div>
+
+            <div class="o_pdc_related" t-if="doc.attachmentCount">
+                <button class="btn btn-sm btn-link o_pdc_related_btn"
+                        t-on-click="() => this.focusOnRecord(doc)">
+                    <i class="fa fa-paperclip me-1" role="img" aria-hidden="true"/>
+                    <t t-esc="doc.attachmentCount"/>
+                    <span class="ms-1">files</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="o_pdc_card_actions">
+            <button class="btn btn-sm btn-link" t-if="doc.canPrint"
+                    title="Preview" t-on-click="() => this.onDocumentClick(doc)">
+                <i class="fa fa-eye" role="img" aria-hidden="true"/>
+            </button>
+            <button class="btn btn-sm btn-link" t-if="doc.canPrint"
+                    title="Print" t-on-click="() => this.printDocument(doc)">
+                <i class="fa fa-print" role="img" aria-hidden="true"/>
+            </button>
+            <button class="btn btn-sm btn-link" title="Open source document"
+                    t-on-click="() => this.openSource(doc)">
+                <i class="fa fa-external-link" role="img" aria-hidden="true"/>
+            </button>
+        </div>
+    </div>
+</t>
+
+
+<t t-name="partner_document_center.DocumentCard">
+    <div class="o_pdc_card" t-att-class="{ o_pdc_card_important: doc.isImportant }">
+
+        <div class="o_pdc_card_preview" t-on-click="() => this.onDocumentClick(doc)"
+             t-att-title="doc.name" role="button" tabindex="0">
+            <img t-if="doc.thumbnailUrl" class="o_pdc_card_thumb" loading="lazy"
+                 t-att-src="doc.thumbnailUrl" t-att-alt="doc.name"/>
+            <i t-else="" class="fa o_pdc_card_icon" t-att-class="doc.icon" role="img" aria-hidden="true"/>
+            <span class="o_pdc_card_star" t-if="doc.isImportant" title="Important">
+                <i class="fa fa-star" role="img" aria-hidden="true"/>
+            </span>
+        </div>
+
+        <div class="o_pdc_card_body">
+            <div class="o_pdc_card_name" t-att-title="doc.name" t-esc="doc.name"/>
+
+            <div class="o_pdc_card_meta">
+                <span class="o_pdc_badge" t-esc="doc.fileType.toUpperCase()"/>
+                <span class="o_pdc_dot">&#183;</span>
+                <span t-esc="formatSize(doc.fileSize)"/>
+                <t t-if="doc.categoryName">
+                    <span class="o_pdc_dot">&#183;</span>
+                    <span class="o_pdc_category" t-esc="doc.categoryName"/>
+                </t>
+            </div>
+
+            <div class="o_pdc_card_source" t-if="doc.sourceDisplayName">
+                <span class="o_pdc_card_source_label" t-esc="doc.sourceLabel"/>
+                <span class="o_pdc_card_source_name" t-esc="doc.sourceDisplayName"/>
+            </div>
+
+            <div class="o_pdc_card_footer">
+                <span t-att-title="formatDocumentDateTime(doc.createDate)"
+                      t-esc="formatDocumentDate(doc.createDate)"/>
+                <t t-if="doc.uploadedBy">
+                    <span class="o_pdc_dot">&#183;</span>
+                    <span class="o_pdc_card_author" t-esc="doc.uploadedBy"/>
+                </t>
+            </div>
+        </div>
+
+        <div class="o_pdc_card_actions">
+            <button class="btn btn-sm btn-link" t-if="doc.isViewable"
+                    title="Preview" t-on-click="() => this.onDocumentClick(doc)">
+                <i class="fa fa-eye" role="img" aria-hidden="true"/>
+            </button>
+            <a class="btn btn-sm btn-link" t-att-href="doc.downloadUrl"
+               title="Download" download="download">
+                <i class="fa fa-download" role="img" aria-hidden="true"/>
+            </a>
+            <button class="btn btn-sm btn-link" t-if="doc.canOpenSource"
+                    title="Open source document" t-on-click="() => this.openSource(doc)">
+                <i class="fa fa-external-link" role="img" aria-hidden="true"/>
+            </button>
+            <button class="btn btn-sm btn-link" t-if="doc.canWrite"
+                    title="Important"
+                    t-att-class="doc.isImportant ? 'text-warning' : ''"
+                    t-on-click="() => this.toggleImportant(doc)">
+                <i class="fa" t-att-class="doc.isImportant ? 'fa-star' : 'fa-star-o'"
+                   role="img" aria-hidden="true"/>
+            </button>
+            <button class="btn btn-sm btn-link" t-if="doc.canWrite"
+                    title="Edit" t-on-click="() => this.editDocument(doc)">
+                <i class="fa fa-pencil" role="img" aria-hidden="true"/>
+            </button>
+            <button class="btn btn-sm btn-link text-danger" t-if="doc.canDelete"
+                    title="Delete" t-on-click="() => this.deleteDocument(doc)">
+                <i class="fa fa-trash-o" role="img" aria-hidden="true"/>
+            </button>
+        </div>
+    </div>
+</t>
+
+
+<t t-name="partner_document_center.DocumentCenterWidget">
+    <div class="o_pdc_widget">
+        <DocumentCenter partnerId="partnerId" inline="true"/>
+    </div>
+</t>
+
+
+<t t-name="partner_document_center.DocumentCenterButton">
+    <button class="oe_stat_button" type="button" t-on-click="() => this.onClick()">
+        <div class="o_stat_info">
+            <span class="o_stat_value">
+                <i class="fa fa-circle-o-notch fa-spin" t-if="state.loading" role="img" aria-hidden="true"/>
+                <t t-elif="state.count !== null" t-esc="state.count"/>
+                <t t-else="">-</t>
+            </span>
+            <span class="o_stat_text" t-esc="label"/>
+        </div>
+        <i class="fa fa-fw fa-folder-open-o o_button_icon" role="img" aria-hidden="true"/>
+    </button>
+</t>
+
+
+<t t-name="partner_document_center.DocumentCenterAction">
+    <Layout className="'o_pdc_action'" display="{ controlPanel: {} }">
+        <DocumentCenter partnerId="partnerId" partnerName="partnerName"/>
+    </Layout>
+</t>
+
+
+<t t-name="partner_document_center.UploadDocumentDialog">
+    <Dialog title="'Upload File'" size="'md'">
+        <div class="o_pdc_upload">
+            <div class="mb-3">
+                <label class="form-label" for="pdc_upload_file">File</label>
+                <input type="file" id="pdc_upload_file" class="form-control"
+                       t-ref="fileInput" t-on-change="(ev) => this.onFileChange(ev)"/>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Destination</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="pdc_dest_partner"
+                           t-att-checked="state.destination === 'partner'"
+                           t-on-change="() => this.onDestinationChange('partner')"/>
+                    <label class="form-check-label" for="pdc_dest_partner">
+                        General file for this contact
+                    </label>
+                </div>
+                <div class="form-check" t-if="canLink">
+                    <input class="form-check-input" type="radio" id="pdc_dest_record"
+                           t-att-checked="state.destination === 'record'"
+                           t-on-change="() => this.onDestinationChange('record')"/>
+                    <label class="form-check-label" for="pdc_dest_record">
+                        Attach to an existing document
+                    </label>
+                </div>
+            </div>
+
+            <t t-if="state.destination === 'record'">
+                <div class="mb-3">
+                    <label class="form-label" for="pdc_upload_source">Document type</label>
+                    <select id="pdc_upload_source" class="form-select"
+                            t-on-change="(ev) => this.onSourceChange(ev)">
+                        <option value="">Select a type...</option>
+                        <t t-foreach="linkableSources" t-as="source" t-key="source.code">
+                            <option t-att-value="source.code">
+                                <t t-esc="source.label"/> (<t t-esc="source.count"/>)
+                            </option>
+                        </t>
+                    </select>
+                </div>
+                <div class="mb-3" t-if="state.sourceCode">
+                    <label class="form-label" for="pdc_upload_target_q">Document</label>
+                    <input type="text" id="pdc_upload_target_q" class="form-control mb-2"
+                           placeholder="Search..."
+                           t-on-input="(ev) => this.onTargetQueryInput(ev)"/>
+                    <select class="form-select" size="6"
+                            t-on-change="(ev) => state.targetId = Number(ev.target.value)">
+                        <t t-foreach="state.targetOptions" t-as="option" t-key="option.id">
+                            <option t-att-value="option.id" t-esc="option.display_name"/>
+                        </t>
+                    </select>
+                </div>
+            </t>
+
+            <div class="mb-3" t-if="props.categories.length">
+                <label class="form-label" for="pdc_upload_category">Category</label>
+                <select id="pdc_upload_category" class="form-select"
+                        t-on-change="(ev) => state.categoryId = ev.target.value ? Number(ev.target.value) : false">
+                    <option value="">No category</option>
+                    <t t-foreach="props.categories" t-as="category" t-key="category.id">
+                        <option t-att-value="category.id" t-esc="category.name"/>
+                    </t>
+                </select>
+            </div>
+        </div>
+
+        <t t-set-slot="footer">
+            <button class="btn btn-primary" t-att-disabled="!canConfirm"
+                    t-on-click="() => this.confirm()">
+                <i class="fa fa-circle-o-notch fa-spin me-1" t-if="state.uploading"
+                   role="img" aria-hidden="true"/>
+                <span>Upload</span>
+            </button>
+            <button class="btn btn-secondary" t-on-click="() => props.close()">Cancel</button>
+        </t>
+    </Dialog>
+</t>
+
+
+<t t-name="partner_document_center.EditDocumentDialog">
+    <Dialog title="'Edit Document'" size="'md'">
+        <div class="mb-3">
+            <label class="form-label" for="pdc_edit_name">Name</label>
+            <input type="text" id="pdc_edit_name" class="form-control"
+                   t-att-value="state.name"
+                   t-on-input="(ev) => state.name = ev.target.value"/>
+        </div>
+        <div class="mb-3" t-if="props.categories.length">
+            <label class="form-label" for="pdc_edit_category">Category</label>
+            <select id="pdc_edit_category" class="form-select" t-on-change="(ev) => this.onCategoryChange(ev)">
+                <option value="">No category</option>
+                <t t-foreach="props.categories" t-as="category" t-key="category.id">
+                    <option t-att-value="category.id" t-att-selected="category.id === state.categoryId"
+                            t-esc="category.name"/>
+                </t>
+            </select>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="pdc_edit_important"
+                   t-att-checked="state.isImportant"
+                   t-on-change="(ev) => state.isImportant = ev.target.checked"/>
+            <label class="form-check-label" for="pdc_edit_important">Important</label>
+        </div>
+
+        <t t-set-slot="footer">
+            <button class="btn btn-primary" t-att-disabled="state.saving" t-on-click="() => this.save()">
+                Save
+            </button>
+            <button class="btn btn-secondary" t-on-click="() => props.close()">Cancel</button>
+        </t>
+    </Dialog>
+</t>
+
+</templates>

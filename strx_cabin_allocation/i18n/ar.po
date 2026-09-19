@@ -1,0 +1,1534 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* strx_cabin_allocation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "%(days)s days remaining"
+msgstr "متبقي %(days)s يوم على الإرجاع"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/quantity_increase_wizard.py:0
+msgid ""
+"%(description)s\n"
+"Additional quantity for %(order)s"
+msgstr ""
+"%(description)s\n"
+"كمية إضافية للأمر %(order)s"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/return_assessment_wizard.py:0
+msgid "%(details)s — Note: %(note)s"
+msgstr "%(details)s — ملاحظة: %(note)s"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "%(order)s — %(product)s: %(allocated)s/%(required)s serials allocated"
+msgstr ""
+"%(order)s — %(product)s: تم تخصيص %(allocated)s/%(required)s من الأرقام "
+"التسلسلية"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/return_assessment_wizard.py:0
+msgid "%(serial)s — %(state)s (Condition: %(condition)s)"
+msgstr "%(serial)s — %(state)s (الحالة الفنية: %(condition)s)"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_return_assessment_wizard_form
+msgid "<i class=\"fa fa-info-circle fa-lg mt-1\" title=\"Assessment guidance\"/>"
+msgstr "<i class=\"fa fa-info-circle fa-lg mt-1\" title=\"إرشادات التقييم\"/>"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.report_invoice_document_strx_allocated_serials
+msgid "<strong>Serial Numbers:</strong>"
+msgstr "<strong>الأرقام التسلسلية:</strong>"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_account_move_line__strx_allocated_serial_numbers
+msgid ""
+"A permanent snapshot of the allocated cabin serial numbers at invoice "
+"creation time."
+msgstr "نسخة ثابتة من الأرقام التسلسلية للكابائن المخصصة وقت إنشاء الفاتورة."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Active"
+msgstr "نشط"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_actual_return_date
+msgid "Actual Return"
+msgstr "العودة الفعلية"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order_line__strx_is_free_additional_service
+msgid "Additional Product"
+msgstr "منتج إضافي"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_form
+msgid "Allocate"
+msgstr "تخصيص"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__state__allocated
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Allocated"
+msgstr "مخصصة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_account_move_line__strx_allocated_serial_numbers
+msgid "Allocated Serial Numbers"
+msgstr "الأرقام التسلسلية المخصصة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_account_move_line__strx_allocated_lot_ids
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__lot_ids
+msgid "Allocated Serials"
+msgstr "الأرقام التسلسلية المخصصة"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Allocated to %(ref)s"
+msgstr "تم التخصيص إلى %(ref)s"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard__allocation_id
+msgid "Allocation"
+msgstr "التخصيص"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Allocation %(ref)s cancelled"
+msgstr "تم إلغاء التخصيص %(ref)s"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Allocation %(ref)s deleted"
+msgstr "تم حذف التخصيص %(ref)s"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Allocation %(ref)s — allocated serial changed"
+msgstr "التخصيص %(ref)s — تم تغيير الرقم التسلسلي"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Allocation: %s"
+msgstr "التخصيص: %s"
+
+#. module: strx_cabin_allocation
+#: model:ir.ui.menu,name:strx_cabin_allocation.menu_strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_order_form_strx_allocation
+msgid "Allocations"
+msgstr "التخصيصات"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_product_change_wizard_form
+msgid "Apply Change"
+msgstr "تطبيق التغيير"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_form
+msgid "Assess Returned Cabins"
+msgstr "تقييم الكبائن المرتجعة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__state__available
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Assessed"
+msgstr "تم التقييم"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__note
+msgid "Assessment Note"
+msgstr "ملاحظة التقييم"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/return_assessment_wizard.py:0
+msgid "Assessment saved: %(ready)s ready, %(follow_up)s routed for follow-up."
+msgstr "تم حفظ التقييم: %(ready)s متاحة، و%(follow_up)s تم توجيهها للمتابعة."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_return_assessment_wizard_line__target_state__available
+msgid "Available"
+msgstr "متاحة"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/return_assessment_wizard.py:0
+msgid ""
+"Cabin %(serial)s cannot be Available while its physical condition is "
+"Damaged."
+msgstr "لا يمكن جعل الكابينة %(serial)s متاحة بينما حالتها الفنية تالفة."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid ""
+"Cabin %(serial)s cannot be allocated — it is %(state)s, not Available.\n"
+"It is shown in the list for planning visibility only. Choose an available unit of the same specification, or raise a substitution request."
+msgstr ""
+"لا يمكن تخصيص الكابينة %(serial)s — حالتها %(state)s وليست متاحة.\n"
+"تظهر في القائمة للتخطيط فقط. اختر وحدة متاحة من المواصفة نفسها، أو أنشئ طلب استبدال."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid ""
+"Cabin %(serial)s is now %(state)s and cannot be assessed from this returned "
+"allocation."
+msgstr ""
+"حالة الكابينة %(serial)s الآن %(state)s، ولا يمكن تقييمها من هذا التخصيص "
+"المرتجع."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/return_assessment_wizard.py:0
+msgid ""
+"Cabin %(serial)s is now %(state)s. Close this window and reopen the "
+"assessment to use its latest status."
+msgstr ""
+"حالة الكابينة %(serial)s أصبحت %(state)s. أغلق النافذة وأعد فتح التقييم "
+"لاستخدام أحدث حالة."
+
+#. module: strx_cabin_allocation
+#: model:ir.model,name:strx_cabin_allocation.model_strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_form
+msgid "Cabin Allocation"
+msgstr "تخصيص كابينة"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+#: model:ir.actions.act_window,name:strx_cabin_allocation.action_strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order__strx_allocation_ids
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order_line__strx_allocation_ids
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_list
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Cabin Allocations"
+msgstr "تخصيصات الكبائن"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard__line_ids
+msgid "Cabin Lines"
+msgstr "بنود الكبائن"
+
+#. module: strx_cabin_allocation
+#: model:ir.model,name:strx_cabin_allocation.model_strx_sale_product_change_wizard
+msgid "Cabin Product Change Wizard"
+msgstr "معالج تغيير منتج الكابينة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model,name:strx_cabin_allocation.model_strx_sale_product_change_wizard_line
+msgid "Cabin Product Change Wizard Line"
+msgstr "بند معالج تغيير منتج الكابينة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_lot_readiness_state
+msgid "Cabin Readiness"
+msgstr "جاهزية الكابينة"
+
+#. module: strx_cabin_allocation
+#: model:ir.actions.server,name:strx_cabin_allocation.ir_cron_strx_return_alerts_ir_actions_server
+msgid "Cabin Return Reminder Monitor"
+msgstr "مراقب تذكير إرجاع الكابينات"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__lot_id
+msgid "Cabin Serial"
+msgstr "الرقم التسلسلي للكابينة"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/product_change_wizard.py:0
+msgid "Cabin product change applied and logistics notified."
+msgstr "تم تغيير منتج الكابينة وإشعار اللوجستيك."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/product_change_wizard.py:0
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Cabin product changes are only available on confirmed rental orders."
+msgstr "تغيير منتج الكابينة متاح فقط على أوامر التأجير المؤكدة."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/product_change_wizard.py:0
+msgid ""
+"Cabin product/specification change applied by %(user)s. Reason: %(reason)s"
+msgstr ""
+"تم تطبيق تغيير منتج/مواصفة الكابينة بواسطة %(user)s. السبب: %(reason)s"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_account_move_line__strx_allocated_lot_ids
+msgid ""
+"Cabin serials committed to the related sale-order line when this invoice "
+"line was created."
+msgstr ""
+"الأرقام التسلسلية للكابائن المخصصة لبند أمر البيع المرتبط وقت إنشاء بند "
+"الفاتورة."
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_product_change_wizard_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_quantity_increase_wizard_form
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_return_assessment_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__state__cancel
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid ""
+"Cannot create the invoice until every cabin item is fully allocated.\n"
+"\n"
+"%(lines)s\n"
+"\n"
+"Open Cabin Allocations, select all required serials, then click Allocate."
+msgstr ""
+"لا يمكن إنشاء الفاتورة حتى يتم تخصيص كل بند كابينة بالكامل.\n"
+"\n"
+"%(lines)s\n"
+"\n"
+"افتح تخصيصات الكبائن، واختر جميع الأرقام التسلسلية المطلوبة، ثم اضغط على تخصيص."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_order_form_strx_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_product_change_wizard_form
+msgid "Change Cabin Product"
+msgstr "تغيير منتج الكابينة"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/product_change_wizard.py:0
+msgid "Choose at least one new cabin product."
+msgstr "اختر منتج كابينة جديد واحد على الأقل."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__lot_id
+msgid "Compatibility pointer to the first allocated serial."
+msgstr "مؤشر توافق يشير إلى أول رقم تسلسلي مخصص."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid ""
+"Confirmed cabin rental lines can only be changed to another cabin "
+"specification. Use a separate commercial process to remove a cabin from a "
+"confirmed order."
+msgstr ""
+"بنود تأجير الكابينات المؤكدة لا يمكن تغييرها إلا إلى مواصفة كابينة أخرى. "
+"استخدم إجراءً تجاريًا منفصلاً لإزالة كابينة من أمر مؤكد."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid ""
+"Confirmed rental orders cannot receive extra cabin quantity on the same "
+"order. Create a quantity increase order instead."
+msgstr ""
+"لا يمكن إضافة كمية كابينة إضافية على نفس أمر التأجير بعد تأكيده. أنشئ طلب "
+"زيادة كمية بدلًا من ذلك."
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_quantity_increase_wizard_form
+msgid "Create New Order"
+msgstr "إنشاء أمر جديد"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/quantity_increase_wizard.py:0
+msgid "Created as a quantity increase for %(order)s."
+msgstr "تم إنشاؤه كزيادة كمية للأمر %(order)s."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__create_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard__create_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__create_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard__create_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard_line__create_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard__create_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__create_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard__create_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__create_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard__create_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard_line__create_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard__create_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard_line__current_product_id
+msgid "Current Product"
+msgstr "المنتج الحالي"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__current_qty
+msgid "Current Quantity"
+msgstr "الكمية الحالية"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__current_state
+msgid "Current Status"
+msgstr "الحالة الحالية"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__partner_id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard__partner_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Customer: %s"
+msgstr "العميل: %s"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_return_assessment_wizard_line__condition__damaged
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_return_assessment_wizard_line__target_state__damaged
+msgid "Damaged"
+msgstr "تالفة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__state__dispatched
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Dispatched"
+msgstr "تم الإرسال"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_advance_payment_inv__display_name
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order__display_name
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__display_name
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard__display_name
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__display_name
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard__display_name
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard_line__display_name
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard__display_name
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__state__done
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Done"
+msgstr "مكتمل"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__state__draft
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Draft shipments updated automatically: %s"
+msgstr "تم تحديث الشحنات المسودة تلقائيًا: %s"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__strx_return_timing_level__today
+msgid "Due Today"
+msgstr "مستحق اليوم"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Due today"
+msgstr "الإرجاع اليوم"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/quantity_increase_wizard.py:0
+msgid "Enter at least one increase quantity."
+msgstr "أدخل كمية زيادة واحدة على الأقل."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/product_change_wizard.py:0
+msgid "Enter the reason for changing the cabin product."
+msgstr "أدخل سبب تغيير منتج الكابينة."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/return_assessment_wizard.py:0
+msgid ""
+"Every returned cabin in this allocation must be assessed exactly once before"
+" saving."
+msgstr "يجب تقييم كل كابينة مرتجعة في هذا التخصيص مرة واحدة قبل الحفظ."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__lot_ids
+msgid ""
+"Exact physical units committed. Their count must match the rental-line "
+"quantity and every unit must be Available at allocation time. Units on rent "
+"or in maintenance are shown for planning visibility but cannot be committed."
+msgstr ""
+"الوحدات الفعلية المُلتزَم بها بالضبط. يجب أن يطابق عددها كمية بند التأجير "
+"وأن تكون كل وحدة متاحة وقت التخصيص. الوحدات المؤجّرة أو تحت الصيانة تُعرض "
+"لغرض التخطيط فقط ولا يمكن الالتزام بها."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order_line__strx_expected_return_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_expected_return_date
+msgid "Expected Return"
+msgstr "العودة المتوقعة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_return_assessment_wizard_line__condition__fair
+msgid "Fair"
+msgstr "مقبولة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "From: %s"
+msgstr "من: %s"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_return_assessment_wizard_line__condition__good
+msgid "Good"
+msgstr "جيدة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_account_move_line__id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_advance_payment_inv__id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order__id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order_line__id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard__id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard__id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard_line__id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard__id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للدلالة على نشاط استثنائي."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__message_has_error
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_return_assessment_wizard_line__target_state__in_cleaning
+msgid "In Cleaning"
+msgstr "قيد التنظيف"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_return_assessment_wizard_line__target_state__in_inspection
+msgid "In Inspection"
+msgstr "قيد الفحص"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_return_assessment_wizard_line__target_state__in_maintenance
+msgid "In Maintenance"
+msgstr "تحت الصيانة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__increase_qty
+msgid "Increase Quantity"
+msgstr "كمية الزيادة"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/quantity_increase_wizard.py:0
+msgid "Increase quantity must be greater than zero."
+msgstr "يجب أن تكون كمية الزيادة أكبر من صفر."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: strx_cabin_allocation
+#: model:ir.model,name:strx_cabin_allocation.model_account_move_line
+msgid "Journal Item"
+msgstr "بند القيد"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__write_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard__write_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__write_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard__write_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard_line__write_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard__write_uid
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__write_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard__write_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__write_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard__write_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard_line__write_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard__write_date
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__lot_id
+msgid "Legacy Allocated Serial"
+msgstr "الرقم التسلسلي المخصص (قديم)"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__current_state
+msgid ""
+"Lifecycle state of this physical unit. Set by fulfillment events, never "
+"edited directly."
+msgstr ""
+"حالة دورة حياة هذه الوحدة الفعلية. تُضبط من أحداث التنفيذ ولا تُعدَّل "
+"يدويًا."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Line: %s"
+msgstr "البند: %s"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_return_assessment_wizard_line__condition__new
+msgid "New"
+msgstr "جديد"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard_line__proposed_product_id
+msgid "New Product"
+msgstr "المنتج الجديد"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__target_state
+msgid "Next Operational Status"
+msgstr "الحالة التشغيلية التالية"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__strx_return_timing_level__none
+msgid "No Date"
+msgstr "بدون تاريخ"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "No return date"
+msgstr "لا يوجد تاريخ إرجاع"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__state__on_rent
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "On Rent"
+msgstr "مؤجرة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__strx_return_timing_level__normal
+msgid "On Track"
+msgstr "في الموعد"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid ""
+"Only a Sales user can change the cabin specification on a confirmed rental "
+"order."
+msgstr ""
+"لا يمكن تغيير مواصفة الكابينة على أمر تأجير مؤكد إلا لمستخدم المبيعات."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Only a returned cabin allocation can be assessed."
+msgstr "يمكن تقييم تخصيص كابينة تم إرجاعها فقط."
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_return_assessment_wizard_form
+msgid ""
+"Only cabins set to Available can be selected for a new rental; all other "
+"choices route the cabin to its actual follow-up workflow."
+msgstr ""
+"الكبائن المحددة كمتاحة فقط يمكن اختيارها لتأجير جديد؛ أما باقي الحالات "
+"فتوجّه الكابينة تلقائيًا لمسار المتابعة المناسب."
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_return_assessment_wizard_form
+msgid "Optional inspection or damage note..."
+msgstr "ملاحظة اختيارية عن الفحص أو التلف..."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__note
+msgid "Optional observation recorded in this cabin's readiness history."
+msgstr "ملاحظة اختيارية تُحفظ في سجل جاهزية هذه الكابينة."
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Order"
+msgstr "الطلب"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__order_line_id
+msgid "Original Line"
+msgstr "السطر الأصلي"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order__strx_origin_order_id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard__original_order_id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard__original_order_id
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_product_change_wizard_form
+msgid "Original Order"
+msgstr "الأمر الأصلي"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__strx_return_timing_level__overdue
+msgid "Overdue"
+msgstr "متأخر"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_return_alert_overdue_sent
+msgid "Overdue Return Alert Sent"
+msgstr "تم إرسال تنبيه تأخر الإرجاع"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Overdue by %(days)s days"
+msgstr "متأخر %(days)s يوم"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__condition
+msgid "Physical Condition"
+msgstr "الحالة الفنية"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_date_out
+msgid "Planned Dispatch"
+msgstr "الإرسال المخطط"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__product_tmpl_id
+msgid "Product Template"
+msgstr "قالب المنتج"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_order_form_strx_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_quantity_increase_wizard_form
+msgid "Quantity Increase"
+msgstr "زيادة كمية"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/quantity_increase_wizard.py:0
+msgid "Quantity Increase Order"
+msgstr "طلب زيادة كمية"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order__strx_addition_order_ids
+msgid "Quantity Increase Orders"
+msgstr "طلبات زيادة الكمية"
+
+#. module: strx_cabin_allocation
+#: model:ir.model,name:strx_cabin_allocation.model_strx_sale_quantity_increase_wizard
+msgid "Quantity Increase Wizard"
+msgstr "معالج زيادة الكمية"
+
+#. module: strx_cabin_allocation
+#: model:ir.model,name:strx_cabin_allocation.model_strx_sale_quantity_increase_wizard_line
+msgid "Quantity Increase Wizard Line"
+msgstr "سطر معالج زيادة الكمية"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order__strx_addition_order_count
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_order_form_strx_allocation
+msgid "Quantity Increases"
+msgstr "زيادات الكمية"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/quantity_increase_wizard.py:0
+msgid "Quantity increase for %(order)s"
+msgstr "زيادة كمية للأمر %(order)s"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/quantity_increase_wizard.py:0
+msgid "Quantity increase order %(new_order)s was created."
+msgstr "تم إنشاء طلب زيادة الكمية %(new_order)s."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/quantity_increase_wizard.py:0
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Quantity increases are only created from confirmed rental orders."
+msgstr "يمكن إنشاء زيادات الكمية من أوامر التأجير المؤكدة فقط."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard__reason
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_product_change_wizard_form
+msgid "Reason"
+msgstr "السبب"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Reason: %s"
+msgstr "السبب: %s"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_return_assessment_wizard_form
+msgid "Record each cabin exactly as it was received."
+msgstr "سجّل حالة كل كابينة كما تم استلامها فعليًا."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__name
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_form
+msgid "Rental"
+msgstr "التأجير"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order_line__strx_rental_days
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_rental_days
+msgid "Rental Days"
+msgstr "أيام التأجير"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__order_line_id
+msgid "Rental Line"
+msgstr "بند التأجير"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__order_id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard__order_id
+msgid "Rental Order"
+msgstr "طلب التأجير"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Rental Order: %s"
+msgstr "طلب التأجير: %s"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_form
+msgid "Rental Period"
+msgstr "فترة التأجير"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order_line__strx_rental_start_date
+msgid "Rental Start"
+msgstr "بداية التأجير"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid ""
+"Rental line %(line)s requires %(required)s serials; %(selected)s were "
+"selected. The selected count cannot exceed the ordered quantity."
+msgstr ""
+"بند التأجير %(line)s يحتاج إلى %(required)s أرقام تسلسلية؛ تم اختيار "
+"%(selected)s. لا يمكن أن يتجاوز العدد المختار الكمية المطلوبة."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Rental line of %(ref)s deleted"
+msgstr "تم حذف بند التأجير الخاص بـ %(ref)s"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Rental order of %(ref)s deleted"
+msgstr "تم حذف طلب التأجير الخاص بـ %(ref)s"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Replaced on allocation %(ref)s"
+msgstr "تم الاستبدال في التخصيص %(ref)s"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard__line_ids
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_quantity_increase_wizard_form
+msgid "Requested Increases"
+msgstr "الزيادات المطلوبة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__required_serial_count
+msgid "Required Serials"
+msgstr "عدد الأرقام التسلسلية المطلوبة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__product_id
+msgid "Required Specification"
+msgstr "المواصفة المطلوبة"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_form
+msgid "Reset to Draft"
+msgstr "إعادة إلى مسودة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_return_assessment_wizard_line__target_state__retired
+msgid "Retired"
+msgstr "مستبعدة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_return_alert_activity_ids
+msgid "Return Alert Activities"
+msgstr "أنشطة تنبيه الإرجاع"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_return_alert_count
+msgid "Return Alerts"
+msgstr "تنبيهات الإرجاع"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/return_assessment_wizard.py:0
+msgid "Return Assessment Saved"
+msgstr "تم حفظ تقييم الإرجاع"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_return_assessment_wizard_form
+msgid "Return Condition Assessment"
+msgstr "تقييم حالة الكابينة بعد الإرجاع"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Return Due Soon"
+msgstr "موعد الإرجاع قريب"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_return_timing_label
+msgid "Return Timing"
+msgstr "توقيت الإرجاع"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_return_timing_level
+msgid "Return Timing Status"
+msgstr "حالة توقيت الإرجاع"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/return_assessment_wizard.py:0
+msgid "Return assessment for allocation %(ref)s"
+msgstr "تقييم الإرجاع للتخصيص %(ref)s"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Return completed; reminder closed."
+msgstr "تم الإرجاع؛ أُغلق التذكير."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid ""
+"Return date: %(date)s\n"
+"Overdue days: %(days)s\n"
+"Customer: %(customer)s\n"
+"Serial: %(serial)s"
+msgstr ""
+"تاريخ الإرجاع: %(date)s\n"
+"عدد أيام التأخير: %(days)s\n"
+"العميل: %(customer)s\n"
+"الرقم التسلسلي: %(serial)s"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields.selection,name:strx_cabin_allocation.selection__strx_cabin_allocation__state__returned
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Returned"
+msgstr "تم الإرجاع"
+
+#. module: strx_cabin_allocation
+#: model:ir.model,name:strx_cabin_allocation.model_strx_cabin_return_assessment_wizard
+msgid "Returned Cabin Assessment"
+msgstr "تقييم الكبائن المرتجعة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model,name:strx_cabin_allocation.model_strx_cabin_return_assessment_wizard_line
+msgid "Returned Cabin Assessment Line"
+msgstr "بند تقييم كابينة مرتجعة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard__line_ids
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_return_assessment_wizard_form
+msgid "Returned Cabins"
+msgstr "الكبائن المرتجعة"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/return_assessment_wizard.py:0
+msgid "Returned cabin assessment completed:"
+msgstr "تم تقييم الكبائن المرتجعة:"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Review open allocations and shipments before dispatch."
+msgstr "يرجى مراجعة التخصيصات والشحنات المفتوحة قبل الإرسال."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Review the allocation and open shipments before dispatch."
+msgstr "يرجى مراجعة التخصيص والشحنات قبل الإرسال."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model,name:strx_cabin_allocation.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "فاتورة دفعة مقدمة للمبيعات"
+
+#. module: strx_cabin_allocation
+#: model:ir.model,name:strx_cabin_allocation.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Sales Order %(ref)s — cabin specification changed"
+msgstr "أمر البيع %(ref)s — تم تغيير مواصفة الكابينة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model,name:strx_cabin_allocation.model_sale_order_line
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard_line__order_line_id
+msgid "Sales Order Line"
+msgstr "بند أمر البيع"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Sales Order: %s"
+msgstr "أمر البيع: %s"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Sales changed the cabin product/specification."
+msgstr "تم تغيير منتج/مواصفة الكابينة بواسطة المبيعات."
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_return_assessment_wizard_form
+msgid "Save Assessment"
+msgstr "حفظ التقييم"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_lot_picker_strx
+msgid "Select a Serial"
+msgstr "اختر رقمًا تسلسليًا"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Select the required serials to allocate first."
+msgstr "اختر الأرقام التسلسلية المطلوبة أولاً قبل التخصيص."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Selected %(selected)s of %(required)s serials"
+msgstr "تم اختيار %(selected)s من %(required)s أرقام تسلسلية"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid ""
+"Selected %(selected)s of %(required)s serials. Select %(remaining)s more "
+"before allocating."
+msgstr ""
+"تم اختيار %(selected)s من %(required)s أرقام تسلسلية. اختر %(remaining)s "
+"إضافية قبل التخصيص."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__selected_serial_count
+msgid "Selected Serials"
+msgstr "عدد الأرقام التسلسلية المختارة"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_lot_picker_strx
+msgid "Serial"
+msgstr "الرقم التسلسلي"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Serial %(serial)s is %(state)s and cannot be selected."
+msgstr "الرقم التسلسلي %(serial)s حالته %(state)s ولا يمكن اختياره."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid ""
+"Serial %(serial)s is already allocated on %(other)s over an overlapping "
+"period. A unit cannot back two overlapping rentals."
+msgstr ""
+"الرقم التسلسلي %(serial)s مخصص بالفعل في %(other)s خلال فترة متداخلة. لا "
+"يمكن استخدام الوحدة في عمليتي تأجير متداخلتين."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__serial_selection_status
+msgid "Serial Selection"
+msgstr "اختيار الأرقام التسلسلية"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Serial not available"
+msgstr "الرقم التسلسلي غير متاح"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Serial selection incomplete"
+msgstr "اختيار الأرقام التسلسلية غير مكتمل"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid ""
+"Serial selection is incomplete: selected %(selected)s of %(required)s. "
+"Select %(remaining)s more before allocating."
+msgstr ""
+"اختيار الأرقام التسلسلية غير مكتمل: تم اختيار %(selected)s من %(required)s. "
+"اختر %(remaining)s إضافية قبل التخصيص."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/return_assessment_wizard.py:0
+msgid ""
+"Set cabin %(serial)s condition to Damaged when choosing the Damaged "
+"operational status."
+msgstr ""
+"عيّن الحالة الفنية للكابينة %(serial)s إلى تالفة عند اختيار الحالة التشغيلية"
+" تالفة."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Shipment %(ref)s — return is due today"
+msgstr "الشحنة %(ref)s — موعد الإرجاع اليوم"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Shipment %(ref)s — return is overdue"
+msgstr "الشحنة %(ref)s — الإرجاع متأخر"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Shipment %(ref)s — sales order product changed"
+msgstr "الشحنة %(ref)s — تم تغيير منتج أمر البيع"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Shipment %(ref)s — two business days until return"
+msgstr "الشحنة %(ref)s — متبقي يومان عمل على الإرجاع"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_cabin_spec
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__product_id
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_list
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Specification"
+msgstr "المواصفة"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_form
+msgid "Specification & Serial"
+msgstr "المواصفة والرقم التسلسلي"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "Specification changed on %(ref)s"
+msgstr "تم تغيير المواصفة في %(ref)s"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid ""
+"Specification mismatch on %(ref)s.\n"
+"Required: %(req)s (%(req_code)s).\n"
+"Allocated serial %(serial)s is %(got)s (%(got_code)s).\n"
+"Allocate a unit of the correct specification or raise a substitution request."
+msgstr ""
+"عدم تطابق المواصفة في %(ref)s.\n"
+"المطلوب: %(req)s (%(req_code)s).\n"
+"الرقم التسلسلي المخصص %(serial)s مواصفته %(got)s (%(got_code)s).\n"
+"خصص وحدة بالمواصفة الصحيحة أو أنشئ طلب استبدال."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__state
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_cabin_allocation_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق مضى بالفعل\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_all_lots_available
+msgid "Strx All Lots Available"
+msgstr "كل الأرقام التسلسلية متاحة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order__strx_allocation_count
+msgid "Strx Allocation Count"
+msgstr "عدد التخصيصات"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/product_change_wizard.py:0
+msgid "The new product must be a cabin product."
+msgstr "يجب أن يكون المنتج الجديد منتج كابينة."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "The rental order %(order)s must be confirmed before allocating."
+msgstr "يجب تأكيد طلب التأجير %(order)s قبل التخصيص."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid ""
+"The rental-line quantity cannot be reduced to %(quantity)s because "
+"allocation %(allocation)s already has %(selected)s selected serials. Remove "
+"serials from the allocation first."
+msgstr ""
+"لا يمكن تخفيض كمية بند التأجير إلى %(quantity)s لأن التخصيص %(allocation)s "
+"يحتوي بالفعل على %(selected)s أرقام تسلسلية مختارة. أزل الأرقام التسلسلية من"
+" التخصيص أولاً."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "The serial was changed on an allocated cabin allocation."
+msgstr "تم تغيير الرقم التسلسلي في تخصيص مخصص."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid ""
+"These allocations were reset to Draft and their old serials were removed: %s"
+msgstr "تم إرجاع التخصيصات التالية لمسودة وإزالة السيريال القديم: %s"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid ""
+"This cabin line is already locked, invoiced, or delivered. Use the logistics"
+" substitution/return process instead."
+msgstr ""
+"بند الكابينة هذا مقفل أو مفوتر أو مُسلَّم بالفعل. استخدم إجراء "
+"الاستبدال/الإرجاع اللوجستي بدلاً من ذلك."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid ""
+"This rental line requires %(required)s serials. You cannot select more than "
+"the ordered quantity."
+msgstr ""
+"بند التأجير يحتاج إلى %(required)s أرقام تسلسلية. لا يمكن اختيار عدد أكبر من"
+" الكمية المطلوبة."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "This returned allocation has no cabin serial to assess."
+msgstr "لا يحتوي هذا التخصيص المرتجع على رقم تسلسلي لكابينة لتقييمها."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_sale_order_line__strx_is_free_additional_service
+msgid ""
+"Tick for add-on products or services requested with a cabin, such as a "
+"bathroom tank, ladder, canopy, AC unit, or water tank. These items are "
+"offered in the Additional Products tab and are not cabin assets."
+msgstr ""
+"فعّلها للمنتجات أو الخدمات الإضافية المطلوبة مع الكابينة، مثل خزان الحمام أو"
+" السلم أو المظلة أو وحدة التكييف أو خزان المياه. تظهر هذه العناصر في تبويب "
+"المنتجات الإضافية ولا تعتبر أصول كبائن."
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "To: %s"
+msgstr "إلى: %s"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_return_alert_today_sent
+msgid "Today Return Alert Sent"
+msgstr "تم إرسال تنبيه إرجاع اليوم"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/cabin_allocation.py:0
+msgid "Too many serials"
+msgstr "عدد الأرقام التسلسلية أكبر من المطلوب"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__strx_return_alert_two_days_sent
+msgid "Two-Business-Day Return Alert Sent"
+msgstr "تم إرسال تنبيه الإرجاع قبل يومي عمل"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي على السجل."
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__price_unit
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__product_uom_id
+msgid "Unit of Measure"
+msgstr "وحدة القياس"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid ""
+"Warning: these allocations are already in an advanced stage and need manual "
+"logistics review: %s"
+msgstr "تنبيه: توجد تخصيصات في مرحلة متقدمة وتحتاج مراجعة يدوية: %s"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_allocation__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,help:strx_cabin_allocation.field_strx_cabin_allocation__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: strx_cabin_allocation
+#: model_terms:ir.ui.view,arch_db:strx_cabin_allocation.view_strx_product_change_wizard_form
+msgid "Why is the customer changing the cabin type or size?"
+msgstr "لماذا يغيّر العميل نوع أو مقاس الكابينة؟"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_cabin_return_assessment_wizard_line__wizard_id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_product_change_wizard_line__wizard_id
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_strx_sale_quantity_increase_wizard_line__wizard_id
+msgid "Wizard"
+msgstr "المعالج"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "order_id"
+msgstr "order_id"
+
+#. module: strx_cabin_allocation
+#. odoo-python
+#: code:addons/strx_cabin_allocation/models/sale_order.py:0
+msgid "strx_origin_order_id"
+msgstr "strx_origin_order_id"

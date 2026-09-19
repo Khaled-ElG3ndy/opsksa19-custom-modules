@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_gr_meter_correction_wizard_form" model="ir.ui.view">
+        <field name="name">gr.generator.asset.meter.correction.wizard.form</field>
+        <field name="model">gr.generator.asset.meter.correction.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Meter Correction">
+                <sheet>
+                    <group>
+                        <field name="asset_id"/>
+                        <field name="old_meter"/>
+                        <field name="last_verified_hour_meter"/>
+                        <field name="new_meter"/>
+                        <field name="is_decrease" invisible="1"/>
+                    </group>
+                    <div class="alert alert-warning" role="alert"
+                         invisible="not is_decrease">
+                        You are <b>decreasing</b> the meter reading. This requires
+                        Generator Administrator approval and will be logged permanently.
+                    </div>
+                    <group>
+                        <field name="reason" placeholder="Why is this correction needed?"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_apply" type="object" string="Apply Correction"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

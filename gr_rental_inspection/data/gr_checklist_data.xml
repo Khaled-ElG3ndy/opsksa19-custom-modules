@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="chk_cabin" model="gr.rental.checklist.item"><field name="name">Cabin</field><field name="sequence">10</field></record>
+        <record id="chk_panel_boards" model="gr.rental.checklist.item"><field name="name">Panel boards</field><field name="sequence">20</field></record>
+        <record id="chk_panel_screen" model="gr.rental.checklist.item"><field name="name">Panel screen function</field><field name="sequence">30</field></record>
+        <record id="chk_fan_belt" model="gr.rental.checklist.item"><field name="name">Fan belt condition</field><field name="sequence">40</field></record>
+        <record id="chk_cabin_doors" model="gr.rental.checklist.item"><field name="name">Cabin doors</field><field name="sequence">50</field></record>
+        <record id="chk_door_locks" model="gr.rental.checklist.item"><field name="name">Door locks</field><field name="sequence">60</field></record>
+        <record id="chk_radiator" model="gr.rental.checklist.item"><field name="name">Radiator condition</field><field name="sequence">70</field></record>
+        <record id="chk_engine_sounds" model="gr.rental.checklist.item"><field name="name">Engine sounds</field><field name="sequence">80</field></record>
+        <record id="chk_oil_level" model="gr.rental.checklist.item"><field name="name">Oil level &amp; condition</field><field name="sequence">90</field></record>
+        <record id="chk_water_level" model="gr.rental.checklist.item"><field name="name">Water level &amp; condition</field><field name="sequence">100</field></record>
+        <record id="chk_battery" model="gr.rental.checklist.item"><field name="name">Battery condition</field><field name="sequence">110</field></record>
+        <record id="chk_load" model="gr.rental.checklist.item"><field name="name">Load conditions</field><field name="sequence">120</field></record>
+    </data>
+</odoo>

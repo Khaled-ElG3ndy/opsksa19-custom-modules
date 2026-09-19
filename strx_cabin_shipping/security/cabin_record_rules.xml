@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+
+    <record id="strx_cabin_shipping_order_company_rule" model="ir.rule">
+        <field name="name">Cabin shipping order: multi-company</field>
+        <field name="model_id" ref="model_strx_cabin_shipping_order"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="strx_cabin_broker_company_rule" model="ir.rule">
+        <field name="name">Cabin broker: multi-company</field>
+        <field name="model_id" ref="model_strx_cabin_broker"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="strx_cabin_broker_payment_company_rule" model="ir.rule">
+        <field name="name">Cabin broker payment: multi-company</field>
+        <field name="model_id" ref="model_strx_cabin_broker_payment"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

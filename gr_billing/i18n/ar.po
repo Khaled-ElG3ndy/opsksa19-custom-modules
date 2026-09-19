@@ -1,0 +1,758 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_billing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "%(label)s: %(value)s"
+msgstr "%(label)s: %(value)s"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "'To' date cannot be before 'From' date."
+msgstr "لا يمكن أن يكون تاريخ 'إلى' قبل تاريخ 'من'."
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Actual Dispatch"
+msgstr "الإرسال الفعلي"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Actual Install"
+msgstr "التركيب الفعلي"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Actual Return"
+msgstr "الإرجاع الفعلي"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "Base Daily Rental (%s day(s))"
+msgstr "إيجار يومي أساسي (%s يوم)"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_rental_order__billable_log_count
+msgid "Billable Logs"
+msgstr "السجلات القابلة للفوترة"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_hour_log__billed
+msgid "Billed"
+msgstr "مفوتر"
+
+#. module: gr_billing
+#: model:ir.ui.menu,name:gr_billing.menu_gr_billing_runs
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_hour_log_form_billing
+msgid "Billing"
+msgstr "الفوترة"
+
+#. module: gr_billing
+#: model:ir.actions.act_window,name:gr_billing.action_gr_billing_run
+msgid "Billing Runs"
+msgstr "جولات الفوترة"
+
+#. module: gr_billing
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_billing_run_form
+msgid "Cancel & Release"
+msgstr "إلغاء وتحرير"
+
+#. module: gr_billing
+#: model:ir.model.fields.selection,name:gr_billing.selection__gr_billing_run__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid ""
+"Cannot cancel: invoice(s) %s already posted. Reverse them in Accounting "
+"first."
+msgstr ""
+"لا يمكن الإلغاء: الفاتورة/الفواتير %s مرحّلة بالفعل. اعكسها في المحاسبة "
+"أولاً."
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Confirm the rental order before creating an invoice."
+msgstr "أكّد أمر التأجير قبل إنشاء فاتورة."
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Contract"
+msgstr "العقد"
+
+#. module: gr_billing
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_rental_order_form_billing
+msgid "Create Invoice"
+msgstr "إنشاء فاتورة"
+
+#. module: gr_billing
+#: model_terms:ir.actions.act_window,help:gr_billing.action_gr_billing_run
+msgid "Create your first billing run"
+msgstr "أنشئ أول دورة فوترة"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Created from rental order %s."
+msgstr "أُنشئت من أمر التأجير %s."
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__partner_id
+msgid "Customer (optional filter)"
+msgstr "العميل (مرشح اختياري)"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Customer PO"
+msgstr "أمر شراء العميل"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Customer Receiver"
+msgstr "مستلم العميل"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Date Requested"
+msgstr "تاريخ الطلب"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Dispatch Note"
+msgstr "إشعار الإرسال"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_account_move__display_name
+#: model:ir.model.fields,field_description:gr_billing.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__display_name
+#: model:ir.model.fields,field_description:gr_billing.field_gr_hour_log__display_name
+#: model:ir.model.fields,field_description:gr_billing.field_gr_rental_order__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_billing
+#: model:ir.model.fields.selection,name:gr_billing.selection__gr_billing_run__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "End Meter Reading"
+msgstr "قراءة العداد النهائية"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Equipment No.: %s"
+msgstr "رقم المعدة: %s"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_account_move_line__rental_equipment_reference
+msgid "Equipment Reference"
+msgstr "مرجع المعدة"
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_account_move_line__rental_equipment_reference
+msgid ""
+"Equipment number copied from the rental order line for audit and printed "
+"invoice descriptions."
+msgstr ""
+"رقم المعدة المنسوخ من بند أمر التأجير للمراجعة وطباعته داخل وصف الفاتورة."
+
+#. module: gr_billing
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_billing_run_form
+msgid "Filters (optional)"
+msgstr "مرشحات (اختيارية)"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Free of Charge"
+msgstr "بدون مقابل"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__date_from
+msgid "From"
+msgstr "من"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "Fuel"
+msgstr "الوقود"
+
+#. module: gr_billing
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_billing_run_form
+msgid "Generate Invoices"
+msgstr "إنشاء الفواتير"
+
+#. module: gr_billing
+#: model_terms:ir.actions.act_window,help:gr_billing.action_gr_billing_run
+msgid ""
+"Generate draft customer invoices from approved hour logs for a\n"
+"               period. Each approved log is billed exactly once."
+msgstr "أنشئ فواتير عملاء مسودة من سجلات الساعات المعتمدة لفترة محددة."
+
+#. module: gr_billing
+#: model:ir.model.fields.selection,name:gr_billing.selection__gr_billing_run__state__done
+msgid "Generated"
+msgstr "تم الإنشاء"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "Generated %(inv)s draft invoice(s) from %(logs)s approved log(s)."
+msgstr "تم توليد %(inv)s فاتورة مسودة من %(logs)s سجل معتمد."
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__invoice_ids
+msgid "Generated Invoices"
+msgstr "الفواتير المنشأة"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid ""
+"Generated by billing run %(run)s for rental order %(order)s covering %(df)s "
+"to %(dt)s."
+msgstr ""
+"تم التوليد بواسطة دورة الفوترة %(run)s لأمر التأجير %(order)s للفترة من "
+"%(df)s إلى %(dt)s."
+
+#. module: gr_billing
+#: model:ir.model,name:gr_billing.model_gr_billing_run
+msgid "Generator Billing Run"
+msgstr "جولة فوترة المولد"
+
+#. module: gr_billing
+#: model:ir.model,name:gr_billing.model_gr_hour_log
+msgid "Generator Hour Log"
+msgstr "سجل ساعات المولد"
+
+#. module: gr_billing
+#: model:ir.model,name:gr_billing.model_gr_rental_order
+msgid "Generator Rental Order"
+msgstr "أمر تأجير المولد"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "Hourly Rental"
+msgstr "تأجير بالساعة"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_account_move__id
+#: model:ir.model.fields,field_description:gr_billing.field_account_move_line__id
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__id
+#: model:ir.model.fields,field_description:gr_billing.field_gr_hour_log__id
+#: model:ir.model.fields,field_description:gr_billing.field_gr_rental_order__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__message_has_error
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Installation Note"
+msgstr "إشعار التركيب"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_hour_log__invoice_id
+msgid "Invoice"
+msgstr "الفاتورة"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_rental_order__invoice_count
+msgid "Invoice Count"
+msgstr "عدد الفواتير"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__invoice_count
+#: model:ir.model.fields,field_description:gr_billing.field_gr_rental_order__invoice_ids
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_billing_run_form
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_rental_order_form_billing
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_billing
+#: model:ir.model,name:gr_billing.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: gr_billing
+#: model:ir.model,name:gr_billing.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__log_count
+msgid "Logs Billed"
+msgstr "السجلات المفوترة"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "Monthly Rental"
+msgstr "إيجار شهري"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid ""
+"No 15%% KSA sales VAT tax found for company %s. Please create one or "
+"reinstall the billing module."
+msgstr ""
+"لم يُعثر على ضريبة قيمة مضافة سعودية بنسبة 15%% للشركة %s. يُرجى إنشاؤها أو "
+"إعادة تثبيت موديول الفوترة."
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "No approved, unbilled hour logs found in the selected range/filters."
+msgstr "لا توجد سجلات ساعات معتمدة وغير مفوترة ضمن النطاق/المرشحات المحددة."
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: gr_billing
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_billing_run_form
+msgid "Notes..."
+msgstr "ملاحظات..."
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "Nothing billable was produced from the logs."
+msgstr "لم يُنتج من السجلات أي شيء قابل للفوترة."
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "Only draft billing runs can be generated."
+msgstr "لا يمكن توليد إلا دورات الفوترة المسودة."
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "Overtime Hours"
+msgstr "الساعات الإضافية"
+
+#. module: gr_billing
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_billing_run_form
+msgid "Period"
+msgstr "الفترة"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Planned Dispatch"
+msgstr "الإرسال المخطط"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Planned Install"
+msgstr "التركيب المخطط"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Planned Return"
+msgstr "الإرجاع المخطط"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__name
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+#: model:ir.model.fields,field_description:gr_billing.field_account_bank_statement_line__rental_order_id
+#: model:ir.model.fields,field_description:gr_billing.field_account_move__rental_order_id
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_account_invoice_filter_rental_order
+msgid "Rental Order"
+msgstr "أمر التأجير"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__rental_order_id
+msgid "Rental Order (optional filter)"
+msgstr "أمر التأجير (مرشح اختياري)"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Rented Serial"
+msgstr "الرقم التسلسلي المؤجَّر"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Rented Serials"
+msgstr "الأرقام التسلسلية المؤجَّرة"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Requested kVA"
+msgstr "القدرة المطلوبة (ك.ف.أ)"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__rental_order_id
+msgid "Restrict this run to a single rental order."
+msgstr "قصر هذه الجولة على أمر تأجير واحد."
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__partner_id
+msgid "Restrict this run to one customer. Leave empty to bill all."
+msgstr "قصر هذه الجولة على عميل واحد. اتركه فارغا لفوترة الجميع."
+
+#. module: gr_billing
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_billing_run_form
+msgid "Result"
+msgstr "النتيجة"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Return Note"
+msgstr "إشعار الإرجاع"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Serial Number: %s"
+msgstr "الرقم التسلسلي: %s"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Site"
+msgstr "الموقع"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Specifications: %s"
+msgstr "المواصفات: %s"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "Standby"
+msgstr "احتياطي"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Start Meter Reading"
+msgstr "قراءة العداد الابتدائية"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_rental_order_billing.py:0
+msgid "Supplier Reference: %s"
+msgstr "مرجع المورد: %s"
+
+#. module: gr_billing
+#: model:ir.model.constraint,message:gr_billing.constraint_gr_billing_run_name_company_uniq
+msgid "The billing-run reference must be unique per company."
+msgstr "يجب أن يكون مرجع دورة الفوترة فريداً لكل شركة."
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_hour_log__invoice_id
+msgid "The draft invoice that consumed this approved log."
+msgstr "الفاتورة المسودة التي استخدمت هذا السجل المعتمد."
+
+#. module: gr_billing
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_billing_run_form
+msgid ""
+"This will delete the draft invoices and release the logs back to billable. "
+"Continue?"
+msgstr ""
+"سيؤدي هذا إلى حذف الفواتير المسودة وإرجاع السجلات إلى حالة قابلة للفوترة. هل"
+" تريد المتابعة؟"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__date_to
+msgid "To"
+msgstr "إلى"
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_hour_log__billed
+msgid ""
+"True once this approved log has been placed on an invoice. A log is billed "
+"at most once."
+msgstr ""
+"صحيح عند إدراج هذا السجل المعتمد في فاتورة. تتم فوترة السجل مرة واحدة فقط."
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_account_move_line__rental_asset_type
+msgid "Type"
+msgstr "النوع"
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_account_move_line__rental_asset_type
+msgid "Type of the rented serial copied from the rental order line."
+msgstr "نوع المعدة المؤجرة المنسوخ من بند أمر التأجير."
+
+#. module: gr_billing
+#: model_terms:ir.ui.view,arch_db:gr_billing.view_gr_billing_run_form
+msgid "Use Last Month"
+msgstr "استخدام الشهر السابق"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "Violation Hours (over contracted maximum)"
+msgstr "ساعات المخالفة (فوق الحد الأقصى التعاقدي)"
+
+#. module: gr_billing
+#: model:ir.model.fields,field_description:gr_billing.field_gr_billing_run__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: gr_billing
+#: model:ir.model.fields,help:gr_billing.field_gr_billing_run__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: gr_billing
+#. odoo-python
+#: code:addons/gr_billing/models/gr_billing_run.py:0
+msgid "id"
+msgstr "المعرف"

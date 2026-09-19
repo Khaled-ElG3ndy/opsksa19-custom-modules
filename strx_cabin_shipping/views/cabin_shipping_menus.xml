@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_strx_shipping_order"
+              name="Shipments"
+              parent="strx_cabin_base.menu_strx_cabin_root"
+              action="action_strx_shipping_order"
+              sequence="30"/>
+
+    <menuitem id="menu_strx_broker"
+              name="Brokers"
+              parent="strx_cabin_base.menu_strx_cabin_root"
+              action="action_strx_broker"
+              sequence="40"/>
+
+    <menuitem id="menu_strx_broker_payment"
+              name="Broker Payments"
+              parent="strx_cabin_base.menu_strx_cabin_root"
+              action="action_strx_broker_payment"
+              sequence="35"/>
+
+</odoo>

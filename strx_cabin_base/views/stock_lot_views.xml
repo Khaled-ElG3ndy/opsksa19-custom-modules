@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_production_lot_form_strx_cabin" model="ir.ui.view">
+        <field name="name">stock.lot.form.strx.cabin</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Readiness-history smart button -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_strx_open_readiness_log" type="object"
+                        class="oe_stat_button o_strx_cabin_stat_button" icon="fa-history"
+                        invisible="not strx_is_cabin">
+                    <field name="strx_readiness_log_count" widget="statinfo"
+                           string="Readiness"/>
+                </button>
+                <button name="action_strx_open_cabin_card_preview" type="object"
+                        class="oe_stat_button o_strx_cabin_stat_button" icon="fa-id-card-o"
+                        invisible="not strx_is_cabin">
+                    <div class="o_stat_info">
+                        <field name="strx_cabin_card_button_label" readonly="1"
+                               class="o_stat_text"/>
+                    </div>
+                </button>
+            </xpath>
+
+            <!-- Cabin readiness block, always visible for cabin lots -->
+            <xpath expr="//group[@name='main_group']" position="after">
+                <field name="strx_is_cabin" invisible="1"/>
+                <group name="strx_cabin_group" string="Cabin Control"
+                       invisible="not strx_is_cabin">
+                    <group string="Identification Card">
+                        <field name="name" string="Serial" readonly="1"/>
+                        <field name="strx_barcode"/>
+                        <field name="product_id" readonly="1"/>
+                        <field name="strx_cabin_spec"/>
+                    </group>
+                    <group string="Readiness">
+                        <field name="strx_readiness_state"/>
+                        <field name="strx_condition"/>
+                    </group>
+                    <group string="Inspection &amp; Maintenance">
+                        <field name="strx_inspection_passed"/>
+                        <field name="strx_cleaning_passed"/>
+                        <field name="strx_last_inspection_date"/>
+                        <field name="strx_next_maintenance_date"/>
+                    </group>
+                    <group string="Physical Dimensions">
+                        <field name="strx_length_m"/>
+                        <field name="strx_width_m"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_production_lot_tree_strx_cabin" model="ir.ui.view">
+        <field name="name">stock.lot.list.strx.cabin</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="strx_is_cabin" column_invisible="1"/>
+                <field name="strx_barcode" optional="show"/>
+                <field name="strx_readiness_state" optional="show"
+                       decoration-success="strx_readiness_state == 'available'"
+                       decoration-danger="strx_readiness_state in ('on_rent', 'damaged')"
+                       decoration-warning="strx_readiness_state == 'in_maintenance'"/>
+                <field name="strx_condition" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_strx_cabin_card_list" model="ir.ui.view">
+        <field name="name">stock.lot.list.strx.cabin.card</field>
+        <field name="model">stock.lot</field>
+        <field name="arch" type="xml">
+            <list string="Cabin Cards" create="true">
+                <field name="name" string="Serial"/>
+                <field name="strx_barcode"/>
+                <field name="product_id"/>
+                <field name="strx_cabin_spec"/>
+                <field name="strx_readiness_state" widget="badge"
+                       decoration-success="strx_readiness_state == 'available'"
+                       decoration-danger="strx_readiness_state in ('on_rent', 'damaged')"
+                       decoration-warning="strx_readiness_state == 'in_maintenance'"/>
+                <field name="strx_condition"/>
+                <field name="strx_length_m" optional="hide"/>
+                <field name="strx_width_m" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_strx_cabin_cards" model="ir.actions.act_window">
+        <field name="name">Cabin Cards</field>
+        <field name="res_model">stock.lot</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_strx_cabin_card_list"/>
+        <field name="domain">[('product_id.strx_is_cabin', '=', True)]</field>
+        <field name="context">{'default_strx_readiness_state': 'available'}</field>
+    </record>
+
+</odoo>

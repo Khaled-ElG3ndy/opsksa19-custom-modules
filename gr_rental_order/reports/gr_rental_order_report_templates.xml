@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Shared header snippet -->
+    <template id="gr_ro_header">
+        <div class="row mt-3">
+            <div class="col-6">
+                <strong>Order:</strong> <span t-field="doc.name"/><br/>
+                <strong>Customer:</strong> <span t-field="doc.partner_id"/><br/>
+                <strong>Site:</strong> <span t-field="doc.site_id"/><br/>
+                <strong>Contract:</strong> <span t-field="doc.contract_id"/>
+            </div>
+            <div class="col-6">
+                <strong>Asset:</strong> <span t-field="doc.asset_id"/><br/>
+                <strong>Serial:</strong> <span t-esc="doc.asset_id.serial_number or ''"/><br/>
+                <strong>Status:</strong> <span t-field="doc.state"/>
+            </div>
+        </div>
+    </template>
+
+    <!-- Delivery Note -->
+    <template id="report_gr_delivery_note">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Delivery Note</h2>
+                        <t t-call="gr_rental_order.gr_ro_header"/>
+                        <table class="table table-sm mt-4">
+                            <tbody>
+                                <tr><td>Planned Dispatch</td><td><span t-field="doc.planned_dispatch_datetime"/></td></tr>
+                                <tr><td>Actual Dispatch</td><td><span t-field="doc.actual_dispatch_datetime"/></td></tr>
+                                <tr><td>Delivery Driver</td><td><span t-field="doc.delivery_driver_id"/></td></tr>
+                                <tr><td>Dispatch Note</td><td><span t-field="doc.dispatch_note"/></td></tr>
+                            </tbody>
+                        </table>
+                        <div class="row mt-5">
+                            <div class="col-6"><p>_____________________<br/>Received By: <span t-field="doc.customer_receiver_name"/></p></div>
+                            <div class="col-6"><p>_____________________<br/>Driver</p></div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <!-- Installation / Commissioning -->
+    <template id="report_gr_install_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Installation / Commissioning Report</h2>
+                        <t t-call="gr_rental_order.gr_ro_header"/>
+                        <table class="table table-sm mt-4">
+                            <tbody>
+                                <tr><td>Actual Install</td><td><span t-field="doc.actual_install_datetime"/></td></tr>
+                                <tr><td>Start Meter Reading</td><td><span t-field="doc.start_meter_reading"/></td></tr>
+                                <tr><td>Installation Technician</td><td><span t-field="doc.installation_technician_id"/></td></tr>
+                                <tr><td>Installation Note</td><td><span t-field="doc.installation_note"/></td></tr>
+                            </tbody>
+                        </table>
+                        <h4 class="mt-3" t-if="doc.checklist_ids">Checklist</h4>
+                        <table class="table table-sm" t-if="doc.checklist_ids">
+                            <thead><tr><th>Phase</th><th>Item</th><th>Done</th><th>Notes</th></tr></thead>
+                            <tbody>
+                                <tr t-foreach="doc.checklist_ids" t-as="ci">
+                                    <td><span t-field="ci.phase"/></td><td><span t-field="ci.name"/></td>
+                                    <td><span t-if="ci.is_done">Yes</span><span t-else="">No</span></td>
+                                    <td><span t-field="ci.notes"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row mt-5">
+                            <div class="col-6"><p>_____________________<br/>Customer</p></div>
+                            <div class="col-6"><p>_____________________<br/>Technician</p></div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <!-- Return Inspection -->
+    <template id="report_gr_return_inspection">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Return Inspection Report</h2>
+                        <t t-call="gr_rental_order.gr_ro_header"/>
+                        <table class="table table-sm mt-4">
+                            <tbody>
+                                <tr><td>Actual Return</td><td><span t-field="doc.actual_return_datetime"/></td></tr>
+                                <tr><td>Start Meter</td><td><span t-field="doc.start_meter_reading"/></td></tr>
+                                <tr><td>End Meter</td><td><span t-field="doc.end_meter_reading"/></td></tr>
+                                <tr><td>Hours Used</td>
+                                    <td><span t-esc="(doc.end_meter_reading or 0) - (doc.start_meter_reading or 0)"/></td></tr>
+                                <tr><td>Return Technician</td><td><span t-field="doc.return_technician_id"/></td></tr>
+                                <tr><td>Return Note</td><td><span t-field="doc.return_note"/></td></tr>
+                            </tbody>
+                        </table>
+                        <div class="row mt-5">
+                            <div class="col-6"><p>_____________________<br/>Customer</p></div>
+                            <div class="col-6"><p>_____________________<br/>Inspector</p></div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

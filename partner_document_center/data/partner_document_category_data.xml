@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="category_contract" model="partner.document.category">
+            <field name="name">Contract</field>
+            <field name="code">contract</field>
+            <field name="sequence">10</field>
+            <field name="color">4</field>
+        </record>
+
+        <record id="category_identity" model="partner.document.category">
+            <field name="name">Identity</field>
+            <field name="code">identity</field>
+            <field name="sequence">20</field>
+            <field name="color">3</field>
+        </record>
+
+        <record id="category_invoice" model="partner.document.category">
+            <field name="name">Invoice</field>
+            <field name="code">invoice</field>
+            <field name="sequence">30</field>
+            <field name="color">1</field>
+        </record>
+
+        <record id="category_quotation" model="partner.document.category">
+            <field name="name">Quotation</field>
+            <field name="code">quotation</field>
+            <field name="sequence">40</field>
+            <field name="color">5</field>
+        </record>
+
+        <record id="category_receipt" model="partner.document.category">
+            <field name="name">Receipt</field>
+            <field name="code">receipt</field>
+            <field name="sequence">50</field>
+            <field name="color">6</field>
+        </record>
+
+        <record id="category_correspondence" model="partner.document.category">
+            <field name="name">Correspondence</field>
+            <field name="code">correspondence</field>
+            <field name="sequence">60</field>
+            <field name="color">7</field>
+        </record>
+
+        <record id="category_photo" model="partner.document.category">
+            <field name="name">Photo</field>
+            <field name="code">photo</field>
+            <field name="sequence">70</field>
+            <field name="color">8</field>
+        </record>
+
+        <record id="category_other" model="partner.document.category">
+            <field name="name">Other</field>
+            <field name="code">other</field>
+            <field name="sequence">99</field>
+            <field name="color">0</field>
+        </record>
+
+    </data>
+</odoo>

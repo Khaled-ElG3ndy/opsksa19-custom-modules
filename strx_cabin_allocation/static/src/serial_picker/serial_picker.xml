@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="strx_cabin_allocation.SerialPickerAutocompleteOption">
+        <t t-if="option.strxSerialStateLabel">
+            <span class="o_strx_serial_picker_option"
+                  t-att-class="'o_strx_serial_state_' + option.strxSerialStateClass">
+                <span class="o_strx_serial_picker_code" t-esc="option.label"/>
+                <span class="o_strx_serial_picker_badge" t-esc="option.strxSerialStateLabel"/>
+            </span>
+        </t>
+        <t t-else="">
+            <t t-esc="option.label"/>
+        </t>
+    </t>
+
+</templates>

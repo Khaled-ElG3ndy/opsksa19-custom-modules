@@ -1,0 +1,88 @@
+body:has(.o_strx_cabin_navbar) {
+    .o_form_view .oe_button_box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .o_form_view .oe_button_box .oe_stat_button.o_strx_cabin_stat_button {
+        margin: 3px;
+        border: 1px solid #dfe4ef;
+        border-radius: 11px;
+        background: #fbfcff;
+        transition: border-color 160ms ease, background-color 160ms ease,
+            box-shadow 160ms ease, transform 160ms ease;
+
+        &:hover,
+        &:focus {
+            border-color: rgba(91, 97, 214, 0.34);
+            background: #f1f2ff;
+            box-shadow: 0 8px 18px rgba(42, 51, 83, 0.08);
+            transform: translateY(-1px);
+        }
+    }
+}
+
+.modal-dialog:has(.o_strx_cabin_card_preview_form) {
+    width: calc(100vw - 48px);
+    max-width: 720px;
+
+    .modal-content {
+        overflow: hidden;
+        border: 1px solid #e1e6ed;
+        border-radius: 18px;
+        box-shadow: 0 24px 70px rgba(15, 23, 42, 0.18);
+    }
+
+    .modal-body {
+        max-height: calc(100vh - 150px);
+        padding: 0;
+        overflow: auto;
+        background: #f2f5f7;
+    }
+}
+
+.o_strx_cabin_card_preview_form {
+    width: 100%;
+    max-width: 100%;
+
+    .o_form_renderer,
+    .o_form_sheet_bg,
+    .o_form_sheet,
+    sheet {
+        background: transparent;
+    }
+
+    .o_form_sheet {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 18px;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .o_strx_cabin_card_preview_field,
+    .o_field_html {
+        display: block;
+        width: 100%;
+        overflow: visible;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .modal-dialog:has(.o_strx_cabin_card_preview_form) {
+        width: calc(100vw - 16px);
+    }
+
+    .o_strx_cabin_card_preview_form .o_form_sheet {
+        padding: 8px;
+    }
+
+    .o_strx_cabin_card_preview_form .strx-cabin-card-v2 {
+        transform: scale(.82);
+        transform-origin: top center;
+        margin-bottom: -35mm !important;
+    }
+}

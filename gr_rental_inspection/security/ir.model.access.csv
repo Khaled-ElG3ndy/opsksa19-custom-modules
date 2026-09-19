@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_insp_user,gr.rental.inspection.user,model_gr_rental_inspection,gr_security_base.group_generator_user,1,0,0,0
+access_gr_insp_ops,gr.rental.inspection.ops,model_gr_rental_inspection,gr_security_base.group_generator_operations_officer,1,1,1,0
+access_gr_insp_tech,gr.rental.inspection.tech,model_gr_rental_inspection,gr_security_base.group_generator_maint_technician,1,1,1,0
+access_gr_insp_mgr,gr.rental.inspection.mgr,model_gr_rental_inspection,gr_security_base.group_generator_maint_manager,1,1,1,1
+access_gr_insp_gm,gr.rental.inspection.gm,model_gr_rental_inspection,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_insp_admin,gr.rental.inspection.admin,model_gr_rental_inspection,gr_security_base.group_generator_administrator,1,1,1,1
+access_gr_insp_line_ops,gr.rental.inspection.line.ops,model_gr_rental_inspection_line,gr_security_base.group_generator_operations_officer,1,1,1,1
+access_gr_insp_line_tech,gr.rental.inspection.line.tech,model_gr_rental_inspection_line,gr_security_base.group_generator_maint_technician,1,1,1,1
+access_gr_insp_line_user,gr.rental.inspection.line.user,model_gr_rental_inspection_line,gr_security_base.group_generator_user,1,0,0,0
+access_gr_insp_line_mgr,gr.rental.inspection.line.mgr,model_gr_rental_inspection_line,gr_security_base.group_generator_maint_manager,1,1,1,1
+access_gr_insp_line_admin,gr.rental.inspection.line.admin,model_gr_rental_inspection_line,gr_security_base.group_generator_administrator,1,1,1,1
+access_gr_chk_item_user,gr.rental.checklist.item.user,model_gr_rental_checklist_item,gr_security_base.group_generator_user,1,0,0,0
+access_gr_chk_item_mgr,gr.rental.checklist.item.mgr,model_gr_rental_checklist_item,gr_security_base.group_generator_maint_manager,1,1,1,1
+access_gr_chk_item_ops,gr.rental.checklist.item.ops,model_gr_rental_checklist_item,gr_security_base.group_generator_operations_officer,1,0,0,0
+access_gr_chk_item_admin,gr.rental.checklist.item.admin,model_gr_rental_checklist_item,gr_security_base.group_generator_administrator,1,1,1,1
