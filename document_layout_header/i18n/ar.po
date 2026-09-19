@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* document_layout_header
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: document_layout_header
+#: model_terms:ir.ui.view,arch_db:document_layout_header.full_width_footer
+msgid "<span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "<span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: document_layout_header
+#: model:ir.model,name:document_layout_header.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: document_layout_header
+#: model:ir.model,name:document_layout_header.model_base_document_layout
+msgid "Company Document Layout"
+msgstr "تخطيط مستندات الشركة"
+
+#. module: document_layout_header
+#: model:ir.model.fields,field_description:document_layout_header.field_base_document_layout__display_name
+#: model:ir.model.fields,field_description:document_layout_header.field_res_company__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: document_layout_header
+#: model:ir.model.fields,field_description:document_layout_header.field_base_document_layout__footer_img
+msgid "Footer Image"
+msgstr "صورة التذييل"
+
+#. module: document_layout_header
+#: model:ir.model.fields,field_description:document_layout_header.field_res_company__footer_img
+msgid "Full Footer Image"
+msgstr "صورة التذييل الكاملة"
+
+#. module: document_layout_header
+#: model:ir.model.fields,field_description:document_layout_header.field_res_company__header_img
+msgid "Full Header Image"
+msgstr "صورة الترويسة الكاملة"
+
+#. module: document_layout_header
+#: model:ir.model.fields,field_description:document_layout_header.field_base_document_layout__header_img
+msgid "Header Image"
+msgstr "صورة الترويسة"
+
+#. module: document_layout_header
+#: model:ir.model.fields,field_description:document_layout_header.field_base_document_layout__id
+#: model:ir.model.fields,field_description:document_layout_header.field_res_company__id
+msgid "ID"
+msgstr "المعرّف"

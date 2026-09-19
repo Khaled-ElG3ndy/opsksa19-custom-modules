@@ -20,14 +20,14 @@ class AuditLogRuleCommon(TransactionCase):
     def tearDownClass(cls):
         for rule in cls.env["auditlog.rule"].search([]):
             try:
-                rule.unsubscribe()
+                rule.set_to_draft()
             except KeyError:  # pragma: no cover
                 continue  # Model not loaded yet
 
         # Assert no patched methods remain
         for model in cls.models:
             for method in ["create", "read", "write", "unlink"]:
-                assert not hasattr(
-                    getattr(cls.env[model], method), "origin"
-                ), f"{model} {method} still patched"
+                assert not hasattr(getattr(cls.env[model], method), "origin"), (
+                    f"{model} {method} still patched"
+                )
         super().tearDownClass()

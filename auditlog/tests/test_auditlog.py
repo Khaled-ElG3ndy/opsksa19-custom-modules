@@ -3,20 +3,23 @@
 # © 2021 Stefan Rijnhart <stefan@opener.amsterdam>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from datetime import timedelta
-
-from odoo import fields
+from odoo.fields import Command
 
 from odoo.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
-from odoo.addons.base.models.res_users import name_boolean_group
 
 from .common import AuditLogRuleCommon
 
 
 class AuditlogCommon:
+    """Base case with basic log creation tests"""
+
+    # Ensure that test cases that inherit from this class run the methods
+    # that it provides.
+    allow_inherited_tests_method = True
+
     def test_LogCreation(self):
         """First test, caching some data."""
-        self.groups_rule.subscribe()
+        self.groups_rule.set_to_confirmed()
         group = self.env["res.groups"].create({"name": "testgroup1"})
         self.assertEqual(
             self.env["auditlog.log"].search_count(
@@ -32,7 +35,7 @@ class AuditlogCommon:
     def test_LogCreation2(self):
         """Second test, using cached data of the first one."""
 
-        self.groups_rule.subscribe()
+        self.groups_rule.set_to_confirmed()
 
         auditlog_log = self.env["auditlog.log"]
         testgroup2 = self.env["res.groups"].create({"name": "testgroup2"})
@@ -48,22 +51,25 @@ class AuditlogCommon:
 
     def test_LogCreation3(self):
         """Third test, two groups, the latter being the parent of the former.
-        Then we remove it right after (with (2, X) tuple) to test the creation
+        Then we remove it right after (with Command.delete) to test the creation
         of a 'write' log with a deleted resource (so with no text
         representation).
         """
 
-        self.groups_rule.subscribe()
+        self.groups_rule.set_to_confirmed()
         auditlog_log = self.env["auditlog.log"]
         testgroup3 = self.env["res.groups"].create({"name": "testgroup3"})
         testgroup4 = self.env["res.groups"].create({"name": "testgroup4"})
         testgroup5 = self.env["res.groups"].create(
             {
                 "name": "testgroup5",
-                "implied_ids": [(4, testgroup3.id), (4, testgroup4.id)],
+                "implied_ids": [
+                    Command.link(testgroup3.id),
+                    Command.link(testgroup4.id),
+                ],
             }
         )
-        testgroup5.write({"implied_ids": [(2, testgroup3.id)]})
+        testgroup5.write({"implied_ids": [Command.delete(testgroup3.id)]})
         self.assertTrue(
             auditlog_log.search(
                 [
@@ -98,7 +104,7 @@ class AuditlogCommon:
         has been generated.
         """
 
-        self.groups_rule.subscribe()
+        self.groups_rule.set_to_confirmed()
 
         auditlog_log = self.env["auditlog.log"]
         groups_vals = [
@@ -126,7 +132,7 @@ class AuditlogCommon:
         has been generated. And then delete it, check that it has created log
         with 0 fields updated.
         """
-        self.groups_rule.subscribe()
+        self.groups_rule.set_to_confirmed()
 
         auditlog_log = self.env["auditlog.log"]
         testgroup5 = self.env["res.groups"].create({"name": "testgroup5"})
@@ -156,7 +162,7 @@ class AuditlogCommon:
         has been generated. And then delete it, check that it has created log
         with x fields updated as per rule
         """
-        self.groups_rule.subscribe()
+        self.groups_rule.set_to_confirmed()
 
         auditlog_log = self.env["auditlog.log"]
         testgroup6 = self.env["res.groups"].create({"name": "testgroup6"})
@@ -186,21 +192,24 @@ class AuditlogCommon:
 
         Check that creation goes as planned (no error coming from ``deepcopy``)
         """
-        self.groups_rule.subscribe()
+        self.groups_rule.set_to_confirmed()
 
         auditlog_log = self.env["auditlog.log"]
         cat = self.env["ir.module.category"].create({"name": "Test Category"})
+        privilege = self.env["res.groups.privilege"].create(
+            {"name": "Test Privilege", "category_id": cat.id},
+        )
         groups_vals = [
             {"name": "testgroup1"},
-            {"name": "testgroup3", "category_id": cat.browse()},
-            {"name": "testgroup2", "category_id": False},
-            {"name": "testgroup4", "category_id": cat.id},
+            {"name": "testgroup3", "privilege_id": self.env["res.groups.privilege"]},
+            {"name": "testgroup2", "privilege_id": False},
+            {"name": "testgroup4", "privilege_id": privilege.id},
         ]
         groups = self.env["res.groups"].create(groups_vals)
 
-        # Ensure ``category_id`` field has the correct values
-        expected_ids = [False, False, False, cat.id]
-        self.assertEqual([g.category_id.id for g in groups], expected_ids)
+        # Ensure ``privilege_id`` field has the correct values
+        expected_ids = [False, False, False, privilege.id]
+        self.assertEqual([g.privilege_id.id for g in groups], expected_ids)
 
         # Ensure the correct number of logs have been created
         logs = auditlog_log.search(
@@ -214,20 +223,26 @@ class AuditlogCommon:
 
     def test_LogUpdate(self):
         """Tests write results with different M2O values."""
-        self.groups_rule.subscribe()
+        self.groups_rule.set_to_confirmed()
         testgroup3 = self.env["res.groups"].create({"name": "testgroup3"})
         testgroup4 = self.env["res.groups"].create({"name": "testgroup4"})
         group = self.env["res.groups"].create(
             {
                 "name": "testgroup1",
-                "implied_ids": [(4, testgroup3.id), (4, testgroup4.id)],
+                "implied_ids": [
+                    Command.link(testgroup3.id),
+                    Command.link(testgroup4.id),
+                ],
             }
         )
         cat = self.env["ir.module.category"].create({"name": "Test Category"})
+        privilege = self.env["res.groups.privilege"].create(
+            {"name": "Test Privilege", "category_id": cat.id},
+        )
         group.write(
             {
                 "name": "Testgroup1",
-                "category_id": False,
+                "privilege_id": False,
             }
         )
         log1 = self.env["auditlog.log"].search(
@@ -238,7 +253,7 @@ class AuditlogCommon:
             ]
         )
         self.assertEqual(len(log1), 1)
-        group.write({"name": "Testgroup2", "category_id": cat.id})
+        group.write({"name": "Testgroup2", "privilege_id": privilege.id})
         log2 = self.env["auditlog.log"].search(
             [
                 ("model_id", "=", self.groups_model_id),
@@ -248,7 +263,7 @@ class AuditlogCommon:
             ]
         )
         self.assertEqual(len(log2), 1)
-        group.write({"name": "Testgroup3", "category_id": False})
+        group.write({"name": "Testgroup3", "privilege_id": False})
         log3 = self.env["auditlog.log"].search(
             [
                 ("model_id", "=", self.groups_model_id),
@@ -261,7 +276,7 @@ class AuditlogCommon:
 
     def test_LogDelete(self):
         """Tests unlink results"""
-        self.groups_rule.subscribe()
+        self.groups_rule.set_to_confirmed()
         group = self.env["res.groups"].create({"name": "testgroup1"})
         group.unlink()
         self.assertEqual(
@@ -274,12 +289,6 @@ class AuditlogCommon:
             ),
             1,
         )
-
-    def test_http_session(self):
-        display_name = self.env["auditlog.http.session"].new().display_name
-        now_plus_one_hour = fields.Datetime.now() + timedelta(hours=1)
-        expected_time_str = now_plus_one_hour.strftime("%Y-%m-%d %H:%M:%S")
-        self.assertEqual(display_name, "? (" + expected_time_str + ")")
 
 
 class TestAuditlogFull(AuditLogRuleCommon, AuditlogCommon):
@@ -298,6 +307,37 @@ class TestAuditlogFull(AuditLogRuleCommon, AuditlogCommon):
                 "log_type": "full",
             }
         )
+
+
+class TestAuditlogExportData(AuditLogRuleCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.groups_model_id = cls.env.ref("base.model_res_groups").id
+        cls.groups_rule = cls.env["auditlog.rule"].create(
+            {
+                "name": "testrule for groups",
+                "model_id": cls.groups_model_id,
+                "log_export_data": True,
+            }
+        )
+
+    def test_LogExport(self):
+        self.groups_rule.set_to_confirmed()
+
+        auditlog_log = self.env["auditlog.log"]
+        self.env["res.groups"].search([]).export_data(["name"])
+        created_log = auditlog_log.search(
+            [
+                ("model_id", "=", self.groups_model_id),
+                ("method", "=", "export_data"),
+            ]
+        ).ensure_one()
+        self.assertTrue(created_log)
+        action = created_log.show_res_ids()
+        domain = action["domain"]  # [('id', 'in', [1, 2, ...])]
+        self.assertIsInstance(domain, list)
+        self.assertIsInstance(domain[0][2], list)
 
 
 class TestAuditlogFast(AuditLogRuleCommon, AuditlogCommon):
@@ -361,7 +401,7 @@ class TestFieldRemoval(AuditLogRuleCommon):
             }
         )
 
-        cls.auditlog_rule.subscribe()
+        cls.auditlog_rule.set_to_confirmed()
         # Trigger log creation
         rec = cls.env["x_test.model"].create({"x_test_field": "test value"})
         rec.write({"x_test_field": "test value 2"})
@@ -449,6 +489,10 @@ class AuditLogRuleTestForUserFields(AuditLogRuleCommon):
                 {
                     "name": "Test User",
                     "login": "testuser",
+                    "group_ids": [
+                        Command.link(cls.env.ref("base.group_user").id),
+                        Command.link(cls.env.ref("base.group_partner_manager").id),
+                    ],
                 }
             )
         )
@@ -459,6 +503,10 @@ class AuditLogRuleTestForUserFields(AuditLogRuleCommon):
                 {
                     "name": "Test User2",
                     "login": "testuser2",
+                    "group_ids": [
+                        Command.link(cls.env.ref("base.group_user").id),
+                        Command.link(cls.env.ref("base.group_partner_manager").id),
+                    ],
                 }
             )
         )
@@ -486,7 +534,7 @@ class AuditLogRuleTestForUserFields(AuditLogRuleCommon):
         cls.auditlog_rule.users_to_exclude_ids = [[4, cls.users_to_exclude_ids]]
 
         # Subscribe auditlog.rule
-        cls.auditlog_rule.subscribe()
+        cls.auditlog_rule.set_to_confirmed()
 
         cls.auditlog_log = cls.env["auditlog.log"]
 
@@ -643,31 +691,12 @@ class AuditLogRuleTestForUserModel(AuditLogRuleCommon):
 
         cls.auditlog_log = cls.env["auditlog.log"]
         # Subscribe auditlog.rule
-        cls.auditlog_rule.subscribe()
+        cls.auditlog_rule.set_to_confirmed()
 
     def test_01_AuditlogFull_field_group_write_log(self):
         """Change group and check successfully created log"""
         self.user.with_context(tracking_disable=True).write(
-            {"groups_id": [(4, self.group.id)]}
-        )
-        # Checking log is created for testpartner1
-        write_log_record = self.auditlog_log.search(
-            [
-                ("model_id", "=", self.auditlog_rule.model_id.id),
-                ("method", "=", "write"),
-                ("res_id", "=", self.user.id),
-            ]
-        ).ensure_one()
-        self.assertTrue(write_log_record)
-
-    def test_02_AuditlogFull_field_group_write_log(self):
-        """Change group and check successfully created log, but using reified fields"""
-        fname = name_boolean_group(self.group.id)
-
-        self.user.with_context(tracking_disable=True).write(
-            {
-                fname: True,
-            }
+            {"group_ids": [Command.link(self.group.id)]}
         )
         # Checking log is created for testpartner1
         write_log_record = self.auditlog_log.search(
@@ -713,7 +742,7 @@ class AuditlogFast_excluded_fields(AuditLogRuleCommon):
         cls.auditlog_rule.fields_to_exclude_ids = [[4, cls.fields_to_exclude_ids]]
 
         # Subscribe auditlog.rule
-        cls.auditlog_rule.subscribe()
+        cls.auditlog_rule.set_to_confirmed()
 
         cls.auditlog_log = cls.env["auditlog.log"]
 
