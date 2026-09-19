@@ -1,0 +1,92 @@
+/* Expected-return smart button on the rental order form.
+   One status colour variant is shown at a time (all share the same layout);
+   the colours map to the rental return countdown status:
+     ok        -> green         (more than 3 days remaining)
+     soon      -> amber         (2-3 days remaining)
+     tomorrow  -> orange        (1 day remaining)
+     today     -> red-orange    (due today)
+     overdue   -> red           (expected return date passed)
+     done      -> gray          (fully returned / completed)
+   The layout is direction-aware so it stays correct in the RTL Arabic UI. */
+
+.o_gr_return {
+    float: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-width: 176px;
+    padding: 10px 14px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    text-align: start;
+    white-space: nowrap;
+
+    .fa {
+        margin-inline-end: 10px;
+        font-size: 20px;
+        opacity: 0.95;
+    }
+
+    .o_gr_return_text {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        line-height: 1.2;
+
+        .o_gr_return_value {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .o_gr_return_sub {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+    }
+}
+
+.o_gr_return.o_gr_return_ok {
+    background: #EAF8F0;
+    border-color: #BFE8CF;
+    color: #198754;
+}
+
+.o_gr_return.o_gr_return_soon {
+    background: #FFF8E1;
+    border-color: #F4D58D;
+    color: #A66B00;
+}
+
+.o_gr_return.o_gr_return_tomorrow {
+    background: #FFF0E6;
+    border-color: #FFC9A8;
+    color: #D95F02;
+}
+
+.o_gr_return.o_gr_return_today {
+    background: #FDEBE0;
+    border-color: #F6BFA5;
+    color: #D5480C;
+}
+
+.o_gr_return.o_gr_return_overdue {
+    background: #FDECEC;
+    border-color: #F4B8B8;
+    color: #C62828;
+}
+
+.o_gr_return.o_gr_return_done {
+    background: #F3F4F6;
+    border-color: #D7DAE0;
+    color: #6B7280;
+}
+
+.o_gr_return:hover {
+    border-color: rgba(0, 0, 0, 0.22);
+}
+
+/* Neutralize the Odoo default stat-button text colour so the status colour
+   always wins inside the button. */
+.o_gr_return .o_field_widget {
+    color: inherit;
+}

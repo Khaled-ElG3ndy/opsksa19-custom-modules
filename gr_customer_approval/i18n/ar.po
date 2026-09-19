@@ -1,0 +1,2638 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_customer_approval
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "%(count)s day(s)"
+msgstr "%(count)s يوم"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "%(count)s hour(s)"
+msgstr "%(count)s ساعة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "%(count)s month(s)"
+msgstr "%(count)s شهر"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "%(document)s - Version %(version)s"
+msgstr "%(document)s - الإصدار %(version)s"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "%(mode)s note %(name)s"
+msgstr "%(mode)s إشعار %(name)s"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_document_footer
+msgid "- <span>Version</span>"
+msgstr "- <span>الإصدار</span>"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_document_header
+msgid "<span class=\"gr-meta-label\">Version</span>:"
+msgstr "<span class=\"gr-meta-label\">الإصدار</span>:"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_document_header
+msgid "<span>Email</span>:"
+msgstr "<span>البريد الإلكتروني</span>:"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_document_footer
+msgid "<span>Page</span> <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "<span>الصفحة</span> <span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_document_header
+msgid "<span>Phone</span>:"
+msgstr "<span>الهاتف</span>:"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_document_header
+msgid "<span>Website</span>:"
+msgstr "<span>الموقع الإلكتروني</span>:"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "<span>day(s)</span>"
+msgstr "<span>يوم/أيام</span>"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid ""
+"<strong>Company Signature</strong><br/><span class=\"gr-muted\">Name, "
+"signature, and date</span>"
+msgstr ""
+"<strong>توقيع الشركة</strong><br/><span class=\"gr-muted\">الاسم والتوقيع "
+"والتاريخ</span>"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_delivery_note_report
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_return_inspection_report
+msgid "<strong>Customer Signature</strong>"
+msgstr "<strong>توقيع العميل</strong>"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid ""
+"<strong>Customer Signature</strong><br/><span class=\"gr-muted\">Name, "
+"signature, and date</span>"
+msgstr ""
+"<strong>توقيع العميل</strong><br/><span class=\"gr-muted\">الاسم والتوقيع "
+"والتاريخ</span>"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_delivery_note_report
+msgid "<strong>Driver Signature</strong>"
+msgstr "<strong>توقيع السائق</strong>"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_return_inspection_report
+msgid "<strong>Inspector Signature</strong>"
+msgstr "<strong>توقيع المفتش</strong>"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "<strong>Notes</strong>:"
+msgstr "<strong>الملاحظات</strong>:"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "<strong>Signature</strong> -"
+msgstr "<strong>التوقيع</strong> -"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "<strong>Technician Signature</strong>"
+msgstr "<strong>توقيع الفني</strong>"
+
+#. module: gr_customer_approval
+#: model:mail.template,body_html:gr_customer_approval.mail_template_inspection_document
+#: model:mail.template,body_html:gr_customer_approval.mail_template_rental_order_document
+#: model:mail.template,body_html:gr_customer_approval.mail_template_worksheet_document
+msgid ""
+"<t t-out=\"object._approval_document_email_body_html()\"/>\n"
+"        "
+msgstr ""
+"<t t-out=\"object._approval_document_email_body_html()\"/>\n"
+"        "
+
+#. module: gr_customer_approval
+#: model:mail.template,body_html:gr_customer_approval.mail_template_inspection_approval_code
+#: model:mail.template,body_html:gr_customer_approval.mail_template_rental_order_approval_code
+#: model:mail.template,body_html:gr_customer_approval.mail_template_worksheet_approval_code
+msgid ""
+"<t t-out=\"object._approval_email_body_html()\"/>\n"
+"        "
+msgstr ""
+"<t t-out=\"object._approval_email_body_html()\"/>\n"
+"        "
+
+#. module: gr_customer_approval
+#: model:ir.model.constraint,message:gr_customer_approval.constraint_gr_customer_approval_document_document_version_uniq
+msgid "A document version can only be created once."
+msgstr "لا يمكن إنشاء إصدار المستند نفسه أكثر من مرة."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "A new approval document revision was requested."
+msgstr "تم طلب إصدار جديد من مستند الاعتماد."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_delivery_note_report
+msgid "Actual Dispatch"
+msgstr "الإرسال الفعلي"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Actual Install"
+msgstr "التركيب الفعلي"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_return_inspection_report
+msgid "Actual Return"
+msgstr "الإرجاع الفعلي"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Air filter conditions"
+msgstr "حالة فلتر الهواء"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Air filter housing and lock conditions"
+msgstr "حالة صندوق فلتر الهواء وقفله"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Allocated Assets and Equipment"
+msgstr "الأصول والمعدات المخصصة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "An approval code was sent for the fixed PDF version."
+msgstr "تم إرسال رمز اعتماد لنسخة PDF المثبتة."
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__event_type__cancelled
+msgid "Approval Cancelled"
+msgstr "تم إلغاء الموافقة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__approval_channel
+msgid "Approval Channel"
+msgstr "قناة الموافقة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__attachment_id
+msgid "Approval Copy"
+msgstr "نسخة الموافقة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__event_type__generated
+msgid "Approval Copy Generated"
+msgstr "تم إنشاء نسخة الموافقة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "Approval Date"
+msgstr "تاريخ الموافقة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__approval_document_id
+msgid "Approval Document"
+msgstr "مستند الموافقة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+#: model:ir.actions.act_window,name:gr_customer_approval.action_gr_customer_approval_document
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approval_document_count
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approval_document_count
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approval_document_count
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approval_document_count
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Approval Documents"
+msgstr "مستندات الموافقة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_log_form
+msgid "Approval Event"
+msgstr "حدث الموافقة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_document_form
+msgid "Approval Evidence"
+msgstr "إثبات الموافقة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approval_log_count
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approval_log_count
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approval_log_count
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approval_log_count
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Approval History"
+msgstr "سجل الموافقات"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__approval_log_id
+msgid "Approval Log Entry"
+msgstr "قيد سجل الموافقة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "Approval Log Number"
+msgstr "رقم سجل الموافقة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__approval_method
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__approval_method
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approval_method
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approval_method
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approval_method
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approval_method
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "Approval Method"
+msgstr "طريقة الموافقة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approval_notes
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approval_notes
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approval_notes
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approval_notes
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Approval Notes"
+msgstr "ملاحظات الموافقة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_document.py:0
+msgid "Approval PDF attachments cannot be deleted."
+msgstr "لا يمكن حذف مرفقات PDF الخاصة بالاعتماد."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_document.py:0
+msgid "Approval PDF attachments cannot be replaced or edited."
+msgstr "لا يمكن استبدال أو تعديل مرفقات PDF الخاصة بالاعتماد."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Approval PDF version %(version)s was generated in %(language)s."
+msgstr "تم توليد نسخة PDF للاعتماد رقم %(version)s باللغة %(language)s."
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__approval_recipient
+msgid "Approval Recipient"
+msgstr "مستلم الموافقة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approval_signature
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approval_signature
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approval_signature
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approval_signature
+msgid "Approval Signature"
+msgstr "توقيع العميل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "Approval Status"
+msgstr "حالة الموافقة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Approval audit log entries cannot be deleted."
+msgstr "لا يمكن حذف قيود سجل تدقيق الاعتماد."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Approval audit log entries cannot be edited."
+msgstr "لا يمكن تعديل قيود سجل تدقيق الاعتماد."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Approval code for %(document)s - Version %(version)s"
+msgstr "رمز اعتماد %(document)s - الإصدار %(version)s"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_document.py:0
+msgid "Approval document versions cannot be deleted manually."
+msgstr "لا يمكن حذف إصدارات مستند الاعتماد يدويًا."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_document.py:0
+msgid "Approval document versions cannot be edited manually."
+msgstr "لا يمكن تعديل إصدارات مستند الاعتماد يدويًا."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Approve with Signature"
+msgstr "اعتماد بتوقيع العميل"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__state__approved
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__event_type__approved
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_mixin__approval_state__approved
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_field_worksheet__approval_state__approved
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_inspection__approval_state__approved
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_order__approval_state__approved
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__approved_attachment_id
+msgid "Approved Document"
+msgstr "المستند المعتمد"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__approved_file_hash
+msgid "Approved File Hash"
+msgstr "بصمة الملف المعتمد"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__approved_at
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approved_on
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approved_on
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approved_on
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approved_on
+msgid "Approved On"
+msgstr "تاريخ الاعتماد"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__approval_method__otp
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__approval_method__otp
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_mixin__approval_method__otp
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_field_worksheet__approval_method__otp
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_inspection__approval_method__otp
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_order__approval_method__otp
+msgid "Approved by one-time code"
+msgstr "اعتماد برمز موافقة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Approved customer approval records cannot be deleted."
+msgstr "لا يمكن حذف سجلات اعتماد العميل المعتمدة."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_document.py:0
+msgid "Approved document versions cannot be deleted."
+msgstr "لا يمكن حذف إصدارات المستندات المعتمدة."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Approved operating hours"
+msgstr "ساعات التشغيل المعتمدة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "Approved via OTP"
+msgstr "تم الاعتماد بواسطة رمز لمرة واحدة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Approved_%s"
+msgstr "%s_معتمد"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approval_partner_id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approval_partner_id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approval_partner_id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approval_partner_id
+msgid "Approving Customer"
+msgstr "العميل المعتمد"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Area located (dry or wet)"
+msgstr "طبيعة الموقع (جاف أو رطب)"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "As applicable under the contract and tax invoice"
+msgstr "حسب ما ينطبق وفق العقد والفاتورة الضريبية"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+msgid "As stated in the checklist"
+msgstr "حسب الحالة المسجلة في قائمة الفحص"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_legacy_order_overview
+msgid "Asset"
+msgstr "الأصل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Asset / Accessory"
+msgstr "الأصل / الملحق"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Asset / Item"
+msgstr "الأصل / البند"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+msgid "Asset Condition"
+msgstr "حالة الأصل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+msgid "Asset Delivery Report"
+msgstr "محضر تسليم الأصل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_legacy_order_overview
+msgid "Asset Number"
+msgstr "رقم الأصل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Asset Return Report"
+msgstr "محضر إرجاع الأصل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Assets and Equipment"
+msgstr "الأصول والمعدات"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Attached is %(document)s, version %(version)s."
+msgstr "مرفق %(document)s، الإصدار %(version)s."
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_ir_attachment
+msgid "Attachment"
+msgstr "مرفق"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Base Daily Rate"
+msgstr "السعر اليومي الأساسي"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Base Monthly Rate"
+msgstr "السعر الشهري الأساسي"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "Base Rate"
+msgstr "السعر الأساسي"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "Based on actual usage"
+msgstr "بناءً على الاستخدام الفعلي"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Battery Voltage"
+msgstr "جهد البطارية"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Battery cables conditions"
+msgstr "حالة كابلات البطارية"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Battery condition"
+msgstr "حالة البطارية"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Battery conditions"
+msgstr "حالة البطارية"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Battery terminal conditions"
+msgstr "حالة أطراف البطارية"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Billing Basis"
+msgstr "أساس الفوترة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Breaker lags and bolts conditions"
+msgstr "حالة مسامير وقواعد القاطع"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Breaker switch conditions"
+msgstr "حالة مفتاح القاطع"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Cabin"
+msgstr "الكابينة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Cabin doors"
+msgstr "أبواب الكابينة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Cabin exterior"
+msgstr "خارج الكابينة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Cabin interior"
+msgstr "داخل الكابينة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Calculated from actual usage"
+msgstr "يتم الاحتساب حسب مدة الاستخدام الفعلية"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Capacity"
+msgstr "السعة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid ""
+"Capture the customer's signature first, or send a one-time code instead if "
+"they are not present."
+msgstr ""
+"التقط توقيع العميل أولاً، أو أرسل رمزًا لمرة واحدة بدلاً من ذلك إذا لم يكن "
+"حاضرًا."
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__channel
+msgid "Channel"
+msgstr "القناة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Check Item"
+msgstr "بند الفحص"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Checklist"
+msgstr "قائمة التحقق"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__otp_expires_at
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__otp_expires_at
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__otp_expires_at
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__otp_expires_at
+msgid "Code Expires"
+msgstr "انتهاء صلاحية الرمز"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__event_type__sent
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_mixin__approval_state__sent
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_field_worksheet__approval_state__sent
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_inspection__approval_state__sent
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_order__approval_state__sent
+msgid "Code Sent"
+msgstr "تم إرسال الرمز"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__otp_sent_to
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__otp_sent_to
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__otp_sent_to
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__otp_sent_to
+msgid "Code Sent To"
+msgstr "أُرسل الرمز إلى"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Code not accepted"
+msgstr "الرمز غير مقبول"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Completed"
+msgstr "مكتمل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+msgid "Condition"
+msgstr "الحالة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__content_hash
+msgid "Content Hash"
+msgstr "بصمة المحتوى"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_legacy_order_overview
+msgid "Contract"
+msgstr "العقد"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Contract Details"
+msgstr "بيانات العقد"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Contract Overview"
+msgstr "ملخص العقد"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Contract Type"
+msgstr "نوع العقد"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Contract rate"
+msgstr "سعر العقد"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/ir_actions_report.py:0
+msgid "Controlled version stored in the system"
+msgstr "نسخة محكومة مخزّنة في النظام"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Cranking time"
+msgstr "زمن بدء التشغيل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Create New Revision"
+msgstr "إنشاء إصدار جديد"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Create a new revision before generating another approval copy."
+msgstr "أنشئ إصدارًا جديدًا قبل توليد نسخة اعتماد أخرى."
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__create_uid
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__create_date
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Currency"
+msgstr "العملة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__current_approval_document_id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__current_approval_document_id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__current_approval_document_id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__current_approval_document_id
+msgid "Current Approval Copy"
+msgstr "نسخة الموافقة الحالية"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__partner_id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__partner_id
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_section
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid ""
+"Customer %s has no email address. Add one, or choose a different channel."
+msgstr "العميل %s ليس له بريد إلكتروني. أضف واحدًا، أو اختر قناة أخرى."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid ""
+"Customer %s has no phone number. Add one, or send the code by email instead."
+msgstr ""
+"العميل %s ليس له رقم هاتف. أضف واحدًا، أو أرسل الرمز بالبريد الإلكتروني "
+"بدلاً من ذلك."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Customer Acknowledgement"
+msgstr "إقرار العميل"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approval_state
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approval_state
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approval_state
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approval_state
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Customer Approval"
+msgstr "موافقة العميل"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_customer_approval_mixin
+msgid "Customer Approval (signature or OTP) mixin"
+msgstr "نظام موافقة العميل بالتوقيع أو رمز لمرة واحدة"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_customer_approval_log
+msgid "Customer Approval Audit Log"
+msgstr "سجل تدقيق موافقات العميل"
+
+#. module: gr_customer_approval
+#: model:mail.template,name:gr_customer_approval.mail_template_worksheet_approval_code
+msgid "Customer Approval Code - Field Worksheet"
+msgstr "رمز موافقة العميل - تقرير الزيارة"
+
+#. module: gr_customer_approval
+#: model:mail.template,name:gr_customer_approval.mail_template_inspection_approval_code
+msgid "Customer Approval Code - Inspection"
+msgstr "رمز موافقة العميل - الفحص"
+
+#. module: gr_customer_approval
+#: model:mail.template,name:gr_customer_approval.mail_template_rental_order_approval_code
+msgid "Customer Approval Code - Rental Order"
+msgstr "رمز موافقة العميل - أمر التأجير"
+
+#. module: gr_customer_approval
+#: model:mail.template,name:gr_customer_approval.mail_template_worksheet_document
+msgid "Customer Approval Document - Field Worksheet"
+msgstr "مستند موافقة العميل - تقرير الزيارة"
+
+#. module: gr_customer_approval
+#: model:mail.template,name:gr_customer_approval.mail_template_inspection_document
+msgid "Customer Approval Document - Inspection"
+msgstr "مستند موافقة العميل - الفحص"
+
+#. module: gr_customer_approval
+#: model:mail.template,name:gr_customer_approval.mail_template_rental_order_document
+msgid "Customer Approval Document - Rental Order"
+msgstr "مستند موافقة العميل - أمر التأجير"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_customer_approval_document
+msgid "Customer Approval Document Version"
+msgstr "إصدار مستند موافقة العميل"
+
+#. module: gr_customer_approval
+#: model:ir.actions.act_window,name:gr_customer_approval.action_gr_customer_approval_log
+msgid "Customer Approval Log"
+msgstr "سجل موافقات العميل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_section
+msgid "Customer Information"
+msgstr "بيانات العميل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Customer PO Number"
+msgstr "رقم أمر شراء العميل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_section
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "Customer Representative"
+msgstr "ممثل العميل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Customer Responsibilities, Delay and Damage"
+msgstr "مسؤوليات العميل والتأخير والتلفيات"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Customer approval of a valid PDF is required before %(operation)s."
+msgstr "يلزم اعتماد العميل لملف PDF صالح قبل %(operation)s."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Customer approval: %(doc)s - %(what)s."
+msgstr "اعتماد العميل: %(doc)s - %(what)s."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Daily Rate"
+msgstr "السعر اليومي"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Damage / Notes"
+msgstr "التلفيات / الملاحظات"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Dash board error"
+msgstr "خطأ في لوحة العدادات"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_log_list
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Dear Customer,"
+msgstr "عزيزي العميل،"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+msgid "Delivered"
+msgstr "تم التسليم"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+msgid "Delivered Assets and Accessories"
+msgstr "الأصول والملحقات المسلمة"
+
+#. module: gr_customer_approval
+#: model:ir.actions.report,name:gr_customer_approval.action_report_approval_delivery
+msgid "Delivery Approval Document"
+msgstr "مستند اعتماد التسليم"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+msgid "Delivery Date and Time"
+msgstr "تاريخ ووقت التسليم"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_delivery_note_report
+msgid "Delivery Details"
+msgstr "بيانات التسليم"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_delivery_note_report
+msgid "Delivery Driver"
+msgstr "سائق التسليم"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_delivery_note_report
+msgid "Delivery Note"
+msgstr "إشعار التسليم"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__report_type__delivery
+msgid "Delivery Report"
+msgstr "محضر التسليم"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+msgid "Delivery Site"
+msgstr "موقع التسليم"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Delivery_Approval_Copy"
+msgstr "نسخة_موافقة_محضر_تسليم"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "Delivery_Note"
+msgstr "إشعار_تسليم"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Delivery_Report"
+msgstr "محضر_تسليم"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Demobilization Charge"
+msgstr "رسوم الإخلاء"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__description
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Description"
+msgstr "الوصف"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_log_form
+msgid "Details"
+msgstr "التفاصيل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_delivery_note_report
+msgid "Dispatch Note"
+msgstr "ملاحظة الإرسال"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_document_report_helper__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet_check__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet_part__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_contract__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection_line__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order_checklist__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order_line__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_ir_actions_report__display_name
+#: model:ir.model.fields,field_description:gr_customer_approval.field_ir_attachment__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_document_form
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_log_form
+msgid "Document"
+msgstr "المستند"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__document_res_id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__document_res_id
+msgid "Document ID"
+msgstr "معرف المستند"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__language
+msgid "Document Language"
+msgstr "لغة المستند"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__document_model
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__document_model
+msgid "Document Model"
+msgstr "نموذج المستند"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__document_number
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_document_header
+msgid "Document Number"
+msgstr "رقم المستند"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__document_ref
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__document_ref
+msgid "Document Reference"
+msgstr "مرجع المستند"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__event_type__document_sent
+msgid "Document Sent"
+msgstr "تم إرسال المستند"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__report_type
+msgid "Document Type"
+msgstr "نوع المستند"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Door locks"
+msgstr "أقفال الأبواب"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_document_form
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Download Approved Document"
+msgstr "تنزيل المستند المعتمد"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_document_form
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Download PDF"
+msgstr "تنزيل PDF"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Duration"
+msgstr "المدة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__approval_channel__email
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__channel__email
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_mixin__otp_channel__email
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_field_worksheet__otp_channel__email
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_inspection__otp_channel__email
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_order__otp_channel__email
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_section
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approval_email_count
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approval_email_count
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approval_email_count
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approval_email_count
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Emails Sent"
+msgstr "الرسائل المرسلة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Emissions / smoke"
+msgstr "الانبعاثات / الدخان"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "End Date"
+msgstr "تاريخ النهاية"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_return_inspection_report
+msgid "End Meter"
+msgstr "عداد النهاية"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Engine oil leaking"
+msgstr "تسريب زيت المحرك"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Engine oil level and condition"
+msgstr "مستوى زيت المحرك وحالته"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Engine sounds"
+msgstr "أصوات المحرك"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__otp_input
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__otp_input
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__otp_input
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__otp_input
+msgid "Enter Code"
+msgstr "إدخال الرمز"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Enter the name of the person who signed."
+msgstr "أدخل اسم الشخص الذي وقّع."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Estimated Total"
+msgstr "الإجمالي التقديري"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__event_type
+msgid "Event Type"
+msgstr "نوع الحدث"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Expected Return Date"
+msgstr "تاريخ الإرجاع المتوقع"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Fail"
+msgstr "فشل"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__attempts
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__otp_attempts
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__otp_attempts
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__otp_attempts
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__otp_attempts
+msgid "Failed Attempts"
+msgstr "المحاولات الخاطئة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__event_type__failed
+msgid "Failed Verification"
+msgstr "فشل التحقق"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Fan belt condition"
+msgstr "حالة سير المروحة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Fan belt conditions"
+msgstr "حالة سير المروحة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Fan hub bearing and blades conditions"
+msgstr "حالة محور المروحة وريشها"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Field Visit Report"
+msgstr "تقرير الزيارة الميدانية"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_field_worksheet_check
+msgid "Field Worksheet Checklist Line"
+msgstr "سطر قائمة تحقق ورقة العمل الميدانية"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_field_worksheet_part
+msgid "Field Worksheet Spare Part Line"
+msgstr "سطر قطعة غيار ورقة العمل الميدانية"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__file_hash
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "File Hash"
+msgstr "بصمة الملف"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__name
+msgid "File Name"
+msgstr "اسم الملف"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Free of Charge"
+msgstr "مجاني"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Frequency"
+msgstr "التردد"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+msgid "Fuel Level"
+msgstr "مستوى الوقود"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Fuel Policy"
+msgstr "سياسة الوقود"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Fuel leaking"
+msgstr "تسريب الوقود"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Fuel tank cap availability"
+msgstr "توفر غطاء خزان الوقود"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Generate Approval Copy"
+msgstr "إنشاء نسخة الموافقة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Generate an approval copy before approving this document."
+msgstr "ولّد نسخة اعتماد قبل اعتماد هذا المستند."
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__generated_at
+msgid "Generated On"
+msgstr "تاريخ الإنشاء"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_document_report_helper
+msgid "Generator Document Report Helper"
+msgstr "مساعد تقارير مستندات المولدات"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_rental_contract
+msgid "Generator Rental Contract"
+msgstr "عقد تأجير المولد"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_rental_order
+msgid "Generator Rental Order"
+msgstr "أمر تأجير المولد"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_rental_order_checklist
+msgid "Generator Rental Order Checklist Item"
+msgstr "بند قائمة تحقق أمر تأجير المولد"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Genset elevation"
+msgstr "ارتفاع المولد"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Genset foundation"
+msgstr "قاعدة المولد"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Hour Meter"
+msgstr "عداد الساعات"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Hourly Rate"
+msgstr "سعر الساعة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_return_inspection_report
+msgid "Hours Used"
+msgstr "الساعات المستخدمة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+msgid ""
+"I acknowledge that I received the assets and accessories in the condition "
+"recorded in this report."
+msgstr "أقر بأنني استلمت الأصول والملحقات بالحالة المسجلة في هذا المحضر."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid ""
+"I acknowledge that the work and inspection described in this report were "
+"performed."
+msgstr "أقر بأن الأعمال والفحوص الموضحة في هذا التقرير قد تم تنفيذها."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid ""
+"I acknowledge the return condition, missing accessories, damage "
+"observations, and potential claims recorded in this report."
+msgstr ""
+"أقر بحالة الإرجاع والملحقات المفقودة والتلفيات والمطالبات المحتملة المسجلة "
+"في هذا المحضر."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid ""
+"I confirm that I have reviewed this document and approve all information and"
+" notes stated in it."
+msgstr ""
+"أقر بأنني راجعت هذا المستند وأوافق على جميع البيانات والملاحظات الواردة فيه."
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_document_report_helper__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet_check__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet_part__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_contract__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection_line__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order_checklist__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order_line__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_ir_actions_report__id
+#: model:ir.model.fields,field_description:gr_customer_approval.field_ir_attachment__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "If you did not expect this message, please ignore it."
+msgstr "إذا لم تكن تتوقع هذه الرسالة، يُرجى تجاهلها."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Included Hours / Day"
+msgstr "الساعات المشمولة / يوم"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Independent Rate"
+msgstr "السعر المستقل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Inspected By"
+msgstr "فحص بواسطة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Inspection and Work Performed"
+msgstr "الفحص والأعمال المنفذة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Installation / Commissioning Report"
+msgstr "تقرير التركيب / التشغيل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Installation Details"
+msgstr "تفاصيل التركيب"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Installation Note"
+msgstr "ملاحظة التركيب"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Installation Technician"
+msgstr "فني التركيب"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "Installation_Report"
+msgstr "محضر_تركيب"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_document_header
+msgid "Issue Date"
+msgstr "تاريخ الإصدار"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Item"
+msgstr "البند"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__last_sent_at
+msgid "Last Sent On"
+msgstr "آخر إرسال في"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__write_uid
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__write_date
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Load conditions"
+msgstr "حالة الأحمال"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Max Hours / Day"
+msgstr "الحد الأقصى للساعات / يوم"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Mobilization Charge"
+msgstr "رسوم التعبئة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "N/A"
+msgstr "غير منطبق"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__event_type__revision
+msgid "New Revision Created"
+msgstr "تم إنشاء إصدار جديد"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "No"
+msgstr "لا"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "No additional terms and conditions were recorded on this contract."
+msgstr "لم يتم تسجيل شروط وأحكام إضافية على هذا العقد."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "No approval email template is configured."
+msgstr "لا يوجد قالب بريد إلكتروني للاعتماد مهيّأ."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "No approved PDF is available for this document."
+msgstr "لا توجد نسخة PDF معتمدة لهذا المستند."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "No code has been sent yet."
+msgstr "لم يُرسل أي رمز بعد."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "No customer is set on this document."
+msgstr "لم يُحدَّد عميل على هذا المستند."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+msgid "Not recorded"
+msgstr "غير مسجل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Notes"
+msgstr "الملاحظات"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Notes and Technician Recommendations"
+msgstr "الملاحظات وتوصيات الفني"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "OK"
+msgstr "موافق"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "OTP Approval Proof"
+msgstr "إثبات الاعتماد بالرمز"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Oil Pressure"
+msgstr "ضغط الزيت"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Oil level & condition"
+msgstr "مستوى الزيت وحالته"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__otp_code_hash
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__otp_code_hash
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__otp_code_hash
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__otp_code_hash
+msgid "One-time Code Hash"
+msgstr "بصمة رمز الموافقة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__otp_salt
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__otp_salt
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__otp_salt
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__otp_salt
+msgid "One-time Code Salt"
+msgstr "قيمة تأمين رمز الموافقة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid ""
+"Only a General Manager or Generator Administrator can cancel an approved "
+"customer approval."
+msgstr "لا يمكن إلغاء اعتماد عميل معتمد إلا للمدير العام أو مسؤول المولدات."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_legacy_order_overview
+msgid "Order and Asset Details"
+msgstr "بيانات أمر التأجير والأصل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Overtime Hour Rate"
+msgstr "سعر ساعة العمل الإضافي"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/ir_actions_report.py:0
+msgid "Page %(page)s / %(total)s"
+msgstr "صفحة %(page)s / %(total)s"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Panel board and buttons condition"
+msgstr "حالة لوحة التحكم وأزرارها"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Panel boards"
+msgstr "لوحات التحكم"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Panel screen function"
+msgstr "عمل شاشة اللوحة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Part Number"
+msgstr "رقم القطعة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Payment Terms"
+msgstr "شروط الدفع"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__state__pending
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_mixin__approval_state__pending
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_field_worksheet__approval_state__pending
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_inspection__approval_state__pending
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_order__approval_state__pending
+msgid "Pending Approval"
+msgstr "بانتظار الموافقة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Phase"
+msgstr "المرحلة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_section
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_photos_section
+msgid "Photos"
+msgstr "الصور"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_delivery_note_report
+msgid "Planned Dispatch"
+msgstr "الإرسال المخطط"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid ""
+"Please review %(document)s, version %(version)s, before using the code. The "
+"code approves this exact attached PDF only."
+msgstr ""
+"يُرجى مراجعة %(document)s، الإصدار %(version)s، قبل استخدام الرمز. الرمز "
+"يعتمد ملف PDF المرفق هذا تحديدًا فقط."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Potential Charges"
+msgstr "الرسوم المحتملة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Preferred Asset"
+msgstr "الأصل المفضل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Preview Document"
+msgstr "معاينة المستند"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Pricing Method"
+msgstr "طريقة التسعير"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Pricing Summary"
+msgstr "ملخص التسعير"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Pricing and Commercial Terms"
+msgstr "التسعير والشروط التجارية"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Product"
+msgstr "المنتج"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Radiator condition"
+msgstr "حالة الرادياتير"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Rate"
+msgstr "السعر"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Readings"
+msgstr "القراءات"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_delivery_note_report
+msgid "Received By"
+msgstr "المستلم"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__recipient
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "Recipient"
+msgstr "المستلم"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approved_by_uid
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approved_by_uid
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approved_by_uid
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approved_by_uid
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "Recorded By"
+msgstr "سجله المستخدم"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Regards,"
+msgstr "مع تحيات،"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Related Job / Inspection"
+msgstr "أمر العمل / الفحص المرتبط"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__report_type__rental_order
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Rental Agreement"
+msgstr "عقد التأجير"
+
+#. module: gr_customer_approval
+#: model:ir.actions.report,name:gr_customer_approval.action_report_approval_rental_agreement
+msgid "Rental Agreement Approval Document"
+msgstr "مستند اعتماد عقد التأجير"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Rental Contract"
+msgstr "عقد التأجير"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_rental_inspection
+msgid "Rental Inspection (Delivery / Return / Replacement)"
+msgstr "فحص التأجير (تسليم / إرجاع / استبدال)"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_rental_inspection_line
+msgid "Rental Inspection Checklist Line"
+msgstr "سطر قائمة تحقق فحص التأجير"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_legacy_order_overview
+msgid "Rental Order"
+msgstr "أمر التأجير"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_rental_order_line
+msgid "Rental Order Item Line"
+msgstr "التأجير الأمر البند السطر"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "Rental order %s"
+msgstr "أمر التأجير %s"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Rental_Agreement"
+msgstr "عقد_تأجير"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Rental_Approval_Copy"
+msgstr "نسخة_موافقة_عقد_تأجير"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "Rental_Contract"
+msgstr "عقد_تأجير"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_ir_actions_report
+msgid "Report Action"
+msgstr "إجراء التقرير"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_customer_signoff
+msgid "Representative Role"
+msgstr "صفة ممثل العميل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Requested Capacity"
+msgstr "القدرة المطلوبة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_log__user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Result"
+msgstr "النتيجة"
+
+#. module: gr_customer_approval
+#: model:ir.actions.report,name:gr_customer_approval.action_report_approval_return
+msgid "Return Approval Document"
+msgstr "مستند اعتماد الإرجاع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Return Condition, Missing Items and Damage"
+msgstr "حالة الإرجاع والملحقات المفقودة والتلفيات"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Return Date and Time"
+msgstr "تاريخ ووقت الإرجاع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Return Details"
+msgstr "بيانات الإرجاع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_return_inspection_report
+msgid "Return Inspection Details"
+msgstr "تفاصيل فحص الإرجاع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_return_inspection_report
+msgid "Return Inspection Report"
+msgstr "تقرير فحص الإرجاع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_return_inspection_report
+msgid "Return Note"
+msgstr "ملاحظة الإرجاع"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__report_type__return
+msgid "Return Report"
+msgstr "محضر الإرجاع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Return Site"
+msgstr "موقع الإرجاع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Return Status"
+msgstr "حالة الإرجاع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_return_inspection_report
+msgid "Return Technician"
+msgstr "فني الإرجاع"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Return_Approval_Copy"
+msgstr "نسخة_موافقة_محضر_إرجاع"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "Return_Inspection"
+msgstr "فحص_إرجاع"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Return_Report"
+msgstr "محضر_إرجاع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Returned"
+msgstr "تم الإرجاع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Returned Assets and Accessories"
+msgstr "الأصول والملحقات المرتجعة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Returned for inspection"
+msgstr "تم الإرجاع للفحص"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Review approval document"
+msgstr "مراجعة مستند الاعتماد"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__approval_channel__sms
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__channel__sms
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_mixin__otp_channel__sms
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_field_worksheet__otp_channel__sms
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_inspection__otp_channel__sms
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_order__otp_channel__sms
+msgid "SMS"
+msgstr "رسالة نصية"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Security Deposit"
+msgstr "مبلغ التأمين"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__otp_channel
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__otp_channel
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__otp_channel
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__otp_channel
+msgid "Send Code Via"
+msgstr "إرسال الرمز عبر"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Send Code to Customer"
+msgstr "إرسال رمز الموافقة للعميل"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Send a Code (customer not present)"
+msgstr "إرسال رمز موافقة (العميل غير حاضر)"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Send to Customer"
+msgstr "إرسال للعميل"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid ""
+"Sending codes by %s is not connected yet. Use Email for now; the channel can"
+" be enabled later without changing this document."
+msgstr ""
+"إرسال الرموز عبر %s غير مفعّل بعد. استخدم البريد الإلكتروني حاليًا؛ يمكن "
+"تفعيل القناة لاحقًا دون تغيير هذا المستند."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_delivery
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_legacy_order_overview
+msgid "Serial Number"
+msgstr "الرقم التسلسلي"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Sign in Person"
+msgstr "توقيع مباشر"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approval_signed_by
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approval_signed_by
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approval_signed_by
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approval_signed_by
+msgid "Signed By (name)"
+msgstr "اسم الموقّع"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__approval_method__signature
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__approval_method__signature
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_mixin__approval_method__signature
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_field_worksheet__approval_method__signature
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_inspection__approval_method__signature
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_order__approval_method__signature
+msgid "Signed in person"
+msgstr "توقيع مباشر"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_mixin__approval_signed_by_role
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_field_worksheet__approval_signed_by_role
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_inspection__approval_signed_by_role
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_rental_order__approval_signed_by_role
+msgid "Signer Role / Relationship"
+msgstr "صفة أو علاقة الموقّع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_legacy_order_overview
+msgid "Site"
+msgstr "الموقع"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Spare Parts Used"
+msgstr "قطع الغيار المستخدمة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Speed"
+msgstr "السرعة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Standby Rate"
+msgstr "سعر الاستعداد"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_return_inspection_report
+msgid "Start Meter"
+msgstr "عداد البداية"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Start Meter Reading"
+msgstr "قراءة عداد البداية"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__state
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_document_form
+msgid "Stored Files"
+msgstr "الملفات المحفوظة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_return
+msgid "Subject to final technical and commercial review"
+msgstr "يخضع للمراجعة الفنية والتجارية النهائية"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__state__superseded
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__event_type__superseded
+msgid "Superseded"
+msgstr "تم استبداله بإصدار أحدث"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Taxes"
+msgstr "الضرائب"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Technician"
+msgstr "الفني"
+
+#. module: gr_customer_approval
+#: model:ir.model,name:gr_customer_approval.model_gr_field_worksheet
+msgid "Technician Field Worksheet"
+msgstr "ورقة عمل الفني الميدانية"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Terms and Conditions"
+msgstr "الشروط والأحكام"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "That code has expired. Send a new one."
+msgstr "انتهت صلاحية هذا الرمز. أرسل رمزًا جديدًا."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid ""
+"That code is not correct, and there are no attempts left. Send a new code."
+msgstr "هذا الرمز غير صحيح، ولم تتبقَّ محاولات. أرسل رمزًا جديدًا."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "That code is not correct. %s attempt(s) remaining."
+msgstr "هذا الرمز غير صحيح. متبقٍ %s محاولة."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "The PDF document was sent to the customer."
+msgstr "تم إرسال مستند PDF إلى العميل."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_document.py:0
+msgid "The PDF file has not been generated yet."
+msgstr "لم يتم توليد ملف PDF بعد."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "The approval code was not accepted."
+msgstr "لم يُقبل رمز الاعتماد."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "The approval copy was superseded because the document changed."
+msgstr "تم إلغاء نسخة الاعتماد لأن المستند تغيّر."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid ""
+"The code is valid for %(minutes)s minutes. Do not use it until you have "
+"reviewed the document."
+msgstr "الرمز صالح لمدة %(minutes)s دقيقة. لا تستخدمه قبل مراجعة المستند."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "The customer approval was cancelled and a new approval is required."
+msgstr "تم إلغاء اعتماد العميل ويلزم اعتماد جديد."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid ""
+"The customer is responsible for using the assets safely, preserving all "
+"supplied accessories, reporting damage promptly, and returning the assets on"
+" the agreed date. Delay and damage charges are applied according to the "
+"approved contract and the documented return condition."
+msgstr ""
+"يتحمل العميل مسؤولية استخدام الأصول بأمان، والمحافظة على جميع الملحقات "
+"المسلمة، والإبلاغ عن أي تلف فورًا، وإرجاع الأصول في التاريخ المتفق عليه. "
+"تطبق رسوم التأخير والتلفيات وفق العقد المعتمد وحالة الإرجاع الموثقة."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "The customer must have an email address."
+msgstr "يجب أن يكون للعميل بريد إلكتروني."
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,help:gr_customer_approval.field_gr_customer_approval_mixin__approval_partner_id
+#: model:ir.model.fields,help:gr_customer_approval.field_gr_field_worksheet__approval_partner_id
+#: model:ir.model.fields,help:gr_customer_approval.field_gr_rental_inspection__approval_partner_id
+#: model:ir.model.fields,help:gr_customer_approval.field_gr_rental_order__approval_partner_id
+msgid "The customer who must approve this document."
+msgstr "العميل المطلوب منه اعتماد هذا المستند."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid ""
+"The document changed after the approval PDF was generated. The old copy was "
+"superseded; generate a new approval copy."
+msgstr ""
+"تغيّر المستند بعد توليد ملف PDF للاعتماد. أُلغيت النسخة القديمة؛ ولّد نسخة "
+"اعتماد جديدة."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "The fixed PDF was approved by customer signature."
+msgstr "تم اعتماد ملف PDF المثبت بتوقيع العميل."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "The fixed PDF was approved using a one-time code."
+msgstr "تم اعتماد ملف PDF المثبت باستخدام رمز لمرة واحدة."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_document.py:0
+msgid "The source document no longer exists."
+msgstr "المستند المصدر لم يعد موجودًا."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "This approval copy is no longer valid. Generate a new version."
+msgstr "نسخة الاعتماد هذه لم تعد صالحة. ولّد إصدارًا جديدًا."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid ""
+"This approved document is locked. Create a new revision before changing "
+"approval or business data."
+msgstr ""
+"هذا المستند المعتمد مقفل. أنشئ إصدارًا جديدًا قبل تغيير بيانات الاعتماد أو "
+"البيانات التشغيلية."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid ""
+"This approved document is locked. Create a new revision before changing its "
+"lines or attachments."
+msgstr ""
+"هذا المستند المعتمد مقفل. أنشئ إصدارًا جديدًا قبل تغيير بنوده أو مرفقاته."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "This document is already approved."
+msgstr "هذا المستند معتمد بالفعل."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.approval_document_footer
+msgid ""
+"This document was electronically generated, and its controlled version is "
+"stored in the system."
+msgstr "تم إنشاء هذا المستند إلكترونيًا، وتُحفظ نسخته المضبوطة داخل النظام."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Time In / Time Out"
+msgstr "وقت الدخول / وقت الخروج"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__sent_count
+msgid "Times Sent"
+msgstr "عدد مرات الإرسال"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Too many incorrect attempts. Send a new code."
+msgstr "محاولات خاطئة كثيرة. أرسل رمزًا جديدًا."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,help:gr_customer_approval.field_gr_customer_approval_mixin__otp_input
+#: model:ir.model.fields,help:gr_customer_approval.field_gr_field_worksheet__otp_input
+#: model:ir.model.fields,help:gr_customer_approval.field_gr_rental_inspection__otp_input
+#: model:ir.model.fields,help:gr_customer_approval.field_gr_rental_order__otp_input
+msgid "Type the code the customer received, then click Verify Code."
+msgstr "أدخل الرمز الذي استلمه العميل ثم اضغط التحقق من الرمز."
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Unknown code channel."
+msgstr "قناة رمز غير معروفة."
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Verify Code"
+msgstr "التحقق من الرمز"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields,field_description:gr_customer_approval.field_gr_customer_approval_document__version
+msgid "Version"
+msgstr "الإصدار"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/ir_actions_report.py:0
+msgid "Version %(version)s"
+msgstr "الإصدار %(version)s"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_document_form
+msgid "Version Information"
+msgstr "بيانات الإصدار"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_document_form
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_document_list
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "View Approval Copy"
+msgstr "عرض نسخة الموافقة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_document_form
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_customer_approval_document_list
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "View Approved Document"
+msgstr "عرض المستند المعتمد"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "View document"
+msgstr "عرض المستند"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "Violation Hour Rate"
+msgstr "سعر ساعة التجاوز"
+
+#. module: gr_customer_approval
+#: model:ir.actions.report,name:gr_customer_approval.action_report_approval_visit
+msgid "Visit Approval Document"
+msgstr "مستند اعتماد الزيارة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Visit Details"
+msgstr "بيانات الزيارة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Visit Number"
+msgstr "رقم الزيارة"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__report_type__visit
+msgid "Visit Report"
+msgstr "تقرير الزيارة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Visit Type"
+msgstr "نوع الزيارة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "Visit report %s"
+msgstr "تقرير الزيارة %s"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Visit_Approval_Copy"
+msgstr "نسخة_موافقة_تقرير_زيارة"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Visit_Report"
+msgstr "تقرير_زيارة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Voltage"
+msgstr "الجهد"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Water Temperature"
+msgstr "درجة حرارة الماء"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Water coolant leaking"
+msgstr "تسريب سائل التبريد"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Water coolant level and condition"
+msgstr "مستوى سائل التبريد وحالته"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Water coolant rubber hose condition"
+msgstr "حالة خرطوم سائل التبريد المطاطي"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Water coolant steel pipe condition"
+msgstr "حالة ماسورة سائل التبريد الفولاذية"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Water level & condition"
+msgstr "مستوى الماء وحالته"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "Water pump leaking"
+msgstr "تسريب مضخة الماء"
+
+#. module: gr_customer_approval
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_document__approval_channel__whatsapp
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_log__channel__whatsapp
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_customer_approval_mixin__otp_channel__whatsapp
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_field_worksheet__otp_channel__whatsapp
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_inspection__otp_channel__whatsapp
+#: model:ir.model.fields.selection,name:gr_customer_approval.selection__gr_rental_order__otp_channel__whatsapp
+msgid "WhatsApp"
+msgstr "واتساب"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_field_worksheet_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_inspection_form_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.view_gr_rental_order_form_approval
+msgid "Withdraw Approval"
+msgstr "إلغاء الموافقة"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_visit
+msgid "Work / Notes"
+msgstr "الأعمال / الملاحظات"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_installation_report
+msgid "Yes"
+msgstr "نعم"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "approval PDF version %(version)s generated"
+msgstr "تم توليد نسخة PDF للاعتماد رقم %(version)s"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "approved by one-time code sent to %(dest)s"
+msgstr "معتمد برمز لمرة واحدة أُرسل إلى %(dest)s"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "confirming the rental order"
+msgstr "تأكيد أمر التأجير"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "document_model"
+msgstr "document_model"
+
+#. module: gr_customer_approval
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.report_approval_rental_agreement
+#: model_terms:ir.ui.view,arch_db:gr_customer_approval.unified_contract_report
+msgid "kVA"
+msgstr "ك.ف.أ"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "model"
+msgstr "النموذج"
+
+#. module: gr_customer_approval
+#: model:ir.actions.report,print_report_name:gr_customer_approval.action_report_approval_rental_agreement
+msgid "object._approval_filename()"
+msgstr "object._approval_filename()"
+
+#. module: gr_customer_approval
+#: model:ir.actions.report,print_report_name:gr_customer_approval.action_report_approval_delivery
+msgid "object._approval_filename(report_type='delivery')"
+msgstr "object._approval_filename(report_type='delivery')"
+
+#. module: gr_customer_approval
+#: model:ir.actions.report,print_report_name:gr_customer_approval.action_report_approval_return
+msgid "object._approval_filename(report_type='return')"
+msgstr "object._approval_filename(report_type='return')"
+
+#. module: gr_customer_approval
+#: model:ir.actions.report,print_report_name:gr_customer_approval.action_report_approval_visit
+msgid "object._approval_filename(report_type='visit')"
+msgstr "object._approval_filename(report_type='visit')"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "one-time code sent to %(dest)s"
+msgstr "رمز لمرة واحدة أُرسل إلى %(dest)s"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "passing the delivery document"
+msgstr "اعتماد مستند التسليم"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "passing the inspection document"
+msgstr "اعتماد مستند الفحص"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "passing the return report"
+msgstr "اعتماد محضر الإرجاع"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_mixin.py:0
+msgid "signed in person"
+msgstr "موقّع حضوريًا"
+
+#. module: gr_customer_approval
+#. odoo-python
+#: code:addons/gr_customer_approval/models/gr_approval_targets.py:0
+msgid "verifying the visit report"
+msgstr "التحقق من تقرير الزيارة"
+
+#. module: gr_customer_approval
+#: model:mail.template,subject:gr_customer_approval.mail_template_inspection_document
+#: model:mail.template,subject:gr_customer_approval.mail_template_rental_order_document
+#: model:mail.template,subject:gr_customer_approval.mail_template_worksheet_document
+msgid "{{ object._approval_document_email_subject() }}"
+msgstr "{{ object._approval_document_email_subject() }}"
+
+#. module: gr_customer_approval
+#: model:mail.template,subject:gr_customer_approval.mail_template_inspection_approval_code
+#: model:mail.template,subject:gr_customer_approval.mail_template_rental_order_approval_code
+#: model:mail.template,subject:gr_customer_approval.mail_template_worksheet_approval_code
+msgid "{{ object._approval_email_subject() }}"
+msgstr "{{ object._approval_email_subject() }}"

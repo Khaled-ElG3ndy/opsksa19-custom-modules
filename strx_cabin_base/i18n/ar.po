@@ -1,0 +1,633 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* strx_cabin_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: strx_cabin_base
+#: model:ir.actions.report,print_report_name:strx_cabin_base.action_report_strx_cabin_id_card
+msgid "'Cabin_ID_Card_%s' % ((object.name or '').replace('/', '-'))"
+msgstr "'Cabin_ID_Card_%s' % ((object.name or '').replace('/', '-'))"
+
+#. module: strx_cabin_base
+#: model:product.template,name:strx_cabin_base.product_strx_extra_ac_unit
+msgid "Additional AC Unit"
+msgstr "وحدة تكييف إضافية"
+
+#. module: strx_cabin_base
+#: model:product.template,name:strx_cabin_base.product_strx_extra_bathroom_tank
+msgid "Additional Bathroom Tank"
+msgstr "خزان حمام إضافي"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_product__strx_is_free_additional_service
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_template__strx_is_free_additional_service
+msgid "Additional Product"
+msgstr "منتج إضافي"
+
+#. module: strx_cabin_base
+#: model:product.template,name:strx_cabin_base.product_strx_extra_water_tank
+msgid "Additional Water Tank"
+msgstr "خزان مياه إضافي"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__allocated
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__allocated
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__allocated
+msgid "Allocated"
+msgstr "مخصصة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_product__strx_asset_kind
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_template__strx_asset_kind
+msgid "Asset Kind"
+msgstr "نوع الأصل"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__available
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__available
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__available
+msgid "Available"
+msgstr "متاحة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_barcode
+msgid "Barcode"
+msgstr "الباركود"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__product_template__strx_asset_kind__bathroom
+msgid "Bathroom Unit"
+msgstr "وحدة حمام"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__user_id
+msgid "By"
+msgstr "بواسطة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__lot_id
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__product_template__strx_asset_kind__cabin
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_strx_readiness_log_search
+msgid "Cabin"
+msgstr "كابينة"
+
+#. module: strx_cabin_base
+#. odoo-python
+#: code:addons/strx_cabin_base/models/stock_lot.py:0
+msgid ""
+"Cabin %(serial)s cannot return to Available: inspection and cleaning must "
+"both pass first."
+msgstr ""
+"لا يمكن إعادة الكابينة %(serial)s إلى حالة متاحة: يجب اجتياز الفحص والتنظيف "
+"أولًا."
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_cabin_card_button_label
+msgid "Cabin Card Button"
+msgstr "زر بطاقة الكابينة"
+
+#. module: strx_cabin_base
+#. odoo-python
+#: code:addons/strx_cabin_base/models/stock_lot.py:0
+#: model:ir.model,name:strx_cabin_base.model_strx_cabin_id_card_wizard
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_strx_cabin_id_card_wizard_form
+msgid "Cabin Card Preview"
+msgstr "معاينة بطاقة الكابينة"
+
+#. module: strx_cabin_base
+#: model:ir.actions.act_window,name:strx_cabin_base.action_strx_cabin_cards
+#: model:ir.ui.menu,name:strx_cabin_base.menu_strx_cabin_cards
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_strx_cabin_card_list
+msgid "Cabin Cards"
+msgstr "بطاقات الكابائن"
+
+#. module: strx_cabin_base
+#: model:ir.ui.menu,name:strx_cabin_base.menu_strx_cabin_root
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_production_lot_form_strx_cabin
+msgid "Cabin Control"
+msgstr "التحكم في الكبائن"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_product__strx_cabin_grade
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_template__strx_cabin_grade
+msgid "Cabin Grade"
+msgstr "فئة الكابينة"
+
+#. module: strx_cabin_base
+#: model:ir.actions.report,name:strx_cabin_base.action_report_strx_cabin_id_card
+msgid "Cabin ID Card"
+msgstr "بطاقة تعريف الكابينة"
+
+#. module: strx_cabin_base
+#: model:product.template,name:strx_cabin_base.product_strx_cabin_ladder
+msgid "Cabin Ladder"
+msgstr "سلم كابينة"
+
+#. module: strx_cabin_base
+#: model:ir.model,name:strx_cabin_base.model_strx_cabin_readiness_log
+msgid "Cabin Readiness Log"
+msgstr "سجل جاهزية الكابينة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_product__strx_cabin_size
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_template__strx_cabin_size
+msgid "Cabin Size"
+msgstr "مقاس الكابينة"
+
+#. module: strx_cabin_base
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.product_template_form_view_strx_cabin
+msgid "Cabin Specification"
+msgstr "مواصفة الكابينة"
+
+#. module: strx_cabin_base
+#. odoo-python
+#: code:addons/strx_cabin_base/models/stock_lot.py:0
+msgid "Cabin barcode %(barcode)s is already used by serial %(serial)s."
+msgstr "باركود الكابينة %(barcode)s مستخدم بالفعل للرقم التسلسلي %(serial)s."
+
+#. module: strx_cabin_base
+#. odoo-python
+#: code:addons/strx_cabin_base/models/stock_lot.py:0
+msgid ""
+"Cabin barcode %(barcode)s must contain printable English letters, numbers, "
+"spaces or symbols only."
+msgstr ""
+"باركود الكابينة %(barcode)s يجب أن يحتوي فقط على حروف إنجليزية أو أرقام أو "
+"مسافات أو رموز قابلة للطباعة."
+
+#. module: strx_cabin_base
+#: model:product.template,name:strx_cabin_base.product_strx_canopy
+msgid "Canopy"
+msgstr "مظلة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_cleaning_passed
+msgid "Cleaning Passed"
+msgstr "اجتاز التنظيف"
+
+#. module: strx_cabin_base
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_strx_cabin_id_card_wizard_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,help:strx_cabin_base.field_stock_lot__strx_state_color
+msgid ""
+"Colour index for selection widgets: green=available, red=on rent, amber=in "
+"maintenance."
+msgstr ""
+"مؤشر اللون في قوائم الاختيار: أخضر=متاحة، أحمر=مؤجرة، كهرماني=تحت الصيانة."
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_condition
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__condition
+msgid "Condition"
+msgstr "الحالة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_product__strx_is_cabin
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_template__strx_is_cabin
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_is_cabin
+msgid "Controlled Cabin Asset"
+msgstr "أصل كابينة خاضع للرقابة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_id_card_wizard__create_uid
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_id_card_wizard__create_date
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_condition__damaged
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__damaged
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__condition__damaged
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__damaged
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__damaged
+msgid "Damaged"
+msgstr "تالفة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,help:strx_cabin_base.field_stock_lot__strx_hidden_from_selection
+msgid "Damaged / Retired units are hidden entirely from selection lists."
+msgstr "الوحدات التالفة أو المسحوبة من الخدمة مخفية تمامًا من قوائم الاختيار."
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__dispatched
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__dispatched
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__dispatched
+msgid "Dispatched"
+msgstr "تم الإرسال"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_template__display_name
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__display_name
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_id_card_wizard__display_name
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: strx_cabin_base
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_strx_cabin_id_card_wizard_form
+msgid "Download Card"
+msgstr "تحميل البطاقة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_condition__fair
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__condition__fair
+msgid "Fair"
+msgstr "مقبولة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,help:strx_cabin_base.field_strx_cabin_readiness_log__company_id
+msgid ""
+"Follows the company of the physical cabin, so a readiness event is only "
+"visible to the company that owns the unit."
+msgstr ""
+"يتبع شركة الكابينة الفعلية، بحيث لا يظهر حدث الجاهزية إلا للشركة المالكة "
+"للوحدة."
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__old_state
+msgid "From"
+msgstr "من"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_condition__good
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__condition__good
+msgid "Good"
+msgstr "جيد"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__held
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__held
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__held
+msgid "Held"
+msgstr "محجوزة مؤقتاً"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_template__id
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__id
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_id_card_wizard__id
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: strx_cabin_base
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_production_lot_form_strx_cabin
+msgid "Identification Card"
+msgstr "بطاقة التعريف"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__in_cleaning
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__in_cleaning
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__in_cleaning
+msgid "In Cleaning"
+msgstr "تحت التنظيف"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__in_inspection
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__in_inspection
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__in_inspection
+msgid "In Inspection"
+msgstr "تحت الفحص"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__in_maintenance
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__in_maintenance
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__in_maintenance
+msgid "In Maintenance"
+msgstr "تحت الصيانة"
+
+#. module: strx_cabin_base
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_production_lot_form_strx_cabin
+msgid "Inspection & Maintenance"
+msgstr "الفحص والصيانة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_inspection_passed
+msgid "Inspection Passed"
+msgstr "اجتاز الفحص"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_last_inspection_date
+msgid "Last Inspection"
+msgstr "آخر فحص"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_id_card_wizard__write_uid
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_id_card_wizard__write_date
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_length_m
+msgid "Length (m)"
+msgstr "الطول (م)"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,help:strx_cabin_base.field_stock_lot__strx_readiness_state
+msgid ""
+"Lifecycle state of this physical unit. Set by fulfillment events, never "
+"edited directly."
+msgstr ""
+"حالة دورة حياة هذه الوحدة الفعلية. تحددها أحداث التنفيذ ولا تُعدّل مباشرة."
+
+#. module: strx_cabin_base
+#: model:ir.model,name:strx_cabin_base.model_stock_lot
+msgid "Lot/Serial"
+msgstr "رقم الدفعة/الرقم التسلسلي"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_condition__new
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__condition__new
+msgid "New"
+msgstr "جديد"
+
+#. module: strx_cabin_base
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_strx_readiness_log_search
+msgid "New State"
+msgstr "الحالة الجديدة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_next_maintenance_date
+msgid "Next Maintenance"
+msgstr "الصيانة القادمة"
+
+#. module: strx_cabin_base
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.product_template_form_view_strx_cabin
+msgid "Nominal Dimensions"
+msgstr "الأبعاد الاسمية"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_product__strx_length_m
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_template__strx_length_m
+msgid "Nominal Length (m)"
+msgstr "الطول الاسمي (م)"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_product__strx_width_m
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_template__strx_width_m
+msgid "Nominal Width (m)"
+msgstr "العرض الاسمي (م)"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__note
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_strx_readiness_log_form
+msgid "Note"
+msgstr "الملاحظات"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__on_rent
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__on_rent
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__on_rent
+msgid "On Rent"
+msgstr "مؤجرة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,help:strx_cabin_base.field_stock_lot__strx_selectable
+msgid "Only Available units may be offered to a new rental."
+msgstr "يمكن تقديم الوحدات المتاحة فقط لعملية تأجير جديدة."
+
+#. module: strx_cabin_base
+#. odoo-python
+#: code:addons/strx_cabin_base/models/stock_lot.py:0
+msgid "Only cabin serials can have a Cabin ID Card."
+msgstr "بطاقة تعريف الكابينة متاحة فقط للأرقام التسلسلية الخاصة بالكبائن."
+
+#. module: strx_cabin_base
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_production_lot_form_strx_cabin
+msgid "Physical Dimensions"
+msgstr "الأبعاد الفعلية"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,help:strx_cabin_base.field_strx_cabin_readiness_log__condition
+msgid "Physical condition recorded when this readiness event occurred."
+msgstr "الحالة الفنية المسجلة وقت حدوث تغيير الجاهزية."
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,help:strx_cabin_base.field_stock_lot__strx_barcode
+msgid ""
+"Physical scannable barcode printed on the cabin ID card. If left empty, it "
+"is generated from the serial number."
+msgstr ""
+"باركود فعلي قابل للمسح مطبوع على بطاقة تعريف الكابينة. إذا تُرك فارغًا، "
+"يُولَّد من الرقم التسلسلي."
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_id_card_wizard__preview_html
+msgid "Preview"
+msgstr "معاينة"
+
+#. module: strx_cabin_base
+#: model:ir.model,name:strx_cabin_base.model_product_template
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_readiness_state
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_production_lot_form_strx_cabin
+msgid "Readiness"
+msgstr "الجاهزية"
+
+#. module: strx_cabin_base
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_strx_readiness_log_form
+msgid "Readiness Event"
+msgstr "حدث الجاهزية"
+
+#. module: strx_cabin_base
+#. odoo-python
+#: code:addons/strx_cabin_base/models/stock_lot.py:0
+#: model:ir.actions.act_window,name:strx_cabin_base.action_strx_readiness_log
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_readiness_log_ids
+#: model:ir.ui.menu,name:strx_cabin_base.menu_strx_cabin_readiness_log
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_strx_readiness_log_list
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_strx_readiness_log_search
+msgid "Readiness History"
+msgstr "سجل الجاهزية"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_state_label
+msgid "Readiness Status"
+msgstr "حالة الجاهزية"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,help:strx_cabin_base.field_stock_lot__strx_state_label
+msgid ""
+"Readiness label rendered in the current user's language for selection "
+"pickers."
+msgstr "مسمى الجاهزية بلغة المستخدم الحالية في قوائم الاختيار."
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__reserved
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__reserved
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__reserved
+msgid "Reserved"
+msgstr "محجوزة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__retired
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__retired
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__retired
+msgid "Retired"
+msgstr "مسحوبة من الخدمة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__return_due
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__return_due
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__return_due
+msgid "Return Due"
+msgstr "مستحقة الإرجاع"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__returned
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__returned
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__returned
+msgid "Returned"
+msgstr "تم الإرجاع"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_id_card_wizard__lot_id
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_production_lot_form_strx_cabin
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.view_strx_cabin_card_list
+msgid "Serial"
+msgstr "الرقم التسلسلي"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_product__strx_cabin_spec
+#: model:ir.model.fields,field_description:strx_cabin_base.field_product_template__strx_cabin_spec
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_cabin_spec
+#: model_terms:ir.ui.view,arch_db:strx_cabin_base.product_template_form_view_strx_cabin
+msgid "Specification"
+msgstr "المواصفة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__stock_lot__strx_readiness_state__staged
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__new_state__staged
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__strx_cabin_readiness_log__old_state__staged
+msgid "Staged"
+msgstr "مجهّزة"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__product_template__strx_cabin_grade__std
+msgid "Standard"
+msgstr "قياسي"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_hidden_from_selection
+msgid "Strx Hidden From Selection"
+msgstr "مخفي من الاختيار"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_readiness_log_count
+msgid "Strx Readiness Log Count"
+msgstr "عدد سجلات الجاهزية"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_selectable
+msgid "Strx Selectable"
+msgstr "قابل للاختيار"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_state_color
+msgid "Strx State Color"
+msgstr "لون الحالة"
+
+#. module: strx_cabin_base
+#. odoo-python
+#: code:addons/strx_cabin_base/models/stock_lot.py:0
+msgid ""
+"The system website URL is not configured. Set web.base.url before printing "
+"cabin QR cards."
+msgstr ""
+"رابط موقع النظام غير مهيّأ. اضبط web.base.url قبل طباعة بطاقات QR للكابينات."
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,help:strx_cabin_base.field_product_product__strx_is_free_additional_service
+#: model:ir.model.fields,help:strx_cabin_base.field_product_template__strx_is_free_additional_service
+msgid ""
+"Tick for add-on products or services requested with a cabin, such as a "
+"bathroom tank, ladder, canopy, AC unit, or water tank. These items are "
+"offered in the Additional Products tab and are not cabin assets."
+msgstr ""
+"فعّلها للمنتجات أو الخدمات الإضافية المطلوبة مع الكابينة، مثل خزان الحمام أو"
+" السلم أو المظلة أو وحدة التكييف أو خزان المياه. تظهر هذه العناصر في تبويب "
+"المنتجات الإضافية ولا تعتبر أصول كبائن."
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,help:strx_cabin_base.field_product_product__strx_is_cabin
+#: model:ir.model.fields,help:strx_cabin_base.field_product_template__strx_is_cabin
+#: model:ir.model.fields,help:strx_cabin_base.field_stock_lot__strx_is_cabin
+msgid ""
+"Tick for products whose serial units are governed by cabin fulfillment "
+"control (spec lock, readiness states, dispatch checks)."
+msgstr ""
+"حدد هذا الخيار للمنتجات التي تخضع وحداتها التسلسلية لضوابط تنفيذ الكبائن "
+"(تثبيت المواصفة، حالات الجاهزية، وفحوصات الإرسال)."
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__new_state
+msgid "To"
+msgstr "إلى"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields.selection,name:strx_cabin_base.selection__product_template__strx_cabin_grade__vip
+msgid "VIP"
+msgstr "مميزة (VIP)"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_strx_cabin_readiness_log__event_date
+msgid "When"
+msgstr "التاريخ والوقت"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_lot__strx_width_m
+msgid "Width (m)"
+msgstr "العرض (م)"
+
+#. module: strx_cabin_base
+#. odoo-python
+#: code:addons/strx_cabin_base/models/stock_lot.py:0
+msgid "lot_id"
+msgstr "lot_id"
+
+#. module: strx_cabin_base
+#. odoo-python
+#: code:addons/strx_cabin_base/models/stock_lot.py:0
+msgid "m"
+msgstr "م"

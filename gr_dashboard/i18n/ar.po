@@ -1,0 +1,1506 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_dashboard
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s / %s (%s%%)"
+msgstr "%s / %s (%s%%)"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s active agreement(s)"
+msgstr "%s اتفاقية نشطة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s available"
+msgstr "%s متاحة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s ending within %s days"
+msgstr "%s تنتهي خلال %s يوماً"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s exposed agreement(s)"
+msgstr "%s اتفاقية معرضة للمخاطر"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s h"
+msgstr "%s ساعة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s maintenance"
+msgstr "%s صيانة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+#: code:addons/gr_dashboard/tests/test_dashboard.py:0
+msgid "%s of %s contracts missing start dates"
+msgstr "%s من %s عقود بدون تاريخ بداية"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s overdue invoice(s)"
+msgstr "%s فاتورة متأخرة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s past its end date"
+msgstr "%s تجاوزت تاريخ الانتهاء"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s rented"
+msgstr "%s مؤجرة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s third-party"
+msgstr "%s مستأجر من الغير"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "%s%%"
+msgstr "%s%%"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid "<i class=\"fa fa-arrow-left\" role=\"img\" aria-label=\"Open\" title=\"Back\"/>"
+msgstr "<i class=\"fa fa-arrow-left\" role=\"img\" aria-label=\"فتح\" title=\"رجوع\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid "<i class=\"fa fa-bar-chart\" role=\"img\" title=\"Statistics\"/>"
+msgstr "<i class=\"fa fa-bar-chart\" role=\"img\" title=\"الإحصائيات\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid ""
+"<i class=\"fa fa-bolt o_gr_kpi_glyph\" role=\"img\" aria-"
+"label=\"Generators\" title=\"Generators\"/>"
+msgstr ""
+"<i class=\"fa fa-bolt o_gr_kpi_glyph\" role=\"img\" aria-label=\"المولدات\" "
+"title=\"المولدات\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"Customer\" title=\"Company\"/>"
+msgstr "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"العميل\" title=\"الشركة\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid ""
+"<i class=\"fa fa-exclamation-circle o_gr_kpi_glyph\" role=\"img\" aria-"
+"label=\"Overdue receivables\" title=\"Overdue receivables\"/>"
+msgstr ""
+"<i class=\"fa fa-exclamation-circle o_gr_kpi_glyph\" role=\"img\" aria-"
+"label=\"المستحقات المتأخرة\" title=\"المستحقات المتأخرة\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid ""
+"<i class=\"fa fa-exclamation-triangle\" role=\"img\" aria-label=\"Overdue\" title=\"Alert\"/>\n"
+"                                    PM overdue"
+msgstr ""
+"<i class=\"fa fa-exclamation-triangle\" role=\"img\" aria-label=\"متأخر\" title=\"تنبيه\"/>\n"
+"                                    صيانة وقائية متأخرة"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid "<i class=\"fa fa-file-text\" role=\"img\" title=\"Contract\"/>"
+msgstr "<i class=\"fa fa-file-text\" role=\"img\" title=\"العقد\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid ""
+"<i class=\"fa fa-handshake-o o_gr_kpi_glyph\" role=\"img\" aria-"
+"label=\"Active contracts\" title=\"Active contracts\"/>"
+msgstr ""
+"<i class=\"fa fa-handshake-o o_gr_kpi_glyph\" role=\"img\" aria-"
+"label=\"العقود النشطة\" title=\"العقود النشطة\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid ""
+"<i class=\"fa fa-map-marker\" role=\"img\" aria-label=\"Depot\" title=\"Location\"/>\n"
+"                                    Yard / available pool"
+msgstr ""
+"<i class=\"fa fa-map-marker\" role=\"img\" aria-label=\"المستودع\" title=\"الموقع\"/>\n"
+"                                    الساحة / المتاح"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid ""
+"<i class=\"fa fa-money o_gr_kpi_glyph\" role=\"img\" aria-label=\"Revenue\" "
+"title=\"Revenue\"/>"
+msgstr ""
+"<i class=\"fa fa-money o_gr_kpi_glyph\" role=\"img\" aria-label=\"الإيراد\" "
+"title=\"الإيراد\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid "<i class=\"fa fa-newspaper-o\" role=\"img\" title=\"Document\"/>"
+msgstr "<i class=\"fa fa-newspaper-o\" role=\"img\" title=\"مستند\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid "<i class=\"fa fa-truck\" role=\"img\" title=\"Deliveries\"/>"
+msgstr "<i class=\"fa fa-truck\" role=\"img\" title=\"التسليمات\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid "<i class=\"fa fa-user-plus\" role=\"img\" title=\"Customer\"/>"
+msgstr "<i class=\"fa fa-user-plus\" role=\"img\" title=\"العميل\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid ""
+"<i class=\"fa fa-wrench\" role=\"img\" aria-label=\"Open jobs\" "
+"title=\"Maintenance\"/>"
+msgstr ""
+"<i class=\"fa fa-wrench\" role=\"img\" aria-label=\"أوامر مفتوحة\" "
+"title=\"الصيانة\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid "<i class=\"fa fa-wrench\" role=\"img\" title=\"Maintenance\"/>"
+msgstr "<i class=\"fa fa-wrench\" role=\"img\" title=\"الصيانة\"/>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid "<span class=\"o_gr_metric_label\">Capacity</span>"
+msgstr "<span class=\"o_gr_metric_label\">السعة</span>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid "<span class=\"o_gr_metric_label\">Meter</span>"
+msgstr "<span class=\"o_gr_metric_label\">العداد</span>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid "<span class=\"o_gr_metric_label\">Next PM</span>"
+msgstr "<span class=\"o_gr_metric_label\">الصيانة القادمة</span>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid "<span class=\"o_gr_metric_label\">Profit est.</span>"
+msgstr "<span class=\"o_gr_metric_label\">الربح التقديري</span>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid "<span class=\"o_gr_metric_label\">Revenue</span>"
+msgstr "<span class=\"o_gr_metric_label\">الإيراد</span>"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid "<span class=\"o_gr_metric_label\">Utilization</span>"
+msgstr "<span class=\"o_gr_metric_label\">الاستخدام</span>"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__action_xml_id
+msgid "Action Xml"
+msgstr "معرف XML للإجراء"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Active Contracts"
+msgstr "العقود النشطة"
+
+#. module: gr_dashboard
+#: model_terms:ir.actions.act_window,help:gr_dashboard.action_dash_fleet_detail
+msgid ""
+"Add generator assets and approved hour logs to see utilization, revenue, "
+"profitability, and maintenance signals here."
+msgstr ""
+"أضف أصول المولدات وسجلات الساعات المعتمدة لعرض الاستخدام والإيراد والربحية."
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Approved hour logs"
+msgstr "سجلات ساعات معتمدة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+#: model:ir.actions.act_window,name:gr_dashboard.action_dash_profit
+#: model:ir.ui.menu,name:gr_dashboard.menu_dash_profit
+msgid "Asset Profitability"
+msgstr "ربحية الأصل"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_profit_list
+msgid "Asset Profitability (live)"
+msgstr "ربحية الأصل (حية)"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+#: model:ir.actions.act_window,name:gr_dashboard.action_dash_overdue_assets
+#: model:ir.ui.menu,name:gr_dashboard.menu_dash_overdue
+msgid "Assets Needing Maintenance"
+msgstr "الأصول التي تحتاج إلى صيانة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_search
+msgid "Available"
+msgstr "متاح"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Average Contract Value"
+msgstr "متوسط قيمة العقد"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_1_label
+msgid "Bar 1 Label"
+msgstr "تسمية الشريط 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_1_percent
+msgid "Bar 1 Percent"
+msgstr "نسبة الشريط 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_1_value
+msgid "Bar 1 Value"
+msgstr "قيمة الشريط 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_2_label
+msgid "Bar 2 Label"
+msgstr "تسمية الشريط 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_2_percent
+msgid "Bar 2 Percent"
+msgstr "نسبة الشريط 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_2_value
+msgid "Bar 2 Value"
+msgstr "قيمة الشريط 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_3_label
+msgid "Bar 3 Label"
+msgstr "تسمية الشريط 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_3_percent
+msgid "Bar 3 Percent"
+msgstr "نسبة الشريط 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_3_value
+msgid "Bar 3 Value"
+msgstr "قيمة الشريط 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_4_label
+msgid "Bar 4 Label"
+msgstr "تسمية الشريط 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_4_percent
+msgid "Bar 4 Percent"
+msgstr "نسبة الشريط 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_4_value
+msgid "Bar 4 Value"
+msgstr "قيمة الشريط 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_5_label
+msgid "Bar 5 Label"
+msgstr "تسمية الشريط 5"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_5_percent
+msgid "Bar 5 Percent"
+msgstr "نسبة الشريط 5"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_5_value
+msgid "Bar 5 Value"
+msgstr "قيمة الشريط 5"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_6_label
+msgid "Bar 6 Label"
+msgstr "تسمية الشريط 6"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_6_percent
+msgid "Bar 6 Percent"
+msgstr "نسبة الشريط 6"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_6_value
+msgid "Bar 6 Value"
+msgstr "قيمة الشريط 6"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_7_label
+msgid "Bar 7 Label"
+msgstr "تسمية الشريط 7"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_7_percent
+msgid "Bar 7 Percent"
+msgstr "نسبة الشريط 7"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__bar_7_value
+msgid "Bar 7 Value"
+msgstr "قيمة الشريط 7"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+#: model:ir.ui.menu,name:gr_dashboard.menu_dash_hours
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_hours_pivot
+msgid "Billable Hours"
+msgstr "الساعات القابلة للفوترة"
+
+#. module: gr_dashboard
+#: model:ir.actions.act_window,name:gr_dashboard.action_dash_hours
+msgid "Billable Hours (Overtime/Violation)"
+msgstr "الساعات القابلة للفوترة (إضافي/تجاوز)"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_search
+msgid "Brand"
+msgstr "العلامة التجارية"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_search
+msgid "Breakdown"
+msgstr "عطل"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__can_create_asset
+msgid "Can Create Asset"
+msgstr "يمكنه إنشاء أصل"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__card_key
+msgid "Card Key"
+msgstr "مفتاح البطاقة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Completed"
+msgstr "مكتمل"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Completion Rate"
+msgstr "معدل الإنجاز"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Cost"
+msgstr "التكلفة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Custom Report"
+msgstr "تقرير مخصص"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_dashboard
+#: model:ir.ui.menu,name:gr_dashboard.menu_gr_dashboard_root
+msgid "Dashboards"
+msgstr "لوحات المعلومات"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__display_name
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_generator_asset__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Draft invoices"
+msgstr "فواتير مسودة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Due Soon"
+msgstr "مستحق قريباً"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Due in %s h"
+msgstr "مستحق خلال %s ساعة"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__empty_message
+msgid "Empty Message"
+msgstr "رسالة الفراغ"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Expected from active contracts"
+msgstr "إيراد متوقع من العقود النشطة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Extra Direct Cost"
+msgstr "تكلفة مباشرة إضافية"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_pivot
+msgid "Fleet Control Tower"
+msgstr "لوحة تحكم الأسطول"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_list
+msgid "Fleet Operations"
+msgstr "عمليات الأسطول"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_graph
+msgid "Fleet Pipeline"
+msgstr "مسار الأسطول"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+#: model:ir.actions.act_window,name:gr_dashboard.action_dash_fleet
+#: model:ir.actions.act_window,name:gr_dashboard.action_dash_fleet_detail
+#: model:ir.ui.menu,name:gr_dashboard.menu_dash_fleet
+msgid "Fleet Utilization & Status"
+msgstr "حالة المولدات"
+
+#. module: gr_dashboard
+#: model:ir.model,name:gr_dashboard.model_gr_generator_asset
+msgid "Generator Asset"
+msgstr "أصل المولد"
+
+#. module: gr_dashboard
+#: model:ir.model,name:gr_dashboard.model_gr_dashboard_card
+msgid "Generator Rental Dashboard Card"
+msgstr "بطاقة لوحة معلومات تأجير المولدات"
+
+#. module: gr_dashboard
+#: model_terms:ir.actions.act_window,help:gr_dashboard.action_dash_fleet
+msgid "Generator Rental dashboard"
+msgstr "لوحة معلومات تأجير المولدات"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__header_compare
+msgid "Header Compare"
+msgstr "مقارنة الترويسة"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__header_range
+msgid "Header Range"
+msgstr "نطاق الترويسة"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__hero_foot_1_label
+msgid "Hero Foot 1 Label"
+msgstr "تسمية تذييل الواجهة 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__hero_foot_1_value
+msgid "Hero Foot 1 Value"
+msgstr "قيمة تذييل الواجهة 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__hero_foot_2_label
+msgid "Hero Foot 2 Label"
+msgstr "تسمية تذييل الواجهة 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__hero_foot_2_value
+msgid "Hero Foot 2 Value"
+msgstr "قيمة تذييل الواجهة 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__hero_foot_3_label
+msgid "Hero Foot 3 Label"
+msgstr "تسمية تذييل الواجهة 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__hero_foot_3_value
+msgid "Hero Foot 3 Value"
+msgstr "قيمة تذييل الواجهة 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__hero_foot_4_label
+msgid "Hero Foot 4 Label"
+msgstr "تسمية تذييل الواجهة 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__hero_foot_4_value
+msgid "Hero Foot 4 Value"
+msgstr "قيمة تذييل الواجهة 4"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Highest contract"
+msgstr "أعلى عقد"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__id
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_generator_asset__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__icon_class
+msgid "Icon Class"
+msgstr "صنف الأيقونة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+#. module: gr_dashboard
+#: model:ir.actions.act_window,name:gr_dashboard.action_dash_revenue
+#: model:ir.ui.menu,name:gr_dashboard.menu_dash_revenue
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_revenue_graph
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_revenue_pivot
+msgid "Invoiced Revenue"
+msgstr "الإيرادات المفوترة"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_1_badge
+msgid "Item 1 Badge"
+msgstr "شارة البند 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_1_badge_tone
+msgid "Item 1 Badge Tone"
+msgstr "نبرة شارة العنصر 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_1_meta
+msgid "Item 1 Meta"
+msgstr "بيانات البند 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_1_name
+msgid "Item 1 Name"
+msgstr "البند 1 الاسم"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_1_value
+msgid "Item 1 Value"
+msgstr "قيمة البند 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_2_badge
+msgid "Item 2 Badge"
+msgstr "شارة البند 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_2_badge_tone
+msgid "Item 2 Badge Tone"
+msgstr "نبرة شارة العنصر 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_2_meta
+msgid "Item 2 Meta"
+msgstr "بيانات البند 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_2_name
+msgid "Item 2 Name"
+msgstr "البند 2 الاسم"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_2_value
+msgid "Item 2 Value"
+msgstr "قيمة البند 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_3_badge
+msgid "Item 3 Badge"
+msgstr "شارة البند 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_3_badge_tone
+msgid "Item 3 Badge Tone"
+msgstr "نبرة شارة العنصر 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_3_meta
+msgid "Item 3 Meta"
+msgstr "بيانات البند 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_3_name
+msgid "Item 3 Name"
+msgstr "البند 3 الاسم"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_3_value
+msgid "Item 3 Value"
+msgstr "قيمة البند 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__item_count
+msgid "Item Count"
+msgstr "عدد البنود"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_maint_graph
+msgid "Jobs by Type"
+msgstr "الأعمال حسب النوع"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,help:gr_dashboard.field_gr_generator_asset__live_cost
+msgid ""
+"Labor/maintenance cost. Parts cost is added by the parts-consumption "
+"milestone; until then this reflects labor only (0)."
+msgstr ""
+"تكلفة العمالة/الصيانة. تضاف تكلفة القطع عند مرحلة استهلاك القطع؛ وحتى ذلك "
+"الحين يعكس هذا العمالة فقط (0)."
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Last invoice"
+msgstr "آخر فاتورة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Last month"
+msgstr "الشهر الماضي"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Last quarter"
+msgstr "الربع الماضي"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Last year"
+msgstr "العام الماضي"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_generator_asset__live_cost
+msgid "Live Cost"
+msgstr "التكلفة الحية"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_generator_asset__live_profit_estimate
+msgid "Live Profit (est.)"
+msgstr "الربح الحي (تقديري)"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_generator_asset__live_revenue
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_list
+msgid "Live Revenue"
+msgstr "الإيرادات الحية"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_generator_asset__live_utilization_hours
+msgid "Live Utilization (h)"
+msgstr "الاستخدام الحي (ساعة)"
+
+#. module: gr_dashboard
+#: model_terms:ir.actions.act_window,help:gr_dashboard.action_dash_profit
+msgid "Live asset profitability"
+msgstr "ربحية الأصول اللحظية"
+
+#. module: gr_dashboard
+#: model_terms:ir.actions.act_window,help:gr_dashboard.action_dash_fleet
+msgid ""
+"Live fleet, billing, hour-log, maintenance, and profitability summaries "
+"appear here."
+msgstr ""
+"تظهر هنا ملخصات مباشرة للأسطول والفوترة وسجل الساعات والصيانة والربحية."
+
+#. module: gr_dashboard
+#: model:ir.model.fields,help:gr_dashboard.field_gr_generator_asset__live_profit_estimate
+msgid ""
+"Live revenue minus cost. Cost is labor-only until parts integration, so this"
+" is an upper-bound estimate for now."
+msgstr ""
+"الإيرادات الحية ناقص التكلفة. التكلفة عمالة فقط حتى تكامل القطع، لذلك فهذا "
+"تقدير أعلى حاليا."
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Maintenance"
+msgstr "تحت الصيانة"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_maint_pivot
+msgid "Maintenance Jobs"
+msgstr "أوامر الصيانة"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_search
+msgid "Maintenance Overdue"
+msgstr "الصيانة متأخرة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+#: model:ir.actions.act_window,name:gr_dashboard.action_dash_maint_jobs
+#: model:ir.ui.menu,name:gr_dashboard.menu_dash_maint
+msgid "Maintenance Overview"
+msgstr "نظرة عامة على الصيانة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Margin Rate"
+msgstr "نسبة الهامش"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_1_delta
+msgid "Metric 1 Delta"
+msgstr "تغيّر المقياس 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_1_delta_class
+msgid "Metric 1 Delta Class"
+msgstr "فئة تغيّر المقياس 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_1_foot
+msgid "Metric 1 Foot"
+msgstr "تذييل المقياس 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_1_label
+msgid "Metric 1 Label"
+msgstr "تسمية المؤشر 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_1_percent
+msgid "Metric 1 Percent"
+msgstr "نسبة المؤشر 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_1_tone
+msgid "Metric 1 Tone"
+msgstr "نغمة المؤشر 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_1_value
+msgid "Metric 1 Value"
+msgstr "قيمة المؤشر 1"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_2_delta
+msgid "Metric 2 Delta"
+msgstr "تغيّر المقياس 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_2_delta_class
+msgid "Metric 2 Delta Class"
+msgstr "فئة تغيّر المقياس 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_2_foot
+msgid "Metric 2 Foot"
+msgstr "تذييل المقياس 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_2_foot_2
+msgid "Metric 2 Foot 2"
+msgstr "التذييل الثاني للمقياس 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_2_foot_2_tone
+msgid "Metric 2 Foot 2 Tone"
+msgstr "نبرة التذييل الثاني للمقياس 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_2_foot_tone
+msgid "Metric 2 Foot Tone"
+msgstr "نبرة تذييل المقياس 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_2_label
+msgid "Metric 2 Label"
+msgstr "تسمية المؤشر 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_2_percent
+msgid "Metric 2 Percent"
+msgstr "نسبة المؤشر 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_2_tone
+msgid "Metric 2 Tone"
+msgstr "نغمة المؤشر 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_2_value
+msgid "Metric 2 Value"
+msgstr "قيمة المؤشر 2"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_3_delta
+msgid "Metric 3 Delta"
+msgstr "تغيّر المقياس 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_3_delta_class
+msgid "Metric 3 Delta Class"
+msgstr "فئة تغيّر المقياس 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_3_foot
+msgid "Metric 3 Foot"
+msgstr "تذييل المقياس 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_3_label
+msgid "Metric 3 Label"
+msgstr "تسمية المؤشر 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_3_percent
+msgid "Metric 3 Percent"
+msgstr "نسبة المؤشر 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_3_target
+msgid "Metric 3 Target"
+msgstr "مستهدف المقياس 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_3_tone
+msgid "Metric 3 Tone"
+msgstr "نغمة المؤشر 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_3_value
+msgid "Metric 3 Value"
+msgstr "قيمة المؤشر 3"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_4_delta
+msgid "Metric 4 Delta"
+msgstr "تغيّر المقياس 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_4_delta_class
+msgid "Metric 4 Delta Class"
+msgstr "فئة تغيّر المقياس 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_4_foot
+msgid "Metric 4 Foot"
+msgstr "تذييل المقياس 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_4_label
+msgid "Metric 4 Label"
+msgstr "تسمية المؤشر 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_4_percent
+msgid "Metric 4 Percent"
+msgstr "نسبة المؤشر 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_4_tone
+msgid "Metric 4 Tone"
+msgstr "نغمة المؤشر 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_4_unit
+msgid "Metric 4 Unit"
+msgstr "وحدة المقياس 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__metric_4_value
+msgid "Metric 4 Value"
+msgstr "قيمة المؤشر 4"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__mix_available_percent
+msgid "Mix Available Percent"
+msgstr "نسبة المتاح في المزيج"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__mix_maintenance_percent
+msgid "Mix Maintenance Percent"
+msgstr "نسبة الصيانة في المزيج"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__mix_rented_percent
+msgid "Mix Rented Percent"
+msgstr "نسبة المؤجّر في المزيج"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Mixed currencies"
+msgstr "عملات مختلطة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Month"
+msgstr "الشهر"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Net Margin"
+msgstr "صافي الهامش"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "New Contract"
+msgstr "عقد جديد"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "New Customer"
+msgstr "عميل جديد"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "New Generator"
+msgstr "مولد جديد"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "New Generator Asset"
+msgstr "أصل مولد جديد"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "New Invoice"
+msgstr "فاتورة جديدة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "New Maintenance Order"
+msgstr "أمر صيانة جديد"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "No assets need maintenance right now"
+msgstr "لا توجد أصول تحتاج إلى صيانة حالياً"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "No change"
+msgstr "بدون تغيير"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "No dated contracts"
+msgstr "لا توجد عقود مؤرخة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "No overdue receivables"
+msgstr "لا توجد مستحقات متأخرة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "No posted invoices this month"
+msgstr "لا توجد فواتير مرحّلة هذا الشهر"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "No posted invoices this quarter"
+msgstr "لا توجد فواتير مرحّلة هذا الربع"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "No posted invoices this year"
+msgstr "لا توجد فواتير مرحّلة هذا العام"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "No profitability data available yet"
+msgstr "لا توجد بيانات ربحية متاحة حتى الآن"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "No sublet margin data yet"
+msgstr "لا توجد بيانات هامش تأجير من الغير حتى الآن"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "None"
+msgstr "لا يوجد"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "None ending soon"
+msgstr "لا توجد عقود تنتهي قريباً"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_search
+msgid "On Rent"
+msgstr "قيد التأجير"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_overview_kanban
+msgid "Open"
+msgstr "فتح"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_generator_asset__open_job_count
+msgid "Open Maintenance Jobs"
+msgstr "أوامر الصيانة المفتوحة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Out of Service"
+msgstr "خارج الخدمة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Over by %s h"
+msgstr "متأخر بمقدار %s ساعة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Overdue"
+msgstr "متأخر"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Overdue Receivables"
+msgstr "المستحقات المتأخرة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Overtime"
+msgstr "ساعات إضافية"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_hours_graph
+msgid "Overtime & Violation Hours"
+msgstr "ساعات العمل الإضافي والتجاوز"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Owned Generators"
+msgstr "المولدات المملوكة للشركة"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__period_key
+msgid "Period Key"
+msgstr "مفتاح الفترة"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__period_month_label
+msgid "Period Month Label"
+msgstr "تسمية شهر الفترة"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__period_quarter_label
+msgid "Period Quarter Label"
+msgstr "تسمية ربع الفترة"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__period_selected_label
+msgid "Period Selected Label"
+msgstr "تسمية محدد الفترة"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__period_year_label
+msgid "Period Year Label"
+msgstr "تسمية سنة الفترة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Planned"
+msgstr "مخطط"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__primary_currency
+msgid "Primary Currency"
+msgstr "عملة المؤشر الأساسي"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__primary_delta
+msgid "Primary Delta"
+msgstr "تغيّر المؤشر الأساسي"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__primary_delta_class
+msgid "Primary Delta Class"
+msgstr "فئة تغيّر المؤشر الأساسي"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__primary_is_empty
+msgid "Primary Is Empty"
+msgstr "المؤشر الأساسي فارغ"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__primary_label
+msgid "Primary Label"
+msgstr "التسمية الرئيسية"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__primary_meta
+msgid "Primary Meta"
+msgstr "البيانات الرئيسية"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__primary_mixed
+msgid "Primary Mixed"
+msgstr "المؤشر الأساسي مختلط"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__primary_percent
+msgid "Primary Percent"
+msgstr "النسبة الرئيسية"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__primary_value
+msgid "Primary Value"
+msgstr "القيمة الرئيسية"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Profit"
+msgstr "الربح"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_list
+msgid "Profit Estimate"
+msgstr "تقدير الربح"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Profit estimate"
+msgstr "تقدير الربح"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Profit margin %s%%"
+msgstr "هامش الربح %s%%"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Quarter"
+msgstr "الربع"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Quick Access"
+msgstr "الوصول السريع"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Rent-in Cost"
+msgstr "تكلفة التأجير الداخلي"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Rental Performance"
+msgstr "أداء التأجير"
+
+#. module: gr_dashboard
+#: model:ir.actions.act_window,name:gr_dashboard.action_dash_returned_assets
+msgid "Returned - Pending Inspection"
+msgstr "مرتجع - بانتظار الفحص"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Revenue"
+msgstr "الإيرادات"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Revenue Out"
+msgstr "الإيراد الخارج"
+
+#. module: gr_dashboard
+#: model_terms:ir.actions.act_window,help:gr_dashboard.action_dash_profit
+msgid ""
+"Revenue is computed live from generated invoices; utilization from\n"
+"               approved hour logs. Cost is labor-only until the parts-consumption\n"
+"               milestone, so profit is an upper-bound estimate for now."
+msgstr ""
+"يُحتسب الإيراد مباشرة من الفواتير المُصدَرة، والاستغلال من سجلات\n"
+"               الساعات المعتمدة. التكلفة عمالة فقط حتى مرحلة استهلاك قطع\n"
+"               الغيار، لذا يُعد الربح حدًا أعلى تقديريًا حاليًا."
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Selected"
+msgstr "محدد"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Sublet Margin Snapshot"
+msgstr "ملخص هامش التأجير من الغير"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "This Month"
+msgstr "هذا الشهر"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__title
+msgid "Title"
+msgstr "العنوان"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Top Asset"
+msgstr "أفضل أصل"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_profit_list
+msgid "Total Cost"
+msgstr "إجمالي التكلفة"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_profit_list
+msgid "Total Profit (est.)"
+msgstr "إجمالي الربح (تقديري)"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_profit_list
+msgid "Total Revenue"
+msgstr "إجمالي الإيرادات"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__trend_label
+msgid "Trend Label"
+msgstr "تسمية الاتجاه"
+
+#. module: gr_dashboard
+#: model:ir.model.fields,field_description:gr_dashboard.field_gr_dashboard_card__trend_tone
+msgid "Trend Tone"
+msgstr "نغمة الاتجاه"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Unbilled"
+msgstr "غير مفوتر"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_list
+msgid "Utilization Hours"
+msgstr "ساعات الاستخدام"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Utilized"
+msgstr "مستخدم"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "View Details"
+msgstr "عرض التفاصيل"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "View Hours"
+msgstr "عرض الساعات"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "View Maintenance Orders"
+msgstr "عرض أوامر الصيانة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "View Margin Analysis"
+msgstr "عرض تحليل الهامش"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "View Profitability Analysis"
+msgstr "عرض تحليل الربحية"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "View all (%s)"
+msgstr "عرض الكل (%s)"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Violation"
+msgstr "متجاوز"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_search
+msgid "With Customer"
+msgstr "لدى العميل"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "Year"
+msgstr "السنة"
+
+#. module: gr_dashboard
+#: model_terms:ir.actions.act_window,help:gr_dashboard.action_dash_fleet_detail
+msgid "Your fleet dashboard is ready"
+msgstr "لوحة معلومات أسطولك جاهزة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid "h"
+msgstr "ساعة"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid "kVA"
+msgstr "ك.ف.أ"
+
+#. module: gr_dashboard
+#: model_terms:ir.ui.view,arch_db:gr_dashboard.view_dash_fleet_kanban
+msgid "open jobs"
+msgstr "أوامر مفتوحة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "unit(s)"
+msgstr "وحدة"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "vs last month"
+msgstr "مقارنة بالشهر الماضي"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "vs last quarter"
+msgstr "مقارنة بالربع الماضي"
+
+#. module: gr_dashboard
+#. odoo-python
+#: code:addons/gr_dashboard/models/gr_dashboard_overview.py:0
+msgid "vs last year"
+msgstr "مقارنة بالعام الماضي"

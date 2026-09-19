@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_strx_cabin_dashboard" model="ir.actions.client">
+        <field name="name">Operations Dashboard</field>
+        <field name="path">cabin-dashboard</field>
+        <field name="tag">strx_cabin_dashboard</field>
+    </record>
+
+    <menuitem id="menu_strx_cabin_dashboard"
+              name="Dashboard"
+              parent="strx_cabin_base.menu_strx_cabin_root"
+              action="action_strx_cabin_dashboard"
+              groups="stock.group_stock_user"
+              sequence="1"/>
+
+</odoo>
+

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_strx_broker_payment_list" model="ir.ui.view">
+        <field name="name">strx.cabin.broker.payment.list</field>
+        <field name="model">strx.cabin.broker.payment</field>
+        <field name="arch" type="xml">
+            <list string="Broker Payment Orders"
+                  decoration-success="state == 'paid'"
+                  decoration-muted="state == 'cancel'">
+                <field name="name"/>
+                <field name="broker_id"/>
+                <field name="payment_batch"/>
+                <field name="date_from" optional="hide"/>
+                <field name="date_to" optional="hide"/>
+                <field name="waybill_count"/>
+                <field name="amount_total" sum="Total"/>
+                <field name="due_date" optional="show"/>
+                <field name="payment_reference" optional="hide"/>
+                <field name="state" widget="badge"
+                       decoration-info="state in ('issued','approved')"
+                       decoration-success="state == 'paid'"
+                       decoration-muted="state == 'cancel'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_strx_broker_payment_form" model="ir.ui.view">
+        <field name="name">strx.cabin.broker.payment.form</field>
+        <field name="model">strx.cabin.broker.payment</field>
+        <field name="arch" type="xml">
+            <form string="Broker Payment Order">
+                <header>
+                    <button name="action_fill_payable_waybills" type="object"
+                            string="Fetch Due Shipments" invisible="state != 'draft'"/>
+                    <button name="action_issue" type="object" string="Issue"
+                            class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="Approve"
+                            class="oe_highlight" invisible="state != 'issued'"/>
+                    <button name="action_mark_paid" type="object" string="Mark Paid"
+                            class="oe_highlight" invisible="state != 'approved'"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state in ('paid','cancel')"/>
+                    <button name="action_reset_to_draft" type="object"
+                            string="Reset to Draft" invisible="state not in ('issued','approved','cancel')"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,issued,approved,paid"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_fill_payable_waybills" type="object"
+                                class="oe_stat_button" icon="fa-truck"
+                                invisible="state != 'draft'">
+                            <field name="waybill_count" widget="statinfo"
+                                   string="Shipments"/>
+                        </button>
+                    </div>
+                    <field name="eligible_shipping_order_ids" invisible="1"/>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Payment">
+                            <field name="broker_id" readonly="state not in ('draft','cancel')"/>
+                            <field name="payment_batch" readonly="state not in ('draft','cancel')"/>
+                            <field name="currency_id" readonly="state not in ('draft','cancel')"/>
+                            <field name="amount_total" readonly="1"/>
+                            <field name="due_date"/>
+                            <field name="payment_reference"/>
+                        </group>
+                        <group string="Batch Period">
+                            <field name="date_from" readonly="state not in ('draft','cancel')"/>
+                            <field name="date_to" readonly="state not in ('draft','cancel')"/>
+                            <field name="issue_date" readonly="1"/>
+                            <field name="approved_date" readonly="1"/>
+                            <field name="paid_date" readonly="1"/>
+                        </group>
+                        <group string="Users">
+                            <field name="issued_by_id" readonly="1"/>
+                            <field name="approved_by_id" readonly="1"/>
+                            <field name="paid_by_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Shipments Included">
+                        <field name="shipping_order_ids" nolabel="1"
+                               readonly="state not in ('draft','cancel')"
+                               domain="[('id', 'in', eligible_shipping_order_ids)]"
+                               options="{'no_create': True}">
+                            <list>
+                                <field name="name"/>
+                                <field name="order_id"/>
+                                <field name="movement_type"/>
+                                <field name="delivered_date"/>
+                                <field name="agreed_cost"/>
+                                <field name="broker_payment_state"/>
+                            </list>
+                        </field>
+                    </group>
+                    <group string="Notes">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_strx_broker_payment_search" model="ir.ui.view">
+        <field name="name">strx.cabin.broker.payment.search</field>
+        <field name="model">strx.cabin.broker.payment</field>
+        <field name="arch" type="xml">
+            <search string="Broker Payment Orders">
+                <field name="name"/>
+                <field name="broker_id"/>
+                <field name="payment_reference"/>
+                <filter name="f_open" string="Open"
+                        domain="[('state', 'in', ('draft','issued','approved'))]"/>
+                <filter name="f_paid" string="Paid"
+                        domain="[('state', '=', 'paid')]"/>
+                <filter name="f_cancel" string="Cancelled"
+                        domain="[('state', '=', 'cancel')]"/>
+                <separator/>
+                <filter name="f_weekly" string="Weekly"
+                        domain="[('payment_batch', '=', 'weekly')]"/>
+                <filter name="f_monthly" string="Monthly"
+                        domain="[('payment_batch', '=', 'monthly')]"/>
+                <group>
+                    <filter name="g_broker" string="Broker"
+                            context="{'group_by': 'broker_id'}"/>
+                    <filter name="g_state" string="Status"
+                            context="{'group_by': 'state'}"/>
+                    <filter name="g_batch" string="Batch Option"
+                            context="{'group_by': 'payment_batch'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_strx_broker_payment" model="ir.actions.act_window">
+        <field name="name">Broker Payment Orders</field>
+        <field name="res_model">strx.cabin.broker.payment</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_strx_broker_payment_search"/>
+    </record>
+
+</odoo>

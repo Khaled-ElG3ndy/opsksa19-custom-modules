@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_strx_shipping_order_list" model="ir.ui.view">
+        <field name="name">strx.cabin.shipping.order.list</field>
+        <field name="model">strx.cabin.shipping.order</field>
+        <field name="arch" type="xml">
+            <list string="Shipments"
+                  decoration-muted="state == 'cancel'"
+                  decoration-success="state == 'delivered'">
+                <field name="name"/>
+                <field name="order_id"/>
+                <field name="partner_id" optional="show"/>
+                <field name="movement_type" optional="show"/>
+                <field name="broker_id"/>
+                <field name="broker_waybill_ref" optional="hide"/>
+                <field name="is_internal" optional="show"/>
+                <field name="driver_name" optional="show"/>
+                <field name="driver_phone" optional="hide"/>
+                <field name="vehicle_plate" optional="show"/>
+                <field name="route_origin" optional="hide"/>
+                <field name="route_destination" optional="hide"/>
+                <field name="scheduled_date" optional="show"/>
+                <field name="agreed_cost" optional="show"/>
+                <field name="broker_payment_state" optional="show" widget="badge"
+                       decoration-success="broker_payment_state == 'paid'"
+                       decoration-info="broker_payment_state in ('issued','approved')"
+                       decoration-muted="broker_payment_state == 'none'"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'delivered'"
+                       decoration-info="state in ('issued','loaded','shipped')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_strx_shipping_order_form" model="ir.ui.view">
+        <field name="name">strx.cabin.shipping.order.form</field>
+        <field name="model">strx.cabin.shipping.order</field>
+        <field name="arch" type="xml">
+            <form string="Shipment">
+                <header>
+                    <button name="action_issue" type="object" string="Issue"
+                            class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="action_load" type="object" string="Loaded"
+                            class="oe_highlight" invisible="state != 'issued'"/>
+                    <button name="action_ship" type="object" string="Shipped"
+                            class="oe_highlight" invisible="state != 'loaded'"/>
+                    <button name="action_deliver" type="object" string="Delivered"
+                            class="oe_highlight" invisible="state != 'shipped'"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state in ('delivered','cancel')"/>
+                    <button name="action_create_broker_payment" type="object"
+                            string="Create Shipment Payment"
+                            invisible="state != 'delivered' or broker_payment_state != 'none'"/>
+                    <button name="action_reset_to_draft" type="object"
+                            string="Reset to Draft" invisible="state != 'cancel'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="issued,loaded,shipped,delivered"/>
+                </header>
+                <sheet>
+                    <field name="allowed_order_ids" invisible="1"/>
+                    <field name="eligible_lot_ids" invisible="1"/>
+                    <widget name="web_ribbon" title="Company Transport"
+                            bg_color="text-bg-info" invisible="not is_internal"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_broker_payments" type="object"
+                                class="oe_stat_button" icon="fa-credit-card"
+                                invisible="broker_payment_count == 0">
+                            <field name="broker_payment_count" widget="statinfo"
+                                   string="Payments"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Rental">
+                            <field name="movement_type" readonly="state not in ('draft', 'cancel')"/>
+                            <field name="order_id"
+                                   domain="[('id', 'in', allowed_order_ids)]"
+                                   readonly="state not in ('draft', 'cancel')"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="broker_id"/>
+                            <field name="broker_waybill_ref"/>
+                            <field name="is_internal"/>
+                        </group>
+                        <group string="Cost &amp; Dates">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="agreed_cost" widget="strx_agreed_cost"
+                                   options="{'currency_field': 'currency_id'}"
+                                   required="1"
+                                   placeholder="0.00 SR"/>
+                            <field name="broker_payment_state" readonly="1"/>
+                            <field name="scheduled_date"/>
+                            <field name="loaded_date"/>
+                            <field name="shipped_date"/>
+                            <field name="delivered_date"/>
+                        </group>
+                        <group string="Driver &amp; Vehicle">
+                            <field name="driver_name"/>
+                            <field name="driver_id_number"/>
+                            <field name="driver_phone"/>
+                            <field name="vehicle_model"/>
+                            <field name="vehicle_plate"/>
+                        </group>
+                        <group string="Route">
+                            <field name="route_origin"/>
+                            <field name="route_destination"/>
+                            <field name="route_note" placeholder="Pickup, delivery, site access, or checkpoints..."/>
+                        </group>
+                    </group>
+                    <group string="Serials Carried">
+                        <field name="lot_ids" nolabel="1"
+                               domain="[('id', 'in', eligible_lot_ids)]"
+                               readonly="state not in ('draft', 'cancel')"
+                               options="{'no_create': True}"
+                               widget="many2many_tags"/>
+                    </group>
+                    <group string="Customer Receipt">
+                        <group>
+                            <field name="customer_receipt_signature" widget="signature"
+                                   readonly="state == 'delivered'"/>
+                            <field name="customer_receipt_attachment_ids"
+                                   widget="strx_receipt_attachment_preview"
+                                   readonly="state == 'delivered'"/>
+                        </group>
+                        <group>
+                            <field name="customer_receipt_exception"
+                                   readonly="state == 'delivered'"/>
+                            <field name="customer_receipt_exception_reason"
+                                   placeholder="Why did the customer not sign or stamp the receipt?"
+                                   invisible="not customer_receipt_exception"
+                                   required="customer_receipt_exception"
+                                   readonly="state == 'delivered'"/>
+                        </group>
+                    </group>
+                    <group string="Notes">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_strx_shipping_order_search" model="ir.ui.view">
+        <field name="name">strx.cabin.shipping.order.search</field>
+        <field name="model">strx.cabin.shipping.order</field>
+        <field name="arch" type="xml">
+            <search string="Shipments">
+                <field name="name"/>
+                <field name="order_id"/>
+                <field name="partner_id"/>
+                <field name="broker_id"/>
+                <field name="broker_waybill_ref"/>
+                <field name="vehicle_plate"/>
+                <field name="driver_name"/>
+                <filter name="f_internal" string="Company Transport"
+                        domain="[('is_internal', '=', True)]"/>
+                <separator/>
+                <filter name="f_delivery" string="Deliveries"
+                        domain="[('movement_type', '=', 'delivery')]"/>
+                <filter name="f_return" string="Returns"
+                        domain="[('movement_type', '=', 'return')]"/>
+                <filter name="f_site_transfer" string="Site Transfers"
+                        domain="[('movement_type', '=', 'site_transfer')]"/>
+                <separator/>
+                <filter name="f_open" string="In Transit"
+                        domain="[('state', 'in', ('issued','loaded','shipped'))]"/>
+                <filter name="f_delivered" string="Delivered"
+                        domain="[('state', '=', 'delivered')]"/>
+                <filter name="f_unpaid" string="Delivered / Unpaid"
+                        domain="[('state', '=', 'delivered'), ('broker_payment_state', '=', 'none')]"/>
+                <filter name="f_paid" string="Paid"
+                        domain="[('broker_payment_state', '=', 'paid')]"/>
+                <group>
+                    <filter name="g_state" string="Status"
+                            context="{'group_by': 'state'}"/>
+                    <filter name="g_broker" string="Broker"
+                            context="{'group_by': 'broker_id'}"/>
+                    <filter name="g_movement" string="Movement"
+                            context="{'group_by': 'movement_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_strx_shipping_order" model="ir.actions.act_window">
+        <field name="name">Shipments</field>
+        <field name="res_model">strx.cabin.shipping.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_strx_shipping_order_search"/>
+    </record>
+
+</odoo>

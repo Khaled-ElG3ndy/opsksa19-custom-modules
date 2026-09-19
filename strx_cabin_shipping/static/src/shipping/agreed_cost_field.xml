@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="strx_cabin_shipping.AgreedCostField">
+        <span t-if="props.readonly" t-esc="formattedReadonlyValue"/>
+        <div t-else="" class="o_strx_agreed_cost_field">
+            <input t-ref="numpadDecimal"
+                   t-att-id="props.id"
+                   t-att-placeholder="placeholder"
+                   inputmode="decimal"
+                   class="o_input o_strx_agreed_cost_input"
+                   autocomplete="off"/>
+            <span class="o_strx_agreed_cost_currency" t-if="currencySymbol" t-esc="currencySymbol"/>
+        </div>
+    </t>
+
+</templates>

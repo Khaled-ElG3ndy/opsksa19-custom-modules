@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_gr_parts_consumption"
+              name="Parts Consumption"
+              parent="gr_maintenance.menu_gr_maintenance_root"
+              action="action_gr_parts_line"
+              groups="gr_security_base.group_generator_maint_technician"
+              sequence="30"/>
+</odoo>

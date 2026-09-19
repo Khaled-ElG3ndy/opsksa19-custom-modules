@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_strx_substitution_form" model="ir.ui.view">
+        <field name="name">strx.cabin.substitution.form</field>
+        <field name="model">strx.cabin.substitution</field>
+        <field name="arch" type="xml">
+            <form string="Cabin Substitution">
+                <header>
+                    <button name="action_submit" type="object" string="Submit"
+                            class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="Approve"
+                            class="oe_highlight" invisible="state != 'submitted'"/>
+                    <button name="action_reject" type="object" string="Reject"
+                            invisible="state != 'submitted'"/>
+                    <button name="action_reset_to_draft" type="object"
+                            string="Reset to Draft"
+                            invisible="state not in ('submitted', 'rejected')"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,submitted,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <widget name="web_ribbon" title="Free Upgrade" bg_color="text-bg-warning"
+                            invisible="not is_free_upgrade"/>
+                    <group>
+                        <group string="Rental">
+                            <field name="allocation_id"
+                                   readonly="state != 'draft'"/>
+                            <field name="order_id" readonly="1"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="is_spec_change"/>
+                            <field name="no_approval_required" invisible="1"/>
+                        </group>
+                        <group string="Change">
+                            <label for="original_product_id" string="From"/>
+                            <div>
+                                <field name="allocation_lot_ids" invisible="1"/>
+                                <field name="original_product_id" readonly="1" nolabel="1"/>
+                                <field name="original_lot_id"
+                                       readonly="state not in ('draft',)" nolabel="1"/>
+                            </div>
+                            <label for="proposed_product_id" string="To"/>
+                            <div>
+                                <field name="proposed_product_id"
+                                       readonly="state not in ('draft',)" nolabel="1"/>
+                                <field name="proposed_lot_id"
+                                       readonly="state not in ('draft',)" nolabel="1"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Commercial Impact">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="price_impact" readonly="state not in ('draft',)"/>
+                            <field name="commercial_value"
+                                   readonly="state not in ('draft',)"/>
+                            <field name="is_free_upgrade"/>
+                        </group>
+                        <group string="Logistics / Site">
+                            <field name="transport_impact"
+                                   readonly="state not in ('draft',)"/>
+                            <field name="transport_note"
+                                   readonly="state not in ('draft',)"/>
+                            <field name="site_fit_confirmed"
+                                   readonly="state not in ('draft',)"/>
+                        </group>
+                    </group>
+                    <group string="Reason">
+                        <field name="reason" nolabel="1"
+                               readonly="state not in ('draft',)"
+                               placeholder="Why is the specification being changed?"/>
+                    </group>
+                    <group string="Rejection" invisible="state != 'rejected'">
+                        <field name="rejection_reason" nolabel="1"/>
+                    </group>
+                    <group string="Audit" col="4">
+                        <field name="requester_id"/>
+                        <field name="request_date"/>
+                        <field name="submitted_date"/>
+                        <field name="approver_id"/>
+                        <field name="decision_date"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_strx_substitution_list" model="ir.ui.view">
+        <field name="name">strx.cabin.substitution.list</field>
+        <field name="model">strx.cabin.substitution</field>
+        <field name="arch" type="xml">
+            <list string="Substitutions"
+                  decoration-warning="is_free_upgrade"
+                  decoration-muted="state == 'rejected'"
+                  decoration-success="state == 'approved'">
+                <field name="name"/>
+                <field name="order_id"/>
+                <field name="partner_id" optional="show"/>
+                <field name="original_lot_id" string="From"/>
+                <field name="proposed_lot_id" string="To"/>
+                <field name="is_spec_change" optional="show"/>
+                <field name="price_impact" optional="show"/>
+                <field name="commercial_value"/>
+                <field name="is_free_upgrade" optional="show"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'approved'"
+                       decoration-info="state == 'submitted'"
+                       decoration-danger="state == 'rejected'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_strx_substitution_search" model="ir.ui.view">
+        <field name="name">strx.cabin.substitution.search</field>
+        <field name="model">strx.cabin.substitution</field>
+        <field name="arch" type="xml">
+            <search string="Substitutions">
+                <field name="name"/>
+                <field name="order_id"/>
+                <field name="partner_id"/>
+                <filter name="f_submitted" string="Awaiting Approval"
+                        domain="[('state', '=', 'submitted')]"/>
+                <filter name="f_free" string="Free Upgrades"
+                        domain="[('is_free_upgrade', '=', True)]"/>
+                <filter name="f_spec" string="Spec Changes"
+                        domain="[('is_spec_change', '=', True)]"/>
+                <group>
+                    <filter name="g_state" string="Status"
+                            context="{'group_by': 'state'}"/>
+                    <filter name="g_partner" string="Customer"
+                            context="{'group_by': 'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_strx_substitution" model="ir.actions.act_window">
+        <field name="name">Substitutions</field>
+        <field name="res_model">strx.cabin.substitution</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_strx_substitution_search"/>
+    </record>
+
+    <!-- Allocation form: smart button + request action -->
+    <record id="view_strx_allocation_form_substitution" model="ir.ui.view">
+        <field name="name">strx.cabin.allocation.form.substitution</field>
+        <field name="model">strx.cabin.allocation</field>
+        <field name="inherit_id" ref="strx_cabin_allocation.view_strx_cabin_allocation_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_request_substitution" type="object"
+                        string="Request Substitution"
+                        invisible="state != 'dispatched'"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

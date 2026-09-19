@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+
+    <!-- Multi-company isolation. Global rules apply to every user including the
+         cabin roles, so a readiness event never crosses a company boundary.
+         company_id = False means "not tied to a company" and stays visible. -->
+    <record id="strx_cabin_readiness_log_company_rule" model="ir.rule">
+        <field name="name">Cabin readiness log: multi-company</field>
+        <field name="model_id" ref="model_strx_cabin_readiness_log"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

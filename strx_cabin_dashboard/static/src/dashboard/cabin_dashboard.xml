@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="strx_cabin_dashboard.CabinDashboard">
+        <div t-attf-class="o_action o_strx_cabin_dashboard {{ isRtl ? 'o_strx_rtl' : 'o_strx_ltr' }}"
+             t-att-dir="isRtl ? 'rtl' : 'ltr'">
+            <div class="o_strx_dashboard_scroll">
+                <t t-if="state.loading">
+                    <div class="o_strx_skeleton_header"/>
+                    <div class="o_strx_kpi_grid">
+                        <div class="o_strx_skeleton_card" t-foreach="[1, 2, 3, 4]"
+                             t-as="item" t-key="item"/>
+                    </div>
+                    <div class="o_strx_skeleton_panel"/>
+                </t>
+                <t t-else="">
+                    <section class="o_strx_hero">
+                        <div class="o_strx_hero_orb o_strx_hero_orb_one"/>
+                        <div class="o_strx_hero_orb o_strx_hero_orb_two"/>
+                        <div class="o_strx_hero_content">
+                            <div class="o_strx_hero_mark" aria-hidden="true">
+                                <i/><i/><i/><i/>
+                            </div>
+                            <h1>Cabin Operations Center</h1>
+                        </div>
+                        <div class="o_strx_hero_actions">
+                            <button class="btn o_strx_refresh_button"
+                                    t-on-click="() => this.loadData(true)"
+                                    t-att-disabled="state.refreshing">
+                                Refresh
+                            </button>
+                            <button t-if="state.data.permissions.create_allocation"
+                                    class="btn o_strx_primary_button"
+                                    t-on-click="createAllocation">
+                                New Allocation
+                            </button>
+                        </div>
+                    </section>
+
+                    <section class="o_strx_kpi_grid">
+                        <button class="o_strx_kpi_card o_strx_kpi_indigo"
+                                t-on-click="() => this.openFleet()">
+                            <span class="o_strx_kpi_icon"><i class="fa fa-cubes"/></span>
+                            <span class="o_strx_kpi_copy">
+                                <span class="o_strx_kpi_label">Total cabins</span>
+                                <strong t-esc="state.data.kpis.total_cabins"/>
+                                <small>
+                                    <t t-esc="state.data.kpis.utilization_rate"/>%
+                                    utilization
+                                </small>
+                            </span>
+                            <i class="fa fa-arrow-right o_strx_kpi_arrow"/>
+                        </button>
+
+                        <button class="o_strx_kpi_card o_strx_kpi_green"
+                                t-on-click="() => this.openFleet([['strx_readiness_state', '=', 'available']])">
+                            <span class="o_strx_kpi_icon"><i class="fa fa-check"/></span>
+                            <span class="o_strx_kpi_copy">
+                                <span class="o_strx_kpi_label">Available now</span>
+                                <strong t-esc="state.data.kpis.available"/>
+                                <small>Ready for allocation</small>
+                            </span>
+                            <i class="fa fa-arrow-right o_strx_kpi_arrow"/>
+                        </button>
+
+                        <button class="o_strx_kpi_card o_strx_kpi_teal"
+                                t-on-click="() => this.openFleet([['strx_readiness_state', '=', 'on_rent']])">
+                            <span class="o_strx_kpi_icon"><i class="fa fa-key"/></span>
+                            <span class="o_strx_kpi_copy">
+                                <span class="o_strx_kpi_label">On rent</span>
+                                <strong t-esc="state.data.kpis.on_rent"/>
+                                <small>
+                                    <t t-esc="state.data.kpis.active_allocations"/>
+                                    active allocations
+                                </small>
+                            </span>
+                            <i class="fa fa-arrow-right o_strx_kpi_arrow"/>
+                        </button>
+
+                        <button class="o_strx_kpi_card o_strx_kpi_amber"
+                                t-on-click="() => this.openFleet([['strx_readiness_state', 'in', ['return_due', 'returned', 'in_inspection', 'in_cleaning', 'in_maintenance', 'damaged']]])">
+                            <span class="o_strx_kpi_icon">
+                                <i class="fa fa-exclamation-triangle"/>
+                            </span>
+                            <span class="o_strx_kpi_copy">
+                                <span class="o_strx_kpi_label">Needs attention</span>
+                                <strong t-esc="state.data.kpis.needs_attention"/>
+                                <small>Returns, service and damage</small>
+                            </span>
+                            <i class="fa fa-arrow-right o_strx_kpi_arrow"/>
+                        </button>
+                    </section>
+
+                    <section class="o_strx_top_grid">
+                        <article class="o_strx_panel o_strx_distribution_panel">
+                            <div class="o_strx_panel_header">
+                                <div>
+                                    <span class="o_strx_section_kicker">Cabin readiness</span>
+                                    <h2>Readiness distribution</h2>
+                                </div>
+                                <button class="o_strx_text_button"
+                                        t-on-click="() => this.openFleet()">
+                                    View cabins <i class="fa fa-arrow-right"/>
+                                </button>
+                            </div>
+                            <div class="o_strx_distribution_body">
+                                <div class="o_strx_donut_wrap">
+                                    <div class="o_strx_donut" t-att-style="donutStyle">
+                                        <div class="o_strx_donut_center">
+                                            <strong t-esc="state.data.kpis.total_cabins"/>
+                                            <span>Total units</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o_strx_legend">
+                                    <button t-foreach="state.data.distribution"
+                                            t-as="segment"
+                                            t-key="segment.key"
+                                            class="o_strx_legend_row"
+                                            t-on-click="() => this.openFleet()">
+                                        <span class="o_strx_legend_dot"
+                                              t-att-style="'background:' + segment.color"/>
+                                        <span class="o_strx_legend_label"
+                                              t-esc="segment.label"/>
+                                        <strong t-esc="segment.count"/>
+                                        <small>
+                                            <t t-esc="segment.percent"/>%
+                                        </small>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="o_strx_panel o_strx_alerts_panel">
+                            <div class="o_strx_panel_header">
+                                <div>
+                                    <span class="o_strx_section_kicker">Action center</span>
+                                    <h2>Operational alerts</h2>
+                                </div>
+                                <span class="o_strx_live_badge">
+                                    <i class="fa fa-circle"/> Live
+                                </span>
+                            </div>
+                            <div class="o_strx_alert_list">
+                                <button class="o_strx_alert o_strx_alert_danger"
+                                        t-on-click="() => this.openAllocations([['state', 'in', ['allocated', 'dispatched', 'on_rent']], ['strx_expected_return_date', '&lt;', state.data.filters.today]])">
+                                    <span class="o_strx_alert_icon">
+                                        <i class="fa fa-calendar-times-o"/>
+                                    </span>
+                                    <span class="o_strx_alert_copy">
+                                        <strong>Overdue returns</strong>
+                                        <small>Expected return date has passed</small>
+                                    </span>
+                                    <span class="o_strx_alert_count"
+                                          t-esc="state.data.alerts.overdue_returns"/>
+                                    <i class="fa fa-chevron-right"/>
+                                </button>
+                                <button class="o_strx_alert o_strx_alert_warning"
+                                        t-on-click="() => this.openAllocations([['state', 'in', ['allocated', 'dispatched', 'on_rent']], ['strx_expected_return_date', '>=', state.data.filters.today], ['strx_expected_return_date', '&lt;=', state.data.filters.horizon]])">
+                                    <span class="o_strx_alert_icon">
+                                        <i class="fa fa-calendar"/>
+                                    </span>
+                                    <span class="o_strx_alert_copy">
+                                        <strong>Returns in the next 7 days</strong>
+                                        <small>Plan inspection and cleaning capacity</small>
+                                    </span>
+                                    <span class="o_strx_alert_count"
+                                          t-esc="state.data.alerts.due_soon_returns"/>
+                                    <i class="fa fa-chevron-right"/>
+                                </button>
+                                <button class="o_strx_alert o_strx_alert_indigo"
+                                        t-on-click="() => this.openSubstitutions([['state', '=', 'submitted']])">
+                                    <span class="o_strx_alert_icon">
+                                        <i class="fa fa-exchange"/>
+                                    </span>
+                                    <span class="o_strx_alert_copy">
+                                        <strong>Awaiting substitution approval</strong>
+                                        <small>Commercial decision required</small>
+                                    </span>
+                                    <span class="o_strx_alert_count"
+                                          t-esc="state.data.alerts.pending_substitutions"/>
+                                    <i class="fa fa-chevron-right"/>
+                                </button>
+                                <button class="o_strx_alert o_strx_alert_teal"
+                                        t-on-click="() => this.openShipping([['state', 'in', ['issued', 'loaded', 'shipped']]])">
+                                    <span class="o_strx_alert_icon">
+                                        <i class="fa fa-truck"/>
+                                    </span>
+                                    <span class="o_strx_alert_copy">
+                                        <strong>Active shipments</strong>
+                                        <small>Issued, loaded or currently shipped</small>
+                                    </span>
+                                    <span class="o_strx_alert_count"
+                                          t-esc="state.data.alerts.active_shipments"/>
+                                    <i class="fa fa-chevron-right"/>
+                                </button>
+                            </div>
+                        </article>
+                    </section>
+
+                    <section class="o_strx_bottom_grid">
+                        <article class="o_strx_panel o_strx_returns_panel">
+                            <div class="o_strx_panel_header">
+                                <div>
+                                    <span class="o_strx_section_kicker">Next movements</span>
+                                    <h2>Upcoming returns</h2>
+                                </div>
+                                <button class="o_strx_text_button"
+                                        t-on-click="() => this.openAllocations()">
+                                    All returns <i class="fa fa-arrow-right"/>
+                                </button>
+                            </div>
+                            <div class="o_strx_empty_state"
+                                 t-if="!state.data.upcoming_returns.length">
+                                <i class="fa fa-calendar-check-o"/>
+                                <strong>No scheduled returns</strong>
+                                <span>Return dates will appear here.</span>
+                            </div>
+                            <div class="o_strx_return_list" t-else="">
+                                <button class="o_strx_return_row"
+                                        t-foreach="state.data.upcoming_returns"
+                                        t-as="item"
+                                        t-key="item.id"
+                                        t-on-click="() => this.openRecord('strx.cabin.allocation', item.id)">
+                                    <span class="o_strx_serial_icon">
+                                        <i class="fa fa-cube"/>
+                                    </span>
+                                    <span class="o_strx_return_main">
+                                        <strong t-esc="item.serial"/>
+                                        <small t-esc="item.customer"/>
+                                    </span>
+                                    <span class="o_strx_return_date">
+                                        <strong t-esc="item.date"/>
+                                        <small t-att-class="'o_strx_timing_' + item.timing_tone"
+                                               t-esc="item.timing"/>
+                                    </span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="o_strx_panel o_strx_shipping_panel">
+                            <div class="o_strx_panel_header">
+                                <div>
+                                    <span class="o_strx_section_kicker">Logistics pulse</span>
+                                    <h2>Recent shipping</h2>
+                                </div>
+                                <button class="o_strx_text_button"
+                                        t-on-click="() => this.openShipping()">
+                                    View shipping <i class="fa fa-arrow-right"/>
+                                </button>
+                            </div>
+                            <div class="o_strx_empty_state"
+                                 t-if="!state.data.recent_shipments.length">
+                                <i class="fa fa-truck"/>
+                                <strong>No shipments yet</strong>
+                                <span>New shipments will appear here.</span>
+                            </div>
+                            <div class="o_strx_shipping_list" t-else="">
+                                <button class="o_strx_shipping_row"
+                                        t-foreach="state.data.recent_shipments"
+                                        t-as="shipment"
+                                        t-key="shipment.id"
+                                        t-on-click="() => this.openRecord('strx.cabin.shipping.order', shipment.id)">
+                                    <span class="o_strx_shipping_icon">
+                                        <i class="fa fa-truck"/>
+                                    </span>
+                                    <span class="o_strx_shipping_main">
+                                        <strong t-esc="shipment.name"/>
+                                        <small>
+                                            <t t-esc="shipment.origin"/>
+                                            <i class="fa fa-long-arrow-right"/>
+                                            <t t-esc="shipment.destination"/>
+                                        </small>
+                                    </span>
+                                    <span class="o_strx_status_badge"
+                                          t-att-class="'o_strx_status_' + shipment.state"
+                                          t-esc="shipment.state_label"/>
+                                </button>
+                            </div>
+                        </article>
+                    </section>
+
+                    <section class="o_strx_panel o_strx_allocations_panel">
+                        <div class="o_strx_panel_header">
+                            <div>
+                                <span class="o_strx_section_kicker">Latest activity</span>
+                                <h2>Recent allocations</h2>
+                            </div>
+                            <button class="o_strx_text_button"
+                                    t-on-click="() => this.openAllocations()">
+                                View all allocations <i class="fa fa-arrow-right"/>
+                            </button>
+                        </div>
+                        <div class="o_strx_table_wrap">
+                            <table class="o_strx_table">
+                                <thead>
+                                    <tr>
+                                        <th>Reference</th>
+                                        <th>Customer</th>
+                                        <th>Cabin</th>
+                                        <th>Specification</th>
+                                        <th>Expected return</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-if="!state.data.recent_allocations.length">
+                                        <td colspan="6">
+                                            <div class="o_strx_empty_inline">
+                                                No active allocations yet.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr t-foreach="state.data.recent_allocations"
+                                        t-as="allocation"
+                                        t-key="allocation.id"
+                                        t-on-click="() => this.openRecord('strx.cabin.allocation', allocation.id)">
+                                        <td>
+                                            <strong class="o_strx_reference"
+                                                    t-esc="allocation.name"/>
+                                            <small t-esc="allocation.order"/>
+                                        </td>
+                                        <td>
+                                            <span class="o_strx_customer_cell">
+                                                <span class="o_strx_avatar">
+                                                    <t t-esc="allocation.customer.substring(0, 1)"/>
+                                                </span>
+                                                <t t-esc="allocation.customer"/>
+                                            </span>
+                                        </td>
+                                        <td t-esc="allocation.serial"/>
+                                        <td t-esc="allocation.specification"/>
+                                        <td t-esc="allocation.return_date"/>
+                                        <td>
+                                            <span class="o_strx_status_badge"
+                                                  t-att-class="'o_strx_status_' + allocation.state"
+                                                  t-esc="allocation.state_label"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </t>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="strx_cabin_dashboard.CabinNavbar"
+       t-inherit="web.NavBar"
+       t-inherit-mode="extension">
+        <xpath expr="//nav[contains(@class, 'o_main_navbar')]" position="attributes">
+            <attribute name="t-att-class">{
+                'o_strx_cabin_navbar':
+                    currentApp?.xmlid === 'strx_cabin_base.menu_strx_cabin_root'
+            }</attribute>
+        </xpath>
+    </t>
+
+</templates>

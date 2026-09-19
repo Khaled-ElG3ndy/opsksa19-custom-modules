@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_parts_request_form" model="ir.ui.view">
+        <field name="name">gr.parts.request.form</field>
+        <field name="model">gr.parts.request</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_issue_available" type="object"
+                            string="Issue Available Stock" class="btn-primary"
+                            invisible="state in ('installed','cancelled') or qty_remaining_to_issue &lt;= 0"/>
+                    <button name="action_generate_po" type="object"
+                            string="Create PO for Shortage"
+                            invisible="state not in ('draft','issued') or qty_shortage_to_buy &lt;= 0"/>
+                    <button name="action_mark_received" type="object"
+                            string="Mark Received" invisible="state != 'purchased'"/>
+                    <button name="action_register_installation" type="object"
+                            string="Register Installation"
+                            invisible="state == 'cancelled' or qty_issued &lt;= qty_installed"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state in ('installed','cancelled')"/>
+                    <button name="action_view_po" type="object" string="View PO"
+                            invisible="not purchase_order_id"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,issued,purchased,received,installed"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Reconciled" bg_color="text-bg-success"
+                            invisible="not reconciled"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Part &amp; Unit">
+                            <field name="job_id"/>
+                            <field name="asset_id" readonly="1"/>
+                            <field name="product_id"/>
+                            <field name="quantity"/>
+                            <field name="product_uom_id"/>
+                            <field name="purpose"/>
+                        </group>
+                        <group string="Stock">
+                            <field name="warehouse_id"/>
+                            <field name="source_location_id"/>
+                            <field name="available_qty"/>
+                            <field name="qty_issued"/>
+                            <field name="qty_installed" readonly="1"/>
+                            <field name="qty_remaining_to_issue"/>
+                            <field name="qty_shortage_to_buy"/>
+                        </group>
+                        <group string="Purchase">
+                            <field name="vendor_id"/>
+                            <field name="purchase_order_id" readonly="1"/>
+                            <field name="purchase_line_id" readonly="1"/>
+                            <field name="purchase_qty_ordered"/>
+                            <field name="purchase_qty_received"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group string="Issue Links">
+                            <field name="stock_picking_id"/>
+                            <field name="stock_move_id"/>
+                        </group>
+                    </group>
+                    <group string="Reconciliation (required vs issued vs installed)">
+                        <group>
+                            <field name="qty_issued"/>
+                            <field name="qty_installed"/>
+                            <field name="qty_outstanding"/>
+                            <field name="reconciled"/>
+                        </group>
+                    </group>
+                    <field name="consumption_line_ids" readonly="1">
+                        <list>
+                            <field name="job_id"/>
+                            <field name="product_id"/>
+                            <field name="quantity"/>
+                            <field name="picking_id"/>
+                            <field name="move_id"/>
+                            <field name="state"/>
+                        </list>
+                    </field>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gr_parts_request_list" model="ir.ui.view">
+        <field name="name">gr.parts.request.list</field>
+        <field name="model">gr.parts.request</field>
+        <field name="arch" type="xml">
+            <list decoration-success="reconciled" decoration-warning="qty_outstanding &gt; 0 and state in ('received','installed')" decoration-muted="state == 'cancelled'">
+                <field name="name"/>
+                <field name="asset_id"/>
+                <field name="product_id"/>
+                <field name="quantity"/>
+                <field name="available_qty"/>
+                <field name="qty_issued"/>
+                <field name="qty_installed"/>
+                <field name="qty_remaining_to_issue"/>
+                <field name="qty_shortage_to_buy"/>
+                <field name="qty_outstanding"/>
+                <field name="purchase_order_id"/>
+                <field name="purchase_qty_ordered" optional="show"/>
+                <field name="purchase_qty_received" optional="show"/>
+                <field name="reconciled"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'installed'"
+                       decoration-info="state in ('issued','purchased','received')"
+                       decoration-muted="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_parts_request_search" model="ir.ui.view">
+        <field name="name">gr.parts.request.search</field>
+        <field name="model">gr.parts.request</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="asset_id"/>
+                <field name="product_id"/>
+                <field name="purchase_order_id"/>
+                <filter name="f_unreconciled" string="Unreconciled (leakage)"
+                        domain="[('reconciled','=',False),('state','in',('received','installed','purchased'))]"/>
+                <filter name="f_open" string="Open" domain="[('state','in',('draft','issued','purchased','received'))]"/>
+                <group>
+                    <filter name="g_asset" string="Equipment" context="{'group_by':'asset_id'}"/>
+                    <filter name="g_state" string="Status" context="{'group_by':'state'}"/>
+                    <filter name="g_purpose" string="Purpose" context="{'group_by':'purpose'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_gr_parts_request" model="ir.actions.act_window">
+        <field name="name">Parts Requests</field>
+        <field name="res_model">gr.parts.request</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_gr_parts_request_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Request a part for a specific generator</p>
+            <p>The closed loop: request against a job, purchase born-linked to the
+               unit, receive, install by Asset No, and reconcile.</p>
+        </field>
+    </record>
+
+    <!-- Reconciliation shortcut: parts ordered for a unit but not installed -->
+    <record id="action_gr_parts_leakage" model="ir.actions.act_window">
+        <field name="name">Parts Leakage (Unreconciled)</field>
+        <field name="res_model">gr.parts.request</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('reconciled','=',False),('state','in',('received','installed','purchased'))]</field>
+        <field name="search_view_id" ref="view_gr_parts_request_search"/>
+    </record>
+
+</odoo>

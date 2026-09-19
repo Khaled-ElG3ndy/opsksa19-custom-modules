@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_partner_document_category"
+              name="Document Categories"
+              parent="contacts.res_partner_menu_config"
+              action="partner_document_category_action"
+              groups="base.group_partner_manager"
+              sequence="25"/>
+
+</odoo>

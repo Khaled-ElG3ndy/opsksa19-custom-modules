@@ -1,0 +1,477 @@
+// Partner Document Center
+//
+// Every selector is nested under .o_pdc so nothing here can reach another Odoo
+// screen. Spacing and alignment use logical properties (inline-start/end)
+// rather than left/right: rtlcss rewrites left/right for the Arabic bundle,
+// and logical properties are already correct in both directions, so the
+// layout does not need a second, mirrored set of rules.
+
+.o_pdc {
+    --pdc-gap: 8px;
+    --pdc-radius: 8px;
+    --pdc-card-bg: var(--bs-body-bg, #ffffff);
+    --pdc-border: var(--bs-border-color, #dee2e6);
+    --pdc-muted: var(--bs-secondary-color, #6c757d);
+    // Live business documents get their own accent so a card is recognisable
+    // as a record rather than a file before reading a word of it.
+    --pdc-record-accent: var(--bs-info, #17a2b8);
+    --pdc-record-tint: rgba(23, 162, 184, 0.12);
+    --pdc-record-border: rgba(23, 162, 184, 0.35);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--pdc-gap);
+    padding: var(--pdc-gap);
+
+    &.o_pdc_inline {
+        padding-inline: 0;
+    }
+
+    // ------------------------------------------------------------------
+    // Toolbar
+    // ------------------------------------------------------------------
+    .o_pdc_toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--pdc-gap);
+    }
+
+    .o_pdc_search {
+        position: relative;
+        flex: 1 1 260px;
+        min-inline-size: 200px;
+
+        .o_pdc_search_icon {
+            position: absolute;
+            inset-inline-start: 0.75rem;
+            inset-block-start: 50%;
+            transform: translateY(-50%);
+            color: var(--pdc-muted);
+            pointer-events: none;
+        }
+
+        .o_pdc_search_input {
+            padding-inline-start: 2.25rem;
+        }
+    }
+
+    .o_pdc_upload_btn {
+        white-space: nowrap;
+    }
+
+    // ------------------------------------------------------------------
+    // Source chips
+    // ------------------------------------------------------------------
+    .o_pdc_chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+    }
+
+    .o_pdc_chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        padding: 0.25rem 0.75rem;
+        border: 1px solid var(--pdc-border);
+        border-radius: 999px;
+        background-color: transparent;
+        font-size: 0.8125rem;
+        color: inherit;
+        transition: background-color 0.15s ease, border-color 0.15s ease;
+
+        &:hover {
+            background-color: var(--bs-tertiary-bg, #f8f9fa);
+        }
+
+        &.active {
+            border-color: var(--bs-primary, #714b67);
+            background-color: var(--bs-primary, #714b67);
+            color: #fff;
+
+            .o_pdc_chip_count {
+                background-color: rgba(255, 255, 255, 0.25);
+            }
+        }
+    }
+
+    .o_pdc_chip_count {
+        padding: 0 0.375rem;
+        border-radius: 999px;
+        background-color: var(--bs-tertiary-bg, #e9ecef);
+        font-size: 0.6875rem;
+        font-weight: 600;
+    }
+
+    // ------------------------------------------------------------------
+    // Kind selector: live business records vs stored files
+    // ------------------------------------------------------------------
+    .o_pdc_kinds {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0;
+        border: 1px solid var(--pdc-border);
+        border-radius: var(--pdc-radius);
+        overflow: hidden;
+        align-self: flex-start;
+    }
+
+    .o_pdc_kind {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        padding: 0.3125rem 0.875rem;
+        border: 0;
+        border-inline-end: 1px solid var(--pdc-border);
+        background-color: transparent;
+        font-size: 0.8125rem;
+        color: inherit;
+
+        &:last-child {
+            border-inline-end: 0;
+        }
+
+        &:hover {
+            background-color: var(--bs-tertiary-bg, #f8f9fa);
+        }
+
+        &.active {
+            background-color: var(--bs-primary, #714b67);
+            color: #fff;
+
+            .o_pdc_chip_count {
+                background-color: rgba(255, 255, 255, 0.25);
+            }
+        }
+    }
+
+    // ------------------------------------------------------------------
+    // Secondary filters
+    // ------------------------------------------------------------------
+    .o_pdc_filters {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.375rem;
+    }
+
+    .o_pdc_daterange {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        input {
+            inline-size: auto;
+        }
+    }
+
+    .o_pdc_daterange_sep {
+        color: var(--pdc-muted);
+    }
+
+    .o_pdc_truncated {
+        margin-block-end: 0;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+
+    // ------------------------------------------------------------------
+    // Body: grid / timeline
+    // ------------------------------------------------------------------
+    .o_pdc_body {
+        min-block-size: 120px;
+    }
+
+    &.o_pdc_inline .o_pdc_body {
+        // The contact form's notebook is not a scroll container; cap the
+        // browser so a contact with hundreds of files does not push the
+        // chatter far below the fold.
+        max-block-size: 60vh;
+        overflow-y: auto;
+    }
+
+    .o_pdc_loading {
+        display: flex;
+        justify-content: center;
+        padding: 3rem 0;
+        color: var(--pdc-muted);
+    }
+
+    .o_pdc_grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: var(--pdc-gap);
+    }
+
+    .o_pdc_grid.o_pdc_timeline {
+        grid-template-columns: 1fr;
+
+        .o_pdc_card {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .o_pdc_card_preview {
+            flex: 0 0 88px;
+            block-size: 64px;
+            border-block-end: 0;
+            border-inline-end: 1px solid var(--pdc-border);
+        }
+
+        .o_pdc_card_actions {
+            border-block-start: 0;
+            border-inline-start: 1px solid var(--pdc-border);
+        }
+    }
+
+    .o_pdc_group_header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-block: var(--pdc-gap) 0.5rem;
+
+        .o_pdc_group_label {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .o_pdc_group_count {
+            padding: 0 0.375rem;
+            border-radius: 999px;
+            background-color: var(--bs-tertiary-bg, #e9ecef);
+            font-size: 0.6875rem;
+            color: var(--pdc-muted);
+        }
+
+        &::after {
+            content: "";
+            flex: 1 1 auto;
+            border-block-start: 1px solid var(--pdc-border);
+        }
+    }
+
+    // ------------------------------------------------------------------
+    // File card
+    // ------------------------------------------------------------------
+    .o_pdc_card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--pdc-border);
+        border-radius: var(--pdc-radius);
+        background-color: var(--pdc-card-bg);
+        overflow: hidden;
+        transition: box-shadow 0.15s ease, border-color 0.15s ease;
+
+        &:hover {
+            border-color: var(--bs-primary, #714b67);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        &.o_pdc_card_important {
+            border-inline-start: 3px solid var(--bs-warning, #f0ad4e);
+        }
+
+        // A live business document must not read as a file. It carries the
+        // accent colour, a tinted header and a "Live" marker.
+        &.o_pdc_card_record {
+            border-color: var(--pdc-record-border);
+            border-inline-start: 3px solid var(--pdc-record-accent);
+        }
+    }
+
+    .o_pdc_record_preview {
+        background: linear-gradient(
+            135deg,
+            var(--pdc-record-tint) 0%,
+            var(--bs-tertiary-bg, #f8f9fa) 100%
+        );
+
+        .o_pdc_card_icon {
+            color: var(--pdc-record-accent);
+        }
+    }
+
+    .o_pdc_live_badge {
+        position: absolute;
+        inset-block-start: 0.375rem;
+        inset-inline-end: 0.375rem;
+        padding: 0 0.375rem;
+        border-radius: 999px;
+        background-color: var(--pdc-record-accent);
+        color: #fff;
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    .o_pdc_badge_record {
+        background-color: var(--pdc-record-tint);
+        color: var(--pdc-record-accent);
+    }
+
+    .o_pdc_state {
+        padding: 0 0.375rem;
+        border: 1px solid var(--pdc-border);
+        border-radius: 999px;
+        font-size: 0.6875rem;
+    }
+
+    .o_pdc_amount {
+        font-weight: 600;
+        font-size: 0.8125rem;
+    }
+
+    .o_pdc_related {
+        margin-block-start: 0.25rem;
+
+        .o_pdc_related_btn {
+            padding: 0;
+            font-size: 0.75rem;
+            text-decoration: none;
+        }
+    }
+
+    .o_pdc_card_preview {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        block-size: 108px;
+        border-block-end: 1px solid var(--pdc-border);
+        background-color: var(--bs-tertiary-bg, #f8f9fa);
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .o_pdc_card_thumb {
+        inline-size: 100%;
+        block-size: 100%;
+        object-fit: cover;
+    }
+
+    .o_pdc_card_icon {
+        font-size: 2.25rem;
+        color: var(--pdc-muted);
+    }
+
+    .o_pdc_card_star {
+        position: absolute;
+        inset-block-start: 0.375rem;
+        inset-inline-end: 0.375rem;
+        color: var(--bs-warning, #f0ad4e);
+    }
+
+    .o_pdc_card_body {
+        flex: 1 1 auto;
+        min-inline-size: 0;
+        padding: 0.5rem 0.625rem;
+        font-size: 0.8125rem;
+    }
+
+    .o_pdc_card_name {
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .o_pdc_card_meta,
+    .o_pdc_card_footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.75rem;
+        color: var(--pdc-muted);
+    }
+
+    .o_pdc_card_meta {
+        margin-block-start: 0.125rem;
+    }
+
+    .o_pdc_card_footer {
+        margin-block-start: 0.25rem;
+    }
+
+    .o_pdc_badge {
+        padding: 0 0.3125rem;
+        border-radius: 3px;
+        background-color: var(--bs-tertiary-bg, #e9ecef);
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+    }
+
+    .o_pdc_card_source {
+        margin-block-start: 0.3125rem;
+        font-size: 0.75rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        .o_pdc_card_source_label {
+            color: var(--pdc-muted);
+        }
+
+        .o_pdc_card_source_name {
+            margin-inline-start: 0.25rem;
+            font-weight: 600;
+        }
+    }
+
+    .o_pdc_card_actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        border-block-start: 1px solid var(--pdc-border);
+
+        .btn {
+            padding: 0.25rem 0.5rem;
+            color: var(--pdc-muted);
+
+            &:hover {
+                color: var(--bs-primary, #714b67);
+            }
+
+            &.text-danger:hover {
+                color: var(--bs-danger, #d9534f) !important;
+            }
+        }
+    }
+
+    // ------------------------------------------------------------------
+    // Empty state / pager
+    // ------------------------------------------------------------------
+    .o_pdc_empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 3rem 1rem;
+        text-align: center;
+        color: var(--pdc-muted);
+    }
+
+    .o_pdc_empty_icon {
+        font-size: 3rem;
+        opacity: 0.4;
+    }
+
+    .o_pdc_empty_title {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .o_pdc_pager {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+// The client-action variant fills the action area rather than a notebook page.
+.o_pdc_action .o_pdc {
+    block-size: 100%;
+    overflow-y: auto;
+}

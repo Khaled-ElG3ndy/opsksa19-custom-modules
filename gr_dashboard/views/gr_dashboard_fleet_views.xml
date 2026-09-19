@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_dash_overview_kanban" model="ir.ui.view">
+        <field name="name">dash.overview.kanban</field>
+        <field name="model">gr.dashboard.card</field>
+        <field name="arch" type="xml">
+            <kanban create="false"
+                    edit="false"
+                    delete="false"
+                    can_open="0"
+                    quick_create="false"
+                    default_order="sequence"
+                    class="o_gr_overview_dashboard">
+                <field name="card_key"/>
+                <field name="title"/>
+                <field name="icon_class"/>
+                <field name="action_xml_id"/>
+                <field name="primary_label"/>
+                <field name="primary_value"/>
+                <field name="primary_meta"/>
+                <field name="primary_percent"/>
+                <field name="primary_delta"/>
+                <field name="primary_delta_class"/>
+                <field name="primary_currency"/>
+                <field name="primary_is_empty"/>
+                <field name="primary_mixed"/>
+                <field name="header_range"/>
+                <field name="header_compare"/>
+                <field name="period_key"/>
+                <field name="period_month_label"/>
+                <field name="period_quarter_label"/>
+                <field name="period_year_label"/>
+                <field name="period_selected_label"/>
+                <field name="hero_foot_1_label"/>
+                <field name="hero_foot_1_value"/>
+                <field name="hero_foot_2_label"/>
+                <field name="hero_foot_2_value"/>
+                <field name="hero_foot_3_label"/>
+                <field name="hero_foot_3_value"/>
+                <field name="hero_foot_4_label"/>
+                <field name="hero_foot_4_value"/>
+                <field name="mix_rented_percent"/>
+                <field name="mix_available_percent"/>
+                <field name="mix_maintenance_percent"/>
+                <field name="trend_label"/>
+                <field name="trend_tone"/>
+                <field name="empty_message"/>
+                <field name="can_create_asset"/>
+                <field name="metric_1_label"/>
+                <field name="metric_1_value"/>
+                <field name="metric_1_percent"/>
+                <field name="metric_1_delta"/>
+                <field name="metric_1_delta_class"/>
+                <field name="metric_1_tone"/>
+                <field name="metric_1_foot"/>
+                <field name="metric_2_label"/>
+                <field name="metric_2_value"/>
+                <field name="metric_2_percent"/>
+                <field name="metric_2_delta"/>
+                <field name="metric_2_delta_class"/>
+                <field name="metric_2_tone"/>
+                <field name="metric_2_foot"/>
+                <field name="metric_2_foot_tone"/>
+                <field name="metric_2_foot_2"/>
+                <field name="metric_2_foot_2_tone"/>
+                <field name="metric_3_label"/>
+                <field name="metric_3_value"/>
+                <field name="metric_3_percent"/>
+                <field name="metric_3_delta"/>
+                <field name="metric_3_delta_class"/>
+                <field name="metric_3_tone"/>
+                <field name="metric_3_foot"/>
+                <field name="metric_3_target"/>
+                <field name="metric_4_label"/>
+                <field name="metric_4_value"/>
+                <field name="metric_4_percent"/>
+                <field name="metric_4_delta"/>
+                <field name="metric_4_delta_class"/>
+                <field name="metric_4_tone"/>
+                <field name="metric_4_foot"/>
+                <field name="metric_4_unit"/>
+                <field name="item_1_name"/>
+                <field name="item_1_meta"/>
+                <field name="item_1_badge"/>
+                <field name="item_1_value"/>
+                <field name="item_2_name"/>
+                <field name="item_2_meta"/>
+                <field name="item_2_badge"/>
+                <field name="item_2_value"/>
+                <field name="item_3_name"/>
+                <field name="item_3_meta"/>
+                <field name="item_3_badge"/>
+                <field name="item_3_value"/>
+                <field name="item_count"/>
+                <field name="bar_1_label"/>
+                <field name="bar_1_value"/>
+                <field name="bar_1_percent"/>
+                <field name="bar_2_label"/>
+                <field name="bar_2_value"/>
+                <field name="bar_2_percent"/>
+                <field name="bar_3_label"/>
+                <field name="bar_3_value"/>
+                <field name="bar_3_percent"/>
+                <field name="bar_4_label"/>
+                <field name="bar_4_value"/>
+                <field name="bar_4_percent"/>
+                <field name="bar_5_label"/>
+                <field name="bar_5_value"/>
+                <field name="bar_5_percent"/>
+                <field name="bar_6_label"/>
+                <field name="bar_6_value"/>
+                <field name="bar_6_percent"/>
+                <field name="bar_7_label"/>
+                <field name="bar_7_value"/>
+                <field name="bar_7_percent"/>
+                <templates>
+                    <t t-name="card">
+                        <t t-set="key" t-value="record.card_key.raw_value"/>
+
+                        <!-- Compact executive summary. The period control is
+                             kept separate from the metric grid so the metrics
+                             stay scannable in both RTL and LTR layouts. -->
+                        <div t-if="key == 'toolbar'" class="o_gr_kpi_zone">
+
+                            <div class="o_gr_kpi_body">
+                                <section class="o_gr_kpi_hero">
+                                    <div class="o_gr_kpi_hero_main">
+                                        <div class="o_gr_kpi_hero_head">
+                                            <div class="o_gr_kpi_label_row">
+                                                <i class="fa fa-money o_gr_kpi_glyph" role="img" aria-label="Revenue" title="Revenue"/>
+                                                <span class="o_gr_kpi_label"><t t-out="record.primary_label.value"/></span>
+                                            </div>
+                                            <div class="o_gr_kpi_periods" role="group">
+                                                <button name="action_period_month" type="object"
+                                                        t-attf-class="o_gr_kpi_period#{record.period_key.raw_value === 'month' ? ' o_gr_kpi_period_on' : ''}"
+                                                        t-attf-title="#{record.period_month_label.value}">
+                                                    <t t-out="record.period_month_label.value"/>
+                                                    <span t-if="record.period_key.raw_value === 'month'" class="visually-hidden">
+                                                        <t t-out="record.period_selected_label.value"/>
+                                                    </span>
+                                                </button>
+                                                <button name="action_period_quarter" type="object"
+                                                        t-attf-class="o_gr_kpi_period#{record.period_key.raw_value === 'quarter' ? ' o_gr_kpi_period_on' : ''}"
+                                                        t-attf-title="#{record.period_quarter_label.value}">
+                                                    <t t-out="record.period_quarter_label.value"/>
+                                                    <span t-if="record.period_key.raw_value === 'quarter'" class="visually-hidden">
+                                                        <t t-out="record.period_selected_label.value"/>
+                                                    </span>
+                                                </button>
+                                                <button name="action_period_year" type="object"
+                                                        t-attf-class="o_gr_kpi_period#{record.period_key.raw_value === 'year' ? ' o_gr_kpi_period_on' : ''}"
+                                                        t-attf-title="#{record.period_year_label.value}">
+                                                    <t t-out="record.period_year_label.value"/>
+                                                    <span t-if="record.period_key.raw_value === 'year'" class="visually-hidden">
+                                                        <t t-out="record.period_selected_label.value"/>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="o_gr_kpi_value_row o_gr_kpi_hero_value_row">
+                                            <strong class="o_gr_value_ltr o_gr_kpi_money_pair">
+                                                <span class="o_gr_kpi_hero_value"><t t-out="record.primary_value.value"/></span>
+                                                <span class="o_gr_kpi_unit"><t t-out="record.primary_currency.value"/></span>
+                                            </strong>
+                                            <span t-attf-class="o_gr_chip #{record.primary_delta_class.raw_value}">
+                                                <t t-out="record.primary_delta.value"/>
+                                            </span>
+                                        </div>
+                                        <div class="o_gr_kpi_foot">
+                                            <t t-foreach="[1, 2, 3, 4]" t-as="fidx" t-key="fidx">
+                                                <t t-set="foot_label" t-value="'hero_foot_' + fidx + '_label'"/>
+                                                <t t-set="foot_value" t-value="'hero_foot_' + fidx + '_value'"/>
+                                            <span t-if="record[foot_label].raw_value" class="o_gr_kpi_foot_item">
+                                                <span class="o_gr_kpi_foot_label"><t t-out="record[foot_label].value"/></span>
+                                                <strong class="o_gr_kpi_foot_value"><t t-out="record[foot_value].value"/></strong>
+                                            </span>
+                                        </t>
+                                    </div>
+                                </div>
+                                </section>
+
+                                <div class="o_gr_kpi_grid">
+
+                                    <article class="o_gr_kpi_card o_gr_contract_kpi">
+                                        <div class="o_gr_kpi_label_row">
+                                            <i class="fa fa-handshake-o o_gr_kpi_glyph" role="img" aria-label="Active contracts" title="Active contracts"/>
+                                            <span class="o_gr_kpi_label"><t t-out="record.metric_2_label.value"/></span>
+                                        </div>
+                                        <div class="o_gr_kpi_value_row o_gr_contract_value">
+                                            <strong class="o_gr_value_ltr o_gr_kpi_value"><t t-out="record.metric_2_value.value"/></strong>
+                                        </div>
+                                        <div class="o_gr_contract_signals">
+                                            <span t-attf-class="o_gr_contract_signal o_gr_contract_signal_#{record.metric_2_foot_tone.raw_value}">
+                                                <i class="fa fa-clock-o" aria-hidden="true"/>
+                                                <t t-out="record.metric_2_foot.value"/>
+                                            </span>
+                                            <span t-if="record.metric_2_foot_2.raw_value"
+                                                  t-attf-class="o_gr_contract_signal o_gr_contract_signal_#{record.metric_2_foot_2_tone.raw_value}">
+                                                <i class="fa fa-exclamation-triangle" aria-hidden="true"/>
+                                                <t t-out="record.metric_2_foot_2.value"/>
+                                            </span>
+                                        </div>
+                                    </article>
+
+                                    <article class="o_gr_kpi_card">
+                                    <div class="o_gr_kpi_label_row">
+                                        <i class="fa fa-exclamation-circle o_gr_kpi_glyph" role="img" aria-label="Overdue receivables" title="Overdue receivables"/>
+                                        <span class="o_gr_kpi_label"><t t-out="record.metric_3_label.value"/></span>
+                                    </div>
+                                    <div class="o_gr_kpi_value_row">
+                                        <strong class="o_gr_value_ltr o_gr_kpi_value"><t t-out="record.metric_3_value.value"/></strong>
+                                    </div>
+                                    <p t-attf-class="o_gr_kpi_note o_gr_kpi_note_#{record.metric_3_tone.raw_value}">
+                                        <t t-out="record.metric_3_foot.value"/>
+                                    </p>
+                                    </article>
+
+                                    <article class="o_gr_kpi_card">
+                                    <div class="o_gr_kpi_label_row">
+                                        <i class="fa fa-bolt o_gr_kpi_glyph" role="img" aria-label="Generators" title="Generators"/>
+                                        <span class="o_gr_kpi_label"><t t-out="record.metric_4_label.value"/></span>
+                                    </div>
+                                    <div class="o_gr_kpi_value_row">
+                                        <strong class="o_gr_value_ltr o_gr_kpi_value"><t t-out="record.metric_4_value.value"/></strong>
+                                        <span class="o_gr_kpi_unit"><t t-out="record.metric_4_unit.value"/></span>
+                                    </div>
+                                    <div class="o_gr_mix">
+                                        <span class="o_gr_mix_seg o_gr_mix_rented"
+                                              t-attf-style="width: #{record.mix_rented_percent.raw_value}%"/>
+                                        <span class="o_gr_mix_seg o_gr_mix_available"
+                                              t-attf-style="width: #{record.mix_available_percent.raw_value}%"/>
+                                        <span class="o_gr_mix_seg o_gr_mix_maintenance"
+                                              t-attf-style="width: #{record.mix_maintenance_percent.raw_value}%"/>
+                                    </div>
+                                    <p class="o_gr_kpi_note"><t t-out="record.metric_4_foot.value"/></p>
+                                    </article>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <section t-elif="key == 'quick_access'" class="o_gr_quick_access">
+                            <h3><t t-out="record.primary_label.value"/></h3>
+                            <div class="o_gr_quick_buttons">
+                                <button name="action_open_report" type="object" class="o_gr_quick_button o_gr_quick_purple">
+                                    <i class="fa fa-bar-chart" role="img" title="Statistics"/>
+                                    <span><t t-out="record.metric_1_label.value"/></span>
+                                </button>
+                                <button name="action_new_invoice" type="object" class="o_gr_quick_button o_gr_quick_green">
+                                    <i class="fa fa-newspaper-o" role="img" title="Document"/>
+                                    <span><t t-out="record.metric_2_label.value"/></span>
+                                </button>
+                                <button name="action_new_customer" type="object" class="o_gr_quick_button o_gr_quick_orange">
+                                    <i class="fa fa-user-plus" role="img" title="Customer"/>
+                                    <span><t t-out="record.metric_3_label.value"/></span>
+                                </button>
+                                <button name="action_new_contract" type="object" class="o_gr_quick_button o_gr_quick_blue">
+                                    <i class="fa fa-file-text" role="img" title="Contract"/>
+                                    <span><t t-out="record.metric_4_label.value"/></span>
+                                </button>
+                                <button name="action_new_maintenance" type="object" class="o_gr_quick_button o_gr_quick_pink">
+                                    <i class="fa fa-wrench" role="img" title="Maintenance"/>
+                                    <span><t t-out="record.item_1_name.value"/></span>
+                                </button>
+                                <button t-if="record.can_create_asset.raw_value"
+                                        name="action_new_asset"
+                                        type="object"
+                                        class="o_gr_quick_button o_gr_quick_violet">
+                                    <i class="fa fa-truck" role="img" title="Deliveries"/>
+                                    <span><t t-out="record.item_2_name.value"/></span>
+                                </button>
+                            </div>
+                        </section>
+
+                        <section t-else="" t-attf-class="o_gr_overview_card o_gr_card_#{key}">
+                            <header class="o_gr_card_header">
+                                <button name="action_open_detail" type="object" class="o_gr_arrow_button" title="Open">
+                                    <i class="fa fa-arrow-left" role="img" aria-label="Open" title="Back"/>
+                                </button>
+                                <div class="o_gr_card_title">
+                                    <strong><t t-out="record.title.value"/></strong>
+                                    <span class="o_gr_card_icon">
+                                        <i t-att-class="record.icon_class.raw_value" role="img" title="Icon"/>
+                                    </span>
+                                </div>
+                            </header>
+
+                            <div t-if="key == 'fleet'" class="o_gr_fleet_card_body">
+                                <div class="o_gr_donut"
+                                     t-attf-style="--gr-utilized: #{record.metric_1_percent.raw_value}; --gr-available: #{record.metric_2_percent.raw_value}; --gr-maintenance: #{record.metric_3_percent.raw_value}; --gr-out: #{record.metric_4_percent.raw_value};">
+                                    <div>
+                                        <strong class="o_gr_value_ltr"><t t-out="record.primary_value.value"/></strong>
+                                        <span><t t-out="record.primary_label.value"/></span>
+                                    </div>
+                                </div>
+                                <div class="o_gr_stat_list">
+                                    <t t-foreach="[1, 2, 3, 4]" t-as="idx" t-key="idx">
+                                        <t t-set="label_field" t-value="'metric_' + idx + '_label'"/>
+                                        <t t-set="value_field" t-value="'metric_' + idx + '_value'"/>
+                                        <t t-set="tone_field" t-value="'metric_' + idx + '_tone'"/>
+                                        <div class="o_gr_stat_line">
+                                            <span t-attf-class="o_gr_dot o_gr_dot_#{record[tone_field].raw_value}"/>
+                                            <span><t t-out="record[label_field].value"/></span>
+                                            <strong class="o_gr_value_ltr"><t t-out="record[value_field].value"/></strong>
+                                        </div>
+                                    </t>
+                                </div>
+                                <button name="action_open_detail" type="object" class="o_gr_card_link">
+                                    <t t-out="record.primary_meta.value"/>
+                                </button>
+                            </div>
+
+                            <div t-elif="key == 'hours'" class="o_gr_hours_card_body">
+                                <span class="o_gr_primary_label"><t t-out="record.primary_label.value"/></span>
+                                <strong class="o_gr_primary_value o_gr_hour_value">
+                                    <span class="o_gr_value_ltr"><t t-out="record.primary_value.value"/></span>
+                                    <span><t t-out="record.bar_1_label.value"/></span>
+                                </strong>
+                                <span class="o_gr_primary_meta"><t t-out="record.primary_meta.value"/></span>
+                                <div class="o_gr_mini_metrics">
+                                    <t t-foreach="[1, 2, 3]" t-as="idx" t-key="idx">
+                                        <t t-set="label_field" t-value="'metric_' + idx + '_label'"/>
+                                        <t t-set="value_field" t-value="'metric_' + idx + '_value'"/>
+                                        <t t-set="tone_field" t-value="'metric_' + idx + '_tone'"/>
+                                        <div>
+                                            <span><t t-out="record[label_field].value"/></span>
+                                            <strong t-attf-class="o_gr_hour_metric o_gr_text_#{record[tone_field].raw_value}">
+                                                <span class="o_gr_value_ltr"><t t-out="record[value_field].value"/></span>
+                                                <span><t t-out="record.bar_1_label.value"/></span>
+                                            </strong>
+                                        </div>
+                                    </t>
+                                </div>
+                                <button name="action_open_detail" type="object" class="o_gr_card_link">
+                                    <t t-out="record.trend_label.value"/>
+                                </button>
+                            </div>
+
+                            <div t-elif="key == 'maintenance'" class="o_gr_maintenance_card_body">
+                                <div class="o_gr_metric_boxes">
+                                    <t t-foreach="[1, 2, 3, 4]" t-as="idx" t-key="idx">
+                                        <t t-set="label_field" t-value="'metric_' + idx + '_label'"/>
+                                        <t t-set="value_field" t-value="'metric_' + idx + '_value'"/>
+                                        <t t-set="tone_field" t-value="'metric_' + idx + '_tone'"/>
+                                        <div class="o_gr_metric_box">
+                                            <strong t-attf-class="o_gr_value_ltr o_gr_text_#{record[tone_field].raw_value}">
+                                                <t t-out="record[value_field].value"/>
+                                            </strong>
+                                            <span><t t-out="record[label_field].value"/></span>
+                                        </div>
+                                    </t>
+                                </div>
+                                <div class="o_gr_progress_wrap">
+                                    <div>
+                                        <span><t t-out="record.primary_label.value"/></span>
+                                        <strong class="o_gr_value_ltr"><t t-out="record.primary_value.value"/></strong>
+                                    </div>
+                                    <div class="o_gr_progress">
+                                        <span t-attf-style="width: #{record.primary_percent.raw_value}%"/>
+                                    </div>
+                                </div>
+                                <button name="action_open_detail" type="object" class="o_gr_card_link">
+                                    <t t-out="record.primary_meta.value"/>
+                                </button>
+                            </div>
+
+                            <div t-elif="key == 'needs_maintenance'" class="o_gr_asset_rows_card_body">
+                                <div t-if="record.empty_message.raw_value" class="o_gr_empty_state">
+                                    <t t-out="record.empty_message.value"/>
+                                </div>
+                                <t t-else="" t-foreach="[1, 2, 3]" t-as="idx" t-key="idx">
+                                    <t t-set="name_field" t-value="'item_' + idx + '_name'"/>
+                                    <t t-set="meta_field" t-value="'item_' + idx + '_meta'"/>
+                                    <t t-set="badge_field" t-value="'item_' + idx + '_badge'"/>
+                                    <t t-set="badge_tone_field" t-value="'item_' + idx + '_badge_tone'"/>
+                                    <t t-set="value_field" t-value="'item_' + idx + '_value'"/>
+                                    <div t-if="record[name_field].raw_value" class="o_gr_asset_row">
+                                        <div>
+                                            <strong><t t-out="record[name_field].value"/></strong>
+                                            <span><t t-out="record[meta_field].value"/></span>
+                                        </div>
+                                        <em class="o_gr_value_ltr"><t t-out="record[value_field].value"/></em>
+                                        <span t-attf-class="o_gr_badge #{record[badge_tone_field].raw_value == 'overdue' ? 'o_gr_badge_red' : 'o_gr_badge_amber'}">
+                                            <t t-out="record[badge_field].value"/>
+                                        </span>
+                                    </div>
+                                </t>
+                                <button name="action_open_detail" type="object" class="o_gr_card_link">
+                                    <t t-out="record.primary_meta.value"/>
+                                </button>
+                            </div>
+
+                            <div t-elif="key == 'profitability'" class="o_gr_profit_card_body">
+                                <div t-if="record.empty_message.raw_value" class="o_gr_empty_state">
+                                    <t t-out="record.empty_message.value"/>
+                                </div>
+                                <div t-else="">
+                                    <div class="o_gr_profit_summary">
+                                        <span><t t-out="record.primary_label.value"/></span>
+                                        <strong><t t-out="record.primary_value.value"/></strong>
+                                        <em><t t-out="record.primary_meta.value"/></em>
+                                    </div>
+                                    <div class="o_gr_profit_bars">
+                                        <t t-foreach="[1, 2, 3, 4]" t-as="idx" t-key="idx">
+                                            <t t-set="label_field" t-value="'bar_' + idx + '_label'"/>
+                                            <t t-set="value_field" t-value="'bar_' + idx + '_value'"/>
+                                            <t t-set="percent_field" t-value="'bar_' + idx + '_percent'"/>
+                                            <div t-if="record[label_field].raw_value" class="o_gr_profit_bar">
+                                                <span><t t-out="record[label_field].value"/></span>
+                                                <div><i t-attf-style="width: #{record[percent_field].raw_value}%"/></div>
+                                                <strong class="o_gr_value_ltr"><t t-out="record[value_field].value"/></strong>
+                                            </div>
+                                        </t>
+                                    </div>
+                                    <button name="action_open_detail" type="object" class="o_gr_card_link">
+                                        <t t-out="record.trend_label.value"/>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div t-elif="key == 'sublet_margin'" class="o_gr_sublet_card_body">
+                                <div t-if="record.empty_message.raw_value" class="o_gr_empty_state">
+                                    <t t-out="record.empty_message.value"/>
+                                </div>
+                                <div t-else="" class="o_gr_sublet_summary">
+                                    <span><t t-out="record.primary_label.value"/></span>
+                                    <strong class="o_gr_value_ltr"><t t-out="record.primary_value.value"/></strong>
+                                    <em><t t-out="record.primary_meta.value"/></em>
+                                </div>
+                                <div t-if="!record.empty_message.raw_value" class="o_gr_metric_boxes">
+                                    <t t-foreach="[1, 2, 3, 4]" t-as="idx" t-key="idx">
+                                        <t t-set="label_field" t-value="'metric_' + idx + '_label'"/>
+                                        <t t-set="value_field" t-value="'metric_' + idx + '_value'"/>
+                                        <t t-set="tone_field" t-value="'metric_' + idx + '_tone'"/>
+                                        <div class="o_gr_metric_box">
+                                            <strong t-attf-class="o_gr_value_ltr o_gr_text_#{record[tone_field].raw_value}">
+                                                <t t-out="record[value_field].value"/>
+                                            </strong>
+                                            <span><t t-out="record[label_field].value"/></span>
+                                        </div>
+                                    </t>
+                                </div>
+                                <button name="action_open_detail" type="object" class="o_gr_card_link">
+                                    <t t-out="record.trend_label.value"/>
+                                </button>
+                            </div>
+                        </section>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Fleet: executive kanban, pivot by status, graph, and a profitability/utilization list -->
+    <record id="view_dash_fleet_kanban" model="ir.ui.view">
+        <field name="name">dash.fleet.kanban</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="status"
+                    class="o_gr_dashboard_fleet o_kanban_dashboard"
+                    quick_create="false"
+                    sample="1">
+                <progressbar field="status"
+                             colors='{"available": "success", "on_rent": "primary", "installed": "info", "reserved": "warning", "maintenance_due": "warning", "under_maintenance": "warning", "breakdown": "danger", "returned_pending_inspection": "danger", "unavailable": "muted", "retired": "muted"}'/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="status"/>
+                <field name="brand"/>
+                <field name="model_name"/>
+                <field name="kva_rating"/>
+                <field name="current_hour_meter"/>
+                <field name="next_pm_hour"/>
+                <field name="maintenance_overdue"/>
+                <field name="current_customer_id"/>
+                <field name="live_utilization_hours"/>
+                <field name="live_revenue"/>
+                <field name="live_profit_estimate"/>
+                <field name="open_job_count"/>
+                <field name="currency_id"/>
+                <templates>
+                    <t t-name="card">
+                        <div t-attf-class="oe_kanban_global_click o_gr_asset_card #{record.maintenance_overdue.raw_value ? 'o_gr_asset_card_alert' : ''}">
+                            <div class="o_gr_asset_card_header">
+                                <div class="o_gr_asset_title_block">
+                                    <span class="o_gr_asset_code"><field name="code"/></span>
+                                    <strong class="o_gr_asset_title"><field name="name"/></strong>
+                                    <span class="o_gr_asset_subtitle">
+                                        <t t-if="record.brand.raw_value"><field name="brand"/></t>
+                                        <t t-if="record.model_name.raw_value"> / <field name="model_name"/></t>
+                                    </span>
+                                </div>
+                                <span t-attf-class="o_gr_status_pill o_gr_status_#{record.status.raw_value}">
+                                    <field name="status"/>
+                                </span>
+                            </div>
+
+                            <div class="o_gr_asset_spec_row">
+                                <div>
+                                    <span class="o_gr_metric_label">Capacity</span>
+                                    <strong><field name="kva_rating"/> kVA</strong>
+                                </div>
+                                <div>
+                                    <span class="o_gr_metric_label">Meter</span>
+                                    <strong><field name="current_hour_meter"/> h</strong>
+                                </div>
+                                <div>
+                                    <span class="o_gr_metric_label">Next PM</span>
+                                    <strong><field name="next_pm_hour"/> h</strong>
+                                </div>
+                            </div>
+
+                            <div class="o_gr_asset_finance_row">
+                                <div>
+                                    <span class="o_gr_metric_label">Utilization</span>
+                                    <strong><field name="live_utilization_hours"/> h</strong>
+                                </div>
+                                <div>
+                                    <span class="o_gr_metric_label">Revenue</span>
+                                    <strong><field name="live_revenue" widget="monetary"/></strong>
+                                </div>
+                                <div>
+                                    <span class="o_gr_metric_label">Profit est.</span>
+                                    <strong><field name="live_profit_estimate" widget="monetary"/></strong>
+                                </div>
+                            </div>
+
+                            <div class="o_gr_asset_footer">
+                                <span t-if="record.current_customer_id.raw_value" class="o_gr_customer_chip">
+                                    <i class="fa fa-building-o" role="img" aria-label="Customer" title="Company"/>
+                                    <field name="current_customer_id"/>
+                                </span>
+                                <span t-else="" class="o_gr_customer_chip o_gr_customer_chip_empty">
+                                    <i class="fa fa-map-marker" role="img" aria-label="Depot" title="Location"/>
+                                    Yard / available pool
+                                </span>
+                                <span t-if="record.maintenance_overdue.raw_value" class="o_gr_alert_chip">
+                                    <i class="fa fa-exclamation-triangle" role="img" aria-label="Overdue" title="Alert"/>
+                                    PM overdue
+                                </span>
+                                <span t-elif="record.open_job_count.raw_value" class="o_gr_job_chip">
+                                    <i class="fa fa-wrench" role="img" aria-label="Open jobs" title="Maintenance"/>
+                                    <field name="open_job_count"/> open jobs
+                                </span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_dash_fleet_pivot" model="ir.ui.view">
+        <field name="name">dash.fleet.pivot</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="arch" type="xml">
+            <pivot string="Fleet Control Tower">
+                <field name="status" type="row"/>
+                <field name="kva_rating" type="measure"/>
+                <field name="live_utilization_hours" type="measure"/>
+                <field name="live_revenue" type="measure"/>
+                <field name="live_profit_estimate" type="measure"/>
+                <field name="open_job_count" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_dash_fleet_graph" model="ir.ui.view">
+        <field name="name">dash.fleet.graph</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="arch" type="xml">
+            <graph string="Fleet Pipeline" type="bar">
+                <field name="status"/>
+                <field name="kva_rating" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_dash_fleet_list" model="ir.ui.view">
+        <field name="name">dash.fleet.list</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="arch" type="xml">
+            <list string="Fleet Operations"
+                  decoration-danger="maintenance_overdue or status == 'breakdown'"
+                  decoration-warning="status in ('maintenance_due','under_maintenance','returned_pending_inspection')"
+                  decoration-success="status == 'available'"
+                  decoration-info="status in ('reserved','installed','on_rent')"
+                  decoration-muted="status in ('unavailable','retired')">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="brand" optional="hide"/>
+                <field name="model_name" optional="hide"/>
+                <field name="kva_rating"/>
+                <field name="status" widget="badge"
+                       decoration-success="status == 'available'"
+                       decoration-info="status in ('reserved','installed','on_rent')"
+                       decoration-warning="status in ('maintenance_due','under_maintenance','returned_pending_inspection')"
+                       decoration-danger="status == 'breakdown'"/>
+                <field name="current_customer_id" optional="show"/>
+                <field name="current_hour_meter" optional="show"/>
+                <field name="next_pm_hour" optional="show"/>
+                <field name="maintenance_overdue"/>
+                <field name="open_job_count"/>
+                <field name="live_utilization_hours" sum="Utilization Hours"/>
+                <field name="live_revenue" sum="Live Revenue"/>
+                <field name="live_profit_estimate" sum="Profit Estimate"/>
+                <field name="currency_id" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_dash_fleet_search" model="ir.ui.view">
+        <field name="name">dash.fleet.search</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="brand"/>
+                <field name="current_customer_id"/>
+                <filter name="f_on_rent" string="On Rent" domain="[('status','=','on_rent')]"/>
+                <filter name="f_available" string="Available" domain="[('status','=','available')]"/>
+                <filter name="f_overdue" string="Maintenance Overdue" domain="[('maintenance_overdue','=',True)]"/>
+                <filter name="f_breakdown" string="Breakdown" domain="[('status','=','breakdown')]"/>
+                <filter name="f_customer" string="With Customer" domain="[('current_customer_id','!=',False)]"/>
+                <group>
+                    <filter name="group_status" string="Status" context="{'group_by':'status'}"/>
+                    <filter name="group_customer" string="Customer" context="{'group_by':'current_customer_id'}"/>
+                    <filter name="group_brand" string="Brand" context="{'group_by':'brand'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_dash_fleet" model="ir.actions.act_window">
+        <field name="name">Fleet Utilization &amp; Status</field>
+        <field name="res_model">gr.dashboard.card</field>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_dash_overview_kanban"/>
+        <field name="search_view_id" eval="False"/>
+        <field name="context">{'create': False, 'edit': False, 'delete': False}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Generator Rental dashboard</p>
+            <p>Live fleet, billing, hour-log, maintenance, and profitability summaries appear here.</p>
+        </field>
+    </record>
+
+    <record id="action_dash_fleet_detail" model="ir.actions.act_window">
+        <field name="name">Fleet Utilization &amp; Status</field>
+        <field name="res_model">gr.generator.asset</field>
+        <field name="view_mode">kanban,list,pivot,graph,form</field>
+        <field name="search_view_id" ref="view_dash_fleet_search"/>
+        <field name="context">{'search_default_group_status': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Your fleet dashboard is ready</p>
+            <p>Add generator assets and approved hour logs to see utilization, revenue, profitability, and maintenance signals here.</p>
+        </field>
+    </record>
+
+    <record id="action_dash_fleet_view_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_dash_fleet_kanban"/>
+        <field name="act_window_id" ref="action_dash_fleet_detail"/>
+    </record>
+
+    <record id="action_dash_fleet_view_list" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_dash_fleet_list"/>
+        <field name="act_window_id" ref="action_dash_fleet_detail"/>
+    </record>
+
+    <record id="action_dash_fleet_view_pivot" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">pivot</field>
+        <field name="view_id" ref="view_dash_fleet_pivot"/>
+        <field name="act_window_id" ref="action_dash_fleet_detail"/>
+    </record>
+
+    <record id="action_dash_fleet_view_graph" model="ir.actions.act_window.view">
+        <field name="sequence" eval="4"/>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="view_dash_fleet_graph"/>
+        <field name="act_window_id" ref="action_dash_fleet_detail"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_recurring_rental_form" model="ir.ui.view">
+        <field name="name">gr.recurring.rental.form</field>
+        <field name="model">gr.recurring.rental</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_prepare_next_rental" type="object"
+                            string="Prepare Next Rental" class="btn-primary"
+                            invisible="not active"
+                            groups="gr_security_base.group_generator_sales_officer"/>
+                    <button name="action_skip_occurrence" type="object"
+                            string="Skip This Occurrence"
+                            confirm="Skip this occurrence? The next rental date will move forward and no order will be prepared."
+                            invisible="not active"
+                            groups="gr_security_base.group_generator_sales_officer"/>
+                    <field name="occurrence_state" widget="statusbar"
+                           statusbar_visible="scheduled,due_soon,due_today,overdue"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Paused" bg_color="text-bg-secondary"
+                            invisible="active"/>
+                    <widget name="web_ribbon" title="Overdue" bg_color="text-bg-danger"
+                            invisible="occurrence_state != 'overdue' or not active"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_orders" type="object"
+                                class="oe_stat_button" icon="fa-file-text-o">
+                            <field name="order_count" widget="statinfo"
+                                   string="Rental Orders"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+
+                    <div class="alert alert-danger mb-2" role="alert"
+                         invisible="occurrence_state != 'overdue' or not active">
+                        This rental date has passed without being prepared or
+                        skipped. Prepare the order or skip the occurrence — the
+                        date is never moved automatically.
+                    </div>
+                    <div class="alert alert-warning mb-2" role="status"
+                         invisible="occurrence_state not in ('due_soon','due_today') or not active">
+                        It is time to prepare the next rental for this customer.
+                    </div>
+                    <div class="alert alert-warning mb-2" role="alert"
+                         invisible="not contract_id or contract_state in ('approved','active')">
+                        The rental contract linked to this recurring rental is
+                        not active. Review the contract before preparing the
+                        order.
+                    </div>
+
+                    <group>
+                        <group string="Customer">
+                            <field name="partner_id"/>
+                            <field name="site_id"/>
+                            <field name="contract_id"/>
+                            <field name="contract_state" readonly="1"
+                                   invisible="not contract_id"/>
+                            <field name="user_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group string="Schedule">
+                            <label for="interval" string="Repeat Every"/>
+                            <div class="o_row">
+                                <field name="interval" class="oe_inline"/>
+                                <field name="frequency" class="oe_inline"/>
+                            </div>
+                            <field name="day_of_month"
+                                   invisible="frequency != 'monthly'"
+                                   placeholder="e.g. 20"/>
+                            <field name="next_rental_date"/>
+                            <field name="rental_duration_days"/>
+                            <field name="planned_return_preview" readonly="1"/>
+                            <field name="reminder_days_before"/>
+                            <field name="next_reminder_date" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Recurring Items" name="recurring_items">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="equipment_type_id"/>
+                                    <field name="item_type_id" optional="show"/>
+                                    <field name="required_kva" optional="show"/>
+                                    <field name="specification" optional="hide"/>
+                                    <field name="quantity"/>
+                                    <field name="preferred_asset_id"
+                                           context="{'gr_show_ownership': True}"
+                                           optional="show"/>
+                                    <field name="preferred_owner_type"
+                                           string="Ownership" widget="badge"
+                                           optional="show" readonly="1"
+                                           decoration-success="preferred_owner_type == 'owned'"
+                                           decoration-warning="preferred_owner_type == 'rented_in'"/>
+                                    <field name="is_free" optional="show"/>
+                                    <field name="daily_rate_override" optional="show"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                    <field name="notes" optional="hide"/>
+                                </list>
+                            </field>
+                            <div class="text-muted mt-2">
+                                <p>A line is a requirement, not a promise of one
+                                   specific machine. A Preferred Unit is used
+                                   only when it is available on the rental dates
+                                   and, for third-party equipment, covered by a
+                                   valid supplier agreement — otherwise the
+                                   prepared order leaves the serial blank for
+                                   you to choose.</p>
+                                <p>Leave Agreed Daily Rate empty to price from
+                                   the current catalogue and contract each
+                                   month.</p>
+                            </div>
+                        </page>
+                        <page string="Occurrence History" name="occurrences">
+                            <field name="occurrence_ids" readonly="1">
+                                <list decoration-muted="state == 'skipped'">
+                                    <field name="occurrence_date"/>
+                                    <field name="state" widget="badge"
+                                           decoration-success="state == 'prepared'"
+                                           decoration-muted="state == 'skipped'"/>
+                                    <field name="order_id"/>
+                                    <field name="order_state"/>
+                                    <field name="note" optional="hide"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="notes" placeholder="Internal notes..."/>
+                            <group string="Last Preparation">
+                                <field name="last_order_id" readonly="1"/>
+                                <field name="last_prepared_date" readonly="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gr_recurring_rental_list" model="ir.ui.view">
+        <field name="name">gr.recurring.rental.list</field>
+        <field name="model">gr.recurring.rental</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="occurrence_state == 'overdue'"
+                  decoration-warning="occurrence_state == 'due_today'"
+                  decoration-info="occurrence_state == 'due_soon'"
+                  decoration-muted="not active">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="site_id" optional="show"/>
+                <field name="frequency"/>
+                <field name="interval" string="Every" optional="hide"/>
+                <field name="next_rental_date"/>
+                <field name="next_reminder_date" optional="show"/>
+                <field name="reminder_days_before" optional="hide"/>
+                <field name="user_id"/>
+                <field name="occurrence_state" widget="badge"
+                       decoration-danger="occurrence_state == 'overdue'"
+                       decoration-warning="occurrence_state == 'due_today'"
+                       decoration-info="occurrence_state == 'due_soon'"
+                       decoration-success="occurrence_state == 'scheduled'"/>
+                <field name="last_order_id" optional="show"/>
+                <field name="order_count" optional="hide"/>
+                <field name="active" column_invisible="1"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_recurring_rental_search" model="ir.ui.view">
+        <field name="name">gr.recurring.rental.search</field>
+        <field name="model">gr.recurring.rental</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="site_id"/>
+                <field name="user_id"/>
+                <separator/>
+                <filter name="f_overdue" string="Overdue"
+                        domain="[('occurrence_state','=','overdue')]"/>
+                <filter name="f_due_today" string="Due Today"
+                        domain="[('occurrence_state','=','due_today')]"/>
+                <filter name="f_due_soon" string="Due Soon"
+                        domain="[('occurrence_state','in',('due_soon','due_today'))]"/>
+                <filter name="f_needs_action" string="Needs Attention"
+                        domain="[('occurrence_state','in',('due_soon','due_today','overdue'))]"/>
+                <separator/>
+                <filter name="f_mine" string="My Recurring Rentals"
+                        domain="[('user_id','=',uid)]"/>
+                <separator/>
+                <filter name="f_paused" string="Paused"
+                        domain="[('active','=',False)]"/>
+                <group>
+                    <filter name="g_customer" string="Customer"
+                            context="{'group_by': 'partner_id'}"/>
+                    <filter name="g_state" string="Status"
+                            context="{'group_by': 'occurrence_state'}"/>
+                    <filter name="g_user" string="Responsible"
+                            context="{'group_by': 'user_id'}"/>
+                    <filter name="g_frequency" string="Frequency"
+                            context="{'group_by': 'frequency'}"/>
+                    <filter name="g_next" string="Next Rental Date"
+                            context="{'group_by': 'next_rental_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_gr_recurring_rental" model="ir.actions.act_window">
+        <field name="name">Recurring Rentals</field>
+        <field name="res_model">gr.recurring.rental</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_gr_recurring_rental_search"/>
+        <field name="context">{'search_default_f_needs_action': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Set up a customer who rents every month</p>
+            <p>Record what they normally take and when. The system reminds the
+               responsible user before each date, and prepares the next rental
+               order as a draft for review — it never confirms a rental on its
+               own.</p>
+        </field>
+    </record>
+
+</odoo>

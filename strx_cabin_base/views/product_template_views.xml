@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_template_form_view_strx_cabin" model="ir.ui.view">
+        <field name="name">product.template.form.strx.cabin</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Cabin Specification" name="strx_cabin_spec"
+                      invisible="not strx_is_cabin">
+                    <group>
+                        <group string="Specification">
+                            <field name="strx_asset_kind"/>
+                            <field name="strx_cabin_size"/>
+                            <field name="strx_cabin_grade"/>
+                            <field name="strx_cabin_spec"/>
+                        </group>
+                        <group string="Nominal Dimensions">
+                            <field name="strx_length_m"/>
+                            <field name="strx_width_m"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Expose the cabin flag in the General Information tab so it can be ticked. -->
+    <record id="product_template_form_view_strx_cabin_flag" model="ir.ui.view">
+        <field name="name">product.template.form.strx.cabin.flag</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="strx_is_cabin"/>
+                <field name="strx_is_free_additional_service"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

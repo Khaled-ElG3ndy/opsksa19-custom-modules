@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_gr_billing_runs"
+              name="Billing"
+              parent="gr_security_base.menu_generator_root"
+              action="action_gr_billing_run"
+              groups="gr_security_base.group_generator_finance_officer"
+              sequence="60"
+              active="False"/>
+</odoo>

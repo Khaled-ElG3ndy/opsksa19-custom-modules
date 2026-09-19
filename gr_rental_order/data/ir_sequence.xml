@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_gr_rental_order" model="ir.sequence">
+            <field name="name">Generator Rental Order</field>
+            <field name="code">gr.rental.order</field>
+            <field name="prefix">GR/RO/</field>
+            <field name="padding">5</field>
+            <field name="number_increment">1</field>
+            <field name="implementation">standard</field>
+        </record>
+    </data>
+</odoo>

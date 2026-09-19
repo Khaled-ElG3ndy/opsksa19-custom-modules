@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+
+    <record id="strx_cabin_allocation_company_rule" model="ir.rule">
+        <field name="name">Cabin allocation: multi-company</field>
+        <field name="model_id" ref="model_strx_cabin_allocation"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_generator_asset_user,gr.generator.asset.user,model_gr_generator_asset,gr_security_base.group_generator_user,1,0,0,0
+access_gr_generator_asset_sales,gr.generator.asset.sales,model_gr_generator_asset,gr_security_base.group_generator_sales_officer,1,0,0,0
+access_gr_generator_asset_ops,gr.generator.asset.ops,model_gr_generator_asset,gr_security_base.group_generator_operations_officer,1,1,0,0
+access_gr_generator_asset_tech,gr.generator.asset.tech,model_gr_generator_asset,gr_security_base.group_generator_maint_technician,1,0,0,0
+access_gr_generator_asset_maint_mgr,gr.generator.asset.maint.mgr,model_gr_generator_asset,gr_security_base.group_generator_maint_manager,1,1,1,0
+access_gr_generator_asset_finance,gr.generator.asset.finance,model_gr_generator_asset,gr_security_base.group_generator_finance_officer,1,0,0,0
+access_gr_generator_asset_gm,gr.generator.asset.gm,model_gr_generator_asset,gr_security_base.group_generator_general_manager,1,1,1,0
+access_gr_generator_asset_admin,gr.generator.asset.admin,model_gr_generator_asset,gr_security_base.group_generator_administrator,1,1,1,1
+access_gr_meter_correction_wizard_maint_mgr,gr.meter.correction.wizard.maint.mgr,model_gr_generator_asset_meter_correction_wizard,gr_security_base.group_generator_maint_manager,1,1,1,1
+access_gr_meter_correction_wizard_admin,gr.meter.correction.wizard.admin,model_gr_generator_asset_meter_correction_wizard,gr_security_base.group_generator_administrator,1,1,1,1

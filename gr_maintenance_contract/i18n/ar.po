@@ -1,0 +1,658 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_maintenance_contract
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Activate"
+msgstr "تفعيل"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields.selection,name:gr_maintenance_contract.selection__gr_maintenance_contract__state__active
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_search
+msgid "Active"
+msgstr "نشط"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__battery_once
+msgid "Battery Once per Contract"
+msgstr "البطارية مرة واحدة لكل عقد"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__battery_once
+msgid "Battery replacement once over the contract term."
+msgstr "استبدال البطارية مرة واحدة خلال مدة العقد."
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields.selection,name:gr_maintenance_contract.selection__gr_maintenance_contract__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_job__tm_charge
+msgid "Charge for an out-of-scope emergency / T&M visit."
+msgstr "رسوم زيارة طارئة / وقت ومواد خارج نطاق العقد."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__emergency_response_hours
+msgid "Committed emergency response window (Perkins = 24h)."
+msgstr "نافذة الاستجابة الطارئة الملتزم بها (Perkins = 24 ساعة)."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__company_id
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_job__company_currency_id
+msgid "Company Currency"
+msgstr "معرف عملة الشركة"
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Consumable Cadence"
+msgstr "وتيرة المستهلكات"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__oil_filter_interval_months
+msgid "Consumable cadence for oil and filters (Perkins contract = 6)."
+msgstr "وتيرة مستهلكات الزيت والفلاتر (عقد Perkins = 6)."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__contract_id
+msgid "Contract"
+msgstr "العقد"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__annual_price
+msgid "Contract Price"
+msgstr "قيمة العقد"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__name
+msgid "Contract Ref"
+msgstr "مرجع العقد"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_job__contract_coverage
+msgid "Coverage"
+msgstr "التغطية"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__covered_visit_count
+msgid "Covered"
+msgstr "مغطى"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields.selection,name:gr_maintenance_contract.selection__gr_maintenance_job__contract_coverage__covered
+msgid "Covered (in contract)"
+msgstr "مغطى (ضمن العقد)"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_job__contract_coverage
+msgid ""
+"Covered periodic visit vs out-of-scope emergency / time-and-materials work."
+msgstr "زيارة دورية مغطاة مقابل عمل طارئ / وقت ومواد خارج النطاق."
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Create Invoice"
+msgstr "إنشاء فاتورة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__create_uid
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__create_date
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__currency_id
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__currency_id
+msgid "Currency"
+msgstr "معرف العملة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__partner_id
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Customer & Unit"
+msgstr "العميل والوحدة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__display_name
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__display_name
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_job__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields.selection,name:gr_maintenance_contract.selection__gr_maintenance_contract__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__due_date
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Emergency / T&M"
+msgstr "طارئ / وقت ومواد"
+
+#. module: gr_maintenance_contract
+#. odoo-python
+#: code:addons/gr_maintenance_contract/models/gr_maintenance_contract.py:0
+msgid "Emergency / T&M Visit"
+msgstr "زيارة طارئة / بالوقت والمواد"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__emergency_response_hours
+msgid "Emergency Response (hours)"
+msgstr "الاستجابة الطارئة (ساعات)"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__emergency_visit_rate
+msgid "Emergency Visit Rate"
+msgstr "سعر الزيارة الطارئة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__date_end
+msgid "End"
+msgstr "النهاية"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__asset_id
+msgid "Equipment (customer-owned)"
+msgstr "المعدة (مملوكة للعميل)"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields.selection,name:gr_maintenance_contract.selection__gr_maintenance_contract__state__expired
+msgid "Expired"
+msgstr "منتهي"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: gr_maintenance_contract
+#: model:ir.model,name:gr_maintenance_contract.model_gr_maintenance_job
+msgid "Generator Maintenance Job"
+msgstr "أمر صيانة مولد"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__visits_total
+msgid ""
+"How many covered visits the contract includes. This is suggested "
+"automatically from the start/end dates and visit interval, but can still be "
+"changed manually."
+msgstr ""
+"عدد الزيارات المغطاة التي يشملها العقد. يتم اقتراحه تلقائيا من تاريخ البداية"
+" والنهاية وفترة الزيارة، ويمكن تغييره يدويا."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__id
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__id
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_job__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__message_has_error
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_job__maintenance_contract_id
+msgid "If set, this visit belongs to a customer maintenance contract."
+msgstr "إذا تم تحديده، فإن هذه الزيارة تتبع عقد صيانة عميل."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__invoice_id
+msgid "Invoice"
+msgstr "الفاتورة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields.selection,name:gr_maintenance_contract.selection__gr_maintenance_contract_payment__state__invoiced
+msgid "Invoiced"
+msgstr "مفوتر"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__invoice_count
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__write_uid
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__write_date
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Log Emergency / T&M Visit"
+msgstr "تسجيل زيارة طارئة / وقت ومواد"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_job__maintenance_contract_id
+msgid "Maintenance Contract"
+msgstr "عقد الصيانة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model,name:gr_maintenance_contract.model_gr_maintenance_contract
+msgid "Maintenance Contract (customer-owned)"
+msgstr "عقد صيانة (مملوك للعميل)"
+
+#. module: gr_maintenance_contract
+#: model:ir.model,name:gr_maintenance_contract.model_gr_maintenance_contract_payment
+msgid "Maintenance Contract Payment Schedule"
+msgstr "جدول دفعات عقد الصيانة"
+
+#. module: gr_maintenance_contract
+#: model:ir.actions.act_window,name:gr_maintenance_contract.action_gr_maintenance_contract
+#: model:ir.ui.menu,name:gr_maintenance_contract.menu_gr_maintenance_contract
+msgid "Maintenance Contracts"
+msgstr "عقود الصيانة"
+
+#. module: gr_maintenance_contract
+#. odoo-python
+#: code:addons/gr_maintenance_contract/models/gr_maintenance_contract.py:0
+msgid "Maintenance contract %(ref)s - installment due %(d)s"
+msgstr "عقد الصيانة %(ref)s - قسط مستحق %(d)s"
+
+#. module: gr_maintenance_contract
+#. odoo-python
+#: code:addons/gr_maintenance_contract/models/gr_maintenance_contract.py:0
+msgid ""
+"Maintenance contract %s: equipment %s must be Customer-owned. Rental fleet "
+"units are not serviced under customer maintenance contracts."
+msgstr ""
+"عقد الصيانة %s: يجب أن تكون المعدة %s مملوكة للعميل. وحدات أسطول التأجير لا "
+"تُخدَم ضمن عقود صيانة العملاء."
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Mark Expired"
+msgstr "تعليم كمنتهي"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: gr_maintenance_contract
+#. odoo-python
+#: code:addons/gr_maintenance_contract/models/gr_maintenance_contract.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__payment_split_count
+msgid ""
+"Number of equal payments across the term (Perkins = 2, i.e. 50% every 6 "
+"months)."
+msgstr "عدد الدفعات المتساوية خلال المدة (Perkins = 2، أي 50% كل 6 أشهر)."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_job__oil_filter_due
+msgid "Oil + Filters Due"
+msgstr "الزيت + الفلاتر مستحقة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__oil_filter_interval_months
+msgid "Oil + Filters Every (months)"
+msgstr "الزيت + الفلاتر كل (أشهر)"
+
+#. module: gr_maintenance_contract
+#. odoo-python
+#: code:addons/gr_maintenance_contract/models/gr_maintenance_contract.py:0
+msgid "Only draft contracts can be activated."
+msgstr "لا يمكن تفعيل إلا العقود المسودة."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__maintenance_template_id
+msgid "Optional M7 template pre-filling each generated visit's checklist."
+msgstr "قالب M7 اختياري يملأ مسبقا قائمة تحقق كل زيارة منشأة."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__schedule_line_ids
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Payment Schedule"
+msgstr "جدول الدفعات"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__payment_split_count
+msgid "Payments (splits)"
+msgstr "الدفعات (الأقساط)"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__emergency_visit_rate
+msgid ""
+"Per-visit charge for out-of-scope emergency / T&M visits (Perkins contract ="
+" 1,500 SR)."
+msgstr "رسوم كل زيارة طارئة / وقت ومواد خارج النطاق (عقد Perkins = 1,500 SR)."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__visit_interval_months
+msgid "Periodic-visit cadence. ABSAL's Perkins contract = 1 (monthly)."
+msgstr "وتيرة الزيارات الدورية. عقد Perkins لدى ABSAL = 1 (شهريا)."
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Pricing & Billing"
+msgstr "التسعير والفوترة"
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.actions.act_window,help:gr_maintenance_contract.action_gr_maintenance_contract
+msgid "Recurring service on a customer-owned generator"
+msgstr "خدمة متكررة لمولد مملوك للعميل"
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Reset to Draft"
+msgstr "إرجاع إلى مسودة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields.selection,name:gr_maintenance_contract.selection__gr_maintenance_contract_payment__state__scheduled
+msgid "Scheduled"
+msgstr "مجدول"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__date_start
+msgid "Start"
+msgstr "البداية"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__state
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract_payment__state
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__tm_visit_count
+msgid "T&M"
+msgstr "وقت ومواد"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields.selection,name:gr_maintenance_contract.selection__gr_maintenance_job__contract_coverage__tm
+msgid "T&M (billable)"
+msgstr "وقت ومواد (قابل للفوترة)"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_job__tm_charge
+msgid "T&M Charge"
+msgstr "رسوم الوقت والمواد"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.constraint,message:gr_maintenance_contract.constraint_gr_maintenance_contract_name_company_uniq
+msgid "The contract reference must be unique per company."
+msgstr "يجب أن يكون مرجع العقد فريداً لكل شركة."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__asset_id
+msgid ""
+"The customer-owned generator under this maintenance contract. Must be "
+"flagged Customer-owned (M11) - these units are serviced, not rented."
+msgstr ""
+"المولد المملوك للعميل ضمن عقد الصيانة هذا. يجب تعليمه كمملوك للعميل (M11) - "
+"هذه الوحدات تخدم ولا تؤجر."
+
+#. module: gr_maintenance_contract
+#. odoo-python
+#: code:addons/gr_maintenance_contract/models/gr_maintenance_contract.py:0
+msgid "This installment is already invoiced."
+msgstr "هذا القسط مفوتر بالفعل."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_job__oil_filter_due
+msgid "This scheduled visit falls on the oil/filter consumable cadence."
+msgstr "هذه الزيارة المجدولة تقع ضمن وتيرة مستهلكات الزيت/الفلاتر."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__visits_total
+msgid "Total Visits"
+msgstr "إجمالي الزيارات"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__annual_price
+msgid "Total contract value (before VAT). Perkins contract = 9,500 SR."
+msgstr "إجمالي قيمة العقد (قبل VAT). عقد Perkins = 9,500 SR."
+
+#. module: gr_maintenance_contract
+#. odoo-python
+#: code:addons/gr_maintenance_contract/models/gr_maintenance_contract.py:0
+msgid "Total visits must be positive."
+msgstr "يجب أن يكون إجمالي الزيارات أكبر من صفر."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__visit_interval_months
+msgid "Visit Every (months)"
+msgstr "زيارة كل (أشهر)"
+
+#. module: gr_maintenance_contract
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Visit Schedule"
+msgstr "جدول الزيارات"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__maintenance_template_id
+msgid "Visit Template"
+msgstr "قالب الزيارة"
+
+#. module: gr_maintenance_contract
+#. odoo-python
+#: code:addons/gr_maintenance_contract/models/gr_maintenance_contract.py:0
+msgid "Visit interval must be positive."
+msgstr "يجب أن تكون فترة الزيارة أكبر من صفر."
+
+#. module: gr_maintenance_contract
+#. odoo-python
+#: code:addons/gr_maintenance_contract/models/gr_maintenance_contract.py:0
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__visit_count
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__visit_ids
+#: model_terms:ir.ui.view,arch_db:gr_maintenance_contract.view_gr_maintenance_contract_form
+msgid "Visits"
+msgstr "الزيارات"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,field_description:gr_maintenance_contract.field_gr_maintenance_contract__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: gr_maintenance_contract
+#: model:ir.model.fields,help:gr_maintenance_contract.field_gr_maintenance_contract__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: gr_maintenance_contract
+#. odoo-python
+#: code:addons/gr_maintenance_contract/models/gr_maintenance_contract.py:0
+msgid "maintenance_contract_id"
+msgstr "maintenance_contract_id"

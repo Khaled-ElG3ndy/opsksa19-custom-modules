@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_customer_approval_log_user,gr.customer.approval.log.user,model_gr_customer_approval_log,gr_security_base.group_generator_user,1,0,0,0
+access_gr_customer_approval_log_admin,gr.customer.approval.log.admin,model_gr_customer_approval_log,gr_security_base.group_generator_administrator,1,0,0,0
+access_gr_customer_approval_document_user,gr.customer.approval.document.user,model_gr_customer_approval_document,gr_security_base.group_generator_user,1,0,0,0
+access_gr_customer_approval_document_admin,gr.customer.approval.document.admin,model_gr_customer_approval_document,gr_security_base.group_generator_administrator,1,0,0,0

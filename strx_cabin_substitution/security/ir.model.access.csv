@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_strx_substitution_cabin_user,strx.cabin.substitution cabin user,model_strx_cabin_substitution,strx_cabin_security.group_cabin_user,1,0,0,0
+access_strx_substitution_cabin_sales,strx.cabin.substitution cabin sales officer,model_strx_cabin_substitution,strx_cabin_security.group_cabin_sales_officer,1,1,1,0
+access_strx_substitution_cabin_ops,strx.cabin.substitution cabin operations officer,model_strx_cabin_substitution,strx_cabin_security.group_cabin_operations_officer,1,1,1,0
+access_strx_substitution_cabin_manager,strx.cabin.substitution cabin manager,model_strx_cabin_substitution,strx_cabin_security.group_cabin_manager,1,1,1,0
+access_strx_substitution_cabin_admin,strx.cabin.substitution cabin administrator,model_strx_cabin_substitution,strx_cabin_security.group_cabin_administrator,1,1,1,1

@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gr_parts_request_user,gr.parts.request.user,model_gr_parts_request,gr_security_base.group_generator_user,1,0,0,0
+access_gr_parts_request_tech,gr.parts.request.tech,model_gr_parts_request,gr_security_base.group_generator_maint_technician,1,1,1,0
+access_gr_parts_request_mgr,gr.parts.request.mgr,model_gr_parts_request,gr_security_base.group_generator_maint_manager,1,1,1,1
+access_gr_parts_request_finance,gr.parts.request.finance,model_gr_parts_request,gr_security_base.group_generator_finance_officer,1,1,1,0
+access_gr_parts_request_gm,gr.parts.request.gm,model_gr_parts_request,gr_security_base.group_generator_general_manager,1,1,1,1
+access_gr_parts_request_admin,gr.parts.request.admin,model_gr_parts_request,gr_security_base.group_generator_administrator,1,1,1,1

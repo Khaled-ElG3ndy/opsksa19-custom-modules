@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_dash_profit_list" model="ir.ui.view">
+        <field name="name">dash.profit.list</field>
+        <field name="model">gr.generator.asset</field>
+        <field name="arch" type="xml">
+            <list string="Asset Profitability (live)">
+                <field name="name"/>
+                <field name="status"/>
+                <field name="live_utilization_hours"/>
+                <field name="live_revenue" sum="Total Revenue"/>
+                <field name="live_cost" sum="Total Cost"/>
+                <field name="live_profit_estimate" sum="Total Profit (est.)"/>
+                <field name="currency_id" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_dash_profit" model="ir.actions.act_window">
+        <field name="name">Asset Profitability</field>
+        <field name="res_model">gr.generator.asset</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Live asset profitability</p>
+            <p>Revenue is computed live from generated invoices; utilization from
+               approved hour logs. Cost is labor-only until the parts-consumption
+               milestone, so profit is an upper-bound estimate for now.</p>
+        </field>
+    </record>
+
+</odoo>

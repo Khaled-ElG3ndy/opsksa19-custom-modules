@@ -1,0 +1,1306 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_contract
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "<span class=\"label\" style=\"margin-top: 5px;\">End Date</span>"
+msgstr "<span class=\"label\" style=\"margin-top: 5px;\">تاريخ النهاية</span>"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "<span class=\"label\">Contract Type</span>"
+msgstr "<span class=\"label\">نوع العقد</span>"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "<span class=\"label\">Customer</span>"
+msgstr "<span class=\"label\">العميل</span>"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "<span class=\"label\">Site</span>"
+msgstr "<span class=\"label\">الموقع</span>"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "<span class=\"label\">Start Date</span>"
+msgstr "<span class=\"label\">تاريخ البداية</span>"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "A closed contract cannot be cancelled."
+msgstr "لا يمكن إلغاء عقد مغلق."
+
+#. module: gr_contract
+#: model_terms:ir.actions.act_window,help:gr_contract.action_gr_rental_contract
+msgid ""
+"A commercial agreement defining rates, hours, and terms. Once approved,\n"
+"               commercial terms lock and changes require an amendment."
+msgstr ""
+"اتفاقية تجارية تحدد الأسعار والساعات والشروط. بعد اعتمادها تصبح الشروط "
+"مقفلة."
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__message_needaction
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Activate"
+msgstr "تفعيل"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__active
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__state__active
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_search
+msgid "Active"
+msgstr "نشط"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__activity_ids
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__activity_exception_decoration
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__activity_state
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__activity_type_icon
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__line_ids
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Allocation Lines"
+msgstr "بنود التخصيص"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract_line.py:0
+msgid "Allocation quantity must be greater than zero."
+msgstr "يجب أن تكون كمية التخصيص أكبر من صفر."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_contract_amendment.py:0
+msgid "Amendment %(ref)s applied. Changes: %(changes)s"
+msgstr "تم تطبيق الملحق %(ref)s. التغييرات: %(changes)s"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__amendment_count
+msgid "Amendment Count"
+msgstr "عدد التعديلات"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__name
+msgid "Amendment Reference"
+msgstr "مرجع التعديل"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__amendment_ids
+#: model:ir.ui.menu,name:gr_contract.menu_gr_contract_amendments
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Amendments"
+msgstr "التعديلات"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__analytic_account_id
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_contract_amendment__state__applied
+msgid "Applied"
+msgstr "مطبق"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_contract_amendment_form
+msgid "Apply to Contract"
+msgstr "تطبيق على العقد"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__approval_date
+msgid "Approval Date"
+msgstr "تاريخ الاعتماد"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_contract_amendment_form
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Approve"
+msgstr "اعتماد"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_contract_amendment__state__approved
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__state__approved
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_search
+msgid "Approved"
+msgstr "معتمد"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Approved - Terms Locked"
+msgstr "معتمد — الشروط مقفلة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__approved_by
+msgid "Approved By"
+msgstr "اعتمد بواسطة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__message_attachment_count
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_contract_amendment_form
+msgid "Audit"
+msgstr "التدقيق"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__base_daily_rate
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Base Daily Rate"
+msgstr "السعر اليومي الأساسي"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__base_monthly_rate
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Base Monthly Rate"
+msgstr "السعر الشهري الأساسي"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Base Rates"
+msgstr "الأسعار الأساسية"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__state__cancelled
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Charges & Deposit"
+msgstr "الرسوم والتأمين"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Charges, Fuel &amp; Service"
+msgstr "الرسوم والوقود والخدمة"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__state__closed
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Commercial Terms"
+msgstr "الشروط التجارية"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__company_id
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__company_id
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__company_id
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Company"
+msgstr "الشركة"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Company Signature"
+msgstr "توقيع الشركة"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__fuel_billing_policy__company_supply_bill_actual
+msgid "Company Supplies - Bill Actual"
+msgstr "الشركة توفر - فوترة الفعلي"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__fuel_billing_policy__company_supply_fixed_rate
+msgid "Company Supplies - Fixed Rate"
+msgstr "الشركة توفر - سعر ثابت"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__contract_id
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__contract_id
+msgid "Contract"
+msgstr "العقد"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid ""
+"Contract %(name)s is %(state)s; its commercial terms are locked. Use the "
+"Amendment workflow to change %(fields)s."
+msgstr ""
+"العقد %(name)s في حالة %(state)s؛ وشروطه التجارية مقفلة. استخدم سير عمل "
+"الملاحق لتغيير %(fields)s."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Contract %s has no commercial rates set."
+msgstr "العقد %s ليس له أسعار تجارية محددة."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Contract %s is hourly and requires an hourly rate."
+msgstr "العقد %s بالساعة ويتطلب سعرًا بالساعة."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Contract %s requires a site before activation."
+msgstr "العقد %s يتطلب موقعًا قبل التفعيل."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Contract %s requires a site before approval."
+msgstr "العقد %s يتطلب موقعًا قبل الاعتماد."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Contract %s requires included hours per day."
+msgstr "العقد %s يتطلب ساعات مشمولة في اليوم."
+
+#. module: gr_contract
+#: model:ir.actions.act_window,name:gr_contract.action_gr_contract_amendment
+msgid "Contract Amendments"
+msgstr "تعديلات العقد"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__name
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Contract Reference"
+msgstr "مرجع العقد"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__contract_type
+msgid "Contract Type"
+msgstr "نوع العقد"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Contract approved."
+msgstr "تم اعتماد العقد."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Contract ended on %(date)s. Renew it or close it."
+msgstr "انتهى العقد بتاريخ %(date)s. جدّده أو أغلقه."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Contract ends on %(date)s (%(days)s day(s) left)."
+msgstr "ينتهي العقد بتاريخ %(date)s (متبقي %(days)s يوم)."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Contract is already closed or cancelled."
+msgstr "العقد مغلق أو ملغى بالفعل."
+
+#. module: gr_contract
+#: model_terms:ir.actions.act_window,help:gr_contract.action_gr_rental_contract
+msgid "Create your first rental contract"
+msgstr "أنشئ أول عقد تأجير"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__create_uid
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__create_uid
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__create_date
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__create_date
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__currency_id
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__currency_id
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__currency_id
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Currency"
+msgstr "العملة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__partner_id
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__customer_po_attachment
+msgid "Customer PO Attachment"
+msgstr "مرفق أمر شراء العميل"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__customer_po_number
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Customer PO Number"
+msgstr "رقم أمر شراء العميل"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Customer Signature"
+msgstr "توقيع العميل"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__fuel_billing_policy__customer_supply
+msgid "Customer Supplies Fuel"
+msgstr "العميل يوفر الوقود"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__contract_type__daily_with_included_hours
+msgid "Daily with Included Hours"
+msgstr "يومي مع ساعات مشمولة"
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__sales_monthly_reminder_day
+msgid ""
+"Day of each month when the sales follow-up becomes due. Keep it between 1 "
+"and 28 so every month has that day."
+msgstr ""
+"يوم كل شهر الذي تصبح فيه متابعة المبيعات مستحقة. اجعله بين 1 و28 حتى يكون "
+"موجوداً في كل الشهور."
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__demobilization_charge
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Demobilization Charge"
+msgstr "رسوم الإخلاء"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__display_name
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__display_name
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Download"
+msgstr "تنزيل"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_contract_amendment__state__draft
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__state__draft
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__date_end
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "End Date"
+msgstr "تاريخ النهاية"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "End date cannot be before the start date."
+msgstr "لا يمكن أن يكون تاريخ الانتهاء قبل تاريخ البداية."
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Expire"
+msgstr "إنهاء الصلاحية"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__state__expired
+msgid "Expired"
+msgstr "منتهي"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__message_follower_ids
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__message_partner_ids
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعين (الشركاء)"
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_contract_amendment__activity_type_icon
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة من Font awesome مثال: fa-tasks"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Fuel"
+msgstr "الوقود"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__fuel_billing_policy__included
+msgid "Fuel Included"
+msgstr "الوقود مشمول"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__fuel_billing_policy
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Fuel Policy"
+msgstr "سياسة الوقود"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__fuel_rate
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Fuel Rate"
+msgstr "سعر الوقود"
+
+#. module: gr_contract
+#: model:ir.model,name:gr_contract.model_gr_contract_amendment
+msgid "Generator Contract Amendment"
+msgstr "تعديل عقد المولد"
+
+#. module: gr_contract
+#: model:ir.model,name:gr_contract.model_gr_rental_contract
+msgid "Generator Rental Contract"
+msgstr "عقد تأجير المولد"
+
+#. module: gr_contract
+#: model:ir.model,name:gr_contract.model_gr_rental_contract_line
+msgid "Generator Rental Contract Allocation Line"
+msgstr "بند توزيع عقد تأجير المولد"
+
+#. module: gr_contract
+#: model:ir.actions.server,name:gr_contract.ir_cron_monthly_sales_followups_ir_actions_server
+msgid "Generator Rental: Monthly Sales Follow-ups"
+msgstr "تأجير المولدات: متابعات المبيعات الشهرية"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__has_message
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__contract_type__hourly
+msgid "Hourly"
+msgstr "بالساعة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__hourly_rate
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Hourly Rate"
+msgstr "سعر الساعة"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Hours"
+msgstr "الساعات"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__id
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__id
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__activity_exception_icon
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_contract_amendment__activity_exception_icon
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "الأيقونة للإشارة إلى النشاط المستثنى."
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_contract_amendment__message_needaction
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا كان محددًا، فهناك رسائل جديدة عليك رؤيتها."
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_contract_amendment__message_has_error
+#: model:ir.model.fields,help:gr_contract.field_gr_contract_amendment__message_has_sms_error
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__message_has_error
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__included_hours_per_day
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Included Hours / Day"
+msgstr "الساعات المشمولة / يوم"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Included hours per day cannot be negative."
+msgstr "لا يمكن أن تكون الساعات المشمولة في اليوم سالبة."
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__message_is_follower
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid ""
+"Issue or coordinate the monthly customer invoice once the billing period is "
+"ready."
+msgstr "أصدر فاتورة العميل الشهرية أو نسّق إصدارها بمجرد جاهزية فترة الفوترة."
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__last_sales_followup_period
+msgid "Last Sales Follow-up Month"
+msgstr "آخر شهر متابعة مبيعات"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__write_uid
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__write_uid
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__write_date
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__write_date
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__maintenance_included
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Maintenance Included"
+msgstr "الصيانة مشمولة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__max_hours_per_day
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Max Hours / Day"
+msgstr "الحد الأقصى للساعات / يوم"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid ""
+"Max hours per day (%(maxh)s) must be greater than or equal to included hours"
+" per day (%(inc)s)."
+msgstr ""
+"يجب أن يكون الحد الأقصى للساعات في اليوم (%(maxh)s) أكبر من أو يساوي الساعات"
+" المشمولة في اليوم (%(inc)s)."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Max hours per day cannot be negative."
+msgstr "لا يمكن أن يكون الحد الأقصى للساعات في اليوم سالبًا."
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__message_has_error
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__message_ids
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__mobilization_charge
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Mobilization Charge"
+msgstr "رسوم التعبئة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__sales_monthly_reminder_day
+msgid "Monthly Reminder Day"
+msgstr "يوم التذكير الشهري"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Monthly Reminder Day must be between 1 and 28 for %s."
+msgstr "يجب أن يكون يوم التذكير الشهري بين 1 و28 للعقد %s."
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__sales_monthly_reminder_enabled
+msgid "Monthly Sales Reminder"
+msgstr "تذكير المبيعات الشهري"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Monthly Sales Reminder is disabled for %s."
+msgstr "تذكير المبيعات الشهري غير مفعّل للعقد %s."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Monthly sales follow-up reminder raised for %(user)s (%(period)s)."
+msgstr ""
+"تم إنشاء تذكير متابعة المبيعات الشهرية للمستخدم %(user)s (%(period)s)."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Monthly sales follow-up: %s"
+msgstr "متابعة المبيعات الشهرية: %s"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__contract_type__monthly_with_included_hours
+msgid "Monthly with Included Hours"
+msgstr "شهري مع ساعات مشمولة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__my_activity_date_deadline
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطاتي"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Name, signature, and date"
+msgstr "الاسم والتوقيع والتاريخ"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_contract_amendment.py:0
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__new_base_daily_rate
+msgid "New Base Daily Rate"
+msgstr "السعر اليومي الأساسي الجديد"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__new_base_monthly_rate
+msgid "New Base Monthly Rate"
+msgstr "السعر الشهري الأساسي الجديد"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__new_hourly_rate
+msgid "New Hourly Rate"
+msgstr "سعر الساعة الجديد"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__new_included_hours_per_day
+msgid "New Included Hours / Day"
+msgstr "الساعات المشمولة الجديدة / يوم"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__new_max_hours_per_day
+msgid "New Max Hours / Day"
+msgstr "الحد الأقصى الجديد للساعات / يوم"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__new_overtime_hour_rate
+msgid "New Overtime Hour Rate"
+msgstr "سعر ساعة العمل الإضافي الجديد"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__new_values_json
+msgid "New Values (JSON)"
+msgstr "القيم الجديدة (JSON)"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__new_violation_hour_rate
+msgid "New Violation Hour Rate"
+msgstr "سعر ساعة التجاوز الجديد"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__activity_date_deadline
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__activity_summary
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__activity_type_id
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "No"
+msgstr "لا"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "No additional terms and conditions were recorded on this contract."
+msgstr "لم يتم تسجيل شروط وأحكام إضافية على هذا العقد."
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Not provided"
+msgstr "غير متوفر"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__notes
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__notes
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__message_needaction_counter
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__message_has_error_counter
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_contract_amendment__message_needaction_counter
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_contract_amendment__message_has_error_counter
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__old_values_json
+msgid "Old Values (JSON)"
+msgstr "القيم القديمة (JSON)"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_contract_amendment.py:0
+msgid "Only a General Manager or Administrator may approve amendments."
+msgstr "لا يجوز اعتماد الملاحق إلا للمدير العام أو المسؤول."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Only a General Manager or Administrator may approve contracts."
+msgstr "لا يجوز اعتماد العقود إلا للمدير العام أو المسؤول."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Only active contracts can be suspended."
+msgstr "لا يمكن تعليق إلا العقود النشطة."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Only active or suspended contracts can expire."
+msgstr "لا تنتهي إلا العقود النشطة أو المعلقة."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_contract_amendment.py:0
+msgid "Only approved amendments can be applied."
+msgstr "لا يمكن تطبيق إلا الملاحق المعتمدة."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid ""
+"Only approved or active contracts can receive monthly sales follow-up "
+"reminders."
+msgstr ""
+"يمكن إنشاء تذكيرات متابعة المبيعات الشهرية للعقود المعتمدة أو النشطة فقط."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Only approved or suspended contracts can be activated."
+msgstr "لا يمكن تفعيل إلا العقود المعتمدة أو المعلقة."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Only cancelled or submitted contracts can return to draft."
+msgstr "لا يمكن إرجاع إلا العقود الملغاة أو المقدَّمة إلى مسودة."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_contract_amendment.py:0
+msgid "Only draft amendments can be submitted."
+msgstr "لا يمكن تقديم إلا الملاحق المسودة."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Only draft contracts can be submitted."
+msgstr "لا يمكن تقديم إلا العقود المسودة."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_contract_amendment.py:0
+msgid "Only submitted amendments can be approved."
+msgstr "لا يمكن اعتماد إلا الملاحق المقدَّمة."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_contract_amendment.py:0
+msgid "Only submitted amendments can be rejected."
+msgstr "لا يمكن رفض إلا الملاحق المقدَّمة."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Only submitted contracts can be approved."
+msgstr "لا يمكن اعتماد إلا العقود المقدَّمة."
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__operator_daily_rate
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Operator Daily Rate"
+msgstr "السعر اليومي للمشغل"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__overtime_hour_rate
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Overtime Hour Rate"
+msgstr "سعر ساعة العمل الإضافي"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "PO & Documents"
+msgstr "أمر الشراء والمستندات"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__customer_po_filename
+msgid "PO Filename"
+msgstr "اسم ملف أمر الشراء"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Parties"
+msgstr "الأطراف"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Parties &amp; Period"
+msgstr "الأطراف والفترة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__payment_terms_id
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Payment Terms"
+msgstr "شروط الدفع"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Period & Type"
+msgstr "الفترة والنوع"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Period: %s"
+msgstr "الفترة: %s"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__preferred_asset_id
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Preferred Asset"
+msgstr "الأصل المفضل"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__product_id
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Product"
+msgstr "المنتج"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Professional generator rental agreement"
+msgstr "اتفاقية تأجير مولدات احترافية"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_contract_amendment_form
+msgid "Proposed New Values (leave blank to keep current)"
+msgstr "القيم الجديدة المقترحة (اتركها فارغة للإبقاء على الحالي)"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__quantity
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__sales_monthly_reminder_enabled
+msgid ""
+"Raise one activity every month for the sales responsible to review contract "
+"renewal and coordinate the customer invoice."
+msgstr ""
+"ينشئ نشاطاً واحداً كل شهر لمسؤول المبيعات لمراجعة تجديد العقد وتنسيق فاتورة "
+"العميل."
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__rate_override
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Rate Override"
+msgstr "تجاوز السعر"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__reason
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_contract_amendment_form
+msgid "Reason"
+msgstr "السبب"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_contract_amendment_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_contract_amendment__state__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Renew the contract if the customer will continue."
+msgstr "جدّد العقد إذا كان العميل سيستمر."
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__renewal_reminder_days
+msgid "Renewal Lead Time (days)"
+msgstr "مهلة تذكير التجديد (بالأيام)"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Renewal Lead Time cannot be negative for %s."
+msgstr "لا يمكن أن تكون مهلة تذكير التجديد سالبة للعقد %s."
+
+#. module: gr_contract
+#: model:ir.actions.report,name:gr_contract.action_report_gr_rental_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Rental Contract"
+msgstr "عقد التأجير"
+
+#. module: gr_contract
+#: model:ir.actions.act_window,name:gr_contract.action_gr_rental_contract
+#: model:ir.ui.menu,name:gr_contract.menu_gr_contracts
+msgid "Rental Contracts"
+msgstr "عقود التأجير"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__request_date
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__requested_by
+msgid "Requested By"
+msgstr "طلب بواسطة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__requires_daily_customer_signature
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Requires Daily Customer Signature"
+msgstr "يتطلب توقيع العميل يوميا"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Reset to Draft"
+msgstr "إرجاع إلى مسودة"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__activity_user_id
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "Review contract %(contract)s for %(customer)s."
+msgstr "راجع العقد %(contract)s للعميل %(customer)s."
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__sla_response_hours
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "SLA Response (h)"
+msgstr "استجابة اتفاقية مستوى الخدمة (ساعة)"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__message_has_sms_error
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية القصيرة"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Sales Follow-up"
+msgstr "متابعة المبيعات"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__sales_user_id
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_search
+msgid "Sales Responsible"
+msgstr "مسؤول المبيعات"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__security_deposit
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Security Deposit"
+msgstr "مبلغ التأمين"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Send Sales Reminder"
+msgstr "إرسال تذكير المبيعات"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__site_id
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Site"
+msgstr "الموقع"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__spare_parts_included
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Spare Parts Included"
+msgstr "قطع الغيار مشمولة"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__contract_type__standby_plus_usage
+msgid "Standby + Usage"
+msgstr "استعداد + استخدام"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__standby_rate
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Standby Rate"
+msgstr "سعر الاستعداد"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__date_start
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__state
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__state
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_contract_amendment__activity_state
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الأنشطة المعتمدة على الحالة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_contract_amendment_form
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Submit"
+msgstr "تقديم"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_contract_amendment__state__submitted
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__state__submitted
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_search
+msgid "Submitted"
+msgstr "مقدم"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Suspend"
+msgstr "تعليق"
+
+#. module: gr_contract
+#: model:ir.model.fields.selection,name:gr_contract.selection__gr_rental_contract__state__suspended
+msgid "Suspended"
+msgstr "معلق"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Terms"
+msgstr "الشروط"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__terms_and_conditions
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Terms & Conditions"
+msgstr "الشروط والأحكام"
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Terms &amp; Conditions"
+msgstr "الشروط والأحكام"
+
+#. module: gr_contract
+#: model:ir.model.constraint,message:gr_contract.constraint_gr_rental_contract_name_company_uniq
+msgid "The contract reference must be unique per company."
+msgstr "يجب أن يكون مرجع العقد فريداً لكل شركة."
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__sales_user_id
+msgid ""
+"The salesperson who receives the monthly renewal and invoicing follow-up "
+"activity."
+msgstr "مسؤول المبيعات الذي يستلم نشاط متابعة التجديد والفوترة الشهرية."
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_contract_amendment.py:0
+msgid "This amendment does not set any new values."
+msgstr "هذا الملحق لا يحدد أي قيم جديدة."
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "This document was generated from Generator Rental ERP."
+msgstr "تم إنشاء هذا المستند من نظام تأجير المولدات."
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_search
+msgid "Type"
+msgstr "النوع"
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_contract_amendment__activity_exception_decoration
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط المستثنى في السجل."
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.view_gr_rental_contract_form
+msgid "Usage Rates"
+msgstr "أسعار الاستخدام"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__violation_hour_rate
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Violation Hour Rate"
+msgstr "سعر ساعة التجاوز"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_contract_amendment__website_message_ids
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_contract_amendment__website_message_ids
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع الإلكتروني"
+
+#. module: gr_contract
+#: model:ir.model.fields,help:gr_contract.field_gr_rental_contract__renewal_reminder_days
+msgid ""
+"When the contract end date is within this many days, the monthly activity "
+"explicitly calls out renewal."
+msgstr ""
+"عندما يكون تاريخ نهاية العقد داخل هذا العدد من الأيام، يوضح النشاط الشهري "
+"ضرورة مراجعة التجديد."
+
+#. module: gr_contract
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "Yes"
+msgstr "نعم"
+
+#. module: gr_contract
+#. odoo-python
+#: code:addons/gr_contract/models/gr_rental_contract.py:0
+msgid "contract_id"
+msgstr "contract_id"
+
+#. module: gr_contract
+#: model:ir.model.fields,field_description:gr_contract.field_gr_rental_contract_line__kva_rating
+#: model_terms:ir.ui.view,arch_db:gr_contract.report_gr_rental_contract
+msgid "kVA Rating"
+msgstr "قدرة ك.ف.أ"
+
+#. module: gr_contract
+#: model:ir.actions.report,print_report_name:gr_contract.action_report_gr_rental_contract
+msgid "object._rental_contract_filename()"
+msgstr "object._rental_contract_filename()"

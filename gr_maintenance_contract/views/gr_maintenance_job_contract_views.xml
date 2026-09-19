@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_gr_maintenance_job_form_contract" model="ir.ui.view">
+        <field name="name">gr.maintenance.job.form.contract</field>
+        <field name="model">gr.maintenance.job</field>
+        <field name="inherit_id" ref="gr_maintenance.view_gr_maintenance_job_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='job_type']" position="after">
+                <field name="maintenance_contract_id" readonly="1"
+                       invisible="not maintenance_contract_id"/>
+                <field name="contract_coverage" readonly="1"
+                       invisible="not maintenance_contract_id"/>
+                <field name="oil_filter_due" readonly="1"
+                       invisible="not maintenance_contract_id"/>
+                <field name="tm_charge"
+                       invisible="contract_coverage != 'tm'"/>
+                <field name="company_currency_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

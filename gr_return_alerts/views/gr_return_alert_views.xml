@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- list showing return status -->
+    <record id="view_gr_return_alert_list" model="ir.ui.view">
+        <field name="name">gr.rental.order.return.list</field>
+        <field name="model">gr.rental.order</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="return_bucket == 'overdue'"
+                  decoration-warning="return_bucket == 'due_today'"
+                  decoration-info="return_bucket == 'due_3'">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="asset_id"/>
+                <field name="planned_return_datetime"/>
+                <field name="working_days_to_return"/>
+                <field name="return_bucket" widget="badge"
+                       decoration-danger="return_bucket == 'overdue'"
+                       decoration-warning="return_bucket == 'due_today'"
+                       decoration-info="return_bucket == 'due_3'"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_gr_return_alert_search" model="ir.ui.view">
+        <field name="name">gr.rental.order.return.search</field>
+        <field name="model">gr.rental.order</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="asset_id"/>
+                <filter name="f_due3" string="Due in 3 working days" domain="[('return_bucket','=','due_3')]"/>
+                <filter name="f_today" string="Due today" domain="[('return_bucket','=','due_today')]"/>
+                <filter name="f_overdue" string="Overdue" domain="[('return_bucket','=','overdue')]"/>
+                <group>
+                    <filter name="g_bucket" string="Return Status" context="{'group_by':'return_bucket'}"/>
+                    <filter name="g_partner" string="Customer" context="{'group_by':'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- three dedicated actions = the "dedicated page split into 3" -->
+    <record id="action_returns_due_3" model="ir.actions.act_window">
+        <field name="name">Due in 3 Working Days</field>
+        <field name="res_model">gr.rental.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('return_bucket','=','due_3')]</field>
+        <field name="view_id" ref="view_gr_return_alert_list"/>
+    </record>
+    <record id="action_returns_due_today" model="ir.actions.act_window">
+        <field name="name">Due Today</field>
+        <field name="res_model">gr.rental.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('return_bucket','=','due_today')]</field>
+        <field name="view_id" ref="view_gr_return_alert_list"/>
+    </record>
+    <record id="action_returns_overdue" model="ir.actions.act_window">
+        <field name="name">Overdue</field>
+        <field name="res_model">gr.rental.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('return_bucket','=','overdue')]</field>
+        <field name="view_id" ref="view_gr_return_alert_list"/>
+    </record>
+    <record id="action_returns_all" model="ir.actions.act_window">
+        <field name="name">All Upcoming Returns</field>
+        <field name="res_model">gr.rental.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('return_bucket','in',['due_3','due_today','overdue'])]</field>
+        <field name="view_id" ref="view_gr_return_alert_list"/>
+        <field name="search_view_id" ref="view_gr_return_alert_search"/>
+    </record>
+
+</odoo>

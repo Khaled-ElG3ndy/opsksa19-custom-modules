@@ -1,0 +1,272 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* gr_return_alerts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: gr_return_alerts
+#: model:mail.template,body_html:gr_return_alerts.mail_template_return_due
+msgid ""
+"<t t-out=\"object._return_alert_email_body_html()\"/>\n"
+"        "
+msgstr ""
+"<t t-out=\"object._return_alert_email_body_html()\"/>\n"
+"        "
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Alert: Asset return due today - %(order)s"
+msgstr "تنبيه: إرجاع الأصل مستحق اليوم - %(order)s"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Alert: Asset return due within 3 business days - %(order)s"
+msgstr "تنبيه: إرجاع الأصل مستحق خلال 3 أيام عمل - %(order)s"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Alert: Asset return is overdue - %(order)s"
+msgstr "تنبيه: إرجاع الأصل متأخر - %(order)s"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Alert: Asset return reminder - %(order)s"
+msgstr "تنبيه: تذكير بإرجاع الأصل - %(order)s"
+
+#. module: gr_return_alerts
+#: model:ir.actions.act_window,name:gr_return_alerts.action_returns_all
+#: model:ir.ui.menu,name:gr_return_alerts.menu_returns_all
+msgid "All Upcoming Returns"
+msgstr "كل الإرجاعات القادمة"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Asset return due within 3 business days"
+msgstr "إرجاع الأصل مستحق خلال 3 أيام عمل"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Asset return is due today"
+msgstr "الأصل مستحق الإرجاع اليوم"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Asset return is overdue"
+msgstr "إرجاع الأصل متأخر"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Asset return reminder"
+msgstr "تذكير بإرجاع الأصل"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Asset(s):"
+msgstr "الأصل/الأصول:"
+
+#. module: gr_return_alerts
+#: model_terms:ir.ui.view,arch_db:gr_return_alerts.view_gr_return_alert_search
+msgid "Customer"
+msgstr "العميل"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Customer:"
+msgstr "العميل:"
+
+#. module: gr_return_alerts
+#: model:ir.model.fields,field_description:gr_return_alerts.field_gr_rental_order__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: gr_return_alerts
+#: model:ir.actions.act_window,name:gr_return_alerts.action_returns_due_today
+#: model:ir.ui.menu,name:gr_return_alerts.menu_returns_due_today
+msgid "Due Today"
+msgstr "مستحق اليوم"
+
+#. module: gr_return_alerts
+#: model:ir.actions.act_window,name:gr_return_alerts.action_returns_due_3
+#: model:ir.ui.menu,name:gr_return_alerts.menu_returns_due_3
+msgid "Due in 3 Working Days"
+msgstr "مستحق خلال 3 أيام عمل"
+
+#. module: gr_return_alerts
+#: model_terms:ir.ui.view,arch_db:gr_return_alerts.view_gr_return_alert_search
+msgid "Due in 3 working days"
+msgstr "مستحق خلال 3 أيام عمل"
+
+#. module: gr_return_alerts
+#: model:ir.model.fields.selection,name:gr_return_alerts.selection__gr_rental_order__return_bucket__due_today
+#: model_terms:ir.ui.view,arch_db:gr_return_alerts.view_gr_return_alert_search
+msgid "Due today"
+msgstr "مستحق اليوم"
+
+#. module: gr_return_alerts
+#: model:ir.model.fields.selection,name:gr_return_alerts.selection__gr_rental_order__return_bucket__due_3
+msgid "Due within 3 working days"
+msgstr "مستحق خلال 3 أيام عمل"
+
+#. module: gr_return_alerts
+#: model:ir.model,name:gr_return_alerts.model_gr_rental_order
+msgid "Generator Rental Order"
+msgstr "أمر تأجير المولد"
+
+#. module: gr_return_alerts
+#: model:ir.actions.server,name:gr_return_alerts.cron_evaluate_returns_ir_actions_server
+msgid "Generator: Evaluate Rental Returns"
+msgstr "المولدات: تقييم إرجاعات التأجير"
+
+#. module: gr_return_alerts
+#: model:ir.model.fields,help:gr_return_alerts.field_gr_rental_order__return_alert_sent_for
+msgid ""
+"Guards against sending the same alert twice for the same return stage and "
+"planned return date."
+msgstr ""
+"يمنع إرسال نفس التنبيه مرتين لنفس مرحلة الإرجاع وتاريخ الإرجاع المخطط."
+
+#. module: gr_return_alerts
+#: model:ir.model.fields,field_description:gr_return_alerts.field_gr_rental_order__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: gr_return_alerts
+#: model:ir.model.fields,field_description:gr_return_alerts.field_gr_rental_order__return_alert_sent_for
+msgid "Last Alert Bucket Sent"
+msgstr "آخر تصنيف تنبيه مرسل"
+
+#. module: gr_return_alerts
+#: model:ir.model.fields.selection,name:gr_return_alerts.selection__gr_rental_order__return_bucket__none
+msgid "Not due soon"
+msgstr "غير مستحق قريبًا"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Not specified"
+msgstr "غير محدد"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Open rental order"
+msgstr "فتح أمر التأجير"
+
+#. module: gr_return_alerts
+#: model:ir.actions.act_window,name:gr_return_alerts.action_returns_overdue
+#: model:ir.model.fields.selection,name:gr_return_alerts.selection__gr_rental_order__return_bucket__overdue
+#: model:ir.ui.menu,name:gr_return_alerts.menu_returns_overdue
+#: model_terms:ir.ui.view,arch_db:gr_return_alerts.view_gr_return_alert_search
+msgid "Overdue"
+msgstr "متأخر"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Planned Return:"
+msgstr "الإرجاع المخطط:"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid "Rental Order:"
+msgstr "أمر التأجير:"
+
+#. module: gr_return_alerts
+#: model:mail.template,name:gr_return_alerts.mail_template_return_due
+msgid "Rental Return Due / Overdue"
+msgstr "إرجاع التأجير مستحق / متأخر"
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid ""
+"Rental order %(order)s for customer %(customer)s and asset %(asset)s is due "
+"for return today, %(return_date)s. Please follow up with the customer and "
+"confirm collection of the asset today."
+msgstr ""
+"أمر التأجير %(order)s للعميل %(customer)s والأصل %(asset)s مستحق الإرجاع "
+"اليوم، %(return_date)s. يُرجى المتابعة مع العميل وتأكيد استلام الأصل اليوم."
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid ""
+"Rental order %(order)s for customer %(customer)s and asset %(asset)s is "
+"expected to be returned on %(return_date)s. There are 3 business days "
+"remaining. Please contact the customer and confirm that the asset will be "
+"ready for return on time."
+msgstr ""
+"من المتوقع إرجاع أمر التأجير %(order)s للعميل %(customer)s والأصل %(asset)s "
+"في %(return_date)s. متبقٍ 3 أيام عمل. يُرجى التواصل مع العميل وتأكيد جاهزية "
+"الأصل للإرجاع في موعده."
+
+#. module: gr_return_alerts
+#. odoo-python
+#: code:addons/gr_return_alerts/models/gr_rental_order_alert.py:0
+msgid ""
+"Rental order %(order)s for customer %(customer)s and asset %(asset)s was due"
+" for return on %(return_date)s and is now overdue by %(overdue_days)s "
+"business day(s). Please take the required action and contact the customer "
+"immediately."
+msgstr ""
+"كان إرجاع أمر التأجير %(order)s للعميل %(customer)s والأصل %(asset)s مستحقًا"
+" في %(return_date)s وهو الآن متأخر بمقدار %(overdue_days)s يوم عمل. يُرجى "
+"اتخاذ الإجراء اللازم والتواصل مع العميل فورًا."
+
+#. module: gr_return_alerts
+#: model:ir.model.fields,field_description:gr_return_alerts.field_gr_rental_order__return_bucket
+#: model_terms:ir.ui.view,arch_db:gr_return_alerts.view_gr_return_alert_search
+msgid "Return Status"
+msgstr "حالة الإرجاع"
+
+#. module: gr_return_alerts
+#: model:ir.ui.menu,name:gr_return_alerts.menu_returns_root
+msgid "Returns"
+msgstr "الإرجاعات"
+
+#. module: gr_return_alerts
+#: model:ir.model.fields,field_description:gr_return_alerts.field_gr_rental_order__working_days_to_return
+msgid "Working Days to Return"
+msgstr "أيام العمل حتى الإرجاع"
+
+#. module: gr_return_alerts
+#: model:ir.model.fields,help:gr_return_alerts.field_gr_rental_order__working_days_to_return
+msgid ""
+"Working days (Friday excluded) until the planned return. Negative = days "
+"overdue."
+msgstr ""
+"أيام العمل حتى الإرجاع المخطط، مع استبعاد الجمعة. القيمة السالبة تعني أيام "
+"التأخير."
+
+#. module: gr_return_alerts
+#: model:ir.model.fields,help:gr_return_alerts.field_gr_rental_order__return_bucket
+msgid "Working-day-aware classification of the planned return date."
+msgstr "تصنيف تاريخ الإرجاع المخطط حسب أيام العمل."
+
+#. module: gr_return_alerts
+#: model:mail.template,subject:gr_return_alerts.mail_template_return_due
+msgid "{{ object._return_alert_email_subject() }}"
+msgstr "{{ object._return_alert_email_subject() }}"
