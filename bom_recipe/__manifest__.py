@@ -5,7 +5,7 @@
     'category': '',
     'summary': 'Basic module for BOM Recipe',
     'description': 'Basic module for BOM Recipe',
-    'version': '17.0.0.2',
+    'version': '19.0.1.1.0',
     'author': "MP Technolabs",
     'license': 'LGPL-3',
     'company': 'TechUltra Solution',

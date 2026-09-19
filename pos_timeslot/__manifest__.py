@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'POS Timeslot',
-    'version': '17.0.0.0.3',
+    'version': '19.0.1.0.2',
     'category': '',
     'author': 'MP Technolabs',
     'summary': 'POS Timeslot',

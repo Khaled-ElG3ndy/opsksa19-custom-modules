@@ -9,8 +9,9 @@ class ReportPOSOrder(models.Model):
     def _select(self):
         return super()._select() + ", s.pos_timeslot_id as pos_timeslot_id"
 
-    def _group_by(self):
-        return super()._group_by() + ", s.pos_timeslot_id"
+    # NOTE: report.pos.order.init() on 19 builds the SQL view from
+    # _select() + _from() only, and the view carries no GROUP BY at all,
+    # so a _group_by() override would be dead code here.
 
     def _from(self):
         return super()._from() + " LEFT JOIN pos_timeslot pts ON (s.pos_timeslot_id=pts.id)"

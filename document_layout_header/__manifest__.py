@@ -5,7 +5,7 @@
     'category': '',
     'summary': 'Document Layout Header for the header and footer full image change in the pdf reports',
     'description': 'Document Layout Header for the header and footer full image change in the pdf reports',
-    'version': '17.0.0.3',
+    'version': '19.0.1.1.0',
     'author': "MP Technolabs",
     'license': 'LGPL-3',
     'website': "https://www.mptechnolabs.com",
