@@ -25,11 +25,11 @@
         <field name="name">pos_timeslot_view_tree</field>
         <field name="model">pos.timeslot</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="time_from" widget="float_time"/>
                 <field name="time_to" widget="float_time"/>
-            </tree>
+            </list>
         </field>
     </record>
     
@@ -38,7 +38,7 @@
         <field name="name">POS Timeslots</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">pos.timeslot</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem id="menu_pos_timeslot" name="POS Timeslots" parent="point_of_sale.menu_point_config_product"

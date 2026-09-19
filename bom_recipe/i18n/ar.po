@@ -1,0 +1,70 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bom_recipe
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 17:10+0000\n"
+"PO-Revision-Date: 2026-09-04 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: bom_recipe
+#: model:ir.model,name:bom_recipe.model_mrp_bom
+msgid "Bill of Material"
+msgstr "قائمة المواد"
+
+#. module: bom_recipe
+#: model:ir.model,name:bom_recipe.model_mrp_bom_line
+msgid "Bill of Material Line"
+msgstr "بند قائمة المواد"
+
+#. module: bom_recipe
+#: model:ir.model.fields,field_description:bom_recipe.field_mrp_bom__display_name
+#: model:ir.model.fields,field_description:bom_recipe.field_mrp_bom_line__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: bom_recipe
+#: model:ir.model.fields,field_description:bom_recipe.field_mrp_bom__id
+#: model:ir.model.fields,field_description:bom_recipe.field_mrp_bom_line__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: bom_recipe
+#: model:ir.model.fields,field_description:bom_recipe.field_mrp_bom__is_recipe
+msgid "Is Recipe"
+msgstr "وصفة"
+
+#. module: bom_recipe
+#. odoo-python
+#: code:addons/bom_recipe/models/mrp.py:0
+msgid "Recipe yield loss must be at least 0%% and less than 100%%."
+msgstr "يجب أن يكون فاقد إنتاجية الوصفة 0%% على الأقل وأقل من 100%%."
+
+#. module: bom_recipe
+#. odoo-python
+#: code:addons/bom_recipe/models/mrp.py:0
+msgid ""
+"The UoM of the BOM Lines must match the UoM of the BOM.\n"
+"BOM UoM: %(bom_uom)s, BOM Line UoM: %(line_uom)s"
+msgstr ""
+"يجب أن تطابق وحدة قياس بنود قائمة المواد وحدة قياس القائمة نفسها.\n"
+"وحدة قياس القائمة: %(bom_uom)s، وحدة قياس البند: %(line_uom)s"
+
+#. module: bom_recipe
+#: model:ir.model.fields,field_description:bom_recipe.field_mrp_bom__bom_qty
+msgid "Total Component Quantity"
+msgstr "إجمالي كمية المكونات"
+
+#. module: bom_recipe
+#: model:ir.model.fields,field_description:bom_recipe.field_mrp_bom__yield_percentage
+msgid "Yield %"
+msgstr "الإنتاجية %"
