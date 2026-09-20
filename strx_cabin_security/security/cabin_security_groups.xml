@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- ============================================================= -->
-    <!-- Application category for all cabin-rental security groups     -->
-    <!-- ============================================================= -->
-    <record id="module_category_cabin_rental" model="ir.module.category">
-        <field name="name">Rental Access</field>
-        <field name="description">Access management for rental systems.</field>
-        <field name="sequence">26</field>
-    </record>
-
     <!-- Odoo 19 groups a category's roles under a privilege: the privilege is
          what renders as a single selection field on the user form. Mirrors the
          shape gr_security_base uses for the generator vertical. -->
@@ -17,7 +8,7 @@
         <field name="name">Cabin Control</field>
         <field name="description">Role granted on Cabin Control.</field>
         <field name="sequence">26</field>
-        <field name="category_id" ref="module_category_cabin_rental"/>
+        <field name="category_id" ref="rental_access_security.module_category_rental_access"/>
     </record>
 
     <!-- ============================================================= -->

@@ -17,11 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #. module: gr_security_base
-#: model:ir.module.category,description:gr_security_base.module_category_generator_rental
-msgid "Access management for the Generator Rental ERP vertical."
-msgstr "إدارة الصلاحيات لنظام تأجير المولدات."
-
-#. module: gr_security_base
 #: model:res.groups,comment:gr_security_base.group_generator_finance_manager
 msgid "Approve billing exceptions and finalize billing."
 msgstr "اعتماد استثناءات الفوترة وإنهاء الفوترة."
@@ -110,11 +105,6 @@ msgid "Generator Rental"
 msgstr "تأجير المولدات"
 
 #. module: gr_security_base
-#: model:ir.module.category,name:gr_security_base.module_category_generator_rental
-msgid "Generator Rental ERP"
-msgstr "نظام تأجير المولدات"
-
-#. module: gr_security_base
 #: model:res.groups,name:gr_security_base.group_generator_sales_officer
 msgid "Generator Sales Officer"
 msgstr "مسؤول مبيعات المولدات"
@@ -140,19 +130,9 @@ msgid "View assigned assets/jobs and submit maintenance reports."
 msgstr "عرض الأصول وأوامر العمل المسندة وتقديم تقارير الصيانة."
 
 #. module: gr_security_base
-#: model:ir.module.category,description:gr_security_base.module_category_generator_rental
-msgid "Access management for rental systems."
-msgstr "إدارة الصلاحيات لأنظمة التأجير."
-
-#. module: gr_security_base
 #: model:res.groups.privilege,name:gr_security_base.res_groups_privilege_generator_rental
 msgid "Equipment Rental"
 msgstr "تأجير المعدات"
-
-#. module: gr_security_base
-#: model:ir.module.category,name:gr_security_base.module_category_generator_rental
-msgid "Rental Access"
-msgstr "صلاحيات التأجير"
 
 #. module: gr_security_base
 #: model:res.groups.privilege,description:gr_security_base.res_groups_privilege_generator_rental

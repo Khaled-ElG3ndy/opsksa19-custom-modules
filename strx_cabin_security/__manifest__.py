@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'STRX Cabin Control — Security',
-    'version': '19.0.1.1.0',
+    'version': '19.0.1.1.1',
     'summary': 'Roles for the cabin-rental vertical, so cabin access is granted '
                'explicitly instead of riding on the generic Inventory and Sales roles.',
     'description': """
@@ -27,7 +27,7 @@ Separation works on two levels:
     'website': 'https://ops-ksa.com',
     'license': 'LGPL-3',
     'category': 'Inventory/Inventory',
-    'depends': ['base', 'stock', 'sales_team'],
+    'depends': ['base', 'stock', 'sales_team', 'rental_access_security'],
     'data': [
         'security/cabin_security_groups.xml',
     ],
