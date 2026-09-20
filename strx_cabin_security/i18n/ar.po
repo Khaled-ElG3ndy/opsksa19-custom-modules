@@ -101,3 +101,23 @@ msgid ""
 msgstr ""
 "إصدار عروض أسعار وأوامر تأجير الكابينات، وتشغيل معالجي زيادة الكمية وتغيير "
 "المنتج. لا يمكنه اعتماد استبدال مواصفة."
+
+#. module: strx_cabin_security
+#: model:ir.module.category,description:strx_cabin_security.module_category_cabin_rental
+msgid "Access management for rental systems."
+msgstr "إدارة الصلاحيات لأنظمة التأجير."
+
+#. module: strx_cabin_security
+#: model:res.groups.privilege,name:strx_cabin_security.res_groups_privilege_cabin_rental
+msgid "Cabin Control"
+msgstr "التحكم في الكابينات"
+
+#. module: strx_cabin_security
+#: model:ir.module.category,name:strx_cabin_security.module_category_cabin_rental
+msgid "Rental Access"
+msgstr "صلاحيات التأجير"
+
+#. module: strx_cabin_security
+#: model:res.groups.privilege,description:strx_cabin_security.res_groups_privilege_cabin_rental
+msgid "Role granted on Cabin Control."
+msgstr "الدور الممنوح على التحكم في الكابينات."

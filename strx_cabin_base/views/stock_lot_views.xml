@@ -11,12 +11,14 @@
             <xpath expr="//div[@name='button_box']" position="inside">
                 <button name="action_strx_open_readiness_log" type="object"
                         class="oe_stat_button o_strx_cabin_stat_button" icon="fa-history"
+                        groups="strx_cabin_security.group_cabin_user"
                         invisible="not strx_is_cabin">
                     <field name="strx_readiness_log_count" widget="statinfo"
                            string="Readiness"/>
                 </button>
                 <button name="action_strx_open_cabin_card_preview" type="object"
                         class="oe_stat_button o_strx_cabin_stat_button" icon="fa-id-card-o"
+                        groups="strx_cabin_security.group_cabin_user"
                         invisible="not strx_is_cabin">
                     <div class="o_stat_info">
                         <field name="strx_cabin_card_button_label" readonly="1"
@@ -29,6 +31,7 @@
             <xpath expr="//group[@name='main_group']" position="after">
                 <field name="strx_is_cabin" invisible="1"/>
                 <group name="strx_cabin_group" string="Cabin Control"
+                       groups="strx_cabin_security.group_cabin_user"
                        invisible="not strx_is_cabin">
                     <group string="Identification Card">
                         <field name="name" string="Serial" readonly="1"/>
@@ -62,12 +65,15 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_id']" position="after">
                 <field name="strx_is_cabin" column_invisible="1"/>
-                <field name="strx_barcode" optional="show"/>
+                <field name="strx_barcode" optional="show"
+                       groups="strx_cabin_security.group_cabin_user"/>
                 <field name="strx_readiness_state" optional="show"
+                       groups="strx_cabin_security.group_cabin_user"
                        decoration-success="strx_readiness_state == 'available'"
                        decoration-danger="strx_readiness_state in ('on_rent', 'damaged')"
                        decoration-warning="strx_readiness_state == 'in_maintenance'"/>
-                <field name="strx_condition" optional="hide"/>
+                <field name="strx_condition" optional="hide"
+                       groups="strx_cabin_security.group_cabin_user"/>
             </xpath>
         </field>
     </record>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'STRX Cabin Control — Substitution Workflow',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.1.0',
     'summary': 'The only sanctioned route past the dispatch hard-stop: a controlled, '
                'priced, approved specification-change request that re-points the '
                'allocation and lets the approved serial through — server-side only.',

@@ -5,8 +5,8 @@
     <!-- Application category for all generator-rental security groups -->
     <!-- ============================================================= -->
     <record id="module_category_generator_rental" model="ir.module.category">
-        <field name="name">Generator Rental ERP</field>
-        <field name="description">Access management for the GenRental vertical.</field>
+        <field name="name">Rental Access</field>
+        <field name="description">Access management for rental systems.</field>
         <field name="sequence">25</field>
     </record>
 
@@ -14,8 +14,8 @@
          what renders as a single selection field on the user form, ordered by
          group sequence and implication depth. -->
     <record id="res_groups_privilege_generator_rental" model="res.groups.privilege">
-        <field name="name">Generator Rental</field>
-        <field name="description">Role granted on the Generator Rental ERP.</field>
+        <field name="name">Equipment Rental</field>
+        <field name="description">Role granted on Equipment Rental.</field>
         <field name="sequence">25</field>
         <field name="category_id" ref="module_category_generator_rental"/>
     </record>

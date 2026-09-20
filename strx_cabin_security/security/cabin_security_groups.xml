@@ -5,8 +5,8 @@
     <!-- Application category for all cabin-rental security groups     -->
     <!-- ============================================================= -->
     <record id="module_category_cabin_rental" model="ir.module.category">
-        <field name="name">Cabin Rental Control</field>
-        <field name="description">Access management for the cabin-rental vertical.</field>
+        <field name="name">Rental Access</field>
+        <field name="description">Access management for rental systems.</field>
         <field name="sequence">26</field>
     </record>
 
@@ -14,8 +14,8 @@
          what renders as a single selection field on the user form. Mirrors the
          shape gr_security_base uses for the generator vertical. -->
     <record id="res_groups_privilege_cabin_rental" model="res.groups.privilege">
-        <field name="name">Cabin Rental</field>
-        <field name="description">Role granted on Cabin Rental Control.</field>
+        <field name="name">Cabin Control</field>
+        <field name="description">Role granted on Cabin Control.</field>
         <field name="sequence">26</field>
         <field name="category_id" ref="module_category_cabin_rental"/>
     </record>

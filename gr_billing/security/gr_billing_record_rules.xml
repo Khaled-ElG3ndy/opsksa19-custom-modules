@@ -7,5 +7,19 @@
             <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
             <field name="global" eval="True"/>
         </record>
+
+        <record id="rule_gr_account_move_rental_access" model="ir.rule">
+            <field name="name">Equipment Rental invoices: rental access</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="domain_force">[(1, '=', 1)] if user.has_group('gr_security_base.group_generator_user') else [('rental_order_id', '=', False)]</field>
+            <field name="global" eval="True"/>
+        </record>
+
+        <record id="rule_gr_account_move_line_rental_access" model="ir.rule">
+            <field name="name">Equipment Rental invoice lines: rental access</field>
+            <field name="model_id" ref="account.model_account_move_line"/>
+            <field name="domain_force">[(1, '=', 1)] if user.has_group('gr_security_base.group_generator_user') else [('move_id.rental_order_id', '=', False)]</field>
+            <field name="global" eval="True"/>
+        </record>
     </data>
 </odoo>

@@ -57,6 +57,7 @@
             <xpath expr="//div[@name='button_box']" position="inside">
                 <button name="action_strx_open_cabin_history" type="object"
                         class="oe_stat_button o_strx_cabin_stat_button" icon="fa-clock-o"
+                        groups="strx_cabin_security.group_cabin_user"
                         invisible="not strx_is_cabin">
                     <field name="strx_cabin_history_count" widget="statinfo"
                            string="Cabin History"/>

@@ -631,3 +631,43 @@ msgstr "lot_id"
 #: code:addons/strx_cabin_base/models/stock_lot.py:0
 msgid "m"
 msgstr "م"
+
+#. module: strx_cabin_base
+#: model:ir.rule,name:strx_cabin_base.strx_cabin_stock_lot_access_rule
+msgid "Cabin lots: cabin access"
+msgstr "أرقام الكابينات التسلسلية: صلاحية الكابينات"
+
+#. module: strx_cabin_base
+#: model:ir.rule,name:strx_cabin_base.strx_cabin_product_template_access_rule
+msgid "Cabin products: cabin access"
+msgstr "منتجات الكابينات: صلاحية الكابينات"
+
+#. module: strx_cabin_base
+#: model:ir.rule,name:strx_cabin_base.strx_cabin_stock_quant_access_rule
+msgid "Cabin quantities: cabin access"
+msgstr "كميات الكابينات: صلاحية الكابينات"
+
+#. module: strx_cabin_base
+#: model:ir.rule,name:strx_cabin_base.strx_cabin_stock_move_line_access_rule
+msgid "Cabin stock move lines: cabin access"
+msgstr "بنود حركات مخزون الكابينات: صلاحية الكابينات"
+
+#. module: strx_cabin_base
+#: model:ir.rule,name:strx_cabin_base.strx_cabin_stock_move_access_rule
+msgid "Cabin stock moves: cabin access"
+msgstr "حركات مخزون الكابينات: صلاحية الكابينات"
+
+#. module: strx_cabin_base
+#: model:ir.rule,name:strx_cabin_base.strx_cabin_stock_picking_access_rule
+msgid "Cabin transfers: cabin access"
+msgstr "تحويلات الكابينات: صلاحية الكابينات"
+
+#. module: strx_cabin_base
+#: model:ir.rule,name:strx_cabin_base.strx_cabin_product_product_access_rule
+msgid "Cabin variants: cabin access"
+msgstr "متغيرات الكابينات: صلاحية الكابينات"
+
+#. module: strx_cabin_base
+#: model:ir.model.fields,field_description:strx_cabin_base.field_stock_picking__strx_has_cabin_content
+msgid "Contains Cabin Content"
+msgstr "يحتوي على محتوى كابينات"

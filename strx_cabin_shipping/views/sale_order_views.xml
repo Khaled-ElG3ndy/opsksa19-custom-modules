@@ -8,13 +8,15 @@
         <field name="arch" type="xml">
             <xpath expr="//div[@name='button_box']" position="inside">
                 <button name="action_view_strx_shipping_orders" type="object"
-                        class="oe_stat_button" icon="fa-truck">
+                        class="oe_stat_button" icon="fa-truck"
+                        groups="strx_cabin_security.group_cabin_user">
                     <field name="strx_shipping_count" widget="statinfo"
                            string="Shipping"/>
                 </button>
             </xpath>
             <xpath expr="//notebook" position="inside">
-                <page name="strx_customer_receipt" string="Customer Receipt">
+                <page name="strx_customer_receipt" string="Customer Receipt"
+                      groups="strx_cabin_security.group_cabin_user">
                     <group>
                         <group>
                             <field name="strx_customer_receipt_signature"

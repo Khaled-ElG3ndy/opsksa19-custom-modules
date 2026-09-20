@@ -11,33 +11,43 @@
                         type="object"
                         string="Quantity Increase"
                         class="btn-primary"
+                        groups="strx_cabin_security.group_cabin_sales_officer"
                         invisible="state not in ('sale', 'done')"/>
                 <button name="action_open_strx_product_change_wizard"
                         type="object"
                         string="Change Cabin Product"
                         class="btn-secondary"
+                        groups="strx_cabin_security.group_cabin_sales_officer"
                         invisible="state not in ('sale', 'done')"/>
             </xpath>
             <xpath expr="//field[@name='order_line']/list/field[@name='product_uom_qty']"
                    position="after">
-                <field name="strx_rental_start_date" optional="show"/>
-                <field name="strx_rental_days" optional="show"/>
-                <field name="strx_expected_return_date" optional="show"/>
+                <field name="strx_rental_start_date" optional="show"
+                       groups="strx_cabin_security.group_cabin_user"/>
+                <field name="strx_rental_days" optional="show"
+                       groups="strx_cabin_security.group_cabin_user"/>
+                <field name="strx_expected_return_date" optional="show"
+                       groups="strx_cabin_security.group_cabin_user"/>
             </xpath>
             <xpath expr="//field[@name='order_line']/form//field[@name='product_uom_qty']"
                    position="after">
-                <field name="strx_rental_start_date"/>
-                <field name="strx_rental_days"/>
-                <field name="strx_expected_return_date"/>
+                <field name="strx_rental_start_date"
+                       groups="strx_cabin_security.group_cabin_user"/>
+                <field name="strx_rental_days"
+                       groups="strx_cabin_security.group_cabin_user"/>
+                <field name="strx_expected_return_date"
+                       groups="strx_cabin_security.group_cabin_user"/>
             </xpath>
             <xpath expr="//div[@name='button_box']" position="inside">
                 <button name="action_view_strx_allocations" type="object"
-                        class="oe_stat_button" icon="fa-cube">
+                        class="oe_stat_button" icon="fa-cube"
+                        groups="strx_cabin_security.group_cabin_user">
                     <field name="strx_allocation_count" widget="statinfo"
                            string="Allocations"/>
                 </button>
                 <button name="action_view_strx_addition_orders" type="object"
                         class="oe_stat_button" icon="fa-plus-circle"
+                        groups="strx_cabin_security.group_cabin_user"
                         invisible="strx_addition_order_count == 0">
                     <field name="strx_addition_order_count" widget="statinfo"
                            string="Quantity Increases"/>

@@ -13,7 +13,7 @@
                    "after which profitability is fully accurate. Read-only "
                    "aggregation - no new write paths. Part of the Generator "
                    "Rental ERP vertical (gr_* suite) for Odoo 18 Community.",
-    'version': '19.0.1.0.5',
+    'version': '19.0.1.0.6',
     'category': 'Industries/Rental',
     'author': 'Generator Rental ERP Project',
     'website': 'https://gen.getintakepilot.com',

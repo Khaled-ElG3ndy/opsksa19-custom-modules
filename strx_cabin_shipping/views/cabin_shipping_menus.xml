@@ -5,18 +5,21 @@
               name="Shipments"
               parent="strx_cabin_base.menu_strx_cabin_root"
               action="action_strx_shipping_order"
+              groups="strx_cabin_security.group_cabin_user"
               sequence="30"/>
 
     <menuitem id="menu_strx_broker"
               name="Brokers"
               parent="strx_cabin_base.menu_strx_cabin_root"
               action="action_strx_broker"
+              groups="strx_cabin_security.group_cabin_user"
               sequence="40"/>
 
     <menuitem id="menu_strx_broker_payment"
               name="Broker Payments"
               parent="strx_cabin_base.menu_strx_cabin_root"
               action="action_strx_broker_payment"
+              groups="strx_cabin_security.group_cabin_user"
               sequence="35"/>
 
 </odoo>

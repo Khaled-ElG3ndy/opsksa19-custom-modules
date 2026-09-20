@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'STRX Cabin Control — Dashboard',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.1.0',
     'summary': 'Modern operational dashboard for cabin availability, rentals, '
                'returns, allocations, substitutions and shipping.',
     'author': 'STRX',
