@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'STRX Cabin Control — Allocation',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.1.0',
     'summary': 'Commit an exact serialised cabin to a rental order line, with '
                'specification-match and no-overlap enforcement.',
     'author': 'STRX',

@@ -756,3 +756,13 @@ msgstr "سجل تواصل الموقع الإلكتروني"
 #: code:addons/gr_billing/models/gr_billing_run.py:0
 msgid "id"
 msgstr "المعرف"
+
+#. module: gr_billing
+#: model:ir.rule,name:gr_billing.rule_gr_account_move_line_rental_access
+msgid "Equipment Rental invoice lines: rental access"
+msgstr "بنود فواتير تأجير المعدات: صلاحيات التأجير"
+
+#. module: gr_billing
+#: model:ir.rule,name:gr_billing.rule_gr_account_move_rental_access
+msgid "Equipment Rental invoices: rental access"
+msgstr "فواتير تأجير المعدات: صلاحيات التأجير"

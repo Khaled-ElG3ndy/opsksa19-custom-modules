@@ -39,7 +39,7 @@
                             string="Reset to Draft" invisible="state != 'cancel'"/>
                     <button name="action_open_return_assessment" type="object"
                             string="Assess Returned Cabins" class="oe_highlight"
-                            groups="stock.group_stock_user"
+                            groups="strx_cabin_security.group_cabin_operations_officer"
                             invisible="state != 'returned' or not lot_ids"/>
                     <field name="state" widget="statusbar"
                            statusbar_visible="draft,allocated,dispatched,on_rent,returned,available"/>

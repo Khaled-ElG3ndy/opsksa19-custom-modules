@@ -13,7 +13,7 @@
                    "generation is idempotent and reversible. Invoices are draft "
                    "only - finance reviews and posts. Part of the Generator "
                    "Rental ERP vertical (gr_* suite) for Odoo 18 Community.",
-    'version': '19.0.1.0.9',
+    'version': '19.0.1.1.0',
     'category': 'Industries/Rental',
     'author': 'Generator Rental ERP Project',
     'website': 'https://gen.getintakepilot.com',

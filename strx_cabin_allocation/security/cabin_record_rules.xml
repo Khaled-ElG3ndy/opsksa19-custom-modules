@@ -8,4 +8,32 @@
         <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
     </record>
 
+    <record id="strx_cabin_sale_order_access_rule" model="ir.rule">
+        <field name="name">Cabin sale orders: cabin access</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[(1, '=', 1)] if user.has_group('strx_cabin_security.group_cabin_user') else [('strx_has_cabin_rental', '=', False)]</field>
+    </record>
+
+    <record id="strx_cabin_sale_order_line_access_rule" model="ir.rule">
+        <field name="name">Cabin sale order lines: cabin access</field>
+        <field name="model_id" ref="sale.model_sale_order_line"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[(1, '=', 1)] if user.has_group('strx_cabin_security.group_cabin_user') else [('order_id.strx_has_cabin_rental', '=', False)]</field>
+    </record>
+
+    <record id="strx_cabin_account_move_access_rule" model="ir.rule">
+        <field name="name">Cabin invoices: cabin access</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[(1, '=', 1)] if user.has_group('strx_cabin_security.group_cabin_user') else [('strx_has_cabin_content', '=', False)]</field>
+    </record>
+
+    <record id="strx_cabin_account_move_line_access_rule" model="ir.rule">
+        <field name="name">Cabin invoice lines: cabin access</field>
+        <field name="model_id" ref="account.model_account_move_line"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[(1, '=', 1)] if user.has_group('strx_cabin_security.group_cabin_user') else [('strx_is_cabin_line', '=', False)]</field>
+    </record>
+
 </odoo>

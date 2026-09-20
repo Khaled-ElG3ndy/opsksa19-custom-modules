@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'STRX Cabin Control — Security',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.1.0',
     'summary': 'Roles for the cabin-rental vertical, so cabin access is granted '
                'explicitly instead of riding on the generic Inventory and Sales roles.',
     'description': """
@@ -31,6 +31,7 @@ Separation works on two levels:
     'data': [
         'security/cabin_security_groups.xml',
     ],
+    'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': False,
     'auto_install': False,

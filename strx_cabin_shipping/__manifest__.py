@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'STRX Cabin Control — Shipping',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.1.0',
     'summary': 'Broker master and shipment: driver, vehicle, route, '
                'cost and dates, linked to the rental order and the exact serials carried.',
     'author': 'STRX',

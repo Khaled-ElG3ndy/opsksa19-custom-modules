@@ -22,6 +22,12 @@ class SaleOrderLine(models.Model):
     strx_rental_start_date = fields.Date(string='Rental Start')
     strx_rental_days = fields.Integer(string='Rental Days')
     strx_expected_return_date = fields.Date(string='Expected Return')
+    strx_is_cabin_line = fields.Boolean(
+        string='Cabin Rental Line',
+        related='product_id.strx_is_cabin',
+        store=True,
+        readonly=True,
+        index=True)
 
     def _strx_committed_allocation_lots(self):
         """Return the exact serials that are safe to snapshot on an invoice."""
@@ -339,9 +345,9 @@ class SaleOrderLine(models.Model):
         if not users:
             group = self.env.ref('stock.group_stock_user', raise_if_not_found=False)
             users = group.all_user_ids.filtered(lambda user: user.active) if group else users
-        dedicated_users = users.filtered(
-            lambda user: user.login != 'admin'
-            and user != self.env.ref('base.user_admin', raise_if_not_found=False))
+        settings_group = self.env.ref('base.group_system', raise_if_not_found=False)
+        settings_users = settings_group.all_user_ids if settings_group else self.env['res.users']
+        dedicated_users = users - settings_users
         return dedicated_users or users or self.env.user
 
     def _strx_open_shipping_orders_for_spec_change(self, order):
@@ -450,10 +456,22 @@ class SaleOrder(models.Model):
         readonly=True)
     strx_addition_order_count = fields.Integer(
         string='Quantity Increases', compute='_compute_strx_addition_order_count')
+    strx_has_cabin_rental = fields.Boolean(
+        string='Contains Cabin Rental',
+        compute='_compute_strx_has_cabin_rental',
+        store=True,
+        index=True)
 
     def _compute_strx_allocation_count(self):
         for order in self:
             order.strx_allocation_count = len(order.strx_allocation_ids)
+
+    @api.depends('order_line.strx_is_cabin_line', 'order_line.display_type')
+    def _compute_strx_has_cabin_rental(self):
+        for order in self:
+            order.strx_has_cabin_rental = any(
+                line.strx_is_cabin_line and not line.display_type
+                for line in order.order_line)
 
     def _compute_strx_addition_order_count(self):
         for order in self:

@@ -1532,3 +1532,43 @@ msgstr "order_id"
 #: code:addons/strx_cabin_allocation/models/sale_order.py:0
 msgid "strx_origin_order_id"
 msgstr "strx_origin_order_id"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_account_move_line__strx_is_cabin_line
+msgid "Cabin Invoice Line"
+msgstr "بند فاتورة كابينة"
+
+#. module: strx_cabin_allocation
+#: model:ir.rule,name:strx_cabin_allocation.strx_cabin_account_move_line_access_rule
+msgid "Cabin invoice lines: cabin access"
+msgstr "بنود فواتير الكابينات: صلاحية الكابينات"
+
+#. module: strx_cabin_allocation
+#: model:ir.rule,name:strx_cabin_allocation.strx_cabin_account_move_access_rule
+msgid "Cabin invoices: cabin access"
+msgstr "فواتير الكابينات: صلاحية الكابينات"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order_line__strx_is_cabin_line
+msgid "Cabin Rental Line"
+msgstr "بند تأجير كابينة"
+
+#. module: strx_cabin_allocation
+#: model:ir.rule,name:strx_cabin_allocation.strx_cabin_sale_order_line_access_rule
+msgid "Cabin sale order lines: cabin access"
+msgstr "بنود أوامر بيع الكابينات: صلاحية الكابينات"
+
+#. module: strx_cabin_allocation
+#: model:ir.rule,name:strx_cabin_allocation.strx_cabin_sale_order_access_rule
+msgid "Cabin sale orders: cabin access"
+msgstr "أوامر بيع الكابينات: صلاحية الكابينات"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_account_move__strx_has_cabin_content
+msgid "Contains Cabin Content"
+msgstr "يحتوي على محتوى كابينات"
+
+#. module: strx_cabin_allocation
+#: model:ir.model.fields,field_description:strx_cabin_allocation.field_sale_order__strx_has_cabin_rental
+msgid "Contains Cabin Rental"
+msgstr "يحتوي على تأجير كابينات"

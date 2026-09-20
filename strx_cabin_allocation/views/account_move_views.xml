@@ -10,8 +10,10 @@
                    position="after">
                 <field name="strx_allocated_serial_numbers"
                        readonly="1"
-                       optional="show"/>
-                <field name="strx_allocated_lot_ids" column_invisible="1"/>
+                       optional="show"
+                       groups="strx_cabin_security.group_cabin_user"/>
+                <field name="strx_allocated_lot_ids" column_invisible="1"
+                       groups="strx_cabin_security.group_cabin_user"/>
             </xpath>
         </field>
     </record>

@@ -496,9 +496,9 @@ class StrxCabinAllocation(models.Model):
         if not users:
             group = self.env.ref('stock.group_stock_user', raise_if_not_found=False)
             users = group.all_user_ids.filtered(lambda user: user.active) if group else users
-        dedicated_users = users.filtered(
-            lambda user: user.login != 'admin'
-            and user != self.env.ref('base.user_admin', raise_if_not_found=False))
+        settings_group = self.env.ref('base.group_system', raise_if_not_found=False)
+        settings_users = settings_group.all_user_ids if settings_group else self.env['res.users']
+        dedicated_users = users - settings_users
         return dedicated_users or users or self.env.user
 
     def _strx_has_open_return_shipment(self):

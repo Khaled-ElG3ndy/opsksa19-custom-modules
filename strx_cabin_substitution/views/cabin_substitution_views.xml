@@ -154,6 +154,7 @@
             <xpath expr="//header" position="inside">
                 <button name="action_request_substitution" type="object"
                         string="Request Substitution"
+                        groups="strx_cabin_security.group_cabin_user"
                         invisible="state != 'dispatched'"/>
             </xpath>
         </field>

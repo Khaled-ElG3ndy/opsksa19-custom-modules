@@ -11,4 +11,53 @@
         <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
     </record>
 
+    <record id="strx_cabin_product_template_access_rule" model="ir.rule">
+        <field name="name">Cabin products: cabin access</field>
+        <field name="model_id" ref="product.model_product_template"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[(1, '=', 1)] if user.has_group('strx_cabin_security.group_cabin_user') else [('strx_is_cabin', '=', False)]</field>
+    </record>
+
+    <record id="strx_cabin_product_product_access_rule" model="ir.rule">
+        <field name="name">Cabin variants: cabin access</field>
+        <field name="model_id" ref="product.model_product_product"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[(1, '=', 1)] if user.has_group('strx_cabin_security.group_cabin_user') else [('strx_is_cabin', '=', False)]</field>
+    </record>
+
+    <record id="strx_cabin_stock_lot_access_rule" model="ir.rule">
+        <field name="name">Cabin lots: cabin access</field>
+        <field name="model_id" ref="stock.model_stock_lot"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[(1, '=', 1)] if user.has_group('strx_cabin_security.group_cabin_user') else [('strx_is_cabin', '=', False)]</field>
+    </record>
+
+    <record id="strx_cabin_stock_quant_access_rule" model="ir.rule">
+        <field name="name">Cabin quantities: cabin access</field>
+        <field name="model_id" ref="stock.model_stock_quant"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[(1, '=', 1)] if user.has_group('strx_cabin_security.group_cabin_user') else [('product_id.strx_is_cabin', '=', False)]</field>
+    </record>
+
+    <record id="strx_cabin_stock_move_access_rule" model="ir.rule">
+        <field name="name">Cabin stock moves: cabin access</field>
+        <field name="model_id" ref="stock.model_stock_move"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[(1, '=', 1)] if user.has_group('strx_cabin_security.group_cabin_user') else [('product_id.strx_is_cabin', '=', False)]</field>
+    </record>
+
+    <record id="strx_cabin_stock_move_line_access_rule" model="ir.rule">
+        <field name="name">Cabin stock move lines: cabin access</field>
+        <field name="model_id" ref="stock.model_stock_move_line"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[(1, '=', 1)] if user.has_group('strx_cabin_security.group_cabin_user') else [('product_id.strx_is_cabin', '=', False)]</field>
+    </record>
+
+    <record id="strx_cabin_stock_picking_access_rule" model="ir.rule">
+        <field name="name">Cabin transfers: cabin access</field>
+        <field name="model_id" ref="stock.model_stock_picking"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">[(1, '=', 1)] if user.has_group('strx_cabin_security.group_cabin_user') else [('strx_has_cabin_content', '=', False)]</field>
+    </record>
+
 </odoo>

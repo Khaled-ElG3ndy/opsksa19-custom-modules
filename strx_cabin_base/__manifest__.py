@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'STRX Cabin Control — Base',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.1.0',
     'summary': 'Foundation for cabin-rental fulfillment control: cabin specifications, '
                'serialised asset readiness states and event-driven readiness history.',
     'author': 'STRX',
