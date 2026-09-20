@@ -18,12 +18,12 @@ Provides:
 
 M0 scaffold: groups + menu shells only. No business models.
 """,
-    'version': '19.0.1.3.0',
+    'version': '19.0.1.3.1',
     'category': 'Industries/Rental',
     'author': 'Generator Rental ERP Project',
     'website': 'https://gen.getintakepilot.com',
     'license': 'LGPL-3',
-    'depends': ['base', 'mail'],
+    'depends': ['base', 'mail', 'rental_access_security'],
     'data': [
         'security/gr_security_groups.xml',
         'security/ir.model.access.csv',

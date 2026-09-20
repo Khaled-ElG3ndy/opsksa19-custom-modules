@@ -17,11 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #. module: strx_cabin_security
-#: model:ir.module.category,description:strx_cabin_security.module_category_cabin_rental
-msgid "Access management for the cabin-rental vertical."
-msgstr "إدارة الصلاحيات لقطاع تأجير الكابينات."
-
-#. module: strx_cabin_security
 #: model:res.groups,comment:strx_cabin_security.group_cabin_user
 msgid ""
 "Baseline access: read cabin specifications, readiness history and "
@@ -49,11 +44,6 @@ msgstr "مسؤول عمليات الكابينات"
 #: model:res.groups.privilege,name:strx_cabin_security.res_groups_privilege_cabin_rental
 msgid "Cabin Rental"
 msgstr "تأجير الكابينات"
-
-#. module: strx_cabin_security
-#: model:ir.module.category,name:strx_cabin_security.module_category_cabin_rental
-msgid "Cabin Rental Control"
-msgstr "التحكم في تأجير الكابينات"
 
 #. module: strx_cabin_security
 #: model:res.groups,name:strx_cabin_security.group_cabin_sales_officer
@@ -103,19 +93,9 @@ msgstr ""
 "المنتج. لا يمكنه اعتماد استبدال مواصفة."
 
 #. module: strx_cabin_security
-#: model:ir.module.category,description:strx_cabin_security.module_category_cabin_rental
-msgid "Access management for rental systems."
-msgstr "إدارة الصلاحيات لأنظمة التأجير."
-
-#. module: strx_cabin_security
 #: model:res.groups.privilege,name:strx_cabin_security.res_groups_privilege_cabin_rental
 msgid "Cabin Control"
 msgstr "التحكم في الكابينات"
-
-#. module: strx_cabin_security
-#: model:ir.module.category,name:strx_cabin_security.module_category_cabin_rental
-msgid "Rental Access"
-msgstr "صلاحيات التأجير"
 
 #. module: strx_cabin_security
 #: model:res.groups.privilege,description:strx_cabin_security.res_groups_privilege_cabin_rental

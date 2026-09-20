@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* rental_access_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#. module: rental_access_security
+#: model:ir.module.module,shortdesc:rental_access_security.module_meta_information
+msgid "Rental Access Security"
+msgstr "أمان صلاحيات التأجير"
+
+#. module: rental_access_security
+#: model:ir.module.module,summary:rental_access_security.module_meta_information
+msgid "Shared Access Rights category for rental verticals."
+msgstr "تصنيف مشترك لصلاحيات الوصول لأنظمة التأجير."
+
+#. module: rental_access_security
+#: model:ir.module.module,description:rental_access_security.module_meta_information
+msgid ""
+"\n"
+"Rental Access Security\n"
+"======================\n"
+"\n"
+"Defines the shared \"Rental Access\" category used by independent rental\n"
+"verticals so their access toggles appear under one section on the user form.\n"
+msgstr ""
+"\n"
+"أمان صلاحيات التأجير\n"
+"======================\n"
+"\n"
+"يعرّف تصنيف \"صلاحيات التأجير\" المشترك الذي تستخدمه أنظمة التأجير المستقلة\n"
+"حتى تظهر مفاتيح صلاحياتها ضمن قسم واحد في نموذج المستخدم.\n"
+
+#. module: rental_access_security
+#: model:ir.module.category,description:rental_access_security.module_category_rental_access
+msgid "Access management for rental systems."
+msgstr "إدارة الصلاحيات لأنظمة التأجير."
+
+#. module: rental_access_security
+#: model:ir.module.category,name:rental_access_security.module_category_rental_access
+msgid "Rental Access"
+msgstr "صلاحيات التأجير"

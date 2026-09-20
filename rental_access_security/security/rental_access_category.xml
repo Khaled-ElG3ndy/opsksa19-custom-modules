@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="module_category_rental_access" model="ir.module.category">
+        <field name="name">Rental Access</field>
+        <field name="description">Access management for rental systems.</field>
+        <field name="sequence">25</field>
+    </record>
+
+</odoo>
