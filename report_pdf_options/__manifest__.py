@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Pdf report options',
+    'version': '19.0.1.1.3',
     'summary': """shows a modal window with options for printing, downloading or opening pdf reports""",
     'description': """
         Choose one of the following options when printing a pdf report:
@@ -23,7 +24,11 @@
         'web.assets_backend': [
             'report_pdf_options/static/src/js/PdfOptionsModal.js',
             'report_pdf_options/static/src/js/qwebactionmanager.js',
-            'report_pdf_options/static/src/**/*.xml'
-        ]
+            'report_pdf_options/static/src/scss/report_pdf_options.scss',
+            'report_pdf_options/static/src/**/*.xml',
+        ],
+        'web.assets_unit_tests': [
+            'report_pdf_options/static/tests/unit/**/*',
+        ],
     }
 }

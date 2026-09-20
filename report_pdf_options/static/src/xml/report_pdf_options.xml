@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates xml:space="preserve">
     <t t-name="report_pdf_options.ButtonOptions">
-        <Dialog size="'sm'" title="title">
-            <div style="text-align:center;">
-                <div class="btn-group" role="group">
-                    <button class="btn btn-info" t-on-click="() => this.executePdfAction('print')">
-                        <i class="fa fa-print me-2"/>
-                        <span>Print</span>
-                    </button>
-                    <button class="btn btn-info" t-on-click="() => this.executePdfAction('download')">
-                        <i class="fa fa-download me-2"/>
-                        <span>Download</span>
-                    </button>
-                    <button class="btn btn-info" t-on-click="() => this.executePdfAction('open')">
-                        <i class="fa fa-file-text me-2"/>
-                        <span>Open</span>
+        <Dialog
+            size="'md'"
+            title="title"
+            footer="false"
+            contentClass="dialogClass"
+            bodyClass="'o_pdf_options_body'"
+        >
+            <div class="o_pdf_options_content" t-att-dir="direction">
+                <p class="o_pdf_options_intro" t-esc="subtitle"/>
+                <div class="o_pdf_options_list" role="group" t-att-aria-label="title">
+                    <button
+                        t-foreach="options"
+                        t-as="option"
+                        t-key="option.key"
+                        type="button"
+                        class="o_pdf_option"
+                        t-att-data-option="option.key"
+                        t-att-aria-label="option.title"
+                        t-on-click="() => this.executePdfAction(option.key)"
+                    >
+                        <span class="o_pdf_option_icon" aria-hidden="true">
+                            <i t-attf-class="fa {{ option.icon }}"/>
+                        </span>
+                        <span class="o_pdf_option_text">
+                            <span class="o_pdf_option_title" t-esc="option.title"/>
+                            <span class="o_pdf_option_description" t-esc="option.description"/>
+                        </span>
+                        <span class="o_pdf_option_arrow" aria-hidden="true">
+                            <i class="fa fa-chevron-right"/>
+                        </span>
                     </button>
                 </div>
             </div>

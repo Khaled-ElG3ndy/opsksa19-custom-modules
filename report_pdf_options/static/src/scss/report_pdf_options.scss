@@ -1,0 +1,180 @@
+.o_pdf_options_dialog {
+    border: 0;
+    border-radius: 16px;
+    box-shadow: 0 18px 48px rgba(15, 23, 42, 0.18);
+    overflow: hidden;
+
+    .modal-header {
+        align-items: center;
+        border-bottom: 0;
+        padding: 1.5rem 1.5rem 0.35rem;
+    }
+
+    .modal-title {
+        color: #172334;
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        line-height: 1.35;
+    }
+
+    .btn-close {
+        border-radius: 8px;
+        opacity: 0.55;
+
+        &:hover,
+        &:focus-visible {
+            background-color: #eef1f4;
+            opacity: 0.85;
+        }
+    }
+
+    .o_pdf_options_body {
+        padding: 0.5rem 1.5rem 1.5rem;
+    }
+
+    .o_pdf_options_content {
+        color: #172334;
+        text-align: start;
+    }
+
+    .o_pdf_options_intro {
+        color: #667085;
+        font-size: 0.925rem;
+        line-height: 1.55;
+        margin: 0 0 1.1rem;
+    }
+
+    .o_pdf_options_list {
+        display: grid;
+        gap: 0.7rem;
+    }
+
+    .o_pdf_option {
+        align-items: center;
+        appearance: none;
+        background: #ffffff;
+        border: 1px solid #d6dce3;
+        border-radius: 11px;
+        color: #172334;
+        cursor: pointer;
+        display: grid;
+        font: inherit;
+        gap: 0.9rem;
+        grid-template-columns: 44px minmax(0, 1fr) auto;
+        min-height: 72px;
+        padding: 0.75rem 0.85rem;
+        text-align: start;
+        transition: background-color 150ms ease, border-color 150ms ease,
+            box-shadow 150ms ease, transform 150ms ease;
+        width: 100%;
+
+        &:hover {
+            background: #f8fafb;
+            border-color: #728092;
+            box-shadow: 0 5px 16px rgba(15, 23, 42, 0.08);
+            transform: translateY(-1px);
+        }
+
+        &:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
+
+        &:focus-visible {
+            border-color: #43566b;
+            box-shadow: 0 0 0 3px rgba(67, 86, 107, 0.16);
+            outline: 0;
+        }
+    }
+
+    .o_pdf_option_icon {
+        align-items: center;
+        background: #edf1f4;
+        border-radius: 9px;
+        color: #34495e;
+        display: inline-flex;
+        font-size: 1.05rem;
+        height: 42px;
+        justify-content: center;
+        width: 42px;
+    }
+
+    .o_pdf_option_text {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    .o_pdf_option_title {
+        color: #172334;
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    .o_pdf_option_description {
+        color: #667085;
+        font-size: 0.82rem;
+        line-height: 1.45;
+        margin-block-start: 0.12rem;
+    }
+
+    .o_pdf_option_arrow {
+        color: #98a2b3;
+        font-size: 0.72rem;
+        margin-inline: 0.25rem;
+    }
+
+    // These classes already represent the user's actual language direction.
+    // Keep RTLCSS from mirroring them a second time in the RTL asset bundle.
+    &.o_pdf_options_rtl {
+        direction: rtl #{"/*rtl:ignore*/"};
+
+        .modal-title,
+        .o_pdf_options_content,
+        .o_pdf_option {
+            text-align: right #{"/*rtl:ignore*/"};
+        }
+
+        .o_pdf_option_arrow {
+            transform: scaleX(-1);
+        }
+    }
+
+    &.o_pdf_options_ltr {
+        direction: ltr #{"/*rtl:ignore*/"};
+
+        .modal-title,
+        .o_pdf_options_content,
+        .o_pdf_option {
+            text-align: left #{"/*rtl:ignore*/"};
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .o_pdf_options_dialog {
+        border-radius: 13px;
+
+        .modal-header {
+            padding: 1.2rem 1.1rem 0.25rem;
+        }
+
+        .o_pdf_options_body {
+            padding: 0.45rem 1.1rem 1.1rem;
+        }
+
+        .o_pdf_option {
+            gap: 0.75rem;
+            grid-template-columns: 40px minmax(0, 1fr) auto;
+            min-height: 68px;
+            padding: 0.7rem;
+        }
+
+        .o_pdf_option_icon {
+            height: 40px;
+            width: 40px;
+        }
+    }
+}
