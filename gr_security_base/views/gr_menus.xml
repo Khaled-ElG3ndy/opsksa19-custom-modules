@@ -9,7 +9,7 @@
     <!-- gr_security_base; everything else arrives with its module.    -->
     <!-- ============================================================= -->
      <menuitem id="menu_generator_root"
-                 name="Generator Rental"
+                 name="Equipment Rental"
                  web_icon="gr_security_base,static/description/app_icon.svg"
                  groups="gr_security_base.group_generator_user"
                  sequence="15"/>

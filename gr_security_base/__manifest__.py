@@ -18,7 +18,7 @@ Provides:
 
 M0 scaffold: groups + menu shells only. No business models.
 """,
-    'version': '19.0.1.3.1',
+    'version': '19.0.1.3.2',
     'category': 'Industries/Rental',
     'author': 'Generator Rental ERP Project',
     'website': 'https://gen.getintakepilot.com',
