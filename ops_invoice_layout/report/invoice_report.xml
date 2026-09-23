@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Saudi A4 with ~15mm side margins, matching the MiKS reference. l10n_sa's
+        own format has margin_left/right = 0, which makes the line-item table run
+        almost edge to edge; its record is left untouched and copied instead.
+    -->
+    <record id="paperformat_ops_invoice_a4" model="report.paperformat">
+        <field name="name">Saudi Arabia A4 (OPS invoice)</field>
+        <field name="format">A4</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">65</field>
+        <field name="margin_bottom">32</field>
+        <field name="margin_left">12</field>
+        <field name="margin_right">12</field>
+        <field name="header_spacing">65</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="account.account_invoices" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_ops_invoice_a4"/>
+    </record>
+
+    <record id="account.account_invoices_without_payment" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_ops_invoice_a4"/>
+    </record>
+
+    <!--
+        Visual-only extension of the Saudi invoice report. This is a plain
+        (non-primary) inherit, so it layers on top of l10n_sa and l10n_sa_edi
+        instead of replacing them: the ZATCA blocks (QR, not-a-legal-document
+        banner, adjustment reason, buyer/seller identification) keep rendering.
+    -->
+    <template id="report_invoice_document_ops_style"
+              inherit_id="l10n_sa.l10n_sa_report_invoice_document">
+
+        <!-- Brand palette, resolved per company, with a neutral grey fallback. -->
+        <xpath expr="//div[hasclass('invoice_main')]" position="before">
+            <t t-set="ops_brand" t-value="o.company_id.primary_color or ''"/>
+            <t t-set="ops_fill" t-value="ops_brand or '#b1b7b7'"/>
+            <t t-set="ops_hex" t-value="ops_fill.lstrip('#')"/>
+            <t t-set="ops_lum" t-value="(int(ops_hex[0:2], 16) * 299 + int(ops_hex[2:4], 16) * 587 + int(ops_hex[4:6], 16) * 114) / 1000 if len(ops_hex) == 6 else 128"/>
+            <t t-set="ops_on_fill" t-value="'#000000' if ops_lum &gt; 200 else '#ffffff'"/>
+
+            <style t-translation="off">
+                /*
+                    Arabic face shipped with the module (Noto Naskh Arabic, OFL).
+
+                    NOTE: wkhtmltopdf's Qt WebKit IGNORES unicode-range - verified
+                    directly. The range is kept because it is correct for any modern
+                    engine (and for the HTML preview), but under wkhtmltopdf a family
+                    listed first is used for ALL glyphs, which knocks Latin off Lato.
+                    So this family is NOT put in the container stack; it is applied
+                    only to the Arabic-only labels below.
+
+                    Mixed-script text inside one field (Latin and Arabic together) cannot be
+                    split by CSS at all. Covering that needs the fontconfig rule in
+                    static/fontconfig/60-ops-arabic.conf installed on the render host.
+                */
+                @font-face {
+                    font-family: 'OPS Arabic';
+                    font-style: normal;
+                    font-weight: 400;
+                    src: url('/ops_invoice_layout/static/src/fonts/NotoNaskhArabic-Regular.ttf') format('truetype');
+                    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+                }
+                @font-face {
+                    font-family: 'OPS Arabic';
+                    font-style: normal;
+                    font-weight: 700;
+                    src: url('/ops_invoice_layout/static/src/fonts/NotoNaskhArabic-Bold.ttf') format('truetype');
+                    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+                }
+
+                /* ---- typography, set once on the report container ---- */
+                .ops-miks-invoice {
+                    font-family: 'Lato', sans-serif;
+                    font-size: 11px;
+                    line-height: 1.3;
+                }
+                .ops-miks-invoice strong,
+                .ops-miks-invoice th {
+                    font-weight: 700;
+                }
+                /* Arabic-only labels from l10n_gcc_invoice / l10n_sa. */
+                .ops-miks-invoice [name$='_ar'] {
+                    font-family: 'OPS Arabic', 'Lato', sans-serif;
+                }
+
+                /* ---- line-item table: full grid, compact, RTL column order ---- */
+                .ops-miks-invoice table[name='invoice_line_table'] {
+                    border-collapse: collapse;
+                    font-size: 10px;
+                    direction: rtl;
+                }
+                /* Cell contents keep their own direction; only the column order flips. */
+                .ops-miks-invoice table[name='invoice_line_table'] > thead > tr > th,
+                .ops-miks-invoice table[name='invoice_line_table'] > tbody > tr > td {
+                    direction: ltr;
+                    border: 1px solid #939697 !important;
+                    padding: 8px 5px !important;
+                    vertical-align: middle;
+                    box-shadow: none !important;
+                }
+                /* Header row is white in the reference; the shading sits on the
+                   TOTAL PRICE / AMOUNT money columns instead. */
+                .ops-miks-invoice table[name='invoice_line_table'] > thead > tr > th {
+                    background-color: #ffffff !important;
+                    padding: 4px 5px !important;
+                    line-height: 1.2;
+                }
+                .ops-miks-invoice table[name='invoice_line_table'] > tbody > tr > td.o_price_total {
+                    background-color: #e5e5e5 !important;
+                }
+
+                /* ---- grand-total bar, driven by the company brand colour ---- */
+                .ops-miks-invoice .o_total_table tr.o_total td,
+                .ops-miks-invoice .o_total_table tr.o_total td strong,
+                .ops-miks-invoice .o_total_table tr.o_total td span {
+                    background-color: <t t-esc="ops_fill"/>;
+                    color: <t t-esc="ops_on_fill"/> !important;
+                    font-weight: 700;
+                }
+                .ops-miks-invoice .o_total_table tr.o_total td {
+                    border-top: 1px solid <t t-esc="ops_fill"/>;
+                    box-shadow: none !important;
+                }
+            </style>
+        </xpath>
+
+        <xpath expr="//div[hasclass('invoice_main')]" position="attributes">
+            <attribute name="class" add="ops-miks-invoice" separator=" "/>
+        </xpath>
+
+        <!--
+            Dates back to dd/MM/yyyy. l10n_sa forces YYYY-MM-dd; this inherit runs
+            after it, so these re-overrides win.
+        -->
+        <div t-field="o.invoice_date" position="attributes">
+            <attribute name="t-options">{'format': 'dd/MM/yyyy'}</attribute>
+        </div>
+        <div t-field="o.invoice_date_due" position="attributes">
+            <attribute name="t-options">{'format': 'dd/MM/yyyy'}</attribute>
+        </div>
+        <div t-field="o.delivery_date" position="attributes">
+            <attribute name="t-options">{'format': 'dd/MM/yyyy'}</attribute>
+        </div>
+        <t t-out="payment_vals['date']" position="attributes">
+            <attribute name="t-options">{'widget': 'date', 'format': 'dd/MM/yyyy'}</attribute>
+        </t>
+    </template>
+</odoo>
