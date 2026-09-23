@@ -8,3 +8,11 @@ reportlab
 
 # strx_cabin_base — QR codes on cabin asset cards
 qrcode
+
+# ops_invoice_layout — ZATCA QR code on the Saudi invoice PDF.
+# reportlab 4.x draws barcode PNGs through a renderPM backend that it does not
+# bundle; with none present Odoo's barcode helper raises RenderPMError and the
+# QR comes out as a broken image. On Debian/Ubuntu this normally arrives with
+# the python3-reportlab-accel deb, which is not guaranteed on odoo.sh, so it is
+# pinned here. Wheels are published up to cp312; Odoo 19 runs Python 3.12.
+rl-renderPM==4.0.3 ; python_version < '3.13'

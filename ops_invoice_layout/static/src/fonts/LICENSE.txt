@@ -1,0 +1,12 @@
+NotoNaskhArabic-Regular.ttf, NotoNaskhArabic-Bold.ttf
+Copyright (c) Google LLC. Noto is a trademark of Google LLC.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+Full licence text: https://scripts.sil.org/OFL
+
+Shipped with this module so the Arabic half of the invoice renders in Noto Naskh
+Arabic instead of falling back to DejaVu Sans. Odoo's own Arabic face is served
+from fonts.odoocdn.com, which is not reachable from the report renderer here.
+
+Source: Debian package fonts-noto-core
+        /usr/share/fonts/truetype/noto/
