@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "OPS Invoice Layout",
-    "version": "19.0.2.0.0",
+    "version": "19.0.2.1.0",
     "summary": "MiKS visual styling for the Saudi customer invoice PDF",
     "description": """
 Restyles the customer invoice PDF to the MiKS look by inheriting the standard
