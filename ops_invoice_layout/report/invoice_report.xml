@@ -149,4 +149,39 @@
             <attribute name="t-options">{'widget': 'date', 'format': 'dd/MM/yyyy'}</attribute>
         </t>
     </template>
+
+    <!--
+        Cap the company logo in the page header.
+
+        The header is NOT part of this report's template: _prepare_html() lifts
+        <div class="header"> out of the tree and renders it through
+        web.minimal_layout as its OWN document, which wkhtmltopdf renders as the
+        page header.
+        The .ops-miks-invoice styles above live in the body document, so they
+        cannot reach the logo - the two are different HTML documents. Hooking
+        minimal_layout puts the rule in whichever document is being built, and
+        report_xml_id keeps it to the two invoice reports.
+
+        Odoo already caps the logo, but at a height that depends on the layout
+        and on the logo's aspect ratio: o_company_logo_big is max-height 8rem /
+        max-width 16rem, so a square logo lands on the height cap (tallest)
+        while a logo wider than 2:1 hits the width cap first and comes out
+        shorter. That difference is the uneven header. A single explicit cap on
+        every o_company_logo* variant makes tall, square and wide logos share
+        one header height across all the external layouts.
+    -->
+    <template id="report_invoice_logo_cap" inherit_id="web.minimal_layout">
+        <xpath expr="//head" position="inside">
+            <style t-if="report_xml_id in ('account.account_invoices', 'account.account_invoices_without_payment')"
+                   t-translation="off">
+                .header img[class*='o_company_logo'] {
+                    max-height: 64px !important;
+                    max-width: 100% !important;
+                    width: auto !important;
+                    height: auto !important;
+                    object-fit: contain;
+                }
+            </style>
+        </xpath>
+    </template>
 </odoo>
