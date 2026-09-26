@@ -105,10 +105,7 @@
                 </div>
             </xpath>
             <xpath expr="//field[@name='serial_number']" position="after">
-                <field name="owner_type" widget="badge"
-                       decoration-success="owner_type == 'owned'"
-                       decoration-warning="owner_type == 'rented_in'"
-                       decoration-info="owner_type == 'customer_owned'"/>
+                <field name="owner_type"/>
                 <field name="owner_partner_id"
                        invisible="owner_type == 'owned'"
                        required="owner_type in ('rented_in','customer_owned')"/>
