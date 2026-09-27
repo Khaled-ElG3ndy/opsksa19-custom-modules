@@ -49,14 +49,13 @@
                 </button>
             </xpath>
 
+            <!-- gr_equipment already lists the current-position fields after
+                 current_rental_order_ref: only give them a heading here and
+                 add Last Movement at the end. -->
             <xpath expr="//field[@name='current_rental_order_ref']" position="after">
                 <separator string="Current Position"/>
-                <field name="current_presence_type"/>
-                <field name="current_rental_order_id"/>
-                <field name="current_contract_id"/>
-                <field name="current_site_id"/>
-                <field name="current_location_label"/>
-                <field name="expected_return_datetime"/>
+            </xpath>
+            <xpath expr="//field[@name='expected_return_datetime']" position="after">
                 <field name="history_last_event_datetime"/>
             </xpath>
 

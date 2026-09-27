@@ -7,7 +7,7 @@
                    "rental, delivery, return, maintenance, inspection, field "
                    "worksheet, parts, contract, and sublet workflows without "
                    "replacing the existing chatter.",
-    'version': '19.0.1.0.2',
+    'version': '19.0.1.0.3',
     'category': 'Industries/Rental',
     'author': 'Generator Rental ERP Project',
     'website': 'https://gen.getintakepilot.com',
