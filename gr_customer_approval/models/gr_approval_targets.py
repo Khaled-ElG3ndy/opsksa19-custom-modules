@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 from math import ceil
 
-from odoo import api, fields, _, models
+from odoo import Command, api, fields, _, models
+
+# Ticking a checklist item off during dispatch or return. The checklist's
+# definition (which items, in which phase) stays part of the approved content.
+_CHECKLIST_TICK_FIELDS = frozenset({'is_done', 'notes'})
 
 
 class GrRentalOrderApproval(models.Model):
@@ -96,6 +100,28 @@ class GrRentalOrderApproval(models.Model):
             'dispatch_note', 'installation_note', 'return_note',
             'customer_receiver_name', 'item_line_ids', 'checklist_ids',
         }
+
+    def _approval_post_approval_fields(self):
+        # Filled in at delivery and return, i.e. after the approval that
+        # confirming the order requires. The approved PDF keeps the values it
+        # was approved with; the live order records what actually happened.
+        return {
+            'customer_receiver_name', 'customer_receiver_signature',
+            'customer_return_signature', 'dispatch_note', 'installation_note',
+            'return_note',
+        }
+
+    def _approval_allows_post_approval_write(self, field_name, value):
+        # The form saves a ticked checklist item as an UPDATE command on the
+        # order. Only ticks and notes pass; new, removed, renamed or re-phased
+        # items still change the approved checklist.
+        if field_name != 'checklist_ids':
+            return super()._approval_allows_post_approval_write(field_name, value)
+        return bool(value) and all(
+            isinstance(command, (list, tuple)) and len(command) == 3
+            and command[0] == Command.UPDATE
+            and not set(command[2] or {}) - _CHECKLIST_TICK_FIELDS
+            for command in value)
 
     def _approval_content_payload(self):
         self.ensure_one()
@@ -350,7 +376,12 @@ class GrRentalOrderChecklistApproval(models.Model):
         return super().create(vals_list)
 
     def write(self, vals):
-        self.mapped('order_id')._approval_related_change_guard()
+        orders = self.mapped('order_id')
+        if vals and not set(vals) - _CHECKLIST_TICK_FIELDS:
+            # A tick on an approved order is operational. Before approval it
+            # still supersedes a pending copy, as any content change does.
+            orders = orders.filtered(lambda order: order.approval_state != 'approved')
+        orders._approval_related_change_guard()
         return super().write(vals)
 
     def unlink(self):

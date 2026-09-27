@@ -5,7 +5,7 @@ from datetime import timedelta
 from unittest.mock import patch
 from lxml import etree
 from pypdf import PdfReader
-from odoo import fields
+from odoo import Command, fields
 from odoo.tests.common import TransactionCase
 from odoo.exceptions import UserError
 from odoo.tests import tagged
@@ -490,6 +490,181 @@ class TestCustomerApproval(TransactionCase):
         self._approve_with_signature(o)
         with self.assertRaises(UserError):
             o.planned_return_datetime = fields.Datetime.now() + timedelta(days=10)
+
+    # ---------- post-approval delivery / return sign-off ----------
+    def _approved_order_with_line(self):
+        o = self._order()
+        line = o.item_line_ids[:1]
+        self.assertTrue(line, "The order's equipment should be mirrored as a rental line.")
+        self._approve_with_signature(o)
+        return o, line
+
+    def test_approved_order_keeps_commercial_data_locked(self):
+        o, line = self._approved_order_with_line()
+        other = self.Asset.create({'name': 'Other Gen', 'pm_interval_hours': 2000.0})
+        with self.assertRaises(UserError):
+            line.daily_rate = 999.0
+        with self.assertRaises(UserError):
+            line.equipment_asset_id = other
+        with self.assertRaises(UserError):
+            o.item_line_ids = [(0, 0, {'equipment_asset_id': other.id, 'daily_rate': 50.0})]
+        with self.assertRaises(UserError):
+            self.env['gr.rental.order.line'].create({
+                'order_id': o.id, 'equipment_asset_id': other.id})
+        with self.assertRaises(UserError):
+            line.unlink()
+        with self.assertRaises(UserError):
+            o.asset_id = other
+        with self.assertRaises(UserError):
+            o.partner_id = self.no_contact
+        with self.assertRaises(UserError):
+            o.planned_return_datetime = fields.Datetime.now() + timedelta(days=10)
+        with self.assertRaises(UserError):
+            self.env['ir.attachment'].create({
+                'name': 'side-letter.pdf', 'raw': b'%PDF-side-letter',
+                'res_model': 'gr.rental.order', 'res_id': o.id})
+        self.assertEqual(o.approval_state, 'approved')
+
+    def test_approved_order_accepts_delivery_and_return_signoff(self):
+        o, _line = self._approved_order_with_line()
+        approved_copy = o.current_approval_document_id
+        o.write({
+            'customer_receiver_name': 'Site Receiver',
+            'customer_receiver_signature': _SIG,
+            'dispatch_note': 'Delivered with 50 m cable',
+            'installation_note': 'Installed on pad B',
+        })
+        o.write({
+            'customer_return_signature': _SIG,
+            'return_note': 'Returned clean',
+        })
+        # Re-signing rewrites the stored attachment; clearing unlinks it.
+        second = base64.b64encode(b'second-return-signature')
+        o.customer_return_signature = second
+        o.customer_receiver_signature = False
+        o.invalidate_recordset()
+        self.assertEqual(o.customer_return_signature, second)
+        self.assertFalse(o.customer_receiver_signature)
+        self.assertEqual(o.customer_receiver_name, 'Site Receiver')
+        self.assertEqual(o.dispatch_note, 'Delivered with 50 m cable')
+        self.assertEqual(o.installation_note, 'Installed on pad B')
+        self.assertEqual(o.return_note, 'Returned clean')
+        self.assertEqual(o.approval_state, 'approved')
+        self.assertEqual(o.current_approval_document_id, approved_copy)
+        self.assertEqual(approved_copy.state, 'approved')
+
+    def test_signature_attachment_cannot_be_moved_off_approved_order(self):
+        o, _line = self._approved_order_with_line()
+        o.customer_return_signature = _SIG
+        attachment = self.env['ir.attachment'].sudo().search([
+            ('res_model', '=', 'gr.rental.order'), ('res_id', '=', o.id),
+            ('res_field', '=', 'customer_return_signature')])
+        self.assertEqual(len(attachment), 1)
+        with self.assertRaises(UserError):
+            attachment.write({'res_field': False})
+
+    def test_return_needs_signature_and_works_after_approval(self):
+        o, _line = self._approved_order_with_line()
+        if 'rental_requires_return_signature_override' not in o.asset_id._fields:
+            self.skipTest('gr_equipment is not installed')
+        o.asset_id.rental_requires_return_signature_override = 'yes'
+        o.action_confirm()
+        # Reserve, dispatch and install are not under test: put the order where
+        # the customer hands the unit back.
+        o.state = 'on_rent'
+        self.assertTrue(o.rental_workflow_return_signature_due)
+        with self.assertRaises(UserError):
+            o.action_return()
+        o.write({
+            'customer_return_signature': _SIG,
+            'return_note': 'Collected from site',
+        })
+        o.action_return()
+        self.assertEqual(o.state, 'returned')
+        self.assertEqual(o.approval_state, 'approved')
+        self.assertEqual(o.current_approval_document_id.state, 'approved')
+
+    def test_post_approval_edit_does_not_revoke_approval_on_send(self):
+        o, _line = self._approved_order_with_line()
+        approved_copy = o.current_approval_document_id
+        before = o._approval_content_hash()
+        o.write({'dispatch_note': 'Delivered to gate 3', 'return_note': 'Back in yard'})
+        self.assertNotEqual(o._approval_content_hash(), before)
+        template = self.env.ref(
+            'gr_customer_approval.mail_template_rental_order_document')
+        with patch.object(type(template), 'send_mail', return_value=1) as send_mail:
+            o.action_send_document_to_customer()
+        self.assertEqual(send_mail.call_count, 1)
+        self.assertEqual(o.approval_state, 'approved')
+        self.assertEqual(o.current_approval_document_id, approved_copy)
+        self.assertEqual(approved_copy.state, 'approved')
+        self.assertEqual(o.approval_document_count, 1)
+
+    def test_send_still_refreshes_a_pending_copy_gone_stale(self):
+        self.partner.lang = 'en_US'
+        o = self._order()
+        stale = self._prepare_approval_copy(o, lang='en_US')
+        # The approved content includes the asset serial; changing it on the
+        # asset does not pass through the order's write().
+        o.asset_id.serial_number = 'SN-CHANGED-AFTER-COPY'
+        template = self.env.ref(
+            'gr_customer_approval.mail_template_rental_order_document')
+        with patch.object(type(o), '_render_approval_pdf', return_value=b'%PDF-v2'), \
+                patch.object(type(template), 'send_mail', return_value=1):
+            o.action_send_document_to_customer()
+        self.assertEqual(stale.state, 'superseded')
+        self.assertEqual(o.current_approval_document_id.version, 2)
+        self.assertEqual(o.approval_state, 'pending')
+
+    def _order_with_checklist(self):
+        return self._order(checklist_ids=[
+            Command.create({'phase': 'dispatch', 'name': 'Fuel level checked'}),
+            Command.create({'phase': 'return', 'name': 'Cables returned'}),
+        ])
+
+    def test_checklist_ticks_after_approval_but_definition_stays_locked(self):
+        o = self._order_with_checklist()
+        dispatch_item, return_item = o.checklist_ids.sorted('id')
+        self._approve_with_signature(o)
+        approved_copy = o.current_approval_document_id
+
+        # Saved from the order form: an UPDATE command on checklist_ids.
+        o.write({'checklist_ids': [Command.update(
+            return_item.id, {'is_done': True, 'notes': 'All 3 cables back'})]})
+        # Saved on the item itself.
+        dispatch_item.is_done = True
+        self.assertTrue(return_item.is_done)
+        self.assertEqual(return_item.notes, 'All 3 cables back')
+        self.assertTrue(dispatch_item.is_done)
+
+        with self.assertRaises(UserError):
+            return_item.name = 'Renamed'
+        with self.assertRaises(UserError):
+            return_item.phase = 'safety'
+        with self.assertRaises(UserError):
+            return_item.write({'is_done': False, 'name': 'Renamed with a tick'})
+        with self.assertRaises(UserError):
+            o.write({'checklist_ids': [Command.update(return_item.id, {'name': 'Renamed'})]})
+        with self.assertRaises(UserError):
+            o.write({'checklist_ids': [Command.create({'phase': 'return', 'name': 'Extra'})]})
+        with self.assertRaises(UserError):
+            self.env['gr.rental.order.checklist'].create({
+                'order_id': o.id, 'phase': 'return', 'name': 'Extra'})
+        with self.assertRaises(UserError):
+            o.write({'checklist_ids': [Command.delete(dispatch_item.id)]})
+        with self.assertRaises(UserError):
+            dispatch_item.unlink()
+        self.assertEqual(len(o.checklist_ids), 2)
+        self.assertEqual(o.approval_state, 'approved')
+        self.assertEqual(o.current_approval_document_id, approved_copy)
+        self.assertEqual(approved_copy.state, 'approved')
+
+    def test_checklist_tick_before_approval_still_supersedes_pending_copy(self):
+        o = self._order_with_checklist()
+        pending = self._prepare_approval_copy(o)
+        o.checklist_ids[:1].is_done = True
+        self.assertEqual(pending.state, 'superseded')
+        self.assertFalse(o.current_approval_document_id)
 
     def test_repeated_send_reuses_same_version_and_language(self):
         self.partner.lang = 'ar_001'

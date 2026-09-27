@@ -135,12 +135,22 @@ class IrAttachment(models.Model):
         'mimetype',
     })
 
-    def _approval_source_documents(self):
+    def _approval_is_post_approval_field(self, model_name, field_name):
+        """The attachment stores a binary field its document allows to change
+        after approval (a signature). That document's write() already decided
+        whether the field may change, so the attachment is not guarded twice."""
+        return bool(field_name) and \
+            field_name in self.env[model_name]._approval_post_approval_fields()
+
+    def _approval_source_documents(self, skip_post_approval_fields=True):
         sources = {}
         for attachment in self:
             if attachment.res_model in {
                     'gr.rental.order', 'gr.rental.inspection', 'gr.field.worksheet'} \
-                    and attachment.res_id:
+                    and attachment.res_id \
+                    and not (skip_post_approval_fields
+                             and self._approval_is_post_approval_field(
+                                 attachment.res_model, attachment.res_field)):
                 sources.setdefault(attachment.res_model, set()).add(attachment.res_id)
         records = []
         for model_name, ids in sources.items():
@@ -171,7 +181,12 @@ class IrAttachment(models.Model):
                 raise UserError(_('Approval PDF attachments cannot be replaced or edited.'))
             source_attachments = self - approval_attachments
             if self._APPROVAL_SOURCE_ATTACHMENT_FIELDS.intersection(vals):
-                for documents in source_attachments._approval_source_documents():
+                # Re-signing rewrites a whitelisted field's content in place;
+                # moving the attachment to another record or field is not a
+                # post-approval operation and stays guarded.
+                relinked = bool({'res_model', 'res_id', 'res_field'}.intersection(vals))
+                for documents in source_attachments._approval_source_documents(
+                        skip_post_approval_fields=not relinked):
                     documents._approval_related_change_guard()
         return super().write(vals)
 
@@ -187,7 +202,9 @@ class IrAttachment(models.Model):
                 res_id = vals.get('res_id')
                 if model_name in {
                         'gr.rental.order', 'gr.rental.inspection',
-                        'gr.field.worksheet'} and res_id:
+                        'gr.field.worksheet'} and res_id \
+                        and not self._approval_is_post_approval_field(
+                            model_name, vals.get('res_field')):
                     sources.setdefault(model_name, set()).add(res_id)
             for model_name, ids in sources.items():
                 self.env[model_name].browse(ids)._approval_related_change_guard()

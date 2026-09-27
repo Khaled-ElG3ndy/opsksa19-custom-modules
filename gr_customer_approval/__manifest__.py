@@ -20,7 +20,7 @@
                    "works out of the box, and WhatsApp/SMS can be plugged in later "
                    "without touching this logic. Part of the Generator Rental ERP "
                    "vertical (gr_* suite) for Odoo 18 Community.",
-    'version': '19.0.1.0.2',
+    'version': '19.0.1.0.3',
     'category': 'Industries/Rental',
     'author': 'Generator Rental ERP Project',
     'website': 'https://gen.getintakepilot.com',

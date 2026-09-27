@@ -222,6 +222,18 @@ class GrCustomerApprovalMixin(models.AbstractModel):
     def _approval_core_fields(self):
         return set()
 
+    def _approval_post_approval_fields(self):
+        """Operational fields recorded after the customer approved, such as
+        delivery and return sign-off. They stay editable on an approved
+        document; everything else in _approval_core_fields stays locked."""
+        return set()
+
+    def _approval_allows_post_approval_write(self, field_name, value):
+        """Whether writing `value` to a core field of an approved document is
+        an operational update rather than a change to what was approved, e.g.
+        ticking a checklist item saved through the document's form."""
+        return False
+
     def _approval_content_payload(self):
         self.ensure_one()
         return {'model': self._name, 'id': self.id, 'name': self.display_name}
@@ -644,9 +656,13 @@ class GrCustomerApprovalMixin(models.AbstractModel):
         internal = self.env.context.get('skip_customer_approval_lock')
         if vals and not internal:
             locked = _APPROVAL_LOCKED_FIELDS.intersection(vals)
+            core = (self._approval_core_fields()
+                    - self._approval_post_approval_fields())
+            blocked = {
+                name for name in core.intersection(vals)
+                if not self._approval_allows_post_approval_write(name, vals[name])}
             for rec in self:
-                if rec.approval_state == 'approved' and (
-                        locked or self._approval_core_fields().intersection(vals)):
+                if rec.approval_state == 'approved' and (locked or blocked):
                     raise UserError(_(
                         'This approved document is locked. Create a new revision '
                         'before changing approval or business data.'))
@@ -820,7 +836,11 @@ class GrCustomerApprovalMixin(models.AbstractModel):
             if not approval_copy or (
                     approval_copy.state == 'pending' and approval_copy.language != customer_lang):
                 approval_copy = rec._generate_approval_copy(language=customer_lang)
-            if approval_copy.content_hash != rec._approval_content_hash():
+            # Only a pending copy can go stale. An approved one is the record of
+            # what the customer accepted; later post-approval edits must not
+            # revoke it.
+            if approval_copy.state == 'pending' and \
+                    approval_copy.content_hash != rec._approval_content_hash():
                 rec._supersede_current_approval_copy()
                 approval_copy = rec._generate_approval_copy(language=customer_lang)
             rec._send_template_with_copy(
