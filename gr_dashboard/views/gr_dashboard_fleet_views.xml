@@ -83,14 +83,17 @@
                 <field name="item_1_name"/>
                 <field name="item_1_meta"/>
                 <field name="item_1_badge"/>
+                <field name="item_1_badge_tone"/>
                 <field name="item_1_value"/>
                 <field name="item_2_name"/>
                 <field name="item_2_meta"/>
                 <field name="item_2_badge"/>
+                <field name="item_2_badge_tone"/>
                 <field name="item_2_value"/>
                 <field name="item_3_name"/>
                 <field name="item_3_meta"/>
                 <field name="item_3_badge"/>
+                <field name="item_3_badge_tone"/>
                 <field name="item_3_value"/>
                 <field name="item_count"/>
                 <field name="bar_1_label"/>
